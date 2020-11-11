@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% document class
+\documentclass[a4paper,12pt,oneside]{report}
+
+% latex template: https://www.overleaf.com/project/5e7ca0498eb4030001ac3e0c
+%% packages
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=3cm]{geometry}
+\include{thesis.preamble}
+%\renewcommand{\nomname}{List of Abbreviations}
+
+%% page settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{
+	{Thesis Title}\\
+	{\large Institution Name}\\}
+\author{Author Name}
+\date{Day Month Year}
+
+\normallinespacing
+\maketitle
+
+\chapter*{Abstract}
+Abstract goes here
+
+\chapter*{Dedication}
+To mum and dad
+
+\chapter*{Acknowledgements}
+I want to thank...
+
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+\newpage
+\renewcommand{\nomname}{Abbreviations}
+\printnomenclature 
+
+\chapter{Introduction}
+\subfile{../General_Introduction/General_Introduction.tex}
+
+\chapter{General Methodology}
+\subfile{../General_Methodology/General_Methodology.tex}
+
+\chapter{Pacific Biosciences: Isoform Sequencing}
+\subfile{../Project_Development/IsoSeq.tex}
+\subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
+\subfile{../Project_Development/Isoseq_Protocol.tex}
+
+\chapter{Oxford Nanopore: cDNA Sequencing}
+\subfile{../Project_Development/Oxford_Nanopore.tex}
+\subfile{../Project_Development/ONT_Protocol.tex}
+
+\chapter{Whole Transcriptome}
+\subfile{../Whole_Transcriptome/Whole_Transcriptome.tex}
+
+\chapter{Targeted Transcriptome}
+%\input{chapters/chapter05}
+
+\chapter{ONT vs PacBio}
+\subfile{../ONT_Analyses/ONT_vs_PacBio.tex}
+
+\chapter{Proteomics (Eli-Lilly)}
+
+\chapter{Conclusion}
+%\input{chapters/conclusion}
+
+\bibliography{library}
+
+\end{document}

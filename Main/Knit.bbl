@@ -1,0 +1,537 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abrams et~al.(2019)Abrams, Johnson, Huang, Payne, and
+  Coombes]{Abrams2019}
+Zachary~B Abrams, Travis~S Johnson, Kun Huang, Philip~R.O. Payne, and Kevin
+  Coombes.
+\newblock {A protocol to evaluate RNA sequencing normalization methods}.
+\newblock \emph{BMC Bioinformatics}, 20, 2019.
+\newblock ISSN 14712105.
+\newblock \doi{10.1186/s12859-019-3247-x}.
+\newblock URL \url{https://doi.org/10.1186/s12859-019-3247-x}.
+
+\bibitem[Au et~al.(2012)Au, Underwood, Lee, and Wong]{Au2012}
+Kin~Fai Au, Jason~G Underwood, Lawrence Lee, and Wing~Hung Wong.
+\newblock {Improving PacBio Long Read Accuracy by Short Read Alignment}.
+\newblock \emph{PLoS ONE}, 7\penalty0 (10), 2012.
+\newblock ISSN 19326203.
+\newblock \doi{10.1371/journal.pone.0046679}.
+\newblock URL
+  \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3464235/pdf/pone.0046679.pdf}.
+
+\bibitem[Bresson et~al.(2015)Bresson, Hunter, Hunter, and Conrad]{Bresson2015}
+Stefan~M. Bresson, Olga~V. Hunter, Allyson~C. Hunter, and Nicholas~K. Conrad.
+\newblock {Canonical Poly(A) Polymerase Activity Promotes the Decay of a Wide
+  Variety of Mammalian Nuclear RNAs}.
+\newblock \emph{PLoS Genetics}, 11\penalty0 (10):\penalty0 e1005610, oct 2015.
+\newblock ISSN 15537404.
+\newblock \doi{10.1371/journal.pgen.1005610}.
+\newblock URL \url{https://dx.plos.org/10.1371/journal.pgen.1005610}.
+
+\bibitem[Cartolano et~al.(2016)Cartolano, Huettel, Hartwig, Reinhardt, and
+  Schneeberger]{Cartolano2016}
+Maria Cartolano, Bruno Huettel, Benjamin Hartwig, Richard Reinhardt, and
+  Korbinian Schneeberger.
+\newblock {cDNA library enrichment of full length transcripts for SMRT long
+  read sequencing}.
+\newblock \emph{PLoS ONE}, 11\penalty0 (6):\penalty0 e0157779, jun 2016.
+\newblock ISSN 19326203.
+\newblock \doi{10.1371/journal.pone.0157779}.
+\newblock URL \url{http://dx.plos.org/10.1371/journal.pone.0157779}.
+
+\bibitem[Castanho et~al.(2020)Castanho, Murray, Hannon, Jeffries, Walker,
+  Laing, Baulf, Harvey, Bradshaw, Randall, Moore, O'Neill, Lunnon, Collier,
+  Ahmed, O'Neill, and Mill]{Castanho2020}
+Isabel Castanho, Tracey~K Murray, Eilis Hannon, Aaron Jeffries, Emma Walker,
+  Emma Laing, Hedley Baulf, Joshua Harvey, Lauren Bradshaw, Andrew Randall,
+  Karen Moore, Paul O'Neill, Katie Lunnon, David~A. Collier, Zeshan Ahmed,
+  Michael~J. O'Neill, and Jonathan Mill.
+\newblock {Transcriptional Signatures of Tau and Amyloid Neuropathology}.
+\newblock \emph{Cell Reports}, 30\penalty0 (6):\penalty0 2040--2054.e5, 2020.
+\newblock ISSN 22111247.
+\newblock \doi{10.1016/j.celrep.2020.01.063}.
+\newblock URL \url{https://doi.org/10.1016/j.celrep.2020.01.063}.
+
+\bibitem[Chen et~al.(2017)Chen, Deng, Jia, Li, and Lai]{Chen2017}
+Shi-Yi Chen, Feilong Deng, Xianbo Jia, Cao Li, and Song-Jia Lai.
+\newblock {A transcriptome atlas of rabbit revealed by PacBio single-molecule
+  long-read sequencing}.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1):\penalty0 7648, 2017.
+\newblock ISSN 2045-2322.
+\newblock \doi{10.1038/s41598-017-08138-z}.
+
+\bibitem[Cummings et~al.(2016)Cummings, Marshall, Tukiainen, Lek, Donkervoort,
+  Foley, Bolduc, Waddell, Sandaradura, O'Grady, Estrella, Reddy, Zhao,
+  Weisburd, Karczewski, O'Donnell-Luria, Birnbaum, Sarkozy, Hu, Gonorazky,
+  Claeys, Joshi, Bournazos, Oates, Ghaoui, Davis, Laing, Topf, Kang, Beggs,
+  North, Straub, Dowling, Muntoni, Clarke, Cooper, Bonnemann, and
+  MacArthur]{Cummings}
+Beryl Cummings, Jamie Marshall, Taru Tukiainen, Monkol Lek, Sandra Donkervoort,
+  A~Reghan Foley, Veronique Bolduc, Leigh Waddell, Sarah Sandaradura, Gina
+  O'Grady, Elicia Estrella, Hemakumar Reddy, Fengmei Zhao, Ben Weisburd, Konrad
+  Karczewski, Anne O'Donnell-Luria, Daniel Birnbaum, Anna Sarkozy, Ying Hu,
+  Hernan Gonorazky, Kristl Claeys, Himanshu Joshi, Adam Bournazos, Emily Oates,
+  Roula Ghaoui, Mark Davis, Nigel Laing, Ana Topf, Peter Kang, Alan Beggs,
+  Kathryn North, Volker Straub, James Dowling, Francesco Muntoni, Nigel Clarke,
+  Sandra Cooper, Carsten Bonnemann, and Daniel MacArthur.
+\newblock {Improving genetic diagnosis in Mendelian disease with transcriptome
+  sequencing}.
+\newblock \emph{Improving genetic diagnosis in Mendelian disease with
+  transcriptome sequencing}, page 074153, 2016.
+\newblock ISSN 1946-6242.
+\newblock \doi{10.1101/074153}.
+\newblock URL \url{http://stm.sciencemag.org/}.
+
+\bibitem[Derrien et~al.(2012)Derrien, Johnson, Bussotti, Tanzer, Djebali,
+  Tilgner, Guernec, Martin, Merkel, Knowles, Lagarde, Veeravalli, Ruan, Ruan,
+  Lassmann, Carninci, Brown, Lipovich, Gonzalez, Thomas, Davis, Shiekhattar,
+  Gingeras, Hubbard, Notredame, Harrow, and Guig{\'{o}}]{Derrien2012}
+Thomas Derrien, Rory Johnson, Giovanni Bussotti, Andrea Tanzer, Sarah Djebali,
+  Hagen Tilgner, Gregory Guernec, David Martin, Angelika Merkel, David~G.
+  Knowles, Julien Lagarde, Lavanya Veeravalli, Xiaoan Ruan, Yijun Ruan, Timo
+  Lassmann, Piero Carninci, James~B. Brown, Leonard Lipovich, Jose~M. Gonzalez,
+  Mark Thomas, Carrie~A. Davis, Ramin Shiekhattar, Thomas~R. Gingeras, Tim~J.
+  Hubbard, Cedric Notredame, Jennifer Harrow, and Roderic Guig{\'{o}}.
+\newblock {The GENCODE v7 catalog of human long noncoding RNAs: Analysis of
+  their gene structure, evolution, and expression}.
+\newblock \emph{Genome Research}, 22\penalty0 (9):\penalty0 1775--1789, 2012.
+\newblock ISSN 10889051.
+\newblock \doi{10.1101/gr.132159.111}.
+
+\bibitem[Djebali et~al.(2012)Djebali, Davis, Merkel, Dobin, Lassmann,
+  Mortazavi, Tanzer, Lagarde, Lin, Schlesinger, Xue, Marinov, Khatun, Williams,
+  Zaleski, Rozowsky, R{\"{o}}der, Kokocinski, Abdelhamid, Alioto, Antoshechkin,
+  Baer, Bar, Batut, Bell, Bell, Chakrabortty, Chen, Chrast, Curado, Derrien,
+  Drenkow, Dumais, Dumais, Duttagupta, Falconnet, Fastuca, Fejes-Toth,
+  Ferreira, Foissac, Fullwood, Gao, Gonzalez, Gordon, Gunawardena, Howald, Jha,
+  Johnson, Kapranov, King, Kingswood, Luo, Park, Persaud, Preall, Ribeca, Risk,
+  Robyr, Sammeth, Schaffer, See, Shahab, Skancke, Suzuki, Takahashi, Tilgner,
+  Trout, Walters, Wang, Wrobel, Yu, Ruan, Hayashizaki, Harrow, Gerstein,
+  Hubbard, Reymond, Antonarakis, Hannon, Giddings, Ruan, Wold, Carninci, Guig,
+  and Gingeras]{Djebali2012}
+Sarah Djebali, Carrie~A. Davis, Angelika Merkel, Alex Dobin, Timo Lassmann, Ali
+  Mortazavi, Andrea Tanzer, Julien Lagarde, Wei Lin, Felix Schlesinger,
+  Chenghai Xue, Georgi~K. Marinov, Jainab Khatun, Brian~A. Williams, Chris
+  Zaleski, Joel Rozowsky, Maik R{\"{o}}der, Felix Kokocinski, Rehab~F.
+  Abdelhamid, Tyler Alioto, Igor Antoshechkin, Michael~T. Baer, Nadav~S. Bar,
+  Philippe Batut, Kimberly Bell, Ian Bell, Sudipto Chakrabortty, Xian Chen,
+  Jacqueline Chrast, Joao Curado, Thomas Derrien, Jorg Drenkow, Erica Dumais,
+  Jacqueline Dumais, Radha Duttagupta, Emilie Falconnet, Meagan Fastuca, Kata
+  Fejes-Toth, Pedro Ferreira, Sylvain Foissac, Melissa~J. Fullwood, Hui Gao,
+  David Gonzalez, Assaf Gordon, Harsha Gunawardena, Cedric Howald, Sonali Jha,
+  Rory Johnson, Philipp Kapranov, Brandon King, Colin Kingswood, Oscar~J. Luo,
+  Eddie Park, Kimberly Persaud, Jonathan~B. Preall, Paolo Ribeca, Brian Risk,
+  Daniel Robyr, Michael Sammeth, Lorian Schaffer, Lei~Hoon See, Atif Shahab,
+  Jorgen Skancke, Ana~Maria Suzuki, Hazuki Takahashi, Hagen Tilgner, Diane
+  Trout, Nathalie Walters, Huaien Wang, John Wrobel, Yanbao Yu, Xiaoan Ruan,
+  Yoshihide Hayashizaki, Jennifer Harrow, Mark Gerstein, Tim Hubbard, Alexandre
+  Reymond, Stylianos~E. Antonarakis, Gregory Hannon, Morgan~C. Giddings, Yijun
+  Ruan, Barbara Wold, Piero Carninci, Roderic Guig, and Thomas~R. Gingeras.
+\newblock {Landscape of transcription in human cells}.
+\newblock \emph{Nature}, 489\penalty0 (7414):\penalty0 101--108, sep 2012.
+\newblock ISSN 00280836.
+\newblock \doi{10.1038/nature11233}.
+\newblock URL \url{http://genome.crg.cat/encode{\_}RNA{\_}dashboard/}.
+
+\bibitem[Dunham et~al.(2012)Dunham, Kundaje, Aldred, Collins, Davis, Doyle,
+  Epstein, Frietze, Harrow, Kaul, Khatun, Lajoie, Landt, Lee, Pauli,
+  Rosenbloom, Sabo, Safi, Sanyal, Shoresh, Simon, Song, Trinklein, Altshuler,
+  Birney, Brown, Cheng, Djebali, Dong, Ernst, Furey, Gerstein, Giardine,
+  Greven, Hardison, Harris, Herrero, Hoffman, Iyer, Kellis, Kheradpour,
+  Lassmann, Li, Lin, Marinov, Merkel, Mortazavi, Parker, Reddy, Rozowsky,
+  Schlesinger, Thurman, Wang, Ward, Whitfield, Wilder, Wu, Xi, Yip, Zhuang,
+  Bernstein, Green, Gunter, Snyder, Pazin, Lowdon, Dillon, Adams, Kelly, Zhang,
+  Wexler, Good, Feingold, Crawford, Dekker, Elnitski, Farnham, Giddings,
+  Gingeras, Guig{\'{o}}, Hubbard, Kent, Lieb, Margulies, Myers,
+  Stamatoyannopoulos, Tenenbaum, Weng, White, Wold, Yu, Wrobel, Risk,
+  Gunawardena, Kuiper, Maier, Xie, Chen, Mikkelsen, Gillespie, Goren, Ram,
+  Zhang, Wang, Issner, Coyne, Durham, Ku, Truong, Eaton, Dobin, Tanzer,
+  Lagarde, Lin, Xue, Williams, Zaleski, R{\"{o}}der, Kokocinski, Abdelhamid,
+  Alioto, Antoshechkin, Baer, Batut, Bell, Bell, Chakrabortty, Chrast, Curado,
+  Derrien, Drenkow, Dumais, Dumais, Duttagupta, Fastuca, Fejes-Toth, Ferreira,
+  Foissac, Fullwood, Gao, Gonzalez, Gordon, Howald, Jha, Johnson, Kapranov,
+  King, Kingswood, Li, Luo, Park, Preall, Presaud, Ribeca, Robyr, Ruan,
+  Sammeth, Sandhu, Schaeffer, See, Shahab, Skancke, Suzuki, Takahashi, Tilgner,
+  Trout, Walters, Wang, Hayashizaki, Reymond, Antonarakis, Hannon, Ruan,
+  Carninci, Sloan, Learned, Malladi, Wong, Barber, Cline, Dreszer, Heitner,
+  Karolchik, Kirkup, Meyer, Long, Maddren, Raney, Grasfeder, Giresi,
+  Battenhouse, Sheffield, Showers, London, Bhinge, Shestak, Schaner, Kim,
+  Zhang, Mieczkowski, Mieczkowska, Liu, McDaniell, Ni, Rashid, Kim, Adar,
+  Zhang, Wang, Winter, Keefe, Iyer, Zheng, Wang, Gertz, Vielmetter, Partridge,
+  Varley, Gasper, Bansal, Pepke, Jain, Amrhein, Bowling, Anaya, Cross, Muratet,
+  Newberry, McCue, Nesmith, Fisher-Aylor, Pusey, DeSalvo, Parker,
+  Balasubramanian, Davis, Meadows, Eggleston, Newberry, Levy, Absher, Wong,
+  Blow, Visel, Pennachio, Petrykowska, Abyzov, Aken, Barrell, Barson, Berry,
+  Bignell, Boychenko, Bussotti, Davidson, Despacio-Reyes, Diekhans, Ezkurdia,
+  Frankish, Gilbert, Gonzalez, Griffiths, Harte, Hendrix, Hunt, Jungreis, Kay,
+  Khurana, Leng, Lin, Loveland, Lu, Manthravadi, Mariotti, Mudge, Mukherjee,
+  Notredame, Pei, Rodriguez, Saunders, Sboner, Searle, Sisu, Snow, Steward,
+  Tapanari, Tress, {Van Baren}, Washietl, Wilming, Zadissa, Zhang, Brent,
+  Haussler, Valencia, Addleman, Alexander, Auerbach, Balasubramanian,
+  Bettinger, Bhardwaj, Boyle, Cao, Cayting, Charos, Cheng, Eastman, Euskirchen,
+  Fleming, Grubert, Habegger, Hariharan, Harmanci, Iyengar, Jin, Karczewski,
+  Kasowski, Lacroute, Lam, Lamarre-Vincent, Lian, Lindahl-Allen, Min, Miotto,
+  Monahan, Moqtaderi, Mu, O'Geen, Ouyang, Patacsil, Raha, Ramirez, Reed, Shi,
+  Slifer, Witt, Wu, Xu, Yan, Yang, Struhl, Weissman, Penalva, Karmakar,
+  Bhanvadia, Choudhury, Domanus, Ma, Moran, Victorsen, Auer, Centanin,
+  Eichenlaub, Gruhl, Heermann, Hoeckendorf, Inoue, Kellner, Kirchmaier,
+  Mueller, Reinhardt, Schertel, Schneider, Sinn, Wittbrodt, Wittbrodt, Jain,
+  Balasundaram, Bates, Byron, Canfield, Diegel, Dunn, Ebersol, Frum, Garg,
+  Gist, Hansen, Boatman, Haugen, Humbert, Johnson, Johnson, Kutyavin, Lee,
+  Lotakis, Maurano, Neph, Neri, Nguyen, Qu, Reynolds, Roach, Rynes, Sanchez,
+  Sandstrom, Shafer, Stergachis, Thomas, Vernot, Vierstra, Vong, Wang, Weaver,
+  Yan, Zhang, Akey, Bender, Dorschner, Groudine, MacCoss, Navas,
+  Stamatoyannopoulos, Beal, Brazma, Flicek, Johnson, Lukk, Luscombe, Sobral,
+  Vaquerizas, Batzoglou, Sidow, Hussami, Kyriazopoulou-Panagiotopoulou,
+  Libbrecht, Schaub, Miller, Bickel, Banfai, Boley, Huang, Li, Noble, Bilmes,
+  Buske, Sahu, Kharchenko, Park, Baker, Taylor, and Lochovsky]{Dunham2012}
+Ian Dunham, Anshul Kundaje, Shelley~F. Aldred, Patrick~J. Collins, Carrie~A.
+  Davis, Francis Doyle, Charles~B. Epstein, Seth Frietze, Jennifer Harrow,
+  Rajinder Kaul, Jainab Khatun, Bryan~R. Lajoie, Stephen~G. Landt, Bum~Kyu Lee,
+  Florencia Pauli, Kate~R. Rosenbloom, Peter Sabo, Alexias Safi, Amartya
+  Sanyal, Noam Shoresh, Jeremy~M. Simon, Lingyun Song, Nathan~D. Trinklein,
+  Robert~C. Altshuler, Ewan Birney, James~B. Brown, Chao Cheng, Sarah Djebali,
+  Xianjun Dong, Jason Ernst, Terrence~S. Furey, Mark Gerstein, Belinda
+  Giardine, Melissa Greven, Ross~C. Hardison, Robert~S. Harris, Javier Herrero,
+  Michael~M. Hoffman, Sowmya Iyer, Manolis Kellis, Pouya Kheradpour, Timo
+  Lassmann, Qunhua Li, Xinying Lin, Georgi~K. Marinov, Angelika Merkel, Ali
+  Mortazavi, Stephen~C.J. Parker, Timothy~E. Reddy, Joel Rozowsky, Felix
+  Schlesinger, Robert~E. Thurman, Jie Wang, Lucas~D. Ward, Troy~W. Whitfield,
+  Steven~P. Wilder, Weisheng Wu, Hualin~S. Xi, Kevin~Y. Yip, Jiali Zhuang,
+  Bradley~E. Bernstein, Eric~D. Green, Chris Gunter, Michael Snyder, Michael~J.
+  Pazin, Rebecca~F. Lowdon, Laura~A.L. Dillon, Leslie~B. Adams, Caroline~J.
+  Kelly, Julia Zhang, Judith~R. Wexler, Peter~J. Good, Elise~A. Feingold,
+  Gregory~E. Crawford, Job Dekker, Laura Elnitski, Peggy~J. Farnham, Morgan~C.
+  Giddings, Thomas~R. Gingeras, Roderic Guig{\'{o}}, Timothy~J. Hubbard,
+  W.~James Kent, Jason~D. Lieb, Elliott~H. Margulies, Richard~M. Myers, John~A.
+  Stamatoyannopoulos, Scott~A. Tenenbaum, Zhiping Weng, Kevin~P. White, Barbara
+  Wold, Yanbao Yu, John Wrobel, Brian~A. Risk, Harsha~P. Gunawardena,
+  Heather~C. Kuiper, Christopher~W. Maier, Ling Xie, Xian Chen, Tarjei~S.
+  Mikkelsen, Shawn Gillespie, Alon Goren, Oren Ram, Xiaolan Zhang, Li~Wang,
+  Robbyn Issner, Michael~J. Coyne, Timothy Durham, Manching Ku, Thanh Truong,
+  Matthew~L. Eaton, Alex Dobin, Andrea Tanzer, Julien Lagarde, Wei Lin,
+  Chenghai Xue, Brian~A. Williams, Chris Zaleski, Maik R{\"{o}}der, Felix
+  Kokocinski, Rehab~F. Abdelhamid, Tyler Alioto, Igor Antoshechkin, Michael~T.
+  Baer, Philippe Batut, Ian Bell, Kimberly Bell, Sudipto Chakrabortty,
+  Jacqueline Chrast, Joao Curado, Thomas Derrien, Jorg Drenkow, Erica Dumais,
+  Jackie Dumais, Radha Duttagupta, Megan Fastuca, Kata Fejes-Toth, Pedro
+  Ferreira, Sylvain Foissac, Melissa~J. Fullwood, Hui Gao, David Gonzalez,
+  Assaf Gordon, C{\'{e}}dric Howald, Sonali Jha, Rory Johnson, Philipp
+  Kapranov, Brandon King, Colin Kingswood, Guoliang Li, Oscar~J. Luo, Eddie
+  Park, Jonathan~B. Preall, Kimberly Presaud, Paolo Ribeca, Daniel Robyr,
+  Xiaoan Ruan, Michael Sammeth, Kuljeet~Singh Sandhu, Lorain Schaeffer,
+  Lei~Hoon See, Atif Shahab, Jorgen Skancke, Ana~Maria Suzuki, Hazuki
+  Takahashi, Hagen Tilgner, Diane Trout, Nathalie Walters, Huaien Wang,
+  Yoshihide Hayashizaki, Alexandre Reymond, Stylianos~E. Antonarakis,
+  Gregory~J. Hannon, Yijun Ruan, Piero Carninci, Cricket~A. Sloan, Katrina
+  Learned, Venkat~S. Malladi, Matthew~C. Wong, Galt~P. Barber, Melissa~S.
+  Cline, Timothy~R. Dreszer, Steven~G. Heitner, Donna Karolchik, Vanessa~M.
+  Kirkup, Laurence~R. Meyer, Jeffrey~C. Long, Morgan Maddren, Brian~J. Raney,
+  Linda~L. Grasfeder, Paul~G. Giresi, Anna Battenhouse, Nathan~C. Sheffield,
+  Kimberly~A. Showers, Darin London, Akshay~A. Bhinge, Christopher Shestak,
+  Matthew~R. Schaner, Seul~Ki Kim, Zhuzhu~Z. Zhang, Piotr~A. Mieczkowski,
+  Joanna~O. Mieczkowska, Zheng Liu, Ryan~M. McDaniell, Yunyun Ni, Naim~U.
+  Rashid, Min~Jae Kim, Sheera Adar, Zhancheng Zhang, Tianyuan Wang, Deborah
+  Winter, Damian Keefe, Vishwanath~R. Iyer, Meizhen Zheng, Ping Wang, Jason
+  Gertz, Jost Vielmetter, E.~Christopher Partridge, Katherine~E. Varley, Clarke
+  Gasper, Anita Bansal, Shirley Pepke, Preti Jain, Henry Amrhein, Kevin~M.
+  Bowling, Michael Anaya, Marie~K. Cross, Michael~A. Muratet, Kimberly~M.
+  Newberry, Kenneth McCue, Amy~S. Nesmith, Katherine~I. Fisher-Aylor, Barbara
+  Pusey, Gilberto DeSalvo, Stephanie~L. Parker, Sreeram Balasubramanian,
+  Nicholas~S. Davis, Sarah~K. Meadows, Tracy Eggleston, J.~Scott Newberry,
+  Shawn~E. Levy, Devin~M. Absher, Wing~H. Wong, Matthew~J. Blow, Axel Visel,
+  Len~A. Pennachio, Hanna~M. Petrykowska, Alexej Abyzov, Bronwen Aken, Daniel
+  Barrell, Gemma Barson, Andrew Berry, Alexandra Bignell, Veronika Boychenko,
+  Giovanni Bussotti, Claire Davidson, Gloria Despacio-Reyes, Mark Diekhans,
+  Iakes Ezkurdia, Adam Frankish, James Gilbert, Jose~Manuel Gonzalez,
+  Ed~Griffiths, Rachel Harte, David~A. Hendrix, Toby Hunt, Irwin Jungreis, Mike
+  Kay, Ekta Khurana, Jing Leng, Michael~F. Lin, Jane Loveland, Zhi Lu, Deepa
+  Manthravadi, Marco Mariotti, Jonathan Mudge, Gaurab Mukherjee, Cedric
+  Notredame, Baikang Pei, Jose~Manuel Rodriguez, Gary Saunders, Andrea Sboner,
+  Stephen Searle, Cristina Sisu, Catherine Snow, Charlie Steward, Electra
+  Tapanari, Michael~L. Tress, Marijke~J. {Van Baren}, Stefan Washietl, Laurens
+  Wilming, Amonida Zadissa, Zhengdong Zhang, Michael Brent, David Haussler,
+  Alfonso Valencia, Nick Addleman, Roger~P. Alexander, Raymond~K. Auerbach,
+  Suganthi Balasubramanian, Keith Bettinger, Nitin Bhardwaj, Alan~P. Boyle,
+  Alina~R. Cao, Philip Cayting, Alexandra Charos, Yong Cheng, Catharine
+  Eastman, Ghia Euskirchen, Joseph~D. Fleming, Fabian Grubert, Lukas Habegger,
+  Manoj Hariharan, Arif Harmanci, Sushma Iyengar, Victor~X. Jin, Konrad~J.
+  Karczewski, Maya Kasowski, Phil Lacroute, Hugo Lam, Nathan Lamarre-Vincent,
+  Jin Lian, Marianne Lindahl-Allen, Renqiang Min, Benoit Miotto, Hannah
+  Monahan, Zarmik Moqtaderi, Xinmeng~J. Mu, Henriette O'Geen, Zhengqing Ouyang,
+  Dorrelyn Patacsil, Debasish Raha, Lucia Ramirez, Brian Reed, Minyi Shi, Teri
+  Slifer, Heather Witt, Linfeng Wu, Xiaoqin Xu, Koon~Kiu Yan, Xinqiong Yang,
+  Kevin Struhl, Sherman~M. Weissman, Luiz~O. Penalva, Subhradip Karmakar,
+  Raj~R. Bhanvadia, Alina Choudhury, Marc Domanus, Lijia Ma, Jennifer Moran,
+  Alec Victorsen, Thomas Auer, Lazaro Centanin, Michael Eichenlaub, Franziska
+  Gruhl, Stephan Heermann, Burkhard Hoeckendorf, Daigo Inoue, Tanja Kellner,
+  Stephan Kirchmaier, Claudia Mueller, Robert Reinhardt, Lea Schertel,
+  Stephanie Schneider, Rebecca Sinn, Beate Wittbrodt, Jochen Wittbrodt, Gaurav
+  Jain, Gayathri Balasundaram, Daniel~L. Bates, Rachel Byron, Theresa~K.
+  Canfield, Morgan~J. Diegel, Douglas Dunn, Abigail~K. Ebersol, Tristan Frum,
+  Kavita Garg, Erica Gist, R.~Scott Hansen, Lisa Boatman, Eric Haugen, Richard
+  Humbert, Audra~K. Johnson, Ericka~M. Johnson, Tattyana~V. Kutyavin, Kristen
+  Lee, Dimitra Lotakis, Matthew~T. Maurano, Shane~J. Neph, Fiedencio~V. Neri,
+  Eric~D. Nguyen, Hongzhu Qu, Alex~P. Reynolds, Vaughn Roach, Eric Rynes,
+  Minerva~E. Sanchez, Richard~S. Sandstrom, Anthony~O. Shafer, Andrew~B.
+  Stergachis, Sean Thomas, Benjamin Vernot, Jeff Vierstra, Shinny Vong, Hao
+  Wang, Molly~A. Weaver, Yongqi Yan, Miaohua Zhang, Joshua~M. Akey, Michael
+  Bender, Michael~O. Dorschner, Mark Groudine, Michael~J. MacCoss, Patrick
+  Navas, George Stamatoyannopoulos, Kathryn Beal, Alvis Brazma, Paul Flicek,
+  Nathan Johnson, Margus Lukk, Nicholas~M. Luscombe, Daniel Sobral, Juan~M.
+  Vaquerizas, Serafim Batzoglou, Arend Sidow, Nadine Hussami, Sofia
+  Kyriazopoulou-Panagiotopoulou, Max~W. Libbrecht, Marc~A. Schaub, Webb Miller,
+  Peter~J. Bickel, Balazs Banfai, Nathan~P. Boley, Haiyan Huang, Jingyi~Jessica
+  Li, William~Stafford Noble, Jeffrey~A. Bilmes, Orion~J. Buske, Avinash~D.
+  Sahu, Peter~V. Kharchenko, Peter~J. Park, Dannon Baker, James Taylor, and
+  Lucas Lochovsky.
+\newblock {An integrated encyclopedia of DNA elements in the human genome}.
+\newblock \emph{Nature}, 489\penalty0 (7414):\penalty0 57--74, sep 2012.
+\newblock ISSN 14764687.
+\newblock \doi{10.1038/nature11247}.
+\newblock URL \url{http://encodeproject.org/ENCODE/}.
+
+\bibitem[Fagnani et~al.(2007)Fagnani, Barash, Ip, Misquitta, Pan, Saltzman,
+  Shai, Lee, Rozenhek, Mohammad, Willaime-Morawek, Babak, Zhang, Hughes, {Van
+  der Kooy}, Frey, and Blencowe]{Fagnani2007}
+Matthew Fagnani, Yoseph Barash, Joanna~Y. Ip, Christine Misquitta, Qun Pan,
+  Arneet~L. Saltzman, Ofer Shai, Leo Lee, Aviad Rozenhek, Naveed Mohammad,
+  Sandrine Willaime-Morawek, Tomas Babak, Wen Zhang, Timothy~R. Hughes, Derek
+  {Van der Kooy}, Brendan~J. Frey, and Benjamin~J. Blencowe.
+\newblock {Functional coordination of alternative splicing in the mammalian
+  central nervous system}.
+\newblock \emph{Genome Biology}, 8\penalty0 (6):\penalty0 R108, jun 2007.
+\newblock ISSN 14747596.
+\newblock \doi{10.1186/gb-2007-8-6-r108}.
+\newblock URL
+  \url{http://genomebiology.biomedcentral.com/articles/10.1186/gb-2007-8-6-r108}.
+
+\bibitem[Garalde et~al.(2018)Garalde, Snell, Jachimowicz, Sipos, Lloyd, Bruce,
+  Pantic, Admassu, James, Warland, Jordan, Ciccone, Serra, Keenan, Martin,
+  McNeill, Wallace, Jayasinghe, Wright, Blasco, Young, Brocklebank, Juul,
+  Clarke, Heron, and Turner]{Garalde2018}
+Daniel~R. Garalde, Elizabeth~A. Snell, Daniel Jachimowicz, Botond Sipos,
+  Joseph~H. Lloyd, Mark Bruce, Nadia Pantic, Tigist Admassu, Phillip James,
+  Anthony Warland, Michael Jordan, Jonah Ciccone, Sabrina Serra, Jemma Keenan,
+  Samuel Martin, Luke McNeill, E.~Jayne Wallace, Lakmal Jayasinghe, Chris
+  Wright, Javier Blasco, Stephen Young, Denise Brocklebank, Sissel Juul, James
+  Clarke, Andrew~J. Heron, and Daniel~J. Turner.
+\newblock {Highly parallel direct RN A sequencing on an array of nanopores}.
+\newblock \emph{Nature Methods}, 15\penalty0 (3):\penalty0 201--206, mar 2018.
+\newblock ISSN 15487105.
+\newblock \doi{10.1038/nmeth.4577}.
+\newblock URL \url{https://www.nature.com/articles/nmeth.4577}.
+
+\bibitem[Gordon et~al.(2015)Gordon, Tseng, Salamov, Zhang, Meng, Zhao, Kang,
+  Underwood, Grigoriev, Figueroa, Schilling, Chen, and Wang]{Gordon2015}
+Sean~P. Gordon, Elizabeth Tseng, Asaf Salamov, Jiwei Zhang, Xiandong Meng,
+  Zhiying Zhao, Dongwan Kang, Jason Underwood, Igor~V Grigoriev, Melania
+  Figueroa, Jonathan~S Schilling, Feng Chen, and Zhong Wang.
+\newblock {Widespread polycistronic transcripts in fungi revealed by
+  single-molecule mRNA sequencing}.
+\newblock \emph{PLoS ONE}, 10\penalty0 (7), 2015.
+\newblock ISSN 19326203.
+\newblock \doi{10.1371/journal.pone.0132628}.
+\newblock URL
+  \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4503453/pdf/pone.0132628.pdf}.
+
+\bibitem[Karlsson and Linnarsson(2017)]{Karlsson2017}
+Kasper Karlsson and Sten Linnarsson.
+\newblock {Single-cell mRNA isoform diversity in the mouse brain}.
+\newblock \emph{BMC Genomics}, 18\penalty0 (1), 2017.
+\newblock ISSN 14712164.
+\newblock \doi{10.1186/s12864-017-3528-6}.
+\newblock URL
+  \url{https://bmcgenomics.biomedcentral.com/track/pdf/10.1186/s12864-017-3528-6?site=bmcgenomics.biomedcentral.com}.
+
+\bibitem[Kremer et~al.(2017)Kremer, Bader, Mertes, Kopajtich, Pichler, Iuso,
+  Haack, Graf, Schwarzmayr, Terrile, Koňař{\'{i}}kova, Repp,
+  Kastenm{\"{u}}ller, Adamski, Lichtner, Leonhardt, Funalot, Donati, Tiranti,
+  Lombes, Jardel, Gl{\"{a}}ser, Taylor, Ghezzi, Mayr, R{\"{o}}tig, Freisinger,
+  Distelmaier, Strom, Meitinger, Gagneur, and Prokisch]{Kremer2017}
+Laura~S. Kremer, Daniel~M. Bader, Christian Mertes, Robert Kopajtich, Garwin
+  Pichler, Arcangela Iuso, Tobias~B. Haack, Elisabeth Graf, Thomas Schwarzmayr,
+  Caterina Terrile, Eli{\v{s}}ka Koňař{\'{i}}kova, Birgit Repp, Gabi
+  Kastenm{\"{u}}ller, Jerzy Adamski, Peter Lichtner, Christoph Leonhardt,
+  Benoit Funalot, Alice Donati, Valeria Tiranti, Anne Lombes, Claude Jardel,
+  Dieter Gl{\"{a}}ser, Robert~W. Taylor, Daniele Ghezzi, Johannes~A. Mayr,
+  Agnes R{\"{o}}tig, Peter Freisinger, Felix Distelmaier, Tim~M. Strom, Thomas
+  Meitinger, Julien Gagneur, and Holger Prokisch.
+\newblock {Genetic diagnosis of Mendelian disorders via RNA sequencing}.
+\newblock \emph{Nature Communications}, 8\penalty0 (1):\penalty0 1--11, jun
+  2017.
+\newblock ISSN 20411723.
+\newblock \doi{10.1038/ncomms15824}.
+\newblock URL \url{www.nature.com/naturecommunications}.
+
+\bibitem[Kuo et~al.(2017)Kuo, Tseng, Eory, Paton, Archibald, and Burt]{Kuo2017}
+Richard~I. Kuo, Elizabeth Tseng, Lel Eory, Ian~R. Paton, Alan~L. Archibald, and
+  David~W. Burt.
+\newblock {Normalized long read RNA sequencing in chicken reveals transcriptome
+  complexity similar to human}.
+\newblock \emph{BMC Genomics}, 18\penalty0 (1):\penalty0 323, dec 2017.
+\newblock ISSN 1471-2164.
+\newblock \doi{10.1186/s12864-017-3691-9}.
+\newblock URL
+  \url{http://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-017-3691-9}.
+
+\bibitem[Levene et~al.(2003)Levene, Korlach, Turner, Foquet, Craighead, and
+  Webb]{Levene2003}
+H.~J. Levene, J~Korlach, S~W Turner, M~Foquet, H~G Craighead, and W~W Webb.
+\newblock {Zero-mode waveguides for single-molecule analysis at high
+  concentrations}.
+\newblock \emph{Science}, 299\penalty0 (5607):\penalty0 682--686, jan 2003.
+\newblock ISSN 00368075.
+\newblock \doi{10.1126/science.1079700}.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/12560545
+  http://www.sciencemag.org/cgi/doi/10.1126/science.1079700}.
+
+\bibitem[Mccarthy(2010)]{Mccarthy2010}
+Alice Mccarthy.
+\newblock {Third generation DNA sequencing: Pacific biosciences' single
+  molecule real time technology}, jul 2010.
+\newblock ISSN 10745521.
+
+\bibitem[Qiao et~al.(2020)Qiao, Ren, Huang, Yuan, Liu, Fan, Lin, Wu, Chen, Bo,
+  Li, Huang, Liu, and Shu]{Qiao2020}
+Yunbo Qiao, Chao Ren, Shisheng Huang, Jie Yuan, Xingchen Liu, Jiao Fan,
+  Jianxiang Lin, Susu Wu, Qiuzhen Chen, Xiaochen Bo, Xiangyang Li, Xingxu
+  Huang, Zhen Liu, and Wenjie Shu.
+\newblock {High-resolution annotation of the mouse preimplantation embryo
+  transcriptome using long-read sequencing}.
+\newblock \emph{Nature Communications}, 11\penalty0 (1), 2020.
+\newblock ISSN 20411723.
+\newblock \doi{10.1038/s41467-020-16444-w}.
+\newblock URL \url{https://doi.org/10.1038/s41467-020-16444-w}.
+
+\bibitem[Ramsk{\"{o}}ld et~al.(2012)Ramsk{\"{o}}ld, Luo, Wang, Li, Deng,
+  Faridani, Daniels, Khrebtukova, Loring, Laurent, Schroth, and
+  Sandberg]{Ramskold2012}
+Daniel Ramsk{\"{o}}ld, Shujun Luo, Yu~Chieh Wang, Robin Li, Qiaolin Deng,
+  Omid~R Faridani, Gregory~A Daniels, Irina Khrebtukova, Jeanne~F Loring,
+  Louise~C Laurent, Gary~P Schroth, and Rickard Sandberg.
+\newblock {Full-length mRNA-Seq from single-cell levels of RNA and individual
+  circulating tumor cells}.
+\newblock \emph{Nature Biotechnology}, 30\penalty0 (8):\penalty0 777--782,
+  2012.
+\newblock ISSN 15461696.
+\newblock \doi{10.1038/nbt.2282}.
+
+\bibitem[Salmela and Rivals(2014)]{Salmela2014}
+Leena Salmela and Eric Rivals.
+\newblock {LoRDEC: Accurate and efficient long read error correction}.
+\newblock \emph{Bioinformatics}, 30\penalty0 (24):\penalty0 3506--3514, 2014.
+\newblock ISSN 14602059.
+\newblock \doi{10.1093/bioinformatics/btu538}.
+\newblock URL \url{http://gatb-core.gforge.inria.fr}.
+
+\bibitem[Salmela et~al.(2017)Salmela, Walve, Rivals, Ukkonen, and
+  Sahinalp]{Salmela2017}
+Leena Salmela, Riku Walve, Eric Rivals, Esko Ukkonen, and Cenk Sahinalp.
+\newblock {Accurate self-correction of errors in long reads using de Bruijn
+  graphs}.
+\newblock \emph{Bioinformatics}, 33\penalty0 (6):\penalty0 799--806, 2017.
+\newblock ISSN 14602059.
+\newblock \doi{10.1093/bioinformatics/btw321}.
+\newblock URL \url{http://www.cs.helsinki.fi/u/lmsalmel/LoRMA/.}
+
+\bibitem[Samarakoon et~al.(2020)Samarakoon, Punchihewa, Senanayake, Hammond,
+  Stevanovski, Ferguson, Ragel, Gamaarachchi, and Deveson]{Samarakoon2020}
+Hiruna Samarakoon, Sanoj Punchihewa, Anjana Senanayake, Jillian~M. Hammond,
+  Igor Stevanovski, James~M. Ferguson, Roshan Ragel, Hasindu Gamaarachchi, and
+  Ira~W. Deveson.
+\newblock {Genopo: a nanopore sequencing analysis toolkit for portable Android
+  devices}.
+\newblock \emph{Communications Biology}, 3\penalty0 (1):\penalty0 1--5, dec
+  2020.
+\newblock ISSN 23993642.
+\newblock \doi{10.1038/s42003-020-01270-z}.
+\newblock URL \url{https://www.nature.com/articles/s42003-020-01270-z}.
+
+\bibitem[Sharon et~al.(2013)Sharon, Tilgner, Grubert, and Snyder]{Sharon2013}
+Donald Sharon, Hagen Tilgner, Fabian Grubert, and Michael Snyder.
+\newblock {A single-molecule long-read survey of the human transcriptome}.
+\newblock \emph{Nature Biotechnology}, 31\penalty0 (11):\penalty0 1009--1014,
+  2013.
+\newblock ISSN 1087-0156.
+\newblock \doi{10.1038/nbt.2705}.
+\newblock URL \url{http://www.nature.com/doifinder/10.1038/nbt.2705}.
+
+\bibitem[Tilgner et~al.(2015)Tilgner, Jahanbani, Blauwkamp, Moshrefi, Jaeger,
+  Chen, Harel, Bustamante, Rasmussen, and Snyder]{Tilgner2015}
+Hagen Tilgner, Fereshteh Jahanbani, Tim Blauwkamp, Ali Moshrefi, Erich Jaeger,
+  Feng Chen, Itamar Harel, Carlos~D Bustamante, Morten Rasmussen, and Michael~P
+  Snyder.
+\newblock {Comprehensive transcriptome analysis using synthetic long-read
+  sequencing reveals molecular co-association of distant splicing events}.
+\newblock \emph{Nature Biotechnology}, 33\penalty0 (7):\penalty0 736--742, may
+  2015.
+\newblock ISSN 15461696.
+\newblock \doi{10.1038/nbt.3242}.
+\newblock URL \url{http://www.nature.com/doifinder/10.1038/nbt.3242}.
+
+\bibitem[Tilgner et~al.(2018)Tilgner, Jahanbani, Gupta, Collier, Wei,
+  Rasmussen, and Snyder]{Tilgner2018}
+Hagen Tilgner, Fereshteh Jahanbani, Ishaan Gupta, Paul Collier, Eric Wei,
+  Morten Rasmussen, and Michael Snyder.
+\newblock {Microfluidic isoform sequencing shows widespread splicing
+  coordination in the human transcriptome}.
+\newblock \emph{Genome Research}, 28\penalty0 (2):\penalty0 231--242, feb 2018.
+\newblock ISSN 15495469.
+\newblock \doi{10.1101/gr.230516.117}.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/29196558
+  http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5793787}.
+
+\bibitem[Wang et~al.(2016)Wang, Tseng, Regulski, Clark, Hon, Jiao, Lu, Olson,
+  Stein, and Ware]{Wang2016}
+Bo~Wang, Elizabeth Tseng, Michael Regulski, Tyson~A Clark, Ting Hon, Yinping
+  Jiao, Zhenyuan Lu, Andrew Olson, Joshua~C Stein, and Doreen Ware.
+\newblock {Unveiling the complexity of the maize transcriptome by
+  single-molecule long-read sequencing}.
+\newblock \emph{Nature Communications}, 7:\penalty0 11708, 2016.
+\newblock ISSN 2041-1723.
+\newblock \doi{10.1038/ncomms11708}.
+\newblock URL \url{https://www.nature.com/articles/ncomms11708.pdf
+  http://www.nature.com/doifinder/10.1038/ncomms11708}.
+
+\bibitem[Wang et~al.(2008)Wang, Sandberg, Luo, Khrebtukova, Zhang, Mayr,
+  Kingsmore, Schroth, and Burge]{Wang2008}
+Eric~T Wang, Rickard Sandberg, Shujun Luo, Irina Khrebtukova, Lu~Zhang,
+  Christine Mayr, Stephen~F Kingsmore, Gary~P Schroth, and Christopher~B Burge.
+\newblock {Alternative isoform regulation in human tissue transcriptomes}.
+\newblock \emph{Nature}, 456\penalty0 (7221):\penalty0 470--476, 2008.
+\newblock ISSN 00280836.
+\newblock \doi{10.1038/nature07509}.
+\newblock URL
+  \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2593745/pdf/nihms-72491.pdf}.
+
+\bibitem[Workman et~al.(2019)Workman, Tang, Tang, Jain, Tyson, Razaghi,
+  Zuzarte, Gilpatrick, Payne, Quick, Sadowski, Holmes, de~Jesus, Jones,
+  Soulette, Snutch, Loman, Paten, Loose, Simpson, Olsen, Brooks, Akeson, and
+  Timp]{Workman2019a}
+Rachael~E. Workman, Alison~D. Tang, Paul~S. Tang, Miten Jain, John~R. Tyson,
+  Roham Razaghi, Philip~C. Zuzarte, Timothy Gilpatrick, Alexander Payne, Joshua
+  Quick, Norah Sadowski, Nadine Holmes, Jaqueline~Goes de~Jesus, Karen~L.
+  Jones, Cameron~M. Soulette, Terrance~P. Snutch, Nicholas Loman, Benedict
+  Paten, Matthew Loose, Jared~T. Simpson, Hugh~E. Olsen, Angela~N. Brooks, Mark
+  Akeson, and Winston Timp.
+\newblock {Nanopore native RNA sequencing of a human poly(A) transcriptome}.
+\newblock \emph{Nature Methods}, 16\penalty0 (12):\penalty0 1297--1305, dec
+  2019.
+\newblock ISSN 15487105.
+\newblock \doi{10.1038/s41592-019-0617-2}.
+\newblock URL \url{https://doi.org/10.1038/s41592-019-0617-2}.
+
+\bibitem[Zhao et~al.(2019)Zhao, Zhang, Kohnen, Prasad, Gu, and Reddy]{Zhao2019}
+Liangzhen Zhao, Hangxiao Zhang, Markus~V. Kohnen, Kasavajhala~V.S.K. Prasad,
+  Lianfeng Gu, and Anireddy~S.N. Reddy.
+\newblock {Analysis of transcriptome and epitranscriptome in plants using
+  pacbio iso-seq and nanopore-based direct RNA sequencing}, mar 2019.
+\newblock ISSN 16648021.
+
+\end{thebibliography}

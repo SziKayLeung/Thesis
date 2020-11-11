@@ -1,0 +1,1408 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.3.26)  1 APR 2020 21:15
+entering extended mode
+**./cDNA_Synthesis_Approaches.tex
+(cDNA_Synthesis_Approaches.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfiles\subfiles.
+cls"
+Document Class: subfiles 2020/02/14 v1.6 Multi-file projects (class)
+Preamble taken from file `../Main/Knit.tex'
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.sty
+"
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read2
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/import\import.sty"
+Package: import 2020/01/22  v 6.0
+) (../Main/../Main/Knit.tex
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty
+"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
+"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count176
+\Gm@cntv=\count177
+\c@Gm@tempcnt=\count178
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks18
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg"))
+\@input{thesis.preamble.aux}
+\openout2 = `thesis.preamble.aux'.
+
+(../Main/thesis.preamble.tex
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.
+sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/appendix\appendix.
+sty"
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count179
+\c@@ppsavesec=\count180
+\c@@ppsaveapp=\count181
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/subfiles\subfiles.
+sty"
+Package: subfiles 2020/02/14 v1.6 Multi-file projects (package)
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\parskip.st
+y"
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoption
+s.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.
+sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetk
+eys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
+sty"
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count182
+))
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/siunitx\siunitx.st
+y"
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty
+"
+Package: expl3 2020-03-06 L3 programming layer (loader) 
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
+d-pdfmode.def"
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count183
+\l__pdf_internal_box=\box45
+))
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse\
+xparse.sty"
+Package: xparse 2020-03-06 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count184
+\g__xparse_grabber_int=\count185
+\l__xparse_m_args_int=\count186
+\l__xparse_v_nesting_int=\count187
+)
+Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen145
+)) ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
+"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen146
+\ar@mcellbox=\box46
+\extrarowheight=\dimen147
+\NC@list=\toks20
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box47
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3keys2
+e\l3keys2e.sty"
+Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box48
+\l__siunitx_tmp_dim=\dimen148
+\l__siunitx_tmp_int=\count188
+\l__siunitx_number_mantissa_length_int=\count189
+\l__siunitx_number_uncert_length_int=\count190
+\l__siunitx_round_int=\count191
+\l__siunitx_process_decimal_int=\count192
+\l__siunitx_process_uncertainty_int=\count193
+\l__siunitx_process_fixed_int=\count194
+\l__siunitx_process_integer_min_int=\count195
+\l__siunitx_process_precision_int=\count196
+\l__siunitx_group_min_int=\count197
+\l__siunitx_angle_marker_box=\box49
+\l__siunitx_angle_unit_box=\box50
+\l__siunitx_angle_marker_dim=\dimen149
+\l__siunitx_angle_unit_dim=\dimen150
+\l__siunitx_unit_int=\count198
+\l__siunitx_unit_denominator_int=\count199
+\l__siunitx_unit_numerator_int=\count266
+\l__siunitx_unit_prefix_int=\count267
+\l__siunitx_unit_prefix_base_int=\count268
+\l__siunitx_unit_prefix_gram_int=\count269
+\l__siunitx_number_product_int=\count270
+\c__siunitx_one_fill_skip=\skip51
+\l__siunitx_table_unit_align_skip=\skip52
+\l__siunitx_table_exponent_dim=\dimen151
+\l__siunitx_table_integer_dim=\dimen152
+\l__siunitx_table_mantissa_dim=\dimen153
+\l__siunitx_table_marker_dim=\dimen154
+\l__siunitx_table_result_dim=\dimen155
+\l__siunitx_table_uncert_dim=\dimen156
+\l__siunitx_table_fill_pre_dim=\dimen157
+\l__siunitx_table_fill_post_dim=\dimen158
+\l__siunitx_table_fill_mid_dim=\dimen159
+\l__siunitx_table_pre_box=\box51
+\l__siunitx_table_post_box=\box52
+\l__siunitx_table_mantissa_box=\box53
+\l__siunitx_table_result_box=\box54
+\l__siunitx_table_number_align_skip=\skip53
+\l__siunitx_table_text_align_skip=\skip54
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
+tor.sty"
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+))
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\tabularx.sty
+"
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen160
+\TX@old@table=\dimen161
+\TX@old@col=\dimen162
+\TX@target=\dimen163
+\TX@delta=\dimen164
+\TX@cols=\count271
+\TX@ftn=\toks21
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ragged2e\ragged2e.
+sty"
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip55
+\RaggedLeftLeftskip=\skip56
+\RaggedRightLeftskip=\skip57
+\CenteringRightskip=\skip58
+\RaggedLeftRightskip=\skip59
+\RaggedRightRightskip=\skip60
+\CenteringParfillskip=\skip61
+\RaggedLeftParfillskip=\skip62
+\RaggedRightParfillskip=\skip63
+\JustifyingParfillskip=\skip64
+\CenteringParindent=\skip65
+\RaggedLeftParindent=\skip66
+\RaggedRightParindent=\skip67
+\JustifyingParindent=\skip68
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs.
+sty"
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count272
+\@cmidlb=\count273
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count274
+\@lastruleclass=\count275
+\@thisrulewidth=\dimen177
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
+y"
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
+ty"
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen178
+\captionmargin@=\dimen179
+\captionwidth=\dimen180
+\caption@tempdima=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count276
+\c@continuedfloat=\count277
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multirow.
+sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip69
+\multirow@cntb=\count278
+\multirow@dima=\skip70
+\bigstrutjot=\dimen185
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tocloft\tocloft.st
+y"
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip71
+\cftbeforetoctitleskip=\skip72
+\cftaftertoctitleskip=\skip73
+\cftbeforepartskip=\skip74
+\cftpartnumwidth=\skip75
+\cftpartindent=\skip76
+\cftbeforechapskip=\skip77
+\cftchapindent=\skip78
+\cftchapnumwidth=\skip79
+\cftbeforesecskip=\skip80
+\cftsecindent=\skip81
+\cftsecnumwidth=\skip82
+\cftbeforesubsecskip=\skip83
+\cftsubsecindent=\skip84
+\cftsubsecnumwidth=\skip85
+\cftbeforesubsubsecskip=\skip86
+\cftsubsubsecindent=\skip87
+\cftsubsubsecnumwidth=\skip88
+\cftbeforeparaskip=\skip89
+\cftparaindent=\skip90
+\cftparanumwidth=\skip91
+\cftbeforesubparaskip=\skip92
+\cftsubparaindent=\skip93
+\cftsubparanumwidth=\skip94
+\cftbeforeloftitleskip=\skip95
+\cftafterloftitleskip=\skip96
+\cftbeforefigskip=\skip97
+\cftfigindent=\skip98
+\cftfignumwidth=\skip99
+\c@lofdepth=\count279
+\c@lotdepth=\count280
+\cftbeforelottitleskip=\skip100
+\cftafterlottitleskip=\skip101
+\cftbeforetabskip=\skip102
+\cfttabindent=\skip103
+\cfttabnumwidth=\skip104
+) ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoc\etoc.sty"
+Package: etoc 2019/11/17 v1.09b Completely customisable TOCs (JFB)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\multicol.sty
+"
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count281
+\mult@box=\box55
+\multicol@leftmargin=\dimen186
+\c@unbalance=\count282
+\c@collectmore=\count283
+\doublecol@number=\count284
+\multicoltolerance=\count285
+\multicolpretolerance=\count286
+\full@width=\dimen187
+\page@free=\dimen188
+\premulticols=\dimen189
+\postmulticols=\dimen190
+\multicolsep=\skip105
+\multicolbaselineskip=\skip106
+\partial@page=\box56
+\last@line=\box57
+\maxbalancingoverflow=\dimen191
+\mult@rightbox=\box58
+\mult@grightbox=\box59
+\mult@gfirstbox=\box60
+\mult@firstbox=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\c@minrows=\count287
+\c@columnbadness=\count288
+\c@finalcolumnbadness=\count289
+\last@try=\dimen192
+\multicolovershoot=\dimen193
+\multicolundershoot=\dimen194
+\mult@nat@firstbox=\box99
+\colbreak@box=\box100
+\mc@col@check@num=\count290
+)
+\Etoc@toctoks=\toks22
+\c@etoc@tocid=\count291
+\c@etoc@tocdepth=\count292
+\etoc@framed@titlebox=\box101
+\etoc@framed@contentsbox=\box102
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
+sty"
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip107
+\enit@outerparindent=\dimen195
+\enit@toks=\toks23
+\enit@inbox=\box103
+\enit@count@id=\count293
+\enitdp@description=\count294
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/nomencl\nomencl.st
+y"
+Package: nomencl 2020/03/01 v5.4 Nomenclature package
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
+y"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
+tex"
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
+.tex"
+\XKV@toks=\toks24
+\XKV@tempa@toks=\toks25
+)
+\XKV@depth=\count295
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\tocbas
+ic.sty"
+Package: tocbasic 2020/01/24 v3.29 KOMA-Script package (handling toc-files)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrbas
+e.sty"
+Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlfi
+le.sty"
+Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
+))
+\scr@dte@tocline@numberwidth=\skip108
+\scr@dte@tocline@numbox=\box104
+)
+Package tocbasic Info: setting babel extension for `nlo' on input line 179.
+Package tocbasic Info: setting babel extension for `nls' on input line 180.
+\nomlabelwidth=\dimen196
+\nom@tempdim=\dimen197
+\nomitemsep=\skip109
+)
+\@nomenclaturefile=\write3
+\openout3 = `cDNA_Synthesis_Approaches.nlo'.
+
+Package nomencl Info: Writing nomenclature file cDNA_Synthesis_Approaches.nlo o
+n input line 17.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xr.sty"
+Package: xr 2019/07/22 v5.05 eXternal References (DPC)
+)
+(../Main/blocked.sty) (../Main/uhead.sty) (../Main/boxit.sty)
+(../Main/thesis.sty
+\tocrulewidth=\skip110
+)
+\c@definition=\count296
+\c@theorem=\count297
+)))
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \section
+            {Different cDNA synthesis approaches}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \section{Different cDNA synthesis approaches}
+                                                 
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (12.2501pt too wide) in paragraph at lines 7--8
+\OT1/cmr/m/n/12 Ad-vanced Course: RNA Tran-scrip-tomics (2018), pro-vided by J.
+Ragoussis,
+ []
+
+
+LaTeX Warning: Reference `WTAC_Pre_RT_Mix' on page 1 undefined on input line 12
+.
+
+
+LaTeX Warning: Reference `WTAC_RT_incubation' on page 1 undefined on input line
+ 12.
+
+
+LaTeX Warning: Reference `WTAC_Pre_RT_Mix' on page 1 undefined on input line 18
+.
+
+
+LaTeX Warning: Reference `WTAC_Pre_RT_incubation' on page 1 undefined on input 
+line 19.
+
+
+LaTeX Warning: Reference `WTAC_RT_Mix' on page 1 undefined on input line 20.
+
+
+LaTeX Warning: Reference `WTAC_RT_incubation' on page 1 undefined on input line
+ 21.
+
+
+LaTeX Warning: Reference `WTAC_PCR_Mix' on page 1 undefined on input line 22.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \begin{table}[h]
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd")
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.44 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (1.03362pt too wide) in alignment at lines 44--44
+[][][][] 
+ []
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 44--47
+ [][] 
+ []
+
+
+Overfull \hbox (21.24026pt too wide) in paragraph at lines 47--47
+[] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 \begin{table}[h]
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.63 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 63--66
+ [][] 
+ []
+
+
+Overfull \hbox (21.24026pt too wide) in paragraph at lines 66--66
+[] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 \begin{table}[h]
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@gtempa ...b \unskip \hskip \cmrkern@l {\CT@arc@ 
+                                                  \leaders \hrule \@height \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.87 	\end{tabularx}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (1.03362pt too wide) in alignment at lines 87--87
+[][][][] 
+ []
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 87--90
+ [][] 
+ []
+
+
+Overfull \hbox (21.24026pt too wide) in paragraph at lines 90--90
+[] [] 
+ []
+
+[1
+
+
+
+\@writefile{toc}{\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble
+ \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setloc
+altop \@gobble }{}}
+
+{C:/Users/sl693/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+\@writefile{toc}{\contentsline {section}{\numberline {0.1}Different cDNA synthe
+sis approaches}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {0.1.1}Adaptation of Sm
+art-seq2}{1}\protected@file@percent }
+]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \begin{table}[h]
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.120 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 120--123
+ [][] 
+ []
+
+
+Overfull \hbox (21.24026pt too wide) in paragraph at lines 123--123
+[] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 \begin{table}[h]
+                      
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.142 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 142--145
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `WTAC_RT_Mix' on page 2 undefined on input line 145.
+
+
+LaTeX Warning: Reference `WTAC_RT_Mix' on page 2 undefined on input line 145.
+
+
+Overfull \hbox (21.24026pt too wide) in paragraph at lines 145--145
+[] [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150 \begin{table}[h]
+                      
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@BTswitch ->{\CT@arc@ 
+                       \hrule \@height \@thisrulewidth }\futurenonspacelet \...
+l.166 	\end{tabularx}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (42.48051pt too wide) in paragraph at lines 166--167
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+! Emergency stop.
+<*> ./cDNA_Synthesis_Approaches.tex
+                                   
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 8248 strings out of 480932
+ 168857 string characters out of 2899905
+ 481378 words of memory out of 3000000
+ 23993 multiletter control sequences out of 15000+200000
+ 537247 words of font info for 42 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 58i,15n,85p,654b,357s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

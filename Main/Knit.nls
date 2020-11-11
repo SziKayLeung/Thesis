@@ -1,0 +1,48 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{A3SS}]\begingroup Alternative 3' Splice Site\nomeqref {1.0}\nompageref{17}
+  \item [{A5SS}]\begingroup Alternative 5' Splice Site\nomeqref {1.0}\nompageref{17}
+  \item [{AD}]\begingroup Alzheimer's disease\nomeqref {1.0}\nompageref{11}
+  \item [{APA}]\begingroup Alternative Poly-Adenylation\nomeqref {1.0}\nompageref{16}
+  \item [{APOE}]\begingroup Apolipoprotein E\nomeqref {1.0}\nompageref{13}
+  \item [{APP}]\begingroup Amyloid Precursor Protein\nomeqref {1.0}\nompageref{12}
+  \item [{AS}]\begingroup Alternative Splicing\nomeqref {1.0}\nompageref{16}
+  \item [{ATI}]\begingroup Alternative Transcription Initiation\nomeqref {1.0}\nompageref{16}
+  \item [{BACE}]\begingroup Beta-secretase\nomeqref {1.0}\nompageref{12}
+  \item [{BIN1}]\begingroup Bridging Integrator \nomeqref {1.0}\nompageref{13}
+  \item [{CLU}]\begingroup Clusterin\nomeqref {1.0}\nompageref{13}
+  \item [{CR1}]\begingroup Complement Receptor 1\nomeqref {1.0}\nompageref{13}
+  \item [{DIE}]\begingroup Differential Isoform Expression\nomeqref {1.0}\nompageref{21}
+  \item [{DS}]\begingroup Differential Splicing\nomeqref {1.0}\nompageref{21}
+  \item [{EOAD}]\begingroup Early Onset Alzheimer's Disease\nomeqref {1.0}\nompageref{12}
+  \item [{EST}]\begingroup Expressed Sequence Tags\nomeqref {1.0}\nompageref{17}
+  \item [{FAD}]\begingroup Familial's Alzheimer's Disease\nomeqref {1.0}\nompageref{12}
+  \item [{GWAS}]\begingroup Genome-wide association studies\nomeqref {1.0}\nompageref{13}
+  \item [{IR}]\begingroup Intron Retention\nomeqref {1.0}\nompageref{16}
+  \item [{Iso-Seq}]\begingroup Isoform Sequencing\nomeqref {1.0}\nompageref{20}
+  \item [{lncRNA}]\begingroup Long non-coding RNA\nomeqref {1.0}\nompageref{17}
+  \item [{LOAD}]\begingroup Late Onset Alzheimer's Disease\nomeqref {1.0}\nompageref{12}
+  \item [{miRNA}]\begingroup micro RNA\nomeqref {1.0}\nompageref{15}
+  \item [{NATs}]\begingroup Natural Antisense Transcripts\nomeqref {1.0}\nompageref{17}
+  \item [{NFT}]\begingroup Neurofibrillary tangles\nomeqref {1.0}\nompageref{12}
+  \item [{NMD}]\begingroup Nonsense Mediated Decay\nomeqref {1.0}\nompageref{17}
+  \item [{ONT}]\begingroup Oxford Nanopore Technologies\nomeqref {1.0}\nompageref{20}
+  \item [{ORF}]\begingroup Open Reading Frame\nomeqref {1.0}\nompageref{16}
+  \item [{PacBio}]\begingroup Pacific Biosciences\nomeqref {1.0}\nompageref{20}
+  \item [{PICALM}]\begingroup Phosphatidylinositol Binding Clathrin Assembly Protein\nomeqref {1.0}\nompageref{13}
+  \item [{PSEN1}]\begingroup Presenilin 1\nomeqref {1.0}\nompageref{13}
+  \item [{PSEN2}]\begingroup Presenilin 2\nomeqref {1.0}\nompageref{13}
+  \item [{PSI}]\begingroup Percent-Spliced In\nomeqref {1.0}\nompageref{21}
+  \item [{RNA-Seq}]\begingroup RNA-Sequencing\nomeqref {1.0}\nompageref{17}
+  \item [{RPKM}]\begingroup Reads of a transcript sequence per Millions\nomeqref {1.0}\nompageref{21}
+  \item [{SAGE}]\begingroup Serial Analysis of Gene Expression\nomeqref {1.0}\nompageref{17}
+  \item [{SE}]\begingroup Skipped Exon\nomeqref {1.0}\nompageref{17}
+  \item [{SMRT}]\begingroup Single Molecule Real Time\nomeqref {1.0}\nompageref{20}
+  \item [{SNP}]\begingroup Single Nucleotide Polymorphism\nomeqref {1.0}\nompageref{13}
+  \item [{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {3.0}\nompageref{27}
+  \item [{TPM}]\begingroup Transcripts per Million\nomeqref {3.0}\nompageref{33}
+  \item [{TSS}]\begingroup Transcription Start Sites\nomeqref {1.0}\nompageref{18}
+  \item [{TTS}]\begingroup Transcription Termination Sites\nomeqref {1.0}\nompageref{18}
+
+\end{thenomenclature}

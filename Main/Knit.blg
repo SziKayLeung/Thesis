@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7380 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Knit.aux
+The style file: plainnat.bst
+Database file #1: library.bib
+Warning--I didn't find a database entry for "A"
+Warning--I didn't find a database entry for "K"
+Warning--I didn't find a database entry for "B"
+You've used 30 entries,
+            2773 wiz_defined-function locations,
+            892 strings with 28371 characters,
+and the built_in function-call counts, 53484 in all, are:
+= -- 3792
+> -- 7711
+< -- 4
++ -- 2571
+- -- 2541
+* -- 6022
+:= -- 9290
+add.period$ -- 171
+call.type$ -- 30
+change.case$ -- 937
+chr.to.int$ -- 30
+cite$ -- 60
+duplicate$ -- 625
+empty$ -- 1158
+format.name$ -- 2575
+if$ -- 10047
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 28
+newline$ -- 239
+num.names$ -- 120
+pop$ -- 1747
+preamble$ -- 1
+purify$ -- 907
+quote$ -- 0
+skip$ -- 1221
+stack$ -- 0
+substring$ -- 580
+swap$ -- 58
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 330
+warning$ -- 0
+while$ -- 129
+width$ -- 0
+write$ -- 557
+(There were 3 warnings)
