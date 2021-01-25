@@ -6,45 +6,45 @@ Database file #1: library.bib
 Warning--I didn't find a database entry for "A"
 Warning--I didn't find a database entry for "K"
 Warning--I didn't find a database entry for "B"
-You've used 30 entries,
+You've used 33 entries,
             2773 wiz_defined-function locations,
-            892 strings with 28371 characters,
-and the built_in function-call counts, 53484 in all, are:
-= -- 3792
-> -- 7711
-< -- 4
-+ -- 2571
-- -- 2541
-* -- 6022
-:= -- 9290
-add.period$ -- 171
-call.type$ -- 30
-change.case$ -- 937
-chr.to.int$ -- 30
-cite$ -- 60
-duplicate$ -- 625
-empty$ -- 1158
-format.name$ -- 2575
-if$ -- 10047
+            919 strings with 29529 characters,
+and the built_in function-call counts, 55179 in all, are:
+= -- 3935
+> -- 7864
+< -- 5
++ -- 2622
+- -- 2589
+* -- 6176
+:= -- 9566
+add.period$ -- 185
+call.type$ -- 33
+change.case$ -- 962
+chr.to.int$ -- 33
+cite$ -- 66
+duplicate$ -- 677
+empty$ -- 1259
+format.name$ -- 2628
+if$ -- 10391
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 28
-newline$ -- 239
-num.names$ -- 120
-pop$ -- 1747
+missing$ -- 29
+newline$ -- 259
+num.names$ -- 132
+pop$ -- 1796
 preamble$ -- 1
-purify$ -- 907
+purify$ -- 929
 quote$ -- 0
-skip$ -- 1221
+skip$ -- 1276
 stack$ -- 0
-substring$ -- 580
-swap$ -- 58
+substring$ -- 595
+swap$ -- 62
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 330
+type$ -- 363
 warning$ -- 0
-while$ -- 129
+while$ -- 139
 width$ -- 0
-write$ -- 557
+write$ -- 604
 (There were 3 warnings)

@@ -31,71 +31,74 @@
 \BOOKMARK [2][-]{subsection.3.2.5}{SMRT Bell Template Preparation}{section.3.2}% 31
 \BOOKMARK [2][-]{subsection.3.2.6}{Primer Annealing and Polymerase Binding}{section.3.2}% 32
 \BOOKMARK [1][-]{section.3.3}{Iso-Seq: Bioinformatics Pipeline}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.1}{Classify}{section.3.3}% 34
-\BOOKMARK [2][-]{subsection.3.3.2}{Cluster}{section.3.3}% 35
-\BOOKMARK [2][-]{subsection.3.3.3}{Genome/Transcriptome Alignment}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.4}{Genome Mapping}{section.3.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.5}{Cupcake}{section.3.3}% 38
-\BOOKMARK [2][-]{subsection.3.3.6}{SQANTI2}{section.3.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.7}{Isoform expression from Iso-Seq}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.8}{Validation of isoforms with RNASeq}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.9}{SQANTI2 filtering}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.10}{Quantification of human transgene expression}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.11}{Classification of Alternative Splicing Events}{section.3.3}% 44
-\BOOKMARK [2][-]{subsection.3.3.12}{Limitations}{section.3.3}% 45
-\BOOKMARK [1][-]{section.3.4}{Iso-Seq Protocol}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.4.1}{Requirement of Sample quality}{section.3.4}% 47
-\BOOKMARK [2][-]{subsection.3.4.2}{General}{section.3.4}% 48
-\BOOKMARK [2][-]{subsection.3.4.3}{First Strand Synthesis}{section.3.4}% 49
-\BOOKMARK [2][-]{subsection.3.4.4}{PCR Cycle Optimisation}{section.3.4}% 50
-\BOOKMARK [2][-]{subsection.3.4.5}{Large-Scale PCR}{section.3.4}% 51
-\BOOKMARK [2][-]{subsection.3.4.6}{Bead Purification of Large-Scale PCR Products}{section.3.4}% 52
-\BOOKMARK [2][-]{subsection.3.4.7}{Pooling Fraction 1 \(1X\) and 2 \(0.40X\)}{section.3.4}% 53
-\BOOKMARK [2][-]{subsection.3.4.8}{Target Capture using IDT probes}{section.3.4}% 54
-\BOOKMARK [2][-]{subsection.3.4.9}{SMRTbell Template Preparation}{section.3.4}% 55
-\BOOKMARK [0][-]{chapter.4}{Oxford Nanopore: cDNA Sequencing}{}% 56
-\BOOKMARK [1][-]{section.4.1}{Oxford Nanopore}{chapter.4}% 57
-\BOOKMARK [2][-]{subsection.4.1.1}{Mechanism}{section.4.1}% 58
-\BOOKMARK [2][-]{subsection.4.1.2}{ONT Kits}{section.4.1}% 59
-\BOOKMARK [1][-]{section.4.2}{Minion Sequencing: Lab Pipeline}{chapter.4}% 60
-\BOOKMARK [2][-]{subsection.4.2.1}{cDNA synthesis}{section.4.2}% 61
-\BOOKMARK [2][-]{subsection.4.2.2}{ONT MinION Library Preparation}{section.4.2}% 62
-\BOOKMARK [1][-]{section.4.3}{Minion Sequencing: Bioinformatics Pipeline}{chapter.4}% 63
-\BOOKMARK [2][-]{subsection.4.3.1}{Base-calling}{section.4.3}% 64
-\BOOKMARK [2][-]{subsection.4.3.2}{Quality Control of Run and Base-called Reads}{section.4.3}% 65
-\BOOKMARK [2][-]{subsection.4.3.3}{Filtering of Base-called Reads}{section.4.3}% 66
-\BOOKMARK [2][-]{subsection.4.3.4}{Removing of Nanopore and cDNA sequencing adapters}{section.4.3}% 67
-\BOOKMARK [2][-]{subsection.4.3.5}{Filtering and processing of trimmed reads}{section.4.3}% 68
-\BOOKMARK [2][-]{subsection.4.3.6}{Genome Alignment}{section.4.3}% 69
-\BOOKMARK [2][-]{subsection.4.3.7}{Transcript Collapse}{section.4.3}% 70
-\BOOKMARK [2][-]{subsection.4.3.8}{Isoform Quantification}{section.4.3}% 71
-\BOOKMARK [2][-]{subsection.4.3.9}{Limitations of Oxford Nanopore}{section.4.3}% 72
-\BOOKMARK [1][-]{section.4.4}{ONT Protocol}{chapter.4}% 73
-\BOOKMARK [2][-]{subsection.4.4.1}{cDNA Synthesis and Amplification}{section.4.4}% 74
-\BOOKMARK [2][-]{subsection.4.4.2}{Bead Purification of Large Scale PCR Products}{section.4.4}% 75
-\BOOKMARK [2][-]{subsection.4.4.3}{ONT MinION Library Preparation}{section.4.4}% 76
-\BOOKMARK [2][-]{subsection.4.4.4}{Priming the Flow Cell}{section.4.4}% 77
-\BOOKMARK [2][-]{subsection.4.4.5}{Library loading into the Flow Cell}{section.4.4}% 78
-\BOOKMARK [0][-]{chapter.5}{Whole Transcriptome}{}% 79
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 80
-\BOOKMARK [2][-]{subsection.5.1.1}{Mouse model of AD amyloidopathy: J20}{section.5.1}% 81
-\BOOKMARK [2][-]{subsection.5.1.2}{Mouse model of AD tauopathy: rTg4510}{section.5.1}% 82
-\BOOKMARK [1][-]{section.5.2}{Methods}{chapter.5}% 83
-\BOOKMARK [1][-]{section.5.3}{Results}{chapter.5}% 84
-\BOOKMARK [2][-]{subsection.5.3.1}{Bioinformatics output}{section.5.3}% 85
-\BOOKMARK [2][-]{subsection.5.3.2}{Genome Mapping}{section.5.3}% 86
-\BOOKMARK [2][-]{subsection.5.3.3}{Transcriptome annotation}{section.5.3}% 87
-\BOOKMARK [2][-]{subsection.5.3.4}{Exploring the PacBio transcriptome of the mouse reference genome}{section.5.3}% 88
-\BOOKMARK [2][-]{subsection.5.3.5}{Transcriptome abundance hierarchal between samples}{section.5.3}% 89
-\BOOKMARK [2][-]{subsection.5.3.6}{Iso-Seq vs RNA-Seq}{section.5.3}% 90
-\BOOKMARK [2][-]{subsection.5.3.7}{Change in endogeneous expression}{section.5.3}% 91
-\BOOKMARK [2][-]{subsection.5.3.8}{ERCC}{section.5.3}% 92
-\BOOKMARK [2][-]{subsection.5.3.9}{LncRNA}{section.5.3}% 93
-\BOOKMARK [2][-]{subsection.5.3.10}{Isoform diversity}{section.5.3}% 94
-\BOOKMARK [2][-]{subsection.5.3.11}{Splicing Events}{section.5.3}% 95
-\BOOKMARK [2][-]{subsection.5.3.12}{Validation of novel isoforms}{section.5.3}% 96
-\BOOKMARK [0][-]{chapter.6}{Targeted Transcriptome}{}% 97
-\BOOKMARK [0][-]{chapter.7}{ONT vs PacBio}{}% 98
-\BOOKMARK [1][-]{subsection.7.0.1}{Comparisons of PacBio vs ONT for RNA-Sequencing}{chapter.7}% 99
-\BOOKMARK [0][-]{chapter.8}{Proteomics \(Eli-Lilly\)}{}% 100
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 101
+\BOOKMARK [2][-]{subsection.3.3.1}{ERCC}{section.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.2}{Classify}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.3}{Cluster}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.4}{Genome/Transcriptome Alignment}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.5}{Genome Mapping}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.6}{Cupcake}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.7}{SQANTI2}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.8}{Isoform expression from Iso-Seq}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.9}{Validation of isoforms with RNASeq}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.10}{SQANTI2 filtering}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.11}{Quantification of human transgene expression}{section.3.3}% 44
+\BOOKMARK [2][-]{subsection.3.3.12}{Classification of Alternative Splicing Events}{section.3.3}% 45
+\BOOKMARK [2][-]{subsection.3.3.13}{Limitations}{section.3.3}% 46
+\BOOKMARK [1][-]{section.3.4}{Iso-Seq: Optimisation}{chapter.3}% 47
+\BOOKMARK [2][-]{subsection.3.4.1}{Varying CCS parameters}{section.3.4}% 48
+\BOOKMARK [2][-]{subsection.3.4.2}{Additional parameters}{section.3.4}% 49
+\BOOKMARK [1][-]{section.3.5}{Iso-Seq Protocol}{chapter.3}% 50
+\BOOKMARK [2][-]{subsection.3.5.1}{Requirement of Sample quality}{section.3.5}% 51
+\BOOKMARK [2][-]{subsection.3.5.2}{General}{section.3.5}% 52
+\BOOKMARK [2][-]{subsection.3.5.3}{First Strand Synthesis}{section.3.5}% 53
+\BOOKMARK [2][-]{subsection.3.5.4}{PCR Cycle Optimisation}{section.3.5}% 54
+\BOOKMARK [2][-]{subsection.3.5.5}{Large-Scale PCR}{section.3.5}% 55
+\BOOKMARK [2][-]{subsection.3.5.6}{Bead Purification of Large-Scale PCR Products}{section.3.5}% 56
+\BOOKMARK [2][-]{subsection.3.5.7}{Pooling Fraction 1 \(1X\) and 2 \(0.40X\)}{section.3.5}% 57
+\BOOKMARK [2][-]{subsection.3.5.8}{Target Capture using IDT probes}{section.3.5}% 58
+\BOOKMARK [2][-]{subsection.3.5.9}{SMRTbell Template Preparation}{section.3.5}% 59
+\BOOKMARK [0][-]{chapter.4}{Oxford Nanopore: cDNA Sequencing}{}% 60
+\BOOKMARK [1][-]{section.4.1}{Oxford Nanopore}{chapter.4}% 61
+\BOOKMARK [2][-]{subsection.4.1.1}{Mechanism}{section.4.1}% 62
+\BOOKMARK [2][-]{subsection.4.1.2}{ONT Kits}{section.4.1}% 63
+\BOOKMARK [1][-]{section.4.2}{Minion Sequencing: Lab Pipeline}{chapter.4}% 64
+\BOOKMARK [2][-]{subsection.4.2.1}{cDNA synthesis}{section.4.2}% 65
+\BOOKMARK [2][-]{subsection.4.2.2}{ONT MinION Library Preparation}{section.4.2}% 66
+\BOOKMARK [1][-]{section.4.3}{Minion Sequencing: Bioinformatics Pipeline}{chapter.4}% 67
+\BOOKMARK [2][-]{subsection.4.3.1}{Base-calling}{section.4.3}% 68
+\BOOKMARK [2][-]{subsection.4.3.2}{Quality Control of Run and Base-called Reads}{section.4.3}% 69
+\BOOKMARK [2][-]{subsection.4.3.3}{Filtering of Base-called Reads}{section.4.3}% 70
+\BOOKMARK [2][-]{subsection.4.3.4}{Removing of Nanopore and cDNA sequencing adapters}{section.4.3}% 71
+\BOOKMARK [2][-]{subsection.4.3.5}{Filtering and processing of trimmed reads}{section.4.3}% 72
+\BOOKMARK [2][-]{subsection.4.3.6}{Genome Alignment}{section.4.3}% 73
+\BOOKMARK [2][-]{subsection.4.3.7}{Transcript Collapse}{section.4.3}% 74
+\BOOKMARK [2][-]{subsection.4.3.8}{Isoform Quantification}{section.4.3}% 75
+\BOOKMARK [2][-]{subsection.4.3.9}{Limitations of Oxford Nanopore}{section.4.3}% 76
+\BOOKMARK [1][-]{section.4.4}{ONT Protocol}{chapter.4}% 77
+\BOOKMARK [2][-]{subsection.4.4.1}{cDNA Synthesis and Amplification}{section.4.4}% 78
+\BOOKMARK [2][-]{subsection.4.4.2}{Bead Purification of Large Scale PCR Products}{section.4.4}% 79
+\BOOKMARK [2][-]{subsection.4.4.3}{ONT MinION Library Preparation}{section.4.4}% 80
+\BOOKMARK [2][-]{subsection.4.4.4}{Priming the Flow Cell}{section.4.4}% 81
+\BOOKMARK [2][-]{subsection.4.4.5}{Library loading into the Flow Cell}{section.4.4}% 82
+\BOOKMARK [0][-]{chapter.5}{Whole Transcriptome}{}% 83
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 84
+\BOOKMARK [2][-]{subsection.5.1.1}{Mouse model of AD amyloidopathy: J20}{section.5.1}% 85
+\BOOKMARK [2][-]{subsection.5.1.2}{Mouse model of AD tauopathy: rTg4510}{section.5.1}% 86
+\BOOKMARK [1][-]{section.5.2}{Methods}{chapter.5}% 87
+\BOOKMARK [1][-]{section.5.3}{Results}{chapter.5}% 88
+\BOOKMARK [2][-]{subsection.5.3.1}{Bioinformatics output}{section.5.3}% 89
+\BOOKMARK [2][-]{subsection.5.3.2}{Genome Mapping}{section.5.3}% 90
+\BOOKMARK [2][-]{subsection.5.3.3}{Transcriptome annotation}{section.5.3}% 91
+\BOOKMARK [2][-]{subsection.5.3.4}{Exploring the PacBio transcriptome of the mouse reference genome}{section.5.3}% 92
+\BOOKMARK [2][-]{subsection.5.3.5}{Transcriptome abundance hierarchal between samples}{section.5.3}% 93
+\BOOKMARK [2][-]{subsection.5.3.6}{Iso-Seq vs RNA-Seq}{section.5.3}% 94
+\BOOKMARK [2][-]{subsection.5.3.7}{Change in endogeneous expression}{section.5.3}% 95
+\BOOKMARK [2][-]{subsection.5.3.8}{LncRNA}{section.5.3}% 96
+\BOOKMARK [2][-]{subsection.5.3.9}{Isoform diversity}{section.5.3}% 97
+\BOOKMARK [2][-]{subsection.5.3.10}{Splicing Events}{section.5.3}% 98
+\BOOKMARK [2][-]{subsection.5.3.11}{Validation of novel isoforms}{section.5.3}% 99
+\BOOKMARK [0][-]{chapter.6}{Targeted Transcriptome}{}% 100
+\BOOKMARK [0][-]{chapter.7}{ONT vs PacBio}{}% 101
+\BOOKMARK [1][-]{subsection.7.0.1}{Comparisons of PacBio vs ONT for RNA-Sequencing}{chapter.7}% 102
+\BOOKMARK [0][-]{chapter.8}{Proteomics \(Eli-Lilly\)}{}% 103
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 104

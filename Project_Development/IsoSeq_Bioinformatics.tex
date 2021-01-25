@@ -28,8 +28,13 @@ Analysing long-read sequencing data requires a different approach to short-read,
 
 Although the raw error rate of PacBio sequencing is 10-14\%, this is greatly reduced by the use of circular template and subsequent generation of circular consensus sequence. 
 
+\subsection{ERCC}
+One source of error from long-read sequencing can occur at reverse transcription, whereby a premature termination in reverse transcription enzyme can result in a full-length cDNA, that is mistaken for a true isoform. To measure the degree of this technical error, ERCC, with known start and end positions can be used as benchmark. As detailed in \cite{Karlsson2017}, most ERCC reads fell within +/- 5bp at both 5' and 3' ends, with 3' end slightly more accurate than 5' end. From \cite{Sharon2013}, drop in read length was observed for ERCC for molecules longer than 1.5kb (PacBio RSII). Interestingly, non-coding exon junctions were more variable than coding-exon junctions, suggesting that codon exon splicing has a stricter control with refined splice donor/acceptor sites (\citep{Karlsson2017}) 
+Of note, however, that while ERCC has been used as a standard for RNA-Seq method validation, the longest molecule is only ~2kB, thus limiting is usage to validate longer molecules. Given that XX of RNA transcripts in human and mouse transcriptome are >2kB, there is a need for longer control sequences. 
+
 
 \subsection{Classify}
+\label{section:classify}
 
 \uline{\textbf{CCS Generation}}: In the first stage, the raw subreads (stored as a BAM file, unaligned.bam) from each “productive” ZMW are processed individually and collapsed to generate a CCS (Figure \ref{fig:CCS}), according to: 
 \begin{itemize}
@@ -189,4 +194,6 @@ While PacBio's Iso-Seq have major potential for transcriptome annotation, there 
 	\item Lack of normalisation of RNA libraries, resulting in biased sequencing of high abundance transcripts and subsequent over-representation of such transcripts 
 	\item Degradation of transcripts from 5' end, and thus lack of confidence in transcription start site and full-length structure 
 \end{enumerate}
+
+
 	 

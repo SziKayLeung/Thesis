@@ -499,10 +499,6 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885035/ - Lorna’s paper on examp
 %Check whether overexpression of human MAPT result in any unwanted, compensatory effects on equivalent mouse genes,as expression levels of mouse APP and MAPT should be slightly reduced, thereby suggesting no evidence that human transgene expression increase expression of directly-related mouse genes.
 Supporting findings from \cite{Castanho2020}, human-specific MAPT sequences were only detected in CCS and FL reads from TG mice, confirming stable insertion and activation of MAPT transgene in TG mice. 
 
-\subsection{ERCC}
-One source of error from long-read sequencing can occur at reverse transcription, whereby a premature termination in reverse transcription enzyme can result in a full-length cDNA, that is mistaken for a true isoform. To measure the degree of this technical error, ERCC, with known start and end positions can be used as benchmark. As detailed in \cite{Karlsson2017}, most ERCC reads fell within +/- 5bp at both 5' and 3' ends, with 3' end slightly more accurate than 5' end. From \cite{Sharon2013}, drop in read length was observed for ERCC for molecules longer than 1.5kb (PacBio RSII). Interestingly, non-coding exon junctions were more variable than coding-exon junctions, suggesting that codon exon splicing has a stricter control with refined splice donor/acceptor sites (\citep{Karlsson2017}) 
-Of note, however, that while ERCC has been used as a standard for RNA-Seq method validation, the longest molecule is only ~2kB, thus limiting is usage to validate longer molecules. Given that XX of RNA transcripts in human and mouse transcriptome are >2kB, there is a need for longer control sequences. 
- 
 \subsection{LncRNA}
 lncRNA expression has been known to be more lowly expressed compared to protein-coding genes (\cite{Derrien2012}), and has been previously shown in other long-read studies (\cite{Tilgner2015})
 

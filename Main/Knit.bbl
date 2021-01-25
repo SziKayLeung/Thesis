@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,15 @@ Zachary~B Abrams, Travis~S Johnson, Kun Huang, Philip~R.O. Payne, and Kevin
 \newblock ISSN 14712105.
 \newblock \doi{10.1186/s12859-019-3247-x}.
 \newblock URL \url{https://doi.org/10.1186/s12859-019-3247-x}.
+
+\bibitem[Amarasinghe et~al.(2020)Amarasinghe, Su, Dong, Zappia, Ritchie, and
+  Gouil]{Amarasinghe2020}
+Shanika~L. Amarasinghe, Shian Su, Xueyi Dong, Luke Zappia, Matthew~E. Ritchie,
+  and Quentin Gouil.
+\newblock {Opportunities and challenges in long-read sequencing data analysis},
+  feb 2020.
+\newblock ISSN 1474760X.
+\newblock URL \url{https://doi.org/10.1186/s13059-020-1935-5}.
 
 \bibitem[Au et~al.(2012)Au, Underwood, Lee, and Wong]{Au2012}
 Kin~Fai Au, Jason~G Underwood, Lawrence Lee, and Wing~Hung Wong.
@@ -487,6 +496,14 @@ Hagen Tilgner, Fereshteh Jahanbani, Ishaan Gupta, Paul Collier, Eric Wei,
 \newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/29196558
   http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5793787}.
 
+\bibitem[Verheijen and Sleegers(2018)]{Verheijen2018}
+Jan Verheijen and Kristel Sleegers.
+\newblock {Understanding Alzheimer Disease at the Interface between Genetics
+  and Transcriptomics}, 2018.
+\newblock ISSN 13624555.
+\newblock URL
+  \url{https://www.cell.com/trends/genetics/pdf/S0168-9525(18)30042-8.pdf}.
+
 \bibitem[Wang et~al.(2016)Wang, Tseng, Regulski, Clark, Hon, Jiao, Lu, Olson,
   Stein, and Ware]{Wang2016}
 Bo~Wang, Elizabeth Tseng, Michael Regulski, Tyson~A Clark, Ting Hon, Yinping
@@ -509,6 +526,19 @@ Eric~T Wang, Rickard Sandberg, Shujun Luo, Irina Khrebtukova, Lu~Zhang,
 \newblock \doi{10.1038/nature07509}.
 \newblock URL
   \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2593745/pdf/nihms-72491.pdf}.
+
+\bibitem[Weirather et~al.(2017)Weirather, de~Cesare, Wang, Piazza, Sebastiano,
+  Wang, Buck, and Au]{Weirather2017}
+Jason~L Weirather, Mariateresa de~Cesare, Yunhao Wang, Paolo Piazza, Vittorio
+  Sebastiano, Xiu-Jie Wang, David Buck, and Kin~Fai Au.
+\newblock {Comprehensive comparison of Pacific Biosciences and Oxford Nanopore
+  Technologies and their applications to transcriptome analysis}.
+\newblock \emph{F1000Research}, 6:\penalty0 100, 2017.
+\newblock ISSN 2046-1402.
+\newblock \doi{10.12688/f1000research.10571.1}.
+\newblock URL
+  \url{https://f1000researchdata.s3.amazonaws.com/manuscripts/11392/aeb5b027-2cdd-4888-8967-bc4812e075eb{\_}10571{\_}-{\_}kin{\_}fai{\_}au.pdf?doi=10.12688/f1000research.10571.1
+  https://f1000research.com/articles/6-100/v1}.
 
 \bibitem[Workman et~al.(2019)Workman, Tang, Tang, Jain, Tyson, Razaghi,
   Zuzarte, Gilpatrick, Payne, Quick, Sadowski, Holmes, de~Jesus, Jones,
