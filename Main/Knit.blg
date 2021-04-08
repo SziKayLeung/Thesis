@@ -3,48 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Knit.aux
 The style file: plainnat.bst
 Database file #1: library.bib
-Warning--I didn't find a database entry for "A"
-Warning--I didn't find a database entry for "K"
-Warning--I didn't find a database entry for "B"
-You've used 33 entries,
+You've used 4 entries,
             2773 wiz_defined-function locations,
-            919 strings with 29529 characters,
-and the built_in function-call counts, 55179 in all, are:
-= -- 3935
-> -- 7864
-< -- 5
-+ -- 2622
-- -- 2589
-* -- 6176
-:= -- 9566
-add.period$ -- 185
-call.type$ -- 33
-change.case$ -- 962
-chr.to.int$ -- 33
-cite$ -- 66
-duplicate$ -- 677
-empty$ -- 1259
-format.name$ -- 2628
-if$ -- 10391
+            641 strings with 6944 characters,
+and the built_in function-call counts, 4311 in all, are:
+= -- 339
+> -- 498
+< -- 0
++ -- 166
+- -- 162
+* -- 468
+:= -- 728
+add.period$ -- 22
+call.type$ -- 4
+change.case$ -- 66
+chr.to.int$ -- 4
+cite$ -- 8
+duplicate$ -- 84
+empty$ -- 168
+format.name$ -- 166
+if$ -- 829
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 29
-newline$ -- 259
-num.names$ -- 132
-pop$ -- 1796
+missing$ -- 4
+newline$ -- 38
+num.names$ -- 16
+pop$ -- 114
 preamble$ -- 1
-purify$ -- 929
+purify$ -- 62
 quote$ -- 0
-skip$ -- 1276
+skip$ -- 101
 stack$ -- 0
-substring$ -- 595
-swap$ -- 62
-text.length$ -- 1
+substring$ -- 113
+swap$ -- 6
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 363
+type$ -- 44
 warning$ -- 0
-while$ -- 139
+while$ -- 19
 width$ -- 0
-write$ -- 604
-(There were 3 warnings)
+write$ -- 79

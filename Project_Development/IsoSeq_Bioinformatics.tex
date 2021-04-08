@@ -1,7 +1,17 @@
 \documentclass[../Main/Knit.tex]{subfiles}
-
 \newpage
-\section{Iso-Seq: Bioinformatics Pipeline} 
+
+
+\subsection{Bioinformatics Pipeline} 
+
+\begingroup
+\parindent=0em
+\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
+\etocsetnexttocdepth{5}
+\localtableofcontents 
+\endgroup
+
+\subsubsection{Introduction}
 While the official PacBio bioinformatics tool (Iso-Seq) has been revised multiple times during the scope of this PhD, there are two main steps with the aim of generating high-quality (HQ) isoforms de novo (Figure X), namely: 
 \begin{itemize}
 	\item Classify to identify full-length non-chimeric (FLNC), and non-FLNC reads 
@@ -28,12 +38,12 @@ Analysing long-read sequencing data requires a different approach to short-read,
 
 Although the raw error rate of PacBio sequencing is 10-14\%, this is greatly reduced by the use of circular template and subsequent generation of circular consensus sequence. 
 
-\subsection{ERCC}
+\subsubsection{ERCC}
 One source of error from long-read sequencing can occur at reverse transcription, whereby a premature termination in reverse transcription enzyme can result in a full-length cDNA, that is mistaken for a true isoform. To measure the degree of this technical error, ERCC, with known start and end positions can be used as benchmark. As detailed in \cite{Karlsson2017}, most ERCC reads fell within +/- 5bp at both 5' and 3' ends, with 3' end slightly more accurate than 5' end. From \cite{Sharon2013}, drop in read length was observed for ERCC for molecules longer than 1.5kb (PacBio RSII). Interestingly, non-coding exon junctions were more variable than coding-exon junctions, suggesting that codon exon splicing has a stricter control with refined splice donor/acceptor sites (\citep{Karlsson2017}) 
 Of note, however, that while ERCC has been used as a standard for RNA-Seq method validation, the longest molecule is only ~2kB, thus limiting is usage to validate longer molecules. Given that XX of RNA transcripts in human and mouse transcriptome are >2kB, there is a need for longer control sequences. 
 
 
-\subsection{Classify}
+\subsubsection{Classify}
 \label{section:classify}
 
 \uline{\textbf{CCS Generation}}: In the first stage, the raw subreads (stored as a BAM file, unaligned.bam) from each “productive” ZMW are processed individually and collapsed to generate a CCS (Figure \ref{fig:CCS}), according to: 
@@ -51,7 +61,7 @@ Across literature and PacBio scientific community, different parameter settings 
 \uline{\textbf{Refine}}: Finally, full-length reads are refined by trimming of polyA tails, of a least a length of 20 bases, and removal of artificial concatemers to generate full-length non-chimeric (FLNC) reads. Artificial concatemers are defined as cDNA sequences with internal runs of polyA and polyT sequences, due to insufficient amount of blunt adapters during library preparation - this is typically rare (<0.5\%). Conversely, it is challenging to differentiate and remove PCR-induced artificial chimera from true biological chimera. PCR-induced artefacts are defined as cDNA sequences that appear to be fusion transcripts, but are actually a result of non-optimal PCR reaction conditions. The number of FLNC reads should be very close to the number of FL reads, and any significant loss implicates issues at the SMRT bell library preparation.
 Note Tama works on FLNC reads from Classify 
 
-\subsection{Cluster}
+\subsubsection{Cluster}
 In the second stage, Iso-Seq uses an iterative isoform-clustering algorithm (ICE – iterative clustering for error, called Quiver for PacBio RSII data and Arrow for PacBio Sequel data) to group all FLNC reads that are thought to be derived from the same isoform if: 
 \begin{itemize}
 	\item They differ less than 100bp on the 5’ end 
@@ -78,24 +88,24 @@ Since the introduction of Iso-Seq protocol, 3 versions of the informatics pipeli
 
 High confidence transcripts can be determined by 1) presence of open reading frame (ORF), CDS length, interpro domain coverage, annotation edit distance 
 
-\subsection{Genome/Transcriptome Alignment} 
+\subsubsection{Genome/Transcriptome Alignment} 
 High quality isoforms are then aligned to the reference genome (as opposed to transcriptome as otherwise miss novel isoforms using BLASR) using splice-aware aligner Minimap2. Various long-read studies have used Minimap2 and GMAP (Križanovic et al. 2018 demonstrated marked success of GMAP vs other RNA-Seq Aligners). Tang et al. 2020, using subset of Oxford Nanopore reads evaluated number of splice sites mapped relative to known junctions, found Minimap2 to be more precise than GMAP. 
 
 Using the –secondary=no parameter restricts the output to the best alignment, -x splice assumes read orientation relative to transcript strand unknown, and thus tries two rounds of alignment to infer orientation. As a splice-aware alignment, -x splice prefers GT[A/G]…[C/T]AG over GT[C/T]…[A/G]AG over other splicing signals (main donor/acceptor motifs). –u f forces minimap2 to consider forward transcript strand only for alignment, slightly improving accuracy. –c 5 to accept non-canonical GT/AG splice junctions. 
 
 --splice-flank=yes for human/mouse data in reads with relatively high sequencing error rate (necessary for ONT), but not for high quality IsoSeq reads (99\% - 100\%). 
 
-\subsection{Genome Mapping}
+\subsubsection{Genome Mapping}
 HQ-isoforms from the pooled dataset were aligned to mouse genome using Minimap2, and a total of XXX reads (XX\%) were mapped. Errors for substitution, insertion and deletion are X\%, X\% and X\% respectively. XX\% of transcripts (polished) could not be mapped to reference genome, thus representing genes that fall into gaps in the assembly (mouse genome should be quite updated though)
 
 
-\subsection{Cupcake}
+\subsubsection{Cupcake}
 To avoid redundancy of transcripts, aligned and filtered HQ transcripts are further collapsed to obtain a final set of unique, full-length, high-quality isoforms using Cupcake (a set of publicly-available, supporting scripts). HQ transcripts are filtered out for lack of mapping and low coverage/identity before collapsing into unique isoforms.  
 
 The abundance of each unique isoform can be estimated from the number of associated FL and NFL reads during IsoSeq cluster (not accounting for HQ transcripts that have been filtered out).  Finally, isoforms are filtered by 5’degradation due to the lack of a cap protection employed in the cDNA synthesis step (Clontech SMARTer cDNA kit). 
 
 
-\subsection{SQANTI2} 
+\subsubsection{SQANTI2} 
 High-quality, clustered, filtered isoforms from Cupcake are characterised using SQANTI2, a pipeline initially developed by Conesa et al. [ref] and refined by Elizabeth Tseng (Pacific Bioscience’s specialist) [ref]. In addition to providing the descriptive statistics for each transcript (such as the chromosome, the strand, the length and the number of exons), it further allows input of public datasets and RNA-Seq data to further characterise and validate isoforms from Iso-Seq:
 \begin{itemize}
 	\item FANTOM5 Cap Analysis of Gene Expression (CAGE): map transcripts, transcription factors, transcriptional promoters and enhancers [ref]
@@ -143,7 +153,7 @@ that contain one or multiple exons (mono-exonic or multi-exonic respectively)
 that contain intronic sequences (intron retention) 
 as fusions. The criteria XXXX
 
-\subsection{Isoform expression from Iso-Seq} 
+\subsubsection{Isoform expression from Iso-Seq} 
 To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
 
 \begin{equation}
@@ -157,14 +167,14 @@ TPM is the most effective within-sample normalisation method to relatively quant
 Between-sample normalisation methods to relatively quantify expression of the same gene in different samples, remove technical variations due to presence of few highly expressed genes that make up a significant proportion of total reads, and due to different number of reads in each sample. 
 
 
-\subsection{Validation of isoforms with RNASeq} 
+\subsubsection{Validation of isoforms with RNASeq} 
 Samples sequenced with paired-end reads, Illumina Hi-Seq, 125bases. Paired end reads as more accurate for identifying and sequencing junctions. RNASeq data through stringent filtering (plot of fastqc) and aligned to mouse genome (Gencode, version X) using STAR (see section X for parameters). Abundance in TPM was then calculated with Kallisto (ref) as an input into SQANTI to identify coverage of splicing junctions with RNASeq.  
 
 Provides support of transcripts from RNA-Seq data, highest expression of RNA-Seq reads of the splice junctions 
 The junction with lowest coverage from RNA-Seq, and its associated read count 	
 Standard deviation of read counts across all the junctions for each transcript 
 
-\subsection{SQANTI2 filtering}
+\subsubsection{SQANTI2 filtering}
 This was developed to remove artifacts from library preparation: i.e. intrapriming of polyA that usually happens in antisense strands and also lack of junction support in NNC; increase \% of FSM transcripts, and removes NIC. 
 
 SQANTI2 further filters isoforms, based on the following rules: 
@@ -182,13 +192,13 @@ Reverse Transcription switch is determined on a junction level on both plus and 
 
 all junctions are either canonical or has short read coverage ( > 3 reads)
 
-\subsection{Quantification of human transgene expression}
+\subsubsection{Quantification of human transgene expression}
 As reported in \cite{Castanho2020}, human-specific MAPT sequence was selected from a 2kb region present in the 3'UTR after using BLAT to identify divergent sequence in human and mouse MAPT. Counts of this human-specific MAPT sequence in the CCS and polished reads from WT and TG were then plotted as a ratio of unique reads to the total number of input reads.  
 
-\subsection{Classification of Alternative Splicing Events}
+\subsubsection{Classification of Alternative Splicing Events}
 SUPPA2 was used to classify alternative splicing events with the parameter –f ioe in isoforms retained from SQANTI2 filter. Splicing events included Alternative 5’ Splice Sites (A5), Alternative 3’ Splice Sites (A3), Alternative First Exons (AF), Alternative Last Exons (AL), Mutually Exclusive Exons (MX), Retained Intron (RI), Skipping Exon (SE). 
 
-\subsection{Limitations}
+\subsubsection{Limitations}
 While PacBio's Iso-Seq have major potential for transcriptome annotation, there are currently several major limitations that need to be addressed with further development of library preparation and bioinformatic data analyses \cite{Kuo2017}: 
 \begin{enumerate}
 	\item Lack of normalisation of RNA libraries, resulting in biased sequencing of high abundance transcripts and subsequent over-representation of such transcripts 

@@ -1,20 +1,22 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Challenges of using short-reads for transcript assembly}}{24}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Evaluation of RNA integrity with Bioanalyzer and Tapestation}}{33}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Evaluation of RNA integrity with Bioanalyzer and Tapestation}}{21}{figure.caption.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces PacBio SMRT}}{36}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Generation of Circular Consensus Sequence}}{37}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PacBio Isoseq Bioinformatics Pipeline}}{44}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Optimisation of CCS generation}}{54}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}}{56}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}}{57}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Whole Transcriptome Iso-Seq run yields and relationship to RIN score}}{29}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run}}{32}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Rarefaction Curves of Whole Transcriptome Iso-Seq Runs}}{33}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Isoform diversity across Tg4510 samples and coverage of ERCC transcripts}}{35}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Detection of ERCC standards in Whole Transcriptome Iso-Seq}}{35}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Correlation of isoform diversity with transcript length and number of exons}}{36}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{39}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq}}{40}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Association of intron retention and NMD in Whole Transcriptome Iso-Seq}}{42}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Characterisation of LncRNA in Whole Transcriptome runs}}{44}{figure.caption.21}%
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Tg4510 WT and TG samples sequenced using Whole and Targeted Iso-Seq}}{89}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Tg4510 WT and TG samples sequenced using Whole and Targeted ONT}}{90}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Whole Transcriptome Iso-Seq run output in transgenic and wild type Tg4510 mouse model}}{91}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}}{92}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Targeted Transcriptome Iso-seq run performance}}{51}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces On-Target rate in Transcriptome Iso-Seq runs}}{52}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex}}{53}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Classification of novel and known isoforms from Targeted Sequencing in mouse cortex}}{54}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

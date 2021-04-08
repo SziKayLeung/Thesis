@@ -1,16 +1,18 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Barcoded Oligo-dT Primers for targeted transcriptome sequencing}}{17}{table.caption.6}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces cDNA synthesis}}{62}{table.caption.14}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces PCR conditions for cDNA synthesis\relax }}{63}{table.caption.15}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Large Scale PCR\relax }}{64}{table.caption.16}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces PCR conditions for Large Scale PCR\relax }}{64}{table.caption.17}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Run Yield Output from Whole Transcriptome Iso-Seq of Tg4510}}{28}{table.caption.8}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Gene and Isoform classification from Whole Transcriptome Iso-Seq of Tg4510}}{38}{table.caption.16}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Number of Splicing Events}}{41}{table.caption.19}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Repair DNA and Ends]\relax }}{82}{table.caption.23}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Loading Flow Cells\relax }}{86}{table.caption.24}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Run Yield Output from Whole Transcriptome Iso-Seq of Tg4510}}{91}{table.caption.27}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Mouse rTg4510 samples sequenced using whole and targeted transcriptome approach with PacBio Iso-Seq and ONT nanopore sequencing}}{47}{table.caption.22}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Run Yield Output from Targeted Transcriptome Iso-Seq of Tg4510}}{49}{table.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces cDNA synthesis}}{63}{table.caption.29}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces PCR conditions for cDNA synthesis\relax }}{63}{table.caption.30}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Large Scale PCR\relax }}{65}{table.caption.31}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces PCR conditions for Large Scale PCR\relax }}{65}{table.caption.32}%
 \addvspace {10\p@ }
