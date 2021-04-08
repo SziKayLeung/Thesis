@@ -1,142 +1,29 @@
 \documentclass[../Main/Knit.tex]{subfiles}
 
-\section{Oxford Nanopore}
-In 2014, Oxford Nanopore Technology (ONT) introduced another long-read sequencing technology akin to PacBio's SMRT, in the ability to also generate long reads that are able to resolve the exon structure of mRNA transcripts. However, rather than mimicking the natural DNA synthesis as is the focus in all major sequencing applications including the PacBio's SMRT, ONT's nanopore-based sequencing adopts an entirely different approach; the DNA sequence is inferred from changes in a current applied across a membrane as it passes through a protein pore. 
+\section{Oxford Nanopore: cDNA Sequencing}
 
-\subsection{Mechanism}
+\subsection{Introduction}
+In 2014, Oxford Nanopore Technology (ONT) introduced another long-read sequencing technology akin to PacBio's SMRT, in the ability to also generate long reads that are able to resolve the exon structure of mRNA transcripts. However, rather than mimicking the natural DNA synthesis as is the focus in all major sequencing applications including the PacBio's SMRT, ONT's nanopore-based sequencing adopts an entirely different approach; the DNA sequence is inferred from fluctuations in a current applied across a membrane as it passes through a protein pore.
+
+Inhibited mostly by the ability to deliver very high-molecular weight DNA to the pore, nanopore sequencing is able to generate much longer reads than SMRT sequencing (from 500bp to currently 2.3Mb (Payne et al. 2019)).  
+
+Basecalling accuracy of reads have dramatically increased, with raw base-called error rate reduced from <1\% from SMRT sequencing and <5\% for nanopore sequencing. 
+
+In comparison to SMRT sequencing, accuracy of nanopore reads is independent of DNA length, but reliant on achieving optimal translocation speed of DNA through pore, which often decreases in the late stages of sequencing, thereby negatively impacting quality. Contrary to SMRT sequencing, each DNA fragment is read only once: 
+\begin{itemize}
+	\item 1D: each strand of dsDNA fragment is read independently, and single pass accuracy is final accuracy of fragment 
+	\item 1D\textsuperscript{2}: sequence complementary strand of dsDNA fragment immediately after, allowing determination of more accurate consensus strand, achieving a median consensus accuracy of 98\%. 
+\end{itemize} 
+
+Low complexity stretches, including homopolymers, are difficult to resolve with current pores (R9) and basecallers, as translocation of homopolymers do not change the sequence of nucleotides within pore, thereby resulting in a constant signal. Significant major advances in technology have been made over the past 3 years, with 4 pore version released in 2019 (R9.4, R9.4.1, R9.5.1 and R10.0) \cite{Amarasinghe2020}. 
+
+\subsubsection{Mechanism}
 In contrast to Pacbio's XXX by XXX Sequel, ONT's nanopore sequencing can be performed in a handheld MINion device (10 × 3 × 2 cm, 90 g), housing a flow cell at its centre where the DNA sample is loaded. (Also on mobile device: \cite{Samarakoon2020}) Each flow cell contains a sensor array, consisting of 512 channels, each with 4 cells that can in turn house one nanopore. However, while the current MinION contains a total of 2048 nanopores, only one of the four wells in each channel can be active at any time, as controlled by Application Specific Integrated Circuit (ASIC), allowing up to 512 independent DNA molecules to be sequenced simultaneously.
 
 *1D vs 2D vs 1D2* 
 *6-mer* 
 *flow cell and the different nanopore?*
 
-\subsection{ONT Kits}
+\subsubsection{ONT Kits}
  
 
-\section{Minion Sequencing: Lab Pipeline}
-\subsection{cDNA synthesis}
-For a fair, direct comparison between ONT's MinION sequencing and PacBio's IsoSeq, 200ng total RNA extracted using AllPrep DNA/RNA Mini Kit (Qiagen) was likewise converted to single-stranded DNA using SMARTer PCR cDNA Synthesis(ClonTech).
-
-\subsection{ONT MinION Library Preparation}
-Despite a range of protocols available on the Oxford Nanopore community protocol that can be used pending on the source of sample, the SQK-LSK109 kit was used with cDNA as starting material. This kit is PCR-free and as such is dependent upon generation of high-quality and full-length cDNA, which would be provided using the SMARTer PCR cDNA synthesis kit rather than that detailed in 1D Strand switching cDNA by ligation protocol (SQK-LSK108).
-
-\subsubsection{Repair DNA and Ends}
-DNA calibration strand (DCS) is 3.6kb amplicon of Lambda genome, and is included in the sample library as a quality control of base-calling and sample preparation. End Repair prepare the ends of cDNA molecules for adapter attachment by addition of dA nucleotides
-
-\subsubsection{Adapter Ligation}
-Post DNA repair and end repair, ONT adapters with dT overhang are ligated to the 5’ end of the dA-tailed cDNA molecules by hybridisation. The ONT adapters contain: 
-\begin{itemize}
-	\item motor protein (loaded processive enzyme?) that can bind to the nanopore and control/increase the speed of DNA translocation through the pore. While it is active in solution, it is inhibited from contacting the rest of the DNA through specialised bases in the adapter.
-	\item cholesterol tether to facilitate DNA capture as (1) tethers the DNA molecule to the lipid bilayer (membrane) of the flow cell  (2) reduces amount of diffusion of the DNA molecule from three dimensions (i.e the volume of whole buffer) to two dimensions (i.e. across the lipid bilayer)  
-\end{itemize}
-
-\subsubsection{Priming the Flow Cell}
-Sequencing buffer provides the optimal chemical conditions for powering DNA translocation through the Nanopore. This is the substrate cofactor of the motor enzyme that is used for DNA translocation process in the pore. 
-
-\section{Minion Sequencing: Bioinformatics Pipeline}
-\subsection{Base-calling}
-The first analysis is to convert or "base-call" the electrical signals to the corresponding bases using Albacore, or a more recently developed package, Guppy, that requires information on the: 
-\begin{enumerate}
-	\item Chemistry of the run such as whether 1D or 1D\textsuperscript{2}
-	\item Flow cell version used, to define the protein nanopore and subsequent 6-mer, which has different residual current	
-	\item Sequencing kit used as this specifies the translocation speed, which informs the event segmentation algorithm how to recognise the corresponding bases from the electrical signal
-	\item use of barcoding to run multiple samples in one flow cells for downstream demultiplexing
-	\item type of output file, such as FASTQ or fast5
-\end{enumerate}
-In contrast to PacBio's SMRT with the ability to generate consensus long reads, the raw accuracy of nanopore 1D cDNA sequencing is relatively low between 85–87\%; however, significant improvements are made on reducing error rate by rapid development of both the technology and library preparation methods (Volden et al. 2018). Such high error rates, from frequent base deletions and insertions particularly near splice sites, can result in spurious alignments and in correct clustering of reads. 
-
-
-\subsection{Quality Control of Run and Base-called Reads}
-There are a number of developed bioinformatic tools that provide a quality assessment of base-called reads, which provide information on: 
-\begin{enumerate}
-	\item Performance of the sequencing run for each flow cell
-	\item Distribution of base called read lengths
-	\item Distribution of quality scores: over base pair per read, over time across all reads across the flow cell 
-	\item No of reads generated over time
-\end{enumerate}
-
-\subsection{Filtering of Base-called Reads}
-Base-called reads are filtered using NanoFilt (part of Nanopack) based on the following parameters: 
-\begin{enumerate}
-	\item Filter on a minimum average read quality score of 7  
-	\item No Filter on a minimum read length  
-	\item No Filter on a maximum read length
-\end{enumerate}
-
-\subsection{Removing of Nanopore and cDNA sequencing adapters}
-Similarly to the Iso-Seq protocol, nanpore ligation adapters and cDNA sequencing primer sequences are removed to prevent spurious alignment, using PoreChop. This tool finds and trims adapters at the end of reads, and remove any "chimeric" reads with adapters in the middle. As detailed in WTAC's course, the nanopore.read.py script was edited to generate the output file for downstream analyses, and the adapters.py was amended to include the specific adapter sequence in accordance to developer's instructions. 
-
-\
-\begin{lstlisting}[language=bash, caption= PoreChop command]
-python porechop-runner.py 
-		 --format fastq \ # input format
-		 -pass_reads.fq \ # input reads
-		 -o pass_reads_choped.fq \ # output trimmed reads
-		 
-		 # Additional parameters to run porechop
-		 # Discard reads with adapters in the middle, i.e. "chimeric reads"
-		 # An adapter would only be trimmed if it has 90% identity (default)
-		 # Report for presence and location of adaptors for every read as output_adaptor_alignments_stats
-		 --discard_middle \		 
-		 --adapter_threshold 90
-		 --verbosity 4 \ 	
-		 
-		 # Parameters to control trimming of adaptors from read ends 
-		 # 100 bases at each end of reads are searched for adaptor
-		 # Adapter alignments smaller than 15bases will be ignored
-		 # 1 base removed next to adapters found at the ends of reads
-		 # Adapters at ends of reads must have >75% identity before removed
-		 
-		 --end_size 100 \			
-		 --min_trim_size 15 \		
-		 --extra_end_trim 1 \	
-		 --end_threshold 75 \		
-		 > output_adaptor_alignment_stats
-\end{lstlisting}
-
-\subsubsection{Definition of sequence adapters for removal}
-After cDNA synthesis with SMARTer PCR cDNA synthesis kit (ClonTech), and ligation of ONT adapters, cDNA have the structure depicted in Figure X. Due to the nature of cDNA sythesis primers and ONT adapter sequences, it is able to:
-\begin{enumerate}
-	\item identity the beginning (Transcription Start Site - TSS) and the end (Transcription End Site - TES) of the cDNA sequence
-	 \item differentiate between the plus strand of the cDNA (strand corresponding to the original mRNA sequence with a poly-A tail ) and the negative strand (complementary strand to original mRNA sequence with a poly-T tail)
-\end{enumerate}
-
-The motor protein binds to either 5' end of the cDNA strand for translocation through the pore. The sequence of the ONT adapters used in the SQK-LSK109 kit are recorded in Table X. 
-
-\subsection{Filtering and processing of trimmed reads}
-The trimmed reads from Porechop contains both plus and negative strands, and only reads containing at least one adapter at either end are retained to maximise read usage. However, it is important to be more stringent for isoform identification and quantification, and retain reads with both adapters at the end. It is further necessary to reverse complement the reads that correspond to the negative strands; all the reads would then start with the TSS and end with the polyA sequence. Using cutadapt, the polyA sequence are then trimmed with cutadapt with a window gap of 40 bases from the end (as polyT primer in cDNA synthesis introduces 30As and to avoid spurious base calling).
-
-\subsection{Genome Alignment}
-Similarly to Iso-Seq, trimmed reads are then aligned to the reference genome (as opposed to transcriptome as otherwise miss novel isoforms) using splice-aware aligner Minimap. However, unlike the Iso-Seq pipeline which generates high-quality transcripts, ONT reads are more prone to errors and having a lower mapping coverage (check). The reads from Minimap2 are thus further filtered based on alignment quality (identity and percentage of alignment length) using htsbox.
-
-\subsection{Transcript Collapse}
-Similarly to Iso-Seq, aligned and filtered reads need to be collapsed to generate unique transcripts. This is done with Cupcake in Iso-Seq, and TAMA collapse for ONT with the below parameters \ref{Tama_collapse_command}. The unique transcripts are then merged with the reference genome using TAMA merge for annotation and further characterisation. TAMA collapse and merge can also be performed for Iso-Seq reads, however, this is not part of the official pipeline. 
-
-\
-\begin{lstlisting}[language=bash, caption= Tama collapse and merge command, label= Tama_collapse_command]
-python tama_collapse.py \
-	-s aligned.sam \ 	# input file
-	-f mm10.fa \		# genome fasta sequence
-	-p tama_collapse_output \
-	
-	# Parameters to control collapse of transcripts by: 
-	# common exon start/end site rather than the longest feature
-	# using only reads where 95% are mapped to the genome
-	# 80% identity
-	# Difference of 50 bases at 5' and 3' end for reads to be collapsed 
-	# Difference of 20 bases at splice junctions for reads to be collapsed
-	# Merge duplicate transcript groups 
-	
-	-e common_ends -c 95 -i 80 -x capped -a 50 -z 50 -m 20 -d  merge_dup 
-	
-python tama_merge.py -f file.list -a 50 -z 50 -m 20 -p tama_merge_output
-\end{lstlisting}
-
-\uline{\textbf{FLAIR}}: Full-Length Alternative Isoform analysis of RNA  (FLAIR\nomenclature{FLAIR}{Full-Length Alternative Isoform analysis of RNA}) 
-Three steps are involved: Correct splice sites with short reads if incorrect splice site is within 10base pairs away from correct splice site, collapse reads to generate consensus sequences. This involves first grouping reads with identical splice junctions - "first pass nanopore isoform transcriptome"; the representative isoform within each group is determined by the most supported transcription and end site. All the reads, including reads that were aligned but not able to be fully corrected, are re-aligned to the "first-pass isoform" with the best alignment. First-pass isoforms that have fewer than three supporting reads are filtered out; three supporting reads selected as threshold as this gave the highest base sensitivity without compromising on precision.  
-
-\subsection{Isoform Quantification} 
-In contrast to Iso-Seq, isoform quantification from ONT is relatively simpler in that each nanopore read corresponds to a single transcript (Tang et al. 2020). However, ambiguity still remains with assignment of truncated reads 
-
-\subsection{Limitations of Oxford Nanopore} 
-Refer to \cite{Workman2019a} for information on strand break etc

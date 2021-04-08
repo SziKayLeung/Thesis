@@ -16,8 +16,30 @@
 12.	Correlation of Isoforms with exon number 
 13.	RNASeq reads 
 14.	Novel isoforms vs annotated; expression, length, exons 
+15. CAGE,TSS,TTS peak novel vs annotated
+16. AS events all, AS events independent events, 
+17. Venn diagram of IR and NMD, low expression of IR and NMD 
+18. LncRNA expression,transcript length and ORF 
 \fi
 
+% ONT comparisons
+\iffalse
+-	Comparing Read lengths 
+-	Mappability 
+-	Chimeric and gapped alignments 
+-	Error patterns 
+-	Isoform identification 
+-	Isoform abundance estimation 
+
+Sequencing quality (fraction of reads aligned) on read lengths for single pass reads (subreads for PacBio) and multi-pass consensus reads (CCS for PacBio and 2D reads for ONT) 
+Fraction of Read aligned in bins
+
+Context specific errors 
+
+Pacbio non-size selection and Oxford Nanopore non-size selection
+\fi
+
+Lowly expressed gene and minor isoform quantification  
 \section{Introduction}
  
 \subsection{Mouse model of AD amyloidopathy: J20}
@@ -33,6 +55,11 @@ These mice also exhibit cognitive and behavioural impairments, with neurofibrill
 \newpage
 \section{Methods}
 As detailed in Chapter X, Pacific Biosciences Iso-Seq dataset was generated with whole transcriptome approach using high quality RNA from mouse cortex of rTg4510 model (n = 12, WT = 6, TG = 6, mean age = 5 months, range = 2 - 8 months) (Figure \ref{fig:isoseq_samples}). As a technological comparison and validation of the IsoSeq approach, a subset of samples were also sequenced on ONT (Figure \ref{fig:ONT_samples}). While both long-read sequencing approaches are superior to short-read RNA-Sequencing in the generation of full-length transcripts, there are major inherent batch biases due to the time-consuming and laborious protocol involved. The library preparation was standardised as much as possible, with the initial input of RNA for cDNA synthesis and the final library input for sequencing. However, due to the need for optimising each sample for library preparation and the rapid updates of sequencing chemistry throughout my PhD, each sample was effectively sequenced sequentially rather than as a batch [Figure X]. 
+
+\subsection{RNA Extraction}
+\label{section: ch2_rna_extraction}
+Total RNA from mouse entorhinal cortex was extracted by Dr. Isabel Castanho using the AllPrep DNA/RNA Mini Kit (Qiagen). Samples were selected for long-read sequencing based on RNA quality and quantity, previously determined using RNA ScreenTape assay (Agilent) on 2200 TapeStation System or the RNA 6000 Nano kit (Agilent) on the 2100 Bioanalyzer (Section \ref{section:ch2_bioanalyzer}). 
+
 
 Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), with the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM dataset, TSS and TTS sites and classification of lncRNA in combination with lcRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artifacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers. 
 
@@ -465,7 +492,7 @@ After further collapsing and filtering of transcripts, a total of 46,626 unique 
 
 \newpage
 \subsection{Isoform diversity}
-Compared with the mouse reference genome, there was a wider range in the number of isoforms identified per gene (1 – 86), with each gene associated with a median of 2 isoforms. Only 10\% (n = 4,641) of isoforms were detected across all the samples (Figure \ref{fig:isoseq_whole_ERCC}a), with about half (47.8\%) detected in 2 - 3 samples with very low transcript expression (Figure \ref{fig:isoseq_whole_ERCC}b). Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n = 57) of ERCCs were detected, those of which were more highly expressed and with a threshold concentration of XX (Figure \ref{fig:isoseq_whole_ERCC}c). However of those ERCCs detected, the number of FL reads detected was highly correlated to the known amount used (corr = 0.98, P = 1.42 x 10\textsuperscript{-41} Figure \ref{fig:isoseq_whole_ERCC}d), highlighting the power of Iso-Seq to quantify highly-expressed transcripts. 
+Compared with the mouse reference genome, there was a wider range in the number of isoforms identified per gene (1 – 86), with each gene associated with a median of 2 isoforms. Only 10\% (n = 4,641) of isoforms were detected across all the samples (Figure \ref{fig:isoseq_whole_lowlyexp}a), with about half (47.8\%) detected in 2 - 3 samples with very low transcript expression (Figure \ref{fig:isoseq_whole_lowlyexp}b). Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n = 57) of ERCCs were detected, those of which were more highly expressed and with a threshold concentration of XX (Figure \ref{fig:isoseq_whole_ercc}a). However of those ERCCs detected, the number of FL reads detected was highly correlated to the known amount used (corr = 0.98, P = 1.42 x 10\textsuperscript{-41} Figure \ref{fig:isoseq_whole_ercc}b), highlighting the power of Iso-Seq to quantify highly-expressed transcripts. 
 
 Gene ontology (GO) analysis showed that the most enriched molecular function amongst the 100 most transcriptionally diverse genes in mouse cortex was ‘tubulin binding’ (odds ratio = 7.90, adjusted P =  6.70 x 10\textsuperscript{-4}), driven by the overexpression of MAPT in TG mice.
 %an interesting observation given the role that RNA-binding proteins (RBPs) themselves play in regulating tissue-specific patterns of alternative splicing. 
@@ -475,23 +502,34 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={0 12cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=4,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Isoform diversity across Tg4510 samples and coverage of ERCC transcripts]%
-	{\textbf{Highly-expressed isoforms are more likely to be sequenced across sampples and accurately quantified}: a) No significant difference in run output was observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry (Sequencing Primer v3; Sequel Binding Kit 2.1) and diffusion loading. b) Samples with RIN $>$8 were selected for Whole Transcriptome Iso-Seq, with TG samples having distinctly lower RIN values than WT samples. However, no significant difference was observed for run output between WT and TG}
-	\label{fig:isoseq_whole_ERCC}
+	{\textbf{Highly-expressed isoforms are more likely to be sequenced across sampples and accurately quantified}: Shown is \textbf{a)} the distribution of isoforms detected in the number of mouse samples, with a third detected in any two of the total 12 samples. However, \textbf{b)} quantification of these isoforms had very low expression (1-2 FL read), whereas those that were commonly detected across all 12 samples were very highly expressed. FL - Full Length}
+	\label{fig:isoseq_whole_lowlyexp}
 \end{figure}
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=6,trim={0 12cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=6,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
+	{\textbf{Over 60\% of ERCCs were detected with highly accurate quantification} \textbf{a} Highly-concentrated ERCCs were detected as single molecules, as expected, and \textbf{b} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
+	\label{fig:isoseq_whole_ercc}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Correlation of isoform diversity with transcript length and number of exons]%
-	{\textbf{Longer genes with more exons are associated with more isoforms}: \textbf{a} The majority of isoforms have a length between 1 - 5kb. \textbf{b)} The number of exons was correlated with the transcript length, and the \textbf{c)} the number of isoforms was correlated with the length and \textbf{d)} and the number of exons per gene. Gene length and exon number is represented by the longest transcript}
+	{\textbf{Longer genes with more exons were associated with more isoforms}: \textbf{a} The majority of isoforms have a length between 1 - 5kb. \textbf{b)} The number of exons was correlated with the transcript length, and the \textbf{c)} the number of isoforms was correlated with the length and \textbf{d)} and the number of exons per gene. Gene length and exon number is represented by the longest transcript. kb - kilobases}
 	\label{fig:isoseq_whole_isoform_length_corr}
 \end{figure}
+
 
 \newpage
 \subsection{Iso-Seq vs RNA-Seq} 
@@ -532,43 +570,91 @@ Interestingly, the transcriptome was made up of 50\% of isoforms that were known
 	\label{tab:sqanti_output_whole}
 \end{table}
 
-Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitney-Wilcoxon test, W = 3.66 x 108, P < 2.23 x 10\textsuperscript{-308}) and longer (Mann-Whitney-Wilcoxon test, W = 2.37 x10\textsuperscript{8}, P = 2.13 x 10\textsuperscript{-42}) with more exons (Mann-Whitney-Wilcoxon test, W = 1.94 x 10\textsuperscript{8}, P < 2.23 x 10\textsuperscript{-308}) (Figure X), suggesting that they would have been harder to detect using traditional short-read RNA-Seq due to the difficulty in assembling transcripts with limited read coverage. These novel isoforms were also more likely to be associated with novel transcription start sites (1,454 novel isoforms vs 1,154 annotated isoforms at least 1kb away from known TSS, Fisher's Test: P = 6.16 x 10\textsuperscript{-12}, odds ratio = 1.32) and termination sites (21,506 novel isoforms vs 21,434 annotated isoforms less than 1kb away from known TTS) than known isoforms. 
+Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitney-Wilcoxon test, W = 3.66 x 108, P < 2.23 x 10\textsuperscript{-308} \ref{fig:isoseq_whole_novel_known_iso_corr}a,b) and longer (Mann-Whitney-Wilcoxon test, W = 2.37 x10\textsuperscript{8}, P = 2.13 x 10\textsuperscript{-42}, Figure \ref{fig:isoseq_whole_novel_known_iso_corr}c,d) with more exons (Mann-Whitney-Wilcoxon test, W = 1.94 x 10\textsuperscript{8}, P < 2.23 x 10\textsuperscript{-308}, Figure \ref{fig:isoseq_whole_novel_known_iso_corr}e,f), suggesting that they would have been harder to detect using traditional short-read RNA-Seq due to the difficulty in assembling transcripts with limited read coverage. These novel isoforms were also more likely to be associated with novel transcription start sites (1,454 novel isoforms vs 1,154 annotated isoforms at least 1kb away from known TSS, Fisher's Test: P = 6.16 x 10\textsuperscript{-12}, odds ratio = 1.32) and termination sites (21,506 novel isoforms vs 21,434 annotated isoforms less than 1kb away from known TTS) than known isoforms. 
 %lncRNA with RNASeq
-
-The different types of splicing events were also compared between known and novel isoforms (see Section X). In total, 40,259 alternative splicing events were identified with AF (alternative TSS variation) and SE being the most prevalent events (AF: 12,853, 32\%; SE: 8,686, 21.6\%). It is important to note, however, that only around 30\% of 5'end isoforms were located near (<5bp) any annotated 5' end whereas 70\% of 3' ends were located near (<5bp) annotated 3'ends - this discrepancy is likely due to a combination of mRNA degradation, template switching artifacts during reverse transcription and true novel alternative TSS. 
-
-Except for AF and AL, all the other different splicing events, and in particularly intron retention, were more likely to be observed in novel isoforms than in known isoforms, implicating the power of Iso-Seq to detect full-length transcripts and the ability to recapitulate the usage of complex splicing events that would have otherwise been underestimated with only RNA-Seq data alone (Fisher's Test, A3: P < 2.23 x 10 \textsuperscript{–16}, odds ratio = 2.69; A5: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 2.62, IR: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 4.23; MX: P = 6.85 x 10\textsuperscript{–9}, odds ratio = 1.68; SE: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 1.45) 
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=5,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=7,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Whole Transcriptome Iso-Seq run output in transgenic and wild type Tg4510 mouse model]%
-	{\textbf{Whole Transcriptome Iso-Seq run output in transgenic and wild type Tg4510 mouse model}: a) No significant difference in run output was observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry (Sequencing Primer v3; Sequel Binding Kit 2.1) and diffusion loading. b) Samples with RIN $>$8 were selected for Whole Transcriptome Iso-Seq, with TG samples having distinctly lower RIN values than WT samples. However, no significant difference was observed for run output between WT and TG}
-	\label{fig:isoseq_whole_rarefaction}
+	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
+	{\textbf{Novel isoforms were less expressed, longer and had more exons than known isoforms}: Shown is the \textbf{a)} Iso-Seq transcript expression, the \textbf{c)} transcript length, and the \textbf{e)} the number of exons of novel and known isoforms. The known and novel isoforms can be further subdivided and classified, with the \textbf{b)} Iso-Seq expression \textbf{d)} transcript length and \textbf{f)} number of exons for each category. According to SQANTI, known isoforms are subdivided into FSM and ISM, and novel isoforms are subdivided into NIC, NNC, and fusion. FSM – Full Splice Match, ISM – Incomplete Splice Match, NIC – Novel In Catalogue, NNC – Novel Not in Catalogue.}   
+	\label{fig:isoseq_whole_novel_known_iso_corr}
+\end{figure}
+
+
+The different types of splicing events were also compared between known and novel isoforms (see Section X). In total, 40,249 alternative splicing events were identified in annotated genes with AF (alternative TSS variation) and SE being the most prevalent events (AF: 12,853, 31.9\%; SE: 8,686, 21.6\%, Figure \ref{fig:isoseq_whole_As_events}). It is important to note, however, that only around 30\% of 5'end isoforms were located near (<5bp) any annotated 5' end whereas 70\% of 3' ends were located near (<5bp) annotated 3'ends - this discrepancy is likely due to a combination of mRNA degradation, template switching artifacts during reverse transcription and true novel alternative TSS. 
+
+Except for AF and AL, all the other different splicing events, and in particularly intron retention, were more likely to be observed in novel isoforms than in known isoforms, implicating the power of Iso-Seq to detect full-length transcripts and the ability to recapitulate the usage of complex splicing events that would have otherwise been underestimated with only RNA-Seq data alone (Fisher's one-tailed Test, A3: P = 7.78 x 10 \textsuperscript{–14}, odds ratio = 1.34; A5: P = 1.21 x 10\textsuperscript{–13}, odds ratio = 1.45, IR: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 4.92; MX: P = 4.18 x 10\textsuperscript{–11}, odds ratio = 1.81; SE: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 1.57, Figure \ref{fig:isoseq_whole_As_events}). 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=8,trim={0 19cm 0 2cm},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq]%
+	{\textbf{Alternative first is the most prevalent AS event, and novel isoforms are more likely to be characterised with complex AS events}: Shown is the proportion of AS events in annotated genes, and further subdivided by known and novel isoforms. Novel isoforms were more likely to be characterised by all AS events, with the exception of AF and AL. MX and SE events were determined using SUPPA2, IR with SQANTI2 and A3’, A5’, AF and AL with custom scripts. AF – Alternative First Exon, AL – Alternative Last Exon, A5’ – Alternative 5’ prime, A3’ – Alternative 3’ prime, IR – Intron Retention, MX – Mutually Exclusive, SE – Skipped Exon}
+	\label{fig:isoseq_whole_As_events}
 \end{figure}
 
 \subsection{Intron Retention and Nonsense mediated decay}
-For the majority of genes characterised by splicing, only one or two splicing events were observed (n = 10,708 (81.8\% of AS genes)), suggesting that such events were often mutually independent. However, interestingly, Nonsense-mediated mRNA decay (NMD) - a mechanism that acts to reduce transcriptional errors by degrading transcripts containing premature stop codon - was found to be particularly enriched amongst isoforms characterised with intron retention (IR-isoforms\nomenclature{IR-isoforms}{Intron-retained isoforms}). Of the 6,803 isoforms characterised with intron retention, 38.7\% (1,930) were also predicted to undergo NMD (NMD-isoforms \nomenclature{NMD-isoforms}{Isoforms characterised with nonsense mediated decay}), as characterised by the presence of an ORF and a coding sequence (CDS) end motif before the last junction. Novel isoforms, more likely to be characterised with intron retention, were also more likely to be associated with NMD than known isoforms (Fisher's Test: P < 2.23 x 10\textsuperscript{-16}, odds ratio = 4.16). 
+For the majority of genes characterised by splicing, only one or two splicing events were observed (n = 10,708, 81.8\% of AS genes, Table \ref{tab:AS_events_spliced}), suggesting that such events were often mutually independent. However, interestingly, Nonsense-mediated mRNA decay (NMD) - a mechanism that acts to reduce transcriptional errors by degrading transcripts containing premature stop codon - was found to be particularly enriched amongst isoforms characterised with intron retention (IR-isoforms\nomenclature{IR-isoforms}{Intron-retained isoforms}). Of the 6,803 isoforms characterised with intron retention, 38.7\% (n = 1,930) were also predicted to undergo NMD (NMD-isoforms\nomenclature{NMD-isoforms}{Isoforms characterised with nonsense mediated decay}), as characterised by the presence of an ORF and a coding sequence (CDS) end motif before the last junction. Novel isoforms, more likely to be characterised with intron retention, were also more likely to be associated with NMD than known isoforms (Fisher's Test: P < 2.23 x 10\textsuperscript{-16}, odds ratio = 4.16). 
 
-These isoforms with both IR and NMD were found to more lowly expressed than isoform only with NMD and no IR (W = 7.50 x 10\textsuperscript{6}, P = 1.67 x 10\textsuperscript{-42}), those of which were also more lowly expressed than isoforms with no NMD. Furthermore, only a small number of genes were associated with isoforms where IR and NMD were mutually exclusive (n = 277 (1.91\%) genes), providing additional support for the hypothesized relationship between these two transcriptional control mechanisms.
+These isoforms with both IR and NMD were found to more lowly expressed than isoform only with NMD and no IR (W = 7.50 x 10\textsuperscript{6}, P = 1.67 x 10\textsuperscript{-42}, Figure \ref{fig:isoseq_whole_IRNMD}b), those of which were also more lowly expressed than isoforms with no NMD. Furthermore, only a small number of genes were associated with isoforms where IR and NMD were mutually exclusive (n = 277, 1.91\% of total genes, Figure \ref{fig:isoseq_whole_IRNMD}a), providing additional support for the hypothesized relationship between these two transcriptional control mechanisms.
 
+\begin{table}[ht]
+	\centering
+	\begin{tabularx}{0.6\textwidth}{cc}
+		\toprule
+		Number of Splicing Events & Frequency \\ \midrule
+		1                           & 7315 (55.89\%)                \\
+		2                           & 3393 (25.92\%)                \\
+		3                           & 1724 (13.17\%)                \\
+		4                           & 548 (4.19\%)                  \\
+		5                           & 108 (0.83\%)                  \\ \bottomrule
+	\end{tabularx}
+	\caption[Number of Splicing Events]%
+	{Shown is the number of splicing events observed in genes that are alternatively spliced. Majority of genes are detected with only one or two splicing events.}
+	\label{tab:AS_events_spliced}
+\end{table}
+
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=9,trim={0 1cm 0 0.5cm},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Association of intron retention and NMD in Whole Transcriptome Iso-Seq]%
+	{\textbf{Intron retention is associated with nonsense-mediated mRNA decay (NMD) and reduced expression}: Shown is the overlap of genes associated with isoforms characterised with intron retention (IR), nonsense-mediated mRNA decay (NMD), and transcripts with both IR and NMD (IR-NMD). Of note, genes with isoforms characterised by both IR and NMD were further classified into genes that contain isoforms where both events are observed together (purple) and where they are mutually exclusive (dark orange). As such, 13800 genes were associated with IR-isoforms that were predicted for NMD, and 168 genes that contained IR-isoforms and NMD-isoforms. Isoforms that were characterised with both IR and NMD were particularly lowly expressed compared to isoforms with either IR, NMD or neither events. IR – Intron Retention, NMD – Nonsense-mediated mRNA decay.}
+	\label{fig:isoseq_whole_IRNMD}
+\end{figure}
 
 \subsection{Fusion Genes}
 Transcriptional read-through between two (or more) adjacent genes can produce ‘fusion transcripts’ that represent an important class of mutation in several types of cancer32. Although fusion events are thought to be rare, we found that ~0.4\% of transcripts included exons from two or more adjacent genes (mouse cortex: n = 297 fusion transcripts associated with 218 genes (1.51\%)). 
 
 
 \subsection{LncRNA}
-Although the majority of isoforms (93.6\%, 43,450) mapping to known genes were classified as protein-coding by the presence of an ORF, a relatively large number of isoforms (n = 1,141) were mapped to genes annotated as encoding lncRNA (n = 734 genes). Compared to isoforms not defined as lncRNA (non-lncRNA) by reference genome, these lncRNA isoforms were found to be longer (Mann-Whitney-Wilcoxon test, W = 3.52 x 10\textsuperscript{7}, P = 8.24 x 10\textsuperscript{-98}), despite containing fewer exons (W = 4.56 x 10\textsuperscript{7}, P < 2.23 x 10\textsuperscript{-308}) and being enriched for mono-exonic molecules(23.9\% vs 2.02\%) - corroborating previous findings from other long-read studies(\cite{Derrien2012},\cite{Tilgner2015}). These lncRNA isoforms were found to be more lowly expressed than non-lncRNA isoforms (W = 3.16 x 10\textsuperscript{7}, P = 5.67 x 10\textsuperscript{-40}), with fewer RNA isoforms identified per lncRNA gene (mean n = 1.55, range = 1 - 34 vs mean n = 3.29, range = 1 - 86; W = 7.40 x 10\textsuperscript{6}, P = 5.76 x 10\textsuperscript{-107}). 
+Although the majority of isoforms (93.6\%, 43,450) mapping to known genes were classified as protein-coding by the presence of an ORF, a relatively large number of isoforms (n = 1,141) were mapped to genes annotated as encoding lncRNA (n = 734 genes). Compared to isoforms not defined as lncRNA (non-lncRNA) by reference genome, these lncRNA isoforms were found to be longer (Mann-Whitney-Wilcoxon test, W = 3.52 x 10\textsuperscript{7}, P = 8.24 x 10\textsuperscript{-98}, Figure \ref{fig:isoseq_whole_lncRNA}a), despite containing fewer exons (W = 4.56 x 10\textsuperscript{7}, P < 2.23 x 10\textsuperscript{-308}, Figure \ref{fig:isoseq_whole_lncRNA}b) and being enriched for mono-exonic molecules(23.9\% vs 2.02\%) - corroborating previous findings from other long-read studies(\cite{Derrien2012},\cite{Tilgner2015}). These lncRNA isoforms were found to be more lowly expressed than non-lncRNA isoforms (W = 3.16 x 10\textsuperscript{7}, P = 5.67 x 10\textsuperscript{-40}), with fewer RNA isoforms identified per lncRNA gene (mean n = 1.55, range = 1 - 34 vs mean n = 3.29, range = 1 - 86; W = 7.40 x 10\textsuperscript{6}, P = 5.76 x 10\textsuperscript{-107}, Figure \ref{fig:isoseq_whole_lncRNA}e). 
 
 Importantly, over a third (448, 39.3\%) of these annotated lncRNA isoforms contained a putative ORF, supporting recent observations that lncRNA have potential protein coding capacity, with shorter ORFs than non-lncRNA isoforms (mean length = 139bp, s.d = 127bp vs mean length = 519bp, s.d = 393bp; W = 1.75 x 10\textsuperscript{7}, P = 8.33 x 10\textsuperscript{-195}). 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=10,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of LncRNA in Whole Transcriptome runs]%
+	{\textbf{LncRNA isoforms were more lowly expressed and typically longer than non-lncRNA transcripts, despite containing fewer exons}: Shown is the distribution of the \textbf{a)} transcript length, \textbf{b)} number of exons, \textbf{c)} transcript expression, \textbf{d)} ORF length and the \textbf{e)} diversity of isoforms annotated to lncRNA and non-lncRNA.lncRNA – long non-coding RNA}
+	\label{fig:isoseq_whole_lncRNA}
+\end{figure}
 
 \subsection{Novel Genes}
 Although the vast majority of isoforms were annotated to known genes, 0.5\% (n = 223 isoforms) did not and potentially represent "novel" genes (n = 189 genes). These novel genes were all multi-exonic (mean length = 1.75kb, s.d = 1.21kb, range = 0.098 - 6.86kb, mean number of exons = 2.5) and were identified uniformly across the genome/chromosome, with over half the identified transcripts from these genes predicted to be non-coding (n = 143 (64.1\%) novel-gene transcripts), shorter and more lowly expressed than annotated genes (length: W = 7.79 x 10\textsuperscript{6}, P = 5.22 x 10\textsuperscript{-45}; expression: W = 2.29x 10\textsuperscript{6}, P = 1.5 x 10\textsuperscript{-73}).
 
 %https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885035/ - Lorna’s paper on example of isoforms in their selective panel of genes that have differential quantification associated with AD. Good examples to check with transcriptome data to see if this is also observed in mouse (I.e. TAU3 increase) 
 
+\newpage
 \section{Discussion}
 "The apparent length limitation to 6kb is most likely a combined result of ineffective size selection and the limitation ofthe sequencing chemistry (P4-C2, Methods) used in this study"; what are the proportion of transcripts relative to genome in size? The length of clustered transcripts closely reflect size distribution of the input full-length reads. "Final transcripts include a large number of isoforms greater than 3 kb that are not accessible by simply using CCS reads."   
 

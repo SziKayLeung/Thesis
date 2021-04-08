@@ -1,17 +1,21 @@
+\newcommand{\myparagraph}[1]{\textbf{#1}\mbox{}\\} % next line after paragraph use
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
 %\usepackage{mathchars}
 \usepackage{setspace}
 \onehalfspacing
-\usepackage[toc]{appendix}
 \usepackage{subfiles}
 \usepackage[parfill]{parskip}
 \usepackage{siunitx,tabularx,ragged2e,booktabs,caption,multirow}
 \usepackage{tocloft} % local contents list 
 \usepackage{etoc} % local contents list 
 \setcounter{secnumdepth}{4} % local contents list 
+\usepackage{etoolbox} % https://tex.stackexchange.com/questions/384514/make-subsection-visible-in-local-toc-only-not-in-main-toc
+\usepackage[titletoc,page, title, header]{appendix}
 \usepackage{enumitem} % enumerate, itemize formatting
+\AtBeginEnvironment{appendix}{\etocsettocdepth.toc{section}\etocignoretoctocdepth
+	\etocsetnexttocdepth{subsection}}
 %\immediate\write18{makeindex \Knit.nlo -s nomencl.ist -o Knit.nls} 
 \usepackage{nomencl} %list of abbreviations
 \makenomenclature
@@ -20,10 +24,12 @@
 \usepackage{xr} % for cross-referencing of chapters
 \usepackage{ulem} % underline
 \usepackage[T1]{fontenc} % underscore
-
 \usepackage[round]{natbib} % referecing style with ()
 \bibliographystyle{plainnat} % bioligraophy 
 \usepackage{subcaption} % multiple figures 
+\usepackage[dvipsnames]{xcolor} % colour text
+\usepackage{libertine} % space between text on same line
+\usepackage{longtable} % longtables overflow into next page
 
 \usepackage{pdfpages} % import pdf 
 % tables and landscape
@@ -31,6 +37,7 @@
 \usepackage{multirow}
 \usepackage{lscape}
 \usepackage{todonotes} %todonotes
+\captionsetup[table]{width=16cm}
 
 
 \usepackage{hyperref} %hyperlinks

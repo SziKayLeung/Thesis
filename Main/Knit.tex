@@ -10,6 +10,11 @@
 %\renewcommand{\nomname}{List of Abbreviations}
 
 %% page settings
+% Make the "Part I" text invisible
+\renewcommand \thepart{}
+\renewcommand \partname{}
+\setlist[itemize]{noitemsep, topsep=-12pt} % space before itemise and paragraph
+\setlist[enumerate]{noitemsep, topsep=-12pt} % space before itemise and paragraph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -49,35 +54,39 @@ I want to thank...
 \printnomenclature 
 
 \chapter{Introduction}
-\subfile{../General_Introduction/General_Introduction.tex}
+%\subfile{../General_Introduction/General_Introduction.tex}
 
-\chapter{General Methodology}
-\subfile{../General_Methodology/General_Methodology.tex}
-
-\chapter{Pacific Biosciences: Isoform Sequencing}
-\subfile{../Project_Development/IsoSeq.tex}
-\subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
-\subfile{../Project_Development/IsoSeq_Optimisation.tex}
-\subfile{../Project_Development/Isoseq_Protocol.tex}
-
-\chapter{Oxford Nanopore: cDNA Sequencing}
-\subfile{../Project_Development/Oxford_Nanopore.tex}
-\subfile{../Project_Development/ONT_Protocol.tex}
+\chapter{Long-read Sequencing}
+%\subfile{../Project_Development/IsoSeq.tex}
+\subfile{../Project_Development/IsoSeq_Lab.tex}
+%\subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
+%\subfile{../Project_Development/IsoSeq_Optimisation.tex}
+%\subfile{../Project_Development/Oxford_Nanopore.tex}
+%\subfile{../Project_Development/ONT_Lab.tex}
+%\subfile{../Project_Development/ONT_Bioinformatics.tex}
 
 \chapter{Whole Transcriptome}
 \subfile{../Whole_Transcriptome/Whole_Transcriptome.tex}
 
 \chapter{Targeted Transcriptome}
-\subfile{../Targeted_Transcriptome/ONT_Targeted_Transcriptome.tex}
+\subfile{../Targeted_Transcriptome/Targeted_Transcriptome.tex}
+
+\chapter{Transcriptional differences between WT and TG mice}
+%\subfile{../Tg4510_Differential/Tg4510_Differential.tex}
 %\input{chapters/chapter05}
 
-\chapter{ONT vs PacBio}
-\subfile{../ONT_Analyses/ONT_vs_PacBio.tex}
-
-\chapter{Proteomics (Eli-Lilly)}
 
 \chapter{Conclusion}
 %\input{chapters/conclusion}
+
+\newpage
+\part{Appendix} % Start the appendix part
+\begin{appendix}
+\chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}
+\subfile{../Project_Development/Isoseq_Protocol.tex}
+\chapter{Oxford Nanopore Transcriptome Protocol}
+%\subfile{../Project_Development/ONT_Protocol.tex}
+\end{appendix}
 
 \bibliography{library}
 
