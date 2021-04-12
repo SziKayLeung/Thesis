@@ -54,35 +54,64 @@ These mice also exhibit cognitive and behavioural impairments, with neurofibrill
 
 \newpage
 \section{Methods}
-As detailed in Chapter X, Pacific Biosciences Iso-Seq dataset was generated with whole transcriptome approach using high quality RNA from mouse cortex of rTg4510 model (n = 12, WT = 6, TG = 6, mean age = 5 months, range = 2 - 8 months) (Figure \ref{fig:isoseq_samples}). As a technological comparison and validation of the IsoSeq approach, a subset of samples were also sequenced on ONT (Figure \ref{fig:ONT_samples}). While both long-read sequencing approaches are superior to short-read RNA-Sequencing in the generation of full-length transcripts, there are major inherent batch biases due to the time-consuming and laborious protocol involved. The library preparation was standardised as much as possible, with the initial input of RNA for cDNA synthesis and the final library input for sequencing. However, due to the need for optimising each sample for library preparation and the rapid updates of sequencing chemistry throughout my PhD, each sample was effectively sequenced sequentially rather than as a batch [Figure X]. 
+Pacific Biosciences Iso-Seq dataset was generated with whole transcriptome approach using high-quality RNA from mouse entorhinal cortex of rTg4510 model (n = 12, WT = 6, TG = 6, mean age = 5 months, range = 2 - 8 months) (Figure \ref{fig:isoseq_samples}). As a technological comparison and validation of the IsoSeq approach, a subset of samples were also sequenced on ONT (Figure \ref{fig:ONT_samples}). While both long-read sequencing approaches are superior to short-read RNA-Sequencing in the generation of full-length transcripts, there are major inherent batch biases due to the time-consuming and laborious protocol involved. The library preparation was standardised as much as possible, with the initial input of RNA for cDNA synthesis and the final library input for sequencing. However, due to the need for optimising each sample for library preparation and the rapid updates of sequencing chemistry throughout my PhD, each sample was effectively sequenced sequentially rather than as a batch. 
 
 \subsection{RNA Extraction}
+Total RNA from mouse entorhinal cortex was extracted by Dr.Isabel Castanho (University of Exeter) using the AllPrep DNA/RNA Mini Kit (Qiagen), which is fully detailed in \cite{Castanho2020}. Briefly, cDNA libraries were prepared from ~450ng of total RNA plus ERCC spike-in synthetic RNA controls (Ambion, dilution 1:100), purified using Ampure XP magnetic beads (Beckman Coulter) and profiled using D1000 ScreenTape System (Agilent). 
+
+\subsection{RNA-Seq Library Preparation, Illumina Sequencing \& raw data processing}
 \label{section: ch2_rna_extraction}
-Total RNA from mouse entorhinal cortex was extracted by Dr. Isabel Castanho using the AllPrep DNA/RNA Mini Kit (Qiagen). Samples were selected for long-read sequencing based on RNA quality and quantity, previously determined using RNA ScreenTape assay (Agilent) on 2200 TapeStation System or the RNA 6000 Nano kit (Agilent) on the 2100 Bioanalyzer (Section \ref{section:ch2_bioanalyzer}). 
+In addition to long-read Iso-Seq, RNA from the same samples were also prepared for short-read RNA-sequencing by Dr. Isabel Castanho, which is also fully detailed in \cite{Castanho2020}. Raw sequencing reads, with Phred (Q) $\geq$ 35, were trimmed (ribosomal sequence removal, quality threshold 20, minimum sequence length 35) using fastqmcf (v1.0), yielding a mean untrimmed read depth of \textasciitilde{}20 million reads/sample. 
+ 
+
+\subsection{Iso-Seq Library Preparation}
+Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200ng RNA from each sample was used for first strand cDNA synthesis (Chapter \ref{section:ch2_cDNA_synthesis_explanation}) and amplified using PCR with 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}, Chapter \ref{section:ch2_PCR_explanation}). Purification with 0.4X and 1X AMPure PB beads selectively and successfully enriched cDNA with different molecular weights (Figure \ref{fig:isoseq_whole_bioresults}). The two fractions were then recombined at equimolar quantities and library preparation was successfully performed (Figure \ref{fig:isoseq_whole_bioresults}). Sequencing was performed for each sample on the PacBio Sequel using a 1M SMRT cell.
+    
+\begin{figure}[!htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=2,trim={0 35cm 0 0},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Iso-Seq Whole Transcriptome - PCR cycle optimisation]%
+	{\textbf{Samples were typically amplified using 14 cycles after performing PCR cycle optimisation}: An example of gel image from PCR cycle optimisation of Samples K17, O23, L22 and S18. PCR aliquots were collected every two cycles (10, 12, 14, 16, 18, 20) and then run on gel electrophoresis. 14 cycles was determined to be optimal for large-scale amplification,as cycles below showed insufficient amplification whereas cycles above showed signs of over-amplification, which would result in biased sequencing representation. Ladder (L) shown is 1kb DNA ladder.}
+	\label{fig:isoseq_whole_pccresults}
+\end{figure}
 
 
-Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), with the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM dataset, TSS and TTS sites and classification of lncRNA in combination with lcRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artifacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers. 
+
+\begin{figure}[!htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=3, ,trim={0 21cm 0 0},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Iso-Seq Whole Transcriptome - cDNA purification and library preparation]%
+	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates}: Following large scale amplification using the optimum cycle number (as determined from Figure \ref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) Ampure beads. \textbf{a)} A bioanalyzer gel of amplified cDNA from the two fractions after ampure bead purification. \textbf{b)} A zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 1 and \textbf{b)} a zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 2, from the gel depicted in Figure a). \textbf{d)} A zoomed-in bioanalyzer electropherogram of Sample K17 and \textbf{e)} of Sample K23 recombining both fractions and performing SMRTbell template preparation. The samples at this point have been DNA-damage repaired, exonuclease treated, and ligated with SMRT bell adapters. The y-axis of the bioanalyzer electropherogram represents the size. The size distribution for each fraction was determined from the start to the end point of the smear, as in Figure a), or the equivalent peak, as depicted in Figure b) and Figure c). 
+	\\
+	\\	 	
+	As is evident from Figures a) - c), cDNA in Fraction 2 has a significantly higher molecular weight across all the samples as would be expected. As seen in Figures d) and e), pooling of both fractions have enriched high molecular weight cDNA fragments, which were still in intact after multiple processing in SMRTbell template preparation. Of note, despite the samples were prepared sequentially, the bioanalyzer profiles were consistent. 
+	
+	F1 - Fraction 1 containing cDNA purified with 1X Ampure beads; F2 - Fraction 2 containing cDNA purified with 0.4X Ampure beads
+ }
+	\label{fig:isoseq_whole_bioresults}
+\end{figure}
+
+
+
+\subsection{Iso-Seq Data Processing}
+Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), and then merged to generate one complete transcriptome (Figure \ref{fig:isoseq_whole_pipeline}). In brief, the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM dataset, TSS and TTS sites and classification of lncRNA in combination with lcRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artifacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers.
+
+\begin{figure}[htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=1,trim={0 12cm 2cm 1cm},clip, scale = 0.45]{Pictures/Pipeline.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[PacBio Isoseq Bioinformatics Pipeline]%
+	{\textbf{PacBio Isoseq Bioinformatics Pipeline}: Pipeline is adapted from ToFU \nomenclature{ToFU}{Transcript isOforms: Full-length and Unassembled} \cite{Gordon2015}}
+	\label{fig:isoseq_whole_pipeline}
+\end{figure}
+ 
 
 Alternative splicing events were assessed using a range of packages and custom scripts: mutually exclusive exons (MX) and skipped exons (SE) were assessed using SUPPA with the parameter –f ioe, intron retention (IR) with SQANTI2, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
-
-\iffalse
-\newpage
-\begin{figure}[h]
-	\includegraphics[page=2, width=1\linewidth,height=0.4\textheight]{Pictures/IsoSeq_Samples.png}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Tg4510 WT and TG samples sequenced using Whole and Targeted Iso-Seq]%
-	{\textbf{Tg4510 WT and TG samples sequenced using Whole and Targeted Iso-Seq}: 12 samples at baseline and final age timepoint (WT = 6, TG = 6, ages = 2 months, 8 months) were sequenced using Whole Iso-Seq (highlighted boxes) and an additional 12 samples (WT = 6, TG = 6, ages = 4 months and 6 months) were sequenced using Targeted Iso-Seq (outlined). Text on each mouse figure refer to sample names}
-	\label{fig:isoseq_samples}
-\end{figure}
-
-\begin{figure}[h]
-	\includegraphics[page=2, width=1\linewidth,height=0.4\textheight]{Pictures/ONT_Samples.png}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Tg4510 WT and TG samples sequenced using Whole and Targeted ONT]%
-	{\textbf{Tg4510 WT and TG samples sequenced using Whole and Targeted ONT}: A subset of samples were also sequenced as whole transcriptome on ONT (WT = 1, TG = 1, age  = 2 months, highlighted boxes) and targeted on ONT (WT = 7, TG = 11, outlined). Text on each mouse figure refer to sample names}
-	\label{fig:ONT_samples}
-\end{figure}
-\fi
 
 \newpage
 \section{Results}
@@ -123,7 +152,7 @@ Following library preparation and single-molecule real time sequencing (SMRT), a
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
-	{\textbf{Whole Transcriptome Iso-Seq runs generated ~30Gb per sample, independent of RIN score}: Sequential Iso-Seq run generated \textbf{a)} a range of 30-35Gb per sample of the whole transcriptome, with no significant difference observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry. \textbf{b)} Despite TG samples having distinctly lower RIN values than WT samples, no significant difference in yield output was observed between WT and TG.}
+	{\textbf{Whole Transcriptome Iso-Seq runs generated \textasciitilde30Gb per sample, independent of RIN score}: Sequential Iso-Seq run generated \textbf{a)} a range of 30-35Gb per sample of the whole transcriptome, with no significant difference observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry. \textbf{b)} Despite TG samples having distinctly lower RIN values than WT samples, no significant difference in yield output was observed between WT and TG.}
 	\label{fig:isoseq_whole_run_output}
 \end{figure}
 

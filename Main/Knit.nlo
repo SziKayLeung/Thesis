@@ -1,6 +1,12 @@
-\nomenclatureentry{aPCR@[{PCR}]\begingroup Polymerase Chain Reaction\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{adNTPs@[{dNTPs}]\begingroup Deoxynucleotides\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aRIN@[{RIN}]\begingroup RNA Integrity Number\nomeqref {2.1}|nompageref}{20}
-\nomenclatureentry{adsDNA@[{dsDNA}]\begingroup double-stranded DNA\nomeqref {2.1}|nompageref}{21}
-\nomenclatureentry{aIR-isoforms@[{IR-isoforms}]\begingroup Intron-retained isoforms\nomeqref {3.0}|nompageref}{41}
-\nomenclatureentry{aNMD-isoforms@[{NMD-isoforms}]\begingroup Isoforms characterised with nonsense mediated decay\nomeqref {3.0}|nompageref}{41}
+\nomenclatureentry{aSMRT@[{SMRT}]\begingroup Single Molecule Real Time sequencing\nomeqref {2.0}|nompageref}{15}
+\nomenclatureentry{aZMW@[{ZMW}]\begingroup Zero-Mode-Waveguide\nomeqref {2.0}|nompageref}{15}
+\nomenclatureentry{aCCS@[{CCS}]\begingroup Circular Consensus Sequence\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aPCR@[{PCR}]\begingroup Polymerase Chain Reaction\nomeqref {2.0}|nompageref}{24}
+\nomenclatureentry{adNTPs@[{dNTPs}]\begingroup Deoxynucleotides\nomeqref {2.0}|nompageref}{24}
+\nomenclatureentry{aRIN@[{RIN}]\begingroup RNA Integrity Number\nomeqref {2.1}|nompageref}{26}
+\nomenclatureentry{adsDNA@[{dsDNA}]\begingroup double-stranded DNA\nomeqref {2.1}|nompageref}{27}
+\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {2.1}|nompageref}{31}
+\nomenclatureentry{aTPM@[{TPM}]\begingroup Transcripts per Million\nomeqref {2.1}|nompageref}{39}
+\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {3.0}|nompageref}{46}
+\nomenclatureentry{aIR-isoforms@[{IR-isoforms}]\begingroup Intron-retained isoforms\nomeqref {3.0}|nompageref}{60}
+\nomenclatureentry{aNMD-isoforms@[{NMD-isoforms}]\begingroup Isoforms characterised with nonsense mediated decay\nomeqref {3.0}|nompageref}{60}

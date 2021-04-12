@@ -1,4 +1,5 @@
 \newcommand{\myparagraph}[1]{\textbf{#1}\mbox{}\\} % next line after paragraph use
+\newcommand{\boldheader}[1]{\vspace{0.5cm}\textbf{#1}\mbox{}\\} % bold header titles and space before and after
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
@@ -24,12 +25,15 @@
 \usepackage{xr} % for cross-referencing of chapters
 \usepackage{ulem} % underline
 \usepackage[T1]{fontenc} % underscore
-\usepackage[round]{natbib} % referecing style with ()
-\bibliographystyle{plainnat} % bioligraophy 
 \usepackage{subcaption} % multiple figures 
 \usepackage[dvipsnames]{xcolor} % colour text
 \usepackage{libertine} % space between text on same line
 \usepackage{longtable} % longtables overflow into next page
+
+%% Bibliography
+\usepackage[superscript,biblabel]{cite}
+%\usepackage[round]{natbib} % referecing style with ()
+%\bibliographystyle{plainnat} % bioligraophy 
 
 \usepackage{pdfpages} % import pdf 
 % tables and landscape

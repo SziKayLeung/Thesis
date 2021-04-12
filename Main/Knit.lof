@@ -1,22 +1,33 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Evaluation of RNA integrity with Bioanalyzer and Tapestation}}{21}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces PacBio SMRT}}{16}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Generation of Circular Consensus Sequence}}{18}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Iso-Seq Lab pipeline used for whole transcriptome sequencing}}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Iso-Seq Lab pipeline used for targeted transcriptome sequencing}}{21}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Evaluation of RNA integrity with Bioanalyzer and Tapestation}}{26}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces PacBio Isoseq Bioinformatics Pipeline}}{31}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Isoform Classifications by SQANTI}}{38}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Whole Transcriptome Iso-Seq run yields and relationship to RIN score}}{29}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run}}{32}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Rarefaction Curves of Whole Transcriptome Iso-Seq Runs}}{33}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Isoform diversity across Tg4510 samples and coverage of ERCC transcripts}}{35}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Detection of ERCC standards in Whole Transcriptome Iso-Seq}}{35}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Correlation of isoform diversity with transcript length and number of exons}}{36}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{39}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq}}{40}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Association of intron retention and NMD in Whole Transcriptome Iso-Seq}}{42}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Characterisation of LncRNA in Whole Transcriptome runs}}{44}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Iso-Seq Whole Transcriptome - PCR cycle optimisation}}{44}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Iso-Seq Whole Transcriptome - cDNA purification and library preparation}}{45}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces PacBio Isoseq Bioinformatics Pipeline}}{46}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Whole Transcriptome Iso-Seq run yields and relationship to RIN score}}{49}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run}}{52}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Rarefaction Curves of Whole Transcriptome Iso-Seq Runs}}{53}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Isoform diversity across Tg4510 samples and coverage of ERCC transcripts}}{55}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Detection of ERCC standards in Whole Transcriptome Iso-Seq}}{55}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Correlation of isoform diversity with transcript length and number of exons}}{56}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{59}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq}}{60}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Association of intron retention and NMD in Whole Transcriptome Iso-Seq}}{62}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Characterisation of LncRNA in Whole Transcriptome runs}}{64}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Targeted Transcriptome Iso-seq run performance}}{51}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces On-Target rate in Transcriptome Iso-Seq runs}}{52}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex}}{53}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Classification of novel and known isoforms from Targeted Sequencing in mouse cortex}}{54}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Iso-Seq Targeted Transcriptome - cDNA amplification and purification}}{70}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Iso-Seq Targeted Transcriptome - Target Capture and library preparation}}{71}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Targeted Transcriptome Iso-seq run performance}}{75}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces On-Target rate in Transcriptome Iso-Seq runs}}{76}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex}}{77}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Classification of novel and known isoforms from Targeted Sequencing in mouse cortex}}{78}{figure.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -10,7 +10,7 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 
 
 \section{Methods}
-The extracted RNA from mouse rTg4510 samples were prepared for targeted transcriptome sequencing on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed using barcodes (listed in Table \ref{tab:barcode_primers}) and ran on the Sequel as three batches. Iso-Seq library preparation and SMRT sequencing is described in Chapter X. 
+The extracted RNA from mouse rTg4510 samples were prepared for targeted transcriptome sequencing on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed using barcodes (listed in Table \ref{tab:barcode_primers}) and ran on the Sequel as three batches. Iso-Seq library preparation and SMRT sequencing is described in Chapter X. Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200ng RNA from each sample was used for first strand cDNA synthesis (Chapter \ref{section:ch2_cDNA_synthesis_explanation}) and amplified using PCR with 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}, Chapter \ref{section:ch2_PCR_explanation}). Purification with 0.4X and 1X AMPure PB beads selectively and successfully enriched cDNA with different molecular weights (Figure \ref{fig:isoseq_whole_bioresults}). The two fractions were then recombined at equimolar quantities and library preparation was successfully performed (Figure \ref{fig:isoseq_whole_bioresults}). Sequencing was performed for each sample on the PacBio Sequel using a 1M SMRT cell.
 
 \begin{landscape}
 \begin{table}[]
@@ -95,9 +95,40 @@ The extracted RNA from mouse rTg4510 samples were prepared for targeted transcri
 	\end{tabular}
 \end{table}
 
+
+\begin{figure}[htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=1,trim={0 16cm 0 4cm},clip,scale = 0.45]{Figures/LabResults.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Iso-Seq Targeted Transcriptome - cDNA amplification and purification]%
+	{\textbf{The first stage between the targeted and whole transcriptome sequencing is the same with samples typically amplified using 14 cycles followed by enrichment of high molecular weight cDNA in Fraction 2: a)} Like whole transcriptome sequencing, samples were amplified using 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}) whereby cycles below generated insufficent cDNA and cycles above showed signs of over-amplification. The samples shown here (K19, K23, K21, K18, K20, K17) were multiplexed and sequenced in Batch 1 (see Table \ref{tab:mouse_samples_sequenced}. Ladder (L) shown is 100bp DNA ladder. \textbf{b)} Similar to whole transcriptome sequencing, ampilfied cDNA was further divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) Ampure beads. As shown in the bioanalyzer gel, there was an enrichment of higher-molecular weight cDNA in Fraction 2 compared to Fraction 1 across all the samples (with the exception of Sample K21 with loss of Fraction 2). Green and purple line represent the lower marker at 50bp and the upper marker at 17kb respectively. F1 - Fraction 1 containing cDNA purified with 1X Ampure beads; F2 - Fraction 2 containing cDNA purified with 0.4X Ampure beads.}
+	\label{fig:isoseq_targeted_pccresults}
+\end{figure}
+
+
+\begin{figure}[!htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=2,trim={0 14cm 3cm 1cm},clip,scale = 0.45]{Figures/LabResults.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Iso-Seq Targeted Transcriptome - Target Capture and library preparation]%
+	{\textbf{Successful target capture and library preparation across all batches, as shown by enrichment of transcripts with specific lengths:} \textbf{a)} and \textbf{c)} are bioanalyzer electropherogram traces of Batch 1 (n = 6) and Batch 2 (n = 9) respectively after enrichment of cDNA with selective IDT probes (Section \ref{section:ch2_targetcapture_explanation}). \textbf{b)}, \textbf{d)} and \textbf{f)} are bioanalyzer electropherogram traces of Batch 1, 2 and 3 respectively after library preparation (denoted here as "Final", Section \ref{section:ch2_smrtbelltemplate_explanation}. \textbf{e)} An overlay of Batch 2 after target capture and library preparation. 
+	\\
+	\\
+	As can be seen across all figures, target capture appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths, which differs from the broad peaks that are evident in whole transcriptome sequencing (Figure \ref{fig:isoseq_whole_bioresults}). Library preparation with ligation of SMRT bell templates retained these targeted transcripts with good peak overlay, as seen in figure e). The difference in peak height (i.e. cDNA quantity) between target capture and library preparation is due to a difference in input cDNA concentration when running Bioanalyzer - input cDNA after library preparation was diluted with a 1:5 dilution factor to maximise amount of cDNA available for sequencing, whereas input cDNA after target capture was not diluted.}  
+	\label{fig:isoseq_targeted_pccresults}
+\end{figure}
+
+\newpage
 \section{Results}
 \subsection{Run performance and sequencing metrics}
 Following library preparation and SMRT sequencing, a total of XXGb (s.d = XXGb) were obtained (Table \ref{tab:targeted_mouse_run_output}). Of note, 6 samples were first trialled and multiplexed in Batch 1 to determine the yield output and coverage depth - PacBio recommends starting with 4 - 8 samples for multiplexing. Having noticed that an average yield output (24Gb) with a high off-target sequencing, implicating saturation of target genes with 6 samples, the number was increased to 9 samples in Batch 2 and Batch 3. Despite more samples, the sequencing run for Batch 2 and 3, performed by Exeter's Seqeuncing Service, had a poor loading rate (38.1\% P1 of Batch 3 vs 71\% of Batch 1) and low subsequent yield. The samples were also potentially degraded after having been stored in -20\textdegree C for over 6 months due to Covid-19 lockdown. 
+
+The yield difference between the first and last two batches was evident in the number of CCS reads (total = 996K; Batch 1 = 469K, Batch 2 = 306K, Batch 3 = 2221K Figure \ref{fig:isoseq_targeted_run_output}a) and FLNC reads (total = 930K; Batch 1 = 399K, Batch 2 = 275K, Batch 3 = 256K, Figure \ref{fig:isoseq_targeted_run_output}a) generated, after applying the bioinformatics Iso-Seq pipeline (same as the whole transcriptome approach with the exception of removing barcodes rather than general primers). However, calculation of the on-target rate suggested that while Batch 2 and 3 had lower output yield, the coverage of target genes was significantly greater than Batch 1 due to the increased sample size (mean rate in Batch 1 = 34.5\%; mean rate in Batch 2 = 46.2\%; mean rate in Batch 3: 42.9\%, Figure \ref{fig:isoseq_targeted_rate}). The on-target rate is defined as the proportion of mapped transcripts with sequences overlapping at least one target probe. 
+%Off-target 
+
+In addition to batch variability, the number of full-length transcripts obtained per sample varied within each batch (Figure \ref{fig:isoseq_targeted_run_output}b). This variability was not associated with RIN (corr = 0.147, P = 0.492, Spearman's rank) and is unlikely to be due to library preparation, given that samples were pooled in equal molarity during target capture. However, there was no significant difference in the number of full-length transcripts between WT and TG across the batched runs (Wilcoxon rank sum test, W = 73, P = 0.977, Figure \ref{fig:isoseq_targeted_run_output}c). 
 
 \begin{landscape}
 	\begin{table}[]
@@ -219,16 +250,9 @@ Following library preparation and SMRT sequencing, a total of XXGb (s.d = XXGb) 
 \end{landscape}
 
 
-The yield difference between the first and last two batches was evident in the number of CCS reads (total = 996K; Batch 1 = 469K, Batch 2 = 306K, Batch 3 = 2221K Figure \ref{fig:isoseq_targeted_run_output}a) and FLNC reads (total = 930K; Batch 1 = 399K, Batch 2 = 275K, Batch 3 = 256K, Figure \ref{fig:isoseq_targeted_run_output}a) generated, after applying the bioinformatics Iso-Seq pipeline (same as the whole transcriptome approach with the exception of removing barcodes rather than general primers). However, calculation of the on-target rate suggested that while Batch 2 and 3 had lower output yield, the coverage of target genes was significantly greater than Batch 1 due to the increased sample size (mean rate in Batch 1 = 34.5\%; mean rate in Batch 2 = 46.2\%; mean rate in Batch 3: 42.9\%, Figure \ref{fig:isoseq_targeted_rate}). The on-target rate is defined as the proportion of mapped transcripts with sequences overlapping at least one target probe. 
-%Off-target 
-
-In addition to batch variability, the number of full-length transcripts obtained per sample varied within each batch (Figure \ref{fig:isoseq_targeted_run_output}b). This variability was not associated with RIN (corr = 0.147, P = 0.492, Spearman's rank) and is unlikely to be due to library preparation, given that samples were pooled in equal molarity during target capture. However, there was no significant difference in the number of full-length transcripts between WT and TG across the batched runs (Wilcoxon rank sum test, W = 73, P = 0.977, Figure \ref{fig:isoseq_targeted_run_output}c). 
-
-
-
-\begin{figure}[!htb]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{TargetedTranscriptome.pdf}
+		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Targeted Transcriptome Iso-seq run performance]%
@@ -236,9 +260,9 @@ In addition to batch variability, the number of full-length transcripts obtained
 	\label{fig:isoseq_targeted_run_output}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=2,trim={0 25cm 0 0},clip,scale = 0.55]{TargetedTranscriptome.pdf}
+		\includegraphics[page=2,trim={0 25cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[On-Target rate in Transcriptome Iso-Seq runs]%
@@ -251,10 +275,13 @@ In addition to batch variability, the number of full-length transcripts obtained
 
 \subsection{Transcriptome annotation}
 Across all the samples (n = 24), a total 757 isoforms were detected across 20 AD-associated target genes (Figure \ref{fig:isoseq_targeted_finalnumberiso}), of which \textit{App} was detected with the highest number of isoforms (n = 121 isoforms) and \textit{Trpa1} with the fewest (n = 2 isoforms). 
+
+% proportion of reads with human MAPT; validation 
+% supported by RNA-Seq, CAGE 
    
-\begin{figure}[!htb]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=3,scale = 0.55]{TargetedTranscriptome.pdf}
+		\includegraphics[page=3,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex]%
@@ -262,14 +289,19 @@ Across all the samples (n = 24), a total 757 isoforms were detected across 20 AD
 	\label{fig:isoseq_targeted_finalnumberiso}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=4,scale = 0.55]{TargetedTranscriptome.pdf}
+		\includegraphics[page=4,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
 	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
 	\label{fig:isoseq_targeted_finalnumberiso_sub}
 \end{figure}
+
+\subsection{Comparison with whole transcriptome}
+% use same samples, compare whether off-target genes from targeted transcriptome are most abundant or whether based on similar sequence homology to target genes; output similar to targeted ppt  
+% compare the AD genes
+% threshold cut off 
 
 
