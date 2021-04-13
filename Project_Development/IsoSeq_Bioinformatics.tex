@@ -145,6 +145,8 @@ Using SQANTI classifications based on splice junctions, the transcriptome was se
 	\end{itemize}
 \end{itemize}
 
+Based on the pair of dinucleotides framing the intron boundary, splice junctions were either categorised as canonical for GT-AG, GC-AG and AT-AC and all the other possible combinations as non-canonical.  
+
 Lastly it can provide further classification of transcripts:  
 As protein-coding or non-protein-coding by the presence of coding sequence
 that may potentially undergo non-sense medicated decay by the presence of ORF but CDS ends before the last junction
@@ -199,7 +201,7 @@ Between-sample normalisation methods to relatively quantify expression of the sa
 As reported in \cite{Castanho2020}, human-specific MAPT sequence was selected from a 2kb region present in the 3'UTR after using BLAT to identify divergent sequence in human and mouse MAPT. Counts of this human-specific MAPT sequence in the CCS and polished reads from WT and TG were then plotted as a ratio of unique reads to the total number of input reads.  
 
 \subsubsection{Classification of Alternative Splicing Events}
-SUPPA2 was used to classify alternative splicing events with the parameter –f ioe in isoforms retained from SQANTI2 filter. Splicing events included Alternative 5’ Splice Sites (A5), Alternative 3’ Splice Sites (A3), Alternative First Exons (AF), Alternative Last Exons (AL), Mutually Exclusive Exons (MX), Retained Intron (RI), Skipping Exon (SE). 
+The occurrence of mutually exclusive exons (MX) and skipped exons (SE) were assessed using SUPPA2 with the parameter –f ioe, intron retention (IR) with SQANTI2, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
 
 \subsubsection{Limitations}
 While PacBio's Iso-Seq have major potential for transcriptome annotation, there were currently several major limitations that need to be addressed with further development of library preparation and bioinformatic data analyses \cite{Kuo2017}: 

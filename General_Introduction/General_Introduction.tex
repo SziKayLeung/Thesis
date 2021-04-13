@@ -49,7 +49,6 @@ With Mendialian diseases such as Duchenne muscular dystrophy, pathogenic variant
 	
 \end{itemize}
 
-
 Transcriptome diversity is highly regulated by various mechanisms: 
 \begin{itemize}
 	\item Alternative transcription initiation (ATI) \nomenclature{ATI}{Alternative Transcription Initiation}) 
@@ -57,10 +56,43 @@ Transcriptome diversity is highly regulated by various mechanisms:
 	\item Alternative splicing (AS) \nomenclature{AS}{Alternative Splicing})
 \end{itemize}
 
+\subsection{Alternative Splicing}
 Alternative splicing and polyadenylation is a widespread phenomenon that facilitates generation of multiple distinct mRNA transcripts or isoforms from one gene, which are subsequently translated to different protein isoforms with unique, and potentially, antagonistic functions (E. T. Wang et al., 2008). AS further regulates gene expression through various mechanisms: non-sense mediated decay, miRNA-mediated mRNA degradation, altered translational efficiency of isoforms. In contrast, alternative polyadenylation regulates RNA transportation, localization, stability, and translation by generating splice isoforms with different cleavage sites.
 
 Alternative splicing is essential in shaping transcriptome and proteome diversity - over 95\% of 22,000 protein-coding multi-exonic human genes are estimated to undergo alternative splicing, with up to 70\% containing multiple polyadenylation sites and 30\% having multiple first exons due to alternative transcription start sites. Each gene is estimated to have on average six transcript isoforms \cite{Dunham2012}, and this figure is likely to increase with more transcriptomic studies. It occurs most prevalently in the brain implicating its role in neuronal development and maintenance (Pan et al., 2008) (Mazin et al., 2014) (Raj, Blencowe, 2015). It is predicted that a single cell, with a transcription of 600,000 molecules, will have generated 5 - 15 conservative isoforms per gene, and 2-4 exon cassette isoforms (\cite{Karlsson2017}) (a single oligodendrocyte contained ~2000 conservative transcripts associated with 700 genes, and 1000 unique isoforms). 
 
+
+\boldheader{Mechanism}
+Nuclear pre-mRNA splicing involves the removal of non-coding sequences (introns) from the mRNA precursors and ligation of coding sequences (exons). This relies on a concerted and regulated assembly of the spliceosome - a multimegaton, dynamic ribonucleoprotein complex - by its recognition and stepwise-bindingo sequence elements within the pre-mRNA (cis-elements), and a group of regulating splicing factor proteins (trans-elements). There are two types of spliceosome - major and minor - both of which involve the activity of five uridine-rich small nuclear ribonucleoproteins (snRNP\nomenclature{snRNPs}{Small Nuclear Ribonucleoproteins}) and numerous non-snRNP proteins\cite{Will2011}. Using a similar mechanism but composed of different snRNPs, the minor spliceosome removes less than 1\% (0.4\%) of introns\cite{Turunen2013} and is thus referred to as "U12-dependent non-canonical splicing", as opposed to "U2-dependent canonical splicing" with major spliceosome.
+
+Correct splicing first requires the recognition of short sequence motifs upstream (5' splice site - 5'SS\nomenclature{5'SS}{5' Splice Site} - or donor site) and downstream (3' splice site - 3'SS\nomenclature{3'SS}{3' Splice Site} - or acceptor site) of the intron/exon boundary and the branch point sequence\cite{Aebi1986,Lamond1987} (BPS\nomenclature{BPS}{Branch Point Sequence}  (Figure \ref{fig:AS_mechanism}a). The 5'SS is typically defined by a conserved nine-nucleotide sequence that predominant contains a GU(T) dinucleotide, whereas the 3'SS is defined by a variable length polypyrimidine tract (PPT\nomenclature{PPT}{Polypyrimidine Tract}) followed by a conserved AG dinucleotide \cite{Will2011}. Almost all introns in both human and mouse are flanked by the GT-AG splice site dinucleotides\cite{Sheth2006} (termed splice junctions), with other variations such as GC-AG and AT-AC known to exist in very minute proportions; GC-AG and AT-AC comprises \textasciitilde0.9\%\cite{Parada2014} and \textasciitilde0.09\%\cite{Parada2014} of human splice sites and are processed by the major and minor spliceosome, respectively. The branch point sequence is defined by a highly conserved sequence, distinguished by an adenosine, and is typically found within 18-40 nucleotides upstream of the 3'SS \cite{Will2011}. 
+
+In the classic splicing model (Figure \ref{fig:AS_mechanism}), spliceosome assembly first involves the identification of 5' and 3' splice sites, followed by sequential assembly of the spliceosome components as the spliceosome matures and activates for catalysis\cite{Herzel2017} - intron excision is primarily executed by two transesterification reactions. Recent studies suggest that this process occurs co-transcriptionally, such that the intron can be identified and removed as soon as it is synthesised by the RNA polymerase (Pol II). 
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=1,trim={0 14cm 8cm 2cm},clip, scale = 0.8]{Introduction_Figures.pdf}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Splicing Mechanism: spliceosome assembly on nascent RNA]%
+	{\textbf{Intron removal is catalysed by the assembly and complex rearrangement of spliceosome. a)}:  Consensus sequence of splice sites that demarcate the intron/exon boundary and are essential for recruitment of spliceosomal snRNPs. \textbf{b)} Co-transcriptional assembly of spliceosome with stepwise interaction of spliceosomal snRNPs, with the formation of 
+	\begin{enumerate}
+	\item E (Early) commitment complex with the identification and binding of U1 snRNP to the 5'SS and branchpoint binding protein (BPP\nomenclature{BPP}{Branchpoinnt Binding Protein} to BPS 
+	\item A (Assembly) catalytically-active complex with association of U2 snRNP to the branch site following the dissociation of BPP. The "A" here denotes to the adenosine of BPS
+	\item B pre-catalytic spliceosome complex with recruitment of U4,U5 and U6 snRNPs
+	\item Bact pre-catalytic spliceosome complex after major conformational rearrangements within the spliceosome (RNA-protein and RNA-RNA interactions) followed by the release of U1 and U4 snRNP to expose the adenosine from BP to the 5'SS 
+	\item B* catalytically-active complex with nucleophilic attack of adenosine on 5'SS (first step of transesterification) 
+	\item C catalytically-active complex with further conformational changes in the U2 snRNA to C* complex, with nucleophilic attack of the 5'SS to 3'SS (second step of transesterification) 
+	\item P (Post-spliceosome complex). The mRNA product is then released from remaining spliceosome (ILS), now bound to the intron lariat. The snRNPs can then disassociate and be recycled for next cycle of splicing.
+	\\
+	\end{enumerate} 
+
+	BPS - Branch point sequence, CTD - carboxyl-terminal domain, ILS - Intron lariat spliceosome, PAS - poly(A) site, SS - Splice site, TSS - Transcription start site,TTS - Transcription termination site. Figure is taken from Herzel et al. 2017\cite{Herzel2017}.
+}
+	\label{fig:AS_mechanism}
+\end{figure}
+
+
+\boldheader{Events}
 Isoforms can differ at the 5' (alternative transcript start sites - TSSs), exons (alternative splicing) and 3' end (alternative transcription termination sites - TTSs)). Exon splicing can be further divided into alternative splice sites (alternative 5'-splice site, alternative 3'-splice site), exon skipping and intron retention. 
 AS events can be classified into five different types: 
 \begin{itemize}
@@ -71,6 +103,7 @@ AS events can be classified into five different types:
 	\item Mutually Exclusive Exon 
 \end{itemize} In addition to above five common categories, many other complex types, such as alternative position, i.e., alternative 3' and 5' site (Wang and Brendel, 2006), AS and transcriptional initiation (ASTI) (Nagasaki et al., 2006) alternative first exons (Chen et al., 2007), and composite patterns (Wang and Rio, 2018), can occur."
 
+\newpage
 \textbf{Nonsense mediated decay (NMD)} \nomenclature{NMD}{Nonsense Mediated Decay} products are alternatively spliced isoforms that are not translated into proteins, by containing an early stop codon. A premature termination-translation codon highly supportive of NMD is defined by a stop codon within at least 50-55 base pairs upstream of splice junctions. 
 
 \textbf{Fusion Transcripts} are a consequence of trans-splicing event of merging two separately encoded pre-mRNA into one transcript
@@ -105,7 +138,7 @@ However, despite its power to identify and quantify gene expression (transcripti
 It is therefore unclear which combination of exons are spliced in, and whether alternative (distant) exons pairs are included in mutually exclusive or independent fashion (i.e. whether events are coordinated though some distant alternative exons have shown to be correlated included (\cite{Fagnani2007})Furthermore, short-read RNA-sequencing fails to capture the connectivity of exons and informs whether the alternative processive events are coordinated (coordination is defined by two or more alternative RNA processing events are dependent of each other and the probability of this occurrence is greater than the observation of the sole event). --> Molecular co-association of distant human alternative exons
 
 
-
+\iffalse
 \begin{figure}[h]
 	\centering
 	\vspace{20pt}
@@ -115,7 +148,7 @@ It is therefore unclear which combination of exons are spliced in, and whether a
 	{\textbf{Challenges of using short-reads for transcript assembly}: Example of a transcript model that is impossible to resolve using short-reads (yellow). Figure and caption taken from \cite{Kuo2017}}
 	\label{fig:kuo_splicing}
 \end{figure}	
-
+\fi
 Various bioinformatic packages have been developed to assemble these short reads into transcripts, by probabilistically assigning and mapping reads to isoforms and exon-exon boundary or XXX, to identify and estimate transcript abundance (Figure X) (Trapnell et al., 2010)(Kingsford, Schatz, \& Pop, 2010)(Au et al., 2013). This, however, requires complex computational analysis and has resulted in conflicting outcomes and limited success, compounded by the fact that alternative transcripts often have significant overlaps and only a minor proportion of reads span splicing junctions. These tools further rely heavily on reference annotation libraries (RefSeq/Ensembl) or predefined splicing events, which may be inaccurate or incomplete; resulting in prediction of transcripts that do not exist (false positives) or fails to detect true transcripts (false negatives) particularly with genes that have large number of variants (Au et al., 2013). Pre-defined models are particularly limiting when comparing splicing profiles between different conditions, such as control versus transgenic mice, as any splicing changes observed are likely to be AD-specific. While there are tools that are de novo, these typically generate different and often conflicting results [Table X]. 
 
 Attempts to overcome challenges with transcriptome assembly included generation of “synthetic long reads”, by tagging full-length complementary DNAs with unique molecular identifiers (UMIs) before cluster amplification and sequencing on Illumina (Tilgner et al., 2015). With the presence of UMIs, transcript isoforms can be reconstructed for up to 4Kb for isoform discovery and expression analysis (Stark, Grzelak, \& Hadfield, 2019). [However…]
@@ -167,7 +200,7 @@ In addition to exploring differential splicing in terms of isoform abundance, wh
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[page=1,trim={2cm 35cm 0 2cm},clip,scale = 0.55]{Pictures/Samples.pdf}
+		\includegraphics[page=2,trim={2cm 35cm 0 2cm},clip,scale = 0.55]{Introduction_Figures.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Mouse samples for Whole and Targeted Transcriptome Iso-Seq]%
