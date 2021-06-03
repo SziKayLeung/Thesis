@@ -14,30 +14,7 @@ In the WTAC's protocol, SuperScript IV enzyme (SSIV) was used for reverse transc
 
 One major limitation of the WTAC's protocol was the initial requirement of high RNA concentration (300ng/uL), whereby most of the mouse RNA extracted had an average concentration of 70ng/uL. The volume of pre-RT and RT PCR mix had to therefore be upscaled to account for additional sample volume, while maintaining reagent concentration. 
 
-\subsubsection{ERCC-RNA Spike-In Controls}
-As a pilot experiment, a pre-formulated set of external RNA controls from External RNA Controls Consortium (ERCC\nomenclature{ERCC}{External RNA Controls Consortium}) was also used to evaluate the performance of library preparation and sequencing run. The ERCC-RNA Spike-In Controls consist of 92 polyadenylated transcripts (250 - 2000 nucleotides) of known sequences from the ERCC plasmid library, which are added in pre-determined amounts to the sample prior to cDNA synthesis. The amount determined of spike-in control was determined by Equation \ref{eq:ercc_calcaluations}, adapted by WTAC and following ERCC's guidelines. 
 
-\begin{myequation}[!h]
-	\begin{equation}
-	mass_{RNA spike} = fraction_{spiked reads}\; * fraction_{target RNA}\; *mass_{RNA input}
-	\end{equation}
-	\begin{equation}
-	concentration_{RNA spike} = mass_{RNA spike}\; * volume_{RNA spike}
-	\end{equation}
-	where:
-	\begin{conditions*}
-		mass_{RNA spike} & mass of RNA spike-in to be added to sample \\
-		concentration_{RNA spike} & final diluted concentration (ngs/ul) of the RNA spike-in \\
-		fraction_{spiked reads}  &   desired proportion of sequenced spike-in RNA reads relative to total amount of sequenced reads \textit{(3\%)} \\
-		fraction_{target RNA}    &  expected proportion of target RNA, in this case mRNA relative to total RNA \textit{(3\%)} \\   
-		mass_{RNA input} &  input of total RNA \textit{(200ng)} \\
-		volume_{RNA spike} & volume of RNA spike-in \textit{(0.1uL)}				
-	\end{conditions*}
-	\label{eq:ercc_calcaluations}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Determining amount of ERCC-RNA Spike-In Control]%
-	{\textbf{Determining amount of ERCC-RNA Spike-In Control}. In determining the mass and final concentration of RNA-spike-in mix based on the above conditions, the stock ERCC RNA spike-in was diluted. The italicised parameters were taken from WTAC with the exception of total RNA input}
-\end{myequation}
 
 \newpage
 \subsubsection{Protocol}

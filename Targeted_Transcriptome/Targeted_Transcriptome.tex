@@ -274,7 +274,8 @@ In addition to batch variability, the number of full-length transcripts obtained
 %Following library preparation and nanopore sequencing (Chapter X), a total of 28.54M reads (39.68Gb) were generated across two flow cells and a total of 22.8M (80\%) reads were successfully basecalled using Guppy.
 
 \subsection{Transcriptome annotation}
-Across all the samples (n = 24), a total 757 isoforms were detected across 20 AD-associated target genes (Figure \ref{fig:isoseq_targeted_finalnumberiso}), of which \textit{App} was detected with the highest number of isoforms (n = 121 isoforms) and \textit{Trpa1} with the fewest (n = 2 isoforms). 
+After filtering for technical artefacts (intrapriming, RT switching, partial degradation), a total of XXX isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). 
+Across all the samples (n = 24), a total of 757 isoforms were detected across 20 AD-associated target genes (Figure \ref{fig:isoseq_targeted_finalnumberiso}), of which \textit{App} was detected with the highest number of isoforms (n = 121 isoforms) and \textit{Trpa1} with the fewest (n = 2 isoforms). 
 
 % proportion of reads with human MAPT; validation 
 % supported by RNA-Seq, CAGE 
@@ -300,6 +301,16 @@ Across all the samples (n = 24), a total 757 isoforms were detected across 20 AD
 \end{figure}
 
 \subsection{Comparison with whole transcriptome}
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=5,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
+	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
+\end{figure}
+
 % use same samples, compare whether off-target genes from targeted transcriptome are most abundant or whether based on similar sequence homology to target genes; output similar to targeted ppt  
 % compare the AD genes
 % threshold cut off 
