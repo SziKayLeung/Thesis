@@ -73,6 +73,46 @@ The general structure of barcoded oligo-dT primer is as follows:
 \end{table}
 \end{landscape}
 
+\subsubsection{ERCC-RNA Spike-In Controls}
+\label{section:ch2_ERCC_explanation} 
+To evaluate the performance of library preapration and the sequencing runs, and to validate the Iso-Seq pipeline to accurately characterise the transcriptome using long reads, a set of external RNA Spike-In controls, External RNA Controls Consortium (ERCC\nomenclature{ERCC}{External RNA Controls Consortium}), was used. ERCC consists of 92 polyadenylated synthetic transcripts (250 to 2000 nucleotides) of known sequences from the ERCC plasmid library, which are added in pre-determined amounts to the sample prior to first-strand cDNA synthesis. The addition of ERCC would allow assessment of the quantitative power of long-read sequencing approaches in addition to providing absolute quantification of mRNA isoform with the sample by generating a standard curve. It can further validate that the bioinformatics pipeline only identifies 1 isoform per ERCC gene. 
+
+The amount determined of spike-in control was calculated using the below equation \cite{WTAC}:
+\begin{myequation}[!h]
+	\begin{equation}
+	\label{eqn:ercc_calcaluations}
+	mass_{RNA spike} = fraction_{spiked reads}\; * fraction_{target RNA}\; *mass_{RNA input}
+	\end{equation}
+	\begin{equation}
+	concentration_{RNA spike} = mass_{RNA spike}\; * volume_{RNA spike}
+	\end{equation}
+	where:
+	\begin{conditions*}
+		mass_{RNA spike} & mass of RNA spike-in to be added to sample \\
+		concentration_{RNA spike} & final diluted concentration (ngs/ul) of the RNA spike-in \\
+		fraction_{spiked reads}  &   desired proportion of sequenced spike-in RNA reads relative to total amount of sequenced reads \textit{(3\%)} \\
+		fraction_{target RNA}    &  expected proportion of target RNA, in this case mRNA relative to total RNA \textit{(3\%)} \\   
+		mass_{RNA input} &  input of total RNA \textit{(200ng)} \\
+		volume_{RNA spike} & volume of RNA spike-in \textit{(0.1uL)}				
+	\end{conditions*}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Determining amount of ERCC-RNA Spike-In Control]%
+	{\textbf{Determining amount of ERCC-RNA Spike-In Control}. In determining the mass and final concentration of RNA-spike-in mix based on the above conditions, the stock ERCC RNA spike-in was diluted from the original concentration of 30ng/$\mu$L to 1.8ng/$\mu$L with a dilution factor of 1:16.8. The italicised parameters were taken from the RNA Transcriptomics 2018 Course\cite{WTAC} with the exception of total RNA input}
+\end{myequation}
+
+A separate pilot experiment (Appendix \ref{ch:alt_cDNA}) showed successful addition of ERCC with two main bands at \textasciitilde600bp and \textasciitilde1000bp (Figure \ref{fig:ercc_lab_gel}a), reflecting significant enrichment of ERCC transcripts at these two respective lengths as is expected (Figure \ref{fig:ercc_lab_gel}b). The stark contrast of these two bands, however, to the smear of cDNA, suggests that the ERCC transcripts are predominant - this could be due to an overestimation of assumed proportion of mRNA to total RNA, which is likely in reality to be lower than 3\%. To reduce unnecessary sequencing and coverage of ERCC transcripts, a lower ERCC RNA-spike in concentration was used (final concentration of 0.6ng/$\mu$L and a dilution factor of 1:50.5, Figure \ref{fig:ercc_lab_gel}c). 
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=5,trim={0 12cm 0 2cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ERCC usage to benchmark library preparation and sequencing performance runs]%
+	{\textbf{Successful addition of ERCC to first-strand cDNA synthesis a)}. Agarose gel image taken from PCR amplification of cDNA and ERCC (1.8ng/$\mu$L determined from equation \ref{eqn:ercc_calcaluations}), and ERCC alone as a positive control. 5$\mu$L of PCR aliquots were taken every cycle (13 - 18) and then run on gel electrophoresis. The two bands at 600bp and 1000bp refer to the enrichment of ERCC transcripts at these two lengths as would be expected. \textbf{b)} Distribution of known ERCC length, with a significant proportion of transcripts sized at 500-600bp and 1000-1200bp. \textbf{c)} Agarose gel image after a repeat of PCR amplification of cDNA and ERCC at a lower concentration (0.6ng/$\mu$L), ERCC as positive and water as negative control respectively. The numbers above the lane refer to the number of cycles, L denotes to 100bp Ladder.}
+	\label{fig:ercc_lab_gel}
+\end{figure}
+
+
 \subsubsection{PCR optimisation and DNA Amplification}
 To minimise PCR bias (under or over-amplification), which can result in under or over representation of the different cDNA library size, the optimal number of PCR cycles for amplification of first-strand synthesis products with PrimeSTAR GXL DNA Polymerase (Clontech) was determined through collection of 5uL PCR aliquots during every two cycles (cycle 10, 12, 14, 16, 18, 20) and assessed a 1.5\% Agarose gel electrophoresis with ethidium bromide. Large scale PCR amplification was subsequently performed using the optimal number of cycles.
 
@@ -107,7 +147,7 @@ While the Bioanalyzer assay is more sensitive than the ScreenTape assay, it is m
 
 For this thesis, most of the assessments of DNA quality in the Iso-Seq and ONT protocol were performed on the DNA 12000 Kit (Agilent) on the 2100 Bioanalyzer (Agilent)for accurate determination of library molarity (Section X). However, the D5000 ScreenTape (Agilent) was used on 4200 Tapestation (Agilent) in a few of the quality control steps where it is optional to assess for DNA quality (Section X).
 
-RNA extracted by Dr Isabel Castanho was also run on RNA ScreenTape assay and the Bioanalyzer RNA analysis to provide accurate evaluation of RNA degradation; this is represented by a RNA Integrity Number (RIN\nomenclature{RIN}{RNA Integrity Number}) between 1 and 10, where 1 is indicative of high degradation, and 10 of low degradation and thus high integrity (Figure \ref{fig:bionalayzer_pics}). As a pre-requisite for good sequencing yield on Sequel and MinION, only samples with RIN $>$ 8 were selected for long-read sequencing on Iso-Seq and ONT protocol.
+RNA extracted by Dr Isabel Castanho was also run on RNA ScreenTape assay and the Bioanalyzer RNA analysis to provide accurate evaluation of 5' RNA degradation asses using a RNA Integrity Number (RIN\nomenclature{RIN}{RNA Integrity Number}) - this uses features from an electrophoretic trace (ratio of 28S to 18S area) to give a number between 1 and 10, where 1 is indicative of high degradation, and 10 of low degradation and thus high integrity (Figure \ref{fig:bionalayzer_pics}). As a pre-requisite for good sequencing yield on Sequel and MinION, only samples with RIN $>$ 8 were selected for long-read sequencing on Iso-Seq and ONT protocol.
 
 \begin{figure}[!htp]
 	\centering

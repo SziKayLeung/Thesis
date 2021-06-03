@@ -38,11 +38,6 @@ Analysing long-read sequencing data requires a different approach to short-read,
 
 Although the raw error rate of PacBio sequencing is 10-14\%, this is greatly reduced by the use of circular template and subsequent generation of circular consensus sequence. 
 
-\subsubsection{ERCC}
-One source of error from long-read sequencing can occur at reverse transcription, whereby a premature termination in reverse transcription enzyme can result in a full-length cDNA, that is mistaken for a true isoform. To measure the degree of this technical error, ERCC, with known start and end positions can be used as benchmark. As detailed in \cite{Karlsson2017}, most ERCC reads fell within +/- 5bp at both 5' and 3' ends, with 3' end slightly more accurate than 5' end. From \cite{Sharon2013}, drop in read length was observed for ERCC for molecules longer than 1.5kb (PacBio RSII). Interestingly, non-coding exon junctions were more variable than coding-exon junctions, suggesting that codon exon splicing has a stricter control with refined splice donor/acceptor sites (\cite{Karlsson2017}) 
-Of note, however, that while ERCC has been used as a standard for RNA-Seq method validation, the longest molecule is only ~2kB, thus limiting is usage to validate longer molecules. Given that XX of RNA transcripts in human and mouse transcriptome were >2kB, there is a need for longer control sequences. 
-
-
 \subsubsection{Classify}
 \label{section:classify}
 
@@ -70,7 +65,7 @@ In the second stage, Iso-Seq uses an iterative isoform-clustering algorithm (ICE
 \end{itemize}
 By collapsing transcripts with differing 5' start [due to cDNA synthesis not preserving 5' end], some transcripts with alternative transcription start sites were lost while preserving those with alternative splicing and alternative polyadenylation. The representative transcript from those clustered is the longest one. 
 
-A minimum of two FLNC reads were further required for a cluster. Two possible issues: reads belong to incorrect clusters, and reads that belong together were in separate clusters. [Briefly it first does clique-finding based on a similarity graph, then calls consensus using the Directed Acyclic Graph Consensus method and finally reassign sequences to different clusters based on their likelihood (Gordon et al. 2015)]. In previous Iso-Seq bioinformatic versions, NLF reads were used to increase the coverage of each consensus isoform. However, with increasing throughput with Sequel I and Sequel II, this has been foregone. Cluster outputs the high-quality isoforms (HQ-isoforms), which have a consensus accuracy >=99\%. 
+A minimum of two FLNC reads were further required for a cluster. Consequently each FLNC read is classified to only one cluster, which is comprised of two or more FLNC reads. Two possible issues: reads belong to incorrect clusters, and reads that belong together were in separate clusters. [Briefly it first does clique-finding based on a similarity graph, then calls consensus using the Directed Acyclic Graph Consensus method and finally reassign sequences to different clusters based on their likelihood (Gordon et al. 2015)]. In previous Iso-Seq bioinformatic versions, NLF reads were used to increase the coverage of each consensus isoform. However, with increasing throughput with Sequel I and Sequel II, this has been foregone. Cluster outputs the high-quality isoforms (HQ-isoforms), which have a consensus accuracy >=99\%. 
 
 So in summary, each productive ZMW generates one polymerase read, which is collapsed to give a circular consensus sequence (CCS) assuming the requirements were met. CCS were then trimmed and processed for primer and poly-A sequence removal to generate full-length non-chimeric (FLNC) reads, which were clustered if they were thought to be derived from the same isoform. The number of associated full-length (FL) reads of each isoform therefore represents the number of ZMWs that sequenced the isoform of interest, and can infer abundance of mRNA isoform. However, Iso-Seq is only semi-quantitative due to preferential loading and sequencing bias of shorter fragments. It is worthy to note that all the steps up to now have een processed without a reference genome or transcriptome. 
 
@@ -97,6 +92,15 @@ Using the –secondary=no parameter restricts the output to the best alignment, 
 
 \subsubsection{Genome Mapping}
 HQ-isoforms from the pooled dataset were aligned to mouse genome using Minimap2, and a total of XXX reads (XX\%) were mapped. Errors for substitution, insertion and deletion were X\%, X\% and X\% respectively. XX\% of transcripts (polished) could not be mapped to reference genome, thus representing genes that fall into gaps in the assembly (mouse genome should be quite updated though)
+
+
+\subsubsection{ERCC}
+One source of error from long-read sequencing can occur at reverse transcription (RT)\nomenclature{RT}{Reverse Transcription}, whereby a premature termination in reverse transcription enzyme can result in a full-length cDNA, that is mistaken for a true isoform. To measure the degree of this technical error, ERCC, with known start and end positions can be used as benchmark. As detailed in \cite{Karlsson2017}, most ERCC reads fell within +/- 5bp at both 5' and 3' ends, with 3' end slightly more accurate than 5' end. From \cite{Sharon2013}, drop in read length was observed for ERCC for molecules longer than 1.5kb (PacBio RSII). Interestingly, non-coding exon junctions were more variable than coding-exon junctions, suggesting that codon exon splicing has a stricter control with refined splice donor/acceptor sites (\cite{Karlsson2017}) 
+Of note, however, that while ERCC has been used as a standard for RNA-Seq method validation, the longest molecule is only ~2kB, thus limiting is usage to validate longer molecules. Given that XX of RNA transcripts in human and mouse transcriptome were >2kB, there is a need for longer control sequences. 
+
+To assess the sensitivity across Iso-Seq runs to detect ERCC, a merged analysis of whole transcriptome samples (n = 10, WT = 5, TG = 5) was performed with ERCC alignment and further collapse using Cupcake. The counts of full-length transcripts pertaining to each sample were then obtained using a custom demultiplexed script, which classifies and counts the merged data based on the unique sequencing run id. Post SQANTI annotation and filtering, only a third of ERCCs (unique number of ERCC = 37, 40.22\%) were identified from both WT (mean number of ERCC: 32.4 (35\%)) and TG (mean number of ERCC: 32.2 (35.22\%)), with no difference in number of ERCC detected between WT and TG, although there were some ERCC that were detected in WT but not in TG, and vice versa. A minority of ERCCs (n = 8, 8.7\%) at higher concentration were further annotated with more than one "isoform", indicating the presence of technical artefacts and more stringent filtering or clustering required, with ERCC at a higher concentration more likely to be sequenced and annotated with multiple redundant "isoforms". Exploration of these "isoforms" revealed them to be shorter transcripts likely to be generated as a result of fragmentation of the original molecule, incomplete PCR synthesis and template-switching. Application of TAMA-GO's script, tama-remove-fragment-models.py, successfully removed these partial, redundant isoforms, while retaining the intact isoforms. 
+
+Deeper investigation into the low coverage of ERCCs further identified an additional 20 lowly-expressed ERCCs that were discarded from cupcake's collapse scripts under the default coverage (alignment identity) parameters at 99\%. Exploration of these imperfect-aligned sequences revealed 5'prime degradation of XX-XX nucleotides - one of the limitations of not using a 5'cap protocol. Inclusion of these ERCCs using a lower minimum coverage threshold at 95\% increased the number of ERCCs detected by 20\% (unique number of ERCC = 57, 61.96\%), and strengthening the relationship between full-length read count and known amount of ERCC (95\% coverage: corr = 0.98, p = 1.41 x 10\textsuperscript{-41}; 99\% coverage: corr = 0.82, p = 4.89 x 10\textsuperscript{-10}).   
 
 
 \subsubsection{Cupcake}
@@ -166,9 +170,23 @@ as fusions. The criteria XXXX
 
 
 \boldheader{Further filtering of isoforms from technical artifacts}
-This was developed to remove artifacts from library preparation: i.e. intrapriming of polyA that usually happens in antisense strands and also lack of junction support in NNC; increase \% of FSM transcripts, and removes NIC. 
+SQANTI was further used to filter the curated transcriptome from any technical artifacts that were generated during library preparation, including artifacts from RT template switching (TS \nomenclature{TS}{Template Switching}) and off-priming \cite{Conesa2016} (Figure \ref{fig:lib_prep_artifacts}. RT template switching is an intrinsic feature of RT whereby the enzyme can transit within (intramolecular TS) or across (intermolecular TS) DNA templates without terminating cDNA synthesis, if the original DNA template harbours two or more direct repeats \cite{Cocquet2006}. This can result in either chimeric cDNAs or short, incomplete cDNAs that can be misinterpreted as isoforms generated from non-canonical splicing \cite{Houseley2010} (Figure \ref{fig:lib_prep_artifacts}a). Capitalising on the fact that RT switching is homology-dependent, SQANTI can identify these RT-switching artifacts by finding these direct repeats \cite{Conesa2016}. 
 
-SQANTI2 further filters isoforms, based on the following rules: 
+Finally, off-priming artifacts can be generated from the binding of oligo(dT) primer to other internal homopolymeric adenines (A) regions that can be located within cDNA template, and thereby generate truncated cDNAs \cite{Nam2002} (Figure \ref{fig:lib_prep_artifacts}b). SQANTI can explore the likelihood of thee events by determining the percentage of adenines (A) within the 20 nucleotide window downstream from the genomic coordinates of the isoform 3'ends and remove any that have a percentage lower than the user-defined threshold \cite{Conesa2016} - the lower the percentage of As, the higher the likelihood of the presence of internal polyA and off-priming. 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=4,trim={2cm 35cm 0 1cm},clip, scale = 0.55]{Pictures/Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Technical artifacts generated during library preparation and identified in SQANTI]%
+	{\textbf{SQANTI identifies technical artifacts that were generated during first-strand cDNA synthesis a)}: Schematic diagram of reverse transcription template switching, taken from Cocquet et al.(2006) \cite{Cocquet2006}. The black and blue line represent the original cDNA and synthesising cDNA from RT respectively, the black box represent the direct repeats and the light grey sphere represent the RT enzyme. As exemplified, RT template switching is further facilitated by RNA secondary structures that could bring the repeats into proximity \cite{Cocquet2006}. \textbf{b)} Schematic diagram of off-priming of oligo(dT) primer to internal A repeats, taken from Nam et al. (2002) \cite{Nam2002}. Oligo(dT) primer from first-strand cDNA synthesis can anneal to internal poly(A) sequence rather than the 3'end polyA, resulting in two truncated cDNAs.}
+	\label{fig:lib_prep_artifacts}
+\end{figure}
+ 
+%This was developed to remove artifacts from library preparation: i.e. intrapriming of polyA that usually happens in antisense strands and also lack of junction support in NNC; increase \% of FSM transcripts, and removes NIC. 
+
+In summary, the isoforms were filtered by the following criteria: 
 \begin{enumerate}
 	\item FSM with a reliable 3’ end by:
 	\begin{itemize}
@@ -177,12 +195,6 @@ SQANTI2 further filters isoforms, based on the following rules:
 	\end{itemize}
 	\item Any other transcripts that have a reliable 3' end do not have any splice junctions were annotated as Reverse Transcription Switching. 
 \end{enumerate}
-
-
-Reverse Transcription switch is determined on a junction level on both plus and minus strands by aligning each splice junction to reference file (splice junction defined as 3’/end of the exon to the 3’/end of the intron). The transcript is considered to be an artifact of reverse transcription if any of the junctions were labelled as RT switch. 
-
-all junctions were either canonical or has short read coverage ( > 3 reads)
-
 
 \subsubsection{Isoform expression from Iso-Seq} 
 To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
