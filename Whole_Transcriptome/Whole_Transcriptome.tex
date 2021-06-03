@@ -38,6 +38,9 @@ Context specific errors
 
 Pacbio non-size selection and Oxford Nanopore non-size selection
 Lowly expressed gene and minor isoform quantification  
+
+Oxford nanopore vs Iso-Seq using ERCC: length of GC bias? --> refer to Spyros's benchmarking paper
+Number of CCS passes for accuracy, Travers2010
 \fi
 
 \section{Introduction}
@@ -94,10 +97,18 @@ Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200n
 	\label{fig:isoseq_whole_bioresults}
 \end{figure}
 
+\subsection{ONT Library Preparation}
+As a technological comparison (see Chapter \ref{chap:ont_labpipeline}), cDNA prepared from 2 samples for Iso-Seq were also sequenced on 2 separate ONT MinION flow cells (vXX). Briefly, following cDNA synthesis and amplification, library preparation was proceeded with ONT's Ligation Sequencing kit (SQK-LSK109) that follows the 1D cDNA sequencing protocol. 
 
 
 \subsection{Iso-Seq Data Processing}
 Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), and then merged to generate one complete transcriptome (Figure \ref{fig:isoseq_whole_pipeline}). In brief, the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM dataset, TSS and TTS sites and classification of lncRNA in combination with lcRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artifacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers.
+
+\subsection{ONT Data Processing}
+In brief, raw reads were basecalled using Guppy and were classified as "pass" if the mean quality score was >7. 
+
+\subsection{Quantification of human MAPT transgene expression} 
+As a quality check of sample identity, the presence of human- and mouse-specific Mapt/MAPT sequences was determined in full-length transcripts across all the samples. Species-specific MAPT sequence, located in a 2kb region present in the 3'UTR, was identified after using BLAT\cite{Kent2002} to compare human and mouse MAPT/Mapt sequence for divergent transcript sequences \cite{Castanho2020}).  
 
 \begin{figure}[htp]
 	\centering
@@ -109,7 +120,7 @@ Raw reads from each sample were processed using the Iso-Seq pipeline with optimi
 	\label{fig:isoseq_whole_pipeline}
 \end{figure}
  
-
+\subsection{Characterisation of Alternative Splicing Events} 
 Alternative splicing events were assessed using a range of packages and custom scripts: mutually exclusive exons (MX) and skipped exons (SE) were assessed using SUPPA with the parameter –f ioe, intron retention (IR) with SQANTI2, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
 
 \newpage
@@ -117,8 +128,8 @@ Alternative splicing events were assessed using a range of packages and custom s
 
 12 mouse samples (6 WT and 6 TG) was sequenced using Iso-Seq approach on the PacBio Sequel 1 platform and analysed together for an accurate,deep characterisation of the full-length splice variants and identification of novel isoforms in the mouse transcriptome. 
 
-\subsection{Run performance and sequencing metrics}
-Following library preparation and single-molecule real time sequencing (SMRT), a total of 371Gb (s.d = 4.35Gb, range = 22.5Gb - 38.74Gb) and 8,082,647 polymerase reads (s.d = 63,013 reads, range = 530,974 - 733,495 reads) were obtained (Table \ref{tab:run_output}). No significant difference was reported between WT and TG (n = 12 animals, two-tailed unpaired t-test, t(10) = -0.636, P = 0.539,  Figure \ref{fig:isoseq_whole_run_output}a), and no significant correlation was observed between run yield and RIN across samples (n = 12 animals, Pearson's correlation, t = -0.98, df = 10, P = 0.350, Figure \ref{fig:isoseq_whole_run_output}b). Yield across all the samples are within the range as would expected from SMRT Iso-Seq library.   
+\subsection{PacBio's Iso-Seq run performance and sequencing metrics}
+Following library preparation and single-molecule real time sequencing (SMRT), a total of 371Gb (s.d = 4.35Gb, range = 22.5Gb - 38.74Gb) and 8,082,647 polymerase reads (s.d = 63,013 reads, range = 530,974 - 733,495 reads) were obtained (Table \ref{tab:isoseq_wholerun_output}). No significant difference was reported between WT and TG (n = 12 animals, two-tailed unpaired t-test, t(10) = -0.636, P = 0.539,  Figure \ref{fig:isoseq_whole_run_output}a), and no significant correlation was observed between run yield and RIN across samples (n = 12 animals, Pearson's correlation, t = -0.98, df = 10, P = 0.350, Figure \ref{fig:isoseq_whole_run_output}b). Yield across all the samples were within the range as would expected from SMRT Iso-Seq library.   
 
 %Check no difference between lengths CCS read lengths i.e. equal representation of RNA molecules; to make sure that we have a fair representation of reads of the RNA transcripts --> comparison of CCS reads and representation of RNA molecules between different base pairs lengths between different sample sets --> if fair representation, then expect log-ratio of interested sample/compared sample = - (10^0 =1)
 
@@ -142,12 +153,12 @@ Following library preparation and single-molecule real time sequencing (SMRT), a
 	\end{tabularx}
 	\caption[Run Yield Output from Whole Transcriptome Iso-Seq of Tg4510]%
 	{Phenotypic information and Iso-seq run yield for each sample of Tg4510 sequenced using Whole Transcriptome approach}
-	\label{tab:run_output}
+	\label{tab:isoseq_wholerun_output}
 \end{table}
 
 \begin{figure}[h]
 	\begin{center}
-	\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+	\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
@@ -492,15 +503,25 @@ Following library preparation and single-molecule real time sequencing (SMRT), a
 	\end{table}
 \end{landscape}
 
-With the application of long-reads bioinformatics pipeline (as detailed in Section X), the raw reads were processed and clustered to unique consensus transcripts, which were then mapped and annotated as isoforms - low-quality, lowly-supported, unmapped and degraded reads were sequentially filtered at each stage. Across all 12 samples, a total of 5.66M CCS reads (mean = 471K,s.d = 46.8K, range =  353K - 512K) and 4.55 FLNC reads were successfully generated (mean = 379K, s.d = 47.0K, range = 270K - 412K) after multiple processing (Figure \ref{fig:isoseq_whole_processing}a). Clustering of these reads yielded a total of 273K high-quality full-length transcripts (97\% of all FL transcripts, mean = 32.7K, s.d = 1.25K, range = 30.3K - 34.4K) (Figure \ref{fig:isoseq_whole_processing}b), and were mapped to 278K and 352 loci of the mouse reference (5K had multi-mapping) and ERCC annotations respectively. After filtering for 85\% alignment identity and 95\% length (Figure \ref{fig:isoseq_whole_processing}c), 266K transcripts were retained. No difference was observed in the number of transcripts generated between WT and TG (n = 12, two-tailed unpaired t-test, t = -0.005, df = 10, P = 0.996) or by age (n = 12, t = -1.58, df = 10, P = 0.15).
+With the application of long-reads bioinformatics pipeline (as detailed in Section X), the raw reads were processed and clustered to unique consensus transcripts, which were then mapped and annotated as isoforms - low-quality, lowly-supported, unmapped and degraded reads were sequentially filtered at each stage. Across all 12 samples, a total of 5.66M CCS reads (mean = 471K,s.d = 46.8K, range =  353K - 512K) and 4.55 FLNC reads were successfully generated (mean = 379K, s.d = 47.0K, range = 270K - 412K) after multiple processing (Figure \ref{fig:isoseq_whole_processing}a). Clustering of these reads yielded a total of 273K high-quality full-length transcripts (97\% of all FL transcripts, mean = 32.7K, s.d = 1.25K, range = 30.3K - 34.4K) (Figure \ref{fig:isoseq_whole_processing}b), and were mapped to 278K and 352 loci of the mouse reference (5K had multi-mapping) and ERCC annotations respectively. After filtering for 85\% alignment identity and 95\% length (Figure \ref{fig:isoseq_whole_processing}c), 266K transcripts were retained. No difference was observed in the number of transcripts generated between WT and TG (n = 12, two-tailed unpaired t-test, t = -0.005, df = 10, P = 0.996) or by age (n = 12, t = -1.58, df = 10, P = 0.15). 
 
+Of note, human-specific \textit{MAPT} sequences were only detected in TG transcripts, confirming stable activation of human \textit{MAPT} transgene (Figure \ref{fig:isoseq_humanmapt}a). Alignment of these human-specific transcripts to the mouse genome were mapped either to the mouse prion protein gene (\textit{Prnp}) with high identity but short overlap (Figure \ref{fig:isoseq_humanmapt}b,c), given that the transgene contains exons 2-3 of mouse \textit{Prnp}\cite{Ramsden2005}, and to the mouse \textit{Mapt} gene with low identity but long overlap (Figure \ref{fig:isoseq_humanmapt}b,d). Applying filter thresholds for downstream analysis removed these human-specific \textit{MAPT} transcripts (Figure \ref{fig:isoseq_humanmapt}b).
 
-\subsection{Transcriptome annotation}
-After further collapsing and filtering of transcripts, a total of 46,626 unique and intact isoforms were identified (mean = 27.5K, s.d = 2.32K, range = 24.2K - 31.2K) and annotated to 14,482 (98.6\%) known and 202 (1.38\%) novel genes. Gene expression patterns from Iso-Seq reflected expected transcriptional profiles for the brain regions profiled. Using the Mouse Gene Atlas database, the 500 most abundantly-expressed genes were most significantly enriched for ‘cerebral cortex’ (odds ratio = 6.07, adjusted P = 6.8 x 10\textsuperscript{-17}). Rarefaction curves confirmed that the dataset approached saturation, indicating that our coverage of isoform diversity was representative of the true population of transcripts (Figure \ref{fig:isoseq_whole_rarefaction}a). Supporting the validity of these isoforms, the majority (n = 35,262, 75\% of isoforms) were enriched near an annotated CAGE peaks (located within 50bp), and the vast majority of unique splice junctions (n = 138,032, 97.8\% of junctions) were supported by RNA-Seq.
+Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n = 57) of ERCCs were detected, those of which were more highly expressed and with a threshold concentration of XX (Figure \ref{fig:isoseq_whole_ercc}a). However of those ERCCs detected, the number of FL reads detected was highly correlated to the known amount used (corr = 0.98, P = 1.42 x 10\textsuperscript{-41} Figure \ref{fig:isoseq_whole_ercc}b), highlighting the power of Iso-Seq to quantify highly-expressed transcripts. 
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=2,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=11,trim={0 1cm 0 0},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
+	{\textbf{Whole Transcriptome Iso-Seq runs generated \textasciitilde30Gb per sample, independent of RIN score}: Sequential Iso-Seq run generated \textbf{a)} a range of 30-35Gb per sample of the whole transcriptome, with no significant difference observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry. \textbf{b)} Despite TG samples having distinctly lower RIN values than WT samples, no significant difference in yield output was observed between WT and TG.}
+	\label{fig:isoseq_whole_lengths}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run]%
@@ -510,7 +531,123 @@ After further collapsing and filtering of transcripts, a total of 46,626 unique 
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=5,trim={1cm 20cm 0cm 0cm},clip,scale = 0.55]{Pictures/Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Quantifying human-specific and mouse-specific \textit{MAPT}/\textit{Mapt} sequences in Iso-Seq Whole Transcriptome]%
+	{\textbf{Human-specific \textit{MAPT} sequences only present in transgenic mice with poor alignment to mouse \textit{Prnp} and \textit{Mapt} gene}: Presence of human- and mouse-specific \textit{MAPT}/\textit{Mapt} sequences was determined in full-length transcripts generated from Iso-Seq merged dataset. \textbf{a)} Ratio of full-length transcripts that were mapped to human-specific \textit{MAPT} and mouse-specific \textit{Mapt} sequences. Dotted lines represent the mean paths across ages. \textbf{b)} As expected, human-specific \textit{MAPT} transcripts were poorly aligned to mouse genome. Transcripts were either aligned to mouse \textit{Prnp} gene (boxed yellow) or  mouse \textit{Mapt} gene (boxed blue). Alignment to mouse \textit{Prnp} gene was near 100\% within a short region, given that the transgene contains exon 2 and 3 of mouse \textit{Prnp} gene\cite{Ramsden2005}. Conversely, while human-specific \textit{MAPT} gene was sufficiently divergent from mouse \textit{Mapt} gene for transgene quantification, it still mapped to the mouse \textit{Mapt} gene 3'UTR albeit poorly. \textbf{c)} USCS genome browser tracks of human-specific (black) \textit{MAPT} transcripts (transgene) and mouse \textit{Prnp} gene and \textbf{d)} mouse \textit{Mapt} gene. Blue tracks represent known transcripts from reference mouse genome (mm10). Tracks were cropped and modified to remove irrelevant genes within the same locus.  UTR - Untranslated region}
+	\label{fig:isoseq_humanmapt}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=6,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
+	{\textbf{Over 60\% of ERCCs were detected with highly accurate quantification} \textbf{a} Highly-concentrated ERCCs were detected as single molecules, as expected, and \textbf{b} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
+	\label{fig:isoseq_whole_ercc}
+\end{figure}
+
+
+\newpage
+\subsection{Nanopore Sequencing run performance and sequencing metrics}
+As a technological comparison, two of the samples sequenced on the PacBio Sequel were also sequenced on the ONT MinION. In contrast to the Iso-Seq, the run performance and yield was significantly poorer and lower with greater variability observed between the two samples (K18: 10.1Gb from nanopore vs 31.1Gb from Iso-Seq, M21: 3.68Gb from nanopore vs 30.45Gb from Iso-Seq, Table \ref{tab:ont_wholerun_output}). The significantly low performance of M21 was due to saturation and permanent blocking of pores (Figure \ref{fig:ont_seq_channel}b) with more rapid decline of sequencing activity than is expected (Figure \ref{fig:ont_time_performance}b). No difference in the sequencing speed was observed across the course of the run (Figure \ref{fig:ont_speedvstime}), however, suggesting that the sequencing chemistry and flow cell was of good quality. The low performance output of the second sample is therefore likely due to introduction of air bubbles and contamination during library preparation.
+
+After removing low-quality basecalled reads (QV < 7), a total of 6M reads were acquired (K18: 4.49M reads, 66\% of total reads, M21: 1.68M reads, 79.2\%, Table \ref{tab:ont_passedreads_output}). Interestingly, despite the marked lower run performance of the second sample, the read quality was slightly higher (K18: mean QV = 9.5, M21: mean QV = 10.2) whereby the first sample had a large portion of very low-quality reads (QV < 2, Figure \ref{fig:ont_lengthquality}a). Nevertheless, both samples had a very similar read length distribution profile (Figure \ref{fig:ont_lengthquality}c,d), with a mean length around 1.8Kb. However in contrast to Iso-Seq, the distribution is skewed to the left with enrichment of smaller molecules (1kb) - a likely reflection of the library size with no size enrichment during library preparation rather than a length bias of the technology. 
+
+Despite the relatively low run performance, more reads were acquired per flow cell per sample than per SMRT cell in Iso-Seq (mean number of basecalled reads from nanopore across 2 samples: 4.43M, mean number of polymerase reads from Iso-Seq across 12 samples: 0.67M). This is because while Iso-Seq was able to generate very long polymerase reads (mean length across 12 samples = 46kb), contributing to the run yield in gigabases, the number of reads generated per run was limited to 1M (number of SMRT cells). Conversely, there was no upper limit in the number of reads that can be generated with nanopore sequencing provided the pores remained active. A greater proportion of ERCCs (68 ERCCs, 73.9\%) was therefore observed in one nanopore run compared to 12 Iso-Seq runs (57 ERCCs, 62\%), and for those ERCCs detected, the number of FL reads detected was also highly correlated to the known amount used (corr = 0.98, P = 9.73 x 10\textsuperscript{-51}). 
+
+
+\vspace{1cm}
+\begin{table}[ht]
+	\centering
+	\begin{tabularx}{1\textwidth}{@{}ccccc@{}}
+		\toprule
+		\multirow{2}{*}{Sample} & \multicolumn{2}{c}{All Reads}      & \multirow{2}{*}{Active channels} & \multirow{2}{*}{Run Duration} \\ \cmidrule(lr){2-3}
+		& Total Bases (Gb) & Number of Reads &                                  &                               \\ \midrule
+		K18                     & 10.1             & 6,752,951       & 479                              & 48hours                       \\
+		M21                     & 3.68             & 2,122,012       & 425                              & 48hours                       \\ \bottomrule
+	\end{tabularx}
+	\captionsetup{justification=raggedright,width=0.95\textwidth}
+\caption[Run Yield Output from Whole Transcriptome Nanopore Sequencing of Tg4510]%
+{\textbf{Poorer run performance and lower yield output observed from Nanopore Sequencing of Whole Transcriptome}. Two samples, sequenced on PacBio Sequel using Iso-Seq approach, were also sequenced on ONT MinION on two separate flow cells over 48hours. The number of total reads basecalled was less than a third of the reads generated on the same samples from the Iso-Seq approach (Table \ref{tab:isoseq_wholerun_output})}
+\label{tab:ont_wholerun_output}
+\end{table}
+
+\vspace{2cm}
+\begin{table}[ht]
+	\centering
+	\begin{tabularx}{1\textwidth}{@{}ccccccccc@{}}
+		\toprule
+		\multirow{2}{*}{Sample} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total Bases\\ (Gb)\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Number of\\  Reads\end{tabular}} & \multicolumn{4}{c}{Read Length (bp)} & \multicolumn{2}{c}{Read Quality} \\ \cmidrule(l){4-9} 
+		&                                                                             &                                                                             & Median  & Mean & N50  & Longest Read & Median           & Mean          \\ \midrule
+		K18                     & 8.21                                                                        & \begin{tabular}[c]{@{}c@{}}4,468,629 \\ (66.2\%)\end{tabular}               & 1400    & 1838 & 2521 & 48877        & 9.6              & 9.5           \\
+		M21                     & 3.1                                                                         & \begin{tabular}[c]{@{}c@{}}1,679,931\\  (79.2\%)\end{tabular}               & 1410    & 1845 & 2644 & 82984        & 10.3             & 10.2          \\ \bottomrule
+	\end{tabularx}
+	\captionsetup{justification=raggedright,width=0.95\textwidth}
+	\caption[ONT Sequencing metrics for pass basecalled reads]%
+	{\textbf{Sequencing metrics of filtered high-quality reads}. Basecalled reads were filtered on quality score with a QV threshold of 7. N50 refers to the sequence length at which 50\% of reads are sized at or over. Gb - Gigabases}
+	\label{tab:ont_passedreads_output}
+\end{table}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=1,scale = 0.45]{Pictures/ONTWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Sequence Channel Activity from Whole Transcriptome Sequencing ]%
+	{\textbf{Sequencing channel activity plot from nanopore sequencing}. Heatmap representation of channel productivity spatially for \textbf{a)} Sample K18 (10.1Gb) and \textbf{b)} Sample M21 (3.68Gb) as DNA is translocated through the pore and signal is collected. A stark contrast of activity can be seen between the two samples, with a significant number of inactive channels (white box) in Sample M21 - of the channels that are active, fewer DNA molecules are translocated and read.  Of note, the activity shows the number of sequences generated per channel not per pore, given that each channel corresponds to four different pores.}
+	\label{fig:ont_seq_channel}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Pictures/ONTWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT run performance over time from Whole Transcriptome Sequencing ]%
+	{\textbf{Temporal run performance from nanopore sequencing}. Shown is the \textbf{a)} number of basses generated per hour over the course of the sequencing run from Sample K18 and from \textbf{b)} Sample M21, and \textbf{c)} cumulative reads generated from Sample K18 and from \textbf{d)} Sample M21. The reads are classified as "pass" (dark blue) if QV > 7 and "fail" (light blue) if QV < 7. The rapid decline of pore activity of Sample M21 is evident from Figure b) in contrast to Figure a), with 90\% of the sequencing data acquired within the first 10hours of the run (Figure d). T50 and T90 refers to the time point at which 50\% and 90\% of total basecalled reads where acquired respectively. Gb - Gigabases}
+	\label{fig:ont_time_performance}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=4,trim={1cm 0cm 0cm 20cm},clip, scale = 0.45]{Pictures/ONTWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT translocation speed against time from Whole Transcriptome Sequencing]%
+	{\textbf{DNA translocation speed against time}. A boxplot of the translocation speed (sequencing rate) for Sample M21 over the course of the 48-hour run. }
+	\label{fig:ont_speedvstime}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=3,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Pictures/ONTWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT read length and quality from Whole Transcriptome Sequencing ]%
+	{\textbf{Length and quality distribution of ONT basecalled reads}. Shown are histograms of the number of sequenced reads against \textbf{a)} mean read quality score of Sample K18, \textbf{b)} mean read quality score of Sample M21, and against \textbf{c)} length of Sample K18 and of \textbf{d)} Sample M21. The distribution has been shaded for reads that have passed or failed the quality filter (Q-score threshold of 7). N50 refers to the sequence length at which 50\% of reads are sized at or over. }
+	\label{fig:ont_lengthquality}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=4,trim={0 16cm 0cm 0},clip, scale = 0.45]{Pictures/Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT read quality against read length from Whole Transcriptome Sequencing ]%
+	{\textbf{Distribution of quality scores against read lengths for all ONT basecalled reads}. Shown are 2D density plots for \textbf{a)} Sample K18 and \textbf{b)} Sample M21 of mean sequence quality (Phred quality score) against read length (log10). Figures are generated from PycoQC \cite{Leger2019}.}
+	\label{fig:ont_lengthvsquality}
+\end{figure}
+
+\clearpage
+\subsection{Transcriptome annotation}
+After further collapsing and filtering of transcripts using the Iso-Seq data, a total of 46,626 unique and intact isoforms were identified (mean = 27.5K, s.d = 2.32K, range = 24.2K - 31.2K) and annotated to 14,482 (98.6\%) known and 202 (1.38\%) novel genes. Gene expression patterns from Iso-Seq reflected expected transcriptional profiles for the brain regions profiled. Using the Mouse Gene Atlas database, the 500 most abundantly-expressed genes were most significantly enriched for ‘cerebral cortex’ (odds ratio = 6.07, adjusted P = 6.8 x 10\textsuperscript{-17}). Rarefaction curves confirmed that the dataset approached saturation, indicating that our coverage of isoform diversity was representative of the true population of transcripts (Figure \ref{fig:isoseq_whole_rarefaction}a). Supporting the validity of these isoforms, the majority (n = 35,262, 75\% of isoforms) were enriched near an annotated CAGE peaks (located within 50bp), and the vast majority of unique splice junctions (n = 138,032, 97.8\% of junctions) were supported by RNA-Seq.
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=3,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Rarefaction Curves of Whole Transcriptome Iso-Seq Runs]%
@@ -520,7 +657,7 @@ After further collapsing and filtering of transcripts, a total of 46,626 unique 
 
 \newpage
 \subsection{Isoform diversity}
-Compared with the mouse reference genome, there was a wider range in the number of isoforms identified per gene (1 – 86), with each gene associated with a median of 2 isoforms. Only 10\% (n = 4,641) of isoforms were detected across all the samples (Figure \ref{fig:isoseq_whole_lowlyexp}a), with about half (47.8\%) detected in 2 - 3 samples with very low transcript expression (Figure \ref{fig:isoseq_whole_lowlyexp}b). Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n = 57) of ERCCs were detected, those of which were more highly expressed and with a threshold concentration of XX (Figure \ref{fig:isoseq_whole_ercc}a). However of those ERCCs detected, the number of FL reads detected was highly correlated to the known amount used (corr = 0.98, P = 1.42 x 10\textsuperscript{-41} Figure \ref{fig:isoseq_whole_ercc}b), highlighting the power of Iso-Seq to quantify highly-expressed transcripts. 
+Compared with the mouse reference genome, there was a wider range in the number of isoforms identified per gene (1 – 86), with each gene associated with a median of 2 isoforms. Only 10\% (n = 4,641) of isoforms were detected across all the samples (Figure \ref{fig:isoseq_whole_lowlyexp}a), with about half (47.8\%) detected in 2 - 3 samples with very low transcript expression (Figure \ref{fig:isoseq_whole_lowlyexp}b).
 
 Gene ontology (GO) analysis showed that the most enriched molecular function amongst the 100 most transcriptionally diverse genes in mouse cortex was ‘tubulin binding’ (odds ratio = 7.90, adjusted P =  6.70 x 10\textsuperscript{-4}), driven by the overexpression of MAPT in TG mice.
 %an interesting observation given the role that RNA-binding proteins (RBPs) themselves play in regulating tissue-specific patterns of alternative splicing. 
@@ -530,7 +667,7 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=4,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Isoform diversity across Tg4510 samples and coverage of ERCC transcripts]%
@@ -540,17 +677,7 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=6,trim={0 25cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
-	{\textbf{Over 60\% of ERCCs were detected with highly accurate quantification} \textbf{a} Highly-concentrated ERCCs were detected as single molecules, as expected, and \textbf{b} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
-	\label{fig:isoseq_whole_ercc}
-\end{figure}
-
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Correlation of isoform diversity with transcript length and number of exons]%
@@ -561,15 +688,27 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \newpage
 \subsection{Iso-Seq vs RNA-Seq} 
-To compare the power of Iso-Seq versus RNA-Seq to detect full-length transcripts, a reference-guided transcriptome assembly using only Illumina's RNA-Seq reads of the same samples was generated. Using SQANTI to characterise isoforms similarly to the Iso-Seq analysis, RNA-Seq defined transcriptome revealed significantly more isoforms (XX). However, upon further examination and comparison using gffcompare, majority of these isoforms were found to be incomplete fragments of isoforms identified in Iso-Seq, with significantly shorter isoform length (XX vs XX, two-tailed unpaired t-test, ), fewer exons (XX vs XX, two-tailed unpaired , ) and less supported by CAGE peaks (XX vs XX, two-tailed unpaired t-test, ). Considering only isoforms that had a complete exact match as defined by gffcompare, more than XX\% of isoforms detected from Iso-Seq dataset could not be readily recapitulated, the majority of which were novel isoforms and genes.      
+To compare the power of Iso-Seq versus RNA-Seq to detect full-length transcripts, a reference-guided transcriptome assembly using only Illumina's RNA-Seq reads of the same samples was generated with Stringtie. Using SQANTI to characterise isoforms similarly to the Iso-Seq analysis, RNA-Seq defined transcriptome revealed significantly more isoforms (156,253 isoforms vs 46,626 isoforms from Iso-Seq defined transcriptome, Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}a). However, upon further examination and comparison using gffcompare, majority of these isoforms were found to be incomplete fragments of isoforms identified in Iso-Seq, with significantly shorter isoform length (2.31kb vs 3.18kb of mean length of RNA-Seq and Iso-Seq defined isoforms respectively, two-tailed unpaired t-test, t(203070) = 71.9, P < 2.2 x 10\textsuperscript{-16}, Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}c), fewer exons (7.30 vs 10.8 of mean number of exons of RNA-Seq and Iso-Seq defined isoforms respectively, two-tailed unpaired t-test, t(203070) = 76.7, P < 2.2 x 10\textsuperscript{-16}, Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}d) and less supported by CAGE peaks (34.0\% vs 71.9\% of RNA-Seq and Iso-Seq defined isoforms within 50bp CAGE peak respectively, Fisher's Test: P < 2.2 x 10\textsuperscript{-16}, odds ratio = 4.97, Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}e). Considering only isoforms that had a complete exact match as defined by gffcompare, more than 50\% of isoforms detected from Iso-Seq dataset could not be readily recapitulated (Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}a), the majority of which were novel isoforms and genes (Figure \ref{fig:isoseq_whole_rnaseqvsisoseq}f).      
 
+The isoform expression (TPM) was then compared using the following methods: 
+\begin{enumerate}
+	\item Iso-Seq data alone using FL read count 
+	\item RNA-Seq data aligned to Iso-Seq defined transcriptome using Kallisto\cite{Bray2016}
+	\item RNA-Seq data aligned to RNA-Seq defined transcriptome using Kallisto.\cite{Bray2016} RNA-Seq transcriptome was generated using Stringtie. 	
+\end{enumerate}
 
+Focusing only on the subset of isoforms that were commonly identified in both RNA-Seq and Iso-Seq defined transcriptomes (n = 23,761), the isoform expression using RNA-Seq data mapped to Iso-Seq (method 2) and RNA-Seq transcriptome (method 3) was highly correlated (Pearson's correlation = 0.77, P < 2.2 x 10\textsuperscript{-16}). Conversely, the isoform expression derived from Iso-Seq data alone (method 1) was weekly correlated to the RNA-Seq derived isoform expression (method 3, Pearson's correlation = 0.45, P < 2.2 x 10\textsuperscript{-16}). This highlights the power of Iso-Seq defined transcriptome to accurately identify and annotate isoforms as a scaffold, but is limited for quantitative analysis due to sequencing depth.
 
-%We then compared the use of Iso-seq and RNA-seq data to estimate isoform expression, focusing on the subset of isoforms identified using both methods (n = 19,094). We calculated isoform expression levels (tpm) using 1)Iso-seq data only (FL-TPM; full-length read transcript per million),2)RNA-seq data using Iso-seq-defined transcriptomes (TPM; kallisto),3)RNA-seq data using short-read-defined transcriptomes (TPM; kallisto)
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=13,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[RNA-Seq defined transcriptome]%
+	{\textbf{Iso-Seq identified more isoforms per gene, that were longer with more exons, and with a greater proportion of isoforms with CAGE peak}: A reference-guided transcriptome using only RNA-Seq data (RNA-Seq defined transcriptome) was generated. \textbf{a)} RNA-Seq defined transcriptome identified more isoforms, as expected given the significantly higher sequencing depth. However, \textbf{b)} the isoform diversity was smaller than that from Iso-Seq defined transcriptome with the majority of genes associated with only one isoform. \textbf{c)} Isoforms identified from the RNA-Seq defined transcriptome were also more likely to be shorter and \textbf{d} contain fewer exons. \textbf{e)} Highlighting the power of Iso-Seq to identify true full-length isoforms in comparison to RNA-Seq, a significantly larger proportion of isoforms from Iso-Seq data were found within 50bp of a CAGE peak. \textbf{f} Approximately half of the isoforms identified using Iso-Seq were novel (NIC, NNC), which were not recapitulated using RNA-Seq. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}   
+	\label{fig:isoseq_whole_rnaseqvsisoseq}
+\end{figure}
 
-%-	Correlation of IsoSeq TPM expression and RNASeq TPM expression 
-%-	What is the threshold of gene expression observed in Iso-Seq data vs RNA-Seq data (genes that are observed in RNA-Seq but not in Iso-Seq)
-%Isoform quantification using RNASeq 
 
 \subsection{Novel isoforms}
 Interestingly, the transcriptome was made up of 50\% of isoforms that were known (23,350) and 50\% that were novel (23,096) and were not present in existing annotation databases (Table \ref{tab:sqanti_output_whole}). Benchmarking the accuracy and reliability of novel isoforms against known isoforms, no difference in the number supported within 50bp CAGE was observed (novel isoforms within CAGE: 17,252, 75.4\%; known isoforms with CAGE: 17,842, 75.8\%, Fisher's Test: P = 0.31, odds ratio = 0.978). Less RNA-Seq support was observed for novel isoforms compared to known isoforms (mean RNA-Seq expression for known isoforms = 8.95TPM, mean RNA-Seq expression for novel isoforms = 1.99TPM; two-tailed unpaired t-test: t(46401) = 14.8, P = 1.37 x 10\textsuperscript{-49}); however, this is likely to reflect RNA-Seq's lack of power to detect novel isoforms rather than the validity of these isoforms. 
@@ -603,7 +742,7 @@ Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitne
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=7,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=7,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
@@ -618,7 +757,7 @@ Except for AF and AL, all the other different splicing events, and in particular
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=8,trim={0 19cm 0 2cm},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=8,trim={0 19cm 0 2cm},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq]%
@@ -650,7 +789,7 @@ These isoforms with both IR and NMD were found to more lowly expressed than isof
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=9,trim={0 1cm 0 0.5cm},clip,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=9,trim={0 1cm 0 0.5cm},clip,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Association of intron retention and NMD in Whole Transcriptome Iso-Seq]%
@@ -669,7 +808,7 @@ Importantly, over a third (448, 39.3\%) of these annotated lncRNA isoforms conta
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=10,scale = 0.55]{Pictures/WholeTranscriptome.pdf}
+		\includegraphics[page=10,scale = 0.55]{Pictures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Characterisation of LncRNA in Whole Transcriptome runs]%
