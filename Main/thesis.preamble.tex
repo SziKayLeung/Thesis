@@ -1,11 +1,13 @@
 \newcommand{\myparagraph}[1]{\textbf{#1}\mbox{}\\} % next line after paragraph use
 \newcommand{\boldheader}[1]{\vspace{0.5cm}\textbf{#1}\mbox{}\\} % bold header titles and space before and after
+\newcommand{\underlineheader}[1]{\vspace{0.5cm}\underline{#1}\mbox{}\\} % bold header titles and space before and after
+\newcommand*\conj[1]{\bar{#1}}
+
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
 %\usepackage{mathchars}
 \usepackage{setspace}
-\onehalfspacing
 \usepackage{subfiles}
 \usepackage[parfill]{parskip}
 \usepackage{siunitx,tabularx,ragged2e,booktabs,caption,multirow}
@@ -29,6 +31,8 @@
 \usepackage[dvipsnames]{xcolor} % colour text
 \usepackage{libertine} % space between text on same line
 \usepackage{longtable} % longtables overflow into next page
+\usepackage{amsmath} % maths equation alignment 
+\usepackage[euler]{textgreek} % greek letters
 
 %% Bibliography
 \usepackage[superscript,biblabel]{cite}
@@ -43,7 +47,6 @@
 \usepackage{todonotes} %todonotes
 \captionsetup[table]{width=16cm}
 
-
 \usepackage{hyperref} %hyperlinks
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
@@ -52,6 +55,16 @@
 	citecolor=black,
 	urlcolor=black
 }
+
+
+\usepackage[capitalize, nameinlink]{cleveref}
+\crefdefaultlabelformat{#2\textbf{#1}#3} % <-- Only #1 in \textbf
+\crefname{section}{\textbf{Section}}{\textbf{Sections}}
+\crefname{chapter}{\textbf{Chapter}}{\textbf{Chapter}}
+\crefname{table}{\textbf{Table}}{\textbf{Table}}
+\crefname{figure}{\textbf{Figure}}{\textbf{Figure}}
+%\Crefname{section}{\textbf{Section}}{\textbf{Sections}}
+
 
 
 \input{code.sty} % for including programming 
