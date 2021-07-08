@@ -1,12 +1,69 @@
-\nomenclatureentry{aSMRT@[{SMRT}]\begingroup Single Molecule Real Time sequencing\nomeqref {2.0}|nompageref}{15}
-\nomenclatureentry{aZMW@[{ZMW}]\begingroup Zero-Mode-Waveguide\nomeqref {2.0}|nompageref}{15}
-\nomenclatureentry{aCCS@[{CCS}]\begingroup Circular Consensus Sequence\nomeqref {2.0}|nompageref}{17}
-\nomenclatureentry{aPCR@[{PCR}]\begingroup Polymerase Chain Reaction\nomeqref {2.0}|nompageref}{24}
-\nomenclatureentry{adNTPs@[{dNTPs}]\begingroup Deoxynucleotides\nomeqref {2.0}|nompageref}{24}
-\nomenclatureentry{aRIN@[{RIN}]\begingroup RNA Integrity Number\nomeqref {2.1}|nompageref}{26}
-\nomenclatureentry{adsDNA@[{dsDNA}]\begingroup double-stranded DNA\nomeqref {2.1}|nompageref}{27}
-\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {2.1}|nompageref}{31}
-\nomenclatureentry{aTPM@[{TPM}]\begingroup Transcripts per Million\nomeqref {2.1}|nompageref}{39}
-\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {3.0}|nompageref}{46}
-\nomenclatureentry{aIR-isoforms@[{IR-isoforms}]\begingroup Intron-retained isoforms\nomeqref {3.0}|nompageref}{60}
-\nomenclatureentry{aNMD-isoforms@[{NMD-isoforms}]\begingroup Isoforms characterised with nonsense mediated decay\nomeqref {3.0}|nompageref}{60}
+\nomenclatureentry{aAD@[{AD}]\begingroup Alzheimer's disease\nomeqref {1.0}|nompageref}{17}
+\nomenclatureentry{aAPP@[{APP}]\begingroup Amyloid Precursor Protein\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aBACE@[{BACE}]\begingroup Beta-secretase\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aNFT@[{NFT}]\begingroup Neurofibrillary tangles\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aLOAD@[{LOAD}]\begingroup Late Onset Alzheimer's Disease\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aEOAD@[{EOAD}]\begingroup Early Onset Alzheimer's Disease\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aFAD@[{FAD}]\begingroup Familial's Alzheimer's Disease\nomeqref {1.0}|nompageref}{18}
+\nomenclatureentry{aPSEN1@[{PSEN1}]\begingroup Presenilin 1\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aPSEN2@[{PSEN2}]\begingroup Presenilin 2\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aGWAS@[{GWAS}]\begingroup Genome-wide association studies\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aSNP@[{SNP}]\begingroup Single Nucleotide Polymorphism\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aBIN1@[{BIN1}]\begingroup Bridging Integrator \nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aCLU@[{CLU}]\begingroup Clusterin\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aCR1@[{CR1}]\begingroup Complement Receptor 1\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aPICALM@[{PICALM}]\begingroup Phosphatidylinositol Binding Clathrin Assembly Protein\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aAPOE@[{APOE}]\begingroup Apolipoprotein E\nomeqref {1.0}|nompageref}{19}
+\nomenclatureentry{aATI@[{ATI}]\begingroup Alternative Transcription Initiation\nomeqref {1.0}|nompageref}{21}
+\nomenclatureentry{aAPA@[{APA}]\begingroup Alternative Poly-Adenylation\nomeqref {1.0}|nompageref}{21}
+\nomenclatureentry{aAS@[{AS}]\begingroup Alternative Splicing\nomeqref {1.0}|nompageref}{21}
+\nomenclatureentry{amiRNA@[{miRNA}]\begingroup micro RNA\nomeqref {1.0}|nompageref}{21}
+\nomenclatureentry{asnRNPs@[{snRNPs}]\begingroup Small Nuclear Ribonucleoproteins\nomeqref {1.0}|nompageref}{23}
+\nomenclatureentry{a5'SS@[{5'SS}]\begingroup 5' Splice Site\nomeqref {1.0}|nompageref}{23}
+\nomenclatureentry{a3'SS@[{3'SS}]\begingroup 3' Splice Site\nomeqref {1.0}|nompageref}{23}
+\nomenclatureentry{aBPS@[{BPS}]\begingroup Branch Point Sequence\nomeqref {1.0}|nompageref}{23}
+\nomenclatureentry{aPPT@[{PPT}]\begingroup Polypyrimidine Tract\nomeqref {1.0}|nompageref}{23}
+\nomenclatureentry{aIR@[{IR}]\begingroup Intron Retention\nomeqref {1.0}|nompageref}{24}
+\nomenclatureentry{aORF@[{ORF}]\begingroup Open Reading Frame\nomeqref {1.0}|nompageref}{24}
+\nomenclatureentry{aSE@[{SE}]\begingroup Skipped Exon\nomeqref {1.0}|nompageref}{24}
+\nomenclatureentry{aA5SS@[{A5SS}]\begingroup Alternative 5' Splice Site\nomeqref {1.0}|nompageref}{24}
+\nomenclatureentry{aA3SS@[{A3SS}]\begingroup Alternative 3' Splice Site\nomeqref {1.0}|nompageref}{24}
+\nomenclatureentry{aBPP@[{BPP}]\begingroup Branchpoinnt Binding Protein\nomeqref {1.0}|nompageref}{25}
+\nomenclatureentry{aNMD@[{NMD}]\begingroup Nonsense Mediated Decay\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{alncRNA@[{lncRNA}]\begingroup Long non-coding RNA\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{aNATs@[{NATs}]\begingroup Natural Antisense Transcripts\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{aRNA-Seq@[{RNA-Seq}]\begingroup RNA-Sequencing\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{aEST@[{EST}]\begingroup Expressed Sequence Tags\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{aSAGE@[{SAGE}]\begingroup Serial Analysis of Gene Expression\nomeqref {1.0}|nompageref}{26}
+\nomenclatureentry{aTSS@[{TSS}]\begingroup Transcription Start Sites\nomeqref {1.0}|nompageref}{27}
+\nomenclatureentry{aTTS@[{TTS}]\begingroup Transcription Termination Sites\nomeqref {1.0}|nompageref}{27}
+\nomenclatureentry{aSMRT@[{SMRT}]\begingroup Single Molecule Real Time\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aPacBio@[{PacBio}]\begingroup Pacific Biosciences\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aONT@[{ONT}]\begingroup Oxford Nanopore Technologies\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aSLR@[{SLR}]\begingroup Synthetic Long Read\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aspISO-seq@[{spISO-seq}]\begingroup Sparse Isoform Sequencing\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aIso-Seq@[{Iso-Seq}]\begingroup Isoform Sequencing\nomeqref {1.0}|nompageref}{29}
+\nomenclatureentry{aPSI@[{PSI}]\begingroup Percent-Spliced In\nomeqref {1.0}|nompageref}{30}
+\nomenclatureentry{aRPKM@[{RPKM}]\begingroup Reads of a transcript sequence per Millions\nomeqref {1.0}|nompageref}{30}
+\nomenclatureentry{aDIE@[{DIE}]\begingroup Differential Isoform Expression\nomeqref {1.0}|nompageref}{31}
+\nomenclatureentry{aDIU@[{DIU}]\begingroup Differential Isoform Usage\nomeqref {1.0}|nompageref}{31}
+\nomenclatureentry{aSMRT@[{SMRT}]\begingroup Single Molecule Real Time sequencing\nomeqref {2.0}|nompageref}{34}
+\nomenclatureentry{aZMW@[{ZMW}]\begingroup Zero-Mode-Waveguide\nomeqref {2.0}|nompageref}{34}
+\nomenclatureentry{aCCS@[{CCS}]\begingroup Circular Consensus Sequence\nomeqref {2.0}|nompageref}{36}
+\nomenclatureentry{aERCC@[{ERCC}]\begingroup External RNA Controls Consortium\nomeqref {2.0}|nompageref}{43}
+\nomenclatureentry{aPCR@[{PCR}]\begingroup Polymerase Chain Reaction\nomeqref {2.2}|nompageref}{45}
+\nomenclatureentry{adNTPs@[{dNTPs}]\begingroup Deoxynucleotides\nomeqref {2.2}|nompageref}{45}
+\nomenclatureentry{aRIN@[{RIN}]\begingroup RNA Integrity Number\nomeqref {2.3}|nompageref}{47}
+\nomenclatureentry{adsDNA@[{dsDNA}]\begingroup double-stranded DNA\nomeqref {2.3}|nompageref}{48}
+\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {2.3}|nompageref}{52}
+\nomenclatureentry{aRT@[{RT}]\begingroup Reverse Transcription\nomeqref {2.3}|nompageref}{56}
+\nomenclatureentry{aTS@[{TS}]\begingroup Template Switching\nomeqref {2.3}|nompageref}{59}
+\nomenclatureentry{aTPM@[{TPM}]\begingroup Transcripts per Million\nomeqref {2.3}|nompageref}{62}
+\nomenclatureentry{aFLAIR@[{FLAIR}]\begingroup Full-Length Alternative Isoform analysis of RNA\nomeqref {2.3}|nompageref}{75}
+\nomenclatureentry{aToFU@[{ToFU}]\begingroup Transcript isOforms: Full-length and Unassembled\nomeqref {3.0}|nompageref}{83}
+\nomenclatureentry{aIR-isoforms@[{IR-isoforms}]\begingroup Intron-retained isoforms\nomeqref {3.0}|nompageref}{104}
+\nomenclatureentry{aNMD-isoforms@[{NMD-isoforms}]\begingroup Isoforms characterised with nonsense mediated decay\nomeqref {3.0}|nompageref}{104}
+\nomenclatureentry{aCPM@[{CPM}]\begingroup Counts per million\nomeqref {5.0}|nompageref}{129}
+\nomenclatureentry{aTMM@[{TMM}]\begingroup Trimmed Mean of M-values\nomeqref {5.0}|nompageref}{129}
+\nomenclatureentry{aFDR@[{FDR}]\begingroup False Discovery Rate\nomeqref {5.0}|nompageref}{130}
+\nomenclatureentry{aGFAP@[{GFAP}]\begingroup Glial Fibrillary Acidic Protein\nomeqref {5.1}|nompageref}{139}

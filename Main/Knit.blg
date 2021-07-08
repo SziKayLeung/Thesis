@@ -3,46 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Knit.aux
 The style file: unsrt.bst
 Database file #1: library.bib
+Warning--I didn't find a database entry for "Carninci2006"
 Warning--I didn't find a database entry for "A"
-You've used 32 entries,
+Warning--empty author in ONT2019NanoporeQC
+Warning--empty journal in ONT2019NanoporeQC
+Warning--empty institution in Conesa2017
+You've used 95 entries,
             1791 wiz_defined-function locations,
-            669 strings with 25137 characters,
-and the built_in function-call counts, 17285 in all, are:
-= -- 643
-> -- 2649
-< -- 1
-+ -- 894
-- -- 862
-* -- 2135
-:= -- 3482
-add.period$ -- 93
-call.type$ -- 32
-change.case$ -- 32
+            1070 strings with 42792 characters,
+and the built_in function-call counts, 34676 in all, are:
+= -- 1897
+> -- 4061
+< -- 3
++ -- 1388
+- -- 1293
+* -- 3775
+:= -- 6434
+add.period$ -- 267
+call.type$ -- 95
+change.case$ -- 96
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 284
-empty$ -- 698
-format.name$ -- 862
-if$ -- 3109
+cite$ -- 98
+duplicate$ -- 836
+empty$ -- 2073
+format.name$ -- 1293
+if$ -- 6677
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 29
-newline$ -- 160
-num.names$ -- 32
-pop$ -- 53
+int.to.str$ -- 95
+missing$ -- 79
+newline$ -- 460
+num.names$ -- 92
+pop$ -- 198
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 123
+skip$ -- 400
 stack$ -- 0
-substring$ -- 550
-swap$ -- 45
-text.length$ -- 1
+substring$ -- 1607
+swap$ -- 146
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 72
-width$ -- 34
-write$ -- 345
-(There was 1 warning)
+warning$ -- 3
+while$ -- 218
+width$ -- 97
+write$ -- 991
+(There were 5 warnings)

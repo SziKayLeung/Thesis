@@ -110,7 +110,7 @@ The abundance of each unique isoform can be estimated from the number of associa
 
 \subsubsection{Validation of isoforms with RNASeq} 
 \label{section:ch2_rnaseq_support_bioinformatics}
-Samples sequenced with paired-end reads, Illumina Hi-Seq, 125bases. Paired end reads as more accurate for identifying and sequencing junctions. RNASeq data through stringent filtering (plot of fastqc) and aligned to mouse genome (Gencode, version X) using STAR (see section X for parameters). Abundance in TPM was then calculated with Kallisto (ref) as an input into SQANTI to identify coverage of splicing junctions with RNASeq.  
+Samples sequenced with paired-end reads, Illumina Hi-Seq, 125bases. Paired end reads as more accurate for identifying and sequencing junctions. RNASeq data through stringent filtering (plot of fastqc) and aligned to mouse genome (Gencode, version X) using STAR (see section X for parameters). Abundance in TPM was then calculated with Kallisto (v0.46.0) \cite{Bray2016} as an input into SQANTI to identify coverage of splicing junctions with RNASeq.  
 
 Provides support of transcripts from RNA-Seq data, highest expression of RNA-Seq reads of the splice junctions 
 The junction with lowest coverage from RNA-Seq, and its associated read count 	
@@ -118,6 +118,7 @@ Standard deviation of read counts across all the junctions for each transcript
 
 
 \subsubsection{SQANTI2 classification and filtering of isoforms} 
+\label{sec:sq_exp}
 High-quality, clustered, filtered isoforms from Cupcake were characterised using SQANTI2 (v7.4), a pipeline initially developed by Conesa et al. [ref] and refined by Elizabeth Tseng (Pacific Bioscience’s specialist) [ref].
 In combination with genome annotation, SQANTI2 performs a reference-based correction of sequences and classifies isoforms based on splice junctions. The curated transcriptome can be further filtered and annotated with public datasets and RNA-Seq data (Section \ref{section:ch2_rnaseq_support_bioinformatics}). Public datasets include 
 \begin{itemize}
@@ -199,9 +200,9 @@ In summary, the isoforms were filtered by the following criteria:
 \subsubsection{Isoform expression from Iso-Seq} 
 To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
 
-\begin{equation}
+\begin{align*}
 FL\;\:TPM (x_{sample},y_{sample})=\frac{Raw\;\:FL\;\:count (x_{isoform},y_{sample})}{Total\;\:FL\;\:count (y_{sample})} *10^6
-\end{equation}
+\end{align*}
 
 With a cut-off lower than 0.5 TPM, a 0.5 - 10 TPM refers to low expression, a 11- 1000 refers to medium expression, and > 1000 TPM high expression [literature ref]. 
 
@@ -209,11 +210,6 @@ TPM is the most effective within-sample normalisation method to relatively quant
 
 Between-sample normalisation methods to relatively quantify expression of the same gene in different samples, remove technical variations due to presence of few highly expressed genes that make up a significant proportion of total reads, and due to different number of reads in each sample. 
 
-\subsubsection{Quantification of human transgene expression}
-As reported in \cite{Castanho2020}, human-specific MAPT sequence was selected from a 2kb region present in the 3'UTR after using BLAT to identify divergent sequence in human and mouse MAPT. Counts of this human-specific MAPT sequence in the CCS and polished reads from WT and TG were then plotted as a ratio of unique reads to the total number of input reads.  
-
-\subsubsection{Classification of Alternative Splicing Events}
-The occurrence of mutually exclusive exons (MX) and skipped exons (SE) were assessed using SUPPA2 with the parameter –f ioe, intron retention (IR) with SQANTI2, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
 
 \subsubsection{Limitations}
 While PacBio's Iso-Seq have major potential for transcriptome annotation, there were currently several major limitations that need to be addressed with further development of library preparation and bioinformatic data analyses \cite{Kuo2017}: 

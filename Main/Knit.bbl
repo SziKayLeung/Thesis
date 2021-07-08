@@ -5,14 +5,6 @@ Jan Verheijen and Kristel Sleegers.
 \newblock {Understanding Alzheimer Disease at the Interface between Genetics
   and Transcriptomics}, 2018.
 
-\bibitem{Ocwieja2012}
-Karen~E. Ocwieja, Scott Sherrill-Mix, Rithun Mukherjee, Rebecca Custers-Allen,
-  Patricia David, Michael Brown, Susana Wang, Darren~R. Link, Jeff Olson, Kevin
-  Travers, Eric Schadt, and Frederic~D. Bushman.
-\newblock {Dynamic regulation of HIV-1 mRNA populations analyzed by
-  single-molecule enrichment and long-read sequencing}.
-\newblock {\em Nucleic Acids Research}, 40(20):10345--10355, nov 2012.
-
 \bibitem{Djebali2012}
 Sarah Djebali, Carrie~A. Davis, Angelika Merkel, Alex Dobin, Timo Lassmann, Ali
   Mortazavi, Andrea Tanzer, Julien Lagarde, Wei Lin, Felix Schlesinger,
@@ -60,6 +52,18 @@ Laura~S. Kremer, Daniel~M. Bader, Christian Mertes, Robert Kopajtich, Garwin
   Meitinger, Julien Gagneur, and Holger Prokisch.
 \newblock {Genetic diagnosis of Mendelian disorders via RNA sequencing}.
 \newblock {\em Nature Communications}, 8(1):1--11, jun 2017.
+
+\bibitem{Wang2008}
+Eric~T Wang, Rickard Sandberg, Shujun Luo, Irina Khrebtukova, Lu~Zhang,
+  Christine Mayr, Stephen~F Kingsmore, Gary~P Schroth, and Christopher~B Burge.
+\newblock {Alternative isoform regulation in human tissue transcriptomes}.
+\newblock {\em Nature}, 456(7221):470--476, 2008.
+
+\bibitem{Pan2008}
+Qun Pan, Ofer Shai, Leo~J Lee, Brendan~J Frey, and Benjamin~J Blencowe.
+\newblock {Deep surveying of alternative splicing complexity in the human
+  transcriptome by high-throughput sequencing}.
+\newblock {\em Nature Genetics}, 40(12):1413--1415, 2008.
 
 \bibitem{Dunham2012}
 Ian Dunham, Anshul Kundaje, Shelley~F. Aldred, Patrick~J. Collins, Carrie~A.
@@ -170,6 +174,45 @@ Kasper Karlsson and Sten Linnarsson.
 \newblock {Single-cell mRNA isoform diversity in the mouse brain}.
 \newblock {\em BMC Genomics}, 18(1), 2017.
 
+\bibitem{Will2011}
+Cindy~L. Will and Reinhard L{\"{u}}hrmann.
+\newblock {Spliceosome structure and function}.
+\newblock {\em Cold Spring Harbor Perspectives in Biology}, 3(7):1--2, jul
+  2011.
+
+\bibitem{Turunen2013}
+Janne~J. Turunen, Elina~H. Niemel{\"{a}}, Bhupendra Verma, and Mikko~J.
+  Frilander.
+\newblock {The significant other: Splicing by the minor spliceosome}, jan 2013.
+
+\bibitem{Aebi1986}
+M.~Aebi, H.~Hornig, R.~A. Padgett, J.~Reiser, and C.~Weissmann.
+\newblock {Sequence requirements for splicing of higher eukaryotic nuclear
+  pre-mRNA}.
+\newblock {\em Cell}, 47(4):555--565, nov 1986.
+
+\bibitem{Lamond1987}
+A.~I. Lamond, M.~M. Konarska, and P.~A. Sharp.
+\newblock {A mutational analysis of spliceosome assembly: evidence for splice
+  site collaboration during spliceosome formation.}
+\newblock {\em Genes {\&} development}, 1(6):532--543, 1987.
+
+\bibitem{Sheth2006}
+Nihar Sheth, Xavier Roca, Michelle~L. Hastings, Ted Roeder, Adrian~R. Krainer,
+  and Ravi Sachidanandam.
+\newblock {Comprehensive splice-site analysis using comparative genomics}.
+\newblock {\em Nucleic Acids Research}, 34(14):3955--3967, 2006.
+
+\bibitem{Parada2014}
+Guillermo~E. Parada, Roberto Munita, Cledi~A. Cerda, and Katia Gysling.
+\newblock {A comprehensive survey of non-canonical splice sites in the human
+  transcriptome}, sep 2014.
+
+\bibitem{Herzel2017}
+Lydia Herzel, Diana~S.M. Ottoz, Tara Alpert, and Karla~M Neugebauer.
+\newblock {Splicing and transcription touch base: Co-transcriptional
+  spliceosome assembly and function}, 2017.
+
 \bibitem{Workman2019a}
 Rachael~E. Workman, Alison~D. Tang, Paul~S. Tang, Miten Jain, John~R. Tyson,
   Roham Razaghi, Philip~C. Zuzarte, Timothy Gilpatrick, Alexander Payne, Joshua
@@ -206,6 +249,21 @@ Donald Sharon, Hagen Tilgner, Fabian Grubert, and Michael Snyder.
 \newblock {A single-molecule long-read survey of the human transcriptome}.
 \newblock {\em Nature Biotechnology}, 31(11):1009--1014, 2013.
 
+\bibitem{Piovesan2016}
+Allison Piovesan, Maria Caracausi, Francesca Antonaros, Maria~Chiara Pelleri,
+  and Lorenza Vitale.
+\newblock {GeneBase 1.1: A tool to summarize data from NCBI gene datasets and
+  its application to an update of human gene statistics}.
+\newblock {\em Database}, 2016:baw153, dec 2016.
+
+\bibitem{Bang2001}
+Marie~Louise Bang, Thomas Centner, Friderike Fornoff, Adam~J. Geach, Michael
+  Gotthardt, Mark McNabb, Christian~C. Witt, Dietmar Labeit, Carol~C. Gregorio,
+  Henk Granzier, and Siegfried Labeit.
+\newblock {The complete gene sequence of titin, expression of an unusual
+  700-kDa titin isoform, and its interaction with obscurin identify a novel
+  Z-line to I-band linking system}, nov 2001.
+
 \bibitem{Kuo2017}
 Richard~I. Kuo, Elizabeth Tseng, Lel Eory, Ian~R. Paton, Alan~L. Archibald, and
   David~W. Burt.
@@ -237,11 +295,18 @@ Hagen Tilgner, Fereshteh Jahanbani, Ishaan Gupta, Paul Collier, Eric Wei,
   coordination in the human transcriptome}.
 \newblock {\em Genome Research}, 28(2):231--242, feb 2018.
 
-\bibitem{Wang2008}
-Eric~T Wang, Rickard Sandberg, Shujun Luo, Irina Khrebtukova, Lu~Zhang,
-  Christine Mayr, Stephen~F Kingsmore, Gary~P Schroth, and Christopher~B Burge.
-\newblock {Alternative isoform regulation in human tissue transcriptomes}.
-\newblock {\em Nature}, 456(7221):470--476, 2008.
+\bibitem{Marques-Coelho2021}
+Diego Marques-Coelho, Lukas da Cruz~Carvalho Iohan, Ana~Raquel {Melo de
+  Farias}, Amandine Flaig, Franck Letournel, Marie~Laure Martin-N{\'{e}}grier,
+  Fran{\c{c}}oise Chapon, Maxime Faisant, Catherine Godfraind, Claude~Alain
+  Maurage, Vincent Deramecourt, Mathilde Duchesne, David Meyronnet, Nathalie
+  Streichenberger, Andr{\'{e}}~Mau{\`{e}}s de~Paula, Val{\'{e}}rie Rigau, Fanny
+  Vandenbos-Burel, Charles Duyckaerts, Danielle Seilhean, Serge Milin,
+  Dan~Christian Chiforeanu, Annie Laquerri{\`{e}}re, Florent Marguet,
+  B{\'{e}}atrice Lannes, Jean~Charles Lambert, and Marcos~Romualdo Costa.
+\newblock {Differential transcript usage unravels gene expression alterations
+  in Alzheimer's disease human brains}.
+\newblock {\em npj Aging and Mechanisms of Disease}, 7(1):1--15, dec 2021.
 
 \bibitem{Byrne2017}
 Ashley Byrne, Anna~E Beaudin, Hugh~E Olsen, Miten Jain, Charles Cole, Theron
@@ -261,6 +326,28 @@ Daniel~R. Garalde, Elizabeth~A. Snell, Daniel Jachimowicz, Botond Sipos,
 \newblock {Highly parallel direct RN A sequencing on an array of nanopores}.
 \newblock {\em Nature Methods}, 15(3):201--206, mar 2018.
 
+\bibitem{Eid2009}
+John Eid, Adrian Fehr, Jeremy Gray, Khai Luong, John Lyle, Geoff Otto, Paul
+  Peluso, David Rank, Primo Baybayan, Brad Bettman, Arkadiusz Bibillo, Keith
+  Bjornson, Bidhan Chaudhuri, Frederick Christians, Ronald Cicero, Sonya Clark,
+  Ravindra Dalal, Alex DeWinter, John Dixon, Mathieu Foquet, Alfred Gaertner,
+  Paul Hardenbol, Cheryl Heiner, Kevin Hester, David Holden, Gregory Kearns,
+  Xiangxu Kong, Ronald Kuse, Yves Lacroix, Steven Lin, Paul Lundquist, Congcong
+  Ma, Patrick Marks, Mark Maxham, Devon Murphy, Insil Park, Thang Pham, Michael
+  Phillips, Joy Roy, Robert Sebra, Gene Shen, Jon Sorenson, Austin Tomaney,
+  Kevin Travers, Mark Trulson, John Vieceli, Jeffrey Wegener, Dawn Wu, Alicia
+  Yang, Denis Zaccarin, Peter Zhao, Frank Zhong, Jonas Korlach, and Stephen
+  Turner.
+\newblock {Real-time DNA sequencing from single polymerase molecules}.
+\newblock {\em Science}, 323(5910):133--138, jan 2009.
+
+\bibitem{Travers2010}
+Kevin~J Travers, Chen~Shan Chin, David~R Rank, John~S Eid, and Stephen~W
+  Turner.
+\newblock {A flexible and efficient template format for circular consensus
+  sequencing and SNP detection}.
+\newblock {\em Nucleic acids research}, 38(15):e159, 2010.
+
 \bibitem{Levene2003}
 H.~J. Levene, J~Korlach, S~W Turner, M~Foquet, H~G Craighead, and W~W Webb.
 \newblock {Zero-mode waveguides for single-molecule analysis at high
@@ -272,12 +359,38 @@ Alice Mccarthy.
 \newblock {Third generation DNA sequencing: Pacific biosciences' single
   molecule real time technology}, jul 2010.
 
-\bibitem{Weirather2017}
-Jason~L Weirather, Mariateresa de~Cesare, Yunhao Wang, Paolo Piazza, Vittorio
-  Sebastiano, Xiu-Jie Wang, David Buck, and Kin~Fai Au.
-\newblock {Comprehensive comparison of Pacific Biosciences and Oxford Nanopore
-  Technologies and their applications to transcriptome analysis}.
-\newblock {\em F1000Research}, 6:100, 2017.
+\bibitem{Ardui2018}
+Simon Ardui, Adam Ameur, Joris~R. Vermeesch, and Matthew~S. Hestand.
+\newblock {Single molecule real-time (SMRT) sequencing comes of age:
+  Applications and utilities for medical diagnostics}, mar 2018.
+
+\bibitem{Rhoads2015}
+Anthony Rhoads and Kin~Fai Au.
+\newblock {PacBio Sequencing and Its Applications}.
+\newblock {\em Genomics, Proteomics {\&} Bioinformatics}, 13(5):278--289, oct
+  2015.
+
+\bibitem{Loomis2013}
+Erick~W. Loomis, John~S. Eid, Paul Peluso, Jun Yin, Luke Hickey, David Rank,
+  Sarah McCalmon, Randi~J. Hagerman, Flora Tassone, and Paul~J. Hagerman.
+\newblock {Sequencing the unsequenceable: Expanded CGG-repeat alleles of the
+  fragile X gene}.
+\newblock {\em Genome Research}, 23(1):121--128, jan 2013.
+
+\bibitem{Au2013}
+Kin~Fai Au, Vittorio Sebastiano, Pegah~Tootoonchi Afshar, J.~D. Durruthy,
+  Lawrence Lee, Brian~A Williams, H.~van Bakel, Eric~E Schadt, Renee~A
+  Reijo-Pera, Jason~G Underwood, and Wing~Hung Wong.
+\newblock {Characterization of the human ESC transcriptome by hybrid
+  sequencing}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  110(50):E4821--E4830, 2013.
+
+\bibitem{Oikonomopoulos2020}
+Spyros Oikonomopoulos, Anthony Bayega, Somayyeh Fahiminiya, Haig Djambazian,
+  Pierre Berube, and Jiannis Ragoussis.
+\newblock {Methodologies for Transcript Profiling Using Long-Read
+  Technologies}, jul 2020.
 
 \bibitem{Ramskold2012}
 Daniel Ramsk{\"{o}}ld, Shujun Luo, Yu~Chieh Wang, Robin Li, Qiaolin Deng,
@@ -293,6 +406,12 @@ Maria Cartolano, Bruno Huettel, Benjamin Hartwig, Richard Reinhardt, and
 \newblock {cDNA library enrichment of full length transcripts for SMRT long
   read sequencing}.
 \newblock {\em PLoS ONE}, 11(6):e0157779, jun 2016.
+
+\bibitem{WTAC}
+Dr~Ioannis Ragoussis and Dr~Spyridon Oikonomopoulos.
+\newblock {RNA Transcriptomics}.
+\newblock {\em Wellcome Genome Campus Advanced Course 2018}, pages 1--111,
+  2018.
 
 \bibitem{Zhao2019}
 Liangzhen Zhao, Hangxiao Zhang, Markus~V. Kohnen, Kasavajhala~V.S.K. Prasad,
@@ -316,6 +435,11 @@ Leena Salmela, Riku Walve, Eric Rivals, Esko Ukkonen, and Cenk Sahinalp.
   graphs}.
 \newblock {\em Bioinformatics}, 33(6):799--806, 2017.
 
+\bibitem{Bray2016}
+Nicolas~L. Bray, Harold Pimentel, P{\'{a}}ll Melsted, and Lior Pachter.
+\newblock {Near-optimal probabilistic RNA-seq quantification}.
+\newblock {\em Nature Biotechnology}, 34(5):525--527, may 2016.
+
 \bibitem{Nellore2016}
 Abhinav Nellore, Andrew~E. Jaffe, Jean~Philippe Fortin, Jos{\'{e}}
   Alquicira-Hern{\'{a}}ndez, Leonardo Collado-Torres, Siruo Wang, Robert~A.
@@ -325,11 +449,140 @@ Abhinav Nellore, Andrew~E. Jaffe, Jean~Philippe Fortin, Jos{\'{e}}
   junctions across human RNA-seq samples on the Sequence Read Archive}.
 \newblock {\em Genome Biology}, 17(1):266, dec 2016.
 
+\bibitem{Conesa2016}
+Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra
+  Cervera, Andrew McPherson, Michal~Wojciech Szcze{\'{s}}niak, Daniel~J
+  Gaffney, Laura~L Elo, Xuegong Zhang, and Ali Mortazavi.
+\newblock {A survey of best practices for RNA-seq data analysis}, 2016.
+
+\bibitem{Cocquet2006}
+Julie Cocquet, Allen Chong, Guanglan Zhang, and Reiner~A. Veitia.
+\newblock {Reverse transcriptase template switching and false alternative
+  transcripts}.
+\newblock {\em Genomics}, 88(1):127--131, jul 2006.
+
+\bibitem{Houseley2010}
+Jonathan Houseley and David Tollervey.
+\newblock {Apparent non-canonical trans-splicing is generated by reverse
+  transcriptase in vitro}.
+\newblock {\em PLoS ONE}, 5(8), 2010.
+
+\bibitem{Nam2002}
+Douglas~Kyung Nam, Sanggyu Lee, Guolin Zhou, Xiaohong Cao, Clarence Wang, Terry
+  Clark, Jianjun Chen, Janet~D. Rowley, and San~Ming Wang.
+\newblock {Oligo(dT) primer generates a high frequency of truncated cDNAs
+  through internal poly(A) priming during reverse transcription}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 99(9):6152--6156, apr 2002.
+
 \bibitem{Abrams2019}
 Zachary~B Abrams, Travis~S Johnson, Kun Huang, Philip~R.O. Payne, and Kevin
   Coombes.
 \newblock {A protocol to evaluate RNA sequencing normalization methods}.
 \newblock {\em BMC Bioinformatics}, 20, 2019.
+
+\bibitem{Samarakoon2020}
+Hiruna Samarakoon, Sanoj Punchihewa, Anjana Senanayake, Jillian~M. Hammond,
+  Igor Stevanovski, James~M. Ferguson, Roshan Ragel, Hasindu Gamaarachchi, and
+  Ira~W. Deveson.
+\newblock {Genopo: a nanopore sequencing analysis toolkit for portable Android
+  devices}.
+\newblock {\em Communications Biology}, 3(1):1--5, dec 2020.
+
+\bibitem{Goyal2014}
+Parveen Goyal, Petya~V. Krasteva, Nani {Van Gerven}, Francesca Gubellini, Imke
+  {Van Den Broeck}, Anastassia Troupiotis-Tsa{\"{i}}laki, Wim Jonckheere,
+  G{\'{e}}rard P{\'{e}}hau-Arnaudet, Jerome~S. Pinkner, Matthew~R. Chapman,
+  Scott~J. Hultgren, Stefan Howorka, R{\'{e}}mi Fronzes, and Han Remaut.
+\newblock {Structural and mechanistic insights into the bacterial amyloid
+  secretion channel CsgG}.
+\newblock {\em Nature}, 516(7530):250--253, dec 2014.
+
+\bibitem{Loman2015}
+Nicholas~J. Loman and Mick Watson.
+\newblock {Successful test launch for nanopore sequencing}, mar 2015.
+
+\bibitem{Oikonomopoulos2016}
+Spyros Oikonomopoulos, Yu~Chang Wang, Haig Djambazian, Dunarel Badescu, and
+  Jiannis Ragoussis.
+\newblock {Benchmarking of the Oxford Nanopore MinION sequencing for
+  quantitative and qualitative assessment of cDNA populations OPEN}.
+\newblock {\em Nature Publishing Group}, 6, 2016.
+
+\bibitem{Weirather2017}
+Jason~L Weirather, Mariateresa de~Cesare, Yunhao Wang, Paolo Piazza, Vittorio
+  Sebastiano, Xiu-Jie Wang, David Buck, and Kin~Fai Au.
+\newblock {Comprehensive comparison of Pacific Biosciences and Oxford Nanopore
+  Technologies and their applications to transcriptome analysis}.
+\newblock {\em F1000Research}, 6:100, 2017.
+
+\bibitem{Jain2015}
+Miten Jain, Ian~T. Fiddes, Karen~H. Miga, Hugh~E. Olsen, Benedict Paten, and
+  Mark Akeson.
+\newblock {Improved data analysis for the MinION nanopore sequencer}.
+\newblock {\em Nature Methods}, 12(4):351--356, mar 2015.
+
+\bibitem{Rang2018}
+Franka~J. Rang, Wigard~P. Kloosterman, and Jeroen de~Ridder.
+\newblock {From squiggle to basepair: Computational approaches for improving
+  nanopore sequencing read accuracy}, jul 2018.
+
+\bibitem{Li2016c}
+Chenhao Li, Kern~Rei Chng, Esther Jia~Hui Boey, Amanda Hui~Qi Ng, Andreas Wilm,
+  and Niranjan Nagarajan.
+\newblock {INC-Seq: Accurate single molecule reads using nanopore sequencing}.
+\newblock {\em GigaScience}, 5(1):34, dec 2016.
+
+\bibitem{Volden2018}
+Roger Volden, Theron Palmer, Ashley Byrne, Charles Cole, Robert~J Schmitz,
+  Richard~E Green, and Christopher Vollmers.
+\newblock {Improving nanopore read accuracy with the R2C2 method enables the
+  sequencing of highly multiplexed full-length single-cell cDNA}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 115(39):9726--9731, 2018.
+
+\bibitem{Leger2019}
+Adrien Leger and Tommaso Leonardi.
+\newblock {pycoQC, interactive quality control for Oxford Nanopore Sequencing}.
+\newblock {\em Journal of Open Source Software}, 4(34):1236, feb 2019.
+
+\bibitem{ONT2019NanoporeQC}
+{Nanopore summary statistics and basic QC tutorial}.
+\newblock 2019.
+
+\bibitem{DeCoster2018}
+Wouter {De Coster}, Svenn D'Hert, Darrin~T. Schultz, Marc Cruts, and Christine
+  {Van Broeckhoven}.
+\newblock {NanoPack: Visualizing and processing long-read sequencing data}.
+\newblock {\em Bioinformatics}, 34(15):2666--2669, aug 2018.
+
+\bibitem{Wick2017}
+R~Wick.
+\newblock {rrwick/Porechop: Adapter Trimmer for Oxford Nanopore reads}, 2017.
+
+\bibitem{Martin2011}
+Marcel Martin.
+\newblock {Cutadapt removes adapter sequences from high-throughput sequencing
+  reads}.
+\newblock {\em EMBnet.journal}, 17(1):10, may 2011.
+
+\bibitem{OxfordNanoporePychopper}
+{Pychopper: A tool to identify, orient, trim and rescue full length cDNA
+  reads}.
+
+\bibitem{Li2018}
+Heng Li.
+\newblock {Minimap2: Pairwise alignment for nucleotide sequences}.
+\newblock {\em Bioinformatics}, 34(18):3094--3100, sep 2018.
+
+\bibitem{Jeffries2020}
+A~R Jeffries, S~K Leung, I~Castanho, K~Moore, J~P Davies, E~L Dempster, N~J
+  Bray, P~O'neill, E~Tseng, Z~Ahmed, D~Collier, S~Prabhakar, L~Schalkwyk, M~J
+  Gandal, E~Hannon, and J~Mill.
+\newblock {Full-length transcript sequencing of human and mouse identifies
+  widespread isoform diversity and alternative splicing in the cerebral
+  cortex}.
+\newblock {\em bioRxiv}, page 2020.10.14.339200, oct 2020.
 
 \bibitem{Castanho2020}
 Isabel Castanho, Tracey~K Murray, Eilis Hannon, Aaron Jeffries, Emma Walker,
@@ -349,5 +602,176 @@ Thomas Derrien, Rory Johnson, Giovanni Bussotti, Andrea Tanzer, Sarah Djebali,
 \newblock {The GENCODE v7 catalog of human long noncoding RNAs: Analysis of
   their gene structure, evolution, and expression}.
 \newblock {\em Genome Research}, 22(9):1775--1789, 2012.
+
+\bibitem{ONTcdna_transcriptome}
+{Oxford Nanopore: Pipeline for differential gene expression (DGE) and
+  differential transcript usage (DTU) analysis using long reads}.
+
+\bibitem{Tang2020}
+Alison~D Tang, Cameron~M Soulette, Marijke~J. van Baren, Kevyn Hart, Eva
+  Hrabeta-Robinson, Catherine~J Wu, and Angela~N Brooks.
+\newblock {Full-length transcript characterization of SF3B1 mutation in chronic
+  lymphocytic leukemia reveals downregulation of retained introns}.
+\newblock {\em Nature Communications}, 11(1), 2020.
+
+\bibitem{Kent2002}
+W.~J. Kent.
+\newblock {BLAT---The BLAST-Like Alignment Tool}.
+\newblock {\em Genome Research}, 12(4):656--664, mar 2002.
+
+\bibitem{DeLaFuente2020}
+Lorena {De La Fuente}, {\'{A}}ngeles Arzalluz-Luque, Manuel Tard{\'{a}}guila,
+  H{\'{e}}ctor {Del Risco}, Cristina Mart{\'{i}}, Sonia Tarazona, Pedro
+  Salguero, Raymond Scott, Alberto Lerma, Ana Alastrue-Agudo, Pablo Bonilla,
+  Jeremy~R.B. Newman, Shunichi Kosugi, Lauren~M. McIntyre, Victoria
+  Moreno-Manzano, and Ana Conesa.
+\newblock {TappAS: A comprehensive computational framework for the analysis of
+  the functional impact of differential splicing}.
+\newblock {\em Genome Biology}, 21(1):1--32, may 2020.
+
+\bibitem{Robinson2010}
+Mark~D. Robinson and Alicia Oshlack.
+\newblock {A scaling normalization method for differential expression analysis
+  of RNA-seq data}.
+\newblock {\em Genome Biology}, 11(3):1--9, mar 2010.
+
+\bibitem{Conesa2006}
+Ana Conesa, Mar{\'{i}}a~Jo{\'{s}}e Nueda, Alberto Ferrer, and Manuel
+  Tal{\'{o}}n.
+\newblock {maSigPro: A method to identify significantly differential expression
+  profiles in time-course microarray experiments}.
+\newblock {\em Bioinformatics}, 22(9):1096--1102, may 2006.
+
+\bibitem{Nueda2014}
+Mar{\'{i}}a~Jos{\'{e}} Nueda, Sonia Tarazona, and Ana Conesa.
+\newblock {Next maSigPro: Updating maSigPro bioconductor package for RNA-seq
+  time series}.
+\newblock {\em Bioinformatics}, 30(18):2598--2602, sep 2014.
+
+\bibitem{Conesa2017}
+Ana Conesa and Mar{\'{i}}a~J Nueda.
+\newblock {maSigPro User's Guide}.
+\newblock Technical report, 2017.
+
+\bibitem{Gonzalez-Porta2013}
+Mar Gonz{\`{a}}lez-Porta, Adam Frankish, Johan Rung, Jennifer Harrow, and Alvis
+  Brazma.
+\newblock {Transcriptome analysis of human tissues and cell lines reveals one
+  dominant transcript per gene}.
+\newblock {\em Genome Biology}, 14(7):R70, 2013.
+
+\bibitem{Ezkurdia2015}
+Iakes Ezkurdia, Jose~Manuel Rodriguez, Enrique {Carrillo-De Santa Pau},
+  Jes{\'{u}}s V{\'{a}}zquez, Alfonso Valencia, and Michael~L. Tress.
+\newblock {Most highly expressed protein-coding genes have a single dominant
+  isoform}.
+\newblock {\em Journal of Proteome Research}, 14(4):1880--1887, apr 2015.
+
+\bibitem{Vitting-Seerup2017}
+Kristoffer Vitting-Seerup and Albin Sandelin.
+\newblock {The landscape of isoform switches in human cancers}.
+\newblock {\em Molecular Cancer Research}, 15(9):1206--1220, sep 2017.
+
+\bibitem{Ramsden2005}
+Martin Ramsden, Linda Kotilinek, Colleen Forster, Jennifer Paulson, Eileen
+  McGowan, Karen SantaCruz, Aaron Guimaraes, Mei Yue, Jada Lewis, George
+  Carlson, Michael Hutton, and Karen~H. Ashe.
+\newblock {Age-dependent neurofibrillary tangle formation, neuron loss, and
+  memory impairment in a mouse model of human tauopathy (P301L)}.
+\newblock {\em Journal of Neuroscience}, 25(46):10637--10647, nov 2005.
+
+\bibitem{Muramori1998}
+Fumihiko Muramori, Katsuji Kobayashi, and Ichirou Nakamura.
+\newblock {A quantitative study of neurofibrillary tangles, senile plaques and
+  astrocytes in the hippocampal subdivisions and entorhinal cortex in
+  Alzheimer's disease, normal controls and non-Alzheimer neuropsychiatric
+  diseases}.
+\newblock {\em Psychiatry and Clinical Neurosciences}, 52(6):593--599, 1998.
+
+\bibitem{Ishiki2016}
+Aiko Ishiki, Maki Kamada, Yuki Kawamura, Chiaki Terao, Fumiko Shimoda, Naoki
+  Tomita, Hiroyuki Arai, and Katsutoshi Furukawa.
+\newblock {Glial fibrillar acidic protein in the cerebrospinal fluid of
+  Alzheimer's disease, dementia with Lewy bodies, and frontotemporal lobar
+  degeneration}.
+\newblock {\em Journal of Neurochemistry}, 136(2):258--261, jan 2016.
+
+\bibitem{Chatterjee2021}
+Pratishtha Chatterjee, Steve Pedrini, Erik Stoops, Kathryn Goozee, Victor~L.
+  Villemagne, Prita~R. Asih, Inge~M.W. Verberk, Preeti Dave, Kevin Taddei,
+  Hamid~R. Sohrabi, Henrik Zetterberg, Kaj Blennow, Charlotte~E. Teunissen,
+  Hugo~M. Vanderstichele, and Ralph~N. Martins.
+\newblock {Plasma glial fibrillary acidic protein is elevated in cognitively
+  normal older adults at risk of Alzheimer's disease}.
+\newblock {\em Translational Psychiatry}, 11(1):1--10, jun 2021.
+
+\bibitem{Zorzetto2016}
+Michele Zorzetto, Francesca Datturi, Laura Divizia, Cristiana Pistono, Ilaria
+  Campo, Annalisa {De Silvestri}, Mariaclara Cuccia, and Giovanni Ricevuti.
+\newblock {Complement C4A and C4B gene copy number study in Alzheimer's disease
+  patients}.
+\newblock {\em Current Alzheimer Research}, 13(999):1--1, nov 2016.
+
+\bibitem{Castillo2017}
+Erika Castillo, Julio Leon, Guianfranco Mazzei, Nona Abolhassani, Naoki
+  Haruyama, Takashi Saito, Takaomi Saido, Masaaki Hokama, Toru Iwaki, Tomoyuki
+  Ohara, Toshiharu Ninomiya, Yutaka Kiyohara, Kunihiko Sakumi, Frank~M.
+  Laferla, and Yusaku Nakabeppu.
+\newblock {Comparative profiling of cortical gene expression in Alzheimer's
+  disease patients and mouse models demonstrates a link between amyloidosis and
+  neuroinflammation}.
+\newblock {\em Scientific Reports}, 7(1):1--16, dec 2017.
+
+\bibitem{Wirz2013}
+Kerstin~T.S. Wirz, Koen Bossers, Anita Stargardt, Willem Kamphuis, Dick~F.
+  Swaab, Elly~M. Hol, and Joost Verhaagen.
+\newblock {Cortical beta amyloid protein triggers an immune response, but no
+  synaptic changes in the APPswe/PS1dE9 Alzheimer's disease mouse model}.
+\newblock {\em Neurobiology of Aging}, 34(5):1328--1342, may 2013.
+
+\bibitem{JR1996}
+John~R. McDermott and Alison~M. Gibson.
+\newblock {Degradation of Alzheimer's $\beta$-amyloid protein by human
+  cathepsin D}.
+\newblock {\em NeuroReport}, 7(13):2163--2166, 1996.
+
+\bibitem{A1997}
+Agnes Kenessey, Parimala Nacharaju, Li~Wen Ko, and Shu~Hui Yen.
+\newblock {Degradation of tau by lysosomal enzyme cathepsin D: Implication for
+  Alzheimer neurofibrillary degeneration}.
+\newblock {\em Journal of Neurochemistry}, 69(5):2026--2038, 1997.
+
+\bibitem{Suire2020}
+Caitlin~N. Suire, Samer~O. Abdul-Hay, Tomoko Sahara, Dongcheul Kang, Monica~K.
+  Brizuela, Paul Saftig, Dennis~W. Dickson, Terrone~L. Rosenberry, and
+  Malcolm~A. Leissring.
+\newblock {Cathepsin D regulates cerebral A$\beta$42/40 ratios via differential
+  degradation of A$\beta$42 and A$\beta$40}.
+\newblock {\em Alzheimer's Research and Therapy}, 12(1):1--13, jul 2020.
+
+\bibitem{Mathys2017}
+Hansruedi Mathys, Chinnakkaruppan Adaikkan, Fan Gao, Jennie~Z. Young, Elodie
+  Manet, Martin Hemberg, Philip~L. {De Jager}, Richard~M Ransohoff, Aviv Regev,
+  and Li~Huei Tsai.
+\newblock {Temporal Tracking of Microglia Activation in Neurodegeneration at
+  Single-Cell Resolution}.
+\newblock {\em Cell Reports}, 21(2):366--380, 2017.
+
+\bibitem{Wang2020}
+Hong Wang, Kaushik~Kumar Dey, Ping~Chung Chen, Yuxin Li, Mingming Niu, Ji~Hoon
+  Cho, Xusheng Wang, Bing Bai, Yun Jiao, Surendhar~Reddy Chepyala, Vahram
+  Haroutunian, Bin Zhang, Thomas~G. Beach, and Junmin Peng.
+\newblock {Integrated analysis of ultra-deep proteomes in cortex, cerebrospinal
+  fluid and serum reveals a mitochondrial signature in Alzheimer's disease}.
+\newblock {\em Molecular Neurodegeneration}, 15(1):1--20, jul 2020.
+
+\bibitem{A2005}
+Akihito Ishigami, Takako Ohsawa, Masaharu Hiratsuka, Hirom Taguchi, Saori
+  Kobayashi, Yuko Saito, Shigeo Murayama, Hiroaki Asaga, Tosifusa Toda,
+  Narimichi Kimura, and Naoki Maruyama.
+\newblock {Abnormal accumulation of citrullinated proteins catalyzed by
+  peptidylarginine deiminase in hippocampal extracts from patients with
+  Alzheimer's disease}.
+\newblock {\em Journal of Neuroscience Research}, 80(1):120--128, apr 2005.
 
 \end{thebibliography}

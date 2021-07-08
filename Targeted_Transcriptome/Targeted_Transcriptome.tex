@@ -1,4 +1,5 @@
 \documentclass[../Main/Knit.tex]{subfiles}
+\label{targetedmousetranscriptome}
 
 \section{Introduction}
 One current limitation of whole transcriptome sequencing is the low coverage/sequencing depth achieved per gene due to the distribution of reads across the whole transcriptome. Consequently, while whole transcriptome sequencing allows identification of novel genes (genes not previously annotated to the genome) and novel isoforms, it may not detect isoforms particularly those of low expression resulting in many false negatives. This can be circumvented by the use of target capture, which enriches a selective panel of genes that are then only sequenced. Multiple samples can further be pooled and sequenced together by barcoding samples at cDNA synthesis, which simplifies laboratory workflow and minimises associated sequencing costs.
@@ -10,7 +11,8 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 
 
 \section{Methods}
-The extracted RNA from mouse rTg4510 samples were prepared for targeted transcriptome sequencing on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed using barcodes (listed in Table \ref{tab:barcode_primers}) and ran on the Sequel as three batches. Iso-Seq library preparation and SMRT sequencing is described in Chapter X. Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200ng RNA from each sample was used for first strand cDNA synthesis (Chapter \ref{section:ch2_cDNA_synthesis_explanation}) and amplified using PCR with 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}, Chapter \ref{section:ch2_PCR_explanation}). Purification with 0.4X and 1X AMPure PB beads selectively and successfully enriched cDNA with different molecular weights (Figure \ref{fig:isoseq_whole_bioresults}). The two fractions were then recombined at equimolar quantities and library preparation was successfully performed (Figure \ref{fig:isoseq_whole_bioresults}). Sequencing was performed for each sample on the PacBio Sequel using a 1M SMRT cell.
+The extracted RNA from mouse rTg4510 samples were prepared for targeted transcriptome sequencing on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed using barcodes (listed in Table \ref{tab:barcode_primers}) and ran on the Sequel as three batches. Iso-Seq library preparation and SMRT sequencing is described in Chapter X. Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200ng RNA from each sample was used for first strand cDNA synthesis (Chapter \ref{section:ch2_cDNA_synthesis_explanation}) and amplified using PCR with 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}, Chapter \ref{section:ch2_PCR_explanation}). Purification with 0.4X and 1X AMPure PB beads selectively and successfully enriched cDNA with different molecular weights (Figure \ref{fig:isoseq_whole_bioresults}). The two fractions were then recombined at equimolar quantities and library preparation was successfully performed (Figure \ref{fig:isoseq_whole_bioresults}). Sequencing was performed for each sample on the PacBio Sequel using a 1M SMRT cell. Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline outlined in Chapter X.
+RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina), and used as junction support of the long reads. 
 
 \begin{landscape}
 \begin{table}[]
@@ -249,7 +251,6 @@ In addition to batch variability, the number of full-length transcripts obtained
 	\end{table}
 \end{landscape}
 
-
 \begin{figure}[!htp]
 	\begin{center}
 		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
@@ -273,12 +274,24 @@ In addition to batch variability, the number of full-length transcripts obtained
 
 %Following library preparation and nanopore sequencing (Chapter X), a total of 28.54M reads (39.68Gb) were generated across two flow cells and a total of 22.8M (80\%) reads were successfully basecalled using Guppy.
 
+\clearpage
 \subsection{Transcriptome annotation}
-After filtering for technical artefacts (intrapriming, RT switching, partial degradation), a total of XXX isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). 
-Across all the samples (n = 24), a total of 757 isoforms were detected across 20 AD-associated target genes (Figure \ref{fig:isoseq_targeted_finalnumberiso}), of which \textit{App} was detected with the highest number of isoforms (n = 121 isoforms) and \textit{Trpa1} with the fewest (n = 2 isoforms). 
+After filtering for technical artefacts (563 (1.69\%) isoforms were removed due to intrapriming, 314 (0.94\%) isoforms were removed due to RT switching, 1,267 (3.80\%) were removed due to likely partial degradation), a total of 4,780 isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). Of these isoforms, an overwhelming majority were novel (n = 4601, 96.2\%) with no RNA-Seq support (n = 24 samples, total number of uniquely mapped reads = 360 million) at the junction (n = 4,033, 84.4\%). This is likely to be reflection of the low coverage of RNA-Seq reads per sample  (mean number of uniquely mapped reads = 15 million) to comprehensively span these novel junctions, rather than an indication of the invalidity of these isoforms given the stringent processing of the Iso-Seq bioinformatics pipeline. Nevertheless, following the recommendations from \textit{SQANTI2} and to ease comparison with the whole transcriptome approach (Chapter X), we took the more stringent approach to only include novel isoforms with RNA-Seq support. All downstream analyses and statistics reported in this chapter thereon were based on the subset of \textit{SQANTI2}-filtered isoforms (n = 747 isoforms, Figure \ref{fig:isoseq_targeted_finalnumberiso}).
 
 % proportion of reads with human MAPT; validation 
 % supported by RNA-Seq, CAGE 
+
+\iffalse
+% plot for technical artefacts
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
+	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
+\end{figure}
+\fi
    
 \begin{figure}[!htp]
 	\begin{center}
@@ -302,9 +315,10 @@ Across all the samples (n = 24), a total of 757 isoforms were detected across 20
 
 \subsection{Comparison with whole transcriptome}
 
+
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=5,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
+		\includegraphics[page=6,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%

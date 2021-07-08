@@ -51,8 +51,12 @@ I want to thank...
 \listoftables
 
 \newpage
+\listofmyequations
+
+\newpage
 \renewcommand{\nomname}{Abbreviations}
 \printnomenclature 
+
 
 \chapter{Introduction}
 \subfile{../General_Introduction/General_Introduction.tex}
@@ -61,10 +65,10 @@ I want to thank...
 \subfile{../Project_Development/IsoSeq.tex}
 \subfile{../Project_Development/IsoSeq_Lab.tex}
 \subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
-%\subfile{../Project_Development/IsoSeq_Optimisation.tex}
-%\subfile{../Project_Development/Oxford_Nanopore.tex}
-%\subfile{../Project_Development/ONT_Lab.tex}
-%\subfile{../Project_Development/ONT_Bioinformatics.tex}
+\subfile{../Project_Development/IsoSeq_Optimisation.tex}
+\subfile{../Project_Development/Oxford_Nanopore.tex}
+\subfile{../Project_Development/ONT_Lab.tex}
+\subfile{../Project_Development/ONT_Bioinformatics.tex}
 
 \chapter{Whole Transcriptome}
 \subfile{../Whole_Transcriptome/Whole_Transcriptome.tex}
@@ -73,9 +77,11 @@ I want to thank...
 \subfile{../Targeted_Transcriptome/Targeted_Transcriptome.tex}
 
 \chapter{Transcriptional differences between WT and TG mice}
-%\subfile{../Tg4510_Differential/Tg4510_Differential.tex}
+\subfile{../Tg4510_Differential/Tg4510_Differential.tex}
 %\input{chapters/chapter05}
 
+\chapter{BDR}
+%\subfile{../ADBDR/ADBDR.tex}
 
 \chapter{Conclusion}
 %\input{chapters/conclusion}
@@ -86,7 +92,10 @@ I want to thank...
 \chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}
 \subfile{../Project_Development/Isoseq_Protocol.tex}
 \chapter{Oxford Nanopore Transcriptome Protocol}
-%\subfile{../Project_Development/ONT_Protocol.tex}
+\subfile{../Project_Development/ONT_Protocol.tex}
+\chapter{cDNA Synthesis alternative approach}
+\label{ch:alt_cDNA}
+%\subfile{../Project_Development/cDNA_Synthesis_Approaches.tex}
 \end{appendix}
 
 \bibliographystyle{unsrt}

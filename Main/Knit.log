@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.3.26)  12 APR 2021 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.3.26)  8 JUL 2021 20:11
 entering extended mode
 **./Knit.tex
 (Knit.tex
@@ -481,7 +481,7 @@ Package tocbasic Info: setting babel extension for `nls' on input line 180.
 \@nomenclaturefile=\write3
 \openout3 = `Knit.nlo'.
 
-Package nomencl Info: Writing nomenclature file Knit.nlo on input line 22.
+Package nomencl Info: Writing nomenclature file Knit.nlo on input line 24.
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xr.sty"
 Package: xr 2019/07/22 v5.05 eXternal References (DPC)
@@ -584,7 +584,432 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@tables=\count302
 \c@LT@chunks=\count303
 \LT@p@ftn=\toks27
-) ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cite\cite.sty"
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip115
+
+For additional information on amsmath, use the `?' option.
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen258
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count304
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count305
+\leftroot@=\count306
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count307
+\DOTSCASE@=\count308
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box112
+\strutbox@=\box113
+\big@size=\dimen259
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count309
+\c@MaxMatrixCols=\count310
+\dotsspace@=\muskip16
+\c@parentequation=\count311
+\dspbrk@lvl=\count312
+\tag@help=\toks28
+\row@=\count313
+\column@=\count314
+\maxfields@=\count315
+\andhelp@=\toks29
+\eqnshift@=\dimen260
+\alignsep@=\dimen261
+\tagshift@=\dimen262
+\tagwidth@=\dimen263
+\totwidth@=\dimen264
+\lineht@=\dimen265
+\@envbody=\toks30
+\multlinegap=\skip116
+\multlinetaggap=\skip117
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/textgreek\textgree
+k.sty"
+Package: textgreek 2011/10/09 v0.7 Greek symbols in text
+Package textgreek Info: Loading the definitions for the Greek fontencoding. on 
+input line 39.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/greek-fontenc\lgre
+nc.def"
+File: lgrenc.def 2020/10/13 2.0 LGR Greek font encoding definitions
+Now handling font encoding LGR ...
+... processing UTF-8 mapping file for font encoding LGR
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/greek-inputenc\lgr
+enc.dfu"
+File: lgrenc.dfu 2019/07/11 1.7 UTF-8 support for Greek
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0259 (decimal 601)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+0374 (decimal 884)
+   defining Unicode char U+0375 (decimal 885)
+   defining Unicode char U+037A (decimal 890)
+   defining Unicode char U+037E (decimal 894)
+   defining Unicode char U+0384 (decimal 900)
+   defining Unicode char U+0385 (decimal 901)
+   defining Unicode char U+0386 (decimal 902)
+   defining Unicode char U+0387 (decimal 903)
+   defining Unicode char U+0388 (decimal 904)
+   defining Unicode char U+0389 (decimal 905)
+   defining Unicode char U+038A (decimal 906)
+   defining Unicode char U+038C (decimal 908)
+   defining Unicode char U+038E (decimal 910)
+   defining Unicode char U+038F (decimal 911)
+   defining Unicode char U+0390 (decimal 912)
+   defining Unicode char U+0391 (decimal 913)
+   defining Unicode char U+0392 (decimal 914)
+   defining Unicode char U+0393 (decimal 915)
+   defining Unicode char U+0394 (decimal 916)
+   defining Unicode char U+0395 (decimal 917)
+   defining Unicode char U+0396 (decimal 918)
+   defining Unicode char U+0397 (decimal 919)
+   defining Unicode char U+0398 (decimal 920)
+   defining Unicode char U+0399 (decimal 921)
+   defining Unicode char U+039A (decimal 922)
+   defining Unicode char U+039B (decimal 923)
+   defining Unicode char U+039C (decimal 924)
+   defining Unicode char U+039D (decimal 925)
+   defining Unicode char U+039E (decimal 926)
+   defining Unicode char U+039F (decimal 927)
+   defining Unicode char U+03A0 (decimal 928)
+   defining Unicode char U+03A1 (decimal 929)
+   defining Unicode char U+03A3 (decimal 931)
+   defining Unicode char U+03A4 (decimal 932)
+   defining Unicode char U+03A5 (decimal 933)
+   defining Unicode char U+03A6 (decimal 934)
+   defining Unicode char U+03A7 (decimal 935)
+   defining Unicode char U+03A8 (decimal 936)
+   defining Unicode char U+03A9 (decimal 937)
+   defining Unicode char U+03AA (decimal 938)
+   defining Unicode char U+03AB (decimal 939)
+   defining Unicode char U+03AC (decimal 940)
+   defining Unicode char U+03AD (decimal 941)
+   defining Unicode char U+03AE (decimal 942)
+   defining Unicode char U+03AF (decimal 943)
+   defining Unicode char U+03B0 (decimal 944)
+   defining Unicode char U+03B1 (decimal 945)
+   defining Unicode char U+03B2 (decimal 946)
+   defining Unicode char U+03B3 (decimal 947)
+   defining Unicode char U+03B4 (decimal 948)
+   defining Unicode char U+03B5 (decimal 949)
+   defining Unicode char U+03B6 (decimal 950)
+   defining Unicode char U+03B7 (decimal 951)
+   defining Unicode char U+03B8 (decimal 952)
+   defining Unicode char U+03B9 (decimal 953)
+   defining Unicode char U+03BA (decimal 954)
+   defining Unicode char U+03BB (decimal 955)
+   defining Unicode char U+03BC (decimal 956)
+   defining Unicode char U+03BD (decimal 957)
+   defining Unicode char U+03BE (decimal 958)
+   defining Unicode char U+03BF (decimal 959)
+   defining Unicode char U+03C0 (decimal 960)
+   defining Unicode char U+03C1 (decimal 961)
+   defining Unicode char U+03C2 (decimal 962)
+   defining Unicode char U+03C3 (decimal 963)
+   defining Unicode char U+03C4 (decimal 964)
+   defining Unicode char U+03C5 (decimal 965)
+   defining Unicode char U+03C6 (decimal 966)
+   defining Unicode char U+03C7 (decimal 967)
+   defining Unicode char U+03C8 (decimal 968)
+   defining Unicode char U+03C9 (decimal 969)
+   defining Unicode char U+03CA (decimal 970)
+   defining Unicode char U+03CB (decimal 971)
+   defining Unicode char U+03CC (decimal 972)
+   defining Unicode char U+03CD (decimal 973)
+   defining Unicode char U+03CE (decimal 974)
+   defining Unicode char U+03D0 (decimal 976)
+   defining Unicode char U+03D1 (decimal 977)
+   defining Unicode char U+03D5 (decimal 981)
+   defining Unicode char U+03D6 (decimal 982)
+   defining Unicode char U+03D8 (decimal 984)
+   defining Unicode char U+03D9 (decimal 985)
+   defining Unicode char U+03DA (decimal 986)
+   defining Unicode char U+03DB (decimal 987)
+   defining Unicode char U+03DC (decimal 988)
+   defining Unicode char U+03DD (decimal 989)
+   defining Unicode char U+03DF (decimal 991)
+   defining Unicode char U+03E0 (decimal 992)
+   defining Unicode char U+03E1 (decimal 993)
+   defining Unicode char U+03F0 (decimal 1008)
+   defining Unicode char U+03F1 (decimal 1009)
+   defining Unicode char U+03F4 (decimal 1012)
+   defining Unicode char U+03F5 (decimal 1013)
+   defining Unicode char U+1F00 (decimal 7936)
+   defining Unicode char U+1F01 (decimal 7937)
+   defining Unicode char U+1F02 (decimal 7938)
+   defining Unicode char U+1F03 (decimal 7939)
+   defining Unicode char U+1F04 (decimal 7940)
+   defining Unicode char U+1F05 (decimal 7941)
+   defining Unicode char U+1F06 (decimal 7942)
+   defining Unicode char U+1F07 (decimal 7943)
+   defining Unicode char U+1F08 (decimal 7944)
+   defining Unicode char U+1F09 (decimal 7945)
+   defining Unicode char U+1F0A (decimal 7946)
+   defining Unicode char U+1F0B (decimal 7947)
+   defining Unicode char U+1F0C (decimal 7948)
+   defining Unicode char U+1F0D (decimal 7949)
+   defining Unicode char U+1F0E (decimal 7950)
+   defining Unicode char U+1F0F (decimal 7951)
+   defining Unicode char U+1F10 (decimal 7952)
+   defining Unicode char U+1F11 (decimal 7953)
+   defining Unicode char U+1F12 (decimal 7954)
+   defining Unicode char U+1F13 (decimal 7955)
+   defining Unicode char U+1F14 (decimal 7956)
+   defining Unicode char U+1F15 (decimal 7957)
+   defining Unicode char U+1F18 (decimal 7960)
+   defining Unicode char U+1F19 (decimal 7961)
+   defining Unicode char U+1F1A (decimal 7962)
+   defining Unicode char U+1F1B (decimal 7963)
+   defining Unicode char U+1F1C (decimal 7964)
+   defining Unicode char U+1F1D (decimal 7965)
+   defining Unicode char U+1F20 (decimal 7968)
+   defining Unicode char U+1F21 (decimal 7969)
+   defining Unicode char U+1F22 (decimal 7970)
+   defining Unicode char U+1F23 (decimal 7971)
+   defining Unicode char U+1F24 (decimal 7972)
+   defining Unicode char U+1F25 (decimal 7973)
+   defining Unicode char U+1F26 (decimal 7974)
+   defining Unicode char U+1F27 (decimal 7975)
+   defining Unicode char U+1F28 (decimal 7976)
+   defining Unicode char U+1F29 (decimal 7977)
+   defining Unicode char U+1F2A (decimal 7978)
+   defining Unicode char U+1F2B (decimal 7979)
+   defining Unicode char U+1F2C (decimal 7980)
+   defining Unicode char U+1F2D (decimal 7981)
+   defining Unicode char U+1F2E (decimal 7982)
+   defining Unicode char U+1F2F (decimal 7983)
+   defining Unicode char U+1F30 (decimal 7984)
+   defining Unicode char U+1F31 (decimal 7985)
+   defining Unicode char U+1F32 (decimal 7986)
+   defining Unicode char U+1F33 (decimal 7987)
+   defining Unicode char U+1F34 (decimal 7988)
+   defining Unicode char U+1F35 (decimal 7989)
+   defining Unicode char U+1F36 (decimal 7990)
+   defining Unicode char U+1F37 (decimal 7991)
+   defining Unicode char U+1F38 (decimal 7992)
+   defining Unicode char U+1F39 (decimal 7993)
+   defining Unicode char U+1F3A (decimal 7994)
+   defining Unicode char U+1F3B (decimal 7995)
+   defining Unicode char U+1F3C (decimal 7996)
+   defining Unicode char U+1F3D (decimal 7997)
+   defining Unicode char U+1F3E (decimal 7998)
+   defining Unicode char U+1F3F (decimal 7999)
+   defining Unicode char U+1F40 (decimal 8000)
+   defining Unicode char U+1F41 (decimal 8001)
+   defining Unicode char U+1F42 (decimal 8002)
+   defining Unicode char U+1F43 (decimal 8003)
+   defining Unicode char U+1F44 (decimal 8004)
+   defining Unicode char U+1F45 (decimal 8005)
+   defining Unicode char U+1F48 (decimal 8008)
+   defining Unicode char U+1F49 (decimal 8009)
+   defining Unicode char U+1F4A (decimal 8010)
+   defining Unicode char U+1F4B (decimal 8011)
+   defining Unicode char U+1F4C (decimal 8012)
+   defining Unicode char U+1F4D (decimal 8013)
+   defining Unicode char U+1F50 (decimal 8016)
+   defining Unicode char U+1F51 (decimal 8017)
+   defining Unicode char U+1F52 (decimal 8018)
+   defining Unicode char U+1F53 (decimal 8019)
+   defining Unicode char U+1F54 (decimal 8020)
+   defining Unicode char U+1F55 (decimal 8021)
+   defining Unicode char U+1F56 (decimal 8022)
+   defining Unicode char U+1F57 (decimal 8023)
+   defining Unicode char U+1F59 (decimal 8025)
+   defining Unicode char U+1F5B (decimal 8027)
+   defining Unicode char U+1F5D (decimal 8029)
+   defining Unicode char U+1F5F (decimal 8031)
+   defining Unicode char U+1F60 (decimal 8032)
+   defining Unicode char U+1F61 (decimal 8033)
+   defining Unicode char U+1F62 (decimal 8034)
+   defining Unicode char U+1F63 (decimal 8035)
+   defining Unicode char U+1F64 (decimal 8036)
+   defining Unicode char U+1F65 (decimal 8037)
+   defining Unicode char U+1F66 (decimal 8038)
+   defining Unicode char U+1F67 (decimal 8039)
+   defining Unicode char U+1F68 (decimal 8040)
+   defining Unicode char U+1F69 (decimal 8041)
+   defining Unicode char U+1F6A (decimal 8042)
+   defining Unicode char U+1F6B (decimal 8043)
+   defining Unicode char U+1F6C (decimal 8044)
+   defining Unicode char U+1F6D (decimal 8045)
+   defining Unicode char U+1F6E (decimal 8046)
+   defining Unicode char U+1F6F (decimal 8047)
+   defining Unicode char U+1F70 (decimal 8048)
+   defining Unicode char U+1F71 (decimal 8049)
+   defining Unicode char U+1F72 (decimal 8050)
+   defining Unicode char U+1F73 (decimal 8051)
+   defining Unicode char U+1F74 (decimal 8052)
+   defining Unicode char U+1F75 (decimal 8053)
+   defining Unicode char U+1F76 (decimal 8054)
+   defining Unicode char U+1F77 (decimal 8055)
+   defining Unicode char U+1F78 (decimal 8056)
+   defining Unicode char U+1F79 (decimal 8057)
+   defining Unicode char U+1F7A (decimal 8058)
+   defining Unicode char U+1F7B (decimal 8059)
+   defining Unicode char U+1F7C (decimal 8060)
+   defining Unicode char U+1F7D (decimal 8061)
+   defining Unicode char U+1F80 (decimal 8064)
+   defining Unicode char U+1F81 (decimal 8065)
+   defining Unicode char U+1F82 (decimal 8066)
+   defining Unicode char U+1F83 (decimal 8067)
+   defining Unicode char U+1F84 (decimal 8068)
+   defining Unicode char U+1F85 (decimal 8069)
+   defining Unicode char U+1F86 (decimal 8070)
+   defining Unicode char U+1F87 (decimal 8071)
+   defining Unicode char U+1F88 (decimal 8072)
+   defining Unicode char U+1F89 (decimal 8073)
+   defining Unicode char U+1F8A (decimal 8074)
+   defining Unicode char U+1F8B (decimal 8075)
+   defining Unicode char U+1F8C (decimal 8076)
+   defining Unicode char U+1F8D (decimal 8077)
+   defining Unicode char U+1F8E (decimal 8078)
+   defining Unicode char U+1F8F (decimal 8079)
+   defining Unicode char U+1F90 (decimal 8080)
+   defining Unicode char U+1F91 (decimal 8081)
+   defining Unicode char U+1F92 (decimal 8082)
+   defining Unicode char U+1F93 (decimal 8083)
+   defining Unicode char U+1F94 (decimal 8084)
+   defining Unicode char U+1F95 (decimal 8085)
+   defining Unicode char U+1F96 (decimal 8086)
+   defining Unicode char U+1F97 (decimal 8087)
+   defining Unicode char U+1F98 (decimal 8088)
+   defining Unicode char U+1F99 (decimal 8089)
+   defining Unicode char U+1F9A (decimal 8090)
+   defining Unicode char U+1F9B (decimal 8091)
+   defining Unicode char U+1F9C (decimal 8092)
+   defining Unicode char U+1F9D (decimal 8093)
+   defining Unicode char U+1F9E (decimal 8094)
+   defining Unicode char U+1F9F (decimal 8095)
+   defining Unicode char U+1FA0 (decimal 8096)
+   defining Unicode char U+1FA1 (decimal 8097)
+   defining Unicode char U+1FA2 (decimal 8098)
+   defining Unicode char U+1FA3 (decimal 8099)
+   defining Unicode char U+1FA4 (decimal 8100)
+   defining Unicode char U+1FA5 (decimal 8101)
+   defining Unicode char U+1FA6 (decimal 8102)
+   defining Unicode char U+1FA7 (decimal 8103)
+   defining Unicode char U+1FA8 (decimal 8104)
+   defining Unicode char U+1FA9 (decimal 8105)
+   defining Unicode char U+1FAA (decimal 8106)
+   defining Unicode char U+1FAB (decimal 8107)
+   defining Unicode char U+1FAC (decimal 8108)
+   defining Unicode char U+1FAD (decimal 8109)
+   defining Unicode char U+1FAE (decimal 8110)
+   defining Unicode char U+1FAF (decimal 8111)
+   defining Unicode char U+1FB0 (decimal 8112)
+   defining Unicode char U+1FB1 (decimal 8113)
+   defining Unicode char U+1FB2 (decimal 8114)
+   defining Unicode char U+1FB3 (decimal 8115)
+   defining Unicode char U+1FB4 (decimal 8116)
+   defining Unicode char U+1FB6 (decimal 8118)
+   defining Unicode char U+1FB7 (decimal 8119)
+   defining Unicode char U+1FB8 (decimal 8120)
+   defining Unicode char U+1FB9 (decimal 8121)
+   defining Unicode char U+1FBA (decimal 8122)
+   defining Unicode char U+1FBB (decimal 8123)
+   defining Unicode char U+1FBC (decimal 8124)
+   defining Unicode char U+1FBD (decimal 8125)
+   defining Unicode char U+1FBE (decimal 8126)
+   defining Unicode char U+1FBF (decimal 8127)
+   defining Unicode char U+1FC0 (decimal 8128)
+   defining Unicode char U+1FC1 (decimal 8129)
+   defining Unicode char U+1FC2 (decimal 8130)
+   defining Unicode char U+1FC3 (decimal 8131)
+   defining Unicode char U+1FC4 (decimal 8132)
+   defining Unicode char U+1FC6 (decimal 8134)
+   defining Unicode char U+1FC7 (decimal 8135)
+   defining Unicode char U+1FC8 (decimal 8136)
+   defining Unicode char U+1FC9 (decimal 8137)
+   defining Unicode char U+1FCA (decimal 8138)
+   defining Unicode char U+1FCB (decimal 8139)
+   defining Unicode char U+1FCC (decimal 8140)
+   defining Unicode char U+1FCD (decimal 8141)
+   defining Unicode char U+1FCE (decimal 8142)
+   defining Unicode char U+1FCF (decimal 8143)
+   defining Unicode char U+1FD0 (decimal 8144)
+   defining Unicode char U+1FD1 (decimal 8145)
+   defining Unicode char U+1FD2 (decimal 8146)
+   defining Unicode char U+1FD3 (decimal 8147)
+   defining Unicode char U+1FD6 (decimal 8150)
+   defining Unicode char U+1FD7 (decimal 8151)
+   defining Unicode char U+1FD8 (decimal 8152)
+   defining Unicode char U+1FD9 (decimal 8153)
+   defining Unicode char U+1FDA (decimal 8154)
+   defining Unicode char U+1FDB (decimal 8155)
+   defining Unicode char U+1FDD (decimal 8157)
+   defining Unicode char U+1FDE (decimal 8158)
+   defining Unicode char U+1FDF (decimal 8159)
+   defining Unicode char U+1FE0 (decimal 8160)
+   defining Unicode char U+1FE1 (decimal 8161)
+   defining Unicode char U+1FE2 (decimal 8162)
+   defining Unicode char U+1FE3 (decimal 8163)
+   defining Unicode char U+1FE4 (decimal 8164)
+   defining Unicode char U+1FE5 (decimal 8165)
+   defining Unicode char U+1FE6 (decimal 8166)
+   defining Unicode char U+1FE7 (decimal 8167)
+   defining Unicode char U+1FE8 (decimal 8168)
+   defining Unicode char U+1FE9 (decimal 8169)
+   defining Unicode char U+1FEA (decimal 8170)
+   defining Unicode char U+1FEB (decimal 8171)
+   defining Unicode char U+1FEC (decimal 8172)
+   defining Unicode char U+1FED (decimal 8173)
+   defining Unicode char U+1FEE (decimal 8174)
+   defining Unicode char U+1FEF (decimal 8175)
+   defining Unicode char U+1FF2 (decimal 8178)
+   defining Unicode char U+1FF3 (decimal 8179)
+   defining Unicode char U+1FF4 (decimal 8180)
+   defining Unicode char U+1FF6 (decimal 8182)
+   defining Unicode char U+1FF7 (decimal 8183)
+   defining Unicode char U+1FF8 (decimal 8184)
+   defining Unicode char U+1FF9 (decimal 8185)
+   defining Unicode char U+1FFA (decimal 8186)
+   defining Unicode char U+1FFB (decimal 8187)
+   defining Unicode char U+1FFC (decimal 8188)
+   defining Unicode char U+1FFD (decimal 8189)
+   defining Unicode char U+1FFE (decimal 8190)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+10144 (decimal 65860)
+   defining Unicode char U+10145 (decimal 65861)
+   defining Unicode char U+10146 (decimal 65862)
+   defining Unicode char U+10147 (decimal 65863)
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/greek-fontenc\gree
+k-fontenc.def"
+File: greek-fontenc.def 2020/10/30 2.0 Common Greek font encoding definitions
+))
+Package textgreek Info: Loaded fontmap: {phv/*/*}{U/psy/*/*} {*/bx/n}{U/eur/b/n
+} {*/b/n}{U/eur/b/n} {*/*/n}{U/eur/m/n} {*/*/it}{OML/*/*/*}. on input line 69.
+)
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -595,16 +1020,16 @@ sty"
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
  ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count304
-\calc@Bcount=\count305
-\calc@Adimen=\dimen258
-\calc@Bdimen=\dimen259
-\calc@Askip=\skip115
-\calc@Bskip=\skip116
+\calc@Acount=\count316
+\calc@Bcount=\count317
+\calc@Adimen=\dimen266
+\calc@Bdimen=\dimen267
+\calc@Askip=\skip118
+\calc@Bskip=\skip119
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count306
-\calc@Cskip=\skip117
+\calc@Ccount=\count318
+\calc@Cskip=\skip120
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.st
 y"
@@ -618,19 +1043,19 @@ Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 err.sty"
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )))
-\AM@pagewidth=\dimen260
-\AM@pageheight=\dimen261
+\AM@pagewidth=\dimen268
+\AM@pageheight=\dimen269
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pppdftex.
 def"
 File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box112
-\AM@global@opts=\toks28
-\AM@pagecnt=\count307
-\AM@toc@title=\toks29
-\c@AM@survey=\count308
-\AM@templatesizebox=\box113
+\AM@pagebox=\box114
+\AM@global@opts=\toks32
+\AM@pagecnt=\count319
+\AM@toc@title=\toks33
+\c@AM@survey=\count320
+\AM@templatesizebox=\box115
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.st
 y"
@@ -649,15 +1074,15 @@ tikz.sty"
 cs.sty"
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-common.tex"
-\pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen262
-\pgfutil@tempdimb=\dimen263
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen270
+\pgfutil@tempdimb=\dimen271
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-common-lists.tex"))
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-latex.def"
-\pgfutil@abb=\box114
+\pgfutil@abb=\box116
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -680,33 +1105,33 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 fkeys.code.tex"
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 fkeysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks33
+\pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen264
-\pgf@y=\dimen265
-\pgf@xa=\dimen266
-\pgf@ya=\dimen267
-\pgf@xb=\dimen268
-\pgf@yb=\dimen269
-\pgf@xc=\dimen270
-\pgf@yc=\dimen271
-\pgf@xd=\dimen272
-\pgf@yd=\dimen273
+\pgf@x=\dimen272
+\pgf@y=\dimen273
+\pgf@xa=\dimen274
+\pgf@ya=\dimen275
+\pgf@xb=\dimen276
+\pgf@yb=\dimen277
+\pgf@xc=\dimen278
+\pgf@yc=\dimen279
+\pgf@xd=\dimen280
+\pgf@yd=\dimen281
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count309
-\c@pgf@countb=\count310
-\c@pgf@countc=\count311
-\c@pgf@countd=\count312
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count313
+\c@pgf@counta=\count321
+\c@pgf@countb=\count322
+\c@pgf@countc=\count323
+\c@pgf@countd=\count324
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
+\pgf@sys@id@count=\count325
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgf.cfg"
@@ -725,8 +1150,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count314
-\pgfsyssoftpath@bigbuffer@items=\count315
+\pgfsyssoftpath@smallbuffer@items=\count326
+\pgfsyssoftpath@bigbuffer@items=\count327
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsysprotocol.code.tex"
@@ -744,12 +1169,12 @@ calc.code.tex"
 util.code.tex")
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 parser.code.tex"
-\pgfmath@dimen=\dimen274
-\pgfmath@count=\count316
-\pgfmath@box=\box115
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
+\pgfmath@dimen=\dimen282
+\pgfmath@count=\count328
+\pgfmath@box=\box117
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.code.tex"
@@ -771,59 +1196,59 @@ functions.misc.code.tex")
 functions.integerarithmetics.code.tex")))
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 float.code.tex"
-\c@pgfmathroundto@lastzeros=\count317
+\c@pgfmathroundto@lastzeros=\count329
 ))
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.
 code.tex")
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen275
-\pgf@picmaxx=\dimen276
-\pgf@picminy=\dimen277
-\pgf@picmaxy=\dimen278
-\pgf@pathminx=\dimen279
-\pgf@pathmaxx=\dimen280
-\pgf@pathminy=\dimen281
-\pgf@pathmaxy=\dimen282
-\pgf@xx=\dimen283
-\pgf@xy=\dimen284
-\pgf@yx=\dimen285
-\pgf@yy=\dimen286
-\pgf@zx=\dimen287
-\pgf@zy=\dimen288
+\pgf@picminx=\dimen283
+\pgf@picmaxx=\dimen284
+\pgf@picminy=\dimen285
+\pgf@picmaxy=\dimen286
+\pgf@pathminx=\dimen287
+\pgf@pathmaxx=\dimen288
+\pgf@pathminy=\dimen289
+\pgf@pathmaxy=\dimen290
+\pgf@xx=\dimen291
+\pgf@xy=\dimen292
+\pgf@yx=\dimen293
+\pgf@yy=\dimen294
+\pgf@zx=\dimen295
+\pgf@zy=\dimen296
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen289
-\pgf@path@lasty=\dimen290
+\pgf@path@lastx=\dimen297
+\pgf@path@lasty=\dimen298
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen291
-\pgf@shorten@start@additional=\dimen292
+\pgf@shorten@end@additional=\dimen299
+\pgf@shorten@start@additional=\dimen300
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box116
-\pgf@hbox=\box117
-\pgf@layerbox@main=\box118
-\pgf@picture@serial@count=\count318
+\pgfpic=\box118
+\pgf@hbox=\box119
+\pgf@layerbox@main=\box120
+\pgf@picture@serial@count=\count330
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen293
+\pgflinewidth=\dimen301
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen294
-\pgf@pt@y=\dimen295
-\pgf@pt@temp=\dimen296
+\pgf@pt@x=\dimen302
+\pgf@pt@y=\dimen303
+\pgf@pt@temp=\dimen304
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorequick.code.tex"
@@ -840,14 +1265,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen297
+\pgfarrowsep=\dimen305
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen298
-\pgf@sys@shading@range@num=\count319
-\pgf@shadingcount=\count320
+\pgf@max=\dimen306
+\pgf@sys@shading@range@num=\count331
+\pgf@shadingcount=\count332
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreimage.code.tex"
@@ -856,7 +1281,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box119
+\pgfexternal@startupbox=\box121
 ))
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorelayers.code.tex"
@@ -877,7 +1302,7 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box120
+\pgfnodeparttextbox=\box122
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduleplot.code.tex"
@@ -886,8 +1311,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
 pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen299
-\pgf@nodesepend=\dimen300
+\pgf@nodesepstart=\dimen307
+\pgf@nodesepend=\dimen308
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
 pgfcomp-version-1-18.sty"
@@ -909,10 +1334,10 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 .code.tex")
-\pgffor@iter=\dimen301
-\pgffor@skip=\dimen302
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
+\pgffor@iter=\dimen309
+\pgffor@skip=\dimen310
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
 ))
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
 r/tikz\tikz.code.tex"
@@ -921,34 +1346,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count321
-\pgfplotmarksize=\dimen303
+\pgf@plot@mark@count=\count333
+\pgfplotmarksize=\dimen311
 )
-\tikz@lastx=\dimen304
-\tikz@lasty=\dimen305
-\tikz@lastxsaved=\dimen306
-\tikz@lastysaved=\dimen307
-\tikz@lastmovetox=\dimen308
-\tikz@lastmovetoy=\dimen309
-\tikzleveldistance=\dimen310
-\tikzsiblingdistance=\dimen311
-\tikz@figbox=\box121
-\tikz@figbox@bg=\box122
-\tikz@tempbox=\box123
-\tikz@tempbox@bg=\box124
-\tikztreelevel=\count322
-\tikznumberofchildren=\count323
-\tikznumberofcurrentchild=\count324
-\tikz@fig@count=\count325
+\tikz@lastx=\dimen312
+\tikz@lasty=\dimen313
+\tikz@lastxsaved=\dimen314
+\tikz@lastysaved=\dimen315
+\tikz@lastmovetox=\dimen316
+\tikz@lastmovetoy=\dimen317
+\tikzleveldistance=\dimen318
+\tikzsiblingdistance=\dimen319
+\tikz@figbox=\box123
+\tikz@figbox@bg=\box124
+\tikz@tempbox=\box125
+\tikz@tempbox@bg=\box126
+\tikztreelevel=\count334
+\tikznumberofchildren=\count335
+\tikznumberofcurrentchild=\count336
+\tikz@fig@count=\count337
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 odulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count326
-\pgfmatrixcurrentcolumn=\count327
-\pgf@matrix@numberofcolumns=\count328
+\pgfmatrixcurrentrow=\count338
+\pgfmatrixcurrentcolumn=\count339
+\pgf@matrix@numberofcolumns=\count340
 )
-\tikz@expandcount=\count329
+\tikz@expandcount=\count341
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
 r/tikz/libraries\tikzlibrarytopaths.code.tex"
@@ -970,7 +1395,7 @@ File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 flibraryfadings.code.tex"
 File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
-\c@@todonotes@numberoftodonotes=\count330
+\c@@todonotes@numberoftodonotes=\count342
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
 sty"
@@ -1004,9 +1429,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 y"
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen312
-\Hy@linkcounter=\count331
-\Hy@pagecounter=\count332
+\@linkdim=\dimen320
+\Hy@linkcounter=\count343
+\Hy@pagecounter=\count344
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
 f"
@@ -1022,7 +1447,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 s.sty"
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count333
+\Hy@SavedSpaceFactor=\count345
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -1030,13 +1455,13 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count334
+\c@Hy@tempcnt=\count346
  ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
-\Urlmuskip=\muskip16
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen313
+\XeTeXLinkMargin=\dimen321
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bitset.st
 y"
@@ -1047,9 +1472,9 @@ tcalc.sty"
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count335
-\Field@Width=\dimen314
-\Fld@charsize=\dimen315
+\Fld@menulength=\count347
+\Field@Width=\dimen322
+\Fld@charsize=\dimen323
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -1059,9 +1484,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6455.
 Package hyperref Info: PDF/A mode OFF on input line 6460.
 LaTeX Info: Redefining \ref on input line 6500.
 LaTeX Info: Redefining \pageref on input line 6504.
-\Hy@abspage=\count336
-\c@Item=\count337
-\c@Hfootnote=\count338
+\Hy@abspage=\count348
+\c@Item=\count349
+\c@Hfootnote=\count350
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -1073,8 +1498,8 @@ File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 d.sty"
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-\Fld@listcount=\count339
-\c@bookmark@seq@number=\count340
+\Fld@listcount=\count351
+\c@bookmark@seq@number=\count352
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilecheck\rer
 unfilecheck.sty"
@@ -1087,31 +1512,54 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip118
+\Hy@SectionHShift=\skip121
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 54.
- (code.sty
+Package hyperref Info: Option `colorlinks' set `true' on input line 57.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cleveref\cleveref.
+sty"
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+30.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7836.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+52.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7852.
+) (code.sty
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 sty"
-\lst@mode=\count341
-\lst@gtempboxa=\box125
-\lst@token=\toks42
-\lst@length=\count342
-\lst@currlwidth=\dimen316
-\lst@column=\count343
-\lst@pos=\count344
-\lst@lostspace=\dimen317
-\lst@width=\dimen318
-\lst@newlines=\count345
-\lst@lineno=\count346
-\lst@maxwidth=\dimen319
+\lst@mode=\count353
+\lst@gtempboxa=\box127
+\lst@token=\toks46
+\lst@length=\count354
+\lst@currlwidth=\dimen324
+\lst@column=\count355
+\lst@pos=\count356
+\lst@lostspace=\dimen325
+\lst@width=\dimen326
+\lst@newlines=\count357
+\lst@lineno=\count358
+\lst@maxwidth=\dimen327
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
 ty"
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count347
-\lst@skipnumbers=\count348
-\lst@framebox=\box126
+\c@lstnumber=\count359
+\lst@skipnumbers=\count360
+\lst@framebox=\box128
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 cfg"
@@ -1119,27 +1567,42 @@ File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
 ) (blocked.sty) (uhead.sty) (boxit.sty) (thesis.sty
-\tocrulewidth=\skip119
+\tocrulewidth=\skip122
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/newfloat\newfloat.
 sty"
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 Package newfloat Info: Document class `report' detected (Hy).
 )
-Package newfloat Info: New float `myequation' with options `' on input line 70.
+Package newfloat Info: New float `myequation' with options `' on input line 83.
 
-\c@myequation=\count349
-\newfloat@ftype=\count350
-Package newfloat Info: float type `myequation'=8 on input line 70.
-\c@lomyequationdepth=\count351
+\c@myequation=\count361
+\newfloat@ftype=\count362
+Package newfloat Info: float type `myequation'=8 on input line 83.
+\c@lomyequationdepth=\count363
 Package tocbasic Info: setting babel extension for `lomyequation' on input line
- 70.
-\c@submyequation=\count352
-\c@definition=\count353
-\c@theorem=\count354
+ 83.
+\c@submyequation=\count364
+\c@definition=\count365
+\c@theorem=\count366
 ) (Knit.aux
 
+LaTeX Warning: Label `fig:uniqueERCC' multiply defined.
+
+
+LaTeX Warning: Label `fig:uniqueERCC@cref' multiply defined.
+
+
 LaTeX Warning: Label `fig:isoseq_targeted_pccresults' multiply defined.
+
+
+LaTeX Warning: Label `fig:isoseq_targeted_pccresults@cref' multiply defined.
+
+
+LaTeX Warning: Label `sec:AS_methods' multiply defined.
+
+
+LaTeX Warning: Label `sec:AS_methods@cref' multiply defined.
 
 )
 \openout1 = `Knit.aux'.
@@ -1157,6 +1620,15 @@ LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 21.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
+1.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr.
+fd"
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+)
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -1209,17 +1681,17 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
-\scratchdimen=\dimen320
-\scratchbox=\box127
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count358
-\MPscratchDim=\dimen321
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count367
+\scratchdimen=\dimen328
+\scratchbox=\box129
+\nofMPsegments=\count368
+\nofMParguments=\count369
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count370
+\MPscratchDim=\dimen329
+\MPnumerator=\count371
+\makeMPintoPDFobject=\count372
+\everyMPtoPDFconversion=\toks48
 )
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -1247,9 +1719,9 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 \Etoc@tf=\read4
-\c@mv@tabular=\count361
-\c@mv@boldtabular=\count362
-\AtBeginShipoutBox=\box128
+\c@mv@tabular=\count373
+\c@mv@boldtabular=\count374
+\AtBeginShipoutBox=\box130
 
 ("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscap
 e.sty"
@@ -1276,7 +1748,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count363
+\c@section@level=\count375
 )
 LaTeX Info: Redefining \ref on input line 21.
 LaTeX Info: Redefining \pageref on input line 21.
@@ -1285,13 +1757,7 @@ LaTeX Info: Redefining \nameref on input line 21.
 \@outlinefile=\write5
 \openout5 = `Knit.out'.
 
-\c@lstlisting=\count364
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 21.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 21.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 21.
+\c@lstlisting=\count376
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
 .
 
@@ -1302,10 +1768,6 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 20.74pt on input line 30.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 30.
 
 [1
 
@@ -1347,43 +1809,129 @@ LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 46.
- [6]
+ [6] [7]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 46.
- [7] (Knit.lof [8]
-Overfull \hbox (2.0612pt too wide) in paragraph at lines 30--30
+ [8] (Knit.lof
+Overfull \hbox (0.37276pt too wide) in paragraph at lines 13--13
+ [][] [][][]\T1/LinuxLibertineT-TLF/m/n/12 Technical ar-ti-facts gen-er-ated du
+r-ing li-brary prepa-ra-tion and iden-ti-fied in SQANTI[][] []  
+ []
+
+[9]
+Overfull \hbox (2.0612pt too wide) in paragraph at lines 45--45
  [][] [][][]\T1/LinuxLibertineT-TLF/m/n/12 Classification of novel and known is
 o-forms from Tar-geted Se-quenc-ing in mouse 
  []
 
-)
+
+Overfull \hbox (2.0612pt too wide) in paragraph at lines 46--46
+ [][] [][][]\T1/LinuxLibertineT-TLF/m/n/12 Classification of novel and known is
+o-forms from Tar-geted Se-quenc-ing in mouse 
+ []
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 49.
+[10])
 \tf@lof=\write7
 \openout7 = `Knit.lof'.
 
- [9] (Knit.lot)
+ [11] (Knit.lot
+Overfull \hbox (4.46475pt too wide) in paragraph at lines 14--14
+ [][] [][][]\T1/LinuxLibertineT-TLF/m/n/12 Differential Gene and Tran-script An
+al-y-ses for mouse tran-scrip-tome us-ing whole 
+ []
+
+)
 \tf@lot=\write8
 \openout8 = `Knit.lot'.
 
- [10] (Knit.nls [11
+ [12] (Knit.lomyequation)
+\tf@lomyequation=\write9
+\openout9 = `Knit.lomyequation'.
 
-] [12]) [13]
+ [13] (Knit.nls [14
+
+] [15]) [16]
 Chapter 1.
-[14
-
-]
-Chapter 2.
-(../Project_Development/../Project_Development/IsoSeq.tex
+(../General_Introduction/../General_Introduction/General_Introduction.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 17.28pt on input line 3.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 3.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 11.
- [15
+
+[17
 
 ]
-<../Project_Development/Pictures/Smrt_template.jpg, id=486, 1358.07375pt x 245.
-91875pt>
+Overfull \hbox (17.7645pt too wide) in paragraph at lines 20--21
+\T1/LinuxLibertineT-TLF/m/n/12 AD is com-monly known to af-fect peo-ple who are
+ aged 65 and above (termed late-onset Alzheimer's
+ []
+
+[18]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 24.
+ [19] [20] [21]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 8.0pt on input line 55.
+
+
+LaTeX Warning: Citation `Carninci2006' on page 22 undefined on input line 55.
+
+[22] [23]
+<../General_Introduction/Introduction_Figures.pdf, id=962, page=1, 597.432pt x 
+853.50871pt>
+File: ../General_Introduction/Introduction_Figures.pdf Graphic file (type pdf)
+<use ../General_Introduction/Introduction_Figures.pdf, page 1>
+Package pdftex.def Info: ../General_Introduction/Introduction_Figures.pdf , pag
+e1 used on input line 68.
+(pdftex.def)             Requested size: 295.84837pt x 318.61215pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--84
+
+ []
+
+[24] [25 <../General_Introduction/Introduction_Figures.pdf>]
+Overfull \hbox (8.30959pt too wide) in paragraph at lines 101--102
+\T1/LinuxLibertineT-TLF/m/n/12 trans-lated into pro-teins, by con-tain-ing an e
+arly stop codon. A pre-ma-ture termination-translation
+ []
+
+[26]
+Overfull \hbox (12.71011pt too wide) in paragraph at lines 123--124
+[]\T1/LinuxLibertineT-TLF/m/n/12 Through massively-parallel se-quenc-ing of am-
+pli-fied DNA tem-plates in a sequence-by-synthesis
+ []
+
+
+LaTeX Warning: Reference `fig:kuo_splicing' on page 27 undefined on input line 
+130.
+
+[27] [28]
+Overfull \hbox (9.3637pt too wide) in paragraph at lines 153--154
+\T1/LinuxLibertineT-TLF/m/n/12 The lim-i-ta-tions with RNA-Seq were ad-dressed 
+with the emer-gence of long-read, third-generation
+ []
+
+[29]
+
+LaTeX Warning: Citation `A' on page 30 undefined on input line 171.
+
+[30] [31]
+<../General_Introduction/Introduction_Figures.pdf, id=1043, page=2, 597.432pt x
+ 853.50871pt>
+File: ../General_Introduction/Introduction_Figures.pdf Graphic file (type pdf)
+<use ../General_Introduction/Introduction_Figures.pdf, page 2>
+Package pdftex.def Info: ../General_Introduction/Introduction_Figures.pdf , pag
+e2 used on input line 201.
+(pdftex.def)             Requested size: 297.2905pt x -109.5841pt.
+ [32 <../General_Introduction/Introduction_Figures.pdf>]) [33]
+Chapter 2.
+(../Project_Development/../Project_Development/IsoSeq.tex [34
+
+]
+<../Project_Development/Pictures/Smrt_template.jpg, id=1115, 1358.07375pt x 245
+.91875pt>
 File: ../Project_Development/Pictures/Smrt_template.jpg Graphic file (type jpg)
 
 <use ../Project_Development/Pictures/Smrt_template.jpg>
@@ -1394,41 +1942,41 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 21.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 21.
-<../Project_Development/Pictures/Phospholinked_nucleotides.png, id=487, 181.427
-81pt x 137.01187pt>
+<../Project_Development/Pictures/Phospholinked_nucleotides.png, id=1116, 181.42
+781pt x 137.01187pt>
 File: ../Project_Development/Pictures/Phospholinked_nucleotides.png Graphic fil
 e (type png)
 <use ../Project_Development/Pictures/Phospholinked_nucleotides.png>
 Package pdftex.def Info: ../Project_Development/Pictures/Phospholinked_nucleoti
 des.png  used on input line 26.
 (pdftex.def)             Requested size: 182.10007pt x 140.5656pt.
-<../Project_Development/Pictures/Mechanism.png, id=489, 489.32813pt x 281.55188
-pt>
+<../Project_Development/Pictures/Mechanism.png, id=1118, 489.32813pt x 281.5518
+8pt>
 File: ../Project_Development/Pictures/Mechanism.png Graphic file (type png)
 <use ../Project_Development/Pictures/Mechanism.png>
 Package pdftex.def Info: ../Project_Development/Pictures/Mechanism.png  used on
  input line 31.
 (pdftex.def)             Requested size: 364.2027pt x 210.83687pt.
- [16 <../Project_Development/Pictures/Smrt_template.jpg> <../Project_Developmen
+ [35 <../Project_Development/Pictures/Smrt_template.jpg> <../Project_Developmen
 t/Pictures/Phospholinked_nucleotides.png> <../Project_Development/Pictures/Mech
 anism.png>]
-<../Project_Development/Pictures/SMRTAdapter.png, id=498, 595.023pt x 247.52475
-pt>
+<../Project_Development/Pictures/SMRTAdapter.png, id=1132, 595.023pt x 247.5247
+5pt>
 File: ../Project_Development/Pictures/SMRTAdapter.png Graphic file (type png)
 <use ../Project_Development/Pictures/SMRTAdapter.png>
 Package pdftex.def Info: ../Project_Development/Pictures/SMRTAdapter.png  used 
-on input line 52.
+on input line 51.
 (pdftex.def)             Requested size: 364.20737pt x 140.55801pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17]) (../Project_Development/../Project_Development/IsoSeq_Lab.tex
-Underfull \hbox (badness 10000) in paragraph at lines 63--2
+[36]) (../Project_Development/../Project_Development/IsoSeq_Lab.tex
+Underfull \hbox (badness 10000) in paragraph at lines 62--2
 
  []
 
-[18 <../Project_Development/Pictures/SMRTAdapter.png (PNG copy)>]
+[37 <../Project_Development/Pictures/SMRTAdapter.png (PNG copy)>]
 Overfull \hbox (30.0pt too wide) in paragraph at lines 14--14
 [][] 
  []
@@ -1438,22 +1986,22 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 14--15
 [][] 
  []
 
-<../Project_Development/Pictures/Pipeline.pdf, id=534, page=1, 963.6pt x 1422.6
-349pt>
+<../Project_Development/Pictures/Pipeline.pdf, id=1175, page=1, 963.6pt x 1422.
+6349pt>
 File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Project_Development/Pictures/Pipeline.pdf, page 1>
 Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page1 u
 sed on input line 18.
 (pdftex.def)             Requested size: 395.20512pt x 396.911pt.
-<../Project_Development/Pictures/Pipeline.pdf, id=542, page=2, 963.6pt x 1422.6
-349pt>
+<../Project_Development/Pictures/Pipeline.pdf, id=1183, page=2, 963.6pt x 1422.
+6349pt>
 File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Project_Development/Pictures/Pipeline.pdf, page 2>
 Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page2 u
 sed on input line 28.
 (pdftex.def)             Requested size: 395.20514pt x 396.911pt.
-[19] [20 <../Project_Development/Pictures/Pipeline.pdf>] [21 <../Project_Develo
-pment/Pictures/Pipeline.pdf>] [22]
+[38] [39 <../Project_Development/Pictures/Pipeline.pdf>] [40 <../Project_Develo
+pment/Pictures/Pipeline.pdf>] [41]
 Underfull \hbox (badness 10000) in paragraph at lines 45--49
 
  []
@@ -1463,50 +2011,61 @@ Overfull \hbox (8.1174pt too wide) in alignment at lines 68--68
 [][] 
  []
 
-[23
+[42
 
-] [24
+]
+Package hyperref Info: bookmark level for unknown myequation defaults to 0 on i
+nput line 100.
+ [43
 
-] [25]
-<../Project_Development/Pictures/RNA_degradation.png, id=770, 613.54219pt x 461
-.47406pt>
+]
+<../Project_Development/Pictures/Pipeline.pdf, id=1371, page=5, 963.6pt x 1422.
+6349pt>
+File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
+<use ../Project_Development/Pictures/Pipeline.pdf, page 5>
+Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page5 u
+sed on input line 107.
+(pdftex.def)             Requested size: 433.616pt x 460.92911pt.
+ [44 <../Project_Development/Pictures/Pipeline.pdf>] [45] [46]
+<../Project_Development/Pictures/RNA_degradation.png, id=1427, 613.54219pt x 46
+1.47406pt>
 File: ../Project_Development/Pictures/RNA_degradation.png Graphic file (type pn
 g)
 <use ../Project_Development/Pictures/RNA_degradation.png>
 Package pdftex.def Info: ../Project_Development/Pictures/RNA_degradation.png  u
-sed on input line 115.
+sed on input line 155.
 (pdftex.def)             Requested size: 182.08871pt x 147.59021pt.
 
-Underfull \hbox (badness 4242) in paragraph at lines 116--116
+Underfull \hbox (badness 4242) in paragraph at lines 156--156
 []\T1/LinuxLibertineT-TLF/b/n/10.95 (a) |\T1/LinuxLibertineT-TLF/m/n/10.95 Au-t
 o-mated gel elec-trophore-sis of
  []
 
-<../Project_Development/Pictures/RIN_range.png, id=771, 298.86656pt x 207.02344
-pt>
+<../Project_Development/Pictures/RIN_range.png, id=1428, 298.86656pt x 207.0234
+4pt>
 File: ../Project_Development/Pictures/RIN_range.png Graphic file (type png)
 <use ../Project_Development/Pictures/RIN_range.png>
 Package pdftex.def Info: ../Project_Development/Pictures/RIN_range.png  used on
- input line 120.
+ input line 160.
 (pdftex.def)             Requested size: 182.09854pt x 147.59416pt.
-<../Project_Development/Pictures/RIN_regions.png, id=772, 581.92406pt x 347.046
-57pt>
+<../Project_Development/Pictures/RIN_regions.png, id=1429, 581.92406pt x 347.04
+657pt>
 File: ../Project_Development/Pictures/RIN_regions.png Graphic file (type png)
 <use ../Project_Development/Pictures/RIN_regions.png>
 Package pdftex.def Info: ../Project_Development/Pictures/RIN_regions.png  used 
-on input line 126.
+on input line 166.
 (pdftex.def)             Requested size: 182.09056pt x 147.5908pt.
-[26 <../Project_Development/Pictures/RNA_degradation.png> <../Project_Developme
+[47 <../Project_Development/Pictures/RNA_degradation.png> <../Project_Developme
 nt/Pictures/RIN_range.png> <../Project_Development/Pictures/RIN_regions.png>]
-Overfull \hbox (1.08669pt too wide) in paragraph at lines 141--143
+Overfull \hbox (1.08669pt too wide) in paragraph at lines 181--183
 \T1/LinuxLibertineT-TLF/m/n/12 For tar-geted se-quenc-ing, we used the of-fi-ci
 al PacBio pro-to-col cDNA Cap-ture Us-ing IDT xGen\TS1/LinuxLibertineT-TLF/m/n
 /12 ®
  []
 
-[27] [28])
+[48] [49])
 (../Project_Development/../Project_Development/IsoSeq_Bioinformatics.tex
-[29]
+[50]
 Overfull \hbox (30.0pt too wide) in paragraph at lines 12--12
 [] 
  []
@@ -1516,8 +2075,8 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 12--13
 [][] 
  []
 
-<../Project_Development/Pictures/Isoseq_Pipeline.png, id=817, 553.1064pt x 655.
-248pt>
+<../Project_Development/Pictures/Isoseq_Pipeline.png, id=1471, 553.1064pt x 655
+.248pt>
 File: ../Project_Development/Pictures/Isoseq_Pipeline.png Graphic file (type pn
 g)
 <use ../Project_Development/Pictures/Isoseq_Pipeline.png>
@@ -1527,342 +2086,841 @@ sed on input line 25.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30]
+[51]
 Overfull \hbox (4.47406pt too wide) in paragraph at lines 36--37
 []\T1/LinuxLibertineT-TLF/m/n/12 Reference-based cor-rec-tion by align-ment of 
 reads to ref-er-ence genome by spliced-awwere
  []
 
-[31 <../Project_Development/Pictures/Isoseq_Pipeline.png>]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 57.
- [32] [33] [34]
-Overfull \hbox (20.80257pt too wide) in paragraph at lines 94--95
+[52 <../Project_Development/Pictures/Isoseq_Pipeline.png>] [53] [54]
+Overfull \hbox (20.80257pt too wide) in paragraph at lines 89--90
 \T1/LinuxLibertineT-TLF/m/n/12 align-ment to in-fer ori-en-ta-tion. As a splice
 -awwere align-ment, -x splice prefers GT[A/G]...[C/T]AG
  []
 
-[35] [36]
-<../Project_Development/Pictures/Pipeline.pdf, id=884, page=3, 963.6pt x 1422.6
-349pt>
+[55]
+Overfull \hbox (2.71263pt too wide) in paragraph at lines 98--100
+\T1/LinuxLibertineT-TLF/m/n/12 One source of er-ror from long-read se-quenc-ing
+ can oc-cur at re-verse tran-scrip-tion (RT)[], whereby
+ []
+
+[56] [57] [58]
+<../Project_Development/Pictures/Pipeline.pdf, id=1538, page=3, 963.6pt x 1422.
+6349pt>
 File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Project_Development/Pictures/Pipeline.pdf, page 3>
 Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page3 u
-sed on input line 157.
+sed on input line 164.
 (pdftex.def)             Requested size: 382.40152pt x 217.66028pt.
- [37] [38 <../Project_Development/Pictures/Pipeline.pdf>] [39])
-[40]
+ [59]
+<../Project_Development/Pictures/Pipeline.pdf, id=1554, page=4, 963.6pt x 1422.
+6349pt>
+File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
+<use ../Project_Development/Pictures/Pipeline.pdf, page 4>
+Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page4 u
+sed on input line 180.
+(pdftex.def)             Requested size: 498.68353pt x 219.08531pt.
+
+Overfull \hbox (43.43942pt too wide) in paragraph at lines 180--181
+ [] 
+ []
+
+[60 <../Project_Development/Pictures/Pipeline.pdf>] [61 <../Project_Development
+/Pictures/Pipeline.pdf>] [62])
+(../Project_Development/../Project_Development/IsoSeq_Optimisation.tex [63]
+<../Project_Development/../Pictures/ERCC_Pipeline.png, id=1605, 871.00406pt x 4
+83.30562pt>
+File: ../Project_Development/../Pictures/ERCC_Pipeline.png Graphic file (type p
+ng)
+<use ../Project_Development/../Pictures/ERCC_Pipeline.png>
+Package pdftex.def Info: ../Project_Development/../Pictures/ERCC_Pipeline.png  
+used on input line 19.
+(pdftex.def)             Requested size: 364.1845pt x 210.83359pt.
+<../Project_Development/../Pictures/ERCC_firstoptim.png, id=1606, 307.90031pt x
+ 176.15813pt>
+File: ../Project_Development/../Pictures/ERCC_firstoptim.png Graphic file (type
+ png)
+<use ../Project_Development/../Pictures/ERCC_firstoptim.png>
+Package pdftex.def Info: ../Project_Development/../Pictures/ERCC_firstoptim.png
+  used on input line 24.
+(pdftex.def)             Requested size: 182.09653pt x 84.32915pt.
+<../Project_Development/../Pictures/ERCC_secondoptim.png, id=1607, 307.90031pt 
+x 176.15813pt>
+File: ../Project_Development/../Pictures/ERCC_secondoptim.png Graphic file (typ
+e png)
+<use ../Project_Development/../Pictures/ERCC_secondoptim.png>
+Package pdftex.def Info: ../Project_Development/../Pictures/ERCC_secondoptim.pn
+g  used on input line 29.
+(pdftex.def)             Requested size: 182.09653pt x 84.32915pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[64] [65 <../Project_Development/../Pictures/ERCC_Pipeline.png> <../Project_Dev
+elopment/../Pictures/ERCC_firstoptim.png> <../Project_Development/../Pictures/E
+RCC_secondoptim.png>]
+<../Project_Development/../Pictures/Project_Development/ERCC.pdf, id=1618, page
+=1, 1084.05pt x 831.105pt>
+File: ../Project_Development/../Pictures/Project_Development/ERCC.pdf Graphic f
+ile (type pdf)
+<use ../Project_Development/../Pictures/Project_Development/ERCC.pdf, page 1>
+Package pdftex.def Info: ../Project_Development/../Pictures/Project_Development
+/ERCC.pdf , page1 used on input line 59.
+(pdftex.def)             Requested size: 455.24828pt x 281.10089pt.
+
+
+LaTeX Warning: Reference `tab:run_output' on page 66 undefined on input line 62
+.
+
+
+LaTeX Warning: Reference `tab:run_output' on page 66 undefined on input line 62
+.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ../Project_Development/../Pictures/Project_Development/ERCC.pdf Graphic f
+ile (type pdf)
+<use ../Project_Development/../Pictures/Project_Development/ERCC.pdf, page 1>
+Package pdftex.def Info: ../Project_Development/../Pictures/Project_Development
+/ERCC.pdf , page1 used on input line 67.
+(pdftex.def)             Requested size: 455.24828pt x 281.10089pt.
+
+LaTeX Warning: Reference `tab:run_output' on page 66 undefined on input line 70
+.
+
+
+LaTeX Warning: Reference `tab:run_output' on page 66 undefined on input line 70
+.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[66]) (../Project_Development/../Project_Development/Oxford_Nanopore.tex
+[67 <../Project_Development/../Pictures/Project_Development/ERCC.pdf>] [68])
+(../Project_Development/../Project_Development/ONT_Lab.tex [69]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 13--13
+[][] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 13--14
+[][] 
+ []
+
+[70]) (../Project_Development/../Project_Development/ONT_Bioinformatics.tex
+[71]
+Overfull \hbox (3.73225pt too wide) in paragraph at lines 4--5
+\T1/LinuxLibertineT-TLF/m/n/12 Unlike the Iso-Seq bioin-for-mat-ics pipeline wh
+ich was largely es-tab-lished by PacBio, the pipeline
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 11--11
+[][] 
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 11--12
+[][] 
+ []
+
+[72]
+Overfull \hbox (18.42282pt too wide) in paragraph at lines 30--31
+\T1/LinuxLibertineT-TLF/m/n/12 Similarly to the Iso-Seq bioin-for-mat-ics pipel
+ine, cDNA se-quenc-ing primer se-quences and nanopore
+ []
+
+<../Project_Development/Pictures/Pipeline.pdf, id=1734, page=7, 963.6pt x 1422.
+6349pt>
+File: ../Project_Development/Pictures/Pipeline.pdf Graphic file (type pdf)
+<use ../Project_Development/Pictures/Pipeline.pdf, page 7>
+Package pdftex.def Info: ../Project_Development/Pictures/Pipeline.pdf , page7 u
+sed on input line 36.
+(pdftex.def)             Requested size: 529.98164pt x 297.33064pt.
+
+Overfull \hbox (74.73753pt too wide) in paragraph at lines 36--37
+ [] 
+ []
+
+[73] [74 <../Project_Development/Pictures/Pipeline.pdf>]
+Overfull \hbox (41.74448pt too wide) in paragraph at lines 47--48
+\T1/LinuxLibertineT-TLF/m/n/12 moval of lowly-aligned tran-scripts and for fur-
+ther col-lapse to unique iso-forms (script: tama_collapse.py,
+ []
+
+[75]) [76]
 Chapter 3.
-(../Whole_Transcriptome/../Whole_Transcriptome/Whole_Transcriptome.tex [41
+(../Whole_Transcriptome/../Whole_Transcriptome/Whole_Transcriptome.tex [77
 
 ]
-[42]
+[78]
 
-LaTeX Warning: Reference `fig:isoseq_samples' on page 43 undefined on input lin
-e 57.
+LaTeX Warning: Reference `fig:isoseq_samples' on page 1 undefined on input line
+ 63.
 
 
-LaTeX Warning: Reference `fig:ONT_samples' on page 43 undefined on input line 5
-7.
+LaTeX Warning: Reference `fig:ONT_samples' on page 1 undefined on input line 63
+.
 
-[43]
-<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=941, page=2, 963.6pt x 1422.6
-349pt>
+[79]
+<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=1840, page=2, 963.6pt x 1422.
+6349pt>
 File: ../Whole_Transcriptome/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Whole_Transcriptome/Pictures/Pipeline.pdf, page 2>
 Package pdftex.def Info: ../Whole_Transcriptome/Pictures/Pipeline.pdf , page2 u
-sed on input line 73.
-(pdftex.def)             Requested size: 433.616pt x 192.05302pt.
-<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=943, page=3, 963.6pt x 1422.6
-349pt>
+sed on input line 78.
+(pdftex.def)             Requested size: 433.616pt x 128.03491pt.
+<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=1842, page=3, 963.6pt x 1422.
+6349pt>
 File: ../Whole_Transcriptome/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Whole_Transcriptome/Pictures/Pipeline.pdf, page 3>
 Package pdftex.def Info: ../Whole_Transcriptome/Pictures/Pipeline.pdf , page3 u
-sed on input line 85.
+sed on input line 90.
 (pdftex.def)             Requested size: 433.616pt x 371.30374pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 
  []
 
 
-LaTeX Warning: Float too large for page by 32.02065pt on input line 96.
+LaTeX Warning: Float too large for page by 32.02065pt on input line 101.
 
-[44 <../Whole_Transcriptome/Pictures/Pipeline.pdf>] [45 <../Whole_Transcriptome
+[80 <../Whole_Transcriptome/Pictures/Pipeline.pdf>] [81 <../Whole_Transcriptome
 /Pictures/Pipeline.pdf>]
-<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=1001, page=1, 963.6pt x 1422.
+<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=1904, page=1, 963.6pt x 1422.
 6349pt>
 File: ../Whole_Transcriptome/Pictures/Pipeline.pdf Graphic file (type pdf)
 <use ../Whole_Transcriptome/Pictures/Pipeline.pdf, page 1>
 Package pdftex.def Info: ../Whole_Transcriptome/Pictures/Pipeline.pdf , page1 u
-sed on input line 106.
+sed on input line 117.
 (pdftex.def)             Requested size: 408.00876pt x 473.73274pt.
- [46 <../Whole_Transcriptome/Pictures/Pipeline.pdf>]
-[47]
-Underfull \hbox (badness 10000) in alignment at lines 143--143
+ [82] [83 <../Whole_Transcriptome/Pictures/Pipeline.pdf>]
+Underfull \hbox (badness 10000) in alignment at lines 156--156
 [][][][][][] 
  []
 
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1100, page=1, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 1>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page1 used on input line 151.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2003, page=1,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 1>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 397.48622pt x 580.58029pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[48] [49 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf>]
+[84] [85 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 160.
+               Default added (so using `tbp') on input line 173.
 
 
-Overfull \vbox (14.49998pt too high) detected at line 492
+Overfull \vbox (14.49998pt too high) detected at line 505
  []
 
 
-Overfull \vbox (14.49998pt too high) detected at line 492
+Overfull \vbox (14.49998pt too high) detected at line 505
  []
 
-[50]
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1142, page=2, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 2>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page2 used on input line 504.
+[86]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2051, page=11
+, 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 11>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page11 used on input line 515.
+(pdftex.def)             Requested size: 397.48622pt x 580.58029pt.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2053, page=2,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 2>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page2 used on input line 525.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
 
 
-LaTeX Warning: Float too large for page by 4.94626pt on input line 510.
+LaTeX Warning: Float too large for page by 4.94626pt on input line 531.
 
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1143, page=3, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 3>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page3 used on input line 514.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2054, page=6,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 6>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page6 used on input line 535.
+(pdftex.def)             Requested size: 397.48622pt x 205.00275pt.
+[87
+
+
+] [88 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+[89 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+Overfull \hbox (26.24121pt too wide) in paragraph at lines 545--545
+[]\T1/LinuxLibertineT-TLF/b/n/14.4 Nanopore Se-quenc-ing run per-for-mance and 
+se-quenc-ing met-rics 
+ []
+
+[90 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+Underfull \hbox (badness 10000) in alignment at lines 562--562
+[][][][][] 
+ []
+
+
+Overfull \hbox (0.83968pt too wide) in alignment at lines 578--578
+[][][][][][][][][] 
+ []
+
+<../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, id=2110, page=1, 72
+2.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf Graphic file (t
+ype pdf)
+<use ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, page 1>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.
+pdf , page1 used on input line 587.
+(pdftex.def)             Requested size: 325.21199pt x 487.818pt.
+<../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, id=2111, page=2, 72
+2.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf Graphic file (t
+ype pdf)
+<use ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, page 2>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.
+pdf , page2 used on input line 597.
+(pdftex.def)             Requested size: 325.21199pt x 359.78178pt.
+<../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, id=2113, page=4, 72
+2.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf Graphic file (t
+ype pdf)
+<use ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, page 4>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.
+pdf , page4 used on input line 607.
+(pdftex.def)             Requested size: 312.40837pt x 231.74554pt.
+<../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, id=2115, page=3, 72
+2.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf Graphic file (t
+ype pdf)
+<use ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf, page 3>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.
+pdf , page3 used on input line 617.
+(pdftex.def)             Requested size: 325.21199pt x 359.78178pt.
+<../Whole_Transcriptome/Pictures/Pipeline.pdf, id=2117, page=4, 963.6pt x 1422.
+6349pt>
+File: ../Whole_Transcriptome/Pictures/Pipeline.pdf Graphic file (type pdf)
+<use ../Whole_Transcriptome/Pictures/Pipeline.pdf, page 4>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/Pipeline.pdf , page4 u
+sed on input line 627.
+(pdftex.def)             Requested size: 433.616pt x 435.32185pt.
+[91] [92 <../Whole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf>] [93 <../W
+hole_Transcriptome/Pictures/ONTWholeTranscriptome.pdf>] [94 <../Whole_Transcrip
+tome/Pictures/ONTWholeTranscriptome.pdf>] [95 <../Whole_Transcriptome/Pictures/
+ONTWholeTranscriptome.pdf>] [96 <../Whole_Transcriptome/Pictures/Pipeline.pdf>]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2181, page=3,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 3>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page3 used on input line 641.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
-[51
+[97
 
-
-] [52 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf>] [53 <../Whole_T
-ranscriptome/Pictures/WholeTranscriptome.pdf>]
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1184, page=4, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 4>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page4 used on input line 534.
+] [98 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2222, page=4,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 4>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page4 used on input line 661.
 (pdftex.def)             Requested size: 397.48622pt x 205.00275pt.
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1186, page=6, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 6>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page6 used on input line 544.
-(pdftex.def)             Requested size: 397.48622pt x 205.00275pt.
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1188, page=5, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 5>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page5 used on input line 554.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2224, page=5,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 5>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page5 used on input line 671.
 (pdftex.def)             Requested size: 397.48622pt x 408.4406pt.
- [54] [55 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf> <../Whole_Tr
-anscriptome/Pictures/WholeTranscriptome.pdf>] [56 <../Whole_Transcriptome/Pictu
-res/WholeTranscriptome.pdf>]
+
+[99 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>] [100 <../Wh
+ole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2270, page=13
+, 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 13>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page13 used on input line 695.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+
+LaTeX Warning: Float too large for page by 91.94626pt on input line 701.
+
+[101] [102 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 578.
+               Default added (so using `tbp') on input line 708.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 596--596
+Underfull \hbox (badness 10000) in alignment at lines 726--726
 [][][] 
  []
 
 
-Overfull \hbox (16.96338pt too wide) in paragraph at lines 602--604
+Overfull \hbox (16.96338pt too wide) in paragraph at lines 732--734
 []\T1/LinuxLibertineT-TLF/m/n/12 Compared to known iso-forms, these novel iso-f
 orms were less abun-dant (Mann-Whitney-Wilcoxon
  []
 
-[57]
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1235, page=7, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 7>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page7 used on input line 607.
+[103]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2317, page=7,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 7>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page7 used on input line 737.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
 
 
-LaTeX Warning: Float too large for page by 19.44626pt on input line 613.
+LaTeX Warning: Float too large for page by 19.44626pt on input line 743.
 
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1238, page=8, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 8>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page8 used on input line 622.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2320, page=8,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 8>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page8 used on input line 752.
 (pdftex.def)             Requested size: 397.48622pt x 267.59901pt.
-[58] [59 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf>] [60 <../Whol
-e_Transcriptome/Pictures/WholeTranscriptome.pdf>]
-Underfull \hbox (badness 10000) in alignment at lines 645--645
+[104] [105 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+[106 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+Underfull \hbox (badness 10000) in alignment at lines 775--775
 [][] 
  []
 
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1277, page=9, 722.7
-pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 9>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page9 used on input line 654.
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2364, page=9,
+ 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 9>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page9 used on input line 784.
 (pdftex.def)             Requested size: 397.48622pt x 572.75577pt.
 
-LaTeX Warning: Float too large for page by 39.47267pt on input line 660.
+LaTeX Warning: Float too large for page by 39.47267pt on input line 790.
 
-[61] [62 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf>]
-<../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, id=1317, page=10, 722.
-7pt x 1084.05pt>
-File: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf Graphic file (type
- pdf)
-<use ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf, page 10>
-Package pdftex.def Info: ../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf
- , page10 used on input line 673.
+[107] [108 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>]
+<../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, id=2406, page=10
+, 722.7pt x 1084.05pt>
+File: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf Graphic file
+ (type pdf)
+<use ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf, page 10>
+Package pdftex.def Info: ../Whole_Transcriptome/Pictures/IsoSeqWholeTranscripto
+me.pdf , page10 used on input line 803.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
- [63]
-[64 <../Whole_Transcriptome/Pictures/WholeTranscriptome.pdf>]) [65]
+
+[109] [110 <../Whole_Transcriptome/Pictures/IsoSeqWholeTranscriptome.pdf>])
+[111]
 Chapter 4.
 
 (../Targeted_Transcriptome/../Targeted_Transcriptome/Targeted_Transcriptome.tex
-[66
+[112
 
-] [67]
+] [113]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 16.
+               Default added (so using `tbp') on input line 18.
 
 
-LaTeX Warning: Float too large for page by 3.29826pt on input line 63.
+LaTeX Warning: Float too large for page by 3.29826pt on input line 65.
 
-[68]
-<../Targeted_Transcriptome/Figures/LabResults.pdf, id=1373, page=1, 963.6pt x 1
+[114]
+<../Targeted_Transcriptome/Figures/LabResults.pdf, id=2468, page=1, 963.6pt x 1
 422.6349pt>
 File: ../Targeted_Transcriptome/Figures/LabResults.pdf Graphic file (type pdf)
 <use ../Targeted_Transcriptome/Figures/LabResults.pdf, page 1>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/LabResults.pdf , pag
-e1 used on input line 102.
+e1 used on input line 104.
 (pdftex.def)             Requested size: 433.616pt x 384.10738pt.
-<../Targeted_Transcriptome/Figures/LabResults.pdf, id=1379, page=2, 963.6pt x 1
+<../Targeted_Transcriptome/Figures/LabResults.pdf, id=2474, page=2, 963.6pt x 1
 422.6349pt>
 File: ../Targeted_Transcriptome/Figures/LabResults.pdf Graphic file (type pdf)
 <use ../Targeted_Transcriptome/Figures/LabResults.pdf, page 2>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/LabResults.pdf , pag
-e2 used on input line 113.
+e2 used on input line 115.
 (pdftex.def)             Requested size: 395.20512pt x 448.12547pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
 
  []
 
 
-LaTeX Warning: Float too large for page by 21.84238pt on input line 121.
+LaTeX Warning: Float too large for page by 21.84238pt on input line 123.
 
-[69
+[115
 
 
-] [70 <../Targeted_Transcriptome/Figures/LabResults.pdf>] [71 <../Targeted_Tran
-scriptome/Figures/LabResults.pdf>] [72]
+] [116 <../Targeted_Transcriptome/Figures/LabResults.pdf>] [117 <../Targeted_Tr
+anscriptome/Figures/LabResults.pdf>] [118]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 134.
+               Default added (so using `tbp') on input line 136.
 
 
-Overfull \vbox (14.49998pt too high) detected at line 244
+Overfull \vbox (14.49998pt too high) detected at line 246
  []
 
 
-Overfull \vbox (14.49998pt too high) detected at line 244
+Overfull \vbox (14.49998pt too high) detected at line 246
  []
 
 
-Overfull \vbox (14.49998pt too high) detected at line 244
+Overfull \vbox (14.49998pt too high) detected at line 246
  []
 
 
-Overfull \vbox (43.49995pt too high) detected at line 244
+Overfull \vbox (43.49995pt too high) detected at line 246
  []
 
-[73]
-<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=1476, page=1, 
+[119]
+<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=2571, page=1, 
 722.7pt x 1084.05pt>
 File: ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf Graphic file 
 (type pdf)
 <use ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, page 1>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/TargetedTranscriptom
-e.pdf , page1 used on input line 255.
+e.pdf , page1 used on input line 256.
 (pdftex.def)             Requested size: 397.48622pt x 580.58029pt.
 
 
-LaTeX Warning: Float too large for page by 61.7972pt on input line 261.
+LaTeX Warning: Float too large for page by 61.7972pt on input line 262.
 
-<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=1478, page=2, 
+<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=2573, page=2, 
 722.7pt x 1084.05pt>
 File: ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf Graphic file 
 (type pdf)
 <use ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, page 2>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/TargetedTranscriptom
-e.pdf , page2 used on input line 265.
+e.pdf , page2 used on input line 266.
 (pdftex.def)             Requested size: 397.48622pt x 205.00275pt.
-<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=1485, page=3, 
+[120 <../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf>] [121 <../Ta
+rgeted_Transcriptome/Figures/TargetedTranscriptome.pdf>]
+<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=2607, page=3, 
 722.7pt x 1084.05pt>
 File: ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf Graphic file 
 (type pdf)
 <use ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, page 3>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/TargetedTranscriptom
-e.pdf , page3 used on input line 284.
+e.pdf , page3 used on input line 298.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
-<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=1486, page=4, 
+<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=2608, page=4, 
 722.7pt x 1084.05pt>
 File: ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf Graphic file 
 (type pdf)
 <use ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, page 4>
 Package pdftex.def Info: ../Targeted_Transcriptome/Figures/TargetedTranscriptom
-e.pdf , page4 used on input line 294.
+e.pdf , page4 used on input line 308.
 (pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
-) [74
+<../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, id=2609, page=6, 
+722.7pt x 1084.05pt>
+File: ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf Graphic file 
+(type pdf)
+<use ../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf, page 6>
+Package pdftex.def Info: ../Targeted_Transcriptome/Figures/TargetedTranscriptom
+e.pdf , page6 used on input line 321.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+) [122
 
 
-] [75 <../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf>]
-[76 <../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf>] [77 <../Targ
-eted_Transcriptome/Figures/TargetedTranscriptome.pdf>] [78 <../Targeted_Transcr
-iptome/Figures/TargetedTranscriptome.pdf>]
+
+] [123 <../Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf>] [124 <../
+Targeted_Transcriptome/Figures/TargetedTranscriptome.pdf>] [125 <../Targeted_Tr
+anscriptome/Figures/TargetedTranscriptome.pdf>]
 Chapter 5.
-[79
+(../Tg4510_Differential/../Tg4510_Differential/Tg4510_Differential.tex [126
+
+]
+[127]
+Underfull \hbox (badness 10000) in alignment at lines 49--49
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[128] [129]
+<../Tg4510_Differential/Tg4510_diff_figures.pdf, id=2690, page=2, 963.6pt x 142
+2.6349pt>
+File: ../Tg4510_Differential/Tg4510_diff_figures.pdf Graphic file (type pdf)
+<use ../Tg4510_Differential/Tg4510_diff_figures.pdf, page 2>
+Package pdftex.def Info: ../Tg4510_Differential/Tg4510_diff_figures.pdf , page2
+ used on input line 96.
+(pdftex.def)             Requested size: 433.616pt x 524.9472pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
+
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 100--100
+\T1/LinuxLibertineT-TLF/m/it/12 maSigPro \T1/LinuxLibertineT-TLF/m/n/12 la-bels
+ the co-ef-fi-cients in the re-sults ta-ble as "Ca-seVs-Con-trol", "Time",
+ []
+
+
+LaTeX Warning: Float too large for page by 64.16411pt on input line 102.
+
+[130] [131 <../Tg4510_Differential/Tg4510_diff_figures.pdf>] [132] [133]
+<../Tg4510_Differential/AltFigures_Diff.pdf, id=2760, page=1, 963.6pt x 1422.63
+49pt>
+File: ../Tg4510_Differential/AltFigures_Diff.pdf Graphic file (type pdf)
+<use ../Tg4510_Differential/AltFigures_Diff.pdf, page 1>
+Package pdftex.def Info: ../Tg4510_Differential/AltFigures_Diff.pdf , page1 use
+d on input line 142.
+(pdftex.def)             Requested size: 514.3326pt x 469.47034pt.
+
+Overfull \hbox (59.08849pt too wide) in paragraph at lines 142--143
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
+(Font)              scaled to size 12.0pt on input line 146.
+[134
+
+] [135 <../Tg4510_Differential/AltFigures_Diff.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 161.
+
+[136]
+LaTeX Font Info:    Trying to load font information for U+eur on input line 195
+.
+
+("C:\Users\sl693\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueur.fd"
+File: ueur.fd 2013/01/14 v3.01 Euler Roman
+)
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2802, page=5, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 5>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page5 used on input line 199.
+(pdftex.def)             Requested size: 397.48622pt x 283.24806pt.
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2806, page=6, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 6>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page6 used on input line 208.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+[137
+
+
+ <../Tg4510_Differential/WholeDifferentialAnalysis.pdf>] [138 <../Tg4510_Differ
+ential/WholeDifferentialAnalysis.pdf>]
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2840, page=1, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 1>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page1 used on input line 221.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+
+LaTeX Warning: Float too large for page by 33.94626pt on input line 227.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2846, page=2, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 2>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page2 used on input line 235.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 19.44626pt on input line 241.
+
+
+Overfull \hbox (13.5546pt too wide) in paragraph at lines 265--268
+[]\T1/LinuxLibertineT-TLF/b/n/12 Iso-Seq de-fined tran-scrip-tome en-able iden-
+ti-fi-ca-tion of tau-pathology as-so-ci-ated changes
+ []
+
+[139
+
+] [140 <../Tg4510_Differential/WholeDifferentialAnalysis.pdf>] [141 <../Tg4510_
+Differential/WholeDifferentialAnalysis.pdf>] [142]
+<../Tg4510_Differential/TracksFigures_Diff.pdf, id=2906, page=1, 1422.6349pt x 
+938.90778pt>
+File: ../Tg4510_Differential/TracksFigures_Diff.pdf Graphic file (type pdf)
+<use ../Tg4510_Differential/TracksFigures_Diff.pdf, page 1>
+Package pdftex.def Info: ../Tg4510_Differential/TracksFigures_Diff.pdf , page1 
+used on input line 272.
+(pdftex.def)             Requested size: 640.1798pt x 371.29012pt.
+
+
+LaTeX Warning: Float too large for page by 13.04599pt on input line 277.
+
+[143 <../Tg4510_Differential/TracksFigures_Diff.pdf>]
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2923, page=11, 722.7p
+t x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 11>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page11 used on input line 282.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+ [144 <../Tg4510_Differential/WholeDifferentialAnalysis.pdf>]
+Overfull \hbox (11.14943pt too wide) in paragraph at lines 296--298
+\T1/LinuxLibertineT-TLF/m/n/12 forms were an-no-tated to \T1/LinuxLibertineT-TL
+F/m/it/12 Gfap \T1/LinuxLibertineT-TLF/m/n/12 ([][]\T1/LinuxLibertineT-TLF/b/n/
+12 Fig-ure 5.9[][]\T1/LinuxLibertineT-TLF/m/n/12 ) and \T1/LinuxLibertineT-TLF/
+m/it/12 C4b \T1/LinuxLibertineT-TLF/m/n/12 ([][]\T1/LinuxLibertineT-TLF/b/n/12 
+Fig-ure 5.10[][]\T1/LinuxLibertineT-TLF/m/n/12 ), the top two most differential
+ly-
+ []
+
+[145
+
+
+
+]
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2980, page=4, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 4>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page4 used on input line 307.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+
+LaTeX Warning: Float too large for page by 48.44626pt on input line 312.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2981, page=12, 722.7p
+t x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 12>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page12 used on input line 316.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 19.44626pt on input line 321.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2982, page=18, 722.7p
+t x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 18>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page18 used on input line 325.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 19.44626pt on input line 330.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2983, page=19, 722.7p
+t x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 19>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page19 used on input line 334.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 19.44626pt on input line 339.
+
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 19>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page19 used on input line 343.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 62.94626pt on input line 350.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=2986, page=17, 722.7p
+t x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 17>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page17 used on input line 354.
+(pdftex.def)             Requested size: 397.48622pt x 283.24806pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 364--364
+\T1/LinuxLibertineT-TLF/m/n/12 Using Iso-Seq reads as ex-pres-sion, the more-hi
+ghly ex-pressed iso-forms PB.527.1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
+
+ []
+
+[146] [147 <../Tg4510_Differential/WholeDifferentialAnalysis.pdf>] [148 <../Tg4
+510_Differential/WholeDifferentialAnalysis.pdf>] [149 <../Tg4510_Differential/W
+holeDifferentialAnalysis.pdf>] [150 <../Tg4510_Differential/WholeDifferentialAn
+alysis.pdf>] [151] [152 <../Tg4510_Differential/WholeDifferentialAnalysis.pdf>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--393
+
+ []
+
+[153
+
+]
+<../Tg4510_Differential/WholeDIUAnalysis.pdf, id=3049, page=1, 722.7pt x 1084.0
+5pt>
+File: ../Tg4510_Differential/WholeDIUAnalysis.pdf Graphic file (type pdf)
+<use ../Tg4510_Differential/WholeDIUAnalysis.pdf, page 1>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDIUAnalysis.pdf , page1 us
+ed on input line 396.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+
+LaTeX Warning: Float too large for page by 19.44626pt on input line 402.
+
+<../Tg4510_Differential/WholeDifferentialAnalysis.pdf, id=3050, page=9, 722.7pt
+ x 1084.05pt>
+File: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf Graphic file (type p
+df)
+<use ../Tg4510_Differential/WholeDifferentialAnalysis.pdf, page 9>
+Package pdftex.def Info: ../Tg4510_Differential/WholeDifferentialAnalysis.pdf ,
+ page9 used on input line 406.
+(pdftex.def)             Requested size: 397.48622pt x 596.22935pt.
+
+LaTeX Warning: Float too large for page by 48.44626pt on input line 414.
+
+[154] [155 <../Tg4510_Differential/WholeDIUAnalysis.pdf>] [156 <../Tg4510_Diffe
+rential/WholeDifferentialAnalysis.pdf>]) [157
 
 ]
 Chapter 6.
-[80
+[158
 
-] [81
+]
+Chapter 7.
+[159
+
+] [160
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{chapter.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.86 ...Targeted and Whole Transcriptome Protocol}
+l.92 ...Targeted and Whole Transcriptome Protocol}
                                                   
 Appendix A.
 (../Project_Development/../Project_Development/Isoseq_Protocol.tex
@@ -1870,7 +2928,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 12--12
 [] 
  []
 
-[82
+[161
 
 ]
 Overfull \hbox (30.0pt too wide) in paragraph at lines 12--13
@@ -1893,7 +2951,7 @@ Overfull \hbox (8.06824pt too wide) in paragraph at lines 28--29
 t are ap-pli-ca-ble through-out the en-tire pro-to-col. 
  []
 
-[83] [84] [85] [86]
+[162] [163] [164] [165]
 Underfull \hbox (badness 10000) in alignment at lines 140--140
 [][] 
  []
@@ -1903,7 +2961,7 @@ Underfull \hbox (badness 10000) in alignment at lines 162--162
 [][][][] 
  []
 
-[87] [88]
+[166] [167]
 Underfull \hbox (badness 10000) in alignment at lines 218--218
 [][] 
  []
@@ -1914,10 +2972,10 @@ Overfull \hbox (1.83072pt too wide) in paragraph at lines 237--237
 °\T1/LinuxLibertineT-TLF/m/n/12 C)| 
  []
 
-[89]
+[168]
 
-LaTeX Warning: Reference `section:ch2_ampurebead' on page 90 undefined on input
- line 257.
+LaTeX Warning: Reference `section:ch2_ampurebead' on page 169 undefined on inpu
+t line 257.
 
 
 Overfull \hbox (3.48375pt too wide) in paragraph at lines 275--277
@@ -1925,53 +2983,101 @@ Overfull \hbox (3.48375pt too wide) in paragraph at lines 275--277
 go/PolyT blocker com-pletely in a LoBind
  []
 
-[90]
+[169]
 Underfull \hbox (badness 10000) in alignment at lines 301--301
 [][][] 
  []
 
-[91] [92] [93]
+[170] [171] [172]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[94]
+[173]
 
-LaTeX Warning: Reference `section:ch2_ampurebead' on page 95 undefined on input
- line 455.
+LaTeX Warning: Reference `section:ch2_ampurebead' on page 174 undefined on inpu
+t line 455.
 
-[95]
+[174]
 
-LaTeX Warning: Reference `section:ch2_ampurebead' on page 96 undefined on input
- line 497.
+LaTeX Warning: Reference `section:ch2_ampurebead' on page 175 undefined on inpu
+t line 497.
 
 
-LaTeX Warning: Reference `section:ch2_ampurebead' on page 96 undefined on input
- line 502.
+LaTeX Warning: Reference `section:ch2_ampurebead' on page 175 undefined on inpu
+t line 502.
 
-[96]) [97]pdfTeX warning (ext4): destination with the same identifier (name{cha
-pter.2}) has been already used, duplicate ignored
+[175]) [176]pdfTeX warning (ext4): destination with the same identifier (name{c
+hapter.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 ...er{Oxford Nanopore Transcriptome Protocol}
+l.94 ...er{Oxford Nanopore Transcriptome Protocol}
                                                   
 Appendix B.
-(Knit.bbl [98
+(../Project_Development/../Project_Development/ONT_Protocol.tex
 
-] [99
+Package xr Warning: 
+No file Isoseq_Protocol.aux
+LABELS NOT IMPORTED.
+ on input line 2.
 
-] [100] [101] [102] [103] [104] [105])
 
-Package caption Warning: Unused \captionsetup[myequation] on input line 71.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `Isoseq_Protocol' on page 177 undefined on input line 
+8.
 
-[106]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 15--15
+[][] 
+ []
+
+[177
+
+]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 15--16
+[][] 
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 17.
+
+
+LaTeX Warning: Reference `Isoseq_Protocol_First_Strand_Synthesis' on page 178 u
+ndefined on input line 18.
+
+
+LaTeX Warning: Reference `Isoseq_Protocol_Large_Scale_PCR' on page 178 undefine
+d on input line 18.
+
+[178]
+Underfull \hbox (badness 10000) in alignment at lines 55--55
+[][] 
+ []
+
+[179] [180] [181]
+Underfull \hbox (badness 10000) in alignment at lines 145--145
+[][] 
+ []
+
+) [182]pdfTeX warning (ext4): destination with the same identifier (name{chapte
+r.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.96 \chapter{cDNA Synthesis alternative approach}
+                                                  
+Appendix C.
+(Knit.bbl [183
+
+] [184
+
+] [185] [186] [187] [188] [189] [190] [191] [192] [193]
+[194] [195] [196] [197] [198]) [199]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
  (Knit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
 Package rerunfilecheck Info: File `Knit.out' has not changed.
-(rerunfilecheck)             Checksum: 013E3164CDFD096CC76E6FB69599AF32;3467.
+(rerunfilecheck)             Checksum: EA7704617FDF9151CE0B537C0100A5E2;7228.
 
 
 LaTeX Warning: There were undefined references.
@@ -1981,31 +3087,35 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27976 strings out of 480932
- 556904 string characters out of 2899905
- 863388 words of memory out of 3000000
- 42787 multiletter control sequences out of 15000+200000
- 608628 words of font info for 81 fonts, out of 3000000 for 9000
+ 32117 strings out of 480932
+ 641270 string characters out of 2899905
+ 931672 words of memory out of 3000000
+ 46504 multiletter control sequences out of 15000+200000
+ 620728 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,17n,94p,1608b,1095s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 78i,17n,94p,1815b,1130s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/l
-btn_7grukw.enc}{C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/libertine/lbtn_naooyc.enc}{C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/f
-onts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/Users/sl693/AppData/Local/Programs
-/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<C:/Users/sl693/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/Use
-rs/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibe
-rtineTB.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/libertine/LinLibertineTI.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sl693/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sl693/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/s
-l693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb>
-Output written on Knit.pdf (106 pages, 12802805 bytes).
+btn_ki75ao.enc}{C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/libertine/lbtn_7grukw.enc}{C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/f
+onts/enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/sl693/AppData/Local/Programs
+/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/Users/sl693/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<C:/Users/sl
+693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertine
+T.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/libe
+rtine/LinLibertineTB.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/libertine/LinLibertineTBI.pfb><C:/Users/sl693/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/sl693
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sl693/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sl693/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/sl693/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm10.pfb>
+Output written on Knit.pdf (199 pages, 16231602 bytes).
 PDF statistics:
- 1999 PDF objects out of 2073 (max. 8388607)
- 432 named destinations out of 1000 (max. 500000)
- 731 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3782 PDF objects out of 4296 (max. 8388607)
+ 773 named destinations out of 1000 (max. 500000)
+ 1345 words of extra memory for PDF output out of 10000 (max. 10000000)
 
