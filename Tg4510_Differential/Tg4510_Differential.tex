@@ -62,8 +62,6 @@ To elucidate transcriptional changes for both genotype and longitudinal effects 
 
 Adapting the model\cite{Conesa2006} to our scenario, let \textit{I} denote the genotype groups (wildtype - WT, transgenic - TG) and \textit{J} as the age (2, 4, 6, 8 months) for each particular group, and assuming that gene or transcript expression in measured in replicated samples (\textit{R}).  
 
-
-
 \begin{myequation}[!h]
 \begin{align}\label{eq:dea_lm_masigpro}
 y_{ijr} =  \:&\beta_{0} + \beta_{1}D_{ijr} \nonumber
@@ -107,7 +105,7 @@ Following the identification of statistically significant gene models (\cref{fig
 
 \boldheader{Differential Isoform Usage}
 \label{ch:diu_method}
-In addition to assessing expression changes across conditions through differential isoform expression analysis, the relative expression, and as such the usage, of these isoforms can also change (see \cref{intro:dtu}). A gene is therefore identified as exhibiting differential isoform usage (DIU) if the fraction of the associated isoforms (Isoform Fraction) is significantly altered between conditions, which could result in switching of the major isoform. 
+In addition to assessing expression changes across conditions through differential isoform expression analysis, the relative expression, and as such the usage, of these isoforms can also change (see \cref{intro:dtu}). A gene is therefore identified as exhibiting differential isoform usage (DIU) if the fraction of the associated isoforms (Isoform Fraction) is significantly altered between conditions, which could result in detection of a different dominant isoform. This phenomenon is known as major isoform switching, when the same isoform in predominantly expressed in one condition (major isoform) but lowly expressed in another (minor isoform). 
 
 In accounting for biological replicates, the isoform fraction (IF) for each isoform was defined as:
 
@@ -124,11 +122,23 @@ In accounting for biological replicates, the isoform fraction (IF) for each isof
 	\caption[Calculation of isoform fraction for differential isoform usage analysis]%
 	{\textbf{Calculation of isoform fraction for differential isoform usage analysis}. Equation is adopted from \textit{tappAS}}    
 \end{myequation}
- 
+
+% Need more information from paper on how DIU was performed
+Identification of genes with DIU was performed with \textit{Iso-maSigPro}\cite{Nueda2018}, similarly implemented as part of \textit{tappAS}. Results from differential gene expression and differential isoform usage can be further combined to explore the transcriptomic changes associated with progressive tau pathology (depicted in \cref{fig:DIU_DEA_model}).  
 
 Despite abundant evidence of widespread isoform diversity \cite{Wang2008}, most protein-coding genes have been reported to typically express a few dominant isoforms \cite{Gonzalez-Porta2013, Ezkurdia2015}, while the remaining are very lowly expressed and unlikely to be main contributors to the proteome \cite{Gonzalez-Porta2013}.As such, minor isoforms were filtered to avoid finding genes associated with differential isoform usage due to "flat" behaviour of these minor isoforms \cite{DeLaFuente2020} (relatively small non-negligible expression changes of minor isoforms in the opposing direction of the predominant isoforms). \textit{tappAS} provides two strategies to filter lowly-expressed isoforms: an isoform is only retained if its proportion relative to other isoforms is greater than the pre-specified threshold (default: proportion $>$ 10\%) in at least one sample, or alternatively if its proportion relative to the major isoform is below a pre-specified threshold (default: FC = 2). A major isoform is defined as the isoform with the highest expression across all the conditions, with the remaining isoforms annotated as minor. 
 
 Implemented as an additional filtering step after \textit{tappAS} and recommended in other bioinformatic tools\cite{Vitting-Seerup2017}, lowly expressed genes were also filtered as there would be less confidence in isoform fraction used for determining genes with significant differential isoform usage.  
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=3,trim={1cm 17cm 0cm 0cm},clip,scale = 0.45]{Tg4510_diff_figures.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Scenarios modelled with differential gene expression analysis and isoform usage]%
+	{\textbf{Scenarios modelled with differential gene expression analysis and isoform usage.} A schematic figure to outline the different scenarios modelled under differential gene expression and differential isoform usage analysis. A gene can be differentially expressed between two conditions with differential isoform usage with or without switching of major isoform (Conditions 1 and 2 respectively). Conversely, a gene may not be differentially expressed, due to averaging of isoform expression, but is characterised with differential isoform usage between the two conditions (Conditions 3 and 4)}   
+	\label{fig:DIU_DEA_model}
+\end{figure}
 
 \clearpage 
 \section{Results}
@@ -340,7 +350,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=19,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=15,scale = 0.55]{WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differential isoform expressed observed with Iso-Seq reads as expression were not recapitulated using RNA-Seq reads]%
 	{\textbf{Differential isoform expressed observed with Iso-Seq reads as expression were not recapitulated using RNA-Seq reads}. Shown are normalised counts \textbf{a)} \textit{Cd34} and \textbf{c)} \textit{Ubqln1} with associated isoforms identified from using Iso-Seq reads as expression, and of the same two genes \textbf{b)} \textit{Cd34} and \textbf{d)} \textit{Ubqln1} identified from using RNA-Seq reads as expression. Significant changes in isoform expression identified using Iso-Seq reads as expression - PB.1063.2 associated with \textit{Cd34} and PB.4255.13 and PB.4255.4 associated with \textit{Ubqln1} - was not recapitulated when using RNA-Seq reads as expression, due to lower sequencing coverage. Notably, minor isoforms had a higher expression with RNA-Seq alignment than direct detection with Iso-Seq reads.
@@ -389,17 +399,27 @@ Using Iso-Seq reads for annotation and expression and after filtering lowly-expr
 In further support of this conclusion, there was a low overlap of DIU genes that were identified when we used RNA-Seq reads as expression. This was likely to be a reflection of lower sequencing depth of Iso-Seq reads, resulting in i) a different pool of isoforms after filtering lowly-expressed isoforms - a minor isoform was more likely to be filtered when using RNA-Seq reads as abundance rather than Iso-Seq reads, particularly if the overall gene expression was low, due to relatively greater expression difference, and ii) smaller differences in isoform expression using Iso-Seq reads are translated to misleading significant changes in isoform proportions, resulting in false detection of genes as DIU. These implications can be seen in the gene \textit{Esyt2}, whereby the low Iso-Seq isoform counts resulted in misleading representation of isoform fraction, which was not recapitulated when RNA-Seq reads were used as expression (\cref{fig:DIU_esyt2}). 
 
 \boldheader{Alignment of RNA-Seq reads to Iso-Seq defined transcriptome identified multiple genes with differential transcript usage with major switching events}
+Differential isoform usage was performed with Iso-Seq reads as annotation and RNA-Seq reads as expression, given higher sequencing RNA-Seq read depth and greater sample size. 570 genes were identified with differential isoform usage (\cref{tab:DIU_DEA_nums}). The majority of these genes (n = 459, 80.5\%), while observed with DIU, were not differentially expressed between wildtype and transgenic mice - a scenario whereby the differential upregulation of one isoform is compensated by the differential downregulation of another isoform, resulting in no net gene expression change. On contrary, a small but significant number of genes (n = 72, 12.6\%) were identified as both differentially expressed and with DIU. 
+%GFAP not significant?   
 %Interestingly, the was a lower consensus when comparing the number of DIU genes identified when using RNA-Seq reads as abundance, suggesting that the choice of filtering strategy becomes redundant when dealing with low sequencing depth.  
 
-\begin{figure}[htp]
-	\begin{center}
-	\includegraphics[page=1,scale = 0.55]{WholeDIUAnalysis.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Number of DIU genes identified from Whole Transcriptome mouse datasets]%
-	{\textbf{Comparison of number of differentially expressed genes identified from Whole Transcriptome datasets after using RNA-Seq or Iso-Seq reads as abundance and various strategies to filter lowly-expressed isoforms}: Shown are venn diagrams that encapsulate the number of genes observed with significant differentially isoform usage, if \textbf{a)} Iso-Seq reads were used as abundance, and lowly expressed isoforms were pre-filtered either by relative proportion or fold change to major isoform, \textbf{b)} RNA-Seq reads were used as abundance, \textbf{c)} if relative proportion or \textbf{d)} relative fold change to major isoform, was chosen as strategy for filtering lowly-expressed isoforms }   
-	\label{fig:whole_venn_diu_methods}
-\end{figure}
+\vspace{1cm}
+\begin{table}[!htp]
+	\centering
+	\begin{tabularx}{0.85\textwidth}{cccc}
+		\toprule
+		\multicolumn{3}{c}{Conditions}                                                                                                                                                                                       & \multirow{2}{*}{Number of Genes} \\ \cmidrule(r){1-3}
+		\begin{tabular}[c]{@{}c@{}}Differential Gene\\  Expression\end{tabular} & \begin{tabular}[c]{@{}c@{}}Differential Isoform \\ Usage\end{tabular} & \begin{tabular}[c]{@{}c@{}}Isoform Major\\  Switching\end{tabular} &                                  \\ \midrule
+		\checkmark                                                                      & \checkmark                                                                    & \checkmark                                                                 & 13                               \\
+		\checkmark                                                                      & \checkmark                                                                    & x                                                                  & 59                               \\
+		x                                                                       & \checkmark                                                                    & \checkmark                                                                 & 39                               \\
+		x                                                                       & \checkmark                                                                    & x                                                                  & 459                              \\ \midrule
+		\multicolumn{3}{c}{Total Number of Genes}                                                                                                                                                                            & 570                              \\ \bottomrule
+	\end{tabularx}
+	\caption[Number of Genes identified with differential gene expression and isoform usage]%
+	{\textbf{Number of Genes identified with differential gene expression and isoform usage}. Tabulated are the number of genes identified from differential gene expression and isoform usage analysis from \textit{tappAS} with Iso-Seq reads as annotation and RNA-Seq reads as expression. The models for each condition are depicted in \cref{fig:DIU_DEA_model}. Isoform major switching refers to the event of an isoform being predominantly expressed in one condition (major) but lowly-expressed in another condition (minor)}
+	\label{tab:DIU_DEA_nums}
+\end{table}
 
 \begin{figure}[htp]
 	\begin{center}
@@ -412,6 +432,20 @@ In further support of this conclusion, there was a low overlap of DIU genes that
 	As can be observed, the Iso-Seq normalised counts are significantly lower than RNA-Seq normalised counts for the associated isoforms, resulting in a misleading representation of isoform fraction with major isoform switching events (Figure c, PB.3907.1 becomes the dominant isoform in transgenic mice), which is not recapitulated with RNA-Seq reads as expression (Figure d)}   
 	\label{fig:DIU_esyt2}
 \end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,scale = 0.55]{DIU_DEG_major}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
+	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}: \textbf{a)} Isoform expression (normalised counts) and \textbf{c)} subsequent deduction of isoform fraction of \textit{Esyt2} using Iso-Seq reads as expression, and the equivalent \textbf{b)} isoform expression and \textbf{d)} isoform fraction of the same gene, \textit{Esyt2} with RNA-Seq reads as expression. Iso-Seq reads were used as annotation in both analyses. 
+		\\
+		As can be observed, the Iso-Seq normalised counts are significantly lower than RNA-Seq normalised counts for the associated isoforms, resulting in a misleading representation of isoform fraction with major isoform switching events (Figure c, PB.3907.1 becomes the dominant isoform in transgenic mice), which is not recapitulated with RNA-Seq reads as expression (Figure d)}   
+	\label{fig:DIU_esyt2}
+\end{figure}
+
+
 
 \clearpage
 \subsection{Differential Feature Inclusion Analysis}
