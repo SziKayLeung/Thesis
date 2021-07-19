@@ -9,6 +9,9 @@ The symptoms of AD are underpinned by both morphological and molecular changes i
 
 The progression of these neuropathological changes have been well mapped, particularly the spread of NFTs under the Braak staging\cite{H1991},  with pathology initially apparent in the temporal lobes (hippocampus and entorhinal cortex) and later in the frontal lobes (\cref{fig:AD_development}). Conversely, the occipital lobes, motor cortex, and the cerebellum are relatively resistant to neuronal degeneration even in advanced stages of AD.
 
+% Protein aggregates a common feature of neurodegenerative diseases; tie in AD with other dementias
+Of note, it is important to emphasise that aside from A$\beta$ deposition and NFT formation, 15-20\% of patients with AD are also presented with Lewy body (LB) pathology \cite{C1995,L2003} - intraneuronal cytoplasmic inclusion bodies of abnormal aggregation of insoluble $\alpha$-synuclein into LBs (Synucleinopathies) - the defining pathological hallmarks of Parkinson's disease (PD)\cite{Wakabayashi2007}\nomenclature{PD}{Parkinson's Disease} and dementia with Lewy bodies (DLB)\cite{Spillantini1997}\nomenclature{DLB}{Dementia with Lewy Bodies}. Up to 75\% of AD patients further present neuronal cytoplasmic inclusions comprising of aggregates of TDP-43 \cite{King2010,McAleese2017,Arai2009} (Transactive response DNA binding protein-43), the defining hallmarks of frontotemporal dementia (FTD\nomenclature{FTD}{Frontotemporal dementia}) and amyotrophic laternal sclerosis\cite{Pesiridis2009} (ALS\nomenclature{ALS}{amyotrophic laternal sclerosis}).
+
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[page=1,trim={0 7cm 1cm 12cm},clip, scale = 0.8]{Introduction_Figures.pdf}
@@ -38,7 +41,7 @@ The progression of these neuropathological changes have been well mapped, partic
 \subsection{Genetics Component}
 Although AD is commonly known to affect people aged 65 and above (referred as Late-Onset Alzheimer’s disease, LOAD\nomenclature{LOAD}{Late Onset Alzheimer's Disease}), 5\% of AD cases arise in much younger patients (termed Early-Onset Alzheimer’s disease, EOAD\nomenclature{EOAD}{Early Onset Alzheimer's Disease}) who typically present a clear familial autosomal dominant pattern of inheritance (Familial Alzheimer’s disease, FAD\nomenclature{FAD}{Familial's Alzheimer's Disease})\cite{Jarmolowicz2015}. To date, more than 160 highly-penetrant, causative mutation have been identified in EOAD, all located within three genes involved in amyloid plaque formation: \textit{APP} (amyloid precursor protein\nomenclature{APP}{Amyloid Precursor Protein}), \textit{PSEN1} and \textit{PSEN2} (presenilin 1 and 2\nomenclature{PSEN1}{Presenilin 1}\nomenclature{PSEN2}{Presenilin 2}) \cite{LM2010,Chai2007}. While the clinical manifestations and presentation of neurological hallmarks are similar between EOAD and LOAD, patients with EOAD performed significantly worse in cognitive abilities not involved with memory (such as executive functions, language and visuoconstructional abilities)\cite{Joubert2016}.
 
-Unlike FAD, LOAD does not follow a clear Mendelian inheritance pattern but is rather complex with a heterogeneous genetic composition. Nonetheless, twin studies have reported a relatively high heritability rate of 50-80\% \cite{Gatz2006}, indicating that there is still a large genetic predisposition for developing AD. Indeed over recent years, the emergence of genome-wide association studies (GWAS\nomenclature{GWAS}{Genome-wide association studies}) and subsequent meta-analyses \cite{Bellenguez2020,Naj2020,Kunkle2019,Jansen2019,Lambert2013,Naj2011,Hollingworth2011,Harold2009} have facilitated the identification of multiple genetic loci associated with an increased risk of developing LOAD. These genetic loci are typically changes or variants of single DNA base-pair (single-nucleotide polymorphisms – SNPs\nomenclature{SNP}{Single Nucleotide Polymorphism}) that are more commonly found in individuals with LOAD than without. 
+Unlike FAD, LOAD does not follow a clear Mendelian inheritance pattern but is rather complex with a heterogeneous genetic composition. Nonetheless, twin studies have reported a relatively high heritability rate of 50-80\% \cite{Gatz2006}, indicating that there is still a large genetic predisposition for developing AD. Indeed over recent years, the emergence of genome-wide association studies (GWAS\nomenclature{GWAS}{Genome-wide association studies}) and subsequent meta-analyses \cite{Bellenguez2020,Naj2020,Kunkle2019,Jansen2019,Lambert2013,Naj2011,Hollingworth2011,Harold2009,Lambert2009,Bertram2008} have facilitated the identification of multiple genetic loci associated with an increased risk of developing LOAD. These genetic loci are typically changes or variants of single DNA base-pair (single-nucleotide polymorphisms – SNPs\nomenclature{SNP}{Single Nucleotide Polymorphism}) that are more commonly found in individuals with LOAD than without. 
 
 The strongest risk factor for LOAD is the $\epsilon$4 allele of the \textit{APOE} gene \cite{Lambert2013}, which encodes for the cholesterol transporter apolipoprotein E (ApoE) - a key regulator of lipid homeostasis by mediating lipid transport between astrocytes and neurons, a process critical for synaptic function and maintenance\cite{DH2001}. While the $\epsilon$4 allele is estimated to occur in \textasciitilde 15\% of the general population, it is observed in 40\% of patients with AD\cite{Farrer1997,alzgene2010}. Harbouring one APOE$\epsilon$4 allele further increases the risk of developing LOAD by three-four times, while harbouring two $\epsilon$4 alleles increases the risk by 15 times \cite{Farrer1997}. Conversely, the $\epsilon$2 allele confers a neuroprotective effect against AD \cite{Nagy1995,EH1994}. 
 
@@ -48,69 +51,93 @@ Collectively, these common but low penetrant variants, with the exception of APO
 
 \clearpage
 \subsection{Hypothesis surrounding AD aetiology}
-Despite the well characterisation of AD neuropathology, the exact biological mechanisms driving AD onset and pathogenesis are still widely unknown. To date, there are several key hypothesis proposed for the cause of AD: i) amyloid cascade hypothesis, ii) tau tangle hypothesis, and iii) inflammatory hypothesis.
+Despite the well characterisation of AD neuropathology, the exact biological mechanisms driving AD onset and pathogenesis are still widely unknown. To date, there are two key hypothesis proposed for the cause of AD: i) amyloid cascade hypothesis, ii) tau tangle hypothesis. Results from GWAS, however, implicated other pathways that could be involved: immune response, lipid metabolism, endocytosis, and cell-adhesion molecule (CAM) pathways (synaptic signalling), which are entangled with the two key hypothesis. 
 
 \boldheader{Amyloid cascade hypothesis} 
-The amyloid cascade hypothesis posits that the extracellular accumulation of A$\beta$ is the key driver of AD pathogenesis, which initiates a pathological cascade of NFT, cell loss, vascular damage \cite{Hardy1992}. A$\beta$ are short peptides (39-43 amino acids) \cite{J1987} produced from the amyloidogenic cleavage of APP (a transmembrane protein involved in synapse formation and stability) by $\beta$-secretase (BACE\nomenclature{BACE}{Beta-secretase}) and $\gamma$-secretase (a complex protein consisting of PSEN1 and PSEN2) (\cref{fig:APP_Processing}). Due to cleavage at various sites, $\gamma$-secretase produces A$\beta$ of varying lengths: the shorter A$\beta$\textsubscript{40} and slightly longer, but more self-aggregating, A$\beta$\textsubscript{42}. 
+The amyloid cascade hypothesis posits that the extracellular accumulation of A$\beta$ is the key driver of AD pathogenesis, which initiates a pathological cascade of NFT, cell loss, vascular damage \cite{Hardy1992}. A$\beta$ are short peptides (39-43 amino acids) \cite{J1987} produced from the amyloidogenic cleavage of APP (a transmembrane protein involved in synapse formation and stability) by $\beta$-secretase (BACE - β-site APP-cleaving enzyme 1\nomenclature{BACE}{Beta-secretase}) and $\gamma$-secretase (a complex protein consisting of PSEN1 and PSEN2) (\cref{fig:APP_Processing}). Due to cleavage at various sites, $\gamma$-secretase produces A$\beta$ of varying lengths, with 90\% secreted as A$\beta$\textsubscript{40} and the remaining 10\% as A$\beta$\textsubscript{42}\cite{Asami-Odaka1995}.
 
-In AD, the processing of APP is altered with the vast majority of causative \textit{APP} mutations (typically found at or near the cleavage sites),\textit{PSEN1} and \textit{PSEN2} mutations favouring the production of A$\beta$42 \cite{Li2019,D1996,JT1993}, thereby promoting the formation of insoluble fibrils and plaques characteristic of AD\cite{JT1993}. 
+In AD, the processing of APP is altered with the vast majority of causative \textit{APP} mutations (typically found at or near the cleavage sites),\textit{PSEN1} and \textit{PSEN2} mutations favouring the production of the slightly longer, but more self-aggregating, A$\beta$42 \cite{Li2019,D1996,JT1993}, thereby promoting the formation of insoluble fibrils and plaques characteristic of AD\cite{JT1993}. 
 
 Increasing evidence further postulates that A$\beta$ clearance is regulated in an APOE isoform-dependent manner\cite{Castellano2011} with APOE4 having low binding affinity to A$\beta$ and thus, being the least efficient at A$\beta$ clearance\cite{RM2012} - carriers of $\epsilon$4 allele have more pervasive amyloid plaques than non-carriers\cite{DE1993,E2009}. Furthermore, APOE4 is poorly lipidated compared to APOE2 and APOE3, resulting in increased propensity to aggregate\cite{DM2006} - of note, lipidation is mediated by ABCA1\cite{R2010}.
 %https://www.nature.com/articles/nrn2620
 
 %Although interestingly, the neuroprotective ApoE$\epsilon$2 allele while associated with intact cognition is also associated with AD pathology in the oldest old population\cite{DJ2009}, suggesting that an A$\beta$-independent mechanism may be at play.   
-    
-\boldheader{Tau tangle hypothesis} 
-The tau hypothesis posits that the phosphorylation and aggregation of tau to form NFTs are the primary drivers of AD\cite{KS1986}, which is also the defining feature of more than 20 other neurodegenerative disorders known collectively as tauopathies\cite{Orr2017}. Tau, encoded by \textit{MAPT}, is a microtubule-associated protein involved in microtubule maintenance and stability.. It is thought that in AD, the increased phosphorylation of tau induces detachment from microtubule and promote aggregation of paired helical filaments that disrupt microtubule function and subsequent axonal growth and transport. The severity of NFTs has shown to correlate better with cognitive decline and progression of AD than amyloid plaques \cite{Serrano-Pozo2016,Giannakopoulos2003,PV1992} with its spread traced through Braak staging \cite{H1991}(\cref{fig:AD_development}\textbf{b}).  
 
+%"TREM2 mediated phagocytosis is critical for Aβ and neuronal debris clearance in AD (Kleinberger et al., 2014; Xiang et al., 2016; Yeh et al., 2016). Specifically, TREM2 expression is important for microglia to physically associate with Aβ plaques (Ulrich et al., 2014; Wang et al., 2016; Yuan et al., 2016; Jay et al., 2015, 2017a,b)." 
+
+%"CD33 is elevated in the AD brain in microglia and infiltrating macrophages and is thought to modulate microglial activation and Aβ clearance (Griciuc et al., 2013; Walker et al., 2015).  In fact, knock-out of CD33 in AD mouse models results in reduced Aβ plaque burden (Griciuc et al., 2013). 
+
+\boldheader{Tau tangle hypothesis} 
+The tau hypothesis posits that the phosphorylation and aggregation of tau to form NFTs are the primary drivers of AD\cite{KS1986}, which is also the defining feature of more than 20 other neurodegenerative disorders known collectively as tauopathies\cite{Orr2017}. Tau, encoded by \textit{MAPT}, is a microtubule-associated protein involved in microtubule maintenance and stability.. It is thought that in AD, the increased phosphorylation of tau induces detachment from microtubule and promote aggregation of paired helical filaments that disrupt microtubule function and subsequent axonal growth and transport. The severity of NFTs has shown to correlate better with cognitive decline and progression of AD than amyloid plaques \cite{Serrano-Pozo2016,Giannakopoulos2003,PV1992} with its spread traced through Braak staging \cite{H1991}(\cref{fig:AD_development}\textbf{b}). 
+
+\vspace{1cm}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=2,trim={0 15cm 0cm 0cm},clip, scale = 0.8]{Introduction_Figures.pdf}
+	\includegraphics[page=2,trim={0 9cm 0cm 15cmcm},clip, scale = 0.8]{Introduction_Figures.pdf}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Cleavage of APP into A$\beta$ by $\beta$-secretase and $\gamma$ secretase]%
-	{\textbf{Cleavage of APP into A$\beta$ by $\beta$-secretase and $\gamma$ secretase}: Schema depicting sequential cleavage of APP, a transmembrane protein, by $\beta$-secretase and $\gamma$-secretase, which can produce A$\beta$ of varying lengths with varying propensities to oligomerise and aggregate. Figure is taken from Makin (2018)\cite{Makin2018}. 
+	\caption[Sequential cleavage of APP into A$\beta$ by $\beta$-secretase and $\gamma$ secretase]%
+	{\textbf{Sequential cleavage of APP into A$\beta$ by $\beta$-secretase and $\gamma$ secretase}: Schema depicting sequential cleavage of APP, a transmembrane protein, either through the \textbf{a)} non-amyloidogenic pathway or \textbf{b)} the amyloidogenic pathway.
+	\\
+	\\
+	In the non-amyloidogenic pathway, APP is cleaved by ADAM protein family (primarily, ADAM10, also known as $\alpha$-secretases) followed by $\beta$-secretase. Conversely in the amyloidogenic pathway, APP is sequentially cleaved by by $\beta$-secretase and $\gamma$-secretase, which can produce A$\beta$ of varying lengths. Monomeric A$\beta$ molecules, particularly, A$\beta$42, have increased propensity to oligomerise and aggregate to form the fibrils and plaques that are characteristic of AD. Figure is taken from Acker et. al (2019)\cite{Acker2019}. 
 	}
 	\label{fig:APP_Processing}
 \end{figure}
+    
+\boldheader{Endocytosis} 
+https://www.alzforum.org/news/conference-coverage/balance-endocytosis-lays-groundwork-disease
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3331683/pdf/cshperspectmed-ALZ-a006270.pdf
+https://link.springer.com/article/10.1007%2Fs00401-014-1379-7
+https://pubmed.ncbi.nlm.nih.gov/12414533/
+https://link.springer.com/article/10.1186/s13024-019-0323-7
 
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=6,trim={0 8cm 0cm 0cm},clip, scale = 0.8]{Introduction_Figures.pdf}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Spatial regulation of APP trafficking and processing]%
+	{\textbf{Spatial regulation of APP processing}: Schema depicting APP trafficking and processing through the non-amyloidogenic (\cref{fig:APP_Processing}\textbf{a}), which predominantly occurs at the plasma membrane (boxed green), and amyloidogenic pathway (\cref{fig:APP_Processing}\textbf{b}), which preferentially occurs in the endosome (boxed red). APP processing through the amyloidgenic pathway is spatially regulated by the localisation and distinct internalisation of assembled PSEN1/$\gamma$ complex and BACE1 at the plasma membrane (boxed purple) and PSEN2/$\gamma$ in the endosome. Figure is adapted from Acker et. al (2019)\cite{Acker2019}  
+	}
+	\label{fig:APP_Trafficking}
+\end{figure}
+
+ 
+
+\boldheader{Immune Response}
+Profound neuroinflammation has been widely implicated in AD development pathology with the identification of immune-related genes from GWAS: TREM2 (triggering receptor expressed on myeloid cells 2), innate immune receptor on surface of microglial cells (the macrophages in the brain) with a role in removal of apoptotic neurons; myeloid cell surface antigen CD33 
+Inflammatory cytokines, chemokines upregulated in AD patients (Tarkowski et al., 2003; Cribbs et al., 2012; Zhang et al., 2013; Brosseron et al., 2014).
+Debate around components of inflammation that contribute to neurodegeneration and those that are protective, as can be involved in A$\beta$ clearance while also involved in neuronal and glial cell death (Qin et al., 2002; Block et al., 2007).
+
+impaired microglial clearance of A$\beta$ (Mawuenyega et al., 2010)
+Microglia(most abundant CNS phagocyte, resident immune cells) reduce A$\beta$ accumulation  (Michaud et al., 2013), recognise and remove dysfunctional synapses (Wake et al., 2009; Tremblay et al., 2010), but also associated with toxic effects (Kettenmann et al., 2011; Heneka et al., 2015; Heppner et al., 2015; Calsolaro and Edison, 2016). 
+
+Astrocytes (provide protection, support to neurons(Allen and Eroglu, 2017; Li and Barres, 2018)) known to secrete many of the cytokines upregulated in AD (Benzing et al., 1999; Apelt and Schliebs, 2001; Abbas et al., 2002; Tan et al., 2002), notably: IFNγ, IL-1β, TNFα, IL-6, and TGFβ (Constam et al., 1992; McGeer and McGeer, 1995; Hu et al., 1998; Johnstone et al., 1999), which can be further stimulated by A$\beta$  (Frost and Li, 2017). Characteristic of “astrogliosis,” astrocytes exhibit hypertrophy of processes, marked by increased expression of intermediate filament, most notably glial fibrillary acidic protein (GFAP) (Wilhelmsson et al., 2006; Kamphuis et al., 2012).
+
+\boldheader{Lipid Metabolism}
+
+\boldheader{Synpatic signalling} 
+
+\clearpage
 \subsection{Mouse Models}
 %https://molecularneurodegeneration.biomedcentral.com/articles/10.1186/s13024-017-0231-7
 %Molecular changes in both genes and regulatory regions are highly conserved between human AD and mouse model neurodegeneration. 
 With autosomal dominant mutations predominantly residing in \textit{APP}, \textit{PSEN1}, \textit{PSEN2}, expression of these human AD-associated genes in mouse have been the foundation of most AD mouse models. 
 Mouse models based on transgene insertion of \textit{APP}, typically harbouring the double swedish mutation at the beta-secretase cleavage site, develop significant amyloid pathology corresponding to increased A$\beta$ production and exhibit memory loss, though neuronal loss is not observed \cite{Hall2012}. Mouse models with \textit{PSEN1} mutations and insertion of human \textit{APP}, unsuprisingly progress much more quickly with amyloid pathology and behavioural deficits. 5XFAD mice exhibit neuronal loss that are not observed in other mouse hAPP or hAPP/PS1 models. 
-AD-associated tau pathology is recapitulated by expression of transgenic human tau, harbouring mutations that cause frontotemporal dementia (FTD).  
+AD-associated tau pathology is recapitulated by expression of transgenic human tau, harbouring mutations that cause FTD.  
 
 It is important to note that there are currently no mouse model that encapsulates all the defining features of AD and one of the major criticisms of current AD mouse models us how representative they are of sporadic, late-onset AD. Since my PhD, there have been efforts to generate mouse models that more closely resemble LOAD with incorporation of AD-associated variants, such as $\epsilon$ variant of \textit{APOE} 
 
 
 Nonetheless, AD mouse models act as a useful reductionist tool to dissect and understand the facets that drive AD-associated pathology and developments \cite{Hall2012}. 
 
-\subsection{Currently available mouse models in AD}
-
-\pagebreak
-\section{Gene expression and regulation}
-
-Common observation from gene expression analysis is that genes typically express multiple isoforms, and the greater the number of annotated isoforms, the greater the number of expressed isoforms (with a plateau of 12 isoforms) \cite{Djebali2012}. These isoforms are defined as mRNA transcripts that are transcribed from the same gene locus, but generated and processed in a different manner either through alternative transcriptional start sites (Alternative transcription initiation (ATI) \nomenclature{ATI}{Alternative Transcription Initiation}), alternative polyadenylation sites (APA) \nomenclature{APA}{Alternative Poly-Adenylation} or alternative splicing (AS) \nomenclature{AS}{Alternative Splicing}). However, as most studies are performed on bulk-tissues, it is unclear whether this is a consequence of multiple isoforms in one single cell or from multiple isoforms from multiple single cells. Perhaps assumed but the expression of alternative isoform is also not consistent, with usually a dominant isoform \cite{Djebali2012}.
-
-MicroRNA \nomenclature{miRNA}{micro RNA}), 22 nucleotides long, involved in regulation of gene expression through various ways, including promotion of transcript degradation and inhibition of translation machinery. This is typically achieved by the contact of miRNA with the 3'UTR of mRNA. It is estimated that up to XX\% of genes are regulated by miRNAs, and has been found to multiple roles in immune functions.
-
 \pagebreak
 \section{Transcriptional profiling}
-Transcriptome profiling by the identification of full landscape of transcribed elements is critical to elucidate the functional relationship between the genomic loci and molecular mechanisms that drive development and diseases. Transcriptome profiling of disease-relevant tissue has enabled discovery of pathogenic coding and non-coding splicing variants in rare diseases, that would have otherwise been missed by exome and whole-genome sequencing in Mendialian disease diagnosis (\cite{Cummings}, \cite{Kremer2017})
+Transcriptome profiling by the identification of full landscape of transcribed elements is critical to elucidate the functional relationship between the genomic loci and molecular mechanisms that drive development and diseases. Transcriptome profiling of disease-relevant tissue has enabled discovery of pathogenic coding and non-coding splicing variants in rare diseases, that would have otherwise been missed by exome and whole-genome sequencing in Mendialian disease diagnosis (\cite{Cummings}, \cite{Kremer2017}). Transcripts can generated and processed in a different manner either through alternative transcriptional start sites (Alternative transcription initiation (ATI) \nomenclature{ATI}{Alternative Transcription Initiation}), alternative polyadenylation sites (APA) \nomenclature{APA}{Alternative Poly-Adenylation} or alternative splicing (AS) \nomenclature{AS}{Alternative Splicing}).
 	
-With Mendialian diseases such as Duchenne muscular dystrophy, pathogenic variants that result in aberrant splicing (exon inclusion, exon skipping, exon extension, intronic splice gain, exonic splice gain) can have significant downstream impacts (i.e. loss of function). A genetic variant can result in aberrant splicing in the following ways (\cite{Cummings}):
-\begin{itemize}
-	\item variant at the splicing donor or acceptor site resulting in a masked splicing site and downstream alternative site used for splicing, thus exonic extension
-	\item variant at the splicing donor or acceptor site resulting in masked splicing site, exon skipping
-	\item variant within an intron (cryptic splice site), resulting in a strong splicing site and thus intronic splice gain
-	
-\end{itemize}
-
 \subsection{Alternative Splicing}
-Alternative splicing and polyadenylation is a widespread phenomenon that facilitates generation of multiple distinct mRNA transcripts or isoforms from one gene, which are subsequently translated to different protein isoforms with unique, and potentially, antagonistic functions \cite{Wang2008}. AS further regulates gene expression through various mechanisms: non-sense mediated decay, miRNA-mediated mRNA degradation, altered translational efficiency of isoforms. In contrast, alternative polyadenylation regulates RNA transportation, localization, stability, and translation by generating splice isoforms with different cleavage sites.
+Alternative splicing is a widespread phenomenon that facilitates generation of multiple distinct mRNA transcripts or isoforms from one gene, which are subsequently translated to different protein isoforms with unique, and potentially, antagonistic functions \cite{Wang2008}. AS further regulates gene expression through various mechanisms: non-sense mediated decay, miRNA-mediated mRNA degradation, altered translational efficiency of isoforms. In contrast, alternative polyadenylation regulates RNA transportation, localization, stability, and translation by generating splice isoforms with different cleavage sites.
 
 Alternative splicing is essential in shaping transcriptome and proteome diversity - over 95\% of 22,000 protein-coding multi-exonic human genes are estimated to undergo alternative splicing \cite{Pan2008}, with up to 70\% containing multiple polyadenylation sites and 60\% with two or more promoters from alternative transcription start sites \cite{Carninci2006}. Each gene is estimated to have on average six transcript isoforms \cite{Dunham2012}, and this figure is likely to increase with more transcriptomic studies. It occurs most prevalently in the brain implicating its role in neuronal development and maintenance (Pan et al., 2008) (Mazin et al., 2014) (Raj, Blencowe, 2015). It is predicted that a single cell, with a transcription of 600,000 molecules, will have generated 5 - 15 conservative isoforms per gene, and 2-4 exon cassette isoforms (\cite{Karlsson2017}) (a single oligodendrocyte contained ~2000 conservative transcripts associated with 700 genes, and 1000 unique isoforms). 
-
 
 \boldheader{Mechanism}
 % summary: https://www.cell.com/current-biology/pdf/S0960-9822(14)01553-X.pdf
@@ -153,6 +180,13 @@ AS events can be classified into five different types:
 	\item Alternative 3' splice site \nomenclature{A3SS}{Alternative 3' Splice Site}
 	\item Mutually Exclusive Exon 
 \end{itemize} In addition to above five common categories, many other complex types, such as alternative position, i.e., alternative 3' and 5' site (Wang and Brendel, 2006), AS and transcriptional initiation (ASTI) (Nagasaki et al., 2006) alternative first exons (Chen et al., 2007), and composite patterns (Wang and Rio, 2018), can occur."
+
+With Mendialian diseases such as Duchenne muscular dystrophy, pathogenic variants that result in aberrant splicing (exon inclusion, exon skipping, exon extension, intronic splice gain, exonic splice gain) can have significant downstream impacts (i.e. loss of function). A genetic variant can result in aberrant splicing in the following ways (\cite{Cummings}):
+\begin{itemize}
+	\item variant at the splicing donor or acceptor site resulting in a masked splicing site and downstream alternative site used for splicing, thus exonic extension
+	\item variant at the splicing donor or acceptor site resulting in masked splicing site, exon skipping
+	\item variant within an intron (cryptic splice site), resulting in a strong splicing site and thus intronic splice gain	
+\end{itemize}
 
 \newpage
 \textbf{Nonsense mediated decay (NMD)} \nomenclature{NMD}{Nonsense Mediated Decay} products are alternatively spliced isoforms that are not translated into proteins, by containing an early stop codon. A premature termination-translation codon highly supportive of NMD is defined by a stop codon within at least 50-55 base pairs upstream of splice junctions. 
@@ -268,7 +302,7 @@ Gene expression and mRNA isoforms vary widely across tissues (\cite{Wang2008}), 
 While human post-mortem brain tissues remain to be the gold standard for transcriptomic studies, important to highlight that post-mortem interval and storage conditions of brain material highly influence transcriptome stability, particularly affecting alternative splicing. Furthermore changes in gene/transcript expression can be due to differences in cellular composition (i.e. neuronal loss/reactive gliosis) rather than indicative of disease-associated transcriptional regulation. 
 
 \section{Future Directions}
-At the time of writing, there have been other major advances in the field have unfortunately not be explored. This include, single cell transcriptomics and Direct RNA-Sequencing. Analysis of mRNA expression at the resolution of individual, "single", cells, allowing representation of cell-to-cell variation rather than taking the stochastic average from bulk measurements, and thereby resolving heterogeneity. This is currently achieved by the capture and analysis of single cells using a microfluidic or droplet-based technology. Importance of single cell approaches highlighted in \cite{Karlsson2017} with few isoforms shared between cells (7\% of all detected isoforms shared between all cell-types, though this increased to 60\% for exon-cassette isoforms). 
+At the time of writing, there have been other major advances in the field have unfortunately not be explored. This include, single cell transcriptomics and Direct RNA-Sequencing. As most studies are performed on bulk-tissues, it is unclear whether this is a consequence of multiple isoforms in one single cell or from multiple isoforms from multiple single cells. Analysis of mRNA expression at the resolution of individual, "single", cells, allowing representation of cell-to-cell variation rather than taking the stochastic average from bulk measurements, and thereby resolving heterogeneity. This is currently achieved by the capture and analysis of single cells using a microfluidic or droplet-based technology. Importance of single cell approaches highlighted in \cite{Karlsson2017} with few isoforms shared between cells (7\% of all detected isoforms shared between all cell-types, though this increased to 60\% for exon-cassette isoforms). 
 
 To date, Direct RNA sequencing of the native RNA molecules rather than the cDNA is only possible on the ONT. This approach offers several benefits over standard cDNA sequencing, in i) eliminating the risk of generating library artefacts from reverse transcription and PCR, ii) removing length bias toward shorter abundant fragments that could skew the population of transcripts, and finally iii) elucidation of RNA epigenetic modifications. 
 
