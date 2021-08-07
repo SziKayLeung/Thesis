@@ -3,6 +3,7 @@
 
 
 \subsection{Bioinformatics Pipeline} 
+\label{section:isoseq_bioinformatics}
 
 \begingroup
 \parindent=0em
@@ -129,12 +130,13 @@ In combination with genome annotation, SQANTI2 performs a reference-based correc
 
 
 \boldheader{Transcriptome Annotation and Isoform Classification}
+\label{section: sqanti_annotations}
 Using SQANTI classifications based on splice junctions, the transcriptome was segregated into the following categories (Figure \ref{fig:sqanti_cate}): 
 \begin{itemize}
 	\item Well-known annotated genes with known isoforms, further isoforms classified as
 	\begin{itemize}
 		\item Full Splice Match (FSM) if reference and query isoform have the same number of exons with matching internal junction. The 5’ and 3’ end, however, can differ 
-		\item Incomplete Splice Match (ISM) if query isoform has fewer 5’ exons than the reference, but the 3’ exons and internal junctions match. The 5’ and 3’ end can also differ 
+		\item Incomplete Splice Match (ISM) if query isoform has fewer 5’ exons than the reference, but the 3’ exons and internal junctions match. The 5’ and 3’ ends can also differ 
 	\end{itemize}
 	\item Well-known annotated genes with novel isoforms, with isoforms classified as
 	\begin{itemize}
@@ -169,7 +171,6 @@ as fusions. The criteria XXXX
 	\label{fig:sqanti_cate}
 \end{figure}
 
-
 \boldheader{Further filtering of isoforms from technical artifacts}
 SQANTI was further used to filter the curated transcriptome from any technical artifacts that were generated during library preparation, including artifacts from RT template switching (TS \nomenclature{TS}{Template Switching}) and off-priming \cite{Conesa2016} (Figure \ref{fig:lib_prep_artifacts}. RT template switching is an intrinsic feature of RT whereby the enzyme can transit within (intramolecular TS) or across (intermolecular TS) DNA templates without terminating cDNA synthesis, if the original DNA template harbours two or more direct repeats \cite{Cocquet2006}. This can result in either chimeric cDNAs or short, incomplete cDNAs that can be misinterpreted as isoforms generated from non-canonical splicing \cite{Houseley2010} (Figure \ref{fig:lib_prep_artifacts}a). Capitalising on the fact that RT switching is homology-dependent, SQANTI can identify these RT-switching artifacts by finding these direct repeats \cite{Conesa2016}. 
 
@@ -197,7 +198,28 @@ In summary, the isoforms were filtered by the following criteria:
 	\item Any other transcripts that have a reliable 3' end do not have any splice junctions were annotated as Reverse Transcription Switching. 
 \end{enumerate}
 
-\subsubsection{Isoform expression from Iso-Seq} 
+\boldheader{Removal of ISM and merging of FSMs}
+Following \textit{SQANTI} annotations, there were many examples where multiple ISMs and several FSM transcripts were annotated to the same known isoform. This is likely due to varying extent of 5'degradation and truncation - small degree of degradation or truncation would result in differing 5' and 3' ends respectively while preserving the internal exonic structure and thereby generating several FSMs; conversely, a large degree of degradation or truncation would generate smaller partial isoforms that also have matching, albeit smaller overlap, exonic structure. To ease downstream quantitative analyses, ISMs and shorter FSMs were assumed as partial products of the longest detected FSM transcript, and the associated counts were aggregated (as shown in \cref{fig:ism_collapse}). However, there is a caveat that significantly shorter ISM transcripts could in theory be mapped to multiple isoforms.  
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=8,trim={0cm 21cm 0cm 0cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Merging of ISMs and FSMs associated with the same known isoform]%
+	{\textbf{Merging of ISMs and FSMs associated with the same known isoform}. All illustration of handling with multiple ISM and FSM associated with the same known transcript. In this example, 6 isoforms were detected for "Gene 1", however, only 4 known isoforms were identified (denoted as ENMUST1-4). For ease of annotation and quantification, ISMs and shorter FSMs were assumed partial products of the longer FSM. Consequently, in the case where: 
+		\begin{itemize}
+			\item both ISM (PB.1.2) and FSM (PB.1.1) are annotated to the same transcript (shaded green), the FSM takes precedence as the associated transcript and counts from respective ISMs are aggreated 
+			\item there is one ISM (PB.1.3) but no corresponding FSMs for the associated transcript (shaded blue), the ISM is retained
+			\item there are multiple ISMs (PB.1.4, PB.1.5) annotated to the same transcript (shaded orange), the longest ISMs (PB.1.5) takes precedence and counts from respective ISMs are similarly aggregated 
+			\item there are multiple FSMs (PB.1.6, PB.1.7) annotated to the same transcript (shaded purple), the longest FSM (PB.1.7) takes precedence and counts are similarly aggreagated
+			\\
+		\end{itemize} 
+		PB - PacBio. FSM - Full Splice Match, ISM - Incomplete Splice Match, FL - Full-length read counts.  
+	}
+	\label{fig:ism_collapse}
+\end{figure}
+
+\subsubsection{Iso-Seq isoform expression}
 To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
 
 \begin{align*}
@@ -209,7 +231,6 @@ With a cut-off lower than 0.5 TPM, a 0.5 - 10 TPM refers to low expression, a 11
 TPM is the most effective within-sample normalisation method to relatively quantify gene expression in a sample \cite{Abrams2019}. Other methods include RPKM (reads per kilobase of transcripts per million mapped reads), FPKM (fragments per kilobase of exon model per million mapped reads), which uses gene length to control for fragmentation in RNA-Seq protocol ("effective length normalisation") - however, this is not necessary in Iso-Seq.  
 
 Between-sample normalisation methods to relatively quantify expression of the same gene in different samples, remove technical variations due to presence of few highly expressed genes that make up a significant proportion of total reads, and due to different number of reads in each sample. 
-
 
 \subsubsection{Limitations}
 While PacBio's Iso-Seq have major potential for transcriptome annotation, there were currently several major limitations that need to be addressed with further development of library preparation and bioinformatic data analyses \cite{Kuo2017}: 

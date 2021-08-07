@@ -1,160 +1,23 @@
-\contentsline {chapter}{\numberline {1}Introduction}{17}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Alzheimer's Disease}{17}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Pathology}{17}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}The two hallmarks: plaques and tangles}{18}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Genetic Component}{18}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Mouse Models}{20}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Currently available mouse models in AD}{20}{subsection.1.1.5}%
-\contentsline {section}{\numberline {1.2}Gene expression and regulation}{21}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Transcriptional profiling}{22}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Alternative Splicing}{22}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Short-read RNA-sequencing}{26}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Long-read sequencing approaches}{29}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Hybrid approach of short and long read sequencing}{29}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Isoform quantification}{30}{subsection.1.3.5}%
-\contentsline {section}{\numberline {1.4}Aims and Objectives}{32}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Future Directions}{32}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Long-read Sequencing}{34}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Pacific Biosciences: Isoform Sequencing}{34}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Introduction}{34}{subsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.1}Mechanism}{36}{subsubsection.2.1.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.2}Performance and Run Quality Metric}{36}{subsubsection.2.1.1.2}%
-\contentsline {subsection}{\numberline {2.1.2}Lab Pipeline}{38}{subsection.2.1.2}%
-\etoc@startlocaltoc {2}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Complementary DNA synthesis}{41}{subsubsection.2.1.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.2.2}ERCC-RNA Spike-In Controls}{43}{subsubsection.2.1.2.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.3}PCR optimisation and DNA Amplification}{45}{subsubsection.2.1.2.3}%
-\contentsline {subsubsection}{\numberline {2.1.2.4}Polymerase Chain Reaction (PCR)}{45}{subsubsection.2.1.2.4}%
-\contentsline {subsubsection}{\numberline {2.1.2.5}Agarose Gel Electrophoresis}{45}{subsubsection.2.1.2.5}%
-\contentsline {subsubsection}{\numberline {2.1.2.6}AMPure Bead Purification}{46}{subsubsection.2.1.2.6}%
-\contentsline {subsubsection}{\numberline {2.1.2.7}Bioanalyzer}{46}{subsubsection.2.1.2.7}%
-\contentsline {subsubsection}{\numberline {2.1.2.8}Qubit}{48}{subsubsection.2.1.2.8}%
-\contentsline {subsubsection}{\numberline {2.1.2.9}Target Capture using IDT Probes}{48}{subsubsection.2.1.2.9}%
-\contentsline {subsubsection}{\numberline {2.1.2.10}SMRT Bell Template Preparation}{49}{subsubsection.2.1.2.10}%
-\contentsline {subsubsection}{\numberline {2.1.2.11}Primer Annealing and Polymerase Binding}{49}{subsubsection.2.1.2.11}%
-\contentsline {subsubsection}{\numberline {2.1.2.12}Sequencing}{50}{subsubsection.2.1.2.12}%
-\contentsline {subsection}{\numberline {2.1.3}Bioinformatics Pipeline}{51}{subsection.2.1.3}%
-\etoc@startlocaltoc {3}
-\contentsline {subsubsection}{\numberline {2.1.3.1}Introduction}{51}{subsubsection.2.1.3.1}%
-\contentsline {subsubsection}{\numberline {2.1.3.2}Classify}{53}{subsubsection.2.1.3.2}%
-\contentsline {subsubsection}{\numberline {2.1.3.3}Cluster}{54}{subsubsection.2.1.3.3}%
-\contentsline {subsubsection}{\numberline {2.1.3.4}Genome/Transcriptome Alignment}{55}{subsubsection.2.1.3.4}%
-\contentsline {subsubsection}{\numberline {2.1.3.5}Genome Mapping}{56}{subsubsection.2.1.3.5}%
-\contentsline {subsubsection}{\numberline {2.1.3.6}ERCC}{56}{subsubsection.2.1.3.6}%
-\contentsline {subsubsection}{\numberline {2.1.3.7}Cupcake}{57}{subsubsection.2.1.3.7}%
-\contentsline {subsubsection}{\numberline {2.1.3.8}Validation of isoforms with RNASeq}{58}{subsubsection.2.1.3.8}%
-\contentsline {subsubsection}{\numberline {2.1.3.9}SQANTI2 classification and filtering of isoforms}{58}{subsubsection.2.1.3.9}%
-\contentsline {subsubsection}{\numberline {2.1.3.10}Isoform expression from Iso-Seq}{62}{subsubsection.2.1.3.10}%
-\contentsline {subsubsection}{\numberline {2.1.3.11}Limitations}{62}{subsubsection.2.1.3.11}%
-\contentsline {section}{\numberline {2.2}Iso-Seq: Optimisation}{64}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Varying CCS parameters}{64}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Additional parameters}{65}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}Application of additional parameters to Whole Transcriptome}{66}{subsubsection.2.2.2.1}%
-\contentsline {section}{\numberline {2.3}Oxford Nanopore: cDNA Sequencing}{67}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Introduction}{67}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Mechanism}{67}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.2}Performance and Run Quality Metric}{69}{subsubsection.2.3.1.2}%
-\contentsline {subsection}{\numberline {2.3.2}Lab Pipeline}{70}{subsection.2.3.2}%
-\etoc@startlocaltoc {4}
-\contentsline {subsubsection}{\numberline {2.3.2.1}cDNA synthesis}{70}{subsubsection.2.3.2.1}%
-\contentsline {subsubsection}{\numberline {2.3.2.2}ONT MinION Library Preparation}{70}{subsubsection.2.3.2.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.3}Repair DNA and Ends}{71}{subsubsection.2.3.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.2.4}Adapter Ligation}{71}{subsubsection.2.3.2.4}%
-\contentsline {subsubsection}{\numberline {2.3.2.5}Priming the Flow Cell}{71}{subsubsection.2.3.2.5}%
-\contentsline {subsection}{\numberline {2.3.3}Bioinformatics Pipeline}{72}{subsection.2.3.3}%
-\etoc@startlocaltoc {5}
-\contentsline {subsubsection}{\numberline {2.3.3.1}Base-calling}{72}{subsubsection.2.3.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.3.2}Quality Control of Run and Filtering of Base-called Reads}{73}{subsubsection.2.3.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3.3}Removing of Nanopore and cDNA sequencing adapters}{73}{subsubsection.2.3.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.3.4}Genome Alignment and Transcript Collapse}{75}{subsubsection.2.3.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.3.5}Isoform Quantification}{76}{subsubsection.2.3.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.3.6}Limitations of Oxford Nanopore}{76}{subsubsection.2.3.3.6}%
-\contentsline {chapter}{\numberline {3}Whole Transcriptome}{77}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{77}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Mouse model of AD amyloidopathy: J20}{77}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Mouse model of AD tauopathy: rTg4510}{77}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Methods}{79}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}RNA Extraction}{79}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}RNA-Seq Library Preparation, Illumina Sequencing \& raw data processing}{79}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Iso-Seq Library Preparation}{79}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}ONT Library Preparation}{80}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Iso-Seq Data Processing}{80}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}ONT Data Processing}{82}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Characterisation of Alternative Splicing Events}{82}{subsection.3.2.7}%
-\contentsline {section}{\numberline {3.3}Results}{84}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}PacBio's Iso-Seq run performance and sequencing metrics}{84}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Nanopore Sequencing run performance and sequencing metrics}{90}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Transcriptome annotation}{97}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Isoform diversity}{99}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Iso-Seq vs RNA-Seq}{101}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Novel isoforms}{103}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Intron Retention and Nonsense mediated decay}{104}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Fusion Genes}{107}{subsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.3.9}LncRNA}{107}{subsection.3.3.9}%
-\contentsline {subsection}{\numberline {3.3.10}Novel Genes}{109}{subsection.3.3.10}%
-\contentsline {section}{\numberline {3.4}Discussion}{111}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Targeted Transcriptome}{112}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{112}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Methods}{112}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Results}{118}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Run performance and sequencing metrics}{118}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Transcriptome annotation}{122}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Comparison with whole transcriptome}{122}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Transcriptional differences between WT and TG mice}{126}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{126}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Methods}{127}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Iso-Seq Processing and Isoform Quantification}{127}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Quantification of human MAPT transgene expression}{127}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Characterisation of Alternative Splicing Events}{128}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Differential expression analysis}{128}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Results}{134}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Change in endogeneous expression}{134}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Transcriptome Annotation}{134}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Alternative Splicing}{134}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Differential Gene Expression Analysis}{137}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Differential Isoform Expression Analysis}{145}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Differential Isoform Usage Analysis}{153}{subsection.5.3.6}%
-\contentsline {subsection}{\numberline {5.3.7}Differential Feature Inclusion Analysis}{157}{subsection.5.3.7}%
-\contentsline {chapter}{\numberline {6}BDR}{158}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{159}{chapter.7}%
-\contentsline {part}{\hspace {1em}Appendix}{160}{part.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{14}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Alzheimer's Disease}{14}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Pathology}{14}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Genetics Component}{17}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Hypothesis surrounding AD aetiology}{19}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Mouse Models}{25}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Transcriptional profiling}{26}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Alternative Splicing}{26}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Role of Alternative Splicing in Alzheimer's Disease}{30}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Short-read RNA-sequencing}{30}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Long-read sequencing approaches}{33}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Hybrid approach of short and long read sequencing}{34}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Isoform quantification}{34}{subsection.1.2.6}%
+\contentsline {section}{\numberline {1.3}Aims and Objectives}{36}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Future Directions}{37}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Long-read Sequencing}{38}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Whole Transcriptome}{39}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Targeted Transcriptome}{40}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Transcriptional differences between WT and TG mice}{41}{chapter.5}%
+\contentsline {chapter}{\numberline {6}BDR}{42}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{44}{chapter.7}%
+\contentsline {part}{\hspace {1em}Appendix}{45}{part.1}%
 \etoc@settocdepth \Etoc@section@@ 
-\contentsline {chapter}{\numberline {A}Iso-Seq Targeted and Whole Transcriptome Protocol}{161}{chapter.1}%
-\etoc@startlocaltoc {6}
-\contentsline {subsection}{\numberline {A.0.1}Requirement of Sample quality}{162}{subsection.1.0.1}%
-\contentsline {subsection}{\numberline {A.0.2}General}{162}{subsection.1.0.2}%
-\contentsline {subsubsection}{\numberline {A.0.2.1}Ampure Bead Purification}{162}{subsubsection.1.0.2.1}%
-\contentsline {subsubsection}{\numberline {A.0.2.2}Assessment of DNA quantity using Qubit}{164}{subsubsection.1.0.2.2}%
-\contentsline {subsubsection}{\numberline {A.0.2.3}Assessment of DNA library size using Tapestation or Bioanalyzer}{165}{subsubsection.1.0.2.3}%
-\contentsline {subsection}{\numberline {A.0.3}First Strand Synthesis}{165}{subsection.1.0.3}%
-\contentsline {subsection}{\numberline {A.0.4}PCR Cycle Optimisation}{167}{subsection.1.0.4}%
-\contentsline {subsubsection}{\numberline {A.0.4.1}Running an agarose gel}{167}{subsubsection.1.0.4.1}%
-\contentsline {subsection}{\numberline {A.0.5}Large-Scale PCR}{167}{subsection.1.0.5}%
-\contentsline {subsection}{\numberline {A.0.6}Bead Purification of Large-Scale PCR Products}{168}{subsection.1.0.6}%
-\contentsline {subsubsection}{\numberline {A.0.6.1}Fraction 1: 2nd purification}{169}{subsubsection.1.0.6.1}%
-\contentsline {subsection}{\numberline {A.0.7}Pooling Fraction 1 (1X) and 2 (0.40X)}{169}{subsection.1.0.7}%
-\contentsline {subsection}{\numberline {A.0.8}Target Capture using IDT probes}{169}{subsection.1.0.8}%
-\contentsline {subsubsection}{\numberline {A.0.8.1}Prepare beads for Capture}{170}{subsubsection.1.0.8.1}%
-\contentsline {subsubsection}{\numberline {A.0.8.2}Binding cDNA to beads}{171}{subsubsection.1.0.8.2}%
-\contentsline {subsubsection}{\numberline {A.0.8.3}Perform heated washes}{172}{subsubsection.1.0.8.3}%
-\contentsline {subsubsection}{\numberline {A.0.8.4}Perform room temperature washes}{172}{subsubsection.1.0.8.4}%
-\contentsline {subsubsection}{\numberline {A.0.8.5}Amplification of Captured DNA Sample}{173}{subsubsection.1.0.8.5}%
-\contentsline {subsection}{\numberline {A.0.9}SMRTbell Template Preparation}{174}{subsection.1.0.9}%
-\contentsline {subsubsection}{\numberline {A.0.9.1}Repair DNA Damage and Ends}{174}{subsubsection.1.0.9.1}%
-\contentsline {subsubsection}{\numberline {A.0.9.2}DNA Purification}{174}{subsubsection.1.0.9.2}%
-\contentsline {subsubsection}{\numberline {A.0.9.3}Prepare Blunt Ligation Reaction}{175}{subsubsection.1.0.9.3}%
-\contentsline {subsubsection}{\numberline {A.0.9.4}Adding Exonuclease to remove failed ligation products}{175}{subsubsection.1.0.9.4}%
-\contentsline {subsubsection}{\numberline {A.0.9.5}First Purification of SMRTbell Templates}{175}{subsubsection.1.0.9.5}%
-\contentsline {subsubsection}{\numberline {A.0.9.6}Second Purification of SMRTbell Templates }{175}{subsubsection.1.0.9.6}%
-\contentsline {chapter}{\numberline {B}Oxford Nanopore Transcriptome Protocol}{177}{chapter.2}%
-\etoc@startlocaltoc {7}
-\contentsline {subsection}{\numberline {B.0.1}cDNA Synthesis and Amplification}{178}{subsection.2.0.1}%
-\contentsline {subsection}{\numberline {B.0.2}Bead Purification of Large Scale PCR Products}{178}{subsection.2.0.2}%
-\contentsline {subsection}{\numberline {B.0.3}ONT MinION Library Preparation}{179}{subsection.2.0.3}%
-\contentsline {subsubsection}{\numberline {B.0.3.1}Repair DNA and Ends}{179}{subsubsection.2.0.3.1}%
-\contentsline {subsubsection}{\numberline {B.0.3.2}Bead Purification of cDNA end-repaired products}{179}{subsubsection.2.0.3.2}%
-\contentsline {subsubsection}{\numberline {B.0.3.3}Prepare Ligation Reaction}{179}{subsubsection.2.0.3.3}%
-\contentsline {subsubsection}{\numberline {B.0.3.4}Bead Purification of ligated cDNA}{180}{subsubsection.2.0.3.4}%
-\contentsline {subsection}{\numberline {B.0.4}Priming the Flow Cell}{181}{subsection.2.0.4}%
-\contentsline {subsection}{\numberline {B.0.5}Library loading into the Flow Cell}{182}{subsection.2.0.5}%
-\contentsline {chapter}{\numberline {C}cDNA Synthesis alternative approach}{183}{chapter.3}%

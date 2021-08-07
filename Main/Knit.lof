@@ -1,66 +1,12 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Splicing Mechanism: spliceosome assembly on nascent RNA}}{25}{figure.caption.6}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Mouse samples for Whole and Targeted Transcriptome Iso-Seq}}{32}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Two key hallmarks of AD Neuropathology: amyloid plaques and neurofibrillary tangles}}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Progression of amyloid plaques and neurofibrillary tangles with AD development}}{16}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Sequential cleavage of APP into A$\beta $ by $\beta $-secretase and $\gamma $ secretase}}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Spatial regulation of APP trafficking and processing}}{21}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Role of microglia in AD development and pathology}}{23}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Splicing Mechanism: spliceosome assembly on nascent RNA}}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Mouse samples for Whole and Targeted Transcriptome Iso-Seq}}{36}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces PacBio SMRT}}{35}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Generation of Circular Consensus Sequence}}{37}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Iso-Seq Lab pipeline used for whole transcriptome sequencing}}{39}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Iso-Seq Lab pipeline used for targeted transcriptome sequencing}}{40}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces ERCC usage to benchmark library preparation and sequencing performance runs}}{44}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Evaluation of RNA integrity with Bioanalyzer and Tapestation}}{47}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces PacBio Isoseq Bioinformatics Pipeline}}{52}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Isoform Classifications by SQANTI}}{60}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Technical artifacts generated during library preparation and identified in SQANTI}}{61}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Optimisation of CCS generation}}{65}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}}{67}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}}{68}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Structure of ONT library cDNA template}}{74}{figure.caption.22}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Iso-Seq Whole Transcriptome - PCR cycle optimisation}}{80}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Iso-Seq Whole Transcriptome - cDNA purification and library preparation}}{81}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces PacBio Isoseq Bioinformatics Pipeline}}{83}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Whole Transcriptome Iso-Seq run yields and relationship to RIN score}}{85}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Whole Transcriptome Iso-Seq run yields and relationship to RIN score}}{88}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run}}{89}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Detection of ERCC standards in Whole Transcriptome Iso-Seq}}{90}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces ONT Sequence Channel Activity from Whole Transcriptome Sequencing }}{92}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces ONT run performance over time from Whole Transcriptome Sequencing }}{93}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces ONT translocation speed against time from Whole Transcriptome Sequencing}}{94}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces ONT read length and quality from Whole Transcriptome Sequencing }}{95}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces ONT read quality against read length from Whole Transcriptome Sequencing }}{96}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Rarefaction Curves of Whole Transcriptome Iso-Seq Runs}}{98}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Isoform diversity across Tg4510 samples and coverage of ERCC transcripts}}{99}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Correlation of isoform diversity with transcript length and number of exons}}{100}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces RNA-Seq defined transcriptome}}{102}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{105}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq}}{106}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Association of intron retention and NMD in Whole Transcriptome Iso-Seq}}{108}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Characterisation of LncRNA in Whole Transcriptome runs}}{110}{figure.caption.48}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Iso-Seq Targeted Transcriptome - cDNA amplification and purification}}{116}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Iso-Seq Targeted Transcriptome - Target Capture and library preparation}}{117}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Targeted Transcriptome Iso-seq run performance}}{120}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces On-Target rate in Transcriptome Iso-Seq runs}}{121}{figure.caption.55}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex}}{123}{figure.caption.56}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Classification of novel and known isoforms from Targeted Sequencing in mouse cortex}}{124}{figure.caption.57}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Classification of novel and known isoforms from Targeted Sequencing in mouse cortex}}{125}{figure.caption.58}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Different conditions modelled for exploring rTg4510 genotype across age}}{131}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Quantifying human-specific and mouse-specific \textit {MAPT}/\textit {Mapt} sequences in Iso-Seq Whole Transcriptome}}{135}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Differentially expressed genes classified by conditions}}{137}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Examples of gene expression differing across conditions}}{138}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Identification of differentially expressed genes using Iso-Seq reads as annotation}}{140}{figure.caption.67}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{141}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Tracks of novel genes that were differentially expressed in rTg4510 mice}}{143}{figure.caption.70}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs}}{144}{figure.caption.71}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit {Gfap}}}{147}{figure.caption.72}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit {C4b}}}{148}{figure.caption.73}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Robust changes in transcript expression of isoforms annotated to genes that are strongly implicated in AD}}{149}{figure.caption.74}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Changes in transcript expression of genes strongly implicated in AD were similarly detected using RNA-Seq reads}}{150}{figure.caption.75}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Differential isoform expressed observed with Iso-Seq reads as expression were not recapitulated using RNA-Seq reads}}{151}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Differential Isoform Expression observed in isoforms with high expression but large variance}}{152}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Number of DIU genes identified from Whole Transcriptome mouse datasets}}{155}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \textit {Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}}{156}{figure.caption.79}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

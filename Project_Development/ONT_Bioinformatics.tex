@@ -33,13 +33,38 @@ Of note, \textit{Porechop} has been officially unsupported since 2018 and has be
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=7,trim={0cm 30cm 0 1cm},clip, scale = 0.55]{Pictures/Pipeline.pdf}
+		\includegraphics[page=7,trim={2cm 17cm 0cm 1cm},clip, scale = 0.55]{Pictures/Pipeline.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Structure of ONT library cDNA template]%
-	{\textbf{Structure of ONT library cDNA template}: Shown is the final structure of cDNA molecules for ONT sequencing, after cDNA synthesis and adaptor ligation. The original cDNA molecules are outlined in purple and green, and the ONT boxes indicate the position of the ONT adaptors. The brown and orange circle refer to the motor protein and cholesterol moiety respectively.}
+	{\textbf{Structure of ONT library cDNA template}: Shown is the \textbf{a)} final structure of cDNA molecules for ONT sequencing, after cDNA synthesis and adaptor ligation, and the corresponding differentiating start and end sequence for the plus and minus strands \textbf{b)} without and \textbf{c)} with barcodes. The original cDNA molecules are outlined in purple and green, and the ONT boxes indicate the position of the ONT adaptors. In cases where multiplexing is performed, the barcode location is indicated in red (see \cref{tab:barcode_primers} and \cref{tab:ont_barcode} for barcode sequences). Of note, only the plus strand end sequence and the minus strand start sequence contain the barcode and are used for sample demultiplexing, whereas the plus strand start and minus strand end sequence are identical across all barcoded samples. The brown and orange circle refer to the motor protein and cholesterol moiety respectively. The start and end of the strand is defined by the 5' and 3' end respectively. }
 	\label{fig:ONT_cdnatemplate}
 \end{figure}
+
+\begin{landscape}
+	\begin{table}[]
+		\centering
+		\begin{tabular}{@{}ccccc@{}}
+			\toprule
+			\multirow{2}{*}{Barcoded  Samples} & \multicolumn{2}{c}{Plus strand} & \multicolumn{2}{c}{Minus strand} \\ \cmidrule(l){2-5} 
+			& Start sequence & End sequence & Start sequence & End sequence \\ \midrule
+			BC1 & \multirow{10}{*}{\begin{tabular}[c]{@{}c@{}}TTGCTAAG\\ CAGTGGTA\\ TCAACGCA\\ GAGTACAT\\ GGG\end{tabular}} & AAAAAACGCACTCTGATATGTGGCA & CACATATCAGAGTGCGTTTTTT & \multirow{10}{*}{\begin{tabular}[c]{@{}c@{}}CCCATGTAC\\ TCTGCGTTG\\ ATACCACT\\ GCTTAGCAAT\\ ACGTAACT\end{tabular}} \\
+			BC2 &  & AAAAAAACTCACAGTCTGTGTGTGCA & ACACACAGACTGTGAGTTTTTTT &  \\
+			BC3 &  & AAAAAAACTCTCACGAGATGTGTGCA & ACACATCTCGTGAGAGTTTTTTT &  \\
+			BC4 &  & AAAAAAACGCGCGTGTGTGCGTGGCA & CACGCACACACGCGCGTTTTTTT &  \\
+			BC5 &  & AAAAAAAACGCGAGAGTCGAGTGGCA & CACTCGACTCTCGCGTTTTTTTT &  \\
+			BC6 &  & AAAAAAAACAGCTGATATATATGGCA & CATATATATCAGCTGTTTTTTTT &  \\
+			BC7 &  & AAAAAAACACATAGAGATACAGAGCA & TCTGTATCTCTATGTGTTTTTTT &  \\
+			BC8 &  & AAAAAAACGCAGCGCTCGACTGTGCA & ACAGTCGAGCGCTGCGTTTTTTT &  \\
+			BC9 &  & AAAAAAATCTGTCTCGCGTGTGTGCA & ACACACGCGAGACAGATTTTTTT &  \\
+			BC10 &  & AAAAAAACTCTGAGATAGCGCGTGCA & ACGCGCTATCTCAGAGTTTTTTT & 
+		\end{tabular}
+	\captionsetup{width=0.9\linewidth}
+	\caption[ONT adapter sequences for plus and minus strand of barcoded samples]%
+	{\textbf{ONT adapter sequences for plus and minus strand of barcoded samples}. Tabulated are the sequences used in \textit{Porechop} for sample demultiplexing and identifying the plus and minus strands. As depicted in \cref{:ONT_cdnatemplate}, only the plus strand end sequences and the minus strand start sequences contain the sample-specific barcode sequence (reverse complementary of one another). BC - Barcode}
+	\label{tab:ont_barcode}
+	\end{table}
+\end{landscape}
 
 \subsubsection{Genome Alignment and Transcript Collapse}
 Trimmed reads were then aligned to the reference genome using Minimap2 \cite{Li2018} (v2.17-r941, parameters: -ax splice). In the Iso-Seq bioinformatics pipeline, mapped transcripts were then processed using \textit{Cupcake} for the removal of transcripts with low alignment identity and length, further collapse of high-quality transcripts to unique isoforms, and to obtain count information using output from \textit{IsoSeq3 Cluster}.

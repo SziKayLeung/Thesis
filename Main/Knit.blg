@@ -3,50 +3,55 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Knit.aux
 The style file: unsrt.bst
 Database file #1: library.bib
+Reallocating 'str_pool' (item size: 1) to 130000 items.
+Repeated entry---line 9158 of file library.bib
+ : @article{Leng2021a
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "alzgene2010"
 Warning--I didn't find a database entry for "Carninci2006"
 Warning--I didn't find a database entry for "A"
-Warning--empty author in ONT2019NanoporeQC
-Warning--empty journal in ONT2019NanoporeQC
-Warning--empty institution in Conesa2017
-You've used 95 entries,
+Warning--empty journal in AlanM.Palmer2015
+Warning--empty journal in Sakae2016
+You've used 110 entries,
             1791 wiz_defined-function locations,
-            1070 strings with 42792 characters,
-and the built_in function-call counts, 34676 in all, are:
-= -- 1897
-> -- 4061
+            1216 strings with 68844 characters,
+and the built_in function-call counts, 51326 in all, are:
+= -- 2208
+> -- 7237
 < -- 3
-+ -- 1388
-- -- 1293
-* -- 3775
-:= -- 6434
-add.period$ -- 267
-call.type$ -- 95
-change.case$ -- 96
++ -- 2451
+- -- 2341
+* -- 6112
+:= -- 9993
+add.period$ -- 305
+call.type$ -- 110
+change.case$ -- 110
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 836
-empty$ -- 2073
-format.name$ -- 1293
-if$ -- 6677
+cite$ -- 112
+duplicate$ -- 916
+empty$ -- 2467
+format.name$ -- 2341
+if$ -- 9446
 int.to.chr$ -- 0
-int.to.str$ -- 95
-missing$ -- 79
-newline$ -- 460
-num.names$ -- 92
-pop$ -- 198
+int.to.str$ -- 110
+missing$ -- 86
+newline$ -- 528
+num.names$ -- 109
+pop$ -- 267
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 400
+skip$ -- 405
 stack$ -- 0
-substring$ -- 1607
-swap$ -- 146
+substring$ -- 2021
+swap$ -- 135
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 218
-width$ -- 97
-write$ -- 991
-(There were 5 warnings)
+warning$ -- 2
+while$ -- 260
+width$ -- 113
+write$ -- 1134
+(There was 1 error message)

@@ -1,6 +1,8 @@
 \documentclass[../Main/Knit.tex]{subfiles}
 \label{targetedmousetranscriptome}
 
+%https://www.nature.com/articles/s41467-020-17009-7#Sec14
+
 \section{Introduction}
 One current limitation of whole transcriptome sequencing is the low coverage/sequencing depth achieved per gene due to the distribution of reads across the whole transcriptome. Consequently, while whole transcriptome sequencing allows identification of novel genes (genes not previously annotated to the genome) and novel isoforms, it may not detect isoforms particularly those of low expression resulting in many false negatives. This can be circumvented by the use of target capture, which enriches a selective panel of genes that are then only sequenced. Multiple samples can further be pooled and sequenced together by barcoding samples at cDNA synthesis, which simplifies laboratory workflow and minimises associated sequencing costs.
 
@@ -11,8 +13,15 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 
 
 \section{Methods}
-The extracted RNA from mouse rTg4510 samples were prepared for targeted transcriptome sequencing on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed using barcodes (listed in Table \ref{tab:barcode_primers}) and ran on the Sequel as three batches. Iso-Seq library preparation and SMRT sequencing is described in Chapter X. Following the Iso-Seq lab pipeline (Chapter \ref{chap:isoseq_labpipeline}), 200ng RNA from each sample was used for first strand cDNA synthesis (Chapter \ref{section:ch2_cDNA_synthesis_explanation}) and amplified using PCR with 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}, Chapter \ref{section:ch2_PCR_explanation}). Purification with 0.4X and 1X AMPure PB beads selectively and successfully enriched cDNA with different molecular weights (Figure \ref{fig:isoseq_whole_bioresults}). The two fractions were then recombined at equimolar quantities and library preparation was successfully performed (Figure \ref{fig:isoseq_whole_bioresults}). Sequencing was performed for each sample on the PacBio Sequel using a 1M SMRT cell. Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline outlined in Chapter X.
-RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina), and used as junction support of the long reads. 
+
+\subsection{Samples}
+Extracted RNA from mouse entorhinal cortex of wildtype and transgenic rTg4510 mice was sequenced on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wildtype and transgenic mice, multiplexed with barcodes (listed in \cref{tab:barcode_primers}) and sequenced as three batches.
+
+\subsection{Library prepartion and sequencing}
+Following the Iso-Seq lab protocol (as described in \cref{chap:isoseq_labpipeline}), 200ng RNA from each sample was primed for first strand cDNA synthesis (\cref{section:ch2_cDNA_synthesis_explanation}) with specific oligo-dT barcodes and amplified using PCR with 14 cycles (\cref{fig:isoseq_targeted_pccresults}, \cref{section:ch2_PCR_explanation}). Following purification with 0.4X and 1X AMPure PB beads, the two fractions were then recombined at equimolar quantities, and samples were subsequently combined at equimolar quantities according to each batch. Enrichment for target genes with IDT hybridisation capture was then performed for each batch (described in \cref{section:ch2_targetcapture_explanation}) using custom-designed probes (summarised in \cref{tab:mouse_probes}). Following successful target capture and library preparation (depicted in \cref{fig:isoseq_targeted_libresults}), sequencing was performed for each batch on the PacBio Sequel using a 1M SMRT cell. RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina), and used as junction support of the long reads. 
+
+\subsection{SMRT sequencing QC and data processing}
+Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline (outlined in \cref{section:isoseq_bioinformatics}), and is similar to the whole transcriptomics data processing with the exception of demultiplexing samples at \textit{Lima} with barcodes. Briefly, CCS reads were generated for each batch and demultiplexed for each sample. Full-length reads from each sample were then merged and collapsed to unique isoforms with \textit{Cupcake}, which were mapped to mouse reference genome (mm10) using \textit{Minimap2} and annotated with \textit{SQANTI3}. Partial isoforms as a consequence of 5'degradation were filtered out using \textit{TAMA}'s script (tama\_remove\_fragment\_models.py) with default parameters. Full-length Iso-Seq read counts from each individual sample were extracted from \textit{Cupcake's} read\_stat.txt file.
 
 \begin{landscape}
 \begin{table}[]
@@ -64,6 +73,8 @@ RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA S
 \label{tab:mouse_samples_sequenced}
 \end{table}
 \end{landscape}
+
+
 \begin{table}[ht]
 	\begin{tabular}{@{}cccccc@{}}
 		\toprule
@@ -95,6 +106,9 @@ RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA S
 		VGF    & 9          & chr  5 : 137030295 -   137033351  & + & 3,057   & 2,553  \\
 		& Total: 464 &                                   &   &         &        \\ \bottomrule
 	\end{tabular}
+\caption[Mouse probes for enrichment of AD-associated target genes]%
+{\textbf{Mouse probes for enrichment of AD-associated target genes}. For target enrichment and subsequent sequencing, probes were designed and curated to 20 AD-associated genes (as detailed in \cref{section:ch2_targetcapture_explanation})}
+\label{tab:mouse_probes}
 \end{table}
 
 
@@ -119,8 +133,12 @@ RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA S
 	\\
 	\\
 	As can be seen across all figures, target capture appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths, which differs from the broad peaks that are evident in whole transcriptome sequencing (Figure \ref{fig:isoseq_whole_bioresults}). Library preparation with ligation of SMRT bell templates retained these targeted transcripts with good peak overlay, as seen in figure e). The difference in peak height (i.e. cDNA quantity) between target capture and library preparation is due to a difference in input cDNA concentration when running Bioanalyzer - input cDNA after library preparation was diluted with a 1:5 dilution factor to maximise amount of cDNA available for sequencing, whereas input cDNA after target capture was not diluted.}  
-	\label{fig:isoseq_targeted_pccresults}
+	\label{fig:isoseq_targeted_libresults}
 \end{figure}
+
+
+\subsection{Transcriptome Annotation and Iso-Seq Quantification}
+Isoforms were annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). ISM isoforms were assumed as partial products of longer FSM isoforms, and associated read counts were aggregated.   
 
 \newpage
 \section{Results}
@@ -329,4 +347,84 @@ After filtering for technical artefacts (563 (1.69\%) isoforms were removed due 
 % compare the AD genes
 % threshold cut off 
 
+\clearpage
+\subsection{Alzheimer's Disease Target Genes}
+%Alternative splicing events?
 
+\boldheader{Abca1}
+Identified two isoforms, one already known (ENSMUST00000030010.3) and a much lower expressed novel isoform with one novel splice site (NIC). 
+RNA-Seq expression identified differential gene and isoform expression with increased expression of  known isoform with progressive tau pathology. A smaller general trend is observed with Iso-Seq data alone but insignificant.
+
+\boldheader{Sorl1}
+In addition to identifying known isoform (ENSMUST00000060989.8), identified 8 novel isoforms (3 NIC and 5 NNC) of which one was characterised with intron retention and two were predicted for NMD (PB.8560.84 with a different polyA motif and PB.8560.39). 7 DMPs observed in gene. Known isoform is the dominant isoform
+
+\boldheader{Mapt}
+7 known isoforms detected (ENSMUST00000106992.9, ENSMUST00000100347.10, ENSMUST00000138384.7, ENSMUST00000106988.7, ENSMUST00000126820.1, ENSMUST00000132245.7, ENSMUST00000106993.9) with ENSMUST00000106992.9 the dominant isoform. 
+56 novel isoforms detected (22 NIC and 34 NNC), 4 with intron retention and 6 predicted for NMD.  
+RNA-Seq expression and Iso-Seq expression show very different profile due to RNA-Seq reads also from sequencing transgene human \textit{MAPT} - conversely any full-length transcript containing human \textit{MAPT} transgene would have been filtered out during Iso-Seq bioinformatics pipeline, thus Iso-Seq reads would only capture mouse \textit{MAPT} isoforms. Unable to use RNA-Seq reads due to sequencing of human transgene; No differential mouse \textit{MAPT} gene or transcript expression. 
+Antisense transcript to MAPT also detected.
+%Of note: 2 ISMs have have semi high expression counts and may be multimapped; apply a threshold to ensure that must have more than x number of exons from the known but caveats?
+%humanMAPT decreases but progressive tau pathology?
+
+\boldheader{Bin1}
+Identified 4 known isoforms (ENSMUST00000025239.8, ENSMUST00000091967.12, ENSMUST00000234496.1, ENSMUST00000234857.1) and 89 novel isoforms (34 NIC and 55 NNC). 11 of the novel isoforms were characterised with intron retention, of which all but one was predicted for NMD. 9 additional isoforms were predicted for NMD. ENSMUST00000025239.8 (PB.3915.1) was identified as the major dominant isoform using Iso-Seq where as a novel isoform (PB.3915.208,NIC) was identified as the dominant isoform using RNA-Seq reads. Differential transcript expression observed using Iso-Seq reads with increased expression of novel isoform (PB.3915.524, NIC, P = 3.66 x 10\textsuperscript{-5}, R-squared = 0.547), but this was not recapitulated with RNA-Seq reads. 1 DMP associated with gene. 
+%Iso-Seq and RNA-Seq expression does not correspond in terms of major isoform, example of misalignment from RNA-Seq reads? Check the difference between PB.3915.208 and PB.3915.1 sequence 
+%check whole targeted approach if novel isoform is detected?
+
+\boldheader{Tardbp}
+Identified 6 known isoforms (ENSMUST00000084125.9, ENSMUST00000186317.1, ENSMUST00000105702.8, ENSMUST00000165113.7, ENSMUST00000045180.13, ENSMUST00000172073.7) and 18 novel isoforms (15 NIC, 3 NNC), the majority of which were characterised with intron retention (n = 14) and also predicted for NMD (n = 8) and 3 additional for NMD. ENSMUST00000084125.9 was identified as the dominant isoform using both Iso-Seq and RNA-Seq as expression.
+
+\boldheader{App}
+Identified 3 known isoforms (ENSMUST00000227723.1 ENSMUST00000227990.1 ENSMUST00000227021.1) and 39 isoforms, the majority of which were detected using RNA-Seq expression. Differential transcript expression observed using Iso-Seq reads with increased expression of known isoform (ENSMUST00000227654.1, P = 1.75 x 10\textsuperscript{-8}, R-squared = 0.657), but this was not recapitulated with RNA-Seq reads. 
+
+\boldheader{Abca7}
+Identified 3 known isoforms (ENSMUST00000227723.1 ENSMUST00000227990.1 ENSMUST00000227021.1) and 39 isoforms, the majority of which were detected using RNA-Seq expression. Differential transcript expression observed using Iso-Seq reads with increased expression of known isoform (ENSMUST00000227654.1, P = 1.75 x 10\textsuperscript{-8}, R-squared = 0.657), but this was not recapitulated with RNA-Seq reads. 2 novel isoforms were identified as dominant isoforms (PB.756.3, NIC and PB.756.31, NNC) 
+%ISM mapped to multiple transcripts 
+
+\boldheader{Ptk2b}
+Identified 5 known isoforms (ENSMUST00000136216.7, ENSMUST00000022622.13, ENSMUST00000089250.8
+ENSMUST00000178730.7, ENSMUST00000111121.1) and 82 novel isoforms of which 6 were characterised with intron retention. Differential transcript expression observed using Iso-Seq reads with increased expression of known isoform (ENSMUST00000089250.8, P = 2.317 x 10\textsuperscript{-8}, R-squared = 0.634), but this was not recapitulated with RNA-Seq reads. 2 dominant isoforms, but were identified differently by Iso-Seq and RNA-Seq reads.
+%redraw isoform expression
+
+\boldheader{Ank1}
+Identified 6 known isoforms (ENSMUST00000118733.7, ENSMUST00000173248.7, ENSMUST00000110688.8, ENSMUST00000141784.8, ENSMUST00000121075.7, ENSMUST00000033947.14), and 3 novel isoforms (NIC). Of note 4 of the known isoforms are ISM with 3'fragment (suggesting not RNA degradation) but equivalent FSM not available. Alignment of RNA-Seq reads to both whole and targeted transcriptome identified ENSMUST00000121802.8 to be the dominant isoform, however, this was not detected in targeted transcriptome. 
+% Example of truncated isoforms in targeted transcriptome
+% check whole transcriptome data, check mouse transcriptome data
+
+\boldheader{Fyn}
+Identified 3 known isoforms (ENSMUST00000136659.1, ENSMUST00000099967.9, ENSMUST00000063091.12) and 26 novel isoforms. General trend of downregulated gene expression associated with progressive tau pathology with both Iso-Seq and RNA-Seq reads as expression input, but not significant. Known isoform (ENSMUST00000099967.9, PB.605.38) and novel isoform (PB.605.118) was predominaly expressed.  
+
+\boldheader{Clu}
+Identified 1 known isoform (ENSMUST00000022616.13) and 62 novel isoforms. Differential gene and isoform expression was detected using RNA-Seq reads as expression, with upgregulated expression associated with progressive tau pathology. However, this increase expression was attributed to a novel isoform (G4103.43,PB.2634.299) rather than the known longer isoform
+% kallisto misalignment?
+
+\boldheader{Cd33}
+Identified 1 known isoform (ENSMUST00000205503.1) and 11 novel isoforms, the majority of which were characterised with intron retention (n = 7). Differential gene expression and isoform expression was observed using both Iso-Seq and RNA-Seq reads, driven by upregulated expression of the known isoform (PB.7476.2), which was also detected in the whole transcriptome. 
+
+\boldheader{Fus}
+Identified 4 known isoforms (ENSMUST00000205261.1, ENSMUST00000128851.7, ENSMUST00000174196.7, ENSMUST00000106251.9) and 21 novel isoforms. The known isoform was identified as the major isoform using Iso-Seq reads, whereas the novel isoform was identified with RNA-Seq reads (G12097.12,PB.7829.97).
+% kallisto misalignment? known isoform is detected in the whole transcriptome
+
+\boldheader{Picalm}
+Identified 8 known isoforms, and 27 novel isoforms. All isoforms, including the novel isoforms, are similarly expressed, although the known isoform (ENSMUST00000049537.8, PB.7635.31) is still the highest expressed using both Iso-Seq and RNA-Seq reads as expression.
+
+\boldheader{Snca}
+Differential gene expression identified using both Iso-Seq and RNA-Seq reads as expresion with TG showing reduced gene expression across progressive tau pathology. However, very different pattern of isoform constitution between Iso-Seq and RNA-Seq reads as expression; known isoform is the dominant major isoform with Iso-Seq reads, however, not obvious from RNA-Seq reads. 
+% kallisto misalignment?
+
+\boldheader{Apoe}
+Identified 6 known isoforms, and 49 novel isoforms. Differential gene expression identified using both Iso-Seq and RNA-Seq reads as expresion with TG showing increased gene expression across progressive tau pathology. Iso-Seq attributed this increase to the known isoform (PB.7333.28, ENSMUST00000173739.7), whereas RNA-Seq attributed this increase to the novel isoform (G11287.50)
+
+\boldheader{Trpa1}
+Identified 1 known isoform and 1 novel isoform, very lowly expressed across all the samples and even with RNA-Seq reads as alignment. 
+
+\boldheader{Rhbdf2}
+Identified 1 known isoform and 2 novel isoforms. Slight increase in gene expression driven by known isoform (ENSMUST00000103029.9), however not significant. 
+
+\boldheader{Trem2}
+Identified 3 known isoforms and 12 novel isoforms. Observed significant differential gene expression and tranascript expression - increased gene expression associated with progresssive tau pathology, which is attributed to the known isoform (ENSMUST00000024791.14).
+% Of note the TAMA merged refers to a whole transcriptome transcript that is slightly different to the one detected in the targeted transcriptome
+
+\boldheader{Vgf}
+Identified 2 known isoforms and 3 novel isoforms, Observed differential gene expression and transcript expression -slight decreased gene expression in TG mice. Very low detected using Iso-Seq reads with only known isoform (ENSMUST00000041543.8) and novel isoform passing the threshold for detection, conversely RNA-Seq reads identified two novel isoforms as the major isoform. 
+% kallisto alignment
