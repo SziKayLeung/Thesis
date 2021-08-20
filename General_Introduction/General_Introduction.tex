@@ -368,7 +368,7 @@ Evidence of upregulated levels of intron-retained transcripts in AD vs control, 
 \end{changemargin}
 
 
-\subsection{Limitations of short-read RNA sequencing}
+\subsection{Constraints of standard RNA sequencing approaches}
 \label{rnaseq_intro}
 Transcriptomic profiling of AD to study gene and transcript expression changes has been traditionally performed using exon microarrays and more recently, RNA-Sequencing (RNA-Seq\nomenclature{RNA-Seq}{RNA-Sequencing}) (summarised in \cref{tab: AS_ADHuman_studies}), which involves high throughput parallel sequencing of amplified DNA templates in a “sequence-by-synthesis” fashion. Through larger sample sizes and significant advances in bioinformatic tools, RNA-Seq has allowed a more comprehesive annotation of the transcriptome and interrogation of alternative splicing events, particularly exon skipping and intron retention. 
 
@@ -393,27 +393,18 @@ Various bioinformatic tools have been developed to overcome this challenge of tr
 %Attempts to overcome challenges with transcriptome assembly included generation of “synthetic long reads”, by tagging full-length complementary DNAs with unique molecular identifiers (UMIs) before cluster amplification and sequencing on Illumina (Tilgner et al., 2015). With the presence of UMIs, transcript isoforms can be reconstructed for up to 4Kb for isoform discovery and expression analysis (Stark, Grzelak, \& Hadfield, 2019). [However…]
 
 
-\subsection{Opportunities with long-read RNA sequencing}
-Recent advances in long-read sequencing technology addressed the issues with RNA-Seq by the ability to generate significantly longer reads that were able to span the full-length transcript. Rather than sequencing of templates in a “wash-and-scan” fashion that resulted in de-phasing and subsequently shorter reads (\cref{fig:longread_benefits}\textbf{a}), long-read sequencing technology capitalised on real-time sequencing of templates in an uninterrupted and processive manner. Pacifib Biosciences's (PacBio) Single Molecule Real Time (SMRT\nomenclature{SMRT}{Single Molecule Real Time}) and Oxford Nanopore Technologies (ONT \nomenclature{ONT}{Oxford Nanopore Technologies}) nanopore sequencing currently dominate this space ((\cref{fig:longread_benefits}\textbf{b,c}), with both platforms generating reads >10kb (\textasciitilde15kb for PacBio and >30kb for ONT). 
+\subsection{Leveraging long-reads for isoform annotation}
+The major challenges of using short-read RNA-Seq reads for transcript assembly were addressed with the recent emergence of long-read sequencing technology. Rather than sequencing of templates in a “wash-and-scan” fashion that resulted in dephasing and the subsequent shorter reads (\cref{fig:longread_benefits}\textbf{a}), long-read sequencing technology capitalised on real-time sequencing of templates in an uninterrupted and processive manner. This provided unprecendented ability to generate longer reads that span the (new) entire lengths of transcripts from 5'end to poly A tail, thereby resolving splicing junctions and relinquishing the need for transcriptome assembly (\cref{fig:longread_benefits}\textbf{d}). Pacific Biosciences's (PacBio)\nomenclature{PacBio}{Pacific Biosciences} Single Molecule Real Time (SMRT\nomenclature{SMRT}{Single Molecule Real Time}) and Oxford Nanopore Technologies (ONT\nomenclature{ONT}{Oxford Nanopore Technologies}) nanopore sequencing currently dominate this space (\cref{fig:longread_benefits}\textbf{b,c}), with both platforms generating reads >10kb (\textasciitilde15kb for PacBio and >30kb for ONT). 
 %Other long-read sequencing methods and protocols, such as synthetic long read\cite{Tilgner2015} and sparse isoform sequencing\cite{Tilgner2018}, however these require more complex workflows.
 
-The consequent generation of longer reads provided unprecedented ability to sequence entire or new entire lengths of transcripts from 5’ end to polyA tail, relinquishing the need for transcriptome assembly and resolving splicing junctions (\cref{fig:longread_benefits}\textbf{d}). Allowing greater accuracy at transcript identification, an increasing number of studies have used such technologies to characterise isoform diversity and splicing with unprecedented success (Table X). Generally in comparison with RNA-Seq, Iso-Seq encapsulates longer transcripts, identifies novel gene locus, and correction of gene model. "Long transcript reads provide better support and higher accuracy in splice junctions than short reads, when these reads are aligned back to the genome. Thus gene models predicted from long reads yield more accurate exon/intron structure and can merge two or more misannotated adjacent genes."
-
-\boldheader{Leveraging long-reads for isoform annotation}
-Significant advances have been made in the realm of long read sequencing of isoforms (\cref{fig:longread_benefits}). With incremental improvements in chemistry, subsequent increase in throughput and diminishing sequencing cost, both PacBio isoform sequencing (Iso-Seq) and Oxford Nanopore sequencing has become more widely used for isoform annotation and characterisation of splicing events (summarised in \cref{tab: longread_isoseqstudies} and \cref{tab: longread_ontstudies} respectively). A common theme across all these studies is the unprecedented widespread isoform diversity with a significant proportion of isoforms identified as novel and not currently annotated in the human \cite{Sharon2013, Au2013,Tseng2019} and mouse transcriptome. Moreover, validation of these novel isoforms with proteomic approaches suggest that some of these novel isoforms with novel splice junctions and splicing events are functionally relevant with biological implications \cite{Huang2021}. 
+With incremental improvements in chemistry, subsequent increase in throughput and diminishing sequencing cost, an increasing number of studies have leveraged both long-read platforms to characterise isoform diversity and splicing with notable success (summarised in \cref{tab: longread_isoseqstudies} and \cref{tab: longread_ontstudies} for PacBio isoform sequencing (Iso-Seq\nomenclature{Iso-Seq}{Isoform Sequencing (PacBio)}) and Oxford nanopore sequencing respectively). A common finding across all these studies is the unprecedented widespread isoform diversity in the human \cite{Sharon2013, Au2013,Tseng2019,DeslattesMays2019} and mouse transcriptome, revealing a significant number of genes with >10 isoforms (comparative analysis with 100M RNA-Seq reads showed that number of isoforms and exons was saturated at 4 even with increased sequenced depth\cite{DeslattesMays2019}), many of which were novel and not current annotated in reference genome. Moreover, validation of these novel isoforms with proteomic approaches suggest that some of these novel isoforms with novel splice junctions and splicing events are functionally relevant with biological implications \cite{Huang2021}. 
 
 However, the majority of these long-read transcriptome studies on human and mouse transcriptome have either been performed on cell lines, or with a relatively small number of samples and targeted sequencing of a few selective genes if using mouse or human post-mortem brain tissues. 
 
-With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initial profiling studies of the human transcriptome leveraged long-reads for annotation\cite{Sharon2013,Au2013} and focused on improving long read accuracy either by correction with short-reads\cite{Au2012} or generation of circular consensus sequences from multiple low-quality reads of the same molecule\cite{Eid2009} (which has been widely used since\cite{Hardwick2019} and is described in more detail in \cref{sec:pb_isoform_sequencing})
+%With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initial profiling studies of the human transcriptome leveraged long-reads for annotation\cite{Sharon2013,Au2013} and focused on improving long read accuracy either by correction with short-reads\cite{Au2012} or generation of circular consensus sequences from multiple low-quality reads of the same molecule\cite{Eid2009} (which has been widely used since\cite{Hardwick2019} and is described in more detail in \cref{sec:pb_isoform_sequencing})
 
-
-%Isoform sequencing of progenitor (lineage negative) and differentiated (lineage positive) cells from human bone marrow tissue, followed by mass spectrometric validation by using long-read data as reference. Of note, paper highlights the power of long-read vs short-read RNA-Seq to characterise transcriptome landscape: RNA-Seq's power to identify number of isoforms per gene was saturated at 4 (regardless of number of exons, and sequencing depth even if increased to 100million), whereas Iso-Seq identifed >10 isoforms (12-36 isoforms); RNA-Seq's ability to recover transcripts with >4 exons drastically drops in comparison to Iso-Seq; RNA-Seq unable to identify transcripts for paralogous genes with conserved sequences
-%			Achieved very good correlation with illumina data within the same cells (\cite{Byrne2017})
-% Multiple advantages to be able to sequence direct-RNA, and paper illustrates the potential to do this, however still require many optimisation with regards to nanopore (using the same pore in cDNA sequencing), motor speed, and bioinformatics tools.\cite{Garalde2018}
-%GGC repeat expansion in the 5'UTR of \textit{NOTCH2NLC} \cite{Sone2019, Deng2019}
-
+%GGC repeat expansion in the 5'UTR of \textit{NOTCH2NLC} \cite{Sone2019, Deng2019};Reyes2021 genomic sequencing with oxford nanopore for repeats in other neurodegenerative disorders
 %Identified \textit{ZCWPW1} loss of function variants located on risk haplotype (confirmed by ONT) driven by 3 splice site mutations at splice donor site, skipping event disuprint ORF, and premature stop codon\cite{Kucukali2021}
-%Reyes2021 genomic sequencing with oxford nanopore for repeats in other neurodegenerative disorders
 %Studies using long-read sequencing of human transcriptome have revealed differences in poly(A) length distribution between genes, and even between isoforms of the same gene  with protein-coding isoforms having shorter poly-A tails than intron-retaining isoforms (\cite{Workman2019a}. This is line with studies showing that hyperadenylation targets intron-retaining transcripts for degradation (\cite{Bresson2015})
 
 
@@ -435,20 +426,7 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 	\label{fig:longread_benefits}
 \end{figure}	
 
-
-
-\begin{changemargin}{1.5cm}
-	\begin{landscape}
-	\begin{figure}[]
-		\hspace*{2cm}\includegraphics[page=1,trim={0 5.5cm 1.8cm 0},clip, scale = 0.8]{Introduction_Figures_Landscape.pdf}
-		\captionsetup{margin={2cm,0cm}}
-		\caption[Timeline of long read sequencing technology \& approaches]%
-		{\textbf{Significant advances in long read sequencing technology \& approaches}: Major breakthroughs in long-read sequencing approaches of isoforms using Pacific Bioscience's (PacBio) Single molecule real-time sequencing (SMRT) (boxed blue) and Oxford Nanopore sequencing (ONT, boxed orange) are highlighted. Release of respective technologies are also marked }
-		\label{fig:longread_timeline}
-	\end{figure}
-	\end{landscape}
-
-	
+\begin{changemargin}{1.5cm}	
 	%\captionsetup{width=30cm}
 	\begin{landscape}
 		\small %smaller font
@@ -499,11 +477,6 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem Complementary to Treutlein et al.(2014) with deeper sequencing coverage of \textit{Nrxn}; detection of 1,364 isoforms\\
 			\hdashline[0.5pt/5pt]
 			
-			\centering Karlsson \& Linnarsson (2017)\cite{Karlsson2017} &
-			\centering Mouse single cels (n = 6)  &
-			\tabitem High isoform diveristy observed within single-cell oligodendrocytes with \textasciitilde1000 distinct isoforms mapped to 700 genes with low overlap between cells, predominatly driven by alterantive TSS and TSS \\
-			\hdashline[0.5pt/5pt]	
-			
 			\centering Tseng et al. (2017) \cite{Tseng2017} &
 			\centering Human cerebellum \newline (3 carriers, 3 controls)  &
 			\tabitem Targeted sequencing of \textit{FMR1} in premutation carriers at risk of fragile X syndrome identifid 49 isoforms, with increased expression of novel truncated isoforms in premutation group \\
@@ -514,11 +487,6 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem NA \\
 			\hdashline[0.5pt/5pt]	
 			
-			\centering Gupta et al.(2018) \cite{Gupta2018} &
-			\centering Mouse cerebellum (n = 1)  &
-			\tabitem Long-read sequencing of >5000 single cells (microglia, astrocytes, neurons) after isolation \& barcoding \newline 
-			\tabitem Identified cell-specific \textit{Bin1} isoforms with skipping of A1 and A2-A6 alternative exons (separated by constitutive exons) in all microglia, some astrocytes but not in neuronal cell-types, indicating cell-specific ES coordination \\
-			\hdashline[0.5pt/5pt]
 			
 			\centering Nattestad et al. (2018) \cite{Nattestad2018} &
 			\centering Breast cancer cell line  &
@@ -529,7 +497,7 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem Sequencing of \textit{MYBPC3} in HCM patients with ISS variant (E19-E20) detected abundant isoforms missing E20 \newline
 			\tabitem Novel isoforms identified from mutant allele (retained introns, extended \& cryptic exon, \& premature stop codons)  \\
 			\hdashline[0.5pt/5pt]	
-	
+			
 			\centering Flaherty et al. (2019) \cite{Flaherty2019} &
 			\centering hiPSCs \newline (4 Psychosis, 4 Controls)  &
 			\tabitem Patient-derived hiPSC-neurons (psychosis-diagnosed individuas with rare \textit{NRXN1} heterozygous deletions) displayed aberrant \textit{NRXN1} isoform expression, with downregulation of \textit{NRXN1$\alpha$} owing to reduced abundance of WT isoforms and expression of 31 novel, mutant isoforms with reduced neuronal activity  \\
@@ -546,16 +514,16 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem Canonical \textit{SNCA} isoform was most abundant with isoforms containing all 6 exons accounting for 95\% of abundance\\
 			\hdashline[0.5pt/5pt]
 			
-			\centering Mays et al. (2019) \cite{Dougherty2018} &
+			\centering Mays et al. (2019)\cite{DeslattesMays2019} &
 			\centering Human brain marrow cells  &
 			\tabitem  \\
 			\hdashline[0.5pt/5pt]
 			
-			\centering Lian et al. (2019) \cite{Dougherty2018} &
+			\centering Lian et al. (2019) \cite{Lian2019} &
 			\centering Breast cancer cell line &
 			\tabitem Downregulation of novel isoform in \textit{BAK1} in paclitaxel-resistant cells as target of chemotherapy resistance \\
 			\hdashline[0.5pt/5pt]
-				
+			
 			\centering Joglekar et al. 2021 \cite{Joglekar2021} &
 			\centering NA &
 			\tabitem NA \\
@@ -566,7 +534,7 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem Cell-line cancer specific novel isoforms with functional implications (i.e. \textit{CD44} with novel domain) \newline
 			\tabitem Widespread use of alternative promoters (represented by AF) validated by mass-spectrometry data, which is upregulated in GC of known oncogenes; novel promoters predicted to disrupt signal peptide sequence essential for cell localisation   \\* \bottomrule
 		\end{longtable}
-
+		
 		\begin{longtable}[c]{p{4cm}p{4cm}p{18cm}}
 			\caption[Long-read sequencing using Oxford Nanopore sequencing]%		
 			{\textbf{Long-read sequencing using Oxford Nanopore sequencing} All studies were performed with using ONT MinION unless otherwise stated. ES - Exon skipping, IR - intron retention; lncRNA; NIID - Neuronal intranuclear inclusion disease; NSCLC - non-small cell lung cancer; PTC - premature termination codon;PFC - prefrontal cortex,primary visual cortex (VCx); SZ; SupCol- superior colliculus }
@@ -589,12 +557,6 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\centering Drosophila &
 			\tabitem First paper to use ONT MinION to characterise exon connectivity; identifying 7,900 full-length isoforms from targeted sequencing of \textit{Dscam, MRP, Mhc} and \textit{Rdl}  \\
 			\hdashline[0.5pt/5pt]
-
-			\centering Byrne et al. (2017)\cite{Byrne2017} &
-			\centering Mouse single B1a cells (n = 7) &
-			\tabitem Identified thousands of novel TSS and TTS (within 20bp bins due to lower error rate) \& hundreds of splicing events \newline
-			\tabitem 160 genes with complex isoforms, 55 of which showed differential isoform usage (including B cell receptors) \\
-			\hdashline[0.5pt/5pt]
 			
 			\centering DeRoeck et al. (2017)\cite{DeRoeck2017}  &
 			\centering Human cortex, blood, lymphocytes (7 EOAD) &
@@ -612,40 +574,11 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\tabitem NA \\
 			\hdashline[0.5pt/5pt]
 			
-			\centering Volden et al. (2018) \cite{Volden2018} &
-			\centering Human single B cells (n = 96 from 1 donor) &
-			\tabitem Circularising input cDNA and generating a CCS read (R2C2) significantly improved raw (316,000 cDNA reads at 94\% accuracy) and splice site accuracy (92\% vs ONT 1D raw reads at 80\%, Iso-Seq CCS reads at 97\%, based on SIRVs) \newline 
-			\tabitem Ability to accurately demultiplex reads based on 7-8nt barcodes enabling mass sequencing of singple cells with accurate gene quantification (strongly correlated with RNA-Seq, r = 0.79) and identification of cell-specific isoforms \\
-
-			\centering Garalde et al. (2018) \cite{Garalde2018} &
-			\centering Yeast \newline ERCC RNA-Spike in mix &
-			\tabitem Direct RNA Sequencing of yeast poly(A) RNA achieved good coverage (2.8M reads vs 5.7M reads using ONT cDNA) with negligible effect on transcript length and GC content \newline 
-			\tabitem Accurately identification of splice variants with no missing or novel exons from spike-in, and able to rudimentally discrimate RNA modification (m\textsuperscript{6}A, 5-mC) using trained datasets  \\
-			\hdashline[0.5pt/5pt]
-			
-			\centering Workman et al. (2019) \cite{Workman2019a} &
-			\centering Huamn B lymphocyte cell line (n = 30) &
-			\tabitem Direct RNA-Sequencing of human cell line documented a high proportion (52.6\%) of novel isoforms \newline
-			\tabitem High error rate (14\%) \& signficant 5'truncation due to technical issues (rapid translocation through pore, signal artefacts from enzyme stalling or strand breaks), making it difficult to ascertain TSS \newline
-			\tabitem Differences in poly(A) length distribution between mitochondrial and nuclear genes, and between different isoforms of the same gene (increase in polyA tail-lengths of intron-retaining isoforms) \\
-			\hdashline[0.5pt/5pt]
-						
 			\centering Hardwick et al. (2019) \cite{Hardwick2019a} &
 			\centering Human PFC, VCx, \newline caudate, SupCol (n = 3)  &
 			\tabitem Targeted sequencing of GWAS neuropsychiatric-associated haplotype blocks containing non-coding SNPs identifed 107 novel intergenic transcripts (novel genes) classed as putative lncRNAs \newline 
 			\tabitem Detected novel splicing events of known neuropsychiatric-associated genes (i.e. novel TSS of \textit{NRGN} 20kb upstream of annotated TSS resulting in novel introns overlapping SZ-associated SNP)  \\
 			\hdashline[0.5pt/5pt]
-			
-			\centering Sessegolo et al. (2019) \cite{Sessegolo2019} &
-			\centering Mouse brain \& liver \newline(n = 3) &
-			\tabitem Benchmark study of Illumina RNA-Seq, ONT cDNA-Seq with/without 5'cap, \& ONT Direct RNA-Seq. \newline
-			\tabitem Biased ONT cDNA-Seq of truncated transcripts with internal runs of poly(T) (15nt) due to cDNA synthesis; ONT RNA-Seq most accurately quantified gene expression using spike-in, followed by RNA-Seq, cDNA-Seq  \\
-			\hdashline[0.5pt/5pt]
-			
-			\centering Singh et al. (2019) \cite{Singh2019} &
-			\centering Human T- \& B-cell lines \newline Tumour \& paired lymph node (n = 1)  &
-			\tabitem Novel sequencing method (RAGE-Seq) combininig droplet-based scRNA-Seq with target capture ONT cDNA-Seq \newline 
-			\tabitem Able to differentiate naive and mature B cells, and subpopulation by accurate identification of antigen receptor; track clonally related cells across tissues revealing cell-specific expression changes between tumour \& lymph node \\
 			
 			\centering Clark et al.(2019) \cite{Clark2019} &
 			\centering Human brain tissues \newline (7 regions) (n = 3) &
@@ -679,10 +612,9 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 			\centering Oka et al. 2021 \cite{Oka2021} &
 			\centering Human NSCLC lines &
 			\tabitem Identified 2021 novel isoforms (validated with mass-spec) \& a significant proportion (30\%) predicted for NMD \\* \bottomrule
-\end{longtable}
-\end{landscape}
+		\end{longtable}
+	\end{landscape}
 \end{changemargin}
-
 %Anvar2018
 
 %https://www.proquest.com/docview/2459613726?pq-origsite=gscholar&fromopenview=true
@@ -693,14 +625,114 @@ With significantly lower raw accuracy than RNA-Seq (ranging from 10-20\%), initi
 %Long-read targeted sequencing uncovers clinicopathological associations for C9orf72-linked diseases
 %NanoSatellite: Accurate characterization of expanded tandem repeat length and sequence through whole genome long-read sequencing on PromethION
 
-\boldheader{Leveraging long-reads for isoform annotation}
-Significant advances have been made in the realm of long read sequencing of isoforms (\cref{fig:longread_benefits}).
+\boldheader{Advances in single cell and direct RNA sequencing}
+During my PhD, significant technological advances have been made in the realm of long read sequencing of isoforms (outlined in \cref{fig:longread_benefits} and reviewed in \cref{tab: longread_advancedstudies}), predominantly in the unprecendeted ability to perform sequencing at a single-cell level (scRNA-Seq) using microfluidic or droplet-based technology, and sequencing of native RNA molecules (rather than cDNA) using nanopore sequencing (Direct RNA-Seq). Both sequencing approaches address limitations of current transcriptome profiling: expression analysis at the resolution of individual "single" cells allow identification of cell-specific changes that would have otherwise been masked and averaged across in "bulk" tissue studies, whereas sequencing of direct RNA molecule eliminates risk of generating artefacts from library preparation and more importantly, allows elucidation of RNA epigenetic modifications.   
 
 
+%% Single cells in AD; 
+%https://www.nature.com/articles/s41593-019-0539-4
+%https://www.nature.com/articles/s41593-020-00764-7
+%% Long read studies with Single cell and Direct RNA
+%Importance of single cell approaches highlighted in \cite{Karlsson2017} with few isoforms shared between cells (7\% of all detected isoforms shared between all cell-types, though this increased to 60\% for exon-cassette isoforms). 
+% Multiple advantages to be able to sequence direct-RNA, and paper illustrates the potential to do this, however still require many optimisation with regards to nanopore (using the same pore in cDNA sequencing), motor speed, and bioinformatics tools.\cite{Garalde2018}
+%Single-cell studies have highlighted the difference in transcriptome diversity at a single cell level, with small overlap of isoforms between cells (\cite{Karlsson2017}). Previous methods on quantifying transcripts at a single cell level have relied on RNA-fluorescence in-situ Hybridisation (RNA-FISH), which is limited in terms of throughput and characterisation of complex splicing events (\cite{Byrne2017})
+
+%% Challenges with single cells and Direct RNA
+%https://www.nature.com/collections/sxnwgntqsk?utm_source=sn&utm_medium=referral&utm_content=RMarketing&utm_campaign=SRBM_USG_YM01_GL_LSGR_Gene_LP
+
+
+
+\begin{changemargin}{1.5cm}
+	\begin{landscape}
+		\begin{figure}[]
+			\includegraphics[page=1,trim={0 4cm 1.8cm 2cm},clip, scale = 0.8]{Introduction_Figures_Landscape.pdf}
+			\captionsetup{margin={2cm,0cm}}
+			\caption[Timeline of long read sequencing technology \& approaches]%
+			{\textbf{Significant advances in long read sequencing technology \& approaches}: Major breakthroughs in long-read sequencing approaches of isoforms using Pacific Bioscience's (PacBio) Single molecule real-time sequencing (SMRT) (boxed blue) and Oxford Nanopore sequencing (ONT, boxed orange) are highlighted. Release of respective technologies are also marked }
+			\label{fig:longread_timeline}
+		\end{figure}
+	\end{landscape}
+	
+	
+	%\captionsetup{width=30cm}
+	\begin{landscape}
+		\small %smaller font
+		\setlength\tabcolsep{2pt} %reduced margin size in table
+		\renewcommand{\arraystretch}{1}
+		\begin{longtable}[c]{p{4cm}p{4cm}p{18cm}}
+			\caption[Long-read sequencing studies of single cells or direct RNA]%		
+			{\textbf{Long-read sequencing studies of single cells or direct RNA}}
+			\label{tab: longread_advancedstudies}\\
+			
+			\toprule
+			\multicolumn{1}{c}{References} &
+			\multicolumn{1}{c}{Samples and Tissue} &
+			\multicolumn{1}{c}{Key Findings} \\* \midrule
+			\endfirsthead
+			%
+			\endhead
+			%
+			\bottomrule
+			\endfoot
+			%
+			\endlastfoot
+			%								
+			\centering Karlsson \& Linnarsson (2017)\cite{Karlsson2017} &
+			\centering Mouse single cels (n = 6)  &
+			\tabitem High isoform diveristy observed within single-cell oligodendrocytes with \textasciitilde1000 distinct isoforms mapped to 700 genes with low overlap between cells, predominatly driven by alterantive TSS and TSS \\
+			\hdashline[0.5pt/5pt]	
+			
+			\centering Gupta et al.(2018) \cite{Gupta2018} &
+			\centering Mouse cerebellum (n = 1)  &
+			\tabitem Long-read sequencing of >5000 single cells (microglia, astrocytes, neurons) after isolation \& barcoding \newline 
+			\tabitem Identified cell-specific \textit{Bin1} isoforms with skipping of A1 and A2-A6 alternative exons (separated by constitutive exons) in all microglia, some astrocytes but not in neuronal cell-types, indicating cell-specific ES coordination \\
+			\hdashline[0.5pt/5pt]			
+			
+			\centering Byrne et al. (2017)\cite{Byrne2017} &
+			\centering Mouse single B1a cells (n = 7) &
+			\tabitem Identified thousands of novel TSS and TTS (within 20bp bins due to lower error rate) \& hundreds of splicing events \newline
+			\tabitem 160 genes with complex isoforms, 55 of which showed differential isoform usage (including B cell receptors) \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering Volden et al. (2018) \cite{Volden2018} &
+			\centering Human single B cells (n = 96 from 1 donor) &
+			\tabitem Circularising input cDNA and generating a CCS read (R2C2) significantly improved raw (316,000 cDNA reads at 94\% accuracy) and splice site accuracy (92\% vs ONT 1D raw reads at 80\%, Iso-Seq CCS reads at 97\%, based on SIRVs) \newline 
+			\tabitem Ability to accurately demultiplex reads based on 7-8nt barcodes enabling mass sequencing of singple cells with accurate gene quantification (strongly correlated with RNA-Seq, r = 0.79) and identification of cell-specific isoforms \\
+			
+			\centering Garalde et al. (2018) \cite{Garalde2018} &
+			\centering Yeast \newline ERCC RNA-Spike in mix &
+			\tabitem Direct RNA Sequencing of yeast poly(A) RNA achieved good coverage (2.8M reads vs 5.7M reads using ONT cDNA) with negligible effect on transcript length and GC content \newline 
+			\tabitem Accurately identification of splice variants with no missing or novel exons from spike-in, and able to rudimentally discrimate RNA modification (m\textsuperscript{6}A, 5-mC) using trained datasets  \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering Workman et al. (2019) \cite{Workman2019a} &
+			\centering Huamn B lymphocyte cell line (n = 30) &
+			\tabitem Direct RNA-Sequencing of human cell line documented a high proportion (52.6\%) of novel isoforms \newline
+			\tabitem High error rate (14\%) \& signficant 5'truncation due to technical issues (rapid translocation through pore, signal artefacts from enzyme stalling or strand breaks), making it difficult to ascertain TSS \newline
+			\tabitem Differences in poly(A) length distribution between mitochondrial and nuclear genes, and between different isoforms of the same gene (increase in polyA tail-lengths of intron-retaining isoforms) \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering Sessegolo et al. (2019) \cite{Sessegolo2019} &
+			\centering Mouse brain \& liver \newline(n = 3) &
+			\tabitem Benchmark study of Illumina RNA-Seq, ONT cDNA-Seq with/without 5'cap, \& ONT Direct RNA-Seq. \newline
+			\tabitem Biased ONT cDNA-Seq of truncated transcripts with internal runs of poly(T) (15nt) due to cDNA synthesis; ONT RNA-Seq most accurately quantified gene expression using spike-in, followed by RNA-Seq, cDNA-Seq  \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering Singh et al. (2019) \cite{Singh2019} &
+			\centering Human T- \& B-cell lines \newline Tumour \& paired lymph node (n = 1)  &
+			\tabitem Novel sequencing method (RAGE-Seq) combininig droplet-based scRNA-Seq with target capture ONT cDNA-Seq \newline 
+			\tabitem Able to differentiate naive and mature B cells, and subpopulation by accurate identification of antigen receptor; track clonally related cells across tissues revealing cell-specific expression changes between tumour \& lymph node \\
+			
+			\centering Joglekar et al. 2021 \cite{Joglekar2021} &
+			\centering NA &
+			\tabitem NA \\* \bottomrule
+		\end{longtable}
+	\end{landscape}
+\end{changemargin}
 
 \clearpage
 \section{Modelling AD: Mouse Models}
-While profiling human post-mortem brain tissues remains the gold standard for studying AD pathogenesis, there are various confounding secondary factors (environmental exposures such as diet, medication) and technical difficulties (agonal state impacting RNA quality) to consider. In comparison, use of mouse models can be tightly controlled by their living conditions, their age and pathology to focus and follow specific pathology progression. As such, mouse models act as a valuable reductionist tool to dissect and understand the processes that drive AD onset and progression, identify biomarkers and validate novel targets\cite{Hall2012}. 
+While profiling human post-mortem brain tissues remains the gold standard for studying AD pathogenesis, there are various confounding secondary factors (environmental exposures such as diet, medication) and technical difficulties (agonal state and post-mortem interval impacting RNA quality and splicing) to consider. In comparison, use of mouse models can be tightly controlled by their living conditions, their age and pathology to focus and follow specific pathology progression. As such, mouse models act as a valuable reductionist tool to dissect and understand the processes that drive AD onset and progression, identify biomarkers and validate novel targets\cite{Hall2012}. 
 
 To study different aspects of pathology, a number of AD mouse models have been developed with mutations that either result in amyloidopathy (formation of A$\beta$ plaques) or tauopathy (NFT) (\cref{tab:mouse_models}). Amloidopathy is typically developed through insertion and overexpression of human \textit{APP}, either alone or in combination with \textit{PSEN1}, whereas tauopathy is recapitulated by overexpressing human \textit{MAPT} with FTD-associated mutations (given no causative \textit{MAPT} mutations have been identified in AD)
 
@@ -759,7 +791,7 @@ Since my PhD, there have been efforts to generate mouse models that more closely
 		\renewcommand{\arraystretch}{1.2}
 		\begin{longtable}[c]{p{3cm}p{4cm}p{3cm}p{16cm}}
 			\captionsetup{width=1.6\textwidth}
-			\caption{Transcriptomic and proteomic studies in AD human post-mortem brain tissues and mouse models in revealing missplicing as a widespead hallmark of AD. AS - Alternative Splicing, RBP - RNA binding protein, TSS - Transcription Start Site}\\
+			\caption{\textbf{Transcriptomic and proteomic studies in AD mouse models}. AS - Alternative Splicing, RBP - RNA binding protein, TSS - Transcription Start Site}\\
 			\toprule
 			\multicolumn{1}{c}{References} &
 			\multicolumn{1}{c}{Samples and Tissue} &
@@ -777,7 +809,7 @@ Since my PhD, there have been efforts to generate mouse models that more closely
 	
 			\centering Maziuk2018 et al. (2018)\cite{Maziuk2018} &
 			\centering rTg4510 mouse model (8 TG, 8 WT) (2 - 8 months) \newline Frontal cortex&
-			\centering Immunohistochemistry &
+			\centering Immuno-\newline histochemistry &
 			Majority of (65\%) of RNA binding proteins showed decreased tau association, with the exception of EWSR1, TAF15 and hnRNPA0 that form soluble aggregates with progressive tau pathology. RBPs colocalised with phosorylated-tau but not mature NFT in rTg4510 \\
 			
 			\centering Apicco et al. (2019) \cite{Apicco2019} &
@@ -790,46 +822,42 @@ Since my PhD, there have been efforts to generate mouse models that more closely
 
 \newpage
 \section{Aims and Objectives}
-\begin{enumerate}
-	\item Whole transcriptome analysis of AD post-mortem brain tissues as reference dataset, shed light on differential isoform expression
-	\item Particular interest on 19 loci identified from meta-analysis of GWAS studies on AD (Lambert et al. 2013) Targeted transcriptome analysis  
-	\item Classification of AS events, which most commonly observed/dominant? Isoforms derived from transcriptional regulation (alternative promoters) vs post-transcriptional regulation? 
-	\item Impact of AS events on protein domains. Non-sense mediated decay? 
-	\item Integration with other (epi)genetic analysis on same samples, i.e. DNA methylation, lysine acetylation, gene expression 
-	\item Protein analysis? Integration with any publicly available mass-spec datasets 
-\end{enumerate}
+An increasing number of studies implicate a role of alternative splicing in AD disease development and pathogenesis (reviewed in \cref{tab: AS_ADHuman_studies}). However, such transcriptional profiling studies are typically performed using standard short-read RNA-Sequencing, which is inherently-constrained at transcript assembly and subsequent isoform characterisation essential for splicing analysis (described in \cref{rnaseq_intro}). My PhD thus aims to overcome these challenges by leveraging the use of long-read sequencing to accurately characterise isoform diversity and splicing patterns associated with Alzheimer's disease (\cref{fig:studydesign})
+  
+%Further limitations of RNA-Seq studies
 %By identifying and characterising such alternative splicing events, there is hope of deepening current understanding of the biological role of transform isoform diversity and in the case of AD, identify novel pathways involved in pathogenesis of disease as potential target treatments. 
 
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[page=3,trim={2cm 35cm 0 2cm},clip,scale = 0.55]{Introduction_Figures.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Mouse samples for Whole and Targeted Transcriptome Iso-Seq]%
-	{\textbf{Mouse samples for Whole and Targeted Transcriptome Iso-Seq}.}
-	\label{fig:samples}
-\end{figure} 
+\textbf{Hypothesis}: Transcriptomic dysregulation plays a fundamental role in development of AD pathology. This includes alterations in gene splicing, which results in differential and novel expression of transcripts that are translated to generate isoforms with functional biological implications. 
 
-Gene expression and mRNA isoforms vary widely across tissues (\cite{Wang2008}), thus sequencing the disease-relevant tissue (in this case entorhinal cortex) is important for understanding the pathology of AD. However, it is consequently important to note that other tissues may have to be considered to fully grasp the whole picture of AD development. 
+\textbf{Main Objectives}:
 
-While human post-mortem brain tissues remain to be the gold standard for transcriptomic studies, important to highlight that post-mortem interval and storage conditions of brain material highly influence transcriptome stability, particularly affecting alternative splicing. Furthermore changes in gene/transcript expression can be due to differences in cellular composition (i.e. neuronal loss/reactive gliosis) rather than indicative of disease-associated transcriptional regulation. 
-
-\section{Future Directions}
-At the time of writing, there have been other major advances in the field have unfortunately not be explored. This include, single cell transcriptomics and Direct RNA-Sequencing. As most studies are performed on bulk-tissues, it is unclear whether this is a consequence of multiple isoforms in one single cell or from multiple isoforms from multiple single cells. Analysis of mRNA expression at the resolution of individual, "single", cells, allowing representation of cell-to-cell variation rather than taking the stochastic average from bulk measurements, and thereby resolving heterogeneity. This is currently achieved by the capture and analysis of single cells using a microfluidic or droplet-based technology. Importance of single cell approaches highlighted in \cite{Karlsson2017} with few isoforms shared between cells (7\% of all detected isoforms shared between all cell-types, though this increased to 60\% for exon-cassette isoforms). 
-
-To date, Direct RNA sequencing of the native RNA molecules rather than the cDNA is only possible on the ONT. This approach offers several benefits over standard cDNA sequencing, in i) eliminating the risk of generating library artefacts from reverse transcription and PCR, ii) removing length bias toward shorter abundant fragments that could skew the population of transcripts, and finally iii) elucidation of RNA epigenetic modifications. 
-
-%https://www.nature.com/collections/sxnwgntqsk?utm_source=sn&utm_medium=referral&utm_content=RMarketing&utm_campaign=SRBM_USG_YM01_GL_LSGR_Gene_LP
-%https://www.biorxiv.org/content/10.1101/2020.12.07.414060v1
-%https://www.nature.com/articles/s41467-020-18976-7
-%https://www.nature.com/articles/s41593-019-0539-4
-Single-cell studies have highlighted the difference in transcriptome diversity at a single cell level, with small overlap of isoforms between cells (\cite{Karlsson2017}). Previous methods on quantifying transcripts at a single cell level have relied on RNA-fluorescence in-situ Hybridisation (RNA-FISH), which is limited in terms of throughput and characterisation of complex splicing events (\cite{Byrne2017})
-
-While the methods I have adopted for long-read sequencing in this thesis allows interrogation of full-length transcripts, this is reliant on the generation and amplification of cDNA from mRNA, which can produce artefacts (template switching), introduce bias (distortion of relative cDNA abundance) and lose RNA modifications. In 2018, ONT showed that it was able to sequence RNA directly using the minION by adding poly(T) adapters directly to the mRNA, with a translocase that was able to bind and process RNA efficiently	 \cite{Garalde2018}, achieving coverage and accuracy comparable to that with ONT-cDNA method. 
-
-% https://www.nature.com/articles/s41598-021-85801-6
+\begin{enumerate}
+	\item Optimise long-read sequencing approaches, PacBio's Iso-Seq and ONT cDNA sequencing, for profilling of full-length transcripts (\cref{ch: long_read_sequencing}) 
+	\item Characterise isoform diversity and splicing events in mouse cortex globally using optimised long-read sequencing approaches (\cref{ch: whole_transcriptome}) 
+	\item Identify global,age-related transcriptional and splicing changes associated with progression of tau pathology using well-characterised AD mouse model, rTg4510 (\cref{ch: transcriptional_global_differences})
+	\item Comprehensively characterise isoform diversity and splicing events of 20 AD-associated genes, and changes in transcript expression associated with tau pathology in rTg4510 mice (\cref{ch: targeted_transcriptome})
+	\item Identify AD-associated differential splicing and transcript expression in human post-mortem brain tissue and relate findings to those identified in mouse (\cref{ch: BDR})
+	\item Integrate transcriptomic analyses with epigenetic (\cref{ch: targeted_transcriptome}) and proteomic data (\cref{ch: BDR}), available from the same samples
+\end{enumerate}
+% Integrative Papers
 % https://www.nature.com/articles/s41588-020-00773-z importance of linking genomics with proteomics
 % https://www.nature.com/articles/s41591-020-0815-6 - more proteomics
-% https://www.nature.com/articles/s41593-020-00764-7
+% https://www.nature.com/articles/s41588-020-0696-0 - epigenetics
 
-%Epigenetics: https://www.nature.com/articles/s41588-020-0696-0
+
+\begin{landscape}
+	\begin{figure}[htb]
+		\begin{center}
+			\includegraphics[page=2,trim={0 0 0 0},clip,scale = 0.7]{Introduction_Figures_Landscape.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Study design and analysis overview]%
+		{\textbf{Study design and analysis overview}. To identify transcriptional and splicing changes associated with AD pathology, this thesis aims to characterise isoform diversity and splicing events at a global and targeted level from the rTg4510 mouse model and AD human post-mortem brain tissues. ONT - Oxford Nanopore Technology, PacBio Iso-Seq - Pacific Bioscience's Isoform Sequencing}
+		\label{fig:studydesign}
+	\end{figure} 	
+\end{landscape}
+
+
+
+
+
