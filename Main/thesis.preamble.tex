@@ -2,6 +2,8 @@
 \newcommand{\boldheader}[1]{\vspace{0.5cm}\textbf{#1}\mbox{}\\} % bold header titles and space before and after
 \newcommand{\underlineheader}[1]{\vspace{0.5cm}\underline{#1}\mbox{}\\} % bold header titles and space before and after
 \newcommand*\conj[1]{\bar{#1}}
+\newenvironment{changemargin}[1]{\begin{list}{}{\setlength{\voffset}{#1}}\item[]}{\end{list}} %change margin for long table intro
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
 \usepackage{graphicx}
 \usepackage{verbatim}
@@ -17,8 +19,6 @@
 \usepackage{etoolbox} % https://tex.stackexchange.com/questions/384514/make-subsection-visible-in-local-toc-only-not-in-main-toc
 \usepackage[titletoc,page, title, header]{appendix}
 \usepackage{enumitem} % enumerate, itemize formatting
-\AtBeginEnvironment{appendix}{\etocsettocdepth.toc{section}\etocignoretoctocdepth
-	\etocsetnexttocdepth{subsection}}
 %\immediate\write18{makeindex \Knit.nlo -s nomencl.ist -o Knit.nls} 
 \usepackage{nomencl} %list of abbreviations
 \makenomenclature
@@ -30,11 +30,10 @@
 \usepackage{subcaption} % multiple figures 
 \usepackage[dvipsnames,table]{xcolor} % colour text
 \usepackage{libertine} % space between text on same line
-\usepackage{longtable} % longtables overflow into next page
 \usepackage{amsmath} % maths equation alignment 
 \usepackage[euler]{textgreek} % greek letters
 \usepackage{tikz} %tick mark
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage{pdfpages} % import pdf s
 \usepackage{pdflscape} %landscape pdf
 
 %% Bibliography
@@ -42,14 +41,24 @@
 %\usepackage[round]{natbib} % referecing style with ()
 %\bibliographystyle{plainnat} % bioligraophy 
 
-\usepackage{pdfpages} % import pdf 
+\AtBeginEnvironment{appendix}{\etocsettocdepth.toc{section}\etocignoretoctocdepth
+	\etocsetnexttocdepth{subsection}}
+
 % tables and landscape
+\captionsetup[table]{width=16cm}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{lscape}
 \usepackage{todonotes} %todonotes
-\captionsetup[table]{width=16cm}
+\usepackage{longtable} % longtables overflow into next page
+\usepackage{array} %table
+\usepackage{tablefootnote} %tablefoonote
+\usepackage{threeparttable} %table
+\usepackage{arydshln} %dash line
+\setlength{\LTcapwidth}{10.2in} %width of long table caption
+\newcommand{\tabitem}{\textbullet~~}
 
+\usepackage{notoccite}
 \usepackage{hyperref} %hyperlinks
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
@@ -58,7 +67,6 @@
 	citecolor=black,
 	urlcolor=black
 }
-
 
 \usepackage[capitalize, nameinlink]{cleveref}
 \crefdefaultlabelformat{#2\textbf{#1}#3} % <-- Only #1 in \textbf
@@ -79,8 +87,6 @@
 \lstset{style=mystyle}
 
 \newcommand{\spacetable}{\vspace{3cm}} % function for "\spacetable"
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
 \newcommand{\ipc}{{\sf ipc}}
 
 \DeclareCaptionType{myequation}[][List of equations] %equations
