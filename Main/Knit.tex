@@ -16,6 +16,8 @@
 \setlist[itemize]{noitemsep, topsep=-12pt} % space before itemise and paragraph
 \setlist[enumerate]{noitemsep, topsep=-12pt} % space before itemise and paragraph
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -28,60 +30,61 @@
 
 \normallinespacing
 \maketitle
+\pagestyle{plain} % page numbering
 
 \chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 Abstract goes here
 
-\chapter*{Dedication}
-To mum and dad
-
-\chapter*{Acknowledgements}
+\chapter*{Acknowledgements \& Dedication}
 I want to thank...
-
-\chapter*{Declarations}
-\subfile{../Additional/Declarations.tex}
-
 
 \newpage
 \tableofcontents
 
 \newpage
 \listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
 
 \newpage
 \listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
 
 \newpage
 \listofmyequations
+\addcontentsline{toc}{chapter}{List of Equations}
+
+\chapter*{Declarations}
+\subfile{../Additional/Declarations.tex}
 
 \newpage
 \renewcommand{\nomname}{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
 \printnomenclature 
-
 
 \chapter{Introduction}
 \subfile{../General_Introduction/General_Introduction.tex}
 
-\chapter{Long-read Sequencing}
-%\subfile{../Project_Development/IsoSeq.tex}
-%\subfile{../Project_Development/IsoSeq_Lab.tex}
-%\subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
-%\subfile{../Project_Development/IsoSeq_Optimisation.tex}
-%\subfile{../Project_Development/Oxford_Nanopore.tex}
-%\subfile{../Project_Development/ONT_Lab.tex}
-%\subfile{../Project_Development/ONT_Bioinformatics.tex}
+\chapter{Long-read Sequencing}\label{ch: long_read_sequencing}
+\subfile{../Project_Development/IsoSeq.tex}
+\subfile{../Project_Development/IsoSeq_Lab.tex}
+\subfile{../Project_Development/IsoSeq_Bioinformatics.tex}
+\subfile{../Project_Development/IsoSeq_Optimisation.tex}
+\subfile{../Project_Development/Oxford_Nanopore.tex}
+\subfile{../Project_Development/ONT_Lab.tex}
+\subfile{../Project_Development/ONT_Bioinformatics.tex}
 
-\chapter{Whole Transcriptome}
-%\subfile{../Whole_Transcriptome/Whole_Transcriptome.tex}
+\chapter{Whole Transcriptome}\label{ch: whole_transcriptome}
+\subfile{../Whole_Transcriptome/Whole_Transcriptome.tex}
 
-\chapter{Targeted Transcriptome}
-%\subfile{../Targeted_Transcriptome/Targeted_Transcriptome.tex}
+\chapter{Transcriptional differences between WT and TG mice}\label{ch: transcriptional_global_differences}
+\subfile{../Tg4510_Differential/Tg4510_Differential.tex}
 
-\chapter{Transcriptional differences between WT and TG mice}
-%\subfile{../Tg4510_Differential/Tg4510_Differential.tex}
-%\input{chapters/chapter05}
 
-\chapter{BDR}
+\chapter{Targeted Transcriptome}\label{ch: targeted_transcriptome}
+\subfile{../Targeted_Transcriptome/Targeted_Transcriptome.tex}
+
+\chapter{BDR}\label{ch: BDR}
 \subfile{../ADBDR/ADBDR.tex}
 
 \chapter{Conclusion}
@@ -90,13 +93,13 @@ I want to thank...
 \newpage
 \part{Appendix} % Start the appendix part
 \begin{appendix}
-%\chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}
-%\subfile{../Project_Development/Isoseq_Protocol.tex}
-%\chapter{Oxford Nanopore Transcriptome Protocol}
-%\subfile{../Project_Development/ONT_Protocol.tex}
-%\chapter{cDNA Synthesis alternative approach}
+\chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}
+\subfile{../Project_Development/Isoseq_Protocol.tex}
+\chapter{Oxford Nanopore Transcriptome Protocol}
+\subfile{../Project_Development/ONT_Protocol.tex}
+\chapter{cDNA Synthesis alternative approach}
 \label{ch:alt_cDNA}
-%\subfile{../Project_Development/cDNA_Synthesis_Approaches.tex}
+\subfile{../Project_Development/cDNA_Synthesis_Approaches.tex}
 \end{appendix}
 
 \bibliographystyle{unsrt}
