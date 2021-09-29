@@ -1,10 +1,11 @@
 \documentclass[../Main/Knit.tex]{subfiles}
 \newpage
 
-\subsection{Lab Pipeline}
+\subsection{Lab Worflow}
 \label{chap:isoseq_labpipeline}
+This section specficially describes the lab workflow for the library preparation for PacBio Iso-Seq. All details relating to sample preparation, cDNA synthesis and amplification can be found in \cref{ch:general_methods}.
 
-The Iso-Seq lab protocol, as outlined in Figure \ref{fig:isoseq_wholelab_protocol}, involved three main steps by first converting total RNA transcripts to full-length complementary DNA (cDNA) using the Clontech SMARTer PCR cDNA synthesis kit, which was then subsequently amplified and purified to generate double-stranded cDNA, which was then constructed to a SMRT bell library for sequencing. Size selection was not performed with full-length transcript detection of up to 4 kB. For targeted sequencing using IDT probes, all the steps in the Iso-Seq protocol are the same with an additional step of target capture post ds-DNA amplification and pre SMRT bell library, and usage of barcodes to allow multiplexing (Figure \ref{fig:isoseq_targetedlab_protocol}). 
+The Iso-Seq lab protocol, as outlined in \cref{fig:isoseq_wholelab_protocol}, involved three main steps by i) converting total RNA transcripts to full-length cDNA using the Clontech SMARTer PCR cDNA synthesis kit, ii) amplification and purification of double-stranded cDNA, and iii) performing library preparation for long-read sequencing which involved constructing the SMRT bell library. Size selection was not performed with full-length transcript detection of up to 4 kB. For targeted transcriptome profiling with enrichment of target genes, all the steps in the workflow were the same with an additional step of target capture post ds-DNA amplification and pre-SMRT bell library, and usage of barcodes to allow multiplexing (\cref{fig:isoseq_targetedlab_protocol}). 
 
 \begingroup
 \parindent=0em
@@ -14,173 +15,54 @@ The Iso-Seq lab protocol, as outlined in Figure \ref{fig:isoseq_wholelab_protoco
 \endgroup
 
 \begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=1,trim={0 18cm 3cm 1cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
-	\end{center}
+	\includegraphics[page=1,trim={0 18cm 5cm 1cm},clip,scale = 0.6]{ProjectDevelopment_Figures}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Lab pipeline used for whole transcriptome sequencing]%
-	{\textbf{An overview of the lab Iso-Seq pipeline used for whole transcriptome profiling}. The lab pipeline, as adapted from official Iso-Seq protocol, involves three main steps: 1) reverse transcription and amplification of cDNA (Section \ref{section:ch2_cDNA_synthesis_explanation}), 2) cDNA purification with ampure beads (Section \ref{section:ch2_AMPure_explanation}) and 3) library preparation involving ligation of SMRT bell templates, and primer and polymerase binding (Section \ref{section:ch2_smrtbelltemplate_explanation})}
+	\caption[Iso-Seq Lab workflow used for whole transcriptome sequencing]%
+	{\textbf{An overview of the lab Iso-Seq workflow used for whole transcriptome profiling}. The lab workflow, as adapted from official Iso-Seq protocol, involves three main steps: 1) reverse transcription and amplification of cDNA ( \cref{section:ch2_cDNA_synthesis_explanation}), 2) cDNA purification with ampure beads ( \cref{section:ch2_AMPure_explanation}) and 3) library preparation involving ligation of SMRT bell templates, and primer and polymerase binding (\cref{section:ch2_smrtbelltemplate_explanation})}
 	\label{fig:isoseq_wholelab_protocol}
 \end{figure}
 
-\begin{figure}[htp]
+\begin{figure}[]
 	\begin{center}
-		\includegraphics[page=2,trim={1cm 18cm 2cm 1cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+		\includegraphics[page=2,trim={1cm 18cm 1cm 3cm},clip,scale = 0.45]{ProjectDevelopment_Figures}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Lab pipeline used for targeted transcriptome sequencing]%
-	{\textbf{An overview of the lab Iso-Seq pipeline used for whole transcriptome profiling}. The lab pipeline for targeted transcriptome profiling involves all the steps in the standard Iso-Seq lab pipeline (Figure \ref{fig:isoseq_wholelab_protocol}), with the addition of the target capture step (Boxed orange, Section \ref{section:ch2_targetcapture_explanation}) and the use of barcoded primers in reverse transcription (Boxed green and denoted here as Barcode 1 and Barcode n) to allow sample multiplexing (denoted here as Sample n, PacBio recommends 6-8 multiplexed samples per run). The list of barcodes can be found in Table \ref{tab:barcode_primers}}
+	\caption[Iso-Seq Lab workflow used for targeted transcriptome sequencing]%
+	{\textbf{An overview of the lab Iso-Seq pipeline used for targeted transcriptome profiling}. The lab workflow for targeted transcriptome profiling involves all the steps in the standard Iso-Seq lab workflow (Figure \ref{fig:isoseq_wholelab_protocol}), with the addition of the target capture step (Boxed orange, Section \ref{section:ch2_targetcapture_explanation}) and the use of barcoded primers in reverse transcription (Boxed green and denoted here as Barcode 1 and Barcode n) to allow sample multiplexing (denoted here as Sample n, PacBio recommends 6-8 multiplexed samples per run). The list of barcodes can be found in \cref{tab:barcode_primers}}
 	\label{fig:isoseq_targetedlab_protocol}
-\end{figure}
-
-\newpage
-\subsubsection{Complementary DNA synthesis}
-\label{section:ch2_cDNA_synthesis_explanation} 
-As part of the official Iso-Seq protocol, SMARTer PCR cDNA Synthesis Kit (Clontech) was used to convert 200ng extracted total RNA to complementary DNA by first strand cDNA synthesis, as outlined in Figure X. In brief, the polyA+ tails of RNA transcripts is first primed by a modified oligo (dT) primer, transcribed by SMARTScribe Reverse Transcriptase to generate a first single-stranded DNA, which is then diluted and subsequently amplified \cite{Ramskold2012}. All reagents were provided with the kit, except for the Pacific Bioscience’s barcodes, with all reagents and consumables used being sterile and DNAse and RNAse free. In order to sequence samples simultaneously (“multiplex”), as exploited for targeted sequencing, unique barcoded oligo (dT) primer was used in place of the standard oligo (dT) primer (Table \ref{tab:barcode_primers}). With new Sequel system, cDNA can be sequenced without size selection. 
-
-While this kit is advantageous in preferentially enriching for full-length cDNA sequences, as a template switching oligo is required to ensure complete reverse transcription, it cannot differentiate between intact and truncated RNA; which, present in poor-quality samples will be amplified as a potential source of contamination in the final cDNA library. One alternative is to exploit the 5’-cap that is present only in intact RNA and not truncated RNA (5-cap refers to the addition of 7-methylguanosine to the 5’-end of mRNA during transcription, to protect nascent mRNA from degradation and assist in protein translation). Alternative reverse transcriptase have been explored that only converts 5’capped mRNAs to cDNA, however, these have been found to negatively affect read length on the ONT platform (Cartolano et al. 2016). An alternative method, Full-Length cDNA Amplification (Teloprime), relies on a double-stranded adapter that recognises and ligates to the 5’cap at the end of first strand synthesis (Section X, Chapter 2)(\cite{Cartolano2016}). 
- 
-
-\begin{landscape}
-The general structure of barcoded oligo-dT primer is as follows:
-\\
-\\
-\hangindent=5cm \textcolor{RedOrange}{Primer Sequence} \hspace{2cm}   \textcolor{ForestGreen}{16-bp barcode}   \hspace{4cm} \textcolor{RoyalBlue}{oligo-dT}
-\begin{center}
-5'\textcolor{RedOrange}{AAGCAGTGGTATCAACGCAGAGTAC}\textcolor{ForestGreen}{tcagacgatgcgtcat}\textcolor{RoyalBlue}{TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN3’}
-\end{center}
-
-	
-\begin{table}[ht]
-	\begin{tabularx}{1.45\textwidth}{ll}
-		\toprule
-		Barcode Name & Sequence                                                                  \\ \midrule
-		Barcode 1    & AAGCAGTGGTATCAACGCAGAGTACCACATATCAGAGTGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 2    & AAGCAGTGGTATCAACGCAGAGTACACACACAGACTGTGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 3    & AAGCAGTGGTATCAACGCAGAGTACACACATCTCGTGAGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 4    & AAGCAGTGGTATCAACGCAGAGTACCACGCACACACGCGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 5    & AAGCAGTGGTATCAACGCAGAGTACCACTCGACTCTCGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 6    & AAGCAGTGGTATCAACGCAGAGTACCATATATATCAGCTGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 7    & AAGCAGTGGTATCAACGCAGAGTACTCTGTATCTCTATGTGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 8    & AAGCAGTGGTATCAACGCAGAGTACACAGTCGAGCGCTGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 9    & AAGCAGTGGTATCAACGCAGAGTACACACACGCGAGACAGATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
-		Barcode 10 & AAGCAGTGGTATCAACGCAGAGTACACGCGCTATCTCAGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\ \bottomrule
-	\end{tabularx}
-\captionsetup{justification=raggedright,width=1.5\textwidth}
-\caption[Barcoded Oligo-dT Primers for targeted transcriptome sequencing]%
-{\textbf{Barcoded oligo-dT primers were used for multiplexing samples in targeted transcriptome sequencing}. Each of the barcoded primers contain the same 5' primer sequence and oligo-dT for reverse transcription of first strand cDNA synthesis using Clontech kit SMARTer PCR cDNA Synthesis Kit. The different internal 16bp sequence allows tagging and differentiation of samples in the same sequencing run. The barcodes are recommended from official PacBio's multiplex protocol.}
-\label{tab:barcode_primers}
-\end{table}
-\end{landscape}
-
-\subsubsection{ERCC-RNA Spike-In Controls}
-\label{section:ch2_ERCC_explanation} 
-To evaluate the performance of library preapration and the sequencing runs, and to validate the Iso-Seq pipeline to accurately characterise the transcriptome using long reads, a set of external RNA Spike-In controls, External RNA Controls Consortium (ERCC\nomenclature{ERCC}{External RNA Controls Consortium}), was used. ERCC consists of 92 polyadenylated synthetic transcripts (250 to 2000 nucleotides) of known sequences from the ERCC plasmid library, which are added in pre-determined amounts to the sample prior to first-strand cDNA synthesis. The addition of ERCC would allow assessment of the quantitative power of long-read sequencing approaches in addition to providing absolute quantification of mRNA isoform with the sample by generating a standard curve. It can further validate that the bioinformatics pipeline only identifies 1 isoform per ERCC gene. 
-
-The amount determined of spike-in control was calculated using the below equation \cite{WTAC}:
-\begin{myequation}[!h]
-	\begin{equation}
-	\label{eqn:ercc_calcaluations}
-	mass_{RNA spike} = fraction_{spiked reads}\; * fraction_{target RNA}\; *mass_{RNA input}
-	\end{equation}
-	\begin{equation}
-	concentration_{RNA spike} = mass_{RNA spike}\; * volume_{RNA spike}
-	\end{equation}
-	where:
-	\begin{conditions*}
-		mass_{RNA spike} & mass of RNA spike-in to be added to sample \\
-		concentration_{RNA spike} & final diluted concentration (ngs/ul) of the RNA spike-in \\
-		fraction_{spiked reads}  &   desired proportion of sequenced spike-in RNA reads relative to total amount of sequenced reads \textit{(3\%)} \\
-		fraction_{target RNA}    &  expected proportion of target RNA, in this case mRNA relative to total RNA \textit{(3\%)} \\   
-		mass_{RNA input} &  input of total RNA \textit{(200ng)} \\
-		volume_{RNA spike} & volume of RNA spike-in \textit{(0.1uL)}				
-	\end{conditions*}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Determining amount of ERCC-RNA Spike-In Control]%
-	{\textbf{Determining amount of ERCC-RNA Spike-In Control}. In determining the mass and final concentration of RNA-spike-in mix based on the above conditions, the stock ERCC RNA spike-in was diluted from the original concentration of 30ng/$\mu$L to 1.8ng/$\mu$L with a dilution factor of 1:16.8. The italicised parameters were taken from the RNA Transcriptomics 2018 Course\cite{WTAC} with the exception of total RNA input}
-\end{myequation}
-
-A separate pilot experiment (Appendix \ref{ch:alt_cDNA}) showed successful addition of ERCC with two main bands at \textasciitilde600bp and \textasciitilde1000bp (Figure \ref{fig:ercc_lab_gel}a), reflecting significant enrichment of ERCC transcripts at these two respective lengths as is expected (Figure \ref{fig:ercc_lab_gel}b). The stark contrast of these two bands, however, to the smear of cDNA, suggests that the ERCC transcripts are predominant - this could be due to an overestimation of assumed proportion of mRNA to total RNA, which is likely in reality to be lower than 3\%. To reduce unnecessary sequencing and coverage of ERCC transcripts, a lower ERCC RNA-spike in concentration was used (final concentration of 0.6ng/$\mu$L and a dilution factor of 1:50.5, Figure \ref{fig:ercc_lab_gel}c). 
-
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[page=5,trim={0 12cm 0 2cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[ERCC usage to benchmark library preparation and sequencing performance runs]%
-	{\textbf{Successful addition of ERCC to first-strand cDNA synthesis a)}. Agarose gel image taken from PCR amplification of cDNA and ERCC (1.8ng/$\mu$L determined from equation \ref{eqn:ercc_calcaluations}), and ERCC alone as a positive control. 5$\mu$L of PCR aliquots were taken every cycle (13 - 18) and then run on gel electrophoresis. The two bands at 600bp and 1000bp refer to the enrichment of ERCC transcripts at these two lengths as would be expected. \textbf{b)} Distribution of known ERCC length, with a significant proportion of transcripts sized at 500-600bp and 1000-1200bp. \textbf{c)} Agarose gel image after a repeat of PCR amplification of cDNA and ERCC at a lower concentration (0.6ng/$\mu$L), ERCC as positive and water as negative control respectively. The numbers above the lane refer to the number of cycles, L denotes to 100bp Ladder.}
-	\label{fig:ercc_lab_gel}
 \end{figure}
 
 
 \subsubsection{PCR optimisation and DNA Amplification}
-To minimise PCR bias (under or over-amplification), which can result in under or over representation of the different cDNA library size, the optimal number of PCR cycles for amplification of first-strand synthesis products with PrimeSTAR GXL DNA Polymerase (Clontech) was determined through collection of 5uL PCR aliquots during every two cycles (cycle 10, 12, 14, 16, 18, 20) and assessed a 1.5\% Agarose gel electrophoresis with ethidium bromide. Large scale PCR amplification was subsequently performed using the optimal number of cycles.
+After cDNA synthesis (described in \cref{section:ch2_cDNA_synthesis_explanation}), cDNA products were amplified using PCR (described in \cref{section:ch2_PCR_explanation}) to ensure sufficient material for sequencing. To minimise PCR bias (under or over-amplification), which can result in under or over representation of the different cDNA library size, the optimal number of PCR cycles for amplification with PrimeSTAR GXL DNA Polymerase (Clontech) was determined (\cref{fig:pcr_optimisation_gel_eg}). This was achieved by collecting 5uL PCR aliquots every two cycles (cycle 10, 12, 14, 16, 18, 20) followed by visualisation of cDNA products on a 1.5\% Agarose gel electrophoresis with ethidium bromide. Large scale PCR amplification was then subsequently performed using the optimal number of cycles.
 
-\subsubsection{Polymerase Chain Reaction (PCR)}
-\label{section:ch2_PCR_explanation} 
-To generate sufficient DNA for sequencing, single-stranded DNA was amplified using Polymerase Chain Reaction (PCR\nomenclature{PCR}{Polymerase Chain Reaction}), a well-established method of generating multiple copies of the same DNA sequence. Mimicking natural DNA replication, this relies on a thermostable DNA polymerase, a set of primers specific to the region of interest, and a cocktail of various other components required for polymerisation (deoxynucleotides\nomenclature{dNTPs}{Deoxynucleotides} , buffers). This reaction is then subjected to a series of heating and cooling steps: 
-\begin{enumerate}
-	\item Denaturation at 96C, to separate any double-stranded DNA 
-	\item Annealing, typically between 55 to 65C, for the binding of primers to the complementary sequences on the single-stranded DNA; the specific annealing temperature is dependent on the primer sequence. 
-	\item Extension at 72C to allow the polymerase to extend the primers, consequently synthesising a new complementary DNA strand using dNTPs
-\end{enumerate} 
-These three steps are then repeated for a number of times, "cycles", for an exponential generation of the DNA template of interest.
+%Single-stranded DNA generated from SMARTer PCR synthesis kit in the official Iso-Seq protocol was amplified by PCR using PrimeSTAR GXL DNA Polymerase (ClonTech). Also performed for targeted sequencing. 
 
-\subsubsection{Agarose Gel Electrophoresis}
-\label{section:ch2_agarose_explanation}  
-Agarose gel electrophoresis allows the separation of (double-stranded) DNA molecules based on its length. It is most commonly used to determine DNA quality and quantity, and assess the efficiency of molecular biology techniques such as PCR amplification. It works on the principle that by applying an electrical charge, negatively-charged DNA migrates through a gel matrix towards the positive anode at a rate dependent on DNA size: smaller DNA fragments migrate faster, and thus move further through the gel within a specific time frame. The separated DNA can be then visualised using a fluorescent dye that intercalates into the DNA structure and fluoresces under ultraviolet light. 
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=3,trim={1cm 24cm 10cm 1cm},clip,scale = 0.9]{ProjectDevelopment_Figures.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Example of Agarose gel to determine optimum number of PCR cycles for amplification]%
+	{\textbf{PCR optimisation is required to determine optimum number of cycles}. Shown is an agarose gel of Human Brain Total RNA after 1st strand cDNA synthesis and PCR amplification through cycles 8 to 18, with PCR aliquots collected during respective cycles. In this example, 10 cycles were determined to be the optimum number for large-scale amplification. While smear distribution from 8 and 10 cycles look similar, 10 cycles show more products thereby generating sufficient material for downstream pooling. Cycles above 12 show signs of over-amplifcation which will result in biased sequencing representation. Figure and legend are adapted from Iso-Seq protocol}
+	\label{fig:pcr_optimisation_gel_eg}
+\end{figure}
+
 
 \subsubsection{AMPure Bead Purification} 
-\label{section:ch2_AMPure_explanation} 
-Post large scale amplification, the resulting PCR product was divided into two fractions and purified with 0.4X and 1X AMPure PB beads (PacBio). Double-stranded DNA was bound to the beads in either 1:1 or 1:0.4 ratio, which were then isolated on a magnetic rack, and washed with 70\% ethanol. DNA purification with 0.4x AMPure beads allows for enrichment of longer DNA fragments to provide a more representative library given that shorter fragments diffuse quicker into ZMW and are more likely to be sequenced. The ability to enrich for longer fragments is due to the preferential binding of beads to more negatively-charged, and subsequently larger molecular weight DNA, and thus displacement of shorter fragments.  Quantification and size distribution of each fraction was then determined using Qubit DNA High sensitivity assay (Invitrogen) and Bioanalyzer assays on the 2100 Bioanalyzer  (Agilent). Two fractions per sample were then recombined at equimolar quantities and library preparation performed using SMRTbell Template Prep Kit v1.0 (PacBio). 
+Post large scale amplification, the resulting PCR product was divided into two fractions and purified with 0.4X and 1X AMPure PB beads (PacBio), such double-stranded DNA was bound to the beads and isolated in either 1:1 or 1:0.4 ratio. DNA purification with 0.4X AMPure beads was important to ensure enrichment of longer fragments (as described in \cref{section:ch2_AMPure_explanation}) to provide a more representative sequencing library; Iso-Seq is length-biased as shorter fragments diffuse faster into ZMW and are therefore more likely to be sequenced. Quantification and size distribution of each fraction was then determined using Qubit DNA High sensitivity assay (Invitrogen) and Bioanalyzer assays on the 2100 Bioanalyzer (Agilent). Two fractions per sample were then recombined at equimolar quantities and library preparation performed using SMRTbell Template Prep Kit v1.0 (PacBio). 
 
 The molarity was calculated by the following equation: 
 \begin{equation}
-\frac{concentration(\frac{ng}{ul})\times 10^6}{660(\frac{g}{mol}) \times average\:library\:size\:in\:bp\mbox{*}} = concentration\;in\; nM
+	\label{eqn:isoseq_library_molarity}
+	\frac{concentration(\frac{ng}{ul})\times 10^6}{660(\frac{g}{mol}) \times average\:library\:size\:in\:bp\mbox{*}} = concentration\;in\; nM
 \end{equation}
 * the average library size was determined by the start and end point of the smear
-
-\subsubsection{Bioanalyzer}
-\label{section:ch2_bioanalyzer} 
-ScreenTape and Bioanalyzer assays are commonly used to provide accurate assessment of nucleic acid quality and size, prior to proceeding with downstream experiments. As an automative alternative to agarose gel electrophoresis, both assays similarly take advantage of nucleic acid's inclination to migrate in response to an electrical field.
-While the Bioanalyzer assay is more sensitive than the ScreenTape assay, it is more expensive to run as it uses a chip consisting of 12 sample wells rather than independent lanes on the ScreenTape. 
-
-For this thesis, most of the assessments of DNA quality in the Iso-Seq and ONT protocol were performed on the DNA 12000 Kit (Agilent) on the 2100 Bioanalyzer (Agilent)for accurate determination of library molarity (Section X). However, the D5000 ScreenTape (Agilent) was used on 4200 Tapestation (Agilent) in a few of the quality control steps where it is optional to assess for DNA quality (Section X).
-
-RNA extracted by Dr Isabel Castanho was also run on RNA ScreenTape assay and the Bioanalyzer RNA analysis to provide accurate evaluation of 5' RNA degradation asses using a RNA Integrity Number (RIN\nomenclature{RIN}{RNA Integrity Number}) - this uses features from an electrophoretic trace (ratio of 28S to 18S area) to give a number between 1 and 10, where 1 is indicative of high degradation, and 10 of low degradation and thus high integrity (Figure \ref{fig:bionalayzer_pics}). As a pre-requisite for good sequencing yield on Sequel and MinION, only samples with RIN $>$ 8 were selected for long-read sequencing on Iso-Seq and ONT protocol.
-
-\begin{figure}[!htp]
-	\centering
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.21\textheight]{Pictures/RNA_degradation.png}
-		\caption{Automated gel electrophoresis of RNA degradation}
-	\end{subfigure}
-	\hspace{2em}
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.21\textheight]{Pictures/RIN_range.png}
-		\caption{Electropherogram of RNA degradation}
-	\end{subfigure}
-	\hspace{2em}
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth,
-		height=0.21\textheight]{Pictures/RIN_regions.png}
-		\caption{Electropherogram of regions that are indicative of RNA quality}
-	\end{subfigure}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Evaluation of RNA integrity with Bioanalyzer and Tapestation]%
-	{\textbf{Evaluation of RNA integrity with Bioanalyzer and Tapestation}: Total RNA degradation can be observed by a shift towards shorter fragment size as depicted in Figure a, after prolonged incubation. The degree of degradation is represented by a RNA integrity number (RIN), ranging from intact (RIN = 10) to degraded (RIN = 2) RNA, and is calculated by the relative ratio of the fast region and 18S, 28S fragment (Figure c). Figures and legends are adapted from Mueller et al. 2016.}
-	\label{fig:bionalayzer_pics}
-\end{figure} 
-
-\subsubsection{Qubit}
-\label{section:ch2_qubit}   
-Qubit assays (Invitrogen) allow accurate nucleic acid quantification by the selective binding of fluorescent Qubit dyes to double-stranded DNA (dsDNA\nomenclature{dsDNA}{double-stranded DNA}) or RNA, making it more sensitive and specific than UV absorbance used in NanoDrop 8000 spectrophotometer (Thermo Fisher Scientific). It is commonly performed to determine the average concentration of DNA or RNA prior to proceeding with downstream experiments. Many of the steps in the Iso-Seq protocol and ONT protocol thus require performing Qubit assays, particularly post bead purification, and are detailed in Section \ref{Isoseq_Protocol_qubit}.  
 
 \subsubsection{Target Capture using IDT Probes} 
 \label{section:ch2_targetcapture_explanation} 
 For targeted sequencing, we used the official PacBio protocol “cDNA Capture Using IDT
-xGen® Lockdown Probes” (an adaptation of the official IDT protocol “xGen hybridisation capture of DNA libraries” ), which slotted as an additional step to the standard protocol between cDNA amplification and ligation. Enrichment of target genes involved hybridisation of dsDNA using pre-designed, complementary 5’ biotinylated DNA 120nt-long oligonucleotides (hereby referred as probes). The hybridised library fragments were then washed, isolated with magnetic streptavidin beads, amplified using Takara Hot-Start polymerase and then further purified with AMPure beads. After assessing the quality and quantity of the target cDNA using the bionanalyzer and qubit, SMRT Bell template preparation, primer and polymerase annealing were proceeded as per standard Iso-Seq protocol. Given the samples were multiplexed for targeted sequencing, the samples were first pooled in equal molarity before probe hybridisation.  
-
+xGen® Lockdown Probes” (an adaptation of the official IDT protocol “xGen hybridisation capture of DNA libraries” ), which slotted as an additional step to the standard protocol between cDNA amplification and ligation (\cref{fig:isoseq_targetedlab_protocol}). Enrichment of target genes involved hybridisation of dsDNA using pre-designed, complementary 5’ biotinylated DNA 120nt-long oligonucleotides (hereby referred as probes). The hybridised library fragments were then washed, isolated with magnetic streptavidin beads, amplified using Takara Hot-Start polymerase and then further purified with AMPure beads. After assessing the quality and quantity of the target cDNA using the bionanalyzer and qubit, SMRT Bell template preparation, primer and polymerase annealing were proceeded according to the standard official Iso-Seq protocol. Given the samples were multiplexed for targeted sequencing, the samples were first pooled in equal molarity before probe hybridisation.  
 
 %*Modifications to the protocol: waiting times at room temperature during hybridisation, lid heat temperatures, method of washing beads at room temperature; all modifications are incorporated from official IDT protocol, post amplification clean-up for consistency  
 
@@ -196,16 +78,63 @@ Given that previous studies with targeted sequencing have found that the target 
 \end{itemize}
 The coverage of each target gene can be found in Appendix. 
 
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[page=12,trim={0cm 6cm 0cm 1cm},clip,scale = 0.70]{ProjectDevelopment_Figures.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Lab workflow for hybridisation capture of cDNA for targeted transcritpome profiling]%
+	{\textbf{Lab workflow for hybridisation capture of cDNA for targeted transcritpome profiling.} An overview of the lab workflow of enrichment of target genes involving hybridsiation of cDNA with probes and blockers (polyT oligonucleotide, cDNA synthesis primers), followed by capture with streptavidin beads. The addition of blockers prevent non-specific binding and subsequently increases enrichment sequencing depth}
+	\label{fig:isoseq_targetcapture}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[!h]
+		\begin{center}
+			\includegraphics[page=1,trim={0cm 2cm 0cm 0cm},clip,scale = 0.70]{TargetProbes_Visualisation.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Manual curation of probes designed to 20 AD-associated target genes]%
+		{\textbf{Manual curation of probes designed to 20 AD-associated target genes.} \textbf{a)} Pre-designed set of probes were provided to "Exons (without UTR)" of target genes. However, exons were unnecessarily covered by contiguous probes which not increases costs but also off-target binding (referred in figure as Predesigned Target Probes). Manual curation was therefore needed for each target gene (referred in figure as Curated Target Probes))to ensure that only exons are covered with one probe for every 500bp. Shown in \textbf{b,c,d)} are UCSC genome browser tracks of predesigned and curated probes to \textit{Trem2}, \textit{Vgf} and \textit{Sorl1} in mouse genome. }
+		\label{fig:target_probes_eg}
+	\end{figure}
+\end{landscape}
 
 \subsubsection{SMRT Bell Template Preparation}
 \label{section:ch2_smrtbelltemplate_explanation} 
-The library preparation post pooling the two fractions at equimolar quantities with the SMRTbell Template Prep Kit v1.0 (PacBio) involved several steps. DNA Damage and End Repair was first performed on the pooled library to polish ends of fragments for ligation of blunt hairpin adapters, necessary to generate high quality library of closed, circular SMRTBell templates. Any abasic sites were filled-in, thymine dimers resolved, and deaminated cytosine are alkylated. 3’ overhangs were removed, whereas 5’ overhangs were filled-in by T4 DNA Polymerase and phosphorylated by T4 PNK. Following 1x AMPure purification of repaired dsDNA, hairpin adapters were then ligated to the blunt ends for up to 24hours. Any fragments failed to ligate were removed with exonuclease III and VII. The repaired, ligated SMRT bell library was then purified twice with 1x AMPure beads, and assessed with Qubit DNA High sensitivity assay (Invitrogen) and Bioanalyzer 2100 (Analyzer) before proceeding to primer annealing and polymerase binding (Figure X). 
+After pooling the two fractions at equimolar quantities with the SMRTbell Template Prep Kit v1.0 (PacBio), SMRT bell template preparation was performed (\cref{fig:isoseq_labworkflow}, Step 1, 2). This involved repairing DNA damage and polishing ends of fragments for ligation of blunt hairpin adapters, essential to generate high quality library of closed, continous and circular SMRTBell templates. Any abasic sites were filled-in, thymine dimers resolved, and deaminated cytosine are alkylated. 3’ overhangs were removed, whereas 5’ overhangs were filled-in by T4 DNA Polymerase and phosphorylated by T4 PNK. Following 1x AMPure purification of repaired dsDNA, hairpin adapters were then ligated to the blunt ends for up to 24hours (\cref{fig:isoseq_labworkflow}, Step 3). Any fragments failed to ligate were removed with exonuclease III and VII (\cref{fig:isoseq_labworkflow}, Step 4). The repaired, ligated SMRT bell library was then purified twice with 1x AMPure beads, and assessed with Qubit DNA High sensitivity assay (Invitrogen) and Bioanalyzer 2100 (Analyzer) before proceeding to primer annealing and polymerase binding (\cref{fig:isoseq_labworkflow}, Step 5,6). 
 
 \subsubsection{Primer Annealing and Polymerase Binding} 
-Post ligation of hairpin adapters, sequencing primer and polymerase were bound to both ends of the SMRTbell templates. The primer and polymerase to template ratio was critical to minimise under or –over loading, thus the concentration was sample specific. 
+\label{section:ch2_polbinding_loading}
+Post ligation of hairpin adapters, sequencing primer and polymerase were bound to both ends of the SMRTbell templates. The primer and polymerase to template ratio was critical to minimise under- or –over loading, and is dependent on the loading method (Diffusion or MagBead), and concentration and mean library size. The SMRTbell molarity was determined using the previous \textbf{Equation \ref{eqn:isoseq_library_molarity}}.
 
-Prior to XXX chemistry, MagBead Loading was only recommended for IsoSeq SMRTbell libraries, whereas Diffusion Loading was recommended for all other applications with insert sizes from 
-250 – 100001bp. As in the name, Diffusion Loading involves immobilization of polymerase-bound SMRTbells to ZMW by diffusion, whereas Magbead Loading involves immobilization by attachment to paramagnetic beads.  Diffusion loading thus preferentially loads longer transcripts, whereas magbead loading preferentially loads shorter transcripts of 700bp as it rolls across nanowells. 
+Prior to the release of v3.0 chemistry in 2018, MagBead Loading was only recommended for IsoSeq SMRTbell libraries, whereas Diffusion Loading was recommended for all other applications with insert sizes from 250bp – 100kb. As suggested by the name, Diffusion loading involves immobilization of polymerase-bound SMRTbells to ZMW by diffusion, whereas Magbead loading involves immobilization by attachment to paramagnetic beads. Magbead loading therefore requires an additional step of hybridising SMRTbell templates to magbeads and washing of SMRTbell-bound Magbeads before loading on the instrument, whereby a built-in Magbead station facilitates movement of Magbeads across ZMW. Typically, Diffusion loading preferentially loads shorter transcripts, whereas magbead loading preferentially loads longer >1b as it rolls across nanowells. However, with the newer release of kits and chemistry, diffusion loading was recommended for all applications including Iso-Seq. Subsequently, all of the samples bar the first two were sequenced by Diffusion Loading. 
+
 
 \subsubsection{Sequencing} 
-Sequencing was performed on the PacBio Sequel 1M SMRT cell. Samples were processed using either the version 3 chemistry (parameters: diffusion loading at 5pM, pre-extension 4 hours, Capture time 20 hours) or version 2.1 chemistry (parameters: magbead loading at 50pM with a 2 hour pre-extension and 10 hour capture).
+\label{section:ch2_sequencing}
+Sequencing was performed on the PacBio Sequel 1M SMRT cell. Samples were processed using either the version 3 chemistry (diffusion loading at 5pM, pre-extension 4 hours, Capture time 20 hours) or version 2.1 chemistry (magbead loading at 50pM with a 2 hour pre-extension and 10 hour capture).
+
+Of note, DNA Interal Control Complex (PacBio) was also added to each library before sequencing. Composed of a 1966bp-insert that has already been ligated with SMRTbell adapters and bound by polymerase, this control sequence provides a quality-control measure of loading and sequencing performance. The amount of internal control was similarly determined by the library size and concentration, with PacBio recommending an average number of 500-1000 sequenced reads per SMRT cel.     
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=1,trim={0cm 8cm 0cm 0cm},clip,scale = 0.70]{labwork_isoseq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Lab workflow of Iso-Seq SMRT Bell Template Preparation, Primer Annealing \& Polymerase Binding]%
+	{\textbf{Lab workflow of Iso-Seq SMRT Bell Template Preparation, Primer Annealing \& Polymerase Binding.} Shown is a flow diagram of the lab workflow of Iso-Seq library preparation for long-read sequencing on the Sequel:
+	\begin{enumerate}
+		\item Repair DNA Damages by repairing abasic sites and nicks, removing thymine dimers, oxidisising guanines, deaminating cytosine; essential to ensure continuous sequence for uninterrupted polymerase processivity 
+		\item Repair ends for blunt ligation with removal of 3' hangs and addition of 5' hangs by T4 DNA polymerase; essential for blunt ligation of SMRT bell adapters 
+		\item Blunt Ligation by adding hairpin SMRT bell adapters to repaired ends
+		\item Exouclease treatment to remove incomplete SMRTbells with Exonuclease III and IV; essential to ensure sequencing of good library 
+		\item Annealing of primer to both ends of the SMRT bell templates to initiate sequencing 
+		\item Binding of polymerase to both ends of SMRT bell templates for efficieny loading into ZMWs
+		\item Immbolisation of polymerase-bound SMRTbels to ZMW by diffusion
+	\\
+	\end{enumerate} 
+	Individual figures and legend are taken and adapted from "PacBio Sequel Library and Sequencing Preparation" presentation
+}
+	\label{fig:isoseq_labworkflow}
+\end{figure}
