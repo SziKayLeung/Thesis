@@ -1,17 +1,21 @@
 \documentclass[../Main/Knit.tex]{subfiles}
+%Classification of AS events, which most commonly observed/dominant? Isoforms derived from transcriptional regulation (alternative promoters) vs post-transcriptional regulation? 
+%Impact of AS events on protein domains. Non-sense mediated decay? 
+%%Furthermore changes in gene/transcript expression can be due to differences in cellular composition (i.e. neuronal loss/reactive gliosis) rather than indicative of disease-associated transcriptional regulation. 
+%%Gene expression and mRNA isoforms vary widely across tissues (\cite{Wang2008}), thus sequencing the disease-relevant tissue (in this case entorhinal cortex) is important for understanding the pathology of AD. However, it is consequently important to note that other tissues may have to be considered to fully grasp the whole picture of AD development. 
 
 \section{Introduction}
 
-Following the accurate characterisation of the mouse transcriptome using long-read sequencing from a global (whole transcriptome approach, \cref{wholetranscriptome}) and targeted perspective (Chapter \cref{targetedmousetranscriptome}), this chapter aims to exploit these datasets to investigate the transcriptional changes in the mouse entorhinal cortex associated with tau pathology. 
+Following the accurate characterisation of the mouse transcriptome using long-read sequencing from a global (whole transcriptome approach, \cref{ch: whole_transcriptome}), this chapter aims to exploit these datasets to investigate the transcriptional changes in the mouse entorhinal cortex associated with tau pathology. 
 
 There have been multiple studies recently that explore the transcriptional differences in transgenic mice harbouring different mutations associated with AD. However, all of these studies to date have been undertaken with short-read RNA-Seq - which, while it offers obvious advantage compared to microarrays in accurately quantifying gene expression, is severely limited in detecting and characterising transcripts (as discussed in detail in \cref{rnaseq_intro}).
 
 While there have been significant advances to process long-read sequencing data for transcriptome annotations, methods to harness long-read data for differential analyses have been limited. Currently, all the new tools developed to process long-read sequencing data (such as Oxford Nanopore's recommended cDNA transcriptome tutorial \cite{ONTcdna_transcriptome}, \textit{FLAIR} \cite{Tang2020}) integrate old tools, which were initially designed to analyse short-read sequencing data, for differential gene and isoform analyses. Systematically assessed and benchmarked for detecting differential splicing and expression at isoform level in RNA-Seq studies, \textit{DESeq2}, \textit{DexSeq} and \textit{NOISeq} have been most widely used. 
  
 %Genome-wide RNAseq study of the molecular mechanisms underlying microglia activation in response to pathological tau perturbation in the rTg4510 tau transgenic animal model - PubMed (nih.gov)
-%Integrative functional genomic analysis of intron retention in human and mouse brain with Alzheimer's disease - Li - 2021 - Alzheimer's &amp; Dementia - Wiley Online Library
 %Integrating human brain proteomes with genome-wide association data implicates new proteins in Alzheimer's disease pathogenesis - PubMed (nih.gov)
 %The role of microglia in processing and spreading of bioactive tau seeds in Alzheimer’s disease | Journal of Neuroinflammation | Full Text (biomedcentral.com) 
+%%https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-018-0574-5 - rTg4510
 
 \section{Methods}
 
@@ -484,44 +488,3 @@ Differential isoform usage was performed with Iso-Seq reads as annotation and RN
 \clearpage
 \subsection{Differential Feature Inclusion Analysis}
 
-\subsection{Target Transcriptome}
-\begin{itemize}
-	\item As would be expected, target transcriptome detected more isoforms per associated gene than whole transcriptome (with the exception of \textit{Ank1,Snca}) and lowly-expressed genes not otherwise detected in whole transcriptome, including \textit{Cd33},\textit{Rhbdf2}, \textit{Trpa1}
-	\item Across all genes independent of sequencing approach, RNA-Seq expression of associated gene and isoform is significantly higher than corresponding Iso-Seq expression, reflecting of higher sequencing coverage and sample size 
-	\item Except for \textit{Trem2}, differetial gene and transcript expression was only identified in whole transcriptome when RNA-Seq was used as expression (rather than Iso-Seq)
-	\item This observation was recapitulated in targeted transcriptome with \textit{Abca1} and \textit{Clu}
-	
-	
-\end{itemize}
-
-\begin{landscape}
-	\begin{table}[]
-		\centering
-		\begin{tabularx}{1.2\textwidth}{cccccccccc}
-			\toprule
-			\multicolumn{2}{c}{\multirow{3}{*}{Target Gene}} & \multicolumn{4}{c}{Whole Transcriptome   Analysis}                                                                                                            & \multicolumn{4}{c}{Targeted Transcriptome   Analysis}                                                                                                         \\ \cmidrule(l){3-10} 
-			\multicolumn{2}{c}{}                             & \multicolumn{2}{c}{Differential Gene}                                         & \multicolumn{2}{c}{Differential Transcript}                                   & \multicolumn{2}{c}{Differential Gene}                                         & \multicolumn{2}{c}{Differential Transcript}                                   \\ \cmidrule(l){3-10} 
-			\multicolumn{2}{c}{}                             & Iso-Seq                   & RNA-Seq                 & Iso-Seq                   & RNA-Seq                    & Iso-Seq               & RNA-Seq                & Iso-Seq                   & RNA-Seq                 \\ \midrule
-			1                     & Abca1                    & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} \\
-			2                     & Abca7                    & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			3                     & Ank1                     & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			4                     & Apoe                     & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{red!25}   \\
-			5                     & App                      & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   \\
-			6                     & Bin1                     & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			7                     & Cd33                     & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{red!25} & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			8                     & Clu                      & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{green!25} \\
-			9                     & Fus                      & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25} & \cellcolor{red!25}   \\
-			10                    & Fyn                      & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			11                    & Mapt                     &                                       &                                       &                                       &                                       &                                       &                                       &                                       &                                       \\
-			12                    & Picalm                   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25} & \cellcolor{red!25}   \\
-			13                    & Ptk2b                    & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   \\
-			14                    & Rhbdf2                   & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{red!25} & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			15                    & Snca                     & \cellcolor{red!25} & \cellcolor{red!25} & \cellcolor{red!25}   & \cellcolor{red!25} & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			16                    & Sorl1                    & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			17                    & Tardbp                   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			18                    & Trem2                    & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} & \cellcolor{green!25} \\
-			19                    & Trpa1                    & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{white!25} & \cellcolor{red!25} & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   \\
-			20                    & Vgf                      & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{red!25}   & \cellcolor{green!25} & \cellcolor{red!25}   & \cellcolor{red!25} & \cellcolor{red!25}   & \cellcolor{green!25} \\ \bottomrule
-		\end{tabularx}
-	\end{table}
-\end{landscape}
