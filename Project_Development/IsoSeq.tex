@@ -1,18 +1,22 @@
 \documentclass[../Main/Knit.tex]{subfiles}
 
+This chapter provides a detailed background into the two main platforms of long-read cDNA sequencing that were used in this thesis: Pacific Bioscience's Isoform Sequencing (Iso-Seq) and Oxford Nanopore Technology's cDNA sequencing.  
+
 \section{Pacific Biosciences: Isoform Sequencing}
+\label{sec:pb_isoform_sequencing}
 
 \subsection{Introduction}
-For successful DNA polymerisation, the DNA polymerase requires high concentration of nucleotides to allow high accuracy and processivity.  However for sequencing, this limits sensitivity to detect each labelled base incorporation and respective fluorophore emission, due to high background noise level. In the past, second-generation sequencing technologies have circumvented this issue by the step-wise addition, scan and wash of each set of labelled nucleotides, but at a compromise of read length. 
+For successful DNA polymerisation, the DNA polymerase requires high concentration of nucleotides to allow high accuracy and processivity.  However for sequencing, this limits sensitivity to detect each labelled base incorporation and respective fluorophore emission, due to high background noise level. Historically, second-generation sequencing technologies such as Illumina RNA-Sequencing have circumvented this issue by the step-wise addition, scan and wash of each set of labelled nucleotides, but at a compromise of read length (discussed in \cref{rnaseq_intro}). 
 
-Unlike RNA-Sequencing, Pacific Bioscience’s Single Molecule Real Time sequencing (SMRT \nomenclature{SMRT}{Single Molecule Real Time sequencing}) is able to generate long reads is due to its ability to mimic natural, uninterrupted, processive DNA synthesis, through three important innovations \cite{Eid2009}: 
+Unlike standard approaches of RNA-Sequencing, Pacific Bioscience’s Single Molecule Real Time sequencing (SMRT\nomenclature{SMRT}{Single Molecule Real Time sequencing}) is able to generate long reads is due to its ability to mimic natural, uninterrupted, processive DNA synthesis, through three important innovations \cite{Eid2009}: 
 \begin{enumerate}
-	\item Creation of a circular template, SMRTbell, enclosed with hairpin adapters at end of the inserted target double-stranded DNA, allowing uninterrupted DNA polymerisation \cite{Travers2010} (Figure \ref{fig:smrtbell}).
-	\item Sequencing of each SMRTbell with a bound polymerase at the bottom of a nanometre-wide well (zero-mode-waveguide - ZMW \nomenclature{ZMW}{Zero-Mode-Waveguide}), and all wells contained within a single SMRT chip\cite{Levene2003}. Due to the very nanoscale size of the ZMW and reduced detection volume, a single nucleotide incorporation can be sensitively detected against the high background of labelled nucleotides, achieving a high-signal-to-noise ratio (Figure \ref{fig:mechanism})).  
-	\item Addition of phospholinked nucleotides, each labelled with a different colour fluorophore corresponding to the four different bases (A, C, G and T), which allows for natural, accurate and processive DNA synthesis\cite{Mccarthy2010} (Figure \ref{fig:Phospholinked_Nucleotides}).
+	\item Creation of a circular template, SMRTbell, enclosed with hairpin adapters at end of the inserted target double-stranded DNA, allowing uninterrupted DNA polymerisation \cite{Travers2010} (\cref{fig:smrtbell}).
+	\item Sequencing of each SMRTbell with a bound polymerase at the bottom of a nanometre-wide well (zero-mode-waveguide - ZMW\nomenclature{ZMW}{Zero-Mode-Waveguide}), and all wells contained within a single SMRT chip\cite{Levene2003}. Due to the very nanoscale size of the ZMW and reduced detection volume, a single nucleotide incorporation can be sensitively detected against the high background of labelled nucleotides, achieving a high-signal-to-noise ratio (\cref{fig:mechanism})). PacBio currently offers two sequencers, which primarily differs in the number of ZMWs: Sequel I with 1M ZMWs and Sequel II with 2M ZMWs.   
+	\item Addition of phospholinked nucleotides, each labelled with a different colour fluorophore corresponding to the four different bases (A, C, G and T), which allows for natural, accurate and processive DNA synthesis\cite{Mccarthy2010} (\cref{fig:Phospholinked_Nucleotides}).
 \end{enumerate}
-In summary, SMRT sequencing detect fluorescence events that correspond to addition of one specific nucleotide by a polymerase attached to the bottom of a tiny well. 
+In summary, PacBio SMRT sequencing detect fluorescence events that correspond to addition of one specific nucleotide by a polymerase attached to the bottom of a tiny well. 
 
+\iffalse
 \begin{figure}[h!]
 	\centering
 	\vspace{50pt}
@@ -36,14 +40,15 @@ In summary, SMRT sequencing detect fluorescence events that correspond to additi
 	{\textbf{PacBio SMRT}: At time of writing, PacBio released Sequel II with the provision of an 8M chip, containing 8 million wells, each capable of sequencing one single molecule. Figures adapted from PacBio}
 	\label{fig:Mechanism}
 \end{figure}
-
-Currently, PacBio offers two sequencers: Sequel I and Sequel II; RSII was the first commercially available sequencer, but is no longer supported. With Sequel v2 chemistry from 2017, fragments longer than 10kbp were typically only read once and had a single pass accuracy of 58-87\%. Last 3 years have seen teh release of 1 instrument (Sequel II), 4 chemistries (Sequel v2,v3, Sequel II v1, v2) and 4 versions of the SMRT-Link analysis suite.  
+\fi
 
 \subsubsection{Mechanism}
-Due to the circular nature of the SMRT bell, the polymerase can continually read through the insert, sequence the same DNA template multiple times and generate a continuous sequence of bases (continuous long read, CLR or polymerase read), which contains the hairpin adapter sequences. Pending on the polymerase lifetime and insert length, both strands can be sequenced multiple times, or “passes” in a CLR, which can then be delineated by the adapter sequences and resolved to multiple reads (subreads). These subreads can be further collapsed to yield a highly-accurate Circular Consensus Sequence (CCS\nomenclature{CCS}{Circular Consensus Sequence}), increasing the accuracy of individual raw subreads from 85\% to 99\% of the consensus read, proportional to the number of passes \cite{Travers2010}.
+Due to the circular nature of the SMRTbell template, the polymerase is able to continually read through the insert in an interrupted fashion multiple times (or "passes"), resulting in a continuous read (known as polymerase read) (\cref{fig:CCS}). In removing the hairpin-adapters that delineate the repeated insert sequence, this polymerase read is then resolved to multiple reads (known as subreads), which are then further merged to yield one high-quality and highly-accurate consensus read (known as Circular Consensus Sequence - CCS\nomenclature{CCS}{Circular Consensus Sequence}). Dependent on the polymerase lifetime and insert length and, the generation of CCS can increase the accuracy from 85\% (raw subreads) to 99\%, proportional to the number of passes \cite{Travers2010}. 
 
-Reads from PacBio are therefore not a set length, as with short-reads generated by RNA-Seq, but a distribution of lengths dependent on the library size and the polymerase activity \cite{Ardui2018,Rhoads2015}. However with previous chemistries, there was a bias towards sequencing molecules of a certain length due to preferential loading of SMRTbell templates - loading by diffusion favoured shorter molecules\cite{Loomis2013} whereas loading using Magbeads allowed proportional loading to the concentration rather than by length, but prevented sequencing of molecules <1kb. Previous attempts to mitigate this loading problem have been to fractionate the library by length (size selection) and enrich for longer cDNA molecules before sequencing \cite{Au2013}, but this approach is more expensive and laborious. Thankfully, recent improvement in the technology and chemistry (v3.0) with usage of molecular crowding agents have alleviated the short-read bias and resulting the magbead loading method obsolete \cite{Oikonomopoulos2020}.   
+Consequently, unlike short-reads generated by RNA-Seq, PacBio Iso-Seq reads are not of a set length, but coverage a range of lengths that is dependent on the library size and the polymerase activity\cite{Ardui2018,Rhoads2015}. With previous chemistries, there was a bias towards sequencing molecules of a certain length due to preferential loading of SMRTbell templates - Diffusion Loading favoured shorter molecules\cite{Loomis2013} whereas Magbead Loading allowed proportional loading to the concentration rather than by length, but prevented sequencing of molecules <1kb (discussed in \cref{section:ch2_polbinding_loading}). Previous attempts to mitigate this loading challenge have been to fractionate the library by length (size selection) and enrich for longer cDNA molecules before sequencing\cite{Au2013}, but this approach is more expensive and laborious. Thankfully, recent improvements in both technology and chemistry with usage of molecular crowding agents have alleviated the sequencing read bias and resulting the magbead loading method obsolete \cite{Oikonomopoulos2020}.   
 
+
+\iffalse
 %https://www.pacb.com/wp-content/uploads/2015/09/Guide-Pacific-Biosciences-Template-Preparation-and-Sequencing.pdf
 \begin{figure}[h]
 	\centering
@@ -54,9 +59,38 @@ Reads from PacBio are therefore not a set length, as with short-reads generated 
 	{\textbf{Generation of Circular Consensus Sequence}: CCS is generated by the collapse of multiple subreads, which sequence correspond to the double-stranded cDNA of interest. The greater the number of "passes" sequenced by the polymerase, the longer the polymerase read, the more subreads generated, and subsequently the higher the quality of CCS. Picture adapted from PacBio}
 	\label{fig:CCS}
 \end{figure}
-
+\fi
 
 \subsubsection{Performance and Run Quality Metric}
-In an ideal situation, all the wells will contain an insert that will generate a positive signal. However, because XXXX, there will be some wells that are empty (quality metric denoted as P0: Productivity 0), and some wells that will be overloaded with multiple inserts with more than one polymerase (quality metric denoted as P2: Productivity: P2). Thus only wells that contain one polymerase (denoted as P1, Productivity 1) will generate a positive signal. Overloading may lead to increase in output of yield per SMRT cell, but increases the chance of P2 (multi-loaded ZMWs), resulting in shortened read lengths and lower accuracy compared to single-loaded ZMW. Loading can be optimised through titration.  	
+Suboptimal sequencing performance could be due to various reasons from potential issues with the instrument and sequencing reagents, to poor library preparation and incorrect loading. Evaluation of the performance of the DNA Internal Control (described in \cref{section:ch2_sequencing}) and productivity metrics would provide useful insights into the performance of a sequencing run. 
 
-A good run is defined by 50-70\% P1, a >XX kB polymerase read-length. Over-loading (>70\%) may result in reduced base quality (noisy base-calling), whereas under-loading (<50\%) results in lower throughput. A short polymerase read-length indicates sequencing/library preparation issues. These metrics are dependent on chemistry, pre-extension, and movie-runtime. 
+\boldheader{DNA Internal Control} 
+Sequencing metrics for the DNA Interal Control (described in \cref{section:ch2_sequencing}) include: i) the number of control reads, ii) the mean polymerase read length of the control and iii) the proportion of identity match between the control raw reads and the control reference sequence (concordance). The expected values from a correctly prepared control in a sequencing run, with a 4hr pre-extension time and a 20hr capture time is documented in \cref{tab:control_Isoseqmetrics}. Low control read length and/or low control read counts suggest issues with the PacBio instrument and consumables, whereas expected values indicate sample-specific issues. The corcordance value is a useful metric for optimum loading whereby over-loaded SMRT cells would typically have a lower value (<0.84).
+
+\begin{table}[!h]
+	%\captionsetup{justification=raggedright,width=1.45\textwidth}
+	\caption[Iso-Seq DNA Internal Control Sequencing Metrics]%
+	{\textbf{Iso-Seq DNA Internal Control Sequencing Metrics.} The expected median values for the number of control reads (median count), the control polymerase read length (median length), and the identity match between conrol raw reads and reference sequence (median concordance). The expected values shown are assuming a sequencing run performed with SMRT cells 1M v3 with Sequel DNA Internal Control Complex, Sequel Sequnecing Kit 3.0 on the Sequel I with a 4hr pre-extension time of 4hrs and a 20hr capture time.}
+	\label{tab:control_Isoseqmetrics}
+	
+	\centering
+	\begin{tabular}{@{}cccc@{}}
+		\toprule
+		Metrics         & Median Count (QR)     & Median Length (kb) (QR) & Median Concordance (QR) \\ \midrule
+		Expected Values & 6900 (4,000 - 10,200) & 46.9 (41.5 – 52.5) & 0.862 (0.857 – 0.867)   \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\boldheader{Productivity Metrics} 
+Productivty metrics, or loading metrics, is a measure of the number of ZMWs that have generated a positive signal and subsequently, useful sequencing data. Each ZMW is classified as either: 
+\begin{itemize}
+	\item P0 (Productivity 0): no active sequencing polymerase complex with no signal 
+	\item P1 (Productivity 1): productive ZMWs with a high quality (HQ) region within read 
+	\item P2 (Productivity 2): detectable signal but no HQ region detected, possibly due to overloading of multiple inserts with multiple polymerases
+\end{itemize}
+High quality region is defined as a high quality sequence of >50bases. These metrics are also dependent on chemistry, pre-extension, and movie runtime.  
+
+In general, a good sequencing run has a 20-30\% P0 (proportion of empty ZMWs). A lower P0 (<20\%) from over-loading of polymerase-bound complexes on SMRT cell would result in poorer sequencing yield (noisy base-calling) and shorter P1 polymerase reads; whereas, a higher P0 (>40\%) from under-loading would result in fewer P1 reads and subsequently lower sequencing yield. Of note, a combination of high P0, low P1 and high P2 loading profile indicates presence of contaminants (possibly due to poor AMPure bead purification) that is interferring with productive polymerase activity. A good balance between P0, P1, and P2 is therefore essential and can be achieved by determining an optimum loading concentration through performing titrations of multiple loading concentrations.  	
+
+A good run is defined by 50-70\% P1, a >XX kB polymerase read-length. These metrics are dependent on chemistry, pre-extension, and movie-runtime. 
