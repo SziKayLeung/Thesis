@@ -13,13 +13,15 @@
 \endgroup
 
 \subsubsection{Introduction}
-While the official PacBio bioinformatics tool (Iso-Seq) has been revised multiple times during the scope of this PhD, there were two main steps with the aim of generating high-quality (HQ) isoforms de novo (Figure X), namely: 
-\begin{itemize}
-	\item Classify to identify full-length non-chimeric (FLNC), and non-FLNC reads 
-	\item Cluster reads derived from the same isoform to generate consensus sequence	
-\end{itemize}
-Bioinformatic analysis of Iso-Seq raw data can be performed using PacBio SMRT Link Suite (ref), a web-based end-to-end user interface. However, for optimisation of parameters and parallelisation of samples, an end-to-end command line was developed and used. Since the development of Iso-Seq, a myriad of bioinformatics tools have been released, as outlined in Table X. 
+While the official PacBio bioinformatics tool for processing long Iso-Seq reads has been revised multiple times over the course of this research, the changes have been centred around three main sequeuntial objectives to generate high-quality (HQ) isoforms de novo (Figure X), namely: 
+\begin{enumerate}
+	\item CCS: generate CCS from each sequencing ZMW
+	\item Classify: identify full-length reads with primer removal
+	\item Cluster: group reads derived from the same isoform to generate consensus sequence (high-quality full-length non-concatemer reads)	
+\end{enumerate}
+Bioinformatic analysis of Iso-Seq raw data can be performed using PacBio SMRT Link Suite (ref), a web-based end-to-end user interface. However, for optimisation of parameters and parallelisation of samples, an end-to-end command line was developed and used.  
 
+\iffalse
 \begin{figure}[h!]
 	\centering
 	\vspace{20pt}
@@ -29,6 +31,7 @@ Bioinformatic analysis of Iso-Seq raw data can be performed using PacBio SMRT Li
 	{\textbf{PacBio Isoseq Bioinformatics Pipeline}: Pipeline is adapted from ToFU \nomenclature{ToFU}{Transcript isOforms: Full-length and Unassembled} \cite{Gordon2015}}
 	\label{fig:isoseq_bioinformatics_Pipeline}
 \end{figure}
+\fi
 
 Analysing long-read sequencing data requires a different approach to short-read, as the initial processing focuses on reducing the high error rate (due to low read coverage relative to short reads). Currently there were three methods of correcting long reads \cite{Zhao2019}: 
 \begin{itemize}
@@ -161,15 +164,17 @@ that contain one or multiple exons (mono-exonic or multi-exonic respectively)
 that contain intronic sequences (intron retention) 
 as fusions. The criteria XXXX
 
+\iffalse
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,trim={2cm 28cm 2cm 5cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+		\includegraphics[page=3,trim={2cm 28cm 2cm 5cm},clip,scale = 0.45]{Pipeline.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Isoform Classifications by SQANTI]%
 	{\textbf{Isoforms were classified by SQANTI as novel or known, and annotated to novel or known genes based on splice junctions}. An isoform was classified as ‘FSM’ if it aligned with reference genome with the same splice junctions and contained the same number of exons, ‘ISM’ if it contained fewer 5’ exons than the reference genome, ‘NIC’ if it represented a novel isoform containing a combination of known donor or acceptor sites, or ‘NNC’ if it represented a novel isoform with at least one novel donor or acceptor site. FSM – Full splice match, ISM – Incomplete splice match, NIC – Novel in catalogue, NNC – novel not in catalogue}
 	\label{fig:sqanti_cate}
 \end{figure}
+\fi
 
 \boldheader{Further filtering of isoforms from technical artifacts}
 SQANTI was further used to filter the curated transcriptome from any technical artifacts that were generated during library preparation, including artifacts from RT template switching (TS \nomenclature{TS}{Template Switching}) and off-priming \cite{Conesa2016} (Figure \ref{fig:lib_prep_artifacts}. RT template switching is an intrinsic feature of RT whereby the enzyme can transit within (intramolecular TS) or across (intermolecular TS) DNA templates without terminating cDNA synthesis, if the original DNA template harbours two or more direct repeats \cite{Cocquet2006}. This can result in either chimeric cDNAs or short, incomplete cDNAs that can be misinterpreted as isoforms generated from non-canonical splicing \cite{Houseley2010} (Figure \ref{fig:lib_prep_artifacts}a). Capitalising on the fact that RT switching is homology-dependent, SQANTI can identify these RT-switching artifacts by finding these direct repeats \cite{Conesa2016}. 
@@ -178,7 +183,7 @@ Finally, off-priming artifacts can be generated from the binding of oligo(dT) pr
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={2cm 35cm 0 1cm},clip, scale = 0.55]{Pictures/Pipeline.pdf}
+		\includegraphics[page=4,trim={2cm 35cm 0 1cm},clip, scale = 0.55]{Pipeline.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Technical artifacts generated during library preparation and identified in SQANTI]%
@@ -198,14 +203,39 @@ In summary, the isoforms were filtered by the following criteria:
 	\item Any other transcripts that have a reliable 3' end do not have any splice junctions were annotated as Reverse Transcription Switching. 
 \end{enumerate}
 
+\subsubsection{Isoform Quantification}
+Isoform abundance was determined in two ways, using either a hybrid approach of long and short reads or the normalised full-length long read count as proxy (\cref{fig:isoform_quant_strategy}). The hybrid approach was a modified strategy of typical RNA-Seq quantiative analyses, whereby short reads were aligned to the Iso-Seq defined transcriptome (a merged, comprehensive annotation) rather than the reference genome, thereby improving read alignment to condition-specific transcripts and enabling the detection of novel transcripts. 
+
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=8,trim={2cm 32cm 0 1cm},clip, scale = 0.4]{Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Strategies for isoform quantification]%
+	{\textbf{Strategies for isoform quantification using long and short reads}: A schematic diagram of three strategies adopted for determining isoform abundance, using either short RNA-Seq reads aligned to the reference genome or the Iso-Seq defined transcriptome (hybrid approach), or the normalilsed full-length read count directly from long reads}
+	\label{fig:isoform_quant_strategy}
+\end{figure}
+
+
 \boldheader{Removal of ISM and merging of FSMs}
-Following \textit{SQANTI} annotations, there were many examples where multiple ISMs and several FSM transcripts were annotated to the same known isoform. This is likely due to varying extent of 5'degradation and truncation - small degree of degradation or truncation would result in differing 5' and 3' ends respectively while preserving the internal exonic structure and thereby generating several FSMs; conversely, a large degree of degradation or truncation would generate smaller partial isoforms that also have matching, albeit smaller overlap, exonic structure. To ease downstream quantitative analyses, ISMs and shorter FSMs were assumed as partial products of the longest detected FSM transcript, and the associated counts were aggregated (as shown in \cref{fig:ism_collapse}). However, there is a caveat that significantly shorter ISM transcripts could in theory be mapped to multiple isoforms.  
+Following \textit{SQANTI} annotations, there were many examples where multiple ISMs and several FSM transcripts were annotated to the same known isoform (exemplified in \cref{fig:redudant_sncatranscripts}). This is likely due to varying extent of 5'degradation and truncation - small degree of degradation or truncation would result in differing 5' and 3' ends respectively while preserving the internal exonic structure and thereby generating several FSMs; conversely, a large degree of degradation or truncation would generate smaller partial isoforms that also have matching, albeit smaller overlap, exonic structure. To ease downstream quantitative analyses, ISMs and shorter FSMs were assumed as partial products of the longest detected FSM transcript, and the associated counts were aggregated (as shown in \cref{fig:ism_collapse}). However, there is a caveat that significantly shorter ISM transcripts could in theory be mapped to multiple isoforms.  
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=10,trim={0cm 0cm 0 0cm},clip, scale = 0.45]{Pipeline.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Redundant ISMs and FSMs associated with same known isoform]%
+	{\textbf{Redundant ISMs and FSMS associated with known transcript of \textit{Snca}}: \textbf{a)} Visualisig transcripts using \textit{Swan}, shown are \textbf{b)} transcripts detected after \textit{SQANTI} annotation of the mouse transcriptome using the targeted approach. An example of detecting multiple redundant transcripts annotated to the same isoform, all the transcripts depicted were annotated to ENMUST0000014268.4 which typically differed at the 5' and 3' end.}
+	\label{fig:redudant_sncatranscripts}
+\end{figure}
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[page=8,trim={0cm 21cm 0cm 0cm},clip,scale = 0.45]{Pictures/Pipeline.pdf}
+	\includegraphics[page=9,trim={0cm 21cm 0cm 0cm},clip,scale = 0.45]{Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Merging of ISMs and FSMs associated with the same known isoform]%
+	\caption[Merging of ISMs and FSMs]%
 	{\textbf{Merging of ISMs and FSMs associated with the same known isoform}. All illustration of handling with multiple ISM and FSM associated with the same known transcript. In this example, 6 isoforms were detected for "Gene 1", however, only 4 known isoforms were identified (denoted as ENMUST1-4). For ease of annotation and quantification, ISMs and shorter FSMs were assumed partial products of the longer FSM. Consequently, in the case where: 
 		\begin{itemize}
 			\item both ISM (PB.1.2) and FSM (PB.1.1) are annotated to the same transcript (shaded green), the FSM takes precedence as the associated transcript and counts from respective ISMs are aggreated 
@@ -218,6 +248,60 @@ Following \textit{SQANTI} annotations, there were many examples where multiple I
 	}
 	\label{fig:ism_collapse}
 \end{figure}
+
+\boldheader{RNA-Seq Alignment to Iso-Seq defined transcriptome}
+For the hybrid approach of aligning short reads to Iso-Seq defined trascriptome from the targeted approach, several factors were optimised including the library size and the Iso-Seq annotation (\cref{tab:rnaseq_alignment_targeted}). 
+
+\begin{table}[!h]
+	\centering
+	\caption[RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome]%
+	{\textbf{RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome}. Tabulated is trialled methods of aligning short reasd to Iso-Seq defined transcriptome, with alterations either of the sequencing library (such as the pool of the sequencing reads for alignment) and the choice of Iso-Seq isoform for alignment}
+	\label{tab:rnaseq_alignment_targeted}
+	\begin{threeparttable}
+	\begin{tabular}{@{}cll@{}}
+		\toprule
+		Method & Sequencing Library                       & Annotation                            \\ \midrule
+		1      & Targeted Transcriptome (All Reads)\tnote{a}       & No Isoform collapse\tnote{c}                   \\
+		2      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to longest FSM\tnote{d}       \\
+		3      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to most abundant FSM\tnote{e} \\
+		4      & Targeted Transcriptome (On Target Reads)\tnote{b} & Isoform collapse to longest FSM\tnote{d}       \\
+		5      & Targeted Transcriptome (On Target Reads)\tnote{b} & Isoform collapse to most abundant FSM\tnote{e} \\
+		6 & \begin{tabular}[c]{@{}l@{}}Whole Transcriptome \& \\ Targeted Transcriptome (On Target Reads)\end{tabular} & Isoform collapse to longest FSM \\ \bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\footnotesize
+		\item[a] Sequencing reads from on-target and off-target genes
+		\item[b] Sequencing reads aligned only to target genes
+		\item[c] Transcriptome annotation following \textit{SQANTI} with no removal of redundant ISMs and FSMs
+		\item[d] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISMs to respective longest FSM of same transcript and aggregated counts
+		\item[e] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISMs to respective most abundant FSM of same transcript and aggregated counts 
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+- Noticed different output dependent on the choice of Iso-Seq isoforms for alignment and the sequencing library, with either different quantification pattern or annotation of differentially expressed isoform to differet isoform to that ascribed using Iso-Seq reads (often novel isoforms)
+
+\begin{landscape}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=1,trim={0cm 0cm 0cm 0cm},clip,scale = 0.8]{ProjectDevelopment_Figures_Landscape}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Merging of ISMs and FSMs]%
+	{\textbf{Merging of ISMs and FSMs associated with the same known isoform}. 
+	}
+	\label{fig:ism_collapse}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=2,trim={0cm 0cm 0cm 0cm},clip,scale = 0.8]{ProjectDevelopment_Figures_Landscape}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Merging of ISMs and FSMs]%
+	{\textbf{Merging of ISMs and FSMs associated with the same known isoform}. 
+	}
+	\label{fig:ism_collapse}
+\end{figure}
+\end{landscape}
 
 \subsubsection{Iso-Seq isoform expression}
 To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
@@ -239,5 +323,30 @@ While PacBio's Iso-Seq have major potential for transcriptome annotation, there 
 	\item Degradation of transcripts from 5' end, and thus lack of confidence in transcription start site and full-length structure 
 \end{enumerate}
 
+Despite the ability of long-read sequencing (particularly, Iso-Seq\nomenclature{Iso-Seq}{Isoform Sequencing}) to discover large number of novel and longer transcripts and identify complex splicing events such as alternative adenylation, there are inherent biases to sequencing the more highly-expressed and relatively shorter transcripts. Consequently, while the new chemistry has improved the error rate and increased throughput, the coverage is still insufficient for accurate transcript quantification and sensitive differential transcript analysis based on long reads alone (Koren et al., 2012). Furthermore, there is currently no consensus to validate or functionally characterise these transcripts (B. Wang, Kumar, Olson, \& Ware, 2019). The current standard for such application is thus a hybrid approach of aligning the short-reads to the long-reads to improve alignment and assemblage, and for downstream isoform quantification. 
+
+Isoform-specific expression can be deduced from short-reads alone using statistical models if the gene is well annotated (i.e. all isoforms are known) based on i) reads aligning to contiguous genomic segment (exonic reads) and ii) reads aligning to two contiguous segments with a single gap of 60-400bp (junction reads)(Jiang and Wong, 2009)).
+
+Various bioinformatic tools and computational models have been developed to quantify isoform quantification from RNA-Seq data. There are currently two main methods:
+\begin{enumerate}
+	\item Inclusion level, calculated for a regulated exon by aligning reads either to candidate alternative exons and its junctions (inclusion reads), or to flanking exons and subsequently skipping the candidate alternative exon (skipping/exclusion reads) (Chen et al. 2012)
+	\item Percent-Spliced-In (PSI\nomenclature{PSI}{Percent-Spliced In}), calculated by proportion of isoforms that include the exon (Venables et al. 2008)(Katz et al. 2010). If the PSI value is calculated for a particular splicing event, it can be considered equivalent to the inclusion level. 
+\end{enumerate}
+Isoform quantification can either be expressed as a global measure of expression, which provides a global gene expression ranking in one sample (measured by RPKM: Reads of a transcript sequence per Millions mapped read\nomenclature{RPKM}{Reads of a transcript sequence per Millions}), or as a relative measure of expression, which is normalized per gene locus and comparable across conditions (measured by inclusion level or PSI value). 
+
+Isoform abundance calculated by aligning short-reads to transcriptome is preferential to alignment with reference annotation library (RefSeq/GENCODE) in narrowing down the isoforms expressed and thus subsequently enabling more reliable abundance quantification. Reference annotation library is constructed on all data from the same species, and inclusion of annotated but not truly expressed isoforms can increase variability of abundance estimates. Finally, if the reference library is incomplete, then truly expressed isoforms would be completely missed and RNA-Seq reads would be incorrectly assigned to annotated isoform (\cite Au2013)
+
+
+\textbf{Differential Isoform Usage }\\
+\label{intro:dtu}
+When analyzing splicing patterns between multiple conditions, changes in isoform abundance can be defined in two ways: 
+\begin{enumerate}
+	\item Differential Isoform Expression (DIE\nomenclature{DIE}{Differential Isoform Expression}): changes in absolute expression of an isoform, evaluated using count matrixes 
+	\item Differential Isoform Usage (DIU\nomenclature{DIU}{Differential Isoform Usage}): changes in relative expression of an isoform from the same gene, resulting in a change in isoform proportion and is evaluated using changes in gene exon usage	
+\end{enumerate}
+
+Figure X shows an example of a change in DIE but no change in DS: A two-fold increase of both isoforms from the same gene results in a change in absolute but not relative expression to one another. A change in DIE but not in DS may indicate a transcription-related mechanism. If a change in DS is observed, a change in DIE of one of the isoforms would also be observed. A change in multiple isoforms would also be observed, as long as the change is not in the same direction (upregulated/downregulated) with the same magnitude. Any changes in DS/relative abundance of isoforms indicate a splicing-related mechanism. 
+
+In addition to exploring differential splicing in terms of isoform abundance, which typically involves an exon-based approach that focuses on differential exon usage (i.e. DEXSeq), a splicing based approach can also be taken. This involves analyzing individual splicing events (exon skipping, alternative donor and acceptor) for systematic changes between conditions. rMATS, SUPP2, LeafCutter and Majiq are such tools that identify and quantify splicing events using junction reads. 
 
 	 
