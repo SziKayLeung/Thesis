@@ -1,10 +1,118 @@
 \documentclass[../Main/Knit.tex]{subfiles}
+\label{ch:general_methods}
+
+This chapter describes the general methods that were applied in the long-read sequencing experiments (detailed in \ref{chap:isoseq_labpipeline}). Experimental methods specific to individual results chapter can be found in the method section of the respective chapter. All detailed intructions, pertaining to the general methods, can be found in \textbf{Appendix \ref{app_longread_protocol}}. 
+
+\section{Mouse Samples and Preparation}
+
+\subsection{Mouse model of AD tauopathy: rTg4510} 
+rTg4510 mice recapitulates AD tauopthy through the overexpression of the human mutant tau form (MAPT\textsuperscript{P301L}); the transgene encodes human tau containing four microtubule binding domains and lacking N-terminal segment (4R0N) with the FTD-associated P301L mutation. The transgene also contains exons 2-3 of the mouse prion protein gene \textit{Prnp} untranslated sequence. Transgene expression is controlled under the calcium calmodulin kinase II promotor (CaMK2a) and is largely restricted to the forebrain, with age-dependent spread of neuropathology starting from the neocortex as early as 2 months and progressing rapdily to the hippopcampus. Neuronal and synpatic loss is also observed by 9 months, with these mice exhibiting cognitive and behavioural impairmets. Sex differences in pathology have been reported with female mice exhibiting earlier and more severe cognitive and behavioural impairment than transgenic male mice.  
+
+Of note, the genomic integration of CAMK2a and MAPT transgene has been to have off-target effects with disruption in the endogenous mouse genes. 
+
+\subsection{Animal breeding \& Sample Preparation}
+All animal procedures were carried out at Eli Lilly and Company, in accordance with the UK Animals (Scientific Procedures) Act 1986 and with approval of the local Animal Welfare and Ethical Review Board. All mice were bred and delivered to Eli Lilly and Company (Windlesham, UK) by Envigo (Loughborough, UK), where animals were housed under standard conditions (constant temperature and humidity with a 12h light/dark cycle in individually ventilated cages) before terminal anaesthesis with pentobarbital and transcardial perfusion with phosphate-buffered saline (PBS)\cite{Castanho2020}.
+
+Entorhinal cortex was dissected from the left-brain hemisphere of female transgenic mice (TG \nomenclature{TG}{Transgenic mice} and wild-type controls (WT\nomenclature{WT}{Wild-type mice}) aged 2, 4, 6 and 8 months (n = 9-10 mice per group). Total RNA was then extracted\cite{Castanho2020} using the AllPrep DNA/RNA Mini Kit (Qiagen) according to the manufacterer protocol, and assessed for RNA quality and quantity using Agilent 2100 Bioanalyzer Instrument (Agilent Technologies). High-quality RNA was then converted to complementary DNA (cDNA) for library preparation and sequencing using both long (Iso-Seq) and short reads (RNA-Seq).
+
+\subsection{Assessment of nucleic acid quality and quantity}
+High-quality RNA and subsequent cDNA was imperative for good library preparation and sequencing runs, particularly for long-read sequencing.  Inference on the purity and integrity of extracted RNA, and subsequent cDNA quality, size and quantity was therefore needed throughout various quality control stages (QC) of library preparation. This was achieved by using ScreenTape and Bioanalyzer assays for qualitative assessment, and Qubit for DNA quantification. 
 
 
+\subsection{Screentape \& Bioanalyzer}
+\label{section:ch2_bioanalyzer} 
+DNA/RNA ScreenTape and Bioanalyzer assays are commonly used to provide accurate, automated assessment of nucleic acid quality and size by electrophoresis. It works on the principle that by applying an electrical charge, negatively-charged DNA migrates through a gel matrix towards the positive anode at a rate dependent on DNA size; smaller DNA fragments migrate faster, and thus move further through the gel within a specific time frame. The separated DNA can be then visualised using a fluorescent dye that intercalates into the DNA structure and fluoresces under ultraviolet light. While the Bioanalyzer assay is more sensitive than the ScreenTape assay, it is more expensive to run as it uses a chip consisting of 12 sample wells rather than independent lanes on the ScreenTape.
 
-\section{Polymerase Chain Reaction (PCR)}
+Both RNA ScreenTape and Bioanalyzer assays further provide a numeric evaluation of an RNA sample as a score between 1 and 10 and is known as a RNA Integrity Number (RIN\nomenclature{RIN}{RNA Integrity Number}); 1 is indicative of high degradation, and 10 of low degradation and thus high integrity (Figure \ref{fig:bionalayzer_pics}). 
+
+The purity and quantity of extracted RNA was assessed using RNA Bioanalyzer assay with Agilent RNA 6000 Nano Kit (Agilent Technologies) and Agilent 2100 Bioanalzyer instrument (Agilent Technologies). Assessment of DNA quality for various QC stages of long-read library preparation was mostly performed using DNA Bioanalyzer assay with Agilent D1200 Kit (Agilent Technologies), particularly where accurate determination of library molarity is critical. In QC steps where assessment is optional, the D5000 ScreenTape (Agilent Technology) and 4200 Tapestation (Agilent Technology) was used instead. Detailed instructions performed for Bioanalyzer and ScreenTape assays are detailed in \textbf{Appendix \ref{Isoseq_Protocol_tapestation_bioanalyzer}}, following manufacterer's instructions.  
+
+\begin{figure}[htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=1,trim={0 10cm 0 0 },clip, scale = 0.7]{General_Methodology_Figures.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Evaluation of RNA integrity with Bioanalyzer and Tapestation]%
+	{\textbf{Evaluation of RNA integrity with Bioanalyzer and Tapestation}: Total RNA degradation can be observed by a shift towards shorter fragment size as depicted in Figure a, after prolonged incubation. The degree of degradation is represented by a RNA integrity number (RIN), ranging from intact (RIN = 10) to degraded (RIN = 2) RNA, and is calculated by the relative ratio of the fast region and 18S, 28S fragment (Figure c). Figures and legends are adapted from Mueller et al. 2016.}
+	\label{fig:bionalayzer_pics}
+\end{figure}
+
+\subsection{Qubit}
+\label{section:ch2_qubit}   
+Qubit assays (Invitrogen) allow accurate nucleic acid quantification by the selective binding of fluorescent Qubit dyes to double-stranded DNA (dsDNA\nomenclature{dsDNA}{double-stranded DNA}) or RNA, making it more sensitive and specific than UV absorbance used in NanoDrop 8000 spectrophotometer (Thermo Fisher Scientific). It is commonly performed to determine the average concentration of DNA or RNA prior to proceeding with downstream experiments. Many of the steps in the Iso-Seq protocol and ONT protocol thus require performing Qubit assays, particularly post bead purification, and are detailed in \textbf{Appendix  \ref{Isoseq_Protocol_qubit}}.       
+
+\section{cDNA synthesis, amplification \& purification}
+Following RNA extraction, integrity assessment and quantification, total RNA was converted to complementary DNA. To generate sufficient DNA for sequencing, single-stranded DNA was then amplified using Polymerase Chain Reaction (PCR\nomenclature{PCR}{Polymerase Chain Reaction}) and assessed using agarose gel electrphoresis. 
+
+
+\subsection{Complementary DNA synthesis}
+\label{section:ch2_cDNA_synthesis_explanation} 
+As part of the official Iso-Seq protocol, SMARTer PCR cDNA Synthesis Kit (Clontech) was used to convert 200ng extracted total RNA to complementary DNA by first strand cDNA synthesis, as outlined in \cref{fig:cDNAsynthesis_workflow}. In brief, the polyA+ tails of RNA transcripts is first primed by a modified oligo (dT) primer, transcribed by SMARTScribe Reverse Transcriptase to generate a first single-stranded DNA, which is then diluted and subsequently amplified \cite{Ramskold2012}. All reagents were provided with the kit, except for the Pacific Bioscience’s barcodes, with all reagents and consumables used being sterile and DNAse and RNAse free. Detailed instructions of lab workflow can be found in \textbf{Appendix \ref{Isoseq_protocol_cDNAsynthesis}}. In order to sequence samples simultaneously (“multiplex”), as exploited for targeted sequencing, unique barcoded oligo (dT) primer was used in place of the standard oligo (dT) primer (\cref{tab:barcode_primers}). With new Sequel system, cDNA can be sequenced without size selection.
+
+While this kit is advantageous in preferentially enriching for full-length cDNA sequences, as a template switching oligo is required to ensure complete reverse transcription, it cannot differentiate between intact and truncated RNA; which, present in poor-quality samples will be amplified as a potential source of contamination in the final cDNA library. One alternative is to exploit the 5’-cap that is present only in intact RNA and not truncated RNA (5-cap refers to the addition of 7-methylguanosine to the 5’ end of mRNA during transcription, to protect nascent mRNA from degradation and assist in protein translation). Alternative reverse transcriptase have been explored that only converts 5’capped mRNAs to cDNA, however, these have been found to negatively affect read length on the ONT platform\cite{Cartolano2016}. An alternative method, Full-Length cDNA Amplification (Teloprime)\cite{Cartolano2016}, relies on a double-stranded adapter that recognises and ligates to the 5’cap at the end of first strand synthesis (\textbf{Appendix \ref{ch:alt_cDNA}}).
+
+\begin{figure}[htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=2,trim={0 12cm 0 0 },clip, scale = 0.7]{General_Methodology_Figures.pdf}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Flowchart of SMARTer cDNA synthesis]%
+	{\textbf{Flowchart of SMARTer cDNA synthesis}: SMARTer cDNA synthesis ensures the generation of full-length cDNA by the usage of the enzyme terminal transferase activity, whereby premature termination of RT results in less efficient transferase activity, and subsequent absence of overhang for downstream amplification. 
+	cDNA synthesis is achieved in the following manner: 
+	\begin{enumerate}
+		\item Oligo(dT) primer (3’ SMART CDS Primer II A) primes the first-strand synthesis reaction by binding to polyA tail and transcribes the RNA into single-stranded DNA
+		\item As RT reaches the 5’ end of the mRNA, the enzyme’s terminal transferase activity adds a few additional nucleotides to the 3’ end of the cDNA
+		\item With a 3’end that is complementary to the added nucleotides, the SMARTer Oligonucleotide, or the template switching oligo, base-pairs with it and creates an extended template.
+		\item RT then switches templates and continues transcribing to the end of the SMARTer oligonucleotide 
+		\item The resulting full-length, single-stranded (ss) cDNA contains the complete 5’ end of the mRNA, as well as a 3’ end that is complementary to the SMARTer Oligonucleotide. 
+		\item The SMARTer Oligonucleotide and the poly A sequence then serves as universal priming sites for end-to-end cDNA amplification.
+		\\
+		
+	\end{enumerate}
+	Of note, the SMARTer II A Oligonucleotide, 3’ SMART CDS Primer II A, and 5’ PCR Primer II A all contain a stretch of identical sequence.  
+
+	Figure is taken from the SMARTer™ PCR cDNA Synthesis Kit User Manual. RT - Reverse Transcriptase.
+	}
+	\label{fig:cDNAsynthesis_workflow}
+\end{figure}
+
+
+\begin{landscape}
+	The general structure of barcoded oligo-dT primer is as follows:
+	\\
+	\\
+	\hangindent=5cm \textcolor{RedOrange}{Primer Sequence} \hspace{2cm}   \textcolor{ForestGreen}{16-bp barcode}   \hspace{4cm} \textcolor{RoyalBlue}{oligo-dT}
+	\begin{center}
+		5'\textcolor{RedOrange}{AAGCAGTGGTATCAACGCAGAGTAC}\textcolor{ForestGreen}{tcagacgatgcgtcat}\textcolor{RoyalBlue}{TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN3’}
+	\end{center}
+	\vspace{1cm}
+
+	\begin{table}[ht]
+		\captionsetup{justification=raggedright,width=1.45\textwidth}
+		\caption[Barcoded Oligo-dT Primers for targeted transcriptome sequencing]%
+		{\textbf{Barcoded oligo-dT primers were used for multiplexing samples in targeted transcriptome sequencing}. Each of the barcoded primers contain the same 5' primer sequence and oligo-dT for reverse transcription of first strand cDNA synthesis using Clontech kit SMARTer PCR cDNA Synthesis Kit. The different internal 16bp sequence allows tagging and differentiation of samples in the same sequencing run. The barcodes are recommended from official PacBio's multiplex protocol.}
+		\label{tab:barcode_primers}
+		\begin{tabularx}{1.45\textwidth}{ll}
+			\toprule
+			Barcode Name & Sequence                                                                  \\ \midrule
+			Barcode 1    & AAGCAGTGGTATCAACGCAGAGTACCACATATCAGAGTGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 2    & AAGCAGTGGTATCAACGCAGAGTACACACACAGACTGTGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 3    & AAGCAGTGGTATCAACGCAGAGTACACACATCTCGTGAGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 4    & AAGCAGTGGTATCAACGCAGAGTACCACGCACACACGCGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 5    & AAGCAGTGGTATCAACGCAGAGTACCACTCGACTCTCGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 6    & AAGCAGTGGTATCAACGCAGAGTACCATATATATCAGCTGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 7    & AAGCAGTGGTATCAACGCAGAGTACTCTGTATCTCTATGTGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 8    & AAGCAGTGGTATCAACGCAGAGTACACAGTCGAGCGCTGCGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 9    & AAGCAGTGGTATCAACGCAGAGTACACACACGCGAGACAGATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\
+			Barcode 10 & AAGCAGTGGTATCAACGCAGAGTACACGCGCTATCTCAGAGTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTVN \\ \bottomrule
+		\end{tabularx}
+	\end{table}
+\end{landscape}
+
+
+\subsection{Polymerase Chain Reaction (PCR)}
 \label{section:ch2_PCR_explanation} 
-To generate sufficient DNA for sequencing, single-stranded DNA was amplified using Polymerase Chain Reaction (PCR\nomenclature{PCR}{Polymerase Chain Reaction}), a well-established method of generating multiple copies of the same DNA sequence. Mimicking natural DNA replication, this relies on a thermostable DNA polymerase, a set of primers specific to the region of interest, and a cocktail of various other components required for polymerisation (deoxynucleotides\nomenclature{dNTPs}{Deoxynucleotides} , buffers). This reaction is then subjected to a series of heating and cooling steps: 
+PCR is well-established method of generating multiple copies of the same DNA sequence. Mimicking natural DNA replication, this relies on a thermostable DNA polymerase, a set of primers specific to the region of interest, and a cocktail of various other components required for polymerisation (deoxynucleotides\nomenclature{dNTPs}{Deoxynucleotides} , buffers). This reaction is then subjected to a series of heating and cooling steps: 
 \begin{enumerate}
 	\item Denaturation at 96C, to separate any double-stranded DNA 
 	\item Annealing, typically between 55 to 65C, for the binding of primers to the complementary sequences on the single-stranded DNA; the specific annealing temperature is dependent on the primer sequence. 
@@ -12,56 +120,62 @@ To generate sufficient DNA for sequencing, single-stranded DNA was amplified usi
 \end{enumerate} 
 These three steps are then repeated for a number of times, "cycles", for an exponential generation of the DNA template of interest.
 
-Single-stranded DNA generated from SMARTer PCR synthesis kit in the official Iso-Seq protocol was amplified by PCR using PrimeSTAR GXL DNA Polymerase (ClonTech). Also performed for targeted sequencing. 
-
-
-\section{Agarose Gel Electrophoresis}
+\subsection{Agarose Gel Electrophoresis}
 \label{section:ch2_agarose_explanation}  
-Agarose gel electrophoresis allows the separation of (double-stranded) DNA molecules based on its length. It is most commonly used to determine DNA quality and quantity, and assess the efficiency of molecular biology techniques such as PCR amplification. It works on the principle that by applying an electrical charge, negatively-charged DNA migrates through a gel matrix towards the positive anode at a rate dependent on DNA size: smaller DNA fragments migrate faster, and thus move further through the gel within a specific time frame. The separated DNA can be then visualised using a fluorescent dye that intercalates into the DNA structure and fluoresces under ultraviolet light. 
+Agarose gel electrophoresis allows the separation of (double-stranded) DNA molecules based on its length, and works on the same principle as Bioanalyzer and ScreenTape assays. It is most commonly used to determine DNA quality and quantity, and assess the efficiency of molecular biology techniques such as PCR amplification in determining the number of optimum cycles. Instructions to set up and run an agarose gel electrophoresis are detailed in \textbf{Appendix \ref{Isoseq_Protocol_running_agarose_gel}}.
 
-For this thesis, visualisation of DNA through gel electrophoresis was required primarily for optimising the number of PCR cycles for amplification, and for validating transcripts identified from Iso-Seq in Chapters X. A 1.5\% agarose gel was made, with the separated DNA visualised using ethidium bromide on XXXX, as detailed in Section \ref{Isoseq_Protocol_running_agarose_gel}.
 
-\section{Bioanalyzer and Tapestation}
-\label{section:ch2_bioanalyzer} 
-ScreenTape and Bioanalyzer assays are commonly used to provide accurate assessment of nucleic acid quality and size, prior to proceeding with downstream experiments. As an automative alternative to agarose gel electrophoresis, both assays similarly take advantage of nucleic acid's inclination to migrate in response to an electrical field.
-While the Bioanalyzer assay is more sensitive than the ScreenTape assay, it is more expensive to run as it uses a chip consisting of 12 sample wells rather than independent lanes on the ScreenTape. 
+\subsection{AMPure Bead Purification} 
+\label{section:ch2_AMPure_explanation} 
+Throughout various stages of long-read library preparation, cDNA (resulting PCR products) was purified using AMPure beads (\cref{fig:ampure_bead_workflow}\textbf{a}). These are paramagnetic beads that reversibly bind to DNA in the presence of polyethylene glycol (PEG) and salt. The concentration of PEG, and consequent ratio of beads to DNA, determines the size of fragments that are bound and consequently eluted (\cref{fig:ampure_bead_workflow}\textbf{b}); the lower the ratio of beads to DNA, the greater the proportion of longer DNA fragments bound, due to the preferential binding of beads to more negatively-charged, resulting in attachment of larger molecular weight DNA and displacement of shorter fragments. 
 
-For this thesis, most of the assessments of DNA quality in the Iso-Seq and ONT protocol were performed on the DNA 12000 Kit (Agilent) on the 2100 Bioanalyzer assay for accurate determination of library molarity (Section X). However, the D5000 ScreenTape (Agilent) was used in a few of the quality control steps where it is optional to assess for DNA quality (Section X).
-
-RNA extracted by Dr Isabel Castanho was also run on RNA ScreenTape assay and the Bioanalyzer RNA analysis to provide accurate evaluation of RNA degradation; this is represented by a RNA Integrity Number (RIN\nomenclature{RIN}{RNA Integrity Number}) between 1 and 10, where 1 is indicative of high degradation, and 10 of low degradation and thus high integrity (Figure \ref{fig:bionalayzer_pics}). As a pre-requisite for good sequencing yield on Sequel and MinION, only samples with RIN $>$ 8 were selected for long-read sequencing on Iso-Seq and ONT protocol.
-
-\spacetable
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.21\textheight]{Pictures/RNA_degradation.png}
-		\caption{Automated gel electrophoresis of RNA degradation}
-	\end{subfigure}
-	\hspace{2em}
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.21\textheight]{Pictures/RIN_range.png}
-		\caption{Electropherogram of RNA degradation}
-	\end{subfigure}
-	\hspace{2em}
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth,
-		height=0.21\textheight]{Pictures/RIN_regions.png}
-		\caption{Electropherogram of regions that are indicative of RNA quality}
-	\end{subfigure}
+	\vspace{20pt}
+	\includegraphics[page=3,trim={0 8cm 0 0 },clip, scale = 0.7]{General_Methodology_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Evaluation of RNA integrity with Bioanalyzer and Tapestation]%
-	{\textbf{Evaluation of RNA integrity with Bioanalyzer and Tapestation}: Total RNA degradation can be observed by a shift towards shorter fragment size as depicted in Figure a, after prolonged incubation. The degree of degradation is represented by a RNA integrity number (RIN), ranging from intact (RIN = 10) to degraded (RIN = 2) RNA, and is calculated by the relative ratio of the fast region and 18S, 28S fragment (Figure c). Figures and legends are adapted from Mueller et al. 2016.}
-	\label{fig:bionalayzer_pics}
-	\end{figure} 
+	\caption[Overview lab workflow of DNA purification with AMPure Beads]%
+	{\textbf{Overview lab workflow of DNA purification with AMPure Beads}: A schematic figure depicting \textbf{a)} steps of purifying DNA with AMPure Beads, with initial binding of magnetic beads to negatively-charged DNA enabling separation of DNA fragments, followed by ethannol wash and elution. \textbf{b)}) An agarose gel image of DNA purified using a range of bead to DNA ratio. As shown, size selection is achieved with different ratios, with a lower ratio retaining only longer fragments. Figures are taken from Beckman Website. Detailed instructions of the workflow can be found in \textbf{Appendix \ref{general_ampure_bead_purification}}}
+	\label{fig:ampure_bead_workflow}
+\end{figure}
 
-\section{Qubit}
-\label{section:ch2_qubit}   
-Qubit assays allow accurate nucleic acid quantification by the selective binding of fluorescent Qubit dyes to double-stranded DNA (dsDNA\nomenclature{dsDNA}{double-stranded DNA}) or RNA, making it more sensitive and specific than UV absorbance used in NanoDrop 8000 spectrophotometer (Thermo Fisher Scientific). It is commonly performed to determine the average concentration of DNA or RNA prior to proceeding with downstream experiments. Many of the steps in the Iso-Seq protocol and ONT protocol thus require performing Qubit assays, particularly post bead purification, and are detailed in Section \ref{Isoseq_Protocol_qubit}.  
+ 
+\section{ERCC-RNA Spike-In Controls}
+\label{section:ch2_ERCC_explanation} 
+To evaluate the performance of library preapration and the sequencing runs, and to validate the Iso-Seq pipeline to accurately characterise the transcriptome using long reads, a set of external RNA Spike-In controls, External RNA Controls Consortium (ERCC\nomenclature{ERCC}{External RNA Controls Consortium}), was used. ERCC consists of 92 polyadenylated synthetic transcripts (250 to 2000 nucleotides) of known sequences from the ERCC plasmid library, which are added in pre-determined amounts to the sample prior to first-strand cDNA synthesis. The addition of ERCC would allow assessment of the quantitative power of long-read sequencing approaches in addition to providing absolute quantification of mRNA isoform with the sample by generating a standard curve. It can further validate that the bioinformatics pipeline only identifies 1 isoform per ERCC gene. 
 
+The amount determined of spike-in control was calculated using the below equation \cite{WTAC}:
+\begin{myequation}[!h]
+	\begin{equation}
+		\label{eqn:ercc_calcaluations}
+		mass_{RNA spike} = fraction_{spiked reads}\; * fraction_{target RNA}\; *mass_{RNA input}
+	\end{equation}
+	\begin{equation}
+		concentration_{RNA spike} = mass_{RNA spike}\; * volume_{RNA spike}
+	\end{equation}
+	where:
+	\begin{conditions*}
+		mass_{RNA spike} & mass of RNA spike-in to be added to sample \\
+		concentration_{RNA spike} & final diluted concentration (ngs/ul) of the RNA spike-in \\
+		fraction_{spiked reads}  &   desired proportion of sequenced spike-in RNA reads relative to total amount of sequenced reads \textit{(3\%)} \\
+		fraction_{target RNA}    &  expected proportion of target RNA, in this case mRNA relative to total RNA \textit{(3\%)} \\   
+		mass_{RNA input} &  input of total RNA \textit{(200ng)} \\
+		volume_{RNA spike} & volume of RNA spike-in \textit{(0.1uL)}				
+	\end{conditions*}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Determining amount of ERCC-RNA Spike-In Control]%
+	{\textbf{Determining amount of ERCC-RNA Spike-In Control}. In determining the mass and final concentration of RNA-spike-in mix based on the above conditions, the stock ERCC RNA spike-in was diluted from the original concentration of 30ng/$\mu$L to 1.8ng/$\mu$L with a dilution factor of 1:16.8. The italicised parameters were taken from the RNA Transcriptomics 2018 Course\cite{WTAC} with the exception of total RNA input}
+\end{myequation}
 
-\pagebreak
-\section{Target Capture using IDT Probes}
-For gene enrichment in targeted sequencing, the official PacBio protocol “cDNA Capture Using IDT
-xGen® Lockdown Probes” was used, with minor changes adapted from the official IDT protocol “xGen hybridisation capture of DNA libraries”, as outlined in Figure X. In brief, the samples with unique non-overlapping barcodes were pooled in equal molarity post ampure bead purification and hybridised with target-specific probes; the captured cDNA was then washed with multiple wash buffers, amplified and purified with AMPure beads.   Pooling 6 – 9 libraries prior to target capture simplifies laboratory workflow and minimises associated sequencing costs. 
+A separate pilot experiment (Appendix \ref{ch:alt_cDNA}) showed successful addition of ERCC with two main bands at \textasciitilde600bp and \textasciitilde1000bp (Figure \ref{fig:ercc_lab_gel}a), reflecting significant enrichment of ERCC transcripts at these two respective lengths as is expected (Figure \ref{fig:ercc_lab_gel}b). The stark contrast of these two bands, however, to the smear of cDNA, suggests that the ERCC transcripts are predominant - this could be due to an overestimation of assumed proportion of mRNA to total RNA, which is likely in reality to be lower than 3\%. To reduce unnecessary sequencing and coverage of ERCC transcripts, a lower ERCC RNA-spike in concentration was used (final concentration of 0.6ng/$\mu$L and a dilution factor of 1:50.5, Figure \ref{fig:ercc_lab_gel}c). 
 
-
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=4,trim={0 8cm 0 2cm},clip,scale = 0.65]{General_Methodology_Figures.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ERCC usage to benchmark library preparation and sequencing performance runs]%
+	{\textbf{Successful addition of ERCC to first-strand cDNA synthesis a)}. Agarose gel image taken from PCR amplification of cDNA and ERCC (1.8ng/$\mu$L determined from equation \ref{eqn:ercc_calcaluations}), and ERCC alone as a positive control. 5$\mu$L of PCR aliquots were taken every cycle (13 - 18) and then run on gel electrophoresis. The two bands at 600bp and 1000bp refer to the enrichment of ERCC transcripts at these two lengths as would be expected. \textbf{b)} Distribution of known ERCC length, with a significant proportion of transcripts sized at 500-600bp and 1000-1200bp. \textbf{c)} Agarose gel image after a repeat of PCR amplification of cDNA and ERCC at a lower concentration (0.6ng/$\mu$L), ERCC as positive and water as negative control respectively. The numbers above the lane refer to the number of cycles, L denotes to 100bp Ladder.}
+	\label{fig:ercc_lab_gel}
+\end{figure}
+ 
