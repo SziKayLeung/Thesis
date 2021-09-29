@@ -13,6 +13,7 @@ ERCC was used to assess the sensitivity and quality of whole transcriptome Iso-S
 As described in Section \ref{section:classify}, the proportion of raw subreads that can be successfully collapsed to generate a CCS is widely influenced by the number of passes (default: 3 passes) and minimum base accuracy (default: 99\%), which settings are widely varied in scientific community. 
 
 To determine the most optimum parameters for CCS generation, CCS was generated on a subset of 1 sample using a combination of parameters, and then further validated with 2 whole samples (Figure \ref{fig:ccs_optimisation}):
+\iffalse
 \begin{figure}[h!]
 	\centering
 	\begin{subfigure}{0.8\linewidth}
@@ -34,7 +35,7 @@ To determine the most optimum parameters for CCS generation, CCS was generated o
 	{\textbf{Optimisation of CCS generation}: Successful CCS generation of raw subreads is dependent on the number of polymerase passes and minimum RQ of subreads. A two-step approach was taken to determine the optimum parameters, using (b) whole range of parameters on 10\% of one sample, and (c) extending analyses to two samples but with a more refined combination (as determined from the results of first step))}
 	\label{fig:ccs_optimisation}
 \end{figure} 
-
+\fi
 
 Conclusion: 0.9 and 1 pass 
 
@@ -56,7 +57,7 @@ Several learnings were taken from analysis with ERCC: i) default parameters used
 - a) readjustment, unique ERCC, lowly expressed transcipts, correlation
 
 \begin{figure}[h]
-	\includegraphics[page=1, width=1\linewidth,height=0.4\textheight]{../Pictures/Project_Development/ERCC.pdf}
+	\includegraphics[page=1, width=1\linewidth,height=0.4\textheight]{ERCC.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[No significant correlation between RIN and Whole Transcriptome Iso-Seq run output]%
 	{\textbf{No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}: Samples with RIN $>$8 were selected for Whole Transcriptome Iso-Seq, with TG samples having distinctly lower RIN values than WT samples. However, no significant difference was observed for run output between WT and TG (Figure \ref{tab:run_output}) }
@@ -64,7 +65,7 @@ Several learnings were taken from analysis with ERCC: i) default parameters used
 \end{figure}
 
 \begin{figure}[h]
-	\includegraphics[page=1, width=1\linewidth,height=0.4\textheight]{../Pictures/Project_Development/ERCC.pdf}
+	\includegraphics[page=1, width=1\linewidth,height=0.4\textheight]{ERCC.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[No significant correlation between RIN and Whole Transcriptome Iso-Seq run output]%
 	{\textbf{No significant correlation between RIN and Whole Transcriptome Iso-Seq run output}: Samples with RIN $>$8 were selected for Whole Transcriptome Iso-Seq, with TG samples having distinctly lower RIN values than WT samples. However, no significant difference was observed for run output between WT and TG (Figure \ref{tab:run_output}) }
