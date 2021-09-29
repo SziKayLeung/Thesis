@@ -1,11 +1,11 @@
 \documentclass[../Main/Knit.tex]{subfiles}
-\newpage
+\clearpage
 
 \section{Oxford Nanopore: cDNA Sequencing}
 %https://www.nature.com/articles/s41587-020-0731-9
 
 \subsection{Introduction}
-In 2014, Oxford Nanopore Technology (ONT) introduced another long-read sequencing technology akin to PacBio's SMRT with the ability to also generate long reads capable of resolving the exon structure of mRNA transcripts. However, rather than mimicking the natural DNA synthesis and measuring the incorporation events on the template strand (as is the focus in all major sequencing applications including the PacBio's SMRT) ONT's nanopore-based sequencing adopted an entirely novel approach - the DNA is directly inferred real-time from fluctuations in an electric current applied across a membrane as it passes through a protein pore. 
+In 2014, Oxford Nanopore Technology (ONT) introduced another long-read sequencing technology akin to PacBio's SMRT with the ability to also generate long reads capable of resolving the exon structure of mRNA transcripts. However, rather than mimicking the natural DNA synthesis and measuring the incorporation events on the template strand (as is the focus in all major sequencing applications including the PacBio's SMRT) ONT's nanopore-based sequencing adopted an entirely novel approach by directly inferring the DNA sequence in real-time from electric current fluctuations as the DNA translocates through a protein pore. 
 
 \subsubsection{Mechanism}
 In contrast to Pacbio's XXX by XXX Sequel, ONT's nanopore sequencing can be performed in a handheld MinION device (10 × 3 × 2 cm, 90 g), housing a flow cell at its centre where the DNA sample is loaded. (Also on mobile device: \cite{Samarakoon2020}) Each flow cell contains a sensor array, consisting of 512 channels, each with 4 cells that can in turn house one nanopore (currently CsgG pore from \textit{E.coli} \cite{Goyal2014}), which is inserted in an electrical resistant membrane surrounded by electrolytes. As an electric field is applied across the membrane, the negatively-charged DNA is driven across the nanpopore and subsequently interrupts the current. The pattern to the current disruption is unique and sensitive to the different nucleotides, which allows the sequence to be determined. However, while the current MinION contains a total of 2048 nanopores, only one of the four wells in each channel can be active at any time, as controlled by Application Specific Integrated Circuit (ASIC), allowing up to 512 independent DNA molecules to be sequenced simultaneously.
