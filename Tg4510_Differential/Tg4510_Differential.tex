@@ -8,9 +8,12 @@
 
 Following the accurate characterisation of the mouse transcriptome using long-read sequencing from a global (whole transcriptome approach, \cref{ch: whole_transcriptome}), this chapter aims to exploit these datasets to investigate the transcriptional changes in the mouse entorhinal cortex associated with tau pathology. 
 
-There have been multiple studies recently that explore the transcriptional differences in transgenic mice harbouring different mutations associated with AD. However, all of these studies to date have been undertaken with short-read RNA-Seq - which, while it offers obvious advantage compared to microarrays in accurately quantifying gene expression, is severely limited in detecting and characterising transcripts (as discussed in detail in \cref{rnaseq_intro}).
+There have been multiple studies recently that explore the transcriptional differences in transgenic mice harbouring different mutations associated with AD. However, all of these studies to date have been undertaken with short-read RNA-Seq - which, while it offers obvious advantage compared to microarrays in accurately quantifying gene expression, is severely limited in detecting and characterising transcripts (as discussed in detail in \cref{rnaseq_intro}). Given that short-reads fail to span the entire length of transcripts, characterising and quantifiying alternatively-spliced isoforms is inferred computationally after alignment by using statistical models, which is computationally challenging - a survey of current tools revealed only 40\% of known human transcripts were assembled \cite{Steijger2013}.  
 
-While there have been significant advances to process long-read sequencing data for transcriptome annotations, methods to harness long-read data for differential analyses have been limited. Currently, all the new tools developed to process long-read sequencing data (such as Oxford Nanopore's recommended cDNA transcriptome tutorial \cite{ONTcdna_transcriptome}, \textit{FLAIR} \cite{Tang2020}) integrate old tools, which were initially designed to analyse short-read sequencing data, for differential gene and isoform analyses. Systematically assessed and benchmarked for detecting differential splicing and expression at isoform level in RNA-Seq studies, \textit{DESeq2}, \textit{DexSeq} and \textit{NOISeq} have been most widely used. 
+While there have been significant advances to process long-read sequencing data for transcriptome annotations, methods to harness long-read data for downstream statistical analyses have been limited. These analyses include identifying genes or transcripts with a significant change in expression across biological conditions (the process of which is referred to as Differential Gene Expression, DEG, and Differential Transcript Expression, DTE, analysis respectively), and are typically analysed using statistial tools such as \textit{DESeq}, \textit{edgeR}, \textit{limma}, among others. However, these tools were developed in response to the emergence of short-read RNA-Seq analysis, and typically involve i) aligning short-reads to transcripts either from de-novo assembly or using a reference annotation, and then ii) estimating the transcript expression using complex algorithms. Various benchmarking studies have been conducted to compare the performance of such tools \cite{Teng2016,Rapaport2013}, concluding that there was no single favourable method although tools based on negative binomial modelling (\textit{DESeq}, \textit{edgeR})) had better specificity, sensitivity and good control of false positive errors\cite{Rapaport2013}. 
+
+
+Currently, all the new tools developed to process long-read sequencing data (such as Oxford Nanopore's recommended cDNA transcriptome tutorial \cite{ONTcdna_transcriptome}, \textit{FLAIR} \cite{Tang2020}) integrate old tools, which were initially designed to analyse short-read sequencing data, for differential gene and isoform analyses. Systematically assessed and benchmarked for detecting differential splicing and expression at isoform level in RNA-Seq studies, \textit{DESeq2}, \textit{DexSeq} and \textit{NOISeq} have been most widely used. 
  
 %Genome-wide RNAseq study of the molecular mechanisms underlying microglia activation in response to pathological tau perturbation in the rTg4510 tau transgenic animal model - PubMed (nih.gov)
 %Integrating human brain proteomes with genome-wide association data implicates new proteins in Alzheimer's disease pathogenesis - PubMed (nih.gov)
@@ -170,11 +173,6 @@ As expected, human-specific \textit{MAPT} sequences were only detected in reads 
 %No difference was observed in the number of transcripts generated between WT and TG (n = 12, two-tailed unpaired t-test, t = -0.005, df = 10, P = 0.996) or by age (n = 12, t = -1.58, df = 10, P = 0.15).
 While identifying widespread RNA isoform diversity amongst genes expressed in the mouse entorhinal cortex (described in \cref{wholetranscriptome}), no difference was observed in the number of genes (mean number = 13,302 genes) or isoforms (mean number = 35,157 isoforms) detected between wildtype and trangenic mouse at the two ages (WT: n = 6, TG: n = 6). Further characterisation of the transcriptome revealed similar profile of isoform diversity between the two phenotypes and ages (\cref{tab:isoseq_whole_subsqantioutput}), with half of the isoforms annotated as known (mean number = 18,567 isoforms (52.8\%), as also shown in \cref{sec:whole_novelIso}) and with a similar distribution in isoform length and number of exons (median: 9, range = 1-89) 
 
-
-\subsection{Alternative Splicing}
-No significant difference was observed
-XX of known transcripts were identified to have intron retention; XX of known transcripts were identified to be fusion genes. XX of know transcripts identified to have non-sense-mediated decay. 
-
 \begin{landscape}
 	\begin{table}[]
 		\centering
@@ -207,6 +205,62 @@ XX of known transcripts were identified to have intron retention; XX of known tr
 		\end{table}
 \end{landscape}
 
+\subsection{Alternative Splicing and Functional Diversity}
+Transcriptome profiling of the mouse cortex previously identified widespread isoform diversity, driven predominantly by the usage of alternative first exons (AF) and exon skipping (ES) (described in \cref{sec:whole_novelIso}). Upon further examination, there was no significant difference in splicing patterns associated with rTg510 pathology or across age with AF (mean n = 20,400, 40.2\%) as the most prevalent event across all datasets \cref{AS_WholeTranscriptome_diff}. 
+%stats?
+%XX of known transcripts were identified to have intron retention; XX of known transcripts were identified to be fusion genes. XX of know transcripts identified to have non-sense-mediated decay. 
+
+\vspace{0.5cm}
+\begin{table}[!htp]
+	\centering
+	\captionsetup{width=1\textwidth}
+	\caption[Alternative Splicing Events associatd with tau pathology and age]%
+	{\textbf{Alternative Splicing Events associatd with tau pathology and age}. Tabulated is the number of splicing events detected for wildtype and transgenic Tg4510 mice aged 2 and 8 months (n = 12, 3 biological replicates per group)}
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		\multirow{2}{*}{Splicing Events} & \multicolumn{2}{c}{Wildtype} & \multicolumn{2}{c}{Transgenic} \\ \cmidrule(l){2-5} 
+		& 2 months        & 8 months        & 2 months        & 8 months        \\ \midrule
+		A3 & 3394 (6.8\%)    & 3526 (6.82\%)   & 2969 (6.41\%)   & 3825 (6.93\%)   \\
+		A5 & 1388 (2.78\%)   & 1456 (2.82\%)   & 1231 (2.66\%)   & 1568 (2.84\%)   \\
+		AF & 20185 (40.44\%) & 20597 (39.87\%) & 19182 (41.41\%) & 21781 (39.44\%) \\
+		AL & 15620 (31.3\%)  & 16079 (31.12\%) & 14796 (31.94\%) & 16932 (30.66\%) \\
+		IR & 3669 (7.35\%)   & 4169 (8.07\%)   & 3017 (6.51\%)   & 4794 (8.68\%)   \\
+		MX & 324 (0.65\%)    & 315 (0.61\%)    & 285 (0.62\%)    & 378 (0.68\%)    \\
+		SE & 5329 (10.68\%)  & 5524 (10.69\%)  & 4847 (10.46\%)  & 5953 (10.78\%)  \\ \bottomrule
+	\end{tabular}
+	\label{AS_WholeTranscriptome_diff}
+\end{table}
+
+However, aside from changes in splicing patterns, variations in strutural and feature elements annotated across RNA and protein isoforms of the same gene can also have functional implications \cite{DeLaFuente2020}. Using \textit{TappAS}\cite{DeLaFuente2020}, we qualitiatively catalogued the functional diversity of all multi-isoform genes, performing pairwise comparisons between isoforms of the same gene to test for either the i) presence or absence of the annotated feature or ii) in the annotated genomic positions (a feature is classified as varying if the feature's coordinates differ by >9bp between isoforms of the same gene). Of note, many of the protein-defined features can be explored using both approaches given that these elements can be affected through complete skipping (resulting in absence) or partial disruption (resulting in varied genomic position).
+
+Under these two approaches, we identifed that the majority of genes had elements that varied either by absence/presence or by position (\cref{fig:FDA_whole}\textbf{a}). Among elements at a transcript level, miRNA binding had the highest rate of varying (n = 4209 genes) with a large number of miRNA sites varying at the 3'UTR (n = 431). Top miRNAs included miR-207 (P = 0.0003, Adjusted P = 0.07, Varying n = 163 genes), which transfected expression in astrocytes was found to allieviate symptoms of depression in stressed mice\cite{Li2020}, and miR-335-3p (P = 0.0015, Adjusted P = 0.1992, Varying n = 167 genes), which was found enriched in aged cultured astrocytes and hippocampal brains\cite{Raihan2018}, while downgregulated in PD patients versus controls\cite{Oliveira2020}. 
+%nonsense-mediated decay had no variation
+Regarding protein-level features, PFAM domains had the highest rate of varying (55\%), with cytochrome P450 as the top most varying PFAM domain (n = 10 genes, P = 0.002) and protein kinase domain as the domain with most varied number of genes (n = 126 genes, P = 0.0095). GO analysis of these genes where protein kinase domain varied across isoforms identified signicant enrichment for the MAPK (Odds ratio = 21.06, Adjusted P = 5.45 x 10\textsuperscript{-23}) and Neurotrophin signalling pathway (Odds ratio = 40.36, Adjusted P = 6.711 x 10\textsuperscript{-23}). 
+
+Poly A site had the highest rate of varying by position among transcript-level features (90.2\% across 7,647 genes), followed by coding squence (80.3\% across 6,812 genes). Furthermore, the vast majority of UTR-varying genes also exhibited CDS variation (\cref{fig:FDA_whole}\textbf{c}). This included \textit{Celf2} (\cref{fig:Celf}), which was identified as exibiting varying lengths of 5'UTR, 3'UTR and polyA in combination with varying miRNA binding sites. The top PFAM domain by position was Ras family (P = 0.0001, Adjustd P = 0.38, Varying n = 58 genes). 
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=2,trim={3cm 7cm 3cm 4cm},scale = 0.6]{WholeFDA.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Variation in functional elements annotated across RNA and protein isoforms]%
+	{\textbf{Variation in functional elements annotated across RNA and protein isoforms} XXX}   
+	\label{fig:FDA_whole}
+\end{figure}
+
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale = 0.3]{tappAS_Celf2.png}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Varying functinonal elements in isoforms associated with \textit{Celf2}]%
+	{\textbf{Varying functinonal elements in isoforms associated with \textit{Celf2}}.\textit{TappAS} graphical representation of the transcript-level annotation for \textit{Celf2}, where 5'UTR, 3'UTR, CDS, and 3' alternative polyadenylation variation were detected.}   
+	\label{fig:Celf}
+\end{figure}	
+
+
+
+\clearpage 
 \subsection{Differential Gene Expression Analysis}
 
 \boldheader{Usage of Iso-Seq reads alone detected robust changes in gene expression}
