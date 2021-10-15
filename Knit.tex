@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% document class
+\documentclass[a4paper,12pt,oneside]{report}
+
+% latex template: https://www.overleaf.com/project/5e7ca0498eb4030001ac3e0c
+%% packages
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=3cm]{geometry}
+\include{Packages/thesis.preamble}
+%\renewcommand{\nomname}{List of Abbreviations}
+
+%% page settings
+% Make the "Part I" text invisible
+\renewcommand \thepart{}
+\renewcommand \partname{}
+\setlist[itemize]{noitemsep, topsep=-12pt} % space before itemise and paragraph
+\setlist[enumerate]{noitemsep, topsep=-12pt} % space before itemise and paragraph
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%==========================================================================================
+%------------------------------------------------------------------------------------------
+% Preamble 
+%------------------------------------------------------------------------------------------
+
+\begin{document}
+\sloppy % text not to overflow across margin
+\title{
+	{Thesis Title}\\
+	{\large Institution Name}\\}
+\author{Author Name}
+\date{Day Month Year}
+
+\normallinespacing
+\maketitle
+\pagestyle{plain} % page numbering
+
+\include{Preamble/Abstract}
+\include{Preamble/Acknowledgements}
+\tableofcontents
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\newpage
+%\listofmyequations
+%\addcontentsline{toc}{chapter}{List of Equations}
+
+\include{Preamble/Declarations}
+
+\newpage
+\renewcommand{\nomname}{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\printnomenclature 
+
+
+%==========================================================================================
+%------------------------------------------------------------------------------------------
+% Chapters
+%------------------------------------------------------------------------------------------
+
+\include{Chapter1_General_Introduction}
+\include{Chapter2_General_Methodology}
+\include{Chapter3a_LongReadSequencing_PacBio}
+\include{Chapter3b_LongReadSequencing_ONT}
+\include{Chapter4_Whole_Transcriptome}
+\include{Chapter5_Tg4510_GlobalAnalysis}
+\include{Chapter6_Targeted_Transcriptome}
+\include{Chapter7_BDR}
+
+
+%==========================================================================================
+%------------------------------------------------------------------------------------------
+% Appendices
+%------------------------------------------------------------------------------------------
+
+\begin{appendix}
+%\crefalias{chapter}{appendix}
+\include{Appendix/Isoseq_Protocol}
+\include{Appendix/ONT_Protocol}
+\include{Appendix/cDNA_Synthesis_Approaches}
+\end{appendix}
+
+
+%==========================================================================================
+%------------------------------------------------------------------------------------------
+% References
+%------------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+\bibliography{library}
+
+\end{document}

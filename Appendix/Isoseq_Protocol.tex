@@ -1,5 +1,4 @@
 \chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}\label{app_longread_protocol}
-\label{app_longread_protocol}
 %\etocsetnexttocdepth{}
 %\etocsettocstyle{\subsection*{Contents}}{}
 %\etocsetnexttocdepth{5}
@@ -19,8 +18,8 @@ The following sample conditions are important to ensure high quality sequencing 
 	\item No exposure to high temperature (>65$^{\circ}$) or pH extremes (<6, >9), 
 	\item 1.8 - 2 OD 260/280, and 2.0 - 2.2 OD 260/230 
 	\item No insoluble material  
-	\item No RNA contamination or carryover contamination (e.g polysacharides)
-	\item No exposure to UV or interacalating fluorescent dyes 
+	\item No RNA contamination or carry over contamination (e.g polysaccharides)
+	\item No exposure to UV or intercalating fluorescent dyes 
 	\item No chelating agents, divalent metal cations, denaturants or detergents
 	
 \end{itemize}
@@ -28,11 +27,11 @@ The following sample conditions are important to ensure high quality sequencing 
 \subsection{General}
 The following sections are general steps that are applicable throughout the entire protocol. 
 
-\subsubsection{Ampure Bead Purification}
+\subsubsection{AMPure Bead Purification}
 Throughout the protocol, DNA is purified using AMPure PacBio (PB) beads. Exact relative concentration of ampure beads, sufficient amount of freshly-prepared ethanol, and not over-drying of beads are critical to remove adapters and dimers, and for high DNA recovery.   
 \label{general_ampure_bead_purification}
 \begin{enumerate}
-	\item Prepare AMPure PB beads for use by allowing tem to equilibrate to room temperature for a minimum of 15 minutes. Resuspend by vortexing.
+	\item Prepare AMPure PB beads for use by allowing them to equilibrate to room temperature for a minimum of 15 minutes. Resuspend by vortexing.
 	\item After adding specified ratio of AMPure PB Beads (ratio differs pending on the part of protocol), mix the bead/DNA solution thoroughly 
 	\begin{itemize}
 		\item Ensure exact concentration is used particularly for 0.4X AMPure beads - higher concentration would result in retainment of undesired short inserts, whereas lower concentration would result in significant yield loss 
@@ -40,7 +39,7 @@ Throughout the protocol, DNA is purified using AMPure PacBio (PB) beads. Exact r
 	\item Quickly spin down the tubes (1 second) to collect beads 
 	\item Allow the DNA to bind to beads by shaking in a VWR vortex mixer at 2000rpm for 10 minutes at room temperature 
 	\item Spin down both tubes (1 second) to collect beads 
-	\item Place tubes in a magnetic bead rack, and wait until the beads collect to the side of the tubes and the solution appears clear (2 minutes).
+	\item Place tubes in a magnetic bead rack, and wait until the beads collect to the side of tubes and solution appears clear (2 minutes).
 	\begin{itemize}
 		\item The actual time required to collect the beads to the side depends on the volume of beads added
 	\end{itemize} 
@@ -68,10 +67,10 @@ Throughout the protocol, DNA is purified using AMPure PacBio (PB) beads. Exact r
 
 
 \subsubsection{Assessment of DNA quantity using Qubit}
-Accurate quantification of DNA using Qubit where stated is essential for accurate binding reaction conditions, and to avoid overloading/underloading, which would otherwise result in high P2 (off polymerase-to-template ratio) and low sequencing yield. 
+Accurate quantification of DNA using Qubit where stated is essential for accurate binding reaction conditions, and to avoid overloading/under-loading, which would otherwise result in high P2 (off polymerase-to-template ratio) and low sequencing yield. 
 
 \label{Isoseq_Protocol_qubit}
-As part of quality control across the various stages of library preparation, quantify DNA using Qubit dsDNA High Sensitivity Assay Kit (ThermoFisher Scientific), following manufacterer's instructions.  	
+As part of quality control across the various stages of library preparation, quantify DNA using Qubit dsDNA High Sensitivity Assay Kit (ThermoFisher Scientific), following manufacturer's instructions.  	
 \begin{enumerate}
 	\item Set up and label the required number of Qubit assay tubes (0.5mL) for samples and 2 standards. 
 	\begin{itemize}
@@ -84,9 +83,9 @@ As part of quality control across the various stages of library preparation, qua
 	\item Run the standards and samples on the Qubit 3.0 Fluorometer, using the dsDNA High Sensitivity option, and account for dilution factor to determine final concentration. 
 \end{enumerate}
 
-\subsubsection{Assessment of DNA library size using Tapestation or Bioanalyzer}
+\subsubsection{Assessment of DNA library size using TapeStation or Bioanalyzer}
 \label{Isoseq_Protocol_tapestation_bioanalyzer}
-Also as part of quality control across the various stages of library preparation in conjunction to performing Qubit assay, run DNA using D5000 ScreenTape or DNA 12000 Assay (Agilent), following manufacterer's instructions. 
+Also as part of quality control across the various stages of library preparation in conjunction to performing Qubit assay, run DNA using D5000 ScreenTape or DNA 12000 Assay (Agilent), following manufacturer's instructions. 
 
 \textbf{D5000 ScreenTape on 2200 TapeStation}
 \begin{enumerate}
@@ -174,7 +173,7 @@ Also as part of quality control across the various stages of library preparation
 	\item Cycle the reaction with the conditions outlined in Table X using 105°C heated lid
 	\begin{itemize}
 		\item At cycles 10, 12, 14, 16 and 18, take 5$\mu$L from reaction tubes and transfer to new micro centrifuge tube
-		\item Flick and spin down reaction tubes, before returning them back to thermo cycler to continue for incubation  
+		\item Flick and spin down reaction tubes, before returning them back to thermocycler to continue for incubation  
 	\end{itemize}
 	\item Run 5$\mu$L of cDNA from each sample and cycle on a 1\% agarose gel (Section X) at 110V for 20minutes with 1$\mu$L 100bp ladder
 	\begin{itemize}
@@ -193,6 +192,7 @@ Also as part of quality control across the various stages of library preparation
 \end{enumerate} 
 
 \subsection{Large-Scale PCR} 
+\label{Isoseq_Protocol_largescalepcr}
 \begin{enumerate}
 	\item Set up and label 16 micro centrifuge tubes for each sample 
 	\item Prepare a PCR reaction mix for each sample in 1.5mL LoBind eppendorf (\cref{tab:large_scale_pcr})
@@ -256,13 +256,13 @@ Also as part of quality control across the various stages of library preparation
 \subsubsection{Fraction 1: 2nd purification}
 \begin{enumerate}
 	\item Perform a second round of AMPure PB bead purification for Fraction 1 (now in 100$\mu$L of EB) using 1X volume of AMPure PB magnetic beads
-	\item Proceed with AMPure PB Bead Purification (Section \ref{section:ch2_ampurebead}), with 22$\mu$L of EB to Fraction 1
+	\item Proceed with AMPure PB Bead Purification (\cref{general_ampure_bead_purification}), with 22$\mu$L of EB to Fraction 1
 	\item Quantify DNA amount and concentration of Fraction 1 and Fraction 2 using a high-sensitivity Qubit (Section X) 
-	\item Determine library size using the BioAnalyzer with DNA 12000 Kit (Section \ref{section:ch2_bioanalyzer}) 
+	\item Determine library size using the Bioanalyzer with DNA 12000 Kit (Section \ref{section:ch2_bioanalyzer}) 
 \end{enumerate}
 
 \subsection{Pooling Fraction 1 (1X) and 2 (0.40X)}
-Based on sample information from the Qubit and BioAnalyzer, determine the molarity of the two fractions using the following equation: 
+Based on sample information from the Qubit and Bioanalyzer, determine the molarity of the two fractions using the following equation: 
 
 A minimum 200ng of pooled cDNA is necessary for library construction, despite the minimum recommended 1ug in protocol. If performing target capture, proceed to “Target Capture with IDT Probes” below, otherwise skip to “SMRTbell Template Preparation”. 
 
@@ -274,9 +274,9 @@ The probes for all the target genes should be delivered and resuspended in one p
 	\item Add 1 – 1.5 µg cDNA to a 0.2mL PCR tube 
 	\item Add 1 $\mu$L of SMARTer PCR oligo and 1 µL PolyT blocker (both at 1000$\mu$M) to the tube containing the cDNA
 	\item Close the tube’s lid and puncture a hole in the cap 
-	\item Dry the cDNA Sample Library/SMARTer PCR oligo/PolyT blocker completely in a LoBind tube using a DNA vacuum concentrator (speed vac)
+	\item Dry the cDNA Sample Library/SMARTer PCR oligo/PolyT blocker completely in a LoBind tube using a DNA vacuum concentrator (speed vacuum)
 	\begin{itemize}
-		\item Place the 0.2mL PCR Tube in a 1.5mL Eppendorf. Do not leave tubes in the speed vac once they have dried. This will resuLt in over drying the tube contents.
+		\item Place the 0.2mL PCR Tube in a 1.5mL Eppendorf. Do not leave tubes in the speed vacuum once they have dried. This will result in over drying the tube contents.
 		\item Be sure to seal sample tube! (From experience, evaporation with 20$\mu$L takes 30minutes)
 	\end{itemize}
 	\item To the dried-down sample, add reagents listed in Table X 
@@ -286,7 +286,7 @@ The probes for all the target genes should be delivered and resuspended in one p
 	\item Brief spin. Leave the PCR tube at room temperature for ~2 minutes. Probes should never be added while at 95°C. 
 	\item Add 4 $\mu$L of xGen Lockdown Panel/Probe for a total volume of 17 $\mu$L. Mix and quick spin. 
 	\item Leave the PCR tube at room temperature for ~5minutes
-	\item Incubate in a thermo cycler at 65°C for 4 hours, lid set at 100°C 
+	\item Incubate in a thermocycler at 65°C for 4 hours, lid set at 100°C 
 \end{enumerate} 
 
 \
@@ -306,7 +306,7 @@ The probes for all the target genes should be delivered and resuspended in one p
 \subsubsection{Prepare beads for Capture}
 \begin{enumerate}
 	\item Allow the Dynabeads M-270 Streptavidin to warm to room temperature for 30 minutes prior to use
-	\item Prepare Wash Buffers as tabuLated in Table X 
+	\item Prepare Wash Buffers as tabulated in Table X 
 	\item Aliquot 200$\mu$L of 1x Wash Buffer (Tube1) to new 1.5ml Eppendorf 
 	\item Mix the Dynabeads M-270 beads thoroughly by vortexing for 15 seconds. Check the bottom of the container to ensure proper reconstituting. 
 	\item For a single sample, aliquot 100$\mu$L beads into a 1.5 mL LoBind tube
@@ -319,7 +319,7 @@ The probes for all the target genes should be delivered and resuspended in one p
 	\item Remove the tube from the magnetic rack. Vortex/tap tube until the beads are in solution. Quickly spin and place the tube in the magnetic rack until the beads collect to the side of the tube (2minutes). Once clear, carefully remove and discard supernatant
 	\item Repeat steps 8 – 9  
 	\item Wash beads with 100$\mu$L of 1x Bead Wash Buffer 
-	\item Remove the tube from the magnetic rackVortex/tap tube until the beads are in solution. Quickly spin and place the tube in the magnetic rack until the beads collect to the side of the tube (2minutes). 
+	\item Remove the tube from magnetic rack. Vortex/tap tube until the beads are in solution. Quickly spin and place the tube in the magnetic rack until the beads collect to the side of the tube (2minutes). 
 	Do not remove the supernatant until ready to add hybridization sample 
 	\item Once clear, carefully remove and discard supernatant
 	\item Proceed immediately to the “Binding cDNA to captured Beads”. The washed beads are now ready to bind the captured DNA. Do not allow the capture beads to dry. Small amounts of residual Bead Wash Buffer will not interfere with binding of DNA to the capture beads.
@@ -453,7 +453,7 @@ Steps 1-4 need to be completed at 65°C to minimize non-specific binding of the 
 
 \subsubsection{DNA Purification}
 \begin{enumerate}
-	\item Proceed with AMPure PB Bead Purification (Section \ref{section:ch2_ampurebead}), with 1X volume of AMPure Beads (50$\mu$L) and eluting with 32$\mu$L of EB
+	\item Proceed with AMPure PB Bead Purification (\cref{general_ampure_bead_purification}), with 1X volume of AMPure Beads (50$\mu$L) and eluting with 32$\mu$L of EB
 	\item The End-Repaired DNA can be stored overnight at 4°C (or -20°C for longer) 
 \end{enumerate} 
 
@@ -495,12 +495,12 @@ Steps 1-4 need to be completed at 65°C to minimize non-specific binding of the 
 
 \subsubsection{First Purification of SMRTbell Templates}
 \begin{enumerate}
-	\item Proceed with AMPure PB Bead Purification (Section \ref{section:ch2_ampurebead}), with 1X volume of AMPure Beads (42$\mu$L) and eluting with 50$\mu$L of EB
+	\item Proceed with AMPure PB Bead Purification (\cref{general_ampure_bead_purification}), with 1X volume of AMPure Beads (42$\mu$L) and eluting with 50$\mu$L of EB
 \end{enumerate} 
 
 \subsubsection{Second Purification of SMRTbell Templates }
 \begin{enumerate}
-	\item Proceed with AMPure PB Bead Purification (Section \ref{section:ch2_ampurebead}), with 1X volume of AMPure Beads (50$\mu$L) and eluting with 10$\mu$L of EB
+	\item Proceed with AMPure PB Bead Purification (\cref{general_ampure_bead_purification}), with 1X volume of AMPure Beads (50$\mu$L) and eluting with 10$\mu$L of EB
 	\item Quantify DNA amount and concentration of Fraction 1 and Fraction 2 using a high-sensitivity Qubit (Section \ref{section:ch2_qubit}) 
 	\item Determine library size using the BioAnalyzer with DNA 12000 Kit (Section \ref{section:ch2_bioanalyzer}) 
 \end{enumerate} 

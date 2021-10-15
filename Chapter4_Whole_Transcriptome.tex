@@ -60,8 +60,8 @@ Pacific Biosciences Iso-Seq dataset was generated with whole transcriptome appro
 
 \subsection{RNA-Seq Library Preparation, Illumina Sequencing \& raw data processing}
 \label{section: ch2_rna_extraction}
-Briefly, cDNA libraries were prepared from ~450ng of total RNA plus ERCC spike-in synthetic RNA controls (Ambion, dilution 1:100), purified using Ampure XP magnetic beads (Beckman Coulter) and profiled using D1000 ScreenTape System (Agilent). 
-In addition to long-read Iso-Seq, RNA from the same samples were also prepared for short-read RNA-sequencing by Dr. Isabel Castanho, which is also fully detailed in Castanho et al.(2020)\cite{Castanho2020}. Raw sequencing reads, with Phred (Q) $\geq$ 35, were trimmed (ribosomal sequence removal, quality threshold 20, minimum sequence length 35) using fastqmcf (v1.0), yielding a mean untrimmed read depth of \textasciitilde{}20 million reads/sample. 
+Briefly, cDNA libraries were prepared from ~450ng of total RNA plus ERCC spike-in synthetic RNA controls (Ambion, dilution 1:100), purified using AMPure XP magnetic beads (Beckman Coulter) and profiled using D1000 ScreenTape System (Agilent). 
+In addition to long-read Iso-Seq, RNA from the same samples were also prepared for short-read RNA-sequencing by Dr. Isabel Castanho\cite{Castanho2020}. Raw sequencing reads, with Phred (Q) $\geq$ 35, were trimmed (ribosomal sequence removal, quality threshold 20, minimum sequence length 35) using fastqmcf (v1.0), yielding a mean untrimmed read depth of \textasciitilde{}20 million reads/sample. 
  
 
 \subsection{Iso-Seq Library Preparation}
@@ -84,12 +84,12 @@ Following the Iso-Seq lab pipeline (\cref{chap:isoseq_labpipeline}), 200ng RNA f
 	\includegraphics[page=3, ,trim={0 21cm 0 0},clip,scale = 0.45]{Figures/Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Whole Transcriptome - cDNA purification and library preparation]%
-	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates}: Following large scale amplification using the optimum cycle number (as determined from \cref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) Ampure beads. \textbf{a)} A bioanalyzer gel of amplified cDNA from the two fractions after ampure bead purification. \textbf{b)} A zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 1 and \textbf{b)} a zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 2, from the gel depicted in Figure a). \textbf{d)} A zoomed-in bioanalyzer electropherogram of Sample K17 and \textbf{e)} of Sample K23 recombining both fractions and performing SMRTbell template preparation. The samples at this point have been DNA-damage repaired, exonuclease treated, and ligated with SMRT bell adapters. The y-axis of the bioanalyzer electropherogram represents the size. The size distribution for each fraction was determined from the start to the end point of the smear, as in Figure a), or the equivalent peak, as depicted in Figure b) and Figure c). 
+	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates}: Following large scale amplification using the optimum cycle number (as determined from \cref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) AMPure beads. \textbf{a)} A Bioanalyzer gel of amplified cDNA from the two fractions after AMPure bead purification. \textbf{b)} A zoomed-in Bioanalyzer electropherogram of Sample K17 Fraction 1 and \textbf{b)} a zoomed-in Bioanalyzer electropherogram of Sample K17 Fraction 2, from the gel depicted in Figure a). \textbf{d)} A zoomed-in Bioanalyzer electropherogram of Sample K17 and \textbf{e)} of Sample K23 recombining both fractions and performing SMRTbell template preparation. The samples at this point have been DNA-damage repaired, exonuclease treated, and ligated with SMRT bell adapters. The y-axis of the Bioanalyzer electropherogram represents the size. The size distribution for each fraction was determined from the start to the end point of the smear, as in Figure a), or the equivalent peak, as depicted in Figure b) and Figure c). 
 	\\
 	\\	 	
-	As is evident from Figures a) - c), cDNA in Fraction 2 has a significantly higher molecular weight across all the samples as would be expected. As seen in Figures d) and e), pooling of both fractions have enriched high molecular weight cDNA fragments, which were still in intact after multiple processing in SMRTbell template preparation. Of note, despite the samples were prepared sequentially, the bioanalyzer profiles were consistent. 
+	As is evident from Figures a) - c), cDNA in Fraction 2 has a significantly higher molecular weight across all the samples as would be expected. As seen in Figures d) and e), pooling of both fractions have enriched high molecular weight cDNA fragments, which were still in intact after multiple processing in SMRTbell template preparation. Of note, despite the samples were prepared sequentially, the Bioanalyzer profiles were consistent. 
 	
-	F1 - Fraction 1 containing cDNA purified with 1X Ampure beads; F2 - Fraction 2 containing cDNA purified with 0.4X Ampure beads
+	F1 - Fraction 1 containing cDNA purified with 1X AMPure beads; F2 - Fraction 2 containing cDNA purified with 0.4X Ampure beads
  }
 	\label{fig:isoseq_whole_bioresults}
 \end{figure}
@@ -99,7 +99,7 @@ As a technological comparison (see \cref{chap:ont_labpipeline}), cDNA prepared f
 
 
 \subsection{Iso-Seq Data Processing}
-Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), and then merged to generate one complete transcriptome (\cref{fig:isoseq_whole_pipeline}). In brief, the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM dataset, TSS and TTS sites and classification of lncRNA in combination with lcRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artifacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers.
+Raw reads from each sample were processed using the Iso-Seq pipeline with optimised parameters (see Section X), and then merged to generate one complete transcriptome (\cref{fig:isoseq_whole_pipeline}). In brief, the aim to identify poly-A full-length transcripts by the presence of both primers and polyA tail, and the clustering of similar transcripts to generate a unique,consensus isoform, which is then annotated by mapping to a reference genome. Briefly, circular consensus reads (CCS) were generated from a minimum of 1 pass and RQ X. cDNA primers and SMRT adapters were then removed using Lima (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of polyA tails in Iso-Seq3 Refine. Full-length, non-concatemers (FLNC) reads were then collapsed, according to default parameters in Iso-Seq3 Cluster, to high-quality transcripts with accuracy $>$99\%, which were mapped to the reference mouse genome using Minimap2 (v2.17). Transcripts were then further filtered based on mapping quality and clustered using Cupcake's collapse script, followed by SQANTI2 annotation to identify fusion transcripts, proximity to CAGE peaks derived from the FANTOM5 dataset, TSS and TTS sites and classification of lncRNA in combination with lncRNA gene annotation (vM22).  Subsequent filtering by TAMA was then applied to remove potential artefacts. CAGE peaks facilitates the mapping of transcripts, transcription factors, transcriptional promoters and enhancers.
 
 \subsection{ONT Data Processing}
 In brief, raw reads were basecalled using Guppy and were classified as "pass" if the mean quality score was >7. 
@@ -110,8 +110,8 @@ In brief, raw reads were basecalled using Guppy and were classified as "pass" if
 	\vspace{20pt}
 	\includegraphics[page=1,trim={0 12cm 2cm 1cm},clip, scale = 0.45]{Figures/Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[PacBio Isoseq Bioinformatics Pipeline]%
-	{\textbf{PacBio Isoseq Bioinformatics Pipeline}: Pipeline is adapted from ToFU \nomenclature{ToFU}{Transcript isOforms: Full-length and Unassembled} \cite{Gordon2015}}
+	\caption[PacBio Iso-Seq Bioinformatics Pipeline]%
+	{\textbf{PacBio Iso-Seq Bioinformatics Pipeline}: Pipeline is adapted from ToFU \nomenclature{ToFU}{Transcript isOforms: Full-length and Unassembled} \cite{Gordon2015}}
 	\label{fig:isoseq_whole_pipeline}
 \end{figure}
  
@@ -149,7 +149,7 @@ Following library preparation and single-molecule real time sequencing (SMRT), a
 		S23     & 8 months & WT   & 9.1 & 30.28            & -                          \\ \bottomrule
 	\end{tabularx}
 	\caption[Run Yield Output from Whole Transcriptome Iso-Seq of Tg4510]%
-	{Phenotypic information and Iso-seq run yield for each sample of Tg4510 sequenced using Whole Transcriptome approach}
+	{Phenotypic information and Iso-Seq run yield for each sample of Tg4510 sequenced using Whole Transcriptome approach}
 	\label{tab:isoseq_wholerun_output}
 \end{table}
 
@@ -520,7 +520,7 @@ Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run]%
-	{\textbf{Sequential processing of Iso-Seq Reads generated around 32K transcripts per sample with good alignment to reference genome}: \textbf{a)} Processing of Iso-Seq reads generated a similar number of reads across all sample throughout Iso-Seq3 bioinformatis pipeline, with the exception of 2 earlier samples. \textbf{b)} Despite this, all the samples had similar number of FL transcripts with no signficant difference observed between WT and TG. \textbf{c)}The majority of transcipts aligned to mouse reference genome (mm10) with >85\% alignment identity and $>$95\% length}
+	{\textbf{Sequential processing of Iso-Seq Reads generated around 32K transcripts per sample with good alignment to reference genome}: \textbf{a)} Processing of Iso-Seq reads generated a similar number of reads across all sample throughout Iso-Seq3 bioinformatics pipeline, with the exception of 2 earlier samples. \textbf{b)} Despite this, all the samples had similar number of FL transcripts with no significant difference observed between WT and TG. \textbf{c)}The majority of transcripts aligned to mouse reference genome (mm10) with >85\% alignment identity and $>$95\% length}
 	\label{fig:isoseq_whole_processing}
 \end{figure}
 
@@ -530,7 +530,7 @@ Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
-	{\textbf{Over 60\% of ERCCs were detected with highly accurate quantification} \textbf{a} Highly-concentrated ERCCs were detected as single molecules, as expected, and \textbf{b} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
+	{\textbf{Over 60\% of ERCC were detected with highly accurate quantification} \textbf{a} Highly-concentrated ERCC were detected as single molecules, as expected, and \textbf{b} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
 	\label{fig:isoseq_whole_ercc}
 \end{figure}
 
@@ -541,7 +541,7 @@ As a technological comparison, two of the samples sequenced on the PacBio Sequel
 
 After removing low-quality basecalled reads (QV < 7), a total of 6M reads were acquired (K18: 4.49M reads, 66\% of total reads, M21: 1.68M reads, 79.2\%, \cref{tab:ont_passedreads_output}). Interestingly, despite the marked lower run performance of the second sample, the read quality was slightly higher (K18: mean QV = 9.5, M21: mean QV = 10.2) whereby the first sample had a large portion of very low-quality reads (QV < 2, \cref{fig:ont_lengthquality}\textbf{a}). Nevertheless, both samples had a very similar read length distribution profile (\cref{fig:ont_lengthquality}\textbf{c,d}), with a mean length around 1.8Kb. However in contrast to Iso-Seq, the distribution is skewed to the left with enrichment of smaller molecules (1kb) - a likely reflection of the library size with no size enrichment during library preparation rather than a length bias of the technology. 
 
-Despite the relatively low run performance, more reads were acquired per flow cell per sample than per SMRT cell in Iso-Seq (mean number of basecalled reads from nanopore across 2 samples: 4.43M, mean number of polymerase reads from Iso-Seq across 12 samples: 0.67M). This is because while Iso-Seq was able to generate very long polymerase reads (mean length across 12 samples = 46kb), contributing to the run yield in gigabases, the number of reads generated per run was limited to 1M (number of SMRT cells). Conversely, there was no upper limit in the number of reads that can be generated with nanopore sequencing provided the pores remained active. A greater proportion of ERCCs (68 ERCCs, 73.9\%) was therefore observed in one nanopore run compared to 12 Iso-Seq runs (57 ERCCs, 62\%), and for those ERCCs detected, the number of FL reads detected was also highly correlated to the known amount used (corr = 0.98, P = 9.73 x 10\textsuperscript{-51}). 
+Despite the relatively low run performance, more reads were acquired per flow cell per sample than per SMRT cell in Iso-Seq (mean number of basecalled reads from nanopore across 2 samples: 4.43M, mean number of polymerase reads from Iso-Seq across 12 samples: 0.67M). This is because while Iso-Seq was able to generate very long polymerase reads (mean length across 12 samples = 46kb), contributing to the run yield in Gigabases, the number of reads generated per run was limited to 1M (number of SMRT cells). Conversely, there was no upper limit in the number of reads that can be generated with nanopore sequencing provided the pores remained active. A greater proportion of ERCC (68 ERCCs, 73.9\%) was therefore observed in one nanopore run compared to 12 Iso-Seq runs (57 ERCC, 62\%), and for those ERCC detected, the number of FL reads detected was also highly correlated to the known amount used (corr = 0.98, P = 9.73 x 10\textsuperscript{-51}). 
 
 
 \vspace{1cm}
@@ -602,7 +602,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT translocation speed against time from Whole Transcriptome Sequencing]%
-	{\textbf{DNA translocation speed against time}. A boxplot of the translocation speed (sequencing rate) for Sample M21 over the course of the 48-hour run. }
+	{\textbf{DNA translocation speed against time}. A box plot of the translocation speed (sequencing rate) for Sample M21 over the course of the 48-hour run. }
 	\label{fig:ont_speedvstime}
 \end{figure}
 
@@ -656,7 +656,7 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Isoform diversity across Tg4510 samples and coverage of ERCC transcripts]%
-	{\textbf{Highly-expressed isoforms are more likely to be sequenced across sampples and accurately quantified}: Shown is \textbf{a)} the distribution of isoforms detected in the number of mouse samples, with a third detected in any two of the total 12 samples. However, \textbf{b)} quantification of these isoforms had very low expression (1-2 FL read), whereas those that were commonly detected across all 12 samples were very highly expressed. FL - Full Length}
+	{\textbf{Highly-expressed isoforms are more likely to be sequenced across samples and accurately quantified}: Shown is \textbf{a)} the distribution of isoforms detected in the number of mouse samples, with a third detected in any two of the total 12 samples. However, \textbf{b)} quantification of these isoforms had very low expression (1-2 FL read), whereas those that were commonly detected across all 12 samples were very highly expressed. FL - Full Length}
 	\label{fig:isoseq_whole_lowlyexp}
 \end{figure}
 
@@ -737,7 +737,7 @@ Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitne
 \end{figure}
 
 
-The different types of splicing events were also compared between known and novel isoforms (see Section X). In total, 40,249 alternative splicing events were identified in annotated genes with AF (alternative TSS variation) and SE being the most prevalent events (AF: 12,853, 31.9\%; SE: 8,686, 21.6\%, \cref{fig:isoseq_whole_As_events}). It is important to note, however, that only around 30\% of 5'end isoforms were located near (<5bp) any annotated 5' end whereas 70\% of 3' ends were located near (<5bp) annotated 3'ends - this discrepancy is likely due to a combination of mRNA degradation, template switching artifacts during reverse transcription and true novel alternative TSS. 
+The different types of splicing events were also compared between known and novel isoforms (see Section X). In total, 40,249 alternative splicing events were identified in annotated genes with AF (alternative TSS variation) and SE being the most prevalent events (AF: 12,853, 31.9\%; SE: 8,686, 21.6\%, \cref{fig:isoseq_whole_As_events}). It is important to note, however, that only around 30\% of 5'end isoforms were located near (<5bp) any annotated 5' end whereas 70\% of 3' ends were located near (<5bp) annotated 3'ends - this discrepancy is likely due to a combination of mRNA degradation, template switching artefacts during reverse transcription and true novel alternative TSS. 
 
 Except for AF and AL, all the other different splicing events, and in particularly intron retention, were more likely to be observed in novel isoforms than in known isoforms, implicating the power of Iso-Seq to detect full-length transcripts and the ability to recapitulate the usage of complex splicing events that would have otherwise been underestimated with only RNA-Seq data alone (Fisher's one-tailed Test, A3: P = 7.78 x 10 \textsuperscript{–14}, odds ratio = 1.34; A5: P = 1.21 x 10\textsuperscript{–13}, odds ratio = 1.45, IR: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 4.92; MX: P = 4.18 x 10\textsuperscript{–11}, odds ratio = 1.81; SE: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 1.57, \cref{fig:isoseq_whole_As_events}). 
 

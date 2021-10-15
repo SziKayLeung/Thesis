@@ -15,7 +15,7 @@ This protocol was adapted from Wellcome Trust Advanced Course: RNA Transcriptomi
 \endgroup
 
 \subsection{cDNA Synthesis and Amplification}
-For a direct comparison of ONT's minion sequencing and PacBio's Iso-Seq approach, the same methods for cDNA synthesis and amplification in the Iso-Seq protocol were used (Section \ref{Isoseq_Protocol_First_Strand_Synthesis} - \ref{Isoseq_Protocol_Large_Scale_PCR}). There were attempts to perform cDNA synthesis and amplification from WTAC's protocol, particularly as it used the capped-dependent Teloprime kit (Appendix X). However, there were difficulties in achieving sufficient yield for downstream library preparation, in addition to complicating downstream comparative analyses.
+For a direct comparison of ONT's minion sequencing and PacBio's Iso-Seq approach, the same methods for cDNA synthesis and amplification in the Iso-Seq protocol were used (\cref{Isoseq_protocol_cDNAsynthesis} - \cref{Isoseq_Protocol_largescalepcr}). There were attempts to perform cDNA synthesis and amplification from WTAC's protocol, particularly as it used the capped-dependent Teloprime kit (Appendix X). However, there were difficulties in achieving sufficient yield for downstream library preparation, in addition to complicating downstream comparative analyses.
 
 Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to use 400ng of Total RNA and then dilute in 180ul (rather than 90ul as per protocol). Concentration of diluted cDNA would be same as in previous experiments (200ng diluted in 90ul), therefore expect similar number of PCR cycles; only difference is with more diluted cDNA, able to split cDNA products for PacBio and ONT protocols (90ul each); Unfortunately, due to low concentration of starting Total RNA, not able to reverse-transcribe 400ng of total RNA. One other possible solution is to dilute 200ng in 180ul before proceeding with PCR cycle optimisation and large scale amplification. However, this would result in more PCR cycles required, resulting in more PCR bias and errors etc.   
 
@@ -75,7 +75,7 @@ Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to
 	\end{itemize}
 	\item Prepare PCR reaction mix in a 1.5 ml Eppendorf DNA LoBind tube
 	\item Mix gently by flicking the tube, and spin down 
-	\item Incubate the reaction for 10 minutes at room temperature (up to 4hrs)
+	\item Incubate the reaction for 10 minutes at room temperature (up to 4hours)
 \end{enumerate}
 
 \subsubsection{Bead Purification of ligated cDNA}
@@ -128,7 +128,7 @@ Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to
 	\item Gently lift the SpotON sample port cover to make the SpotON sample port accessible.
 	\item Load 200 $\mu$l of the priming mix into the flow cell via the priming port (not the SpotON sample port), avoiding the introduction of air bubbles.
 	\item Mix the prepared library gently by pipetting up and down just prior to loading.
-	\item Add 75 $\mu$l of sample to the flow cell via the SpotON sample port in a dropwise fashion. Ensure each drop flows into the port before adding the next.
+	\item Add 75 $\mu$l of sample to the flow cell via the SpotON sample port in a drop-wise fashion. Ensure each drop flows into the port before adding the next.
 	\item Gently replace the SpotON sample port cover, making sure the bung enters the SpotON port, close the priming port and replace the MinION lid.
 \end{enumerate}
 \
