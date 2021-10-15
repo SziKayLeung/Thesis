@@ -1,6 +1,8 @@
 *.nlo*
 *log*
-Main\*Knit*
+*Knit*
 |Knit.tex
 *aux*
 !Knit-blx
+*pptx*
+*build/**

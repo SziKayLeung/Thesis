@@ -1,4 +1,4 @@
-\documentclass[Project_Development.tex]{subfiles}
+\chapter{Iso-Seq Targeted and Whole Transcriptome Protocol}\label{app_longread_protocol}
 \label{app_longread_protocol}
 %\etocsetnexttocdepth{}
 %\etocsettocstyle{\subsection*{Contents}}{}
@@ -14,10 +14,10 @@
 \subsection{Requirement of Sample quality}
 The following sample conditions are important to ensure high quality sequencing library: 
 \begin{itemize}
-	\item Double stranded DNA sample (dsDNA) generated from cDNA synthesis of extracted RNA 
-	\item Minimum freeze thaw cycles 
-	\item No exposure to high temperature (>65) or pH extremes (<6, >9), 
-	\item 1.8 - 2 OD260/280, and 2.0 - 2.2 OD260/230 
+	\item dsDNA generated from cDNA synthesis of extracted RNA with preferable RIN > 8
+	\item Minimum freeze-thaw cycles 
+	\item No exposure to high temperature (>65$^{\circ}$) or pH extremes (<6, >9), 
+	\item 1.8 - 2 OD 260/280, and 2.0 - 2.2 OD 260/230 
 	\item No insoluble material  
 	\item No RNA contamination or carryover contamination (e.g polysacharides)
 	\item No exposure to UV or interacalating fluorescent dyes 
@@ -29,17 +29,17 @@ The following sample conditions are important to ensure high quality sequencing 
 The following sections are general steps that are applicable throughout the entire protocol. 
 
 \subsubsection{Ampure Bead Purification}
-Throughout the protocol, DNA is purified using ampure beads. Exact relative concentration of ampure beads, sufficient amount of freshly-prepared ethanol, and not over-drying of beads are critical to remove adapters and dimers, and for high DNA recovery.   
+Throughout the protocol, DNA is purified using AMPure PacBio (PB) beads. Exact relative concentration of ampure beads, sufficient amount of freshly-prepared ethanol, and not over-drying of beads are critical to remove adapters and dimers, and for high DNA recovery.   
 \label{general_ampure_bead_purification}
 \begin{enumerate}
-	\item Prepare the AMPure beads for use by allowing to equilibrate to room temperature for a minimum of 15minutes. Resuspend by vortexing.
+	\item Prepare AMPure PB beads for use by allowing tem to equilibrate to room temperature for a minimum of 15 minutes. Resuspend by vortexing.
 	\item After adding specified ratio of AMPure PB Beads (ratio differs pending on the part of protocol), mix the bead/DNA solution thoroughly 
 	\begin{itemize}
-		\item Ensure exact concentration particularly for 0.4X ampure beads - too high concentration would result in retainment of undesired short inserts, too low concentration would result in significant yield loss 
+		\item Ensure exact concentration is used particularly for 0.4X AMPure beads - higher concentration would result in retainment of undesired short inserts, whereas lower concentration would result in significant yield loss 
 	\end{itemize} 
 	\item Quickly spin down the tubes (1 second) to collect beads 
 	\item Allow the DNA to bind to beads by shaking in a VWR vortex mixer at 2000rpm for 10 minutes at room temperature 
-	\item Spin down both tubes (for 1 second) to collect beads 
+	\item Spin down both tubes (1 second) to collect beads 
 	\item Place tubes in a magnetic bead rack, and wait until the beads collect to the side of the tubes and the solution appears clear (2 minutes).
 	\begin{itemize}
 		\item The actual time required to collect the beads to the side depends on the volume of beads added
@@ -60,7 +60,7 @@ Throughout the protocol, DNA is purified using ampure beads. Exact relative conc
 	\begin{itemize}
 		\item Important to not over-dry pellet (over 60 seconds), as otherwise result in low yield due to difficulties during sample elution 
 	\end{itemize}
-	\item Elute with specified amount of PacBio Elution Buffer (differs pending on the part of the protocol)
+	\item Elute with specified amount of PacBio Elution Buffer (amount depends on which part of the protocol)
 	\item Tap tubes until beads are uniformly re-suspended. Do not pipette to mix
 	\item Elute DNA by letting the mix stand at room temperature for 2 minutes
 	\item Spin the tube down to pellet beads, then place the tube back on the magnetic bead rack. Let beads separate fully and transfer supernatant to a new 1.5ml Lo-Bind tube. Avoid disturbing beads. 
@@ -68,12 +68,12 @@ Throughout the protocol, DNA is purified using ampure beads. Exact relative conc
 
 
 \subsubsection{Assessment of DNA quantity using Qubit}
-Accurate quantification of DNA using Qubit where stated is essential for accurate binding reaction conditions, and subsequently overloading/underloading, which would otherwise result in high P2 (off polymerase-to-template ratio) and low sequencing yield. 
+Accurate quantification of DNA using Qubit where stated is essential for accurate binding reaction conditions, and to avoid overloading/underloading, which would otherwise result in high P2 (off polymerase-to-template ratio) and low sequencing yield. 
 
 \label{Isoseq_Protocol_qubit}
 As part of quality control across the various stages of library preparation, quantify DNA using Qubit dsDNA High Sensitivity Assay Kit (ThermoFisher Scientific), following manufacterer's instructions.  	
 \begin{enumerate}
-	\item Set up and label the required number of Qubit assay tubes (0.5mL) for samples and 2 samples. 
+	\item Set up and label the required number of Qubit assay tubes (0.5mL) for samples and 2 standards. 
 	\begin{itemize}
 		\item Do not label the side of the tubes as this can interfere with sample readout. 
 	\end{itemize} 
@@ -114,16 +114,16 @@ Also as part of quality control across the various stages of library preparation
 \subsection{First Strand Synthesis}
 \label{Isoseq_protocol_cDNAsynthesis}
 \begin{enumerate}
-	\item For each sample, add 200ng of RNA with 1$\mu$L of barcoded/non-barcoded polyT primer in a micro centrifuge on ice (Table X), mix and spin briefly
+	\item For each sample, add 200ng of RNA with 1$\mu$L of barcoded/non-barcoded polyT primer in a micro centrifuge on ice (\cref{tab:cdna_synthesis}), mix and spin briefly
 	\item Incubate tubes at 72°C in a 105°C hot-lid thermal cycler for 3 minutes, slowly ramp to 42°C at 0.1°C/sec, then let sit for 2 minutes
-	\item During incubation, prepare PCR reaction mix by combining the following reagents in Table X in the order shown. Scale reagent volumes accordingly to the number of samples prepared
+	\item During incubation, prepare PCR reaction mix by combining the following reagents in \cref{tab:PCR_condition_cdna_synthesis} in the order shown. Scale reagent volumes accordingly to the number of samples prepared
 	\begin{itemize}
 		\item Important:  Only add reverse transcriptase to the master mix just prior to step 4, and go immediately into step 5 
 	\end{itemize}
 	\item Within the last 1 minute of RNA reaction tubes sitting at 42°C, incubate PCR reaction mix at 42°C for 1 minute and proceed immediately to step 5
 	\item Aliquot 5.5$\mu$L of PCR reaction mix into each RNA reaction tube. Mix tubes by tapping and spin briefly 
 	\item Incubate tubes at 42°C for 90minutes, followed by 70°C for 10minutes 
-	\item Add 90$\mu$L of PacBio Elution Buffer (EB) to each RNA reaction tubes: diluted first-strand cDNA (Table \ref{tab:cdna_synthesis})
+	\item Add 90$\mu$L of PacBio Elution Buffer (EB) to each RNA reaction tubes: diluted first-strand cDNA
 \end{enumerate}
 
 \
@@ -140,8 +140,8 @@ Also as part of quality control across the various stages of library preparation
 		Total Volume per sample          & 45          \\ 
 		\bottomrule	
 	\end{tabularx}
-	\caption[cDNA synthesis]%
-	{Long Description}
+	\caption[Reagent composition for cDNA synthesis]%
+	{Reagent composition for cDNA synthesis}
 	\label{tab:cdna_synthesis}
 \end{table}
 
@@ -180,7 +180,7 @@ Also as part of quality control across the various stages of library preparation
 	\begin{itemize}
 		\item Note: input of 5uL of cDNA rather than 10uL, as stated in protocol, otherwise insufficient amount of diluted cDNA to proceed with both PCR cycle optimisation and PCR large scale amplification
 	\end{itemize} 
-	\item Determine the number of optimum PCR cycles to generate a sufficient amount of ds-cDNA without the risk of over-amplification (Section X)
+	\item Determine the number of optimum PCR cycles to generate a sufficient amount of ds-cDNA without the risk of over-amplification (\cref{ch: pcr_optimisation})
 \end{enumerate} 
 	
 \subsubsection{Running an agarose gel}
@@ -195,14 +195,14 @@ Also as part of quality control across the various stages of library preparation
 \subsection{Large-Scale PCR} 
 \begin{enumerate}
 	\item Set up and label 16 micro centrifuge tubes for each sample 
-	\item Prepare a PCR reaction mix for each sample in 1.5mL LoBind eppendorf (Table \ref{tab:large_scale_pcr})
+	\item Prepare a PCR reaction mix for each sample in 1.5mL LoBind eppendorf (\cref{tab:large_scale_pcr})
 	\item Add 50$\mu$L of respective diluted cDNA to each PCR reaction mix 
 	\begin{itemize}
 		\item Note: input of 50$\mu$L of cDNA rather than 100uL, as stated in protocol, otherwise insufficient amount of diluted cDNA to proceed
 	\end{itemize}
 	\item Mix and briefly spin down
 	\item Aliquot 50$\mu$L of PCR reaction mix (now 800$\mu$L) into 16 micro centrifuge tubes
-	\item Cycle the reaction with the conditions outlined in Table \ref{tab:PCR_conditions_large_scale_pcr} 
+	\item Cycle the reaction with the conditions outlined in \cref{tab:PCR_conditions_large_scale_pcr} 
 \end{enumerate}
 \
 \begin{table}[ht]
@@ -379,7 +379,6 @@ Steps 1-4 need to be completed at 65°C to minimize non-specific binding of the 
 
 \subsubsection{Amplification of Captured DNA Sample}
 \begin{enumerate}
-	\setlength\itemsep{-1.5em}
 	\item Prepare PCR reaction mix in a 1.5ml eppendorf (Table X) 
 	\item Split the PCR reaction mix into two tubes, 100$\mu$L each 
 	\item Cycle with the conditions outlined in Table X 

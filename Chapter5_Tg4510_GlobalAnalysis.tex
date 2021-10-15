@@ -1,4 +1,4 @@
-\documentclass[../Main/Knit.tex]{subfiles}
+\chapter{Transcriptional differences between WT and TG mice}\label{ch: transcriptional_global_differences}
 %Classification of AS events, which most commonly observed/dominant? Isoforms derived from transcriptional regulation (alternative promoters) vs post-transcriptional regulation? 
 %Impact of AS events on protein domains. Non-sense mediated decay? 
 %%Furthermore changes in gene/transcript expression can be due to differences in cellular composition (i.e. neuronal loss/reactive gliosis) rather than indicative of disease-associated transcriptional regulation. 
@@ -102,7 +102,7 @@ therefore, if:
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=2,trim={0 5cm 0 4cm},scale = 0.45]{Tg4510_diff_figures.pdf}
+	\includegraphics[page=2,trim={0 5cm 0 4cm},scale = 0.45]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Different conditions modelled for exploring rTg4510 genotype across age]%
 	{\textbf{Different conditions modelled for exploring rTg4510 genotype across age.} An example of six different models generated with \textit{maSigPro} using Equation \cref{eq:dea_lm_masigpro} for 2 experimental groups (WT - Wildtype/Control, TG - Transgenic/Case) across two time points/age (T1, T2). The regression coefficients from Equation \cref{eq:dea_lm_masigpro} - $\beta_{1}$, $\delta_{0}$, $\delta_{1}$ - refer to the different variables modelled, the significance of which can be used to infer whether there is a genotype, age or interaction effect. The significance is symbolised by the tick and cross, which refers to adjusted P-value (FDR) < 0.05 and > 0.05 respectively. A significance of  $\beta_{1}$ denotes to a statistically significant difference between WT and TG at T1 (Genotype effect),$\delta_{0}$ to a difference in WT over time (Age effect), and $\delta_{1}$ to a difference between WT and TG across age (Interaction effect). \\\\
@@ -143,7 +143,7 @@ Implemented as an additional filtering step after \textit{tappAS} and recommende
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,trim={1cm 17cm 0cm 0cm},clip,scale = 0.45]{Tg4510_diff_figures.pdf}
+		\includegraphics[page=3,trim={1cm 17cm 0cm 0cm},clip,scale = 0.45]{Figures/WholeDifferentialAnalysis.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Scenarios modelled with differential gene expression analysis and isoform usage]%
@@ -160,7 +160,7 @@ As expected, human-specific \textit{MAPT} sequences were only detected in reads 
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=1,trim={1cm 20cm 0cm 0cm},clip,scale = 0.55]{AltFigures_Diff.pdf}
+		\includegraphics[page=1,trim={1cm 20cm 0cm 0cm},clip,scale = 0.55]{Figures/AltFigures_Diff.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Quantifying human-specific and mouse-specific \textit{MAPT}/\textit{Mapt} sequences in Iso-Seq Whole Transcriptome]%
@@ -241,7 +241,7 @@ Poly A site had the highest rate of varying by position among transcript-level f
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=2,trim={3cm 7cm 3cm 4cm},scale = 0.6]{WholeFDA.pdf}
+	\includegraphics[page=2,trim={3cm 7cm 3cm 4cm},scale = 0.6]{Figures/WholeFDA.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Variation in functional elements annotated across RNA and protein isoforms]%
 	{\textbf{Variation in functional elements annotated across RNA and protein isoforms} XXX}   
@@ -251,7 +251,7 @@ Poly A site had the highest rate of varying by position among transcript-level f
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[scale = 0.3]{tappAS_Celf2.png}
+	\includegraphics[scale = 0.3]{Figures/tappAS_Celf2.png}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Varying functinonal elements in isoforms associated with \textit{Celf2}]%
 	{\textbf{Varying functinonal elements in isoforms associated with \textit{Celf2}}.\textit{TappAS} graphical representation of the transcript-level annotation for \textit{Celf2}, where 5'UTR, 3'UTR, CDS, and 3' alternative polyadenylation variation were detected.}   
@@ -262,49 +262,60 @@ Poly A site had the highest rate of varying by position among transcript-level f
 
 \clearpage 
 \subsection{Differential Gene Expression Analysis}
+Our group previously characterised widespread transcriptional differences in rTg4510 entorinhal cortex, identifying extensive differences in gene expression associated with development of tau pathology in TG mice (n = 154 differentaially expressed genes)\cite{Castanho2020}. Mapping the same RNA-Seq reads (n = 29 TG, n = 30 WT) to Iso-Seq reads (n = 6 TG, n = 6 WT) derived from the same animals rather to the reference genome annotation, we similarly identify extensive differences in gene expression (n = XX differentially expressed genes) with a large overlap. 
 
-\boldheader{Usage of Iso-Seq reads alone detected robust changes in gene expression}
-Strikingly, despite the lower long-read sequencing coverage and smaller sample size (n = 6 TG, n = 6 WT) sequenced on the long-read platform, a significant number of genes (n = 446 genes) were identified as differentially expressed when we used the Iso-Seq long reads for both annotation and expression. Using \textit{EnrichR}, differentially expressed genes (n = 466) were found to be highly enriched in lysosome (KEGG 2021 Human: odds ratio = 5.99, adjusted P = 4.41 x 10\textsuperscript{-6}) and in particularly the TGF-\textbeta pathway (WikiPathway 2021 Human: odds ratio = 58.98, adjusted P = 2.69 x 10\textsuperscript{-3} ). Classification of the differentially expressed genes by effects (depicted in \cref{fig:dea_model} and showcased in \cref{fig:dea_model_genexp}), further identified the majority (n = 340 genes, \cref{fig:dea_model_num}) to be associated with tau pathology (n = 23, \cref{fig:dea_model_genexp}\textbf{a}) and progressive with age (n = 340, \cref{fig:dea_model_genexp}\textbf{d,e,f,g}).       
- 
+The hybrid approach also enabled identification of tau-pathology associated changes in genes not previously known in reference. Using the Iso-Seq reads as annotation and RNA-Seq reads for expression, we identified robust expression changes in a few genes (n = 3) that we would have otherwise not detected if we used the reference genome for annotation. These "novel" genes, not present in existing genome annotations (mm10), have been previously characterised as more lowly-expressed and often were antisense to known genes, with a large proportion sharing exonic regions either at the 5'UTR, 3'UTR or within the gene body (\cref{sec:whole_novelgenes}). The most significant differentially-expressed novel gene was identified in Chromosome 10 (\cref{fig:whole_novelgene_difftracks}\textbf{a}), with progressive down-regulation in TG over time (\cref{fig:whole_novelgene_diffexp}\textbf{a}). The other differentially-expressed novel genes were found antisense to \textit{Fgfr1op} (\cref{fig:whole_novelgene_difftracks}\textbf{b}), within the gene-body, and to \textit{Htra1}  (\cref{fig:whole_novelgene_difftracks}\textbf{c}), at the 5'UTR. Both genes were associated with increased expression in TG compared to the WT over time (\cref{fig:whole_novelgene_diffexp}\textbf{b,d}). Notably, while \textit{Fgfr1op} was not identified as differentially-expressed (\cref{fig:whole_novelgene_diffexp}\textbf{c}), \textit{Htra1} was also found to have higher expression in TG compared to WT (\cref{fig:whole_novelgene_diffexp}\textbf{e}).     
+%Htra1-AS shared exonic regions with Htra1 so misalignment of RNA-Seq reads
+
+\begin{landscape}
+	\begin{figure}[!htp]
+		\centering
+		\includegraphics[page=1,trim={0 4cm 0 0}, scale = 0.45]{Figures/TracksFigures_Diff.pdf}
+		\captionsetup{width=1.4\textwidth}
+		\caption[Tracks of novel genes that were differentially expressed in rTg4510 mice]%
+		{\textbf{Tracks of novel genes that were differentially expressed in rTg4510 mice}: Shown are UCSC genome browser Iso-Seq tracks of three novel genes - \textbf{a)}novel gene in Chromosome 10, \textbf{b)} novel gene antisense to \textit{Fgfr1op}, and \textbf{c)} novel gene antisense to \textit{Htra1} - that were identified as differentially expressed with Iso-Seq reads (n = 12 samples) as annotation and RNA-Seq reads (n = 59 samples) as expression. The isoforms were coloured based on \textit{SQANTI} classification, with the novel gene coloured grey for genic/intergenic in panel a) and pink for antisense in panels b) and c). Shown are also the reference genome annotations (mm10) and RNA-Seq reads.}   
+		\label{fig:whole_novelgene_difftracks}
+	\end{figure}
+\end{landscape}
+
 \begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=11,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
+	{\textbf{Novel isoforms were less expressed, longer and had more exons than known isoforms}: Shown is the \textbf{a)}}   
+	\label{fig:whole_novelgene_diffexp}
+\end{figure}
+   
+
+%\boldheader{Usage of Iso-Seq reads alone detected robust changes in gene expression}
+While Iso-Seq reads are commonly used for accurately characterising RNA diveristy, we found that Iso-Seq reads were also able to accurately quantify the abundance of highly-expressed transcripts - as illustrated by the strong correlation of gene-level expression quantified using Iso-Seq and RNA-Seq reads, and near-perfect correlation Iso-Seq reads and actual amount of ERCC controls (described in XX). Strikingly, despite the lower long-read sequencing coverage and smaller sample size (n = 6 TG, n = 6 WT) sequenced on the long-read platform, a significant number of genes (n = 446 genes) were identified as differentially expressed when we used the Iso-Seq long reads for both annotation and expression. Using \textit{EnrichR}, differentially expressed genes (n = 466) were found to be highly enriched in lysosome (KEGG 2021 Human: odds ratio = 5.99, adjusted P = 4.41 x 10\textsuperscript{-6}) and in particularly the TGF-\textbeta pathway (WikiPathway 2021 Human: odds ratio = 58.98, adjusted P = 2.69 x 10\textsuperscript{-3} ). Classification of the differentially expressed genes by effects (depicted in \cref{fig:dea_model} and showcased in \cref{fig:dea_model_genexp}), further identified the majority (n = 340 genes, \cref{fig:dea_model_num}) to be associated with tau pathology (n = 23, \cref{fig:dea_model_genexp}\textbf{a}) and progressive with age (n = 340, \cref{fig:dea_model_genexp}\textbf{d,e,f,g}).       
+ 
+\begin{figure}[h]
 	\centering
-	\includegraphics[page=5,trim={0 20cm 0 0},clip,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=5,trim={0 20cm 0 0},clip,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differentially expressed genes classified by conditions]%
 	{\textbf{Differentially expressed genes were identified across all the different conditions, with most genes exhibiting an interaction effect of rTg4510 genotype and age} Shown is a bar plot of the number of differentially expressed genes (n = 446) classified by the different conditions, as modelled in \cref{fig:dea_model}. The differentially expressed genes were identified from the whole transcriptome datasets (WT = 6, TG = 6, across age 2 and 8 months) using Iso-Seq read counts as abundance. WT - Wildtype, TG - Transgenic.}    
 	\label{fig:dea_model_num}
 \end{figure}
 
-\begin{figure}[!htp]
+\begin{figure}[h]
 	\centering
-	\includegraphics[page=6,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=6,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Examples of gene expression differing across conditions]%
 	{\textbf{Differential expressed genes exhibiting genotype, age and interaction effects} Shown are examples of differentially expressed genes classified under the different models, using the whole transcriptome dataset (WT = 6, TG = 6, across age 2 and 8 months) using Iso-Seq read counts as abundance: \textbf{a} \textit{Herc2} with a genotype effect, \textbf{b} \textit{Kcng1} with a genotype and age effect, \textbf{c} \textit{Clnc3} with an age effect, and \textbf{d} \textit{Cd34}, \textbf{e} \textit{Unc93b1}, \textbf{f} \textit{Csf1r} and \textbf{g} \textit{Gjb2} with an interaction effect. Dotted lines represent the mean paths across ages.}   
 	\label{fig:dea_model_genexp}
 \end{figure}
 
-\clearpage
-\boldheader{Iso-Seq-identified-differential gene expression changes, associated with rTg4510 phenotype and age, were validated with RNA-Seq reads}
-With RNA-Seq reads (n = 29 TG, n = 30 WT) used as expression abundance, we identified 832 genes as differentially expressed, a significant proportion of which were also identified when using the reference genome instead as annotation (n = 483 genes, 58.8\%.)
+Usage of Iso-Seq reads alone identified differentially-expressed genes previously reported to be highly associated with AD. The top ranked tau-associated differentially-expressed genes that was found to be progressive with age in our previous analyse\cite{Castanho2020} was also recapitulated (\cref{fig:whole_dea}\textbf{a,b}): \textit{Gfap}, which encodes for glial fibrillary acidic protein (GFAP\nomenclature{GFAP}{Glial Fibrillary Acidic Protein}), a cytoskeletal protein that acts as a marker for astrocyte activation and proliferation - its increased expression was reported to correlate with increased neurofibrillary tangles density in Alzheimer's disease entorhinal cortex tissues \cite{Muramori1998}. Higher GFAP levels have also be documented in cerebrospinal fluid (CSF) in patients with AD compared to healthy control \cite{Ishiki2016}, and more recently, in plasma of cognitively intact older adults at risk of AD \cite{Chatterjee2021}. 
 
-\begin{figure}[htp]
+
+\begin{figure}[h]
 	\begin{center}
-		\includegraphics[page=1,scale = 0.55]{WholeDifferentialAnalysis.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Identification of differentially expressed genes using Iso-Seq reads as annotation]%
-	{\textbf{While usage of RNA-Seq reads as expression identified more differentially expressed genes associated with rTg4510 genotype and across age, a significant number of these were detected when using Iso-Seq read counts as expression}. Shown are venn diagrams of the number of differentially expressed genes associated with \textbf{a)} rTg4510 genotype and progressive with age (interaction effect) \textbf{b)} and genotype alone, that were identified when using RNA-Seq reads as expression and the reference genome (mm10) as annotation (green circle), RNA-Seq reads as expression but Iso-Seq defined transcriptome as reference annotation (orange circle), and Iso-Seq reads as both expression and annotation (purple circle)}   
-	\label{fig:whole_deagenes_venn}
-\end{figure}
-
-\boldheader{Usage of Iso-Seq reads alone identified differentially-expressed genes previously reported to be highly associated with AD}
-Of the differentially-expressed genes identified using Iso-Seq reads alone, the top ranked tau-associated differentially-expressed genes that was found to be progressive with age in our previous analyse\cite{Castanho2020} was also recapitulated (\cref{fig:whole_dea}\textbf{a,b}): \textit{Gfap}, which encodes for glial fibrillary acidic protein (GFAP\nomenclature{GFAP}{Glial Fibrillary Acidic Protein}), a cytoskeletal protein that acts as a marker for astrocyte activation and proliferation - its increased expression was reported to correlate with increased neurofibrillary tangles density in Alzheimer's disease entorhinal cortex tissues \cite{Muramori1998}. Higher GFAP levels have also be documented in cerebrospinal fluid (CSF) in patients with AD compared to healthy control \cite{Ishiki2016}, and more recently, in plasma of cognitively intact older adults at risk of AD \cite{Chatterjee2021}. 
-
-
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=2,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+		\includegraphics[page=2,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
@@ -334,30 +345,6 @@ Other top-ranked differentially-expressed genes have been reported to be involve
 	\label{tab:dea_wholemouse}
 \end{table}
 
-\boldheader{Iso-Seq defined transcriptome enable identification of tau-pathology associated changes in genes not previously known in reference}
-Using the Iso-Seq reads as annotation and RNA-Seq reads for expression, we identified robust expression changes in a few genes (n = 3) that we would have otherwise not detected if we used the reference genome for annotation. These "novel" genes, not present in existing genome annotations (mm10), have been previously characterised as more lowly-expressed and often were antisense to known genes, with a large proportion sharing exonic regions either at the 5'UTR, 3'UTR or within the gene body (\cref{sec:whole_novelgenes}). The most significant differentially-expressed novel gene was identified in Chromosome 10 (\cref{fig:whole_novelgene_difftracks}\textbf{a}), with progressive down-regulation in TG over time (\cref{fig:whole_novelgene_diffexp}\textbf{a}). The other differentially-expressed novel genes were found antisense to \textit{Fgfr1op} (\cref{fig:whole_novelgene_difftracks}\textbf{b}), within the gene-body, and to \textit{Htra1}  (\cref{fig:whole_novelgene_difftracks}\textbf{c}), at the 5'UTR. Both genes were associated with increased expression in TG compared to the WT over time (\cref{fig:whole_novelgene_diffexp}\textbf{b,d}). Notably, while \textit{Fgfr1op} was not identified as differentially-expressed (\cref{fig:whole_novelgene_diffexp}\textbf{c}), \textit{Htra1} was also found to have higher expression in TG compared to WT (\cref{fig:whole_novelgene_diffexp}\textbf{e}).     
-%Htra1-AS shared exonic regions with Htra1 so misalignment of RNA-Seq reads
-
-\begin{landscape}
-\begin{figure}[htp]
-	\centering
-	\includegraphics[page=1,trim={0 4cm 0 0}, scale = 0.45]{TracksFigures_Diff}
-	\captionsetup{width=1.4\textwidth}
-	\caption[Tracks of novel genes that were differentially expressed in rTg4510 mice]%
-	{\textbf{Tracks of novel genes that were differentially expressed in rTg4510 mice}: Shown are UCSC genome browser Iso-Seq tracks of three novel genes - \textbf{a)}novel gene in Chromosome 10, \textbf{b)} novel gene antisense to \textit{Fgfr1op}, and \textbf{c)} novel gene antisense to \textit{Htra1} - that were identified as differentially expressed with Iso-Seq reads (n = 12 samples) as annotation and RNA-Seq reads (n = 59 samples) as expression. The isoforms were coloured based on \textit{SQANTI} classification, with the novel gene coloured grey for genic/intergenic in panel a) and pink for antisense in panels b) and c). Shown are also the reference genome annotations (mm10) and RNA-Seq reads.}   
-	\label{fig:whole_novelgene_difftracks}
-\end{figure}
-\end{landscape}
-
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=11,scale = 0.55]{WholeDifferentialAnalysis.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
-	{\textbf{Novel isoforms were less expressed, longer and had more exons than known isoforms}: Shown is the \textbf{a)}}   
-	\label{fig:whole_novelgene_diffexp}
-\end{figure}
 
 
 
@@ -376,7 +363,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=4,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=4,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{Gfap}]%
 	{\textbf{Significant upregulation of known isoform of \textit{Gfap} with progressive tau pathology}. Shown are \textbf{a)} normalised counts of \textit{Gfap} with associated isoforms in WT and TG across 2 time points (aged 2 and 8 months) for emphasis of dominant isoform (PB.2972.16, ENSMUST00000067444.9), and \textbf{b)} alternative plot of \textit{Gfap} with y-axis log-transformed for better visualisation of minor isoform expression. Novel minor isoforms, PB.2972.13 and PB.2972.14, were also identified as differentially expressed. Normalised counts of isoforms are derived directly from Iso-Seq full-length reads. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue. WT - Wildtype, TG - Transgenic. Dotted lines represent the mean paths across ages.} 
@@ -385,7 +372,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=12,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=12,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{C4b}]%
 	{\textbf{Significant upregulation of known isoform of \textit{C4b} with progressive tau pathology}. Shown are \textbf{a)} normalised counts of \textit{C4b} with associated isoforms in WT and TG across 2 time points (aged 2 and 8 months) for emphasis of dominant isoform (PB.7004.8, ENSMUST00000069507.8), and \textbf{b)} alternative plot of \textit{C4b} with y-axis log-transformed for better visualisation of minor isoform expression. Normalised counts of isoforms are derived directly from Iso-Seq full-length reads. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue. WT - Wildtype, TG - Transgenic. Dotted lines represent the mean paths across ages.}   
@@ -394,7 +381,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=18,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=18,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Robust changes in transcript expression of isoforms annotated to genes that are strongly implicated in AD]%
 	{\textbf{Robust changes in transcript expression of isoforms annotated to genes that are strongly implicated in AD}. Using Iso-Seq reads (n = 6 WT, n = 6 TG, across 2 and 8 months) as annotation and expression, differential isoform expression was observed for \textbf{a)} ENSMUST00000151120.8 (PB.15108.6) annotated to \textit{Ctsd}, \textbf{b)} ENSMUST00000172785.7 (PB.7039.1) annotated to \textit{H2-D1}, \textbf{c)} ENSMUST00000028624.8 (PB.9298.1) annotated to \textit{Gatm}, and \textbf{d)} ENSMUST00000030765.6 (PB.11607.2) associated with \textit{Padi2}/\textit{Pad2}.  WT - Wildtype, TG - Transgenic. Dotted lines represent the mean paths across ages.}    
@@ -403,7 +390,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=19,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=19,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Changes in transcript expression of genes strongly implicated in AD were similarly detected using RNA-Seq reads]%
 	{\textbf{Changes in transcript expression of genes strongly implicated in AD were similarly detected using RNA-Seq reads}. Usage of RNA-Seq reads (n = 30 WT, n = 29 TG, across 2, 4, 6 and 8 months) as expression similarly identified isoforms as differentially expressed (\cref{fig:DEI_ADgenes_isoseq}). \textbf{a)} ENSMUST00000151120.8 (PB.15108.6) annotated to \textit{Ctsd}, \textbf{b)} ENSMUST00000172785.7 (PB.7039.1) annotated to \textit{H2-D1}, \textbf{c)} ENSMUST00000028624.8 (PB.9298.1) annotated to \textit{Gatm}, and \textbf{d)} ENSMUST00000030765.6 (PB.11607.2) associated with \textit{Padi2}/\textit{Pad2}.  WT - Wildtype, TG - Transgenic. Dotted lines represent the mean paths across ages.}   
@@ -412,7 +399,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=15,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=15,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differential isoform expressed observed with Iso-Seq reads as expression were not recapitulated using RNA-Seq reads]%
 	{\textbf{Differential isoform expressed observed with Iso-Seq reads as expression were not recapitulated using RNA-Seq reads}. Shown are normalised counts \textbf{a)} \textit{Cd34} and \textbf{c)} \textit{Ubqln1} with associated isoforms identified from using Iso-Seq reads as expression, and of the same two genes \textbf{b)} \textit{Cd34} and \textbf{d)} \textit{Ubqln1} identified from using RNA-Seq reads as expression. Significant changes in isoform expression identified using Iso-Seq reads as expression - PB.1063.2 associated with \textit{Cd34} and PB.4255.13 and PB.4255.4 associated with \textit{Ubqln1} - was not recapitulated when using RNA-Seq reads as expression, due to lower sequencing coverage. Notably, minor isoforms had a higher expression with RNA-Seq alignment than direct detection with Iso-Seq reads.
@@ -423,7 +410,7 @@ However, on closer examination, the majority of isoforms identified as different
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=17,trim={0cm 20cm 0cm 0cm},clip,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+	\includegraphics[page=17,trim={0cm 20cm 0cm 0cm},clip,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differential Isoform Expression observed in isoforms with high expression but large variance]%
 	{\textbf{Usage of RNA-Seq reads as expression, with larger sample size, reduce probability of calling isoforms differentially expressed due to chance} Shown are \textbf{a)} \textit{Slc1a3} with associated isoforms identified as differentially expressed when Iso-Seq reads were used as expression (n = 6 WT, n = 6 TG, across 2 time points), and \textbf{b)} \textit{Slc1a3} when RNA-Seq reads were used as expression (n = 30 WT, n = 29 TG, across 4 time points). 
@@ -440,15 +427,16 @@ However, on closer examination, the majority of isoforms identified as different
 
 \clearpage
 \subsection{Differential Isoform Usage Analysis}
-Contributing to the complexity of transcript regulation through alternative splicing, while the expression of a gene may be constant between conditions, the relative expression of the isoforms (and thus isoform proportion) can change. This phenomenon is known as differential transcript/isoform usage (DIU), and was also assessed using \textit{tappAS} for genes with more than one isoform.  
+Contributing to the complexity of transcript regulation through alternative splicing, while the expression of a gene may be constant between conditions, the relative expression of the isoforms (and thus isoform proportion) can change. This phenomenon is known as differential transcript/isoform usage (DIU), and was also assessed using \textit{tappAS} for genes with more than one isoform. Of note, a major isoform switching event occurs when the dominant (major) isoform in one condition becomes a minor isoform in another.    
 
 \boldheader{Usage of Iso-Seq reads results in many false positives due to insufficient sequencing depth}
 Using Iso-Seq reads for annotation and expression and after filtering lowly-expressed isoforms, we identified 400 genes that were characterised with differential isoform usage. However upon further examination, the majority of these genes were lowly expressed and the associated isoforms that were observed to undergo differential usage had only 1-2 full-length long-read counts. We were therefore not confident in any of observed DIU changes detected with Iso-Seq abundance from the whole transcriptome sequencing due to low sequencing depth. Indeed, none of the DTU genes were significant after applying a gene expression threshold (described in \cref{ch:diu_method}).
 
+
 \iffalse
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=10,trim={0cm 18cm 0cm 0cm},clip,scale = 0.55]{WholeDifferentialAnalysis.pdf}
+		\includegraphics[page=10,trim={0cm 18cm 0cm 0cm},clip,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Genes characterised with differential isoform usage had low Iso-Seq full-length read counts]%
@@ -460,10 +448,20 @@ Using Iso-Seq reads for annotation and expression and after filtering lowly-expr
 % DIU genes with major switching	
 In further support of this conclusion, there was a low overlap of DIU genes that were identified when we used RNA-Seq reads as expression. This was likely to be a reflection of lower sequencing depth of Iso-Seq reads, resulting in i) a different pool of isoforms after filtering lowly-expressed isoforms - a minor isoform was more likely to be filtered when using RNA-Seq reads as abundance rather than Iso-Seq reads, particularly if the overall gene expression was low, due to relatively greater expression difference, and ii) smaller differences in isoform expression using Iso-Seq reads are translated to misleading significant changes in isoform proportions, resulting in false detection of genes as DIU. These implications can be seen in the gene \textit{Esyt2}, whereby the low Iso-Seq isoform counts resulted in misleading representation of isoform fraction, which was not recapitulated when RNA-Seq reads were used as expression (\cref{fig:DIU_esyt2}). 
 
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=9,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
+	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}: \textbf{a)} Isoform expression (normalised counts) and \textbf{c)} subsequent deduction of isoform fraction of \textit{Esyt2} using Iso-Seq reads as expression, and the equivalent \textbf{b)} isoform expression and \textbf{d)} isoform fraction of the same gene, \textit{Esyt2} with RNA-Seq reads as expression. Iso-Seq reads were used as annotation in both analyses. 
+		\\
+		As can be observed, the Iso-Seq normalised counts are significantly lower than RNA-Seq normalised counts for the associated isoforms, resulting in a misleading representation of isoform fraction with major isoform switching events (Figure c, PB.3907.1 becomes the dominant isoform in transgenic mice), which is not recapitulated with RNA-Seq reads as expression (Figure d)}   
+	\label{fig:DIU_esyt2}
+\end{figure}
+
 \boldheader{Alignment of RNA-Seq reads to Iso-Seq defined transcriptome identified multiple genes with differential transcript usage with major switching events}
-Differential isoform usage was performed with Iso-Seq reads as annotation and RNA-Seq reads as expression, given higher sequencing RNA-Seq read depth and greater sample size. 570 genes were identified with differential isoform usage (\cref{tab:DIU_DEA_nums}). The majority of these genes (n = 459, 80.5\%), while observed with DIU, were not differentially expressed between wildtype and transgenic mice - a scenario whereby the differential upregulation of one isoform is compensated by the differential downregulation of another isoform, resulting in no net gene expression change. On contrary, a small but significant number of genes (n = 72, 12.6\%) were identified as both differentially expressed and with DIU. 
-%GFAP not significant?   
-%Interestingly, the was a lower consensus when comparing the number of DIU genes identified when using RNA-Seq reads as abundance, suggesting that the choice of filtering strategy becomes redundant when dealing with low sequencing depth.  
+Differential isoform usage was performed with Iso-Seq reads as annotation and RNA-Seq reads as expression, given higher sequencing RNA-Seq read depth and greater sample size. 570 genes were identified with differential isoform usage (\cref{tab:DIU_DEA_nums}). 
 
 \vspace{1cm}
 \begin{table}[!htp]
@@ -483,62 +481,39 @@ Differential isoform usage was performed with Iso-Seq reads as annotation and RN
 	\label{tab:DIU_DEA_nums}
 \end{table}
 
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=9,scale = 0.55]{WholeDifferentialAnalysis.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
-	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}: \textbf{a)} Isoform expression (normalised counts) and \textbf{c)} subsequent deduction of isoform fraction of \textit{Esyt2} using Iso-Seq reads as expression, and the equivalent \textbf{b)} isoform expression and \textbf{d)} isoform fraction of the same gene, \textit{Esyt2} with RNA-Seq reads as expression. Iso-Seq reads were used as annotation in both analyses. 
-	\\
-	As can be observed, the Iso-Seq normalised counts are significantly lower than RNA-Seq normalised counts for the associated isoforms, resulting in a misleading representation of isoform fraction with major isoform switching events (Figure c, PB.3907.1 becomes the dominant isoform in transgenic mice), which is not recapitulated with RNA-Seq reads as expression (Figure d)}   
-	\label{fig:DIU_esyt2}
-\end{figure}
+The majority of these genes (n = 498, 87.3\%), while observed with DIU, were not differentially expressed between wildtype and transgenic mice - a scenario whereby the differential upregulation of one isoform is compensated by the differential downregulation of another isoform, resulting in no net gene expression change. This indicates that a significant degree of the post-transcriptional regulation was independent of gene expression regulation. An example of this was \textit{Ptprz1}, a receptor protein tyrosine phosphatase, which is involved in oligodendrocyte development and function. While there was no change in overall gene expression, closer examination revealed progressive upregulation of two isoforms (PB.13000,10, PB.13000.11) which was offset by progressive downregulation of two other isoforms (PB.13000.14, PB.13000.7) in transgenic mice. In transgenic mice, the known isoform PB.13000.10 (ENSMUST00000090568.6) continued to dominate in both wildtype and transgenic mice across all ages with a slight increase. This was complemented by a slight decrease in the aother known shorter isoform PB.13000.14 (ENSMUST00000202579.3). Interestingly, the two other differentially expressed isoforms were novel, with skipping of exon 16. 
+
+The most significant gene characterised with differential isoform usage with a dominant isoform switch but no change in gene expression was \textit{Cisd3}, a mitochondrial iron-sulfur domain-containing protein involved in regulating electron transport and iron homeostasis essential for normal mitochondrial function. While there was little change in overall gene expression, there is a major isoform shift between wildtype and transgenic mice that was generally consistent across all ages. The two isoforms only differ at the 5'end with the first exon of the upregulated isoform, ENSMUST00000107583.2 (PB.2833.2), spanning across exons 1 and 2 of the downregulated isoform, ENSMUST00000107584.7 (PB.2833.1). 
+% Predicted protein structure
+
+%GFAP not significant?   
+%Interestingly, the was a lower consensus when comparing the number of DIU genes identified when using RNA-Seq reads as abundance, suggesting that the choice of filtering strategy becomes redundant when dealing with low sequencing depth.  
+
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=2,scale = 0.55]{DIU_DEG_major}
+		\includegraphics[page=1,scale = 0.55]{Figures/DIU_notDEG_nomajor.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
-	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}: \textbf{a)} Isoform expression (normalised counts) and \textbf{c)} subsequent deduction of isoform fraction of \textit{Esyt2} using Iso-Seq reads as expression, and the equivalent \textbf{b)} isoform expression and \textbf{d)} isoform fraction of the same gene, \textit{Esyt2} with RNA-Seq reads as expression. Iso-Seq reads were used as annotation in both analyses. 
-		\\
-		As can be observed, the Iso-Seq normalised counts are significantly lower than RNA-Seq normalised counts for the associated isoforms, resulting in a misleading representation of isoform fraction with major isoform switching events (Figure c, PB.3907.1 becomes the dominant isoform in transgenic mice), which is not recapitulated with RNA-Seq reads as expression (Figure d)}   
-	\label{fig:DIU_esyt2}
+	\caption[Differential isoform expression and usage of \textit{Ptprz1}]%
+	{\textbf{Differential isoform expression and usage of \textit{Ptprz1}}: \textbf{a)} \textit{Cisd3}'s RNA-Seq gene expression in wildtype (grey) and transgenic (red) mice, with no significant overall change. \textbf{b)} RNA-Seq expression of the two known and two novel isoforms in wildtype and mice across age. \textbf{c)} Overall isoform fraction of two isoforms across wildtype and transgenic, \textbf{d)} and by age.}    
+	\label{fig:DIU_ptprz1}
 \end{figure}
+
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,scale = 0.55]{DIU_DEG_major}
+		\includegraphics[page=1,scale = 0.55]{Figures/DIU_notDEG_major.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
-	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}:}   
-	\label{fig:DIU_esyt2}
+	\caption[Differential isoform expression and usage of \textit{Cisd3}]%
+	{\textbf{Differential isoform expression and usage of \textit{Cisd3}}: \textbf{a)} \textit{Cisd3}'s RNA-Seq gene expression in wildtype (grey) and transgenic (red) mice, with no significant overall change. \textbf{b)} RNA-Seq expression of the two known isoforms in wildtype and mice across age. \textbf{c)} Overall isoform fraction of two isoforms across wildtype and transgenic, \textbf{d)} and by age.}    
+	\label{fig:DIU_Cisd3}
 \end{figure}
 
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=4,scale = 0.55]{DIU_DEG_major}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
-	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}:}   
-	\label{fig:DIU_esyt2}
-\end{figure}
-
-\begin{figure}[htp]
-	\begin{center}
-		\includegraphics[page=5,scale = 0.55]{DIU_DEG_major}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts]%
-	{\textbf{\textit{Esyt2} was misidentified with differential isoform usage due to low Iso-Seq read counts}:}   
-	\label{fig:DIU_esyt2}
-\end{figure}
 
 
 
 \clearpage
-\subsection{Differential Feature Inclusion Analysis}
+\subsection{Differential Polyadenylation}
 

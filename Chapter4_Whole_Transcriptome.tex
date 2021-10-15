@@ -1,5 +1,5 @@
-\documentclass[../Main/Knit.tex]{subfiles}
-\label{wholetranscriptome}
+\chapter{Whole Transcriptome}\label{ch: whole_transcriptome}
+
 %While the methods I have adopted for long-read sequencing in this thesis allows interrogation of full-length transcripts, this is reliant on the generation and amplification of cDNA from mRNA, which can produce artefacts (template switching), introduce bias (distortion of relative cDNA abundance) and lose RNA modifications. In 2018, ONT showed that it was able to sequence RNA directly using the minION by adding poly(T) adapters directly to the mRNA, with a translocase that was able to bind and process RNA efficiently	 \cite{Garalde2018}, achieving coverage and accuracy comparable to that with ONT-cDNA method. 
 
 % Plots
@@ -69,7 +69,7 @@ Following the Iso-Seq lab pipeline (\cref{chap:isoseq_labpipeline}), 200ng RNA f
     
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[page=2,trim={0 35cm 0 5cm},clip,scale = 0.45]{Pipeline.pdf}
+	\includegraphics[page=2,trim={0 35cm 0 5cm},clip,scale = 0.45]{Figures/Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Whole Transcriptome - PCR cycle optimisation]%
 	{\textbf{Samples were typically amplified using 14 cycles after performing PCR cycle optimisation}: An example of gel image from PCR cycle optimisation of Samples K17, O23, L22 and S18. PCR aliquots were collected every two cycles (10, 12, 14, 16, 18, 20) and then run on gel electrophoresis. 14 cycles was determined to be optimal for large-scale amplification,as cycles below showed insufficient amplification whereas cycles above showed signs of over-amplification, which would result in biased sequencing representation. Ladder (L) shown is 1kb DNA ladder.}
@@ -81,7 +81,7 @@ Following the Iso-Seq lab pipeline (\cref{chap:isoseq_labpipeline}), 200ng RNA f
 \begin{figure}[!htp]
 	\centering
 	\vspace{20pt}
-	\includegraphics[page=3, ,trim={0 21cm 0 0},clip,scale = 0.45]{Pipeline.pdf}
+	\includegraphics[page=3, ,trim={0 21cm 0 0},clip,scale = 0.45]{Figures/Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Whole Transcriptome - cDNA purification and library preparation]%
 	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates}: Following large scale amplification using the optimum cycle number (as determined from \cref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) Ampure beads. \textbf{a)} A bioanalyzer gel of amplified cDNA from the two fractions after ampure bead purification. \textbf{b)} A zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 1 and \textbf{b)} a zoomed-in bioanalyzer electropherogram of Sample K17 Fraction 2, from the gel depicted in Figure a). \textbf{d)} A zoomed-in bioanalyzer electropherogram of Sample K17 and \textbf{e)} of Sample K23 recombining both fractions and performing SMRTbell template preparation. The samples at this point have been DNA-damage repaired, exonuclease treated, and ligated with SMRT bell adapters. The y-axis of the bioanalyzer electropherogram represents the size. The size distribution for each fraction was determined from the start to the end point of the smear, as in Figure a), or the equivalent peak, as depicted in Figure b) and Figure c). 
@@ -108,7 +108,7 @@ In brief, raw reads were basecalled using Guppy and were classified as "pass" if
 \begin{figure}[htp]
 	\centering
 	\vspace{20pt}
-	\includegraphics[page=1,trim={0 12cm 2cm 1cm},clip, scale = 0.45]{Pipeline.pdf}
+	\includegraphics[page=1,trim={0 12cm 2cm 1cm},clip, scale = 0.45]{Figures/Pipeline.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[PacBio Isoseq Bioinformatics Pipeline]%
 	{\textbf{PacBio Isoseq Bioinformatics Pipeline}: Pipeline is adapted from ToFU \nomenclature{ToFU}{Transcript isOforms: Full-length and Unassembled} \cite{Gordon2015}}
@@ -155,7 +155,7 @@ Following library preparation and single-molecule real time sequencing (SMRT), a
 
 \begin{figure}[h]
 	\begin{center}
-	\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+	\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
@@ -506,7 +506,7 @@ Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=11,trim={0 1cm 0 0},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=11,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
@@ -516,7 +516,7 @@ Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=2,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=2,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run]%
@@ -526,7 +526,7 @@ Showcasing the sensitivity of the sequencing platform and approach, only 62\% (n
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=6,trim={0 25cm 0 0},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=6,trim={0 25cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
@@ -578,7 +578,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=1,scale = 0.45]{ONTWholeTranscriptome.pdf}
+		\includegraphics[page=1,scale = 0.45]{Figures/ONTWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT Sequence Channel Activity from Whole Transcriptome Sequencing ]%
@@ -588,7 +588,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=2,,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{ONTWholeTranscriptome.pdf}
+		\includegraphics[page=2,,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Figures/ONTWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT run performance over time from Whole Transcriptome Sequencing ]%
@@ -598,7 +598,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={1cm 0cm 0cm 20cm},clip, scale = 0.45]{ONTWholeTranscriptome.pdf}
+		\includegraphics[page=4,trim={1cm 0cm 0cm 20cm},clip, scale = 0.45]{Figures/ONTWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT translocation speed against time from Whole Transcriptome Sequencing]%
@@ -608,7 +608,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{ONTWholeTranscriptome.pdf}
+		\includegraphics[page=3,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Figures/ONTWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT read length and quality from Whole Transcriptome Sequencing ]%
@@ -618,7 +618,7 @@ Despite the relatively low run performance, more reads were acquired per flow ce
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={0 16cm 0cm 0},clip, scale = 0.45]{Pipeline.pdf}
+		\includegraphics[page=4,trim={0 16cm 0cm 0},clip, scale = 0.45]{Figures/Pipeline.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT read quality against read length from Whole Transcriptome Sequencing ]%
@@ -632,7 +632,7 @@ After further collapsing and filtering of transcripts using the Iso-Seq data, a 
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=3,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=3,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Rarefaction Curves of Whole Transcriptome Iso-Seq Runs]%
@@ -652,7 +652,7 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=4,trim={0 25cm 0 0},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=4,trim={0 25cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Isoform diversity across Tg4510 samples and coverage of ERCC transcripts]%
@@ -662,7 +662,7 @@ A significant proportion of isoforms (20,621, 45\%) were sized 2 - 4kb in length
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Correlation of isoform diversity with transcript length and number of exons]%
@@ -686,7 +686,7 @@ Focusing only on the subset of isoforms that were commonly identified in both RN
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=13,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=13,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[RNA-Seq defined transcriptome]%
@@ -728,7 +728,7 @@ Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitne
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=7,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=7,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Comparison of Known and Novel Isoforms from Iso-Seq Whole Transcriptome runs]%
@@ -743,7 +743,7 @@ Except for AF and AL, all the other different splicing events, and in particular
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=8,trim={0 19cm 0 2cm},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=8,trim={0 19cm 0 2cm},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq]%
@@ -775,7 +775,7 @@ These isoforms with both IR and NMD were found to more lowly expressed than isof
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=9,trim={0 1cm 0 0.5cm},clip,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=9,trim={0 1cm 0 0.5cm},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Association of intron retention and NMD in Whole Transcriptome Iso-Seq]%
@@ -794,7 +794,7 @@ Importantly, over a third (448, 39.3\%) of these annotated lncRNA isoforms conta
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=10,scale = 0.55]{IsoSeqWholeTranscriptome.pdf}
+		\includegraphics[page=10,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Characterisation of LncRNA in Whole Transcriptome runs]%

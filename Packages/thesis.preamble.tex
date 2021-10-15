@@ -5,6 +5,9 @@
 \newenvironment{changemargin}[1]{\begin{list}{}{\setlength{\voffset}{#1}}\item[]}{\end{list}} %change margin for long table intro
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
+%\usepackage[backend=biber, style = geschichtsfrkl]{biblatex}
+%\addbibresource{Knit.bbl}
+ 
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
@@ -35,6 +38,7 @@
 \usepackage{tikz} %tick mark
 \usepackage{pdfpages} % import pdf s
 \usepackage{pdflscape} %landscape pdf
+
 
 %% Bibliography
 \usepackage[superscript,biblabel]{cite}
@@ -78,11 +82,11 @@
 
 
 
-\input{code.sty} % for including programming 
-\input{blocked.sty}
-\input{uhead.sty}
-\input{boxit.sty}
-\input{thesis.sty}
+\input{Packages/code.sty} % for including programming 
+\input{Packages/blocked.sty}
+\input{Packages/uhead.sty}
+\input{Packages/boxit.sty}
+\input{Packages/thesis.sty}
 
 \lstset{style=mystyle}
 
