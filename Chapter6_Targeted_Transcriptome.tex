@@ -27,7 +27,7 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 Extracted RNA from mouse entorhinal cortex of wild-type and transgenic rTg4510 mice was sequenced on the PacBio's Sequel (n = 24, Table \ref{tab:mouse_samples_sequenced}), a subset of which were also sequenced on the Oxford Nanopore's MinION (n = 18, Table \ref{tab:mouse_samples_sequenced}). Three biological replicates were selected at each age (2, 4, 6 and 8 months) across wild-type and transgenic mice, multiplexed with barcodes (listed in \cref{tab:barcode_primers}) and sequenced as three batches.
 
 \subsection{Library preparation and sequencing}
-Following the Iso-Seq lab protocol (as described in \cref{chap:isoseq_labpipeline}), 200ng RNA from each sample was primed for first strand cDNA synthesis (\cref{section:ch2_cDNA_synthesis_explanation}) with specific oligo-dT barcodes and amplified using PCR with 14 cycles (\cref{fig:isoseq_targeted_pccresults}, \cref{section:ch2_PCR_explanation}). Following purification with 0.4X and 1X AMPure PB beads, the two fractions were then recombined at equimolar quantities, and samples were subsequently combined at equimolar quantities according to each batch. Enrichment for target genes with IDT hybridisation capture was then performed for each batch (described in \cref{section:ch2_targetcapture_explanation}) using custom-designed probes (summarised in \cref{tab:mouse_probes}). Following successful target capture and library preparation (depicted in \cref{fig:isoseq_targeted_libresults}), sequencing was performed for each batch on the PacBio Sequel using a 1M SMRT cell. RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina), and used as junction support of the long reads. 
+Following the Iso-Seq lab protocol (as described in \cref{chap:isoseq_labpipeline}), 200ng RNA from each sample was primed for first strand cDNA synthesis (\cref{section:ch2_cDNA_synthesis_explanation}) with specific oligo-dT barcodes and amplified using PCR with 14 cycles (\cref{fig:isoseq_targeted_pccresults}, \cref{section:ch2_PCR_explanation}). Following purification with 0.4X and 1X AMPure PB beads, the two fractions were then recombined at equimolar quantities, and samples were subsequently combined at equimolar quantities according to each batch. Enrichment for target genes with IDT hybridisation capture was then performed for each batch (described in \cref{section:ch2_targetcapture_explanation}) using custom-designed probes (summarised in \cref{tab:mouse_probes}). Following successful target capture, Iso-Seq library preparation (depicted in \cref{fig:isoseq_targeted_libresults}) was performed for each batch and sequenced on the PacBio Sequel using a 1M SMRT cell. A subset of the samples (Batch 2 and Batch 3) were also prepared with ONT library preparation (depicted in \cref{fig:ONT_targeted_libresults}) and sequenced on the ONT MinION with a FLO-Min106D flow cell (described in \cref{sec: ONTlib_preparation}). RNA from the same samples (n = 24) was also prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina), and used as junction support of the long reads. 
 
 \subsection{SMRT sequencing QC and data processing}
 Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline (outlined in \cref{section:isoseq_bioinformatics}), and is similar to the whole transcriptomics data processing with the exception of demultiplexing samples at \textit{Lima} with barcodes. Briefly, CCS reads were generated for each batch and demultiplexed for each sample. Full-length reads from each sample were then merged and collapsed to unique isoforms with \textit{Cupcake}, which were mapped to mouse reference genome (mm10) using \textit{Minimap2} and annotated with \textit{SQANTI3}. Partial isoforms as a consequence of 5'degradation were filtered out using \textit{TAMA}'s script (tama\_remove\_fragment\_models.py) with default parameters. Full-length Iso-Seq read counts from each individual sample were extracted from \textit{Cupcake's} read\_stat.txt file.
@@ -138,11 +138,24 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 	\includegraphics[page=2,trim={0 14cm 3cm 1cm},clip,scale = 0.45]{Figures/TargetedLabResults.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Targeted Transcriptome - Target Capture and library preparation]%
-	{\textbf{Successful target capture and library preparation across all batches, as shown by enrichment of transcripts with specific lengths:} \textbf{a)} and \textbf{c)} are Bioanalyzer electropherogram traces of Batch 1 (n = 6) and Batch 2 (n = 9) respectively after enrichment of cDNA with selective IDT probes (Section \ref{section:ch2_targetcapture_explanation}). \textbf{b)}, \textbf{d)} and \textbf{f)} are Bioanalyzer electropherogram traces of Batch 1, 2 and 3 respectively after library preparation (denoted here as "Final", Section \ref{section:ch2_smrtbelltemplate_explanation}. \textbf{e)} An overlay of Batch 2 after target capture and library preparation. 
+	{\textbf{Successful target capture and library preparation across all batches, as shown by enrichment of transcripts with specific lengths:} \textbf{a)} and \textbf{c)} are Bioanalyzer electropherogram traces of Batch 1 (n = 6) and Batch 2 (n = 9) respectively after enrichment of cDNA with selective IDT probes ( \cref{section:ch2_targetcapture_explanation}). \textbf{b)}, \textbf{d)} and \textbf{f)} are Bioanalyzer electropherogram traces of Batch 1, 2 and 3 respectively after library preparation (denoted here as "Final", \cref{section:ch2_smrtbelltemplate_explanation}. \textbf{e)} An overlay of Batch 2 after target capture and library preparation. 
 	\\
 	\\
 	As can be seen across all figures, target capture appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths, which differs from the broad peaks that are evident in whole transcriptome sequencing (Figure \ref{fig:isoseq_whole_bioresults}). Library preparation with ligation of SMRT bell templates retained these targeted transcripts with good peak overlay, as seen in figure e). The difference in peak height (i.e. cDNA quantity) between target capture and library preparation is due to a difference in input cDNA concentration when running Bioanalyzer - input cDNA after library preparation was diluted with a 1:5 dilution factor to maximise amount of cDNA available for sequencing, whereas input cDNA after target capture was not diluted.}  
 	\label{fig:isoseq_targeted_libresults}
+\end{figure}
+
+\begin{figure}[!htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=3,trim={0 28cm 3cm 1cm},clip,scale = 0.45]{Figures/TargetedLabResults.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Targeted Transcriptome - Target Capture and library preparation]%
+	{\textbf{Successful target capture and ONT library preparation, as shown by enrichment of transcripts with specific lengths:} Shown in \textbf{a)} is the gel snapshot image from the TapeStation Assay of Batch 2 (n = 9) and Batch 3 (n = 9) respectively after enrichment of cDNA with selective IDT probes (\cref{section:ch2_targetcapture_explanation}) and ONT library preparation (\cref{sec: ONTlib_preparation}), and \textbf{b)} is the respective electropherogram of Batch 3. 
+	\\
+	\\
+	Similar to the Bioanalyzer electropherogram from \cref{fig:isoseq_targeted_libresults}, target capture and ONT library preparation appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths. Diluted DNA (1:5 dilution factor) was used for TapeStation Assay to maximise the amount of cDNA available for sequencing. L - Ladder, B2 - Batch 2, B3 - Batch 3. Of note, the ladder used was expired and thus missing the lower green marker. }  
+	\label{fig:ONT_targeted_libresults}
 \end{figure}
 
 
@@ -151,132 +164,71 @@ Isoforms were annotated with \textit{SQANTI3} in combination with mouse referenc
 
 \newpage
 \section{Results}
-\subsection{Run performance and sequencing metrics}
-Following library preparation and SMRT sequencing, a total of XXGb (s.d = XXGb) were obtained (Table \ref{tab:targeted_mouse_run_output}). Of note, 6 samples were first trialled and multiplexed in Batch 1 to determine the yield output and coverage depth - PacBio recommends starting with 4 - 8 samples for multiplexing. Having noticed that an average yield output (24Gb) with a high off-target sequencing, implicating saturation of target genes with 6 samples, the number was increased to 9 samples in Batch 2 and Batch 3. Despite more samples, the sequencing run for Batch 2 and 3, performed by Exeter's Seqeuncing Service, had a poor loading rate (38.1\% P1 of Batch 3 vs 71\% of Batch 1) and low subsequent yield. The samples were also potentially degraded after having been stored in -20\textdegree C for over 6 months due to Covid-19 lockdown. 
+\subsection{Iso-Seq Run performance and sequencing metrics}
+Following Iso-Seq library preparation and SMRT sequencing, a total of XXGb (s.d = XXGb) were obtained (Table \ref{tab:targeted_mouse_run_output}). Of note, 6 samples were first trialled and multiplexed in Batch 1 to determine the yield output and coverage depth - PacBio recommends starting with 4 - 8 samples for multiplexing. Having noticed that an average yield output (24Gb) with a high off-target sequencing, implicating saturation of target genes with 6 samples, the number was increased to 9 samples in Batch 2 and Batch 3. Despite more samples, the sequencing run for Batch 2 and 3, performed by Exeter's Seqeuncing Service, had a poor loading rate (38.1\% P1 of Batch 3 vs 71\% of Batch 1) and low subsequent yield. The samples were also potentially degraded after having been stored in -20\textdegree C for over 6 months due to Covid-19 lockdown. 
 
 The yield difference between the first and last two batches was evident in the number of CCS reads (total = 996K; Batch 1 = 469K, Batch 2 = 306K, Batch 3 = 2221K Figure \ref{fig:isoseq_targeted_run_output}a) and FLNC reads (total = 930K; Batch 1 = 399K, Batch 2 = 275K, Batch 3 = 256K, Figure \ref{fig:isoseq_targeted_run_output}a) generated, after applying the bioinformatics Iso-Seq pipeline (same as the whole transcriptome approach with the exception of removing barcodes rather than general primers). However, calculation of the on-target rate suggested that while Batch 2 and 3 had lower output yield, the coverage of target genes was significantly greater than Batch 1 due to the increased sample size (mean rate in Batch 1 = 34.5\%; mean rate in Batch 2 = 46.2\%; mean rate in Batch 3: 42.9\%, Figure \ref{fig:isoseq_targeted_rate}). The on-target rate is defined as the proportion of mapped transcripts with sequences overlapping at least one target probe. 
 %Off-target 
 
 In addition to batch variability, the number of full-length transcripts obtained per sample varied within each batch (Figure \ref{fig:isoseq_targeted_run_output}b). This variability was not associated with RIN (corr = 0.147, P = 0.492, Spearman's rank) and is unlikely to be due to library preparation, given that samples were pooled in equal molarity during target capture. However, there was no significant difference in the number of full-length transcripts between WT and TG across the batched runs (Wilcoxon rank sum test, W = 73, P = 0.977, Figure \ref{fig:isoseq_targeted_run_output}c). 
 
-\begin{landscape}
-	\begin{table}[]
-		\resizebox{1.5\textwidth}{!}{%
-			\begin{tabular}{@{}cccccccccccccccccccl@{}}
-				\toprule
-				\multirow{3}{*}{Sample} &
-				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Total \\ Bases \\ (GB)\end{tabular}} &
-				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Polymerase\\ Reads\end{tabular}} &
-				\multicolumn{6}{c}{Read   Length} &
-				\multicolumn{3}{c}{Productivity} &
-				\multicolumn{4}{c}{Control} &
-				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Local \\ Base \\ Rate\end{tabular}} &
-				\multicolumn{2}{c}{Template} &
-				\multicolumn{1}{c}{\multirow{3}{*}{Notes}} \\ \cmidrule(lr){4-16} \cmidrule(lr){18-19}
-				&
-				&
-				&
-				\multicolumn{2}{c}{Polymerase} &
-				\multicolumn{2}{c}{Subread} &
-				\multicolumn{2}{c}{Insert} &
-				\multirow{2}{*}{P0} &
-				\multirow{2}{*}{P1} &
-				\multirow{2}{*}{P2} &
-				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total   \\ Reads\end{tabular}} &
-				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Read \\ Length\\  Mean\end{tabular}} &
-				\multicolumn{2}{c}{Concordance} &
-				&
-				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Adapter   \\ Dimer \\ (0-10bp)\end{tabular}} &
-				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Short \\ Insert \\ (11-100bp)\end{tabular}} &
-				\multicolumn{1}{c}{} \\ \cmidrule(lr){4-9} \cmidrule(lr){15-16}
-				&
-				&
-				&
-				Mean &
-				N50 &
-				Mean &
-				N50 &
-				Mean &
-				N50 &
-				&
-				&
-				&
-				&
-				&
-				Mean &
-				Mode &
-				&
-				&
-				&
-				\multicolumn{1}{c}{} \\ \midrule
-				Batch 1 &
-				24.2 &
-				712250 &
-				34016 &
-				70473 &
-				1402 &
-				1852 &
-				3024 &
-				3808 &
-				\begin{tabular}[c]{@{}c@{}}4.62\% \\ (46613)\end{tabular} &
-				\begin{tabular}[c]{@{}c@{}}71.58\%\\  (722026)\end{tabular} &
-				\begin{tabular}[c]{@{}c@{}}24.76\% \\ (249707)\end{tabular} &
-				9,690 &
-				31,505 &
-				0.84 &
-				0.87 &
-				2.31 &
-				0 &
-				0 &
-				Sequenced in November 2019 \\
-				Batch 2 &
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				&
-				\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Sequenced in July 2020\\ Samples were kept at -20 for over 9months. \\ Sequel broke down mid-run.  \\ Sequencing was prepared by Exeter's Sequencing Services\\ \\ \end{tabular}} \\
-				Batch 3 &
-				19.3 &
-				383292 &
-				50472 &
-				100255 &
-				1557 &
-				2017 &
-				3158 &
-				3898 &
-				\begin{tabular}[c]{@{}c@{}}18.68\% \\ (189549)\end{tabular} &
-				\begin{tabular}[c]{@{}c@{}}38.11\%\\  (386743)\end{tabular} &
-				\begin{tabular}[c]{@{}c@{}}43.56\% \\ (442054)\end{tabular} &
-				3,440 &
-				52,533 &
-				0.85 &
-				0.87 &
-				2.86 &
-				0 &
-				0 &
-				\\ \bottomrule
-			\end{tabular}%
-		}
-		\captionsetup{width=1.5\textwidth}
-		\caption[Run Yield Output from Targeted Transcriptome Iso-Seq of Tg4510]%
-		{Iso-Seq run yield for each batch of Tg4510 mouse samples sequenced using targeted transcriptome approach}
-		\label{tab:targeted_mouse_run_output}
-	\end{table}
-\end{landscape}
+
+\begin{table}[]
+	\captionsetup{width=1.0\textwidth}
+	\caption[Run Yield Output from Targeted Transcriptome Iso-Seq of Tg4510]%
+	{Iso-Seq run yield for each batch of Tg4510 mouse samples sequenced using targeted transcriptome approach}
+	\label{tab:targeted_mouse_run_output}
+	\centering
+	\begin{tabularx}{\textwidth}{cccccccccc}
+		\toprule
+		\multirow{3}{*}{Sample} &
+		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Total \\ Bases\\ (GB)\end{tabular}} &
+		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Polymerase\\  Reads\end{tabular}} &
+		\multicolumn{4}{c}{Read  Length (kB)} &
+		\multicolumn{3}{c}{Productivity} \\ \cmidrule(l){4-10} 
+		&&&
+		\multicolumn{2}{c}{Polymerase} &
+		\multicolumn{2}{c}{Subread} &
+		\multirow{2}{*}{P0} &
+		\multirow{2}{*}{P1} &
+		\multirow{2}{*}{P2} \\
+		&&&
+		Mean & N50 & Mean & N50 &&&
+		\\ \midrule
+		Batch 1 & 24.2 & 712250 & 34.0 & 70.5 &	1.4 & 1.85 &
+		\begin{tabular}[c]{@{}c@{}}4.62\% \\ (46613)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}71.58\% \\ (722026)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}24.76\% \\ (249707)\end{tabular} \\
+		Batch 2 &
+		&&&&&&&
+		&
+		\\
+		Batch 3 &	19.3 &	383292 &	50.5 &	100 &	1.6 &
+		2.02 &
+		\begin{tabular}[c]{@{}c@{}}18.68\% \\ (189549)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}38.11\% \\ (386743)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}43.56\% \\ (442054)\end{tabular} \\ \bottomrule
+	\end{tabularx}
+
+	\vspace{1cm}
+	\centering
+	\begin{tabularx}{\textwidth}{cccccccc}
+		\hline
+		\multirow{3}{*}{Sample} & \multicolumn{4}{c}{Control}  & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Local\\ Base\\ Rate\end{tabular}} & \multicolumn{2}{c}{Template} \\ \cline{2-5} \cline{7-8} 
+		&
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total\\  Reads\end{tabular}} &
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Read \\  Length Mean\end{tabular}} &
+		\multicolumn{2}{c}{Concordance} &
+		&
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Adapter\\ Dimer (0-10bp)\end{tabular}} &
+		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Short Insert\\ (11- 100bp)\end{tabular}} \\
+		&       &        & Mean & Mode &                                                                              &               &              \\ \hline
+		Batch 1                 & 9,690 & 31,505 & 0.84 & 0.87 & 2.31                                                                         & 0             & 0            \\
+		Batch 2                 &       &        &      &      &                                                                              &               &              \\
+		Batch 3                 & 3,440 & 52,533 & 0.85 & 0.87 & 2.86                                                                         & 0             & 0            \\ \hline
+	\end{tabularx}
+\end{table}
+
 
 \begin{figure}[!htp]
 	\begin{center}
@@ -299,7 +251,88 @@ In addition to batch variability, the number of full-length transcripts obtained
 \end{figure}
 
 
-%Following library preparation and nanopore sequencing (Chapter X), a total of 28.54M reads (39.68Gb) were generated across two flow cells and a total of 22.8M (80\%) reads were successfully basecalled using Guppy.
+\subsection{ONT Run performance and sequencing metrics}
+Following library preparation and nanopore sequencing on a subset of samples, a total of 28.54M reads (39.68Gb) were generated across two flow cells and a total of 22.8M (80\%) reads were successfully basecalled using \textit{Guppy} (\cref{tab:ont_targetedrun_output}). Despite similar amount of loading onto the flow cell (Batch 2: 540ng, Batch 3: 500ng), there was a large yield difference in the number of basecalled reads between the two batches with Batch 3 generating significantly more reads (Batch 2: 12.3M and Batch 3: 16.3M), and after filtering for read quality (Phred Score > Q7, referring to a read accuracy > 80\%) of which the majority reads passed (Batch 2: 9.68 (78.8\%); Batch 3: 13.13M (99.3\%) (\cref{fig:ONT_targeted_run_output}\textbf{a}). 
+
+Similar to Iso-Seq Targeted Transcriptome run performance, the number of filtered reads obtained per sample varied within each batch (\cref{fig:ONT_targeted_run_output}\textbf{b}), with more reads generated in the transgenic mice in both Batches 2 and 3 (\cref{fig:ONT_targeted_run_output}\textbf{c}, Batch 2: Wilcoxon rank sum test, W = 18, P = 0.063; Batch 3: Wilcoxon rank sum test, W = 17, P = 0.11). This variability was not associated with RIN (corr = -0.267, P = 0.284, Spearman's rank) or barcode (corr = -0.058, P = 0.819, Spearman's rank), but simply a reflection of more transgenic mice sequenced (Batch 2: WT = 4, TG = 5 samples; Batch 3: WT = 4, TG = 5 samples). The difference in number of WT and TG mice in Batches 2 and 3 would have been compensated in Iso-Seq with Batch 1, where there is more WT mice; however, Batch 1 was not sequenced using ONT due to the lack of remaining cDNA. Of note, the difference in the number of reads between TG and WT, while different, was not statistically significant at the 5\% level (Wilcoxon rank sum test, W = 59, P = 0.10, \cref{fig:ONT_targeted_run_output}\textbf{d}).
+  
+While the throughput was comparable between Iso-Seq and ONT nanopore sequencing for the targeted transcriptome profiling (Iso-Seq: 19.3 - 24.2Gb, ONT: 16.9 - 22.8Gb), ONT nanopore sequencing generated significantly more (1D) reads (12.3M - 16.3M) than the polymerase reads from Iso-Seq (0.3M - 0.7M), which is limited by the number of wells available for sequencing (1M ZMWs), and subsequently 20X the number of full-length reads per sample (Iso-Seq mean PolyA-FLNC reads = 38.7K, range = 16.8K - 77.2K; ONT mean basecalled, filtered reads = 918K, range = 667K - 1.32M). This significant difference in read but comparable yield output is due to the multiple sequencing of the same insert in Iso-Seq with the generation of CCS reads, whereas each insert is only sequenced once in ONT nanopore. This significantly higher yield is therefore achieved at the expense of read accuracy, whereby the average read accuracy in ONT nanopore is 90\% (mean Phred Quality = 10; \cref{tab:ont_targetedrun_output)}, \cref{fig:ont_targetedlengthquality}\textbf{a,b}). Of note, the on-target rate observed in both Iso-Seq and ONT nanopore sequencing was similar at $\tilde{50\%}$ (\cref{fig:isoseq_targeted_rate,fig:ont_targeted_rate}), indicating that more samples could have been sequenced.  
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=1,trim={0 4cm 0 0},scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Sequence Channel Activity from Whole Transcriptome Sequencing ]%
+	{\textbf{Sequencing channel activity plot from nanopore sequencing}. Heatmap representation of channel productivity spatially for \textbf{a)} Batch2 (10.1Gb) and \textbf{b)} Batch 3 (3.68Gb) as DNA is translocated through the pore and signal is collected. A contrast of activity can be seen between the two batches, with a number of inactive channels (white box) in Batch 2, and of the channels that are active, fewer DNA molecules are translocated and read.}
+	\label{fig:ont_targetedseq_channel}
+\end{figure}
+
+%% Qus: Wsa there reflushing?
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT run performance over time from Whole Transcriptome Sequencing ]%
+	{\textbf{Temporal run performance from nanopore sequencing}. Shown is the \textbf{a)} number of basses generated per hour over the course of the sequencing run from Batch 2 and from \textbf{b)} Batch 3, and \textbf{c)} cumulative reads generated from Batch2 and from \textbf{d)} Batch3. The reads are classified as "pass" (dark blue) if QV > 7 and "fail" (light blue) if QV < 7. Gb - Gigabases}
+	\label{fig:ont_targetedtime_performance}
+\end{figure}
+
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=4,trim={0 0 0 0},clip,scale = 0.55]{Figures/ONTTargetedTranscriptome.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Targeted Transcriptome run performance]%
+	{\textbf{Significantly more reads were generated in Batch 3 and for transgenic mice in ONT nanopore sequencing}. \textbf{a)} A subset of samples (n = 19) were multiplexed and sequenced in two runs (Batches 2 and 3) with varied performance, as indicated by the number of sequenced reads through to reads demultiplexed per sample. \textbf{b)} Sample variability within each batch not correlated by barcode sequence. \textbf{c)} A reflection of the yield output and sequencing of more transgenic mice, there were more significantly reads generated for transgenic mice individually and \textbf{d)} and across both batches. WT - Wild-type, TG - Transgenic }
+	\label{fig:ONT_targeted_run_output}
+\end{figure}
+
+\vspace{1cm}
+\begin{table}[ht]
+	\captionsetup{justification=raggedright,width=0.95\textwidth}
+	\caption[Run Yield Output from Targeted Transcriptome Nanopore Sequencing of Tg4510]%
+	{\textbf{Comparable run performance and yield output from Targeted Nanopore sequencing of Tg4510}. Two of three batches prepared for targeted transcriptome profiling were also sequenced on ONT MinION on two separate flow cells over 48hours (Batch 2: WT = 4, TG = 5 samples; Batch 3: WT = 4, TG = 5 samples). The number of total reads basecalled was comparable to the targeted sequencing yield with the Iso-Seq approach (\cref{fig:isoseq_targeted_run_output}). Basecalled reads were filtered on quality score with a QV threshold of 7. N50 refers to the sequence length at which 50\% of reads are sized at or over. Gb - Gigabases. Med - Median}
+	\label{tab:ont_targetedrun_output}
+	\centering
+	\begin{tabularx}{0.95\textwidth}{@{}ccccc@{}}
+		\toprule
+		\multirow{2}{*}{Sample} & \multicolumn{2}{c}{All Reads}      & \multirow{2}{*}{Active channels} & \multirow{2}{*}{Run Duration} \\ \cmidrule(lr){2-3}
+		& Total Bases (Gb) & Number of Reads &                                  &                               \\ \midrule
+		Batch 2                     & 16.9             & 12,274,792       & 479                              & 48hours                       \\
+		Batch 3                     & 22.8             & 16,274,909       & 425                              & 48hours                       \\ \bottomrule
+	\end{tabularx}
+	\vspace{1cm}
+
+	\begin{tabularx}{0.95\textwidth}{@{}ccccccccc@{}}
+		\toprule
+		\multirow{2}{*}{Sample} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total Bases\\ (Gb)\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Number of\\  Reads\end{tabular}} & \multicolumn{4}{c}{Read Length (bp)} & \multicolumn{2}{c}{Read Quality} \\ \cmidrule(l){4-9} 
+		&                                                     &                                                                             & Med  & Mean & N50  & Longest Read & Med           & Mean          \\ \midrule
+		Batch 2                     & 14.2                                                                        & \begin{tabular}[c]{@{}c@{}}9,675,186 \\ (78.8\%)\end{tabular}               & XXX   & 1478 & 1779 & 19081        & XXX              & 10.2           \\
+		Batch 3                     & 19.41                                                                         & \begin{tabular}[c]{@{}c@{}}13,129,731\\  (80.7\%)\end{tabular}               & XXX    & 1468 & 1813 & 20476        & XXX             & 9.9          \\ \bottomrule
+	\end{tabularx}
+\end{table}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[page=5,trim={0 27cm 0 0cm},clip,scale = 0.55]{Figures/ONTTargetedTranscriptome.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[On-Target rate in ONT nanopore runs]%
+	{\textbf{Comparable on-target rate in ONT nanopore sequencing to Iso-Seq with a 40-50\% on target rate}. Samples (n = 18) were multiplexed and sequenced in two runs (Batch 2 = 9 samples, Batch 3 = 9 samples). The on-target rate, was similar to that observed in Iso-Seq targeted sequencing (\cref{fig:isoseq_targeted_rate}). A difference in the on-target rate between wild-type and transgenic samples was observed in both batches, a likely reflection of the sample variability in sequencing (\cref{fig:ONT_targeted_run_output}\textbf{c,d}). WT - Wild-type, TG - Transgenic}
+	\label{fig:ont_targeted_rate}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=3,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT read length and quality from Whole Transcriptome Sequencing ]%
+	{\textbf{Length and quality distribution of ONT basecalled reads}. Shown are histograms of the number of sequenced reads against \textbf{a)} mean read quality score of Batch 2, \textbf{b)} mean read quality score of Batch 3, and against \textbf{c)} length of Batch 2 and of \textbf{d)} Batch 3. The distribution has been shaded for reads that have passed or failed the quality filter (Q-score threshold of 7). N50 refers to the sequence length at which 50\% of reads are sized at or over. }
+	\label{fig:ont_targetedlengthquality}
+\end{figure}
 
 \clearpage
 \subsection{Transcriptome annotation}
