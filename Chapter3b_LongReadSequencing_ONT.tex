@@ -4,59 +4,100 @@
 %https://www.nature.com/articles/s41587-020-0731-9
 
 \subsection{Introduction}
-In 2014, Oxford Nanopore Technology (ONT) introduced another long-read sequencing technology akin to PacBio's SMRT with the ability to also generate long reads capable of resolving the exon structure of mRNA transcripts. However, rather than mimicking the natural DNA synthesis and measuring the incorporation events on the template strand (as is the focus in all major sequencing applications including the PacBio's SMRT) ONT's nanopore-based sequencing adopted an entirely novel approach by directly inferring the DNA sequence in real-time from electric current fluctuations as the DNA translocates through a protein pore. 
+Shortly following the revolutionary success of PacBio's SMRT to generate significantly longer reads in real-time (reviewed in \cref{tab: longread_isoseqstudies}), Oxford Nanopore Technologies (ONT) introduced another long-read, single-molecule sequencing technology with the commercial release of the MinION in 2014. In contrast to all other major sequencing applications including PacBio's SMRT sequencing which relies on "sequencing-by-synthesis" approach, ONT technology pioneered the novel approach of nucleic acid sequencing using protein nanopores for direct inference of the sequence (\cref{fig:ONT_Mechanism}\textbf{a}); it is the only technology to directly read a single DNA strand rather than by measuring incorporation events on the template strand\cite{Jain2015}. Partly owing to the relatively lower cost and portability of ONT technology, nanopore sequencing has been widely used for transcriptome profiling (reviewed in \cref{tab: longread_ontstudies}), 
+with theoretically no upper limit \cite{Loman2015} (the longest read to date is over 150kb), and with no bias towards length or GC content \cite{Oikonomopoulos2016, Weirather2017}.
+
 
 \subsubsection{Mechanism}
-In contrast to Pacbio's XXX by XXX Sequel, ONT's nanopore sequencing can be performed in a handheld MinION device (10 × 3 × 2 cm, 90 g), housing a flow cell at its centre where the DNA sample is loaded. (Also on mobile device: \cite{Samarakoon2020}) Each flow cell contains a sensor array, consisting of 512 channels, each with 4 cells that can in turn house one nanopore (currently CsgG pore from \textit{E.coli} \cite{Goyal2014}), which is inserted in an electrical resistant membrane surrounded by electrolytes. As an electric field is applied across the membrane, the negatively-charged DNA is driven across the nanpopore and subsequently interrupts the current. Different nucleotides would disrupt the electrical currenly differently, thereby generating a signal that is nucleotide-sensitive and a proxy of the DNA sequence. However, while the current MinION contains a total of 2048 nanopores, only one of the four wells in each channel can be active at any time, as controlled by Application Specific Integrated Circuit (ASIC), allowing up to 512 independent DNA molecules to be sequenced simultaneously.
+The MinION is a hand-held portable USB-powered device. At its centre is a flow cell that contains a sensor array, which houses a total of 2048 individual nanopores that are controlled in four groups of 512 channels (allowing up to 512 independent DNA molecules to be sequenced simultaneously)\cite{Jain2015}. As an electric current is applied across the nanopore, the single-stranded DNA molecules translocates through the nanopore and subsequently interrupts the current in a nucleotide-dependent manner, thereby generating a unique signal of electric current perturbations as proxy of the underlying nucleotide sequence (\cref{fig:ONT_Mechanism}\textbf{a}). 
 
-*6-mer* 
-*flow cell and the different nanopore?*
-% https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1462-9
+Successful nanopore sequencing requires the efficient capture and threading of single strand DNA into the pore, followed by the ability to identify individual DNA bases in a time-resolved manner. This was achieved through several key innovations\cite{Bayley2015}: 
+\begin{enumerate}
+	\item Generation of an internal positive charge within the protein nanopore to induce capture of negatively-charged DNA. Each nanopore is embedded into an electrical resistant membrane that is immersed in an electrolyte solution.
+	\item Discovery and usage of biological pore proteins, from the \textit{α}HL\cite{N2005}, to the MspA from \textit{Mycobacterium smegmatis}\cite{Manrao2011}, and currently, the CsgG from E.coli. The modified CsgG pore contains a short and narrow channel constriction site, enabling distinct ionic currents at a single-nucleotide resolution. 
+	\item Ratcheting the DNA through the pore for time-resolved base identification to discriminate individual nucleotide signals from noisy background with a processive enzyme (motor protein, \cref{fig:ONT_Mechanism}\textbf{a,b}), which controls DNA movement and reduces the translocation speed of the molecule (average speed of 450bp/s) for improved signal\cite{Rang2018}. This processive enzyme is ligated to 5'end of both strands during library preparation.   
+\end{enumerate}
+
+\begin{figure}[]
+	\centering
+	\includegraphics[page=1,trim={0 6cm 0 0 },clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Oxford Nanopore Sequencing]%
+	{\textbf{Oxford Nanopore Sequencing}: \textbf{a)} Oxford Nanopore Technologies pioneered the development of sequencing DNA through a biological nanopore. The translocation of the sequence, controlled by the enzyme motor protein, causes nucleotide-sensitive perturbations in the electric current. \textbf{b)} The structure of the library DNA with ligation of the sequencing adapter, containing the motor protein (brown circle), to both template and complementary strands. \textbf{c)} Two sequencing translocation modes are currently offered, generating either 1D or 1D\textsuperscript{2} reads. Figures are taken from Oxford Nanopore Product Brochure July 2018.}
+	\label{fig:ONT_Mechanism}
+\end{figure}
+
+\vspace{1cm}
 % https://community.nanoporetech.com/posts/flo-minxxx-x-rx-x-r
-%The difference is in the nanopores present in each flow cell. The nanopore is essentially a biological protein; it is found naturally occurring in the environment. We perform a lot of engineering internally to optimise these nanopores for utilisation in our system, enabling greater throughput and accuracy. The R9.4.1 nanopore is the current broadly-used nanopore. As DNA moves through the nanopore, there's a pinch-point - a narrowing of the hole, which allows us to measure the current, and so interpret the translocation of the molecule in real time. In the R10 series, there is a longer barrel and two pinch points, enabling two such measurements. This provides benefits for the sequencing of homopolymers - stretches of the same base multiple times. These homopolymer stretches are difficult, not only for our platform, but for all sequencing plaforms. We have found that introducing this second pinch point provides better fidelity for homopolymer sequences than previously seen with the R9.4 series; we are starting to see very accurate sequencing of homopolymer stretches of about ten bases. R10.3 is the newest nanopore in this series, and provides the high accuracy of the R10 series together with increased throughput and capture.
-%https://nanoporetech.com/sites/default/files/s3/Product_brochure_Final_July_2018.pdf
-%https://community.nanoporetech.com/posts/flowcell-r9-5-and-1dsq-lib
-%https://community.nanoporetech.com/posts/1d-2-cdna-library-prep-low
-%https://link.springer.com/content/pdf/10.1007%2F978-1-4939-7834-2.pdf
-
 \subsubsection{Performance and Run Quality Metric}
-The ability of nanopore sequencing to directly read the DNA has both positive and negative implications. Inhibited mostly by the ability to deliver very high-molecular weight DNA to the pore, nanopore sequencing is able to generate much longer reads than SMRT sequencing (from 500bp to currently XXX), with theoretically no upper limit \cite{Loman2015}, and with no bias towards length or GC content \cite{Oikonomopoulos2016, Weirather2017}. This offers great potential in transcriptomics profiling and genome assembly. However without the circular feature of PacBio SMRT sequencing, DNA strand cannot be sequenced multiple times and one of the major limitations of nanopore sequencing is its lower read accuracy. Low complexity stretches, including homopolymers, are furthermore difficult to resolve as translocation of homopolymers do not change the sequence of nucleotides within pore, thereby resulting in a constant signal. 
+One major limitation of nanopore sequencing is the relatively high error rate compared to short-read technologies, which can arise from error during sequencing or from translating the raw electric signal into a DNA sequence (basecalling)\cite{Rang2018}. The first error is exacerbated by the fact that several nucleotides occupy the pore at any given time point, resulting in multiple influences, and that the signal does change with translocation of homopolymers. However over recent years, major advances in both the basecalling algorithms, the chemistry and nanopore itself has drastically increased the initial accuracy from 60\% \cite{Jain2015} to 98.3\% (vR.9.4.1 and Bonito) (\cref{fig:ONT_advances}). This includes the improved chemistry to sequence both the template and the complementary strand immediately after, thereby attaining a more accurate consensus read (1D\textsuperscript{2}) that increases the accuracy of template reads (1D) alone by 5\%\cite{Rang2018} (\cref{fig:ONT_Mechanism}\textbf{c}), though at the expense of throughput \cite{NanoporeCommunityPosts}. Of note, earlier releases of nanopore sequencing offered 2D sequencing which involved ligation of both strands with a hairpin adapter, though this has been largely replaced by (1D\textsuperscript{2}) sequencing. However, the error rate still falls short of 99\% offered by PacBio's CCS reads and short-read platforms, and errors near splice sites can result in spurious alignments and in correct clustering of reads. Other approaches to mimic the PacBio's circular consensus approach and generate circularised templates for nanopore sequencing have been proposed (INC-seq \cite{Li2016c} and R2C2 \cite{Volden2018}), with accuracy approaching 97.5\%. However, such methods are laborious and are not commonly used.  
 
-%In contrast to PacBio's SMRT with the ability to generate consensus long reads, the raw accuracy of nanopore 1D cDNA sequencing is relatively low between 85–87\%; however, significant improvements are made on reducing error rate by rapid development of both the technology and library preparation methods (Volden et al. 2018). Such high error rates, from frequent base deletions and insertions particularly near splice sites, can result in spurious alignments and in correct clustering of reads. 
-
-However over recent years, major advances in both the basecalling algorithms, the chemistry and nanopore itself has drastically increased the initial accuracy from 60\% \cite{Jain2015} to 98.3\% (vR.9.4.1 and Bonito). This includes the chemistry (1D\textsuperscript{2}) to sequence both the template and the complementary strand immediately after, thereby attaining a more accurate consensus read that increases the accuracy of template reads (1D) alone by 5\%\cite{Rang2018}. Further to mimic the circular consensus approach, two methodologies (INC-seq \cite{Li2016c} and R2C2 \cite{Volden2018}) involving Rolling Circle Amplification and subsequent nanopore sequencing of circularised templates have been proposed with accuracy approaching 97.5\%. 
-
-\subsection{Lab Pipeline}
-\label{chap:ont_labpipeline}
-Similar to the Iso-Seq library preparation (Chapter \ref{chap:isoseq_labpipeline}), nanopore sequencing of transcriptome also involved three main steps by first generating and amplifying cDNA, finally followed by ligation of adaptors. However unlike PacBio whereby the polymerase is bound after ligation of adaptors, the molecular motor (that drives the DNA through the pore) is already bound to the adaptors. At the time I trialled the nanopore sequencing, the Iso-Seq Express Library Preparation protocol had not yet been released, and the ONT rapid library preparation was much shorter and simpler than the Iso-Seq protocol I used.    
-
-\begingroup
-\parindent=0em
-\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
-\etocsetnexttocdepth{5}
-\localtableofcontents 
-\endgroup
-
-\subsubsection{cDNA synthesis}
-For a fair, direct comparison between ONT's MinION sequencing and PacBio's IsoSeq, 200ng total RNA extracted using AllPrep DNA/RNA Mini Kit (Qiagen) was likewise converted to single-stranded DNA using SMARTer PCR cDNA Synthesis(ClonTech).
-
-\subsubsection{ONT MinION Library Preparation}
-Despite a range of protocols available on the Oxford Nanopore community protocol that can be used pending on the source of sample, the SQK-LSK109 kit was used with cDNA as starting material. This kit is PCR-free and as such is dependent upon generation of high-quality and full-length cDNA, which would be provided using the SMARTer PCR cDNA synthesis kit rather than that detailed in 1D Strand switching cDNA by ligation protocol (SQK-LSK108).
-
-\subsubsection{Repair DNA and Ends}
-DNA calibration strand (DCS) is 3.6kb amplicon of Lambda genome, and is included in the sample library as a quality control of base-calling and sample preparation. End Repair prepare the ends of cDNA molecules for adapter attachment by addition of dA nucleotides
-
-\subsubsection{Adapter Ligation}
-Post DNA repair and end repair, ONT adapters with dT overhang are ligated to the 5’ end of the dA-tailed cDNA molecules by hybridisation. The ONT adapters contain: 
-\begin{itemize}
-	\item motor protein (loaded processive enzyme?) that can bind to the nanopore and control/increase the speed of DNA translocation through the pore. While it is active in solution, it is inhibited from contacting the rest of the DNA through specialised bases in the adapter.
-	\item cholesterol tether to facilitate DNA capture as (1) tethers the DNA molecule to the lipid bilayer (membrane) of the flow cell  (2) reduces amount of diffusion of the DNA molecule from three dimensions (i.e the volume of whole buffer) to two dimensions (i.e. across the lipid bilayer)  
-\end{itemize}
-
-\subsubsection{Priming the Flow Cell}
-Sequencing buffer provides the optimal chemical conditions for powering DNA translocation through the Nanopore. This is the substrate cofactor of the motor enzyme that is used for DNA translocation process in the pore. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[page=2,trim={0 19cm 0 0 },clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Significant advances in Oxford nanopore sequencing read accuracy]%
+	{\textbf{Significant advances in Oxford nanopore sequencing read accuracy}: Optimisation in the structure of nanopores (chemistry updates) and development in basecalling algorithms have led to drastic improvements in read accuracy. The R7 and R9 nanopore series is based on the MspA and CsgG protein respectively. Of note, the figure does not include the latest chemistry (1D\textsuperscript{2}) or nanopore development (R.10.4, this involves a longer barrel and two pinch points to provide better resolution of homo-polymer sequences). Figure is taken from Rang et al.(2018)\cite{Rang2018}}
+	\label{fig:ONT_advances}
+\end{figure}
 
 \newpage
+In contrast to Iso-Seq Sequel, real-time feedback of the nanopore sequencing progress is obtained from MinION with information provided on the run statistics (i.e. the total number of reads generated so far) and a summary of the channel states over time (duty time plot). The channel state is an indication of the pore occupancy and is classified as either i) Sequencing (active with current DNA translocation), ii) Pore (active but without DNA translocation), iii) Recovering, iv) Inactive and v) Unclassified - channels are divided into 4 groups and used sequentially to maximise throughput, and unclassified channels are those not currently used. The duty time plot provides a good assessment of the current performance of the run, and an early indication whether to continue or stop the run (examples of successful and suboptimal runs are depicted in \cref{fig:ONTPoreOccupancy}). 
+
+\begin{figure}[]
+	\centering
+	\includegraphics[page=6,trim={0 14cm 0 0 },clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Examples of successful and suboptimal ONT nanopore sequencing runs]%
+	{\textbf{Examples of successful and suboptimal ONT nanopore sequencing runs}: Shown are duty time plots from \textbf{a)} Good quality run, which is determined by the majority of pores in the "Sequencing" state (bright green), \textbf{b)} Suboptimal run with channels being blocked, as indicated by an accumulation of pores in the "Recovering" state (dark blue), \textbf{c)} Suboptimal run with low pore occupancy, indicated by the high ratio of "Pore" (dark green) to "Sequencing" state, and \textbf{d)} Suboptimal run with flow cell failure with the majority of pores in "Inactive state" (light blue). Channel blocking typically occurs when there are contaminants in the library. Conversely, low pore occupancy suggests insufficient loading material or poor library preparation (poor ligation reaction). Flow cell failure indicate damaged channel or membranes, which can be caused by multiple factors (air bubbles, osmotic imbalance, presence of detergents in library). Figures are taken from WTAC material. Channel states are classified as sequencing (bright green), pore (dark green), recovering (dark blue), inactive (light blue) and unclassified (grey).}
+	\label{fig:ONTPoreOccupancy}
+\end{figure}
+
+\clearpage
+\subsection{Lab Workflow}
+\label{chap:ont_labpipeline}
+This section describes the library preparation for ONT cDNA sequencing used in this thesis. At the time I was performing nanopore sequencing, the ONT was less advanced that the PacBio with less detailed protocols. Nanopore sequencing was therefore conducted on a subset of samples as a source of validation and technology comparison. For a fairer and more direct comparison, all steps prior to the ONT library preparation were adopted from the Iso-Seq protocol, including conversion of RNA to cDNA using the SMARTer PCR cDNA synthesis (ClonTech) (described in \cref{section:ch2_cDNA_synthesis_explanation}) and large scale DNA amplification using the GXL DNA Polymerase (workflow is depicted in \cref{fig:ONT_WholeProtocol}). Targeted profiling of the transcriptome using nanopore sequencing was performed by conducting ONT library preparation on the same samples after cDNA synthesis, amplification and target enrichment with IDT (described in \cref{section:ch2_targetcapture_explanation}) (workflow is depicted in \cref{fig:ONT_TargetedProtocol}). The nanopore reads thus have the same cDNA primers and barcode sequences as the Iso-Seq reads (refer to \cref{tab:barcode_primers} for sequences).   
+
+Post cDNA synthesis and amplification, ONT library preparation is similar to the Iso-Seq library preparation  (described in \cref{chap:isoseq_labpipeline}) in that cDNA molecules are repaired for ends, and then ligated with adapters (outlined in \cref{fig:ONT_WholeProtocol}). The only difference is the nature of the adapters - the polymerase is loaded after adapter ligation in PacBio, whereas the motor enzyme is already pre-bound to the adapters in ONT. 
+
+\begin{figure}[]
+	\centering
+	\includegraphics[page=4,trim={0 6cm 0 0 },clip, scale = 0.7]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Global Transcriptome Profiling Lab Workflow]%
+	{\textbf{ONT Global Transcriptome Profiling Lab Workflow}: For a fair and direct comparison of technology, the first part of the lab workflow for the global transcriptome profiling using nanopore sequencing was identical as that for the PacBio Iso-Seq. RNA was converted to cDNA using SMARTer PCR cDNA synthesis (ClonTech) and amplified to two reactions in order to sufficient material downstream. Amplified DNA was then split and purified using the 1x and 0.4x AMPure beads for Iso-Seq, and 0.9x for ONT. Equimolar amounts of purified DNA was then used for respective library preparation, before sequencing on the PacBio Sequel and ONT MinION.}
+	\label{fig:ONT_WholeProtocol}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\includegraphics[page=5,trim={0 11cm 0 0 },clip, scale = 0.7]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT Targeted Transcriptome Profiling Lab Workflow]%
+	{\textbf{ONT Targeted Transcriptome Profiling Lab Workflow}: For a fair and direct comparison, targeted transcriptome profiling was similarly performed on the same samples that had been prepared for Iso-Seq transcriptome profiling. RNA was barcoded and similarly converted to cDNA using SMARTer PCR cDNA synthesis kit. Amplified cDNA was then enriched for target genes using IDT Target Capture and subjected to respective library preparation. Of note, this workflow is identical to the global transcriptome profiling workflow depicted in \cref{fig:ONT_WholeProtocol} with the exception of using barcodes for cDNA synthesis (boxed green) and the additional step of target enrichment (boxed orange)}
+	\label{fig:ONT_TargetedProtocol}
+\end{figure}
+
+
+\subsubsection{ONT MinION Library Preparation}
+\label{sec: ONTlib_preparation}
+After obtaining high-quality and full-length cDNA, nanopore library preparation was proceeded with 1D sequencing by ligation protocol (SQK-LSK109, \cref{fig:ONT_Protocol}) to generate 1D reads (\cref{fig:ONT_Mechanism}\textbf{c}). The library preparation was simple: cDNA ends were repaired and dA-tailed using the NEBNext End Repair/dA-tailing Module. Following 1x AMPure Bead Purification of cDNA end-repaired products, ONT sequencing adapters were then ligated onto the 5' prepared ends and subjected to another round of 0.4x AMPure Bead Purification. The library was then ready for loading onto the MinION. The ONT sequencing adapters (depicted in \cref{fig:ONT_Mechanism}\textbf{b}) contained a dT overhang for ligation to the dA-ends of cDNA, the pre-bound motor protein, and a cholesterol moiety which facilitates DNA capture by tethering and restricting the DNA molecule to the flow cell's lipid membrane.
+
+\subsubsection{Priming the Flow Cell and Sequencing}
+Nanopore sequencing was performed on the MinION using a Min106D Flow cell (contains the R9 nanopore shown in \cref{fig:ONT_advances}). Prior to sequencing, the flow cells were tested for the total number of functional pores present and only used if more than 800 pores were available, as recommended by ONT. The flow cell was then primed for sequencing with a "Running buffer with fuel mix" (RBF), which contained the substrate cofactor essential for efficient motor protein activity (i.e. ATP for the ATPase activity of the helicase component of the translocation motor). The library was then loaded into the MinION with Library Loading Beads (LLB) - these are sepharose beads that work similarly to Iso-Seq MagBeads by immobilising the library to the lipid membrane, which is then tethered together with the cholesterol moiety.    
+
+\begin{figure}[]
+	\centering
+	\includegraphics[page=3,trim={0 16cm 0 0 },clip, scale = 0.7]{Figures/ProjectDevelopment_FiguresONT}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT library preparation with ligation sequencing kit]%
+	{\textbf{ONT library preparation with ligation sequencing kit}: High-quality and full-length cDNA was proceeded with ONT's ligation sequencing kit (SQK-LSK109), which involved repairing ends and dA-tailing followed by ligation of the ONT sequencing adaptors. The motor protein and cholesterol moiety are represented by the brown and yellow circle respectively. Figure is adapted from ONT Nanopore Protocol 1D amplicon/cDNA by Ligation (SQK-LSK109)}
+	\label{fig:ONT_Protocol}
+\end{figure}
+
+ 
+
+\clearpage
 \subsection{Bioinformatics Pipeline}
 This section describes the bioinformatic pipeline that was used to process ONT cDNA sequencing data generated using the whole transcriptome (n = 2) in \cref{ch: whole_transcriptome} and targeted transcriptome approach (n = 20) \cref{ch: targeted_transcriptome}. 
 
@@ -95,7 +136,7 @@ The steps for processing sequencing data from the whole and targeted transcripto
 \subsubsection{Quality Control of Run, Base-calling and Filtering of Base-called Reads}
 The performance of a Nanopore sequencing run was assessed using \textit{PycoQC}\cite{Leger2019} and the official Nanopore QC tutorial\cite{ONT2019NanoporeQC}, by evaluating the number of active pores during the run, the number of reads generated over time, and the length and quality score distribution of basecalled reads. A suboptimal run would be indicated by a low sequencing yield (<20kb), whereby the vast majority of pores were inactive or there was significant increase in the number of inactive pores over time. 
 
-Raw reads were basecalled using \textit{Guppy}, a basecaller program which converts ONT's raw electrical signal to DNA sequence. Basecalling is a rapidly advancing field current basecallers developed by using neural networks and training machine-learning algorithms on real data\cite{Wick2019}. The latest released basecaller by ONT, Guppy has been shown to perform superior to other available basecallers with higher read accuracy and faster basecalling\cite{Wick2019}. Basecalled reads with read quality score < 7 were then removed using \textit{Nanofilt}\cite{DeCoster2018} with default parameters. 
+Raw reads were basecalled using \textit{Guppy}, a basecaller program which converts ONT's raw electrical signal to DNA sequence. Basecalling is a rapidly advancing field current basecallers developed by using neural networks and training machine-learning algorithms on real data\cite{Wick2019}. The latest released basecaller by ONT, Guppy has been shown to perform superior to other available basecallers with higher read accuracy and faster basecalling\cite{Wick2019}. Basecalled reads with read quality score < 7 (nanopore default passed quality) were then removed using \textit{Nanofilt}\cite{DeCoster2018} with default parameters. 
 
 \subsubsection{Removing of Nanopore and cDNA sequencing adapters}
 Similarly to the Iso-Seq bioinformatics pipeline, cDNA sequencing primer sequences and nanopore ligation adaptors were removed to prevent spurious alignment, using \textit{Porechop}\cite{Wick2017} (v0.2.4, parameters: --end\_size 100, --adapter\_threshold 90, --end\_threshold 75, --min\_trim\_size 15, --discard\_middle, --extra\_end\_trim 1). Under those parameters, a window of 100 nucleotides from each end of the reads were searched for a set of adaptors, which must have a minimum 90\% identity to be considered present for trimming and a minimum 75\% at the end of the reads; alignments smaller than 15bp or found within the middle of the reads (considered chimeric) were removed. By manually defining a unique set of adaptors that includes the cDNA primers (from Clontech SMARTer PCR cDNA synthesis kit), the ONT adaptors and corresponding polyA/T tail, it was possible to differentiate the strand orientation (\cref{fig:ONT_cdnatemplate}); the adapter sequences used for whole transcriptome and targeted transcriptome approach are given in \cref{fig:ONT_cdnatemplate}\textbf{b} and \cref{tab:ont_barcode} respectively. Sample demultiplexing in the targeted transcriptome approach was performed by including the 16bp barcode sequence; of note, the barcode is only present in the 3'end of the plus strand and 5'end of the minus strand, as part of the oligo-dT primer during cDNA synthesis (\cref{tab:barcode_primers}). Reads were therefore assigned to the sample with the highest identity at the 5'end and 3'end for the plus and minus strand respectively. 
@@ -142,12 +183,13 @@ Trimmed reads with adaptors present at both ends were retained, and reads corres
 \end{landscape}
 
 \subsubsection{Genome Alignment and Transcript Collapse}
-Trimmed reads were then aligned to the reference genome using Minimap2 \cite{Li2018} (v2.17-r941, parameters: -ax splice). In the Iso-Seq bioinformatics pipeline, mapped transcripts were then processed using \textit{Cupcake} for the removal of transcripts with low alignment identity and length, further collapse of high-quality transcripts to unique isoforms, and to obtain count information using output from \textit{Iso-Seq3 Cluster}.
+Trimmed reads from each sample were then aligned to the reference genome using Minimap2 \cite{Li2018} (v2.17-r941, parameters: -ax splice). In the Iso-Seq bioinformatics pipeline, mapped transcripts were then processed using \textit{Cupcake} for the removal of transcripts with low alignment identity and length, further collapse of high-quality transcripts to unique isoforms, and to obtain count information using output from \textit{Iso-Seq3 Cluster}.
 
 As a similar comparison, mapped transcripts from ONT were processed using \textit{TAMA} for removal of lowly-aligned transcripts and for further collapse to unique isoforms (script: tama\_collapse.py, parameters: -e common\_ends, -c 95, -i 80, -x capped -a 50, -z 50, -m 20, -d merge\_dup) and to subsequently obtain count information (script: tama\_read\_support\_levels.py). Under those parameters recommended by WTAC, transcripts were filtered for minimum alignment identity > 80\% and alignment length >95\% (same threshold as that applied in Iso-Seq pipeline using \textit{Cupcake}) and collapsed by common exon start and end sites. 50 nucleotides at both 5'end and 3' end of the transcript, and 20 nucleotides at the exon/splice junction and tolerated for grouping transcripts to be collapsed. Of note, this is much more relaxed than the default \textit{TAMA} parameters (-a 10 -m 10 -z 10), given that the 5'cap method was not used and the error rate of ONT reads were high. 
 
 Despite the growing emergence of various new tools developed for processing ONT reads - such as ONT's officially recommended pipeline with Pinfish and Stringtie, FLAIR, UNAGI - I chose to use \textit{TAMA} due to greater flexibility and transparency with parameter usage, generation of multiple output files for quality control, and ability to subsequently obtain count information (script: tama\_read\_support\_levels.py)
 
+Of note, samples were merged only after alignment to the genome and collapsed unlike in the Iso-Seq bioinformatics pipeline, whereby samples were merged prior to alignment. This is because it was too memory and computationally intensive to collapse all the ONT reads from all the samples. 
 
 %\uline{\textbf{FLAIR}}: Full-Length Alternative Isoform analysis of RNA  (FLAIR\nomenclature{FLAIR}{Full-Length Alternative Isoform analysis of RNA}) 
 %Three steps are involved: Correct splice sites with short reads if incorrect splice site is within 10base pairs away from correct splice site, collapse reads to generate consensus sequences. This involves first grouping reads with identical splice junctions - "first pass nanopore isoform transcriptome"; the representative isoform within each group is determined by the most supported transcription and end site. All the reads, including reads that were aligned but not able to be fully corrected, are re-aligned to the "first-pass isoform" with the best alignment. First-pass isoforms that have fewer than three supporting reads are filtered out; three supporting reads selected as threshold as this gave the highest base sensitivity without compromising on precision.  
