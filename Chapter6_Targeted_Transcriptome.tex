@@ -10,16 +10,14 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 
 %Advantages of targeted transcriptomics vs whole transcriptomics; resources in Targeted Transcriptomics paper; Literature Review 
 %List of relevance of AD genes
-
-%Single cell RNA-Sequencing identified subsets of protective microglia, referred as disease-associated microglia (DAM), with a characteristic transcriptional activation profile: Trem2-dependent upregulation of phagocytic-related genes, essential for A$\beta$ clearance\cite{Keren-Shaul2017}. 
-
-%Single cell RNA-Sequencing of mouse also revealed two main activated states (reactive) of microglia, activated response microglia (ARM) characterised by upregulated expression of immune cells, and interferon response microglia (IRM) characterised by upregulated expression of innate immune response and interferon response pathway \cite{Frigerio2019}. ARM was enriched with GWAS AD risk genes, with upregulation of \textit{Trem2} and downregulation of \textit{Bin1,Cd33,Picalm}. ARM also promote \textit{Apoe} expression in microglia, whereby deletion of \textit{APOE} ablated ARM expression and density of microglia around amyloid deposits \cite{Frigerio2019} 
-%Single cell RNA-Sequencing of AD prefrontal cortex further revealed cell-specific response with upregulation of microglial-expressed genes, such as \textit{Trem2} and \textit{PICALM}, that positively correlately with AD pathology in micrologia \cite{Mathys2019}.
+%"CD33 is elevated in the AD brain in microglia and infiltrating macrophages and is thought to modulate microglial activation and Aβ clearance (Griciuc et al., 2013; Walker et al., 2015).  In fact, knock-out of CD33 in AD mouse models results in reduced Aβ plaque burden (Griciuc et al., 2013).  
 %Structural crystallography studies of mutant TREM2 proteins reveal that AD-associated risk variants were localised to the receptor's functional surface, thereby reducing ligand binding affinity\cite{Kober2016}, and modulate TREM2 signalling \cite{Wang2015a}.
-%Mouse-specific microglial expression signatures are not readily recapitulated in human microglia from recent studies using single-nucleus RNA-sequencing (snRNA-seq) \cite{Thrupp2020,Olah2020} with only a low overlap of activation genes reported \cite{Grubman2019,Mathys2019} - these inconsistencies may be reflective of the limtations of snRNA-seq to capture human microlglial activation genes \cite{Thrupp2020}.
 %https://journals.lww.com/co-neurology/Fulltext/2021/04000/The_role_of_innate_immune_genes_in_Alzheimer_s.13.aspx#:~:text=Neuroinflammation%20is%20as%20an%20innate,role%20in%20Alzheimer's%20disease%20pathogenesis
 %https://www.nature.com/articles/s41598-020-75057-x
+%"TREM2 mediated phagocytosis is critical for Aβ and neuronal debris clearance in AD (Kleinberger et al., 2014; Xiang et al., 2016; Yeh et al., 2016). Specifically, TREM2 expression is important for microglia to physically associate with Aβ plaques (Ulrich et al., 2014; Wang et al., 2016; Yuan et al., 2016; Jay et al., 2015, 2017a,b)." 
 
+
+ 
 
 \section{Methods}
 
@@ -160,7 +158,14 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 
 
 \subsection{Transcriptome Annotation and Iso-Seq Quantification}
-Isoforms were annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). ISM isoforms were assumed as partial products of longer FSM isoforms, and associated read counts were aggregated.   
+Isoforms were annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). ISM isoforms were assumed as partial products of longer FSM isoforms, and associated read counts were aggregated.  
+
+\subsection{ONT Library Preparation and Nanopore Sequencing}
+RNA from a subset of mouse samples (n = 2) was prepared for ONT cDNA library preparation and nanopore sequencing using the ONT lab workflow, as detailed and described in \cref{chap:ont_labpipeline}. Briefly, cDNA was similarly prepared from 200ng RNA using the SMARTer PCR cDNA Synthesis Kit (Clontech, UK) (described in \cref{section:ch2_cDNA_synthesis_explanation}), with addition of ERCC standards, followed by PCR amplification of 14 cycles with PrimeSTAR GXL DNA Polymerase (Clontech, UK) (described in \cref{section:ch2_PCR_explanation}). Quantification and size distribution were then determined using Qubit DNA High sensitivity assay (Invitrogen) and Bioanalyzer 2100 (Agilent), and library preparation was proceeded with ONT’s Ligation Sequencing kit (SQK-LSK109) (detailed in \cref{sec: ONTlib_preparation}). Sequencing was then performed on ONT MinION using a FLO-Min106D flow cell (detailed in \cref{sec: ONTlib_sequencing}). 
+
+\subsection{ONT QC and data processing}
+QC of raw reads was performed using PycoQC, with subsequent analysis using the ONT bioinformatics pipeline (details are provided in \cref{section:ont_bioinformatics}). Briefly, raw reads were basecalled using \textit{Guppy} (v4.0) and reads with Phred (Q) < 7 filtered out. Primers and ONT adapters were then removed using \textit{Porechop} to generate full-length reads, followed by trimming of polyA tails with \textit{Cutadapt}. Full-length reads were then mapped to the reference mouse genome using \textit{Minimap2} (v2.17) with the following parameters "-ax splice", and subsequently collapsed with \textit{TAMA} using default parameters.  
+ 
 
 \newpage
 \section{Results}
