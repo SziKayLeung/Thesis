@@ -20,13 +20,26 @@ Currently, all the new tools developed to process long-read sequencing data (suc
 %The role of microglia in processing and spreading of bioactive tau seeds in Alzheimer’s disease | Journal of Neuroinflammation | Full Text (biomedcentral.com) 
 %%https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-018-0574-5 - rTg4510
 
+\textbf{Differential Isoform Usage }\\
+\label{intro:dtu}
+When analyzing splicing patterns between multiple conditions, changes in isoform abundance can be defined in two ways: 
+\begin{enumerate}
+	\item Differential Isoform Expression (DIE\nomenclature{DIE}{Differential Isoform Expression}): changes in absolute expression of an isoform, evaluated using count matrices 
+	\item Differential Isoform Usage (DIU\nomenclature{DIU}{Differential Isoform Usage}): changes in relative expression of an isoform from the same gene, resulting in a change in isoform proportion and is evaluated using changes in gene exon usage	
+\end{enumerate}
+
+Figure X shows an example of a change in DIE but no change in DS: A two-fold increase of both isoforms from the same gene results in a change in absolute but not relative expression to one another. A change in DIE but not in DS may indicate a transcription-related mechanism. If a change in DS is observed, a change in DIE of one of the isoforms would also be observed. A change in multiple isoforms would also be observed, as long as the change is not in the same direction (upregulated/downregulated) with the same magnitude. Any changes in DS/relative abundance of isoforms indicate a splicing-related mechanism. 
+
+In addition to exploring differential splicing in terms of isoform abundance, which typically involves an exon-based approach that focuses on differential exon usage (i.e. DEXSeq), a splicing based approach can also be taken. This involves analysing individual splicing events (exon skipping, alternative donor and acceptor) for systematic changes between conditions. rMATS, SUPP2, LeafCutter and Majiq are such tools that identify and quantify splicing events using junction reads. 
+
+
+
 \section{Methods}
 
 \subsection{Iso-Seq Processing and Isoform Quantification}
 All analyses pertaining to this chapter follows on from \cref{ch: whole_transcriptome} and \cref{targetedmousetranscriptome}: raw Iso-Seq reads from the individual samples were processed using \textit{IsoSeq3}, which were them merged to one complete transcriptome at the global and targeted level, before transcript collapse with \textit{Cupcake}, alignment with \textit{Minimap2}, annotation with \textit{SQANTI3} (v3.3) and finally, additional filtering with \textit{TAMA}. Of note, transcriptome was re-annotated with \textit{SQANTI3} due to \text{SQANTI2} being no longer maintained and the addition of novel features in \textit{SQANTI3}, including the generation of a functionally-labelled annotation from the long-reads. 
 
 The full-length long-read counts (abundance) for each sample, required for downstream analyses, were obtained from one of \textit{cupcake's} output files (read\_stat.txt), which documented the source of all the full-length transcripts that were used for isoform collapse. Given that samples were sequenced individually under the whole transcriptome approach, we were thus able to differentiate and count the transcripts using the Run ID. For the targeted transcriptome approach, whereby the samples were barcoded and thus could not be differentiated by sequencing run, we used the ID (original CCS read) documented in the output file (flnc.report.csv) from \textit{Iso-Seq3 Refine} after sample demultiplexing. 
-
 
 \subsection{Quantification of human MAPT transgene expression} 
 As a quality check of sample identity, the presence of human- and mouse-specific Mapt/MAPT sequences was determined in full-length transcripts across all the samples. Species-specific MAPT sequence, located in a 2kb region present in the 3'UTR, was identified after using BLAT\cite{Kent2002} to compare human and mouse MAPT/Mapt sequence for divergent transcript sequences \cite{Castanho2020}).  
@@ -154,6 +167,44 @@ Implemented as an additional filtering step after \textit{tappAS} and recommende
 \clearpage 
 \section{Results}
 
+%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885035/ - Lorna’s paper on example of isoforms in their selective panel of genes that have differential quantification associated with AD. Good examples to check with transcriptome data to see if this is also observed in mouse (I.e. TAU3 increase) 
+
+
+\subsection{PacBio Iso-Seq run performance and sequencing metrics}
+No significant difference in yield was reported between WT and TG (n = 12 animals, two-tailed unpaired t-test, t(10) = -0.636, P = 0.539,  \cref{fig:isoseq_whole_run_output}\textbf{a}), and no significant correlation was observed between run yield and RIN across samples (n = 12 animals, Pearson's correlation, t = -0.98, df = 10, P = 0.350, \cref{fig:isoseq_whole_run_output}\textbf{b}).
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
+	{\textbf{Whole Transcriptome Iso-Seq runs generated \textasciitilde30Gb per sample, independent of RIN score}: Sequential Iso-Seq run generated \textbf{a)} a range of 30-35Gb per sample of the whole transcriptome, with no significant difference observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry. \textbf{b)} Despite TG samples having distinctly lower RIN values than WT samples, no significant difference in yield output was observed between WT and TG.}
+	\label{fig:isoseq_whole_lengths}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Whole Transcriptome Iso-Seq run yields and relationship to RIN score]%
+	{\textbf{Whole Transcriptome Iso-Seq runs generated \textasciitilde30Gb per sample, independent of RIN score}: Sequential Iso-Seq run generated \textbf{a)} a range of 30-35Gb per sample of the whole transcriptome, with no significant difference observed between WT and TG Tg4510 mice. Of note, two samples with $<$25Gb in WT and TG refer to earlier samples sequenced with a lower chemistry. \textbf{b)} Despite TG samples having distinctly lower RIN values than WT samples, no significant difference in yield output was observed between WT and TG.}
+	\label{fig:isoseq_whole_run_output}
+\end{figure}
+
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Sequential processing and alignment of reads from Whole Transcriptome Iso-Seq run]%
+	{\textbf{Sequential processing of Iso-Seq Reads generated around 32K transcripts per sample with good alignment to reference genome}: \textbf{a)} Processing of Iso-Seq reads generated a similar number of reads across all sample throughout Iso-Seq3 bioinformatics pipeline, with the exception of 2 earlier samples. \textbf{b)} Despite this, all the samples had similar number of FL transcripts with no significant difference observed between WT and TG. \textbf{c)}The majority of transcripts aligned to mouse reference genome (mm10) with >85\% alignment identity and $>$95\% length}
+	\label{fig:isoseq_whole_processing}
+\end{figure}
+
+
 \subsection{Change in endogeneous expression}
 %Check whether overexpression of human MAPT result in any unwanted, compensatory effects on equivalent mouse genes,as expression levels of mouse APP and MAPT should be slightly reduced, thereby suggesting no evidence that human transgene expression increase expression of directly-related mouse genes.
 As expected, human-specific \textit{MAPT} sequences were only detected in reads from TG mice, confirming stable activation of human \textit{MAPT} transgene (\cref{fig:isoseq_humanmapt}\textbf{a}) and supporting findings from Castanho et al.\cite{Castanho2020}. Alignment of these human-specific transcripts to the mouse genome were mapped either to the mouse prion protein gene (\textit{Prnp}) with high identity but short overlap (\cref{fig:isoseq_humanmapt}\textbf{b,c}), given that the transgene contains exons 2-3 of mouse \textit{Prnp}\cite{Ramsden2005}, and to the mouse \textit{Mapt} gene with low identity but long overlap (\cref{fig:isoseq_humanmapt}\textbf{b,d}). Applying filter thresholds for downstream analysis removed these human-specific \textit{MAPT} transcripts (\cref{fig:isoseq_humanmapt}\textbf{b}). 
@@ -171,7 +222,7 @@ As expected, human-specific \textit{MAPT} sequences were only detected in reads 
 
 \subsection{Transcriptome Annotation}
 %No difference was observed in the number of transcripts generated between WT and TG (n = 12, two-tailed unpaired t-test, t = -0.005, df = 10, P = 0.996) or by age (n = 12, t = -1.58, df = 10, P = 0.15).
-While identifying widespread RNA isoform diversity amongst genes expressed in the mouse entorhinal cortex (described in \cref{ch: whole_transcriptome}), no difference was observed in the number of genes (mean number = 13,302 genes) or isoforms (mean number = 35,157 isoforms) detected between wild-type and transgenic mouse at the two ages (WT: n = 6, TG: n = 6). Further characterisation of the transcriptome revealed similar profile of isoform diversity between the two phenotypes and ages (\cref{tab:isoseq_whole_subsqantioutput}), with half of the isoforms annotated as known (mean number = 18,567 isoforms (52.8\%), as also shown in \cref{sec:whole_novelIso}) and with a similar distribution in isoform length and number of exons (median: 9, range = 1-89) 
+While identifying widespread RNA isoform diversity amongst genes expressed in the mouse entorhinal cortex (described in \cref{ch: whole_transcriptome}), no difference was observed in the number of genes (mean number = 13,302 genes) or isoforms (mean number = 35,157 isoforms) detected between wild-type and transgenic mouse at the two ages (WT: n = 6, TG: n = 6). Further characterisation of the transcriptome revealed similar profile of isoform diversity between the two phenotypes and ages (\cref{tab:isoseq_whole_subsqantioutput}), with half of the isoforms annotated as known (mean number = 18,567 isoforms (52.8\%), as also shown in \cref{sec:whole_novelIso}) and with a similar distribution in isoform length and number of exons (median: 9, range = 1-89). Post SQANTI annotation and filtering, only a third of ERCC (unique number of ERCC = 37, 40.22\%) were identified from both WT (mean number of ERCC: 32.4 (35\%)) and TG (mean number of ERCC: 32.2 (35.22\%)), with no difference in number of ERCC detected between WT and TG, although there were some ERCC that were detected in WT but not in TG, and vice versa. 
 
 \begin{landscape}
 	\begin{table}[]
@@ -258,7 +309,18 @@ Poly A site had the highest rate of varying by position among transcript-level f
 	\label{fig:Celf}
 \end{figure}	
 
+\subsection{Differential Feature Inclusion Analysis}
+We next investigated whether the inclusion of the specific functional elements differed between wild-type and transgenic mice, suggesting a disease-specific regulation. Features characterised with DFI were observed across all functional categories (\cref{fig:DFI}\textbf{a}), with significant enrichment for 3'UTR motif (Fisher's Exact Test (FET) P = 1.51 x 10\textsuperscript{-4}), post-transcriptional,  modifications (PTM, FET P = 7.36 x 10\textsuperscript{-152}) and protein-binding sites (FET P = 6.13 x 10\textsuperscript{-17}. For transcript features, we observed that feature gain (i.e. feature is upregulated or favoured) was more apparent in in Wild-type whereas the the protein features, with the exception of transmembranes, were more frequent in the transgenic (\cref{fig:DFI}\textbf{b}). 
 
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=3,trim={0cm 20cm 0cm 0cm},scale = 0.6]{Figures/WholeFDA.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[DFI]%
+	{\textbf{DFI} \textbf{a)} Enrichment DFI analysis. The Lines represent the proportion of total features per category across all annotated features, whereas the bars represent the proportion of DFI features observed per category across all features that were included in the DFI analysis. A functional category is considered significantly differentially included if the proportion of DFI feature is greater than proportion of annotated feature (i.e. the bar is higher than the line)}   
+	\label{fig:DFI}
+\end{figure}
 
 \clearpage 
 \subsection{Differential Gene Expression Analysis}
@@ -290,14 +352,14 @@ The hybrid approach also enabled identification of tau-pathology associated chan
    
 
 %\boldheader{Usage of Iso-Seq reads alone detected robust changes in gene expression}
-While Iso-Seq reads are commonly used for accurately characterising RNA diversity, we found that Iso-Seq reads were also able to accurately quantify the abundance of highly-expressed transcripts - as illustrated by the strong correlation of gene-level expression quantified using Iso-Seq and RNA-Seq reads, and near-perfect correlation Iso-Seq reads and actual amount of ERCC controls (described in XX). Strikingly, despite the lower long-read sequencing coverage and smaller sample size (n = 6 TG, n = 6 WT) sequenced on the long-read platform, a significant number of genes (n = 446 genes) were identified as differentially expressed when we used the Iso-Seq long reads for both annotation and expression. Using \textit{EnrichR}, differentially expressed genes (n = 466) were found to be highly enriched in lysosome (KEGG 2021 Human: odds ratio = 5.99, adjusted P = 4.41 x 10\textsuperscript{-6}) and in particularly the TGF-\textbeta pathway (WikiPathway 2021 Human: odds ratio = 58.98, adjusted P = 2.69 x 10\textsuperscript{-3} ). Classification of the differentially expressed genes by effects (depicted in \cref{fig:dea_model} and showcased in \cref{fig:dea_model_genexp}), further identified the majority (n = 340 genes, \cref{fig:dea_model_num}) to be associated with tau pathology (n = 23, \cref{fig:dea_model_genexp}\textbf{a}) and progressive with age (n = 340, \cref{fig:dea_model_genexp}\textbf{d,e,f,g}).       
+While Iso-Seq reads are commonly used for accurately characterising RNA diversity, we found that Iso-Seq reads were also able to accurately quantify the abundance of highly-expressed transcripts - as illustrated by the strong correlation of gene-level expression quantified using Iso-Seq and RNA-Seq reads, and near-perfect correlation Iso-Seq reads and actual amount of ERCC controls (described in XX). Strikingly, despite the lower long-read sequencing coverage and smaller sample size (n = 6 TG, n = 6 WT) sequenced on the long-read platform, a significant number of genes (n = 446 genes) were identified as differentially expressed when we used the Iso-Seq long reads for both annotation and expression. Using \textit{EnrichR}, differentially expressed genes (n = 466) were found to be highly enriched in lysosome (KEGG 2021 Human: odds ratio = 5.99, adjusted P = 4.41 x 10\textsuperscript{-6}) and in particularly the TGF-\textbeta pathway (WikiPathway 2021 Human: odds ratio = 58.98, adjusted P = 2.69 x 10\textsuperscript{-3} ). Classification of the differentially expressed genes by effects (n = 448 genes, depicted in \cref{fig:dea_model}\textbf{a} and showcased in \cref{fig:dea_model_genexp}), further identified the majority (n = 372 genes, \cref{fig:dea_model_num}\textbf{a}) to be associated with tau pathology (n = 55, \cref{fig:dea_model_genexp}\textbf{a, b}) and progressive with age (n = 317, \cref{fig:dea_model_genexp}\textbf{d,e,f,g}). Further examination of these genes revealed enrichment in the "turquoise" co-expression module (n = 134 genes, 36\%) identified from previous WGCNA analyses, which was previously found to become increasing upregulated with development of tau pathology and was highly enriched in pathways involved in immune system activation\cite{Castanho2020} (\cref{fig:dea_model_num}\textbf{b}).  
  
 \begin{figure}[h]
 	\centering
 	\includegraphics[page=5,trim={0 20cm 0 0},clip,scale = 0.55]{Figures/WholeDifferentialAnalysis.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Differentially expressed genes classified by conditions]%
-	{\textbf{Differentially expressed genes were identified across all the different conditions, with most genes exhibiting an interaction effect of rTg4510 genotype and age} Shown is a bar plot of the number of differentially expressed genes (n = 446) classified by the different conditions, as modelled in \cref{fig:dea_model}. The differentially expressed genes were identified from the whole transcriptome datasets (WT = 6, TG = 6, across age 2 and 8 months) using Iso-Seq read counts as abundance. WT - wild-type, TG - Transgenic.}    
+	{\textbf{Differentially expressed genes were identified across all the different conditions, with most genes exhibiting an interaction effect of rTg4510 genotype and age.} \textbf{a)} A bar plot of the number of differentially expressed genes (n = 446) classified by the different conditions, as modelled in \cref{fig:dea_model}. The differentially expressed genes were identified from the whole transcriptome datasets (WT = 6, TG = 6, across age 2 and 8 months) using Iso-Seq read counts as abundance. WT - wild-type, TG - Transgenic. \textbf{b)} A pie chart of the number and proportion of these differentially expressed genes associated with progressive tau pathology co-identified by the "Red","Turquoise", and "Yellow" significant co-expression module identified from WGCNA. All three modules were significantly associated with progressive tau pathology: "Red" module was downregulated in TG and is enriched in synaptic transmission, "Turquoise" module was upregulated in TG and is enriched for immune system activation, and "Yellow" module was downregulated in TG and is enriched in mitochondria and synpatic processes.}    
 	\label{fig:dea_model_num}
 \end{figure}
 
@@ -512,23 +574,88 @@ The most significant gene characterised with differential isoform usage with a d
 \end{figure}
 
 
-
-
-\clearpage
-\subsection{Differential Polyadenylation}
-
 \clearpage
 \subsection{Integration of splicing and methylation}
 Epigenetic modifications such as DNA methylation have been widely acknowledged to heavily influence gene regulation and more specifically, alternative splicing. Using genome-wide DNA methylation data on the same mouse samples, we wanted to use an integrative approach to identify genes with both splicing and methylation changes between wild-type and transgenic mice. Genes defined to undergo differential splicing were classified by either genes with a change in transcript expression (differential isoform expression - DIE), a change in usage of isoform proportions (differential isoform usage - DIU) or a change in feature element (differential feature inclusion - DFI). Genes with changes in methylation were classified as either with a change in a specific position (differential methylated position - DMP) associated with tau pathology (genotype effect) and progressively over time (interaction effect), or associated with a cluster of differentially methylated cytosines (differentially methylated region - DMR). 
 
-Using a stringent approach to identify biologically meaningful splicing changes, we identified nine genes with an altered splicing and methylation profile associated with progressive tau pathology. The most significant co-differentially-methylated position and differentially-spliced gene was \textit{Spata13} - a gene involved in cell migration\cite{Bourbia2019} and has been reported to be upregulated in entorhinal cortex of AD patients\cite{Yan2019} - which was characterised with a change in transcript expression, usage and feature inclusion. There was a significant progressive increase in expression of the shorter known isoform (PB.4966.2, ENSMUST00000162945.1) in the transgenic mice, whereas there was no change in expression of the longer, novel NIC isoform (PB.4966.1) which harboured a 5' miRNA-binding site (miR-446h-5p) and an alternative transcription start site with an upstream open reading frame. A DMP was identified upstream of \textit{Spata13} (8.9Kb and 107Kb from known and novel isoform respectively) and was hypermethylated in transgenic mice compared to wild-type, suggesting a distal suppressed expression of both isoforms in the wild-type. Conversely, the decreased methylation in the transgenic is only associated with suppressed expression of the proximal, novel isoform. 
+Using a stringent approach to identify biologically meaningful splicing changes, we identified nine genes with an altered splicing and methylation profile associated with progressive tau pathology. The most significant co-differentially-methylated position and differentially-spliced gene was \textit{Spata13} - a gene involved in cell migration\cite{Bourbia2019} and has been reported to be upregulated in entorhinal cortex of AD patients\cite{Yan2019} - which was characterised with a change in transcript expression, usage and feature inclusion. There was a significant progressive increase in expression of the shorter known isoform (PB.4966.2, ENSMUST00000162945.1) in the transgenic mice, whereas there was no change in expression of the longer, novel NIC isoform (PB.4966.1) which harboured a 5' miRNA-binding site (miR-446h-5p) and an alternative transcription start site with an upstream open reading frame (\cref{fig:IntMeth_Spata13}\textbf{a, d}). A DMP was identified upstream of \textit{Spata13} (8.9Kb and 107Kb from known and novel isoform respectively, \cref{fig:IntMeth_Spata13}\textbf{b, d}) and was hypermethylated in transgenic mice compared to wild-type ($\Delta$$\beta$ = 0.777, FDR\textsubscript{interaction} = 0.012), \cref{fig:IntMeth_Spata13}\textbf{c}), suggesting a distal suppressed expression of both isoforms in the wild-type. Conversely, the decreased methylation in the transgenic is only associated with suppressed expression of the proximal, novel isoform. 
+
+\begin{figure}[ht]
+	\includegraphics[page=2,scale = 0.4]{Figures/WholeDifferentialAnalysis_DMPDMR.pdf}
+	\\
+	\hspace*{0.2cm}\vspace{0.5cm}\large d
+	\\
+	\includegraphics[page=1,trim={1.5cm 0 0 0},scale = 0.9]{Figures/SPATA13_DMP.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Differential splicing and methylation of \textit{Spata13}]%
+	{\textbf{Differential splicing and methylation of \textit{Spata13}}: \textbf{a}) Upregulation of known isoform (PB.4966.2, ENSMUST00000162945.1) associated with \textit{Spata13} in TG (P = 9.42 x 10 \textsuperscript{-33}, R\textsuperscript{2} = 0.73) \textbf{b)} Hypermethylated DMP identified upstream of promoter ($\Delta$$\beta$ = 0.777, FDR\textsubscript{interaction} = 0.012). \textbf{c)} Correlation between DNA methylation at this site and normalised isoform expression of the \textit{Spata13} gene. \textbf{d)} UCSC browser track showing relative position of DMP and two isoforms. }    
+	\label{fig:IntMeth_Spata13}
+\end{figure}
 
 %Another gene with co-differentially-methylated position and differentially-spliced gene was \textit{Tmem237}, characterised by an isoform switch of a known (PB.261.4) and novel NNC (PB.261.10) isoform, which had an alternative first exon and a shorter 3'UTR resulting in absence of miRNA-binding sites. 
 % check methylation levels across first exon.
 
-Other genes were characterised with a change in transcript expression correlated with a change in methylation. This included \textit{Ncf2}, \textit{Osmr}, and \textit{Cebpa} where there was a progressive increase in expression of the respective known isoform and an associated hypomethylated DMP (located in the promoter) in transgenic; whereas in \textit{Rnf165} and \textit{Susd5}, there was a progressive downregulation of known isoform and an associated hypermethylated DMP in transgenic. Interestingly, we also identified altered splicing and methylation changes in \textit{Irf8} - a transcription factor of the IRF family that is involved in microglial activation in AD\cite{Zeng2017}, where a hypomethylated DMP (located upstream) in TG was associated with progressive increase in transcript expression. The associations described here between DNA methylation and transcript expression support well-established theories of the relationship between DNA methylation and gene expression, whereby increased methylation at the promoter is associated with decreased gene expression. Of note, only one isoform was detected for each of these genes.  
+\newpage
+Other genes were characterised with a change in transcript expression correlated with a change in methylation. This included \textit{Ncf2} (\cref{fig:IntMeth_Ncf2}), \textit{Osmr}, and \textit{Cebpa} where there was a progressive increase in expression of the respective known isoform and an associated hypomethylated DMP (located in the promoter) in transgenic; whereas in \textit{Rnf165} and \textit{Susd5} (\cref{fig:IntMeth_Susd5}), there was a progressive downregulation of known isoform and an associated hypermethylated DMP in transgenic. Interestingly, we also identified altered splicing and methylation changes in \textit{Irf8} (\cref{fig:IntMeth_Irf8}) - a transcription factor of the IRF family that is involved in microglial activation in AD\cite{Zeng2017}, where a hypomethylated DMP (located 130kb downstream) in TG was associated with progressive increase in transcript expression. The associations described here between DNA methylation and transcript expression support well-established theories of the relationship between DNA methylation and gene expression, whereby increased methylation at the promoter is associated with decreased gene expression. Of note, only one isoform was detected for each of these genes.  
 % Note other example where this was not the case 
 
-Focusing on genotype-associated differentially methylated regions, we identified splicing changes annotated to \textit{As3mt} and \textit{Prnp}. Three isoforms were detected for \textit{As3mt}, a schizophrenia-associated GWAS gene, whereby there was a progressive upregulation in the known isoform (PB.8363.2, ENSMUST00000003655.8) in TG (P = 4.98 x 10\textsuperscript{-18}, R\textsuperscript{2} = 0.56) while there was no detected change in expression of the two other novel NNC isoforms, both of which were characterised by a novel splice junction resulting in a novel exon that was absent in the known isoform. A DMR consisting of X differentially methylated cytosine was identified XX upstream of this novel exon within the intron, and was hypermethylated in transgenic mice compared to wild-type ($\Delta$ = 0.19, P = 1.22 x 10\textsuperscript{-8}). We hypothesise that an increase in methylation in this region would hinder recruitment and assembly of the spliceosome, resulting in skipping of the novel exon and subsequent increased expression of the known isoform. 
+\begin{figure}[h]
+	\includegraphics[page=3,scale = 0.4]{Figures/WholeDifferentialAnalysis_DMPDMR.pdf}
+	\\
+	\hspace*{0.2cm}\vspace{0.5cm}\large d
+	\\
+	\includegraphics[page=1,trim={1.5cm 0 0 0},scale = 0.9]{Figures/NCF2_DMP.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Differential splicing and methylation of \textit{Ncf2}]%
+	{\textbf{Differential splicing and methylation of \textit{Ncf2}}. \textbf{a}) Upregulation of known isoform associated with \textit{Ncf2} (PB.700.1,ENSMUST00000027754.6) in TG coincided with two \textbf{b)} hypomethylated DMP located upstream of promoter. Only the most significant DMP is shown ($\Delta$$\beta$ = -0.293, FDR\textsubscript{interaction} = 0.039). \textbf{c)} Correlation between DNA methylation at this site and normalised isoform expression of the \textit{Ncf2} gene. \textbf{d)} UCSC browser track showing relative position of DMP and isoform.}    
+	\label{fig:IntMeth_Ncf2}
+\end{figure}
+
+\begin{figure}[]
+	\includegraphics[page=4,scale = 0.4]{Figures/WholeDifferentialAnalysis_DMPDMR.pdf}
+	\\
+	\hspace*{0.2cm}\vspace{0.5cm}\large d
+	\\
+	\includegraphics[page=1,trim={1.5cm 0 0 0},scale = 0.9]{Figures/SUSD5_DMP.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Differential splicing and methylation of \textit{Susd5}]%
+	{\textbf{Differential splicing and methylation of \textit{Susd5}}: \textbf{a}) Downregulation of known isoform associated with \textit{Susd5} (PB.16983.1,ENSMUST00000135338.2) in TG (P = 5.93 x 10\textsuperscript{-52}, R\textsuperscript{2} = 0.84) \textbf{b)} Five hypermethylated DMPs were identified in the intronic region after the first exon. Only the most significant DMP is shown ($\Delta$$\beta$ = 0.344, P\textsubscript{Genotype} = 1.63). \textbf{c)} Correlation between DNA methylation at this site and normalised isoform expression of the \textit{Susd5} gene. \textbf{d)} UCSC browser track showing relative position of DMPs and isoform}    
+	\label{fig:IntMeth_Susd5}
+\end{figure}
+
+\begin{figure}[]
+	\includegraphics[page=5,scale = 0.4]{Figures/WholeDifferentialAnalysis_DMPDMR.pdf}
+	\\
+	\hspace*{0.2cm}\vspace{0.5cm}\large d
+	\\
+	\includegraphics[page=1,trim={1.5cm 0 0 0},scale = 0.9]{Figures/IRF8_DMP.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Differential splicing and methylation of \textit{Irf8}]%
+	{\textbf{Differential splicing and methylation of \textit{Irf8}}: \textbf{a}) Upregulation of known isoform associated with \textit{Irf8} (PB.15969.1, ENSMUST00000047737.9) in TG (P = 8.17 x 10\textsuperscript{-78}, R\textsuperscript{2} = 0.87)\textbf{b)} Two hypermethylated DMPs were identified downstream in the distal intergenic region. Only the most significant DMP is shown ($\Delta$$\beta$ = -0.464, FDR\textsubscript{Interaction} = 0.0368) \textbf{c)} Correlation between DNA methylation at this site and normalised isoform expression of the \textit{Irf8} gene. \textbf{d)} UCSC browser track showing relative position of DMPs and isoform}    
+	\label{fig:IntMeth_Irf8}
+\end{figure}
+
+Focusing on genotype-associated differentially methylated regions, we identified splicing changes annotated to \textit{As3mt}  (\cref{fig:IntMeth_As3mt}) and \textit{Prnp}. Three isoforms were detected for \textit{As3mt}, a schizophrenia-associated GWAS gene, whereby there was a progressive upregulation in the known isoform (PB.8363.2, ENSMUST00000003655.8) in TG (P = 4.98 x 10\textsuperscript{-18}, R\textsuperscript{2} = 0.56) while there was no detected change in expression of the two other novel NNC isoforms, both of which were characterised by a novel splice junction resulting in a novel exon that was absent in the known isoform. A 485bp DMR consisting of nine differentially methylated cytosines was identified \textasciitilde{}8kb upstream of this novel exon within the intron, and was hypermethylated in transgenic mice compared to wild-type ($\Delta$ = 0.19, P = 1.22 x 10\textsuperscript{-8}). We hypothesise that an increase in methylation in this region would hinder recruitment and assembly of the spliceosome, resulting in skipping of the novel exon and subsequent increased expression of the known isoform. 
 
 There was an increase in expression of a novel isoform of \textit{Prnp} in transgenic mice. However, given that \textit{Mapt} transgene includes exons 2 and 3 of the \textit{Prnp}, we were uncertain whether the transcript expression changes attributed to \textit{Prnp} from short-read RNA-Seq reads was due to the mouse gene or the human transgene. No change in transcript expression was identified from Iso-Seq full-length read counts. 
+
+\begin{figure}[htp]
+	\includegraphics[page=1,scale = 0.4]{Figures/WholeDifferentialAnalysis_DMPDMR.pdf}
+	\\
+	\hspace*{0.2cm}\vspace{0.5cm}\large c
+	\\
+	\includegraphics[page=1,trim={1.5cm 0 0 0},scale = 0.9]{Figures/AS3MT_DMP.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Differential splicing and methylation of \textit{As3mt}]%
+	{\textbf{Differential splicing and methylation of \textit{As3mt}}: \textbf{a}) Upregulation of known isoform associated with \textit{As3mt} (PB.8363.2, ENSMUST00000003655.8) in TG (P = 4.98 x 10\textsuperscript{-18}, R\textsuperscript{2} = 0.56) \textbf{b)} A DMR of nine hypermethylated sites was identified upstream of 11th novel exon. \textbf{d)} UCSC browser track showing relative position of DMR and isoform}    
+	\label{fig:IntMeth_As3mt}
+\end{figure}	
+
+
+
+
+
+
+
+
+
