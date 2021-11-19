@@ -1,16 +1,11 @@
-\section{Isoform Quantification}
-RSEM, Sailfish and Kallisto are used for transcript-level quantification. Expectation-Maximum (EM) algorithm works by assigning reads to multiple genomic loci and also works without reference genome. Hybrid approaches have been that use the isoform abundance estimates from long-reads to weight the isoform abundance estimated from short-read RNA-Sequencing have been made, however they are not widely adopted\cite{Bayega2018}.
+\section{Differential analysis}
 
-Isoform abundance was determined in two ways, using either a hybrid approach of long and short reads or the normalised full-length long read count as proxy (\cref{fig:isoform_quant_strategy}). The hybrid approach was a modified strategy of typical RNA-Seq quantitive analyses, whereby short reads were aligned to the Iso-Seq defined transcriptome (a merged, comprehensive annotation) rather than the reference genome, thereby improving read alignment to condition-specific transcripts and enabling the detection of novel transcripts. 
+This section describes the general differential analyses that were performed downstream after processing long-read sequencing data in \textbf{Chapters 5, 6 and 7}. Used as a global term, differential analyses is the means by which statistically significant differences in expression, splicing and usage of genes and transcripts are identified across experimental groups. Parameters that are specific to individual results chapters can be found in the Method section of the relevant chapter. 
 
-Various bioinformatic tools and computational models have been developed to quantify isoform quantification from RNA-Seq data. There are currently two main methods:
-\begin{enumerate}
-	\item Inclusion level, calculated for a regulated exon by aligning reads either to candidate alternative exons and its junctions (inclusion reads), or to flanking exons and subsequently skipping the candidate alternative exon (skipping/exclusion reads) (Chen et al. 2012)
-	\item Percent-Spliced-In (PSI\nomenclature{PSI}{Percent-Spliced In}), calculated by proportion of isoforms that include the exon (Venables et al. 2008)(Katz et al. 2010). If the PSI value is calculated for a particular splicing event, it can be considered equivalent to the inclusion level. 
-\end{enumerate}
-Isoform quantification can either be expressed as a global measure of expression, which provides a global gene expression ranking in one sample (measured by RPKM: Reads of a transcript sequence per Millions mapped read\nomenclature{RPKM}{Reads of a transcript sequence per Millions}), or as a relative measure of expression, which is normalized per gene locus and comparable across conditions (measured by inclusion level or PSI value). 
+\subsection{Gene and Isoform Quantification}
+Any downstream differential analysis first requires estimation of gene and transcript expression. In handling the short-read nature of RNA-Seq data, previous bioinformatic tools and computational models have determined this primarily from the number of reads that align to each transcript sequence from a reference genome annotation\cite{Conesa2016} (\cref{fig:isoform_quant_strategy}\textbf{A}). While such approaches can accurately determine gene expression, it becomes much more challenging to estimate transcript expression due to the overlapping exonic structure of related transcripts, resulting in ambiguous read alignment (illustrated in \cref{fig:rna_seq_limitations}). Several sophisticated algorithms have been developed, including the Expectation Maximization algorithm adopted in \textit{Kallisto} and \textit{RSEM}, which assigns reads to multiple genomic loci and works without a reference genome\cite{Conesa2016}. 
 
-Isoform abundance calculated by aligning short-reads to transcriptome is preferential to alignment with reference annotation library (RefSeq/GENCODE) in narrowing down the isoforms expressed and thus subsequently enabling more reliable abundance quantification. Reference annotation library is constructed on all data from the same species, and inclusion of annotated but not truly expressed isoforms can increase variability of abundance estimates. Finally, if the reference library is incomplete, then truly expressed isoforms would be completely missed and RNA-Seq reads would be incorrectly assigned to annotated isoform (\cite{Au2013})
+In the advent of long-read sequencing data and the availability of matched short-read RNA-Seq data, gene and isoform expression can be estimated through two ways: i) a hybrid approach by using the Iso-Seq reads as scaffold (hereby defined as Iso-Seq transcriptome) for the mapping of short-reads as expression (\cref{fig:isoform_quant_strategy}\textbf{B}), or ii) directly using the normalised full-length (FL) read count as a proxy of gene and transcript expression (\cref{fig:isoform_quant_strategy}\textbf{C}); notably, the gene expression is estimated from the summation of FL read counts from associated transcripts. While the former hybrid approach still suffers from a degree of ambiguous alignment, usage of the Iso-Seq defined transcriptome in place of the reference genome would minimise misalignment, and improve mapping to condition-specific transcripts and other novel transcripts that are missing in the reference annotations\cite{Au2013}. Conversely, the latter approach does not rely on transcript assembly and is thus not impeded by misalignment. However, while long-read sequencing data can accurately identify and characterise full0length transcripts, it is currently considered semi-quantitative due to the insufficient sequencing coverage required to reliable differential analysis. 
 
 \begin{figure}[htp]
 	\begin{center}
@@ -23,107 +18,231 @@ Isoform abundance calculated by aligning short-reads to transcriptome is prefere
 \end{figure}
 
 
-\boldheader{Removal of ISM and merging of FSM}
-Following \textit{SQANTI} annotations, there were many examples where multiple ISM and several FSM transcripts were annotated to the same known isoform (exemplified in \cref{fig:redudant_sncatranscripts}). This is likely due to varying extent of 5'degradation and truncation - small degree of degradation or truncation would result in differing 5' and 3' ends respectively while preserving the internal exonic structure and thereby generating several FSM; conversely, a large degree of degradation or truncation would generate smaller partial isoforms that also have matching, albeit smaller overlap, exonic structure. To ease downstream quantitative analyses, ISM and shorter FSM were assumed as partial products of the longest detected FSM transcript, and the associated counts were aggregated (as shown in \cref{fig:ism_collapse}). However, there is a caveat that significantly shorter ISM transcripts could in theory be mapped to multiple isoforms.  
+\subsection{Differential Gene and Transcript Expression Analysis}
+Differential gene expression (DGE\nomenclature{DGE}{Differential Gene Expression Analysis}) or transcript expression analysis (DTE\nomenclature{DTE}{Differential Transcript Expression Analysis}) identifies genes or transcripts that have a statistically significant change in abundance across biological conditions (i.e. "differentially expressed") (\cref{fig:dte_dtu_explanation}\textbf{A}). To facilitate unbiased comparisons across samples and experimental groups, raw read counts are normalised to eliminate feature-length and library-size effects - longer transcripts and samples sequenced at a higher depth would accumulate more reads - to a standard metric, namely TPM (Transcripts per Million\nomenclature{TPM}{Transcripts per Million}). FL reads from long-read sequencing are thus normalised to TPM using the following: 
+
+\begin{myequation}[!h]
+	\begin{equation}
+		FL\;\:TPM (x_{sample},y_{sample})=\frac{Raw\;\:FL\;\:count (x_{isoform},y_{sample})}{Total\;\:FL\;\:count (y_{sample})} *10^6
+	\end{equation}
+\end{myequation}
+%With a cut-off lower than 0.5 TPM, a 0.5 - 10 TPM refers to low expression, a 11- 1000 refers to medium expression, and > 1000 TPM high expression [literature ref]. 
+
+Further between-sample normalisation methods, such as TMM\cite{Robinson2010} (Trimmed Mean of M-values\nomenclature{TMM}{Trimmed Mean of M-values}), are used to account for differences in sample RNA library composition, which is particularly important when comparing samples from different genotypes. 
+
+While significant computational advances have been made in processing long-read RNA-Seq data for transcriptome annotations, methods to harness such data for downstream differential analyses have been limited; current analysis of long-read data typically rely on existing tools developed for short-read RNA-Seq\cite{Amarasinghe2020}, such as \textit{DESeq}, \textit{maSigPro}, \textit{edgeR}, among others. Highlighting the challenges of performing such analyses, various benchmarking studies have demonstrated that the choice of tool can affect the outcome considerably and no single methods performs favourably across all datasets; although tools based on negative binomial modelling had better specificity, sensitivity and good control of false positive errors\cite{Rapaport2013}. Recent methods, such as \textit{FLAIR} and \textit{LIQA}\cite{Hu2021}, have emerged specifically for isoform expression analysis of long read RNA-Seq data. However, such methods have not been systematically assessed and are challenging to use for time-series data analyses; targeted experiments in \textbf{Chapters 5 and 6} include data from two different conditions and across four time points. 
+
+\subsection{Differential Splicing Analysis}\label{intro:dtu}
+A change in alternative splicing can be assessed in two ways: i) differential isoform expression, as described above, defined by a change in \textit{absolute} expression of an isoform, and ii) differential transcript (or isoform) usage (DTU\nomenclature{DTU}{Differential Transcript Usage}) defined by a change in \textit{relative} expression of an isoform, manifesting to a change in the proportions of the isoforms of a gene (\cref{fig:dte_dtu_explanation}\textbf{B}). As shown in \cref{fig:dte_dtu_explanation}, DTU always implies DIE whereas the reverse is not necessarily true; e.g. a two-fold increase of two associated isoforms results in a change in absolute but not relative expression (\cref{fig:dte_dtu_explanation}\textbf{A}), indicating a transcription-related mechanism. Conversely, any change in relative abundance of isoforms indicate a splicing-related mechanism. 
+
+One well-known phenomenon characterised in differential splicing analysis is the significant altering of isoform proportions resulting in detection of a different dominant isoform, known as major isoform switching (\cref{fig:dte_dtu_explanation}\textbf{C}). In these circumstances, the same isoform is predominantly expressed in one condition (major isoform) while lowly expressed in another (minor isoform). Notably, upregulation of one isoform could be compensated by downregulation of another, resulting in no net change at gene-expression level (\cref{fig:dte_dtu_explanation}\textbf{D}). Transcriptomic profiling studies at the gene level would thus fail to capture such nuances, highlighting the complexity of gene regulation and the importance of performing differential splicing analysis. 
+
 
 \begin{figure}[htp]
 	\begin{center}
-		\includegraphics[page=10,trim={0cm 0cm 0 0cm},clip, scale = 0.7]{Figures/ProjectDevelopment_Figures.pdf}
+		\includegraphics[page=20,trim={0cm 12cm 0 0cm},clip, scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
 	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Redundant ISM and FSM associated with same known isoform]%
-	{\textbf{Redundant ISM and FSM associated with known transcript of \textit{Snca}}: \textbf{a)} Visualising transcripts using \textit{Swan}, shown are \textbf{b)} transcripts detected after \textit{SQANTI} annotation of the mouse transcriptome using the targeted approach. An example of detecting multiple redundant transcripts annotated to the same isoform, all the transcripts depicted were annotated to ENMUST0000014268.4 which typically differed at the 5' and 3' end.}
-	\label{fig:redudant_sncatranscripts}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Scenarios of Differential Splicing Analysis]%
+	{\textbf{Scenarios of Differential Splicing Analysis}: A schematic illustration of four different scenarios envisioned under differential splicing of a gene with two isoforms between conditions 1 and 2:
+	\begin{enumerate}[label=\textbf{\Alph*})]
+		\item Differential transcript expression (DTE) indicates an expression change for at least one transcript between conditions 1 and 2. However, the expression proportion of each transcript (defined as percentage of the total expression of all associated transcripts, in this case 50\%) remains constant).
+		\item Conversely in differential transcript usage, the relative expression of the isoforms is changed between conditions - in this case, isoform B has a relative expression of 33.3\% in condition 1 (5/15), but a relative expression of 41.6\% in condition 2 (10/24).
+		\item Differential transcript usage can occur with a switch of the major isoform - in this case, the more abundantly expressed isoform is switched from Isoform A in condition 1 to Isoform B in condition 2. 
+		\item Differential transcript usage can result in no change in gene expression if the change of transcripts occur in opposite directions.
+		\\
+	\end{enumerate} 
+	Figures and legends were adapted from Soneson et al. (2016)\cite{Soneson2016} 
+   }
+	\label{fig:dte_dtu_explanation}
 \end{figure}
 
+
+Despite the limited utility of short-read RNA-Seq data for elucidating differential splicing events, a number of computational methods have been developed (reviewed in \cref{tab: rnaseq_diffsplicing}), based around two major strategies: i) isoform-based and ii) count-based methods, which is further subdivided into exon-based and event-based. Isoform-based methods aim to reconstruct the transcripts from sequencing reads and estimate relative abundance in each sample, followed by statistical testing to identify transcripts with significant expression differences across experimental groups\cite{Mehmood2020}. Conversely count-based methods dissect genes into counting units and document the number of reads falling within those units\cite{Mehmood2020}; exon-based methods assigns reads into exonic and junction regions, whereas event-based methods quantify transcripts by inclusion of individual splicing events with a percent splicing index (PSI\nomenclature{PSI}{Percent-Spliced In})) value for each event (i.e. proportion of associated isoforms that contain the AS event of interest). 
+
+However, similar to transcript quantification, there is no clear consensus about the optimal tool or pipeline for such analysis. Benchmarking studies have similarly revealed that the choice of tools can directly impact the sensitivity and precision to detect differential isoforms, which is influenced by the number of replicates and the conditions heterogeneity\cite{Merino2019}. Exon-based methods (i.e.\textit{DEXSeq, edgeR, limma}) were found to overall perform better than other methods with superior precision and sensitivity, with \textit{edgeR} recommended for faster performance and reduced memory requirements\cite{Mehmood2020}. 
+
+
+\begin{changemargin}{1.5cm}	
+	%\captionsetup{width=30cm}
+	\begin{landscape}
+		\small %smaller font
+		\setlength\tabcolsep{2pt} %reduced margin size in table
+		\renewcommand{\arraystretch}{1}
+	\begin{longtable}[c]{p{2.5cm}p{2cm}p{2cm}p{2.5cm}p{17cm}}
+		\caption[Overview of Differential splicing analysis methods]%		
+		{\textbf{Overview of Differential splicing analysis methods}. \newline AF - Alternative First, IR - Intron Retention, MX - Mutually Exclusive, SE - Skipped Exon. Table is adapted from Mehmood et al. (2020) \cite{Mehmood2020} and is by no means comprehensive. }
+		\label{tab: rnaseq_diffsplicing}\\
+		\toprule
+		Approach &
+		Method &
+		Annotation &
+		Designs &
+		Model \\ \midrule
+		\multirow{2}{*}{Isoform-based} &
+		Cufflinks \newline /cuffdiff2 &
+		Yes, \textit{de novo} &
+		2 groups &
+		\tabitem Following transcript assembly, transcript abundance estimated by maximising the likelihood score across all possible combinations of relative abundances of each associated isoform \newline 
+		\tabitem Variability between  replicates and uncertainty in abundance accounted with a beta negative   binomial model \\ 
+		
+		&
+		DiffSplice &
+		\textit{Ab initio} &
+		2 groups &
+		\tabitem Reconstructs a graph of the transcriptome based on reads, from   which the abundance is estimated from alternative paths and alternative splicing modules are identified genomic regions where transcripts diverge \newline 
+		\tabitem  Abundance of modules is compared using a non-parametric permutation test \\ \cmidrule(l){1-5} 
+		\multirow{4}{*}{Exon-based} &
+		DEXSeq &
+		Yes &
+		Complex &
+		\tabitem Applies a generalised linear model to exon-level expression data to model differential usage of exons across experimental groups, assuming that read counts follow a negative binomial distribution \\ 		
+		&
+		edgeR &
+		Yes &
+		Complex &
+		\tabitem Fits a negative binomial generalised log-linear model to exon-level expression data  to test differential exon usage by comparing the log-fold-change of an exon to that of the gene \\
+		&
+		JunctionSeq &
+		Yes, \textit{de novo} &
+		Complex &
+		\tabitem Uses a similar statistical method as DEXSeq with added features to include novel exon junctions in differential exon usage \\	
+		&
+		limma &
+		Yes &
+		Complex &
+		\tabitem Fits a linear model to exon-level expression data for differential exon usage between experimental groups \\ \cmidrule(l){1-5} 
+		\multirow{4}{*}{Event-based} &
+		dSpliceType &
+		Yes &
+		2 groups &
+		\tabitem For each AS event type (SE, RI, MX, A3SS, A5SS), it calculates the read coverage signal for each base and the normalised  logarithmic ratios of PSI between groups. DS event are then identified using a parametric test on the PSI \\ 			
+		& 
+		MAJIQ &
+		Yes, \textit{de novo} &
+		2 groups &
+		\tabitem Uses local splicing variations, which denote splits in a splice graph mapping to the edges of a reference exon to calculate PSI.   
+		\tabitem Change in PSI is then quantified using Bayesian modelling and bootstrapping \\ 		
+
+		&
+		rMATS &
+		Yes &
+		2 groups, \newline paired samples &
+		\tabitem Calculates PSI for each AS event after applying a hierarchical framework to account for within-sample uncertainty and between-sample variability.
+		\tabitem Mean PSI across each AS event is then tested between experimental conditions using a likelihood ratio \\ 	
+		&
+		SUPPA2 &
+		Yes &
+		2 groups, \newline paired samples &
+		\tabitem Determines transcript abundance using RSEM to estiminate PSI   for each AS event \\* \bottomrule 
+		\end{longtable}
+\end{landscape}
+\end{changemargin}
+%Anvar2018
+
+\subsection{TappAS: Integrated framework for Differential Analysis of Long-reads}
+After trialling various methods, \textit{tappAS}(v1.0.0)\cite{DeLaFuente2020} was chosen as a framework for the differential expression and splicing analysis of long reads across biological conditions (i.e. AD vs non-AD) (\textbf{Chapters 5 - 7}). To date, it is the only tool that allows integration of isoform-level, long-read-derived annotations with public databases to comprehensively understand the functional implications of alternative splicing. Accessible as a user-friendly Java application, it provides the flexibility to use expression derived from short-reads or long-reads, and supports complex design experiments: i) case-control, ii) time-course single series and iii) time-course multiple series. Developed by the same authors as \textit{SQANTI}\cite{Tardaguila2018}, it was recommended as an extension to the Iso-Seq pipeline for the functional annotations of isoforms.    
+
+The following sections detail specific analyses from \textit{tappAS} in investigating differential expression and splicing changes associated with progressive tau pathology in rTg4510 mice at a global (\textbf{Chapter 5}) and targeted level (\textbf{Chapter 6}). All details are summarised from Lorena de la Fuente et.al (2020)\cite{DeLaFuente2020}.
+
+\vspace{2cm}
+\begingroup
+\parindent=0em
+\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
+\etocsetnexttocdepth{5}
+\localtableofcontents 
+\endgroup
+
+
 \begin{figure}[htp]
-	\centering
-	\includegraphics[page=9,trim={0cm 12cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
+	\begin{center}
+		\includegraphics[page=21,trim={0cm 4cm 0 0cm},clip, scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
+	\end{center}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Merging of ISM and FSM]%
-	{\textbf{Merging of ISM and FSM associated with the same known isoform}. All illustration of handling with multiple ISM and FSM associated with the same known transcript. In this example, 6 isoforms were detected for "Gene 1", however, only 4 known isoforms were identified (denoted as ENMUST1-4). For ease of annotation and quantification, ISM and shorter FSM were assumed partial products of the longer FSM. Consequently, in the case where: 
-		\begin{itemize}
-			\item both ISM (PB.1.2) and FSM (PB.1.1) are annotated to the same transcript (shaded green), the FSM takes precedence as the associated transcript and counts from respective ISM are aggregated 
-			\item there is one ISM (PB.1.3) but no corresponding FSM for the associated transcript (shaded blue), the ISM is retained
-			\item there are multiple ISM (PB.1.4, PB.1.5) annotated to the same transcript (shaded orange), the longest ISMs (PB.1.5) takes precedence and counts from respective ISM are similarly aggregated 
-			\item there are multiple FSM (PB.1.6, PB.1.7) annotated to the same transcript (shaded purple), the longest FSM (PB.1.7) takes precedence and counts are similarly aggregated
-			\\
-		\end{itemize} 
-		PB - PacBio. FSM - Full Splice Match, ISM - Incomplete Splice Match, FL - Full-length read counts.  
+	\caption[Overview of \textit{tappAS}]%
+	{\textbf{Overview of \textit{tappAS}}: 
 	}
-	\label{fig:ism_collapse}
+	\label{fig:tappAS_overview}
 \end{figure}
 
 \clearpage
-\boldheader{RNA-Seq Alignment to Iso-Seq defined transcriptome}
-For the hybrid approach of aligning short reads to Iso-Seq defined transcriptome from the targeted approach, several factors were optimised including the library size and the Iso-Seq annotation (\cref{tab:rnaseq_alignment_targeted}) to align RNA-Seq reads to targeted transcriptome dataset using \textit{Kallisto}. 
-
-\begin{table}[h]
-	\centering
-	\caption[RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome]%
-	{\textbf{RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome}. Tabulated is trialled methods of aligning short reasd to Iso-Seq defined transcriptome, with alterations either of the sequencing library (such as the pool of the sequencing reads for alignment) and the choice of Iso-Seq isoform for alignment}
-	\label{tab:rnaseq_alignment_targeted}
-	\begin{threeparttable}
-		\begin{tabular}{@{}cll@{}}
-			\toprule
-			Method & Sequencing Library                       & Annotation                            \\ \midrule
-			1      & Targeted Transcriptome (All Reads)\tnote{a}       & No Isoform collapse\tnote{c}                   \\
-			2      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to longest FSM\tnote{d}       \\
-			3      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to most abundant FSM\tnote{e} \\
-			4      & Targeted Transcriptome (On-Target Reads)\tnote{b} & Isoform collapse to longest FSM\tnote{d}       \\
-			5      & Targeted Transcriptome (On-Target Reads)\tnote{b} & Isoform collapse to most abundant FSM\tnote{e} \\
-			6 & \begin{tabular}[c]{@{}l@{}}Whole Transcriptome \& \\ Targeted Transcriptome (On Target Reads)\end{tabular} & Isoform collapse to longest FSM \\ \bottomrule
-		\end{tabular}
-		\begin{tablenotes}
-			\footnotesize
-			\item[a] Sequencing reads from on-target and off-target genes
-			\item[b] Sequencing reads aligned only to on-target genes
-			\item[c] Transcriptome annotation following \textit{SQANTI} with no removal of redundant ISM and FSM
-			\item[d] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISM to respective longest FSM of same transcript and aggregated counts
-			\item[e] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISM to respective most abundant FSM of same transcript and aggregated counts 
-		\end{tablenotes}
-	\end{threeparttable}
-\end{table}
-
-However, independent of the scaffold or library size, \textit{Kallisto} appeared to mis-assign short reads to novel isoforms. This is exemplified with \textit{Clu} (\cref{fig:Clu_TargetedRNAseqAlignment}) and \textit{Bin1} (\cref{fig:Bin1_TargetedRNAseqAlignment}).   Using total Iso-Seq FL reads from targeted transcriptome as proxy of transcript expression, the known and longer isoforms associated with both \textit{Clu} (\cref{fig:Clu_TargetedRNAseqAlignment}\textbf{a}) and \textit{Bin1}(\cref{fig:Bin1_TargetedRNAseqAlignment}\textbf{a}) were most abundant whereas the novel isoforms were only lowly detected. Conversely, alignment of RNA-Seq reads to targeted transcriptome often ascribed the novel isoforms as the dominant isoform(s), particularly when further collapsing targeted transcriptome to longest or most abundantly expressed isoforms or limiting the scaffold to only on-target reads (Methods 2 - 5 from \cref{tab:rnaseq_alignment_targeted}). Nonetheless, while using all the reads from the targeted transcriptome with redundant ISM and FSM is more likely to ascribe the known isoform as the dominant isoform, mis-asignment can still occur with the shorter, redundant ISM annotated as most abundantly expressed rather than the longer, complete FSM (\cref{fig:Clu_TargetedRNAseqAlignment}\textbf{a, b, d}).
-
-Visualisations of the dominant known isoform ascribed by Iso-Seq FL read counts and the dominant novel isoform ascribed by RNA-Seq alignment from \textit{Clu} and \textit{Bin1} show that both isoforms are structurally very similar, with almost identical internal exonic structure bar one or two exons with differing splice junctions. There was no difference in RNA-Seq coverage from \textit{Kallisto} alignment to targeted transcriptome across all the methods \cref{tab:rnaseq_alignment_targeted}), suggesting that the issue is the probabilistic assignment of reads to isoforms (Expectation-Maximum algorithm) rather than the alignment. It appears that in cases where the known and novel isoforms are similar in transcript structure, and consequently there are only a few short reads that can be unambiguously assigned, \textit{Kallisto} fails to quantify at an isoform level. Given that significantly more novel isoforms are identified using the targeted approach than the whole transcriptome approach, this is more likely to be evident in the former.   
+\subsubsection{Functional annotations of long-read derived isoforms}
+\textit{tappAS} requires three inputs (\cref{fig:tappAS_overview}\textbf{A}) :
+\begin{enumerate}
+	\item An experimental design file to enable comparisons between two or more groups and/or over a time-course 
+	\item A transcript-level functional annotation file, which is generated post \textit{SQANTI} using \textit{IsoAnnot} (https://isoannot.tappas.org), as a "scaffold" for transcript-level annotations. For the purpose of this thesis, the annotation file is the conglomerate, long-read defined transcriptome of all the samples merged. The annotations incorporate feature elements from public annotations at both the transcript and protein level (\cref{tab: tappas_publicannotations}). 
+	\item A transcript level expression matrix, which can either be derived directly from the FL long-read transcript counts, or from mapping and transcript quantification of short-reads to the long-read defined transcriptome using \textit{Kallisto}(v0.46.0). Raw transcript counts were tabulated per sample.  	 
+\end{enumerate}
 
 
-\newgeometry{left=0.5cm,top=1cm,right=0.5cm}
-\begin{landscape}
-	\begin{figure}[htp]
-		\centering
-		\includegraphics[page=1,trim={0cm 1cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures_Landscape.pdf}
-		\captionsetup{width=1.2\textwidth,singlelinecheck=off}
-		\caption[RNA-Seq mis assignment of dominant isoform associated with \textit{Clu}]%
-		{\textbf{RNA-Seq mis assigns \textit{Clu}'s novel isoform as most abundantly expressed}. Shown are the top 10 most abundantly expressed \textit{Clu} transcripts based on \textbf{a)} Iso-Seq full-length read counts from targeted transcriptome, \textbf{b)} RNA-Seq reads aligned to all reads in targeted transcriptome, with no further collapse of redundant FSM and ISM transcripts (Method 1 in \cref{tab:rnaseq_alignment_targeted}) and \textbf{c)} RNA-Seq reads aligned to all reads in targeted transcriptome with isoforms further collapsed to longest FSM (Method 2 in \cref{tab:rnaseq_alignment_targeted}). Of note, all other methods (3 - 6) generated a similar plot to figure c. \textbf{d)} Swan visualisations of most abundantly expressed isoforms according to respective methods. Iso-Seq mean expression refer to average full length read counts from targeted transcriptome. RNA-Seq mean expression refer to estimated counts from \textit{Kallisto} in Figures b and c. 
-		}
-		\label{fig:Clu_TargetedRNAseqAlignment}
-	\end{figure}
-	
-	
-	\begin{figure}[htp]
-		\centering
-		\includegraphics[page=2,trim={0cm 0cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures_Landscape.pdf}
-		\captionsetup{width=1.2\textwidth,singlelinecheck=off}
-		\caption[RNA-Seq mis-assignment of dominant isoform associated with \textit{Bin1}]%
-		{\textbf{RNA-Seq mis-assigns \textit{Bin1}'s novel isoform as most abundantly expressed}. Shown are the top 10 most abundantly expressed \textit{Bin1} transcripts based on \textbf{a)} Iso-Seq full-length read counts from targeted transcriptome, \textbf{b)} RNA-Seq reads aligned to all reads in targeted transcriptome, with no further collapse of redundant FSM and ISM transcripts (Method 1 in \cref{tab:rnaseq_alignment_targeted}) and \textbf{c)} RNA-Seq reads aligned to all reads in targeted transcriptome with isoforms further collapsed to longest FSM (Method 2 in \cref{tab:rnaseq_alignment_targeted}). Of note, all other methods (3 - 6) generated a similar plot to figure c. \textbf{d)} Swan visualisations of most abundantly expressed isoforms according to respective methods. Iso-Seq mean expression refer to average full length read counts from targeted transcriptome. RNA-Seq mean expression refer to estimated counts from \textit{Kallisto} in Figures b and c. 
-		}
-		\label{fig:Bin1_TargetedRNAseqAlignment}
-	\end{figure}
-\end{landscape}
-\restoregeometry
+\subsubsection{Isoform pre-filtering and normalisation}
+% Discussion of expression 
+%The choice to use quantification directly from long-reads or derived indirectly from short-reads is dependent on the read coverage. While there will be no assembly ambiguity in using the abundance counts from long-reads, the coverage from the whole transcriptome approach would be insufficient for meaningful quantitative analyses - as shown in the coverage with ERCC (see Figure \cref{fig:isoseq_whole_ercc}) with lowly-expressed transcripts not being detected. Conversely, this is unlikely to be a limiting factor for the targeted transcriptome approach given the saturation coverage of target genes with additional sequencing of off-target, highly-expressed genes (see Figure \cref{fig:isoseq_targeted_rate}). Consequently, the expression matrix input for the whole transcriptome analyses was derived from the short-read alignment, and from the long-read abundance for the targeted transcriptome analyses. 
+Lowly-expressed transcripts with a sum of expression value less than 1 CPM (counts per million\nomenclature{CPM}{Counts per million}) or a large variance (>100 Coefficient of Variation) across all the samples were removed to reduce noise. The raw transcript counts were then normalised using TMM normalisation \cite{Robinson2010} to account for differences in library size (sequencing depth) and sample RNA library composition. Of note, TMM assumes that the majority of the transcripts are not differentially expressed. Gene abundance was then deduced from the sum of normalised counts of associated isoforms, after removing transcripts with low or highly-varied expression values.     
 
-\subsubsection{Iso-Seq isoform expression}
-To control for sequencing bias in library depth, full-length (FL) read count for each isoform is normalized to transcripts per million (TPM \nomenclature{TPM}{Transcripts per Million})), which is calculated as: 
+\begin{changemargin}{1cm}	
+	%\captionsetup{width=30cm}
+	\begin{landscape}
+		\small %smaller font
+		\setlength\tabcolsep{2pt} %reduced margin size in table
+		\renewcommand{\arraystretch}{1}
+		\begin{longtable}[c]{p{2cm}p{5cm}p{5cm}p{13.5cm}}
+		\caption[Overview of Differential splicing analysis methods]%		
+		{\textbf{Overview of Differential splicing analysis methods}. \newline }
+		\label{tab: tappas_publicannotations}\\
+				\toprule
+		Level                    & Elements                     & Public Annotation     & Functional Implications    \\ \midrule
+		\multirow{4}{*}{Transcript} & UTR elements \& uORFs & UTRscan      & mRNA subcellular localisation, translation efficiency and stability           \\
+		& repeat \& low complexity regions & repeatMakser & chromatin organisation by serving as boundaries for heterochromatin   domains \\
+		& miRNA binding sites          & mirWalk2.0 ,mirRbase  & mRNA decay and translation \\
+		& RNA binding protein sites    & CLIP data from CLIPdb &                            \\
+		\hdashline[0.5pt/5pt]
+		\multirow{6}{*}{Protein} & Pfam domains                 & InterProScan          &                            \\
+		& Transmembrane regions        & TMHMM                 &                            \\
+		& Signal peptides              & SignalP               &                            \\
+		& Coiled-coil region           & COILS                 &                            \\
+		& Nuclear Localisation Signals & cNLS mapper           &                            \\
+		& Disordered regions           & MobiDB Lite           &                            \\ \bottomrule
+		\end{longtable}
+	\end{landscape}
+\end{changemargin}
 
-\begin{align*}
-	FL\;\:TPM (x_{sample},y_{sample})=\frac{Raw\;\:FL\;\:count (x_{isoform},y_{sample})}{Total\;\:FL\;\:count (y_{sample})} *10^6
-\end{align*}
 
-With a cut-off lower than 0.5 TPM, a 0.5 - 10 TPM refers to low expression, a 11- 1000 refers to medium expression, and > 1000 TPM high expression [literature ref]. 
 
-TPM is the most effective within-sample normalisation method to relatively quantify gene expression in a sample \cite{Abrams2019}. Other methods include RPKM (reads per kilobase of transcripts per million mapped reads), FPKM (fragments per kilobase of exon model per million mapped reads), which uses gene length to control for fragmentation in RNA-Seq protocol ("effective length normalisation") - however, this is not necessary in Iso-Seq.  
+\subsubsection{Functional Diversity Analysis}
 
-Between-sample normalisation methods to relatively quantify expression of the same gene in different samples, remove technical variations due to presence of few highly expressed genes that make up a significant proportion of total reads, and due to different number of reads in each sample. 
+\subsubsection{Differential Feature Inclusion Analysis}
+
+\subsubsection{Differential Gene and Isoform Expression Analysis}
+Briefly, maSigPro performs a two-step regression strategy to first define a negative binomial general linearised models\cite{Nueda2014} for each gene or transcript, accounting for both genotype and age (Equation \cref{eq:dea_lm_masigpro}), and identify differentially expressed genes. A stepwise regression is then applied to identify the conditions for which the differentially expressed genes have statistically significant profiles.  
+
+\subsubsection{Differential Isoform Usage}
+\label{ch:diu_method}
+In addition to assessing expression changes across conditions through differential isoform expression analysis, the relative expression, and as such the usage, of these isoforms can also change (see \cref{intro:dtu}). A gene is therefore identified as exhibiting differential isoform usage (DIU) if the fraction of the associated isoforms (Isoform Fraction) is significantly altered between conditions, which could result in detection of a different dominant isoform. This phenomenon is known as major isoform switching, when the same isoform in predominantly expressed in one condition (major isoform) but lowly expressed in another (minor isoform). 
+
+In accounting for biological replicates, the isoform fraction (IF) for each isoform was defined as:
+
+\begin{myequation}[!h]
+	\begin{align}
+		IF_{cig} = \frac{\bar{E}_{cig}}{\sum_{i=1}^{n}\bar{E}_{cig}}
+	\end{align}
+	where:
+	\begin{conditions*}
+		\hspace{3mm}\conj{E}\textsubscript{cig} & mean normalised expression for isoform \textit{i} associated to gene \textit{g} under condition \textit{c}\\
+		\hspace{3mm}n  & total number of isoforms associated with gene \textit{g}
+	\end{conditions*}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Calculation of isoform fraction for differential isoform usage analysis]%
+	{\textbf{Calculation of isoform fraction for differential isoform usage analysis}. Equation is adopted from \textit{tappAS}}    
+\end{myequation}
+
+% Need more information from paper on how DIU was performed
+Identification of genes with DIU was performed with \textit{Iso-maSigPro}\cite{Nueda2018}, similarly implemented as part of \textit{tappAS}. Results from differential gene expression and differential isoform usage can be further combined to explore the transcriptomic changes associated with progressive tau pathology (depicted in \cref{fig:DIU_DEA_model}).  
+
+Despite abundant evidence of widespread isoform diversity \cite{Wang2008}, most protein-coding genes have been reported to typically express a few dominant isoforms \cite{Gonzalez-Porta2013, Ezkurdia2015}, while the remaining are very lowly expressed and unlikely to be main contributors to the proteome \cite{Gonzalez-Porta2013}.As such, minor isoforms were filtered to avoid finding genes associated with differential isoform usage due to "flat" behaviour of these minor isoforms \cite{DeLaFuente2020} (relatively small non-negligible expression changes of minor isoforms in the opposing direction of the predominant isoforms). \textit{tappAS} provides two strategies to filter lowly-expressed isoforms: an isoform is only retained if its proportion relative to other isoforms is greater than the pre-specified threshold (default: proportion $>$ 10\%) in at least one sample, or alternatively if its proportion relative to the major isoform is below a pre-specified threshold (default: FC = 2). A major isoform is defined as the isoform with the highest expression across all the conditions, with the remaining isoforms annotated as minor. 
+
+Implemented as an additional filtering step after \textit{tappAS} and recommended in other bioinformatic tools\cite{Vitting-Seerup2017}, lowly expressed genes were also filtered as there would be less confidence in isoform fraction used for determining genes with significant differential isoform usage.  
+
+
+
+
