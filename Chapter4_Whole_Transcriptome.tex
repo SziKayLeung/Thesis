@@ -46,7 +46,7 @@ Entorhinal cortex was dissected from 6 female rTg4510 transgenic mice (TG \nomen
 	\end{tabular}
 \end{table}
 
-\subsection{Iso-Seq Library Preparation and SMRT sequencing}
+\subsection{Iso-Seq Library Preparation and SMRT sequencing}\label{ch4_methods: isoseq_library}
 RNA from each mouse sample was prepared for Iso-Seq library preparation and SMRT sequencing following the Iso-Seq lab workflow, as detailed and described in \cref{chap:isoseq_labpipeline}. Briefly, first strand cDNA synthesis was performed on 200ng RNA using the SMARTer PCR cDNA Synthesis Kit (Clontech) (described in \cref{section:ch2_cDNA_synthesis_explanation}), with addition of External RNA Controls Consortium (ERCC) standards to a subset of mouse cortex samples (n = 10) (described in \cref{section:ch2_ERCC_explanation}), followed by PCR amplification of 14 cycles with PrimeSTAR GXL DNA Polymerase (Clontech) (described in \cref{section:ch2_PCR_explanation}). An example of a gel image from PCR amplification is provided in \cref{fig:isoseq_whole_pccresults}. The resulting amplicons were then divided into two factions and purified with 0.4X and 1X AMPure PB beads, with selective enrichment of cDNA with different molecular weights, as shown in \cref{fig:isoseq_whole_bioresults}. The two factions were then recombined at equimolar quantities and library preparation was performed using SMRTbell Template Prep Kit v1.0 (shown in \cref{fig:isoseq_whole_bioresults}). Each sample was sequenced on the PacBio Sequel 1M SMRT cell with the version 3 chemistry (parameters: diffusion loading at 5pM, pre-extension 4 hours, Capture time 20 hours) (described in \cref{section:ch2_sequencing}).
 
 \vspace{1cm}
@@ -77,7 +77,7 @@ RNA from each mouse sample was prepared for Iso-Seq library preparation and SMRT
 \subsection{RNA-Seq Library Preparation and Illumina Sequencing}
 RNA from the same mouse samples (n = 12) was prepared with TruSeq Stranded mRNA Sample Prep Kit (Illumina) and subjected to 125bp paired-end sequencing using a HiSeq2500 (Illumina)\cite{Castanho2020}. Briefly, cDNA libraries were prepared from \textasciitilde450ng of total RNA plus ERCC spike-in synthetic RNA controls (Ambion, dilution 1:100), purified using AMPure XP magnetic beads (Beckman Coulter) and profiled using D1000 ScreenTape System (Agilent). 
 
-\subsection{SMRT sequencing QC and Iso-Seq data processing}
+\subsection{SMRT sequencing QC and Iso-Seq data processing}\label{ch4_methods: isoseq_data}
 Raw Iso-Seq sequencing reads were evaluated using the SMRT Link Portal v7.0 and analysed using the Iso-Seq bioinformatics pipeline, as depicted in \cref{fig:isoseq_whole_pipeline}. Details are provided in \cref{section:isoseq_bioinformatics}. Briefly, CCS reads were generated from a minimum of 1 pass using \textit{Iso-Seq3 CCS} (v3.4.1). Primers and SMRT adapters were then removed using \textit{Lima} (v1.9) to generate full-length (FL) reads, followed by removal of artificial concatemers reads and trimming of poly(A) tails in \textit{Iso-Seq3 Refine}. Full-length, non-chimeric (FLNC) reads were then collapsed to high-quality transcripts using \textit{Iso-Seq3 Cluster}, and mapped to the mouse (mm10) reference genome using \textit{Minimap2} (v2.17) with the following parameters “-ax splice -uf --secondary=no -C5 -O6,24 -B4”. \textit{ Cupcake collapse-isoforms-by-sam.py} script was subsequently applied with the following parameters  “-c 0.85 -i 0.95 --dun-merge-5-shorter” to reduce redundancy. 
 
 \subsection{RNA-Seq QC and data processing}
@@ -350,21 +350,47 @@ In total, 40,249 alternative splicing events were identified in known genes with
 	\label{fig:isoseq_whole_As_events}
 \end{figure}
 
+\subsection{Isoforms characterised with varying functional domains}
+Aside from changes in splicing patterns, variations in structural and feature elements annotated across RNA and protein isoforms of the same gene can have functional implications \cite{DeLaFuente2020}. We identified that the majority of genes had elements that varied either by absence/presence or by position (\cref{fig:FDA_whole}\textbf{A}). Among elements at a transcript level, miRNA binding had the highest rate of varying (n = 4209 genes) with a large number of miRNA sites varying at the 3'UTR (n = 431). Top miRNAs included miR-207 (P = 0.0003, Adjusted P = 0.07, Varying n = 163 genes), which transfected expression in astrocytes was found to alleviate symptoms of depression in stressed mice\cite{Li2020}, and miR-335-3p (P = 0.0015, Adjusted P = 0.1992, Varying n = 167 genes), which was found enriched in aged cultured astrocytes and hippocampal brains\cite{Raihan2018}, while downregulated in PD patients versus controls\cite{Oliveira2020}. 
+%nonsense-mediated decay had no variation
+Regarding protein-level features, PFAM domains had the highest rate of varying (55\%), with cytochrome P450 as the top most varying PFAM domain (n = 10 genes, P = 0.002) and protein kinase domain as the domain with most varied number of genes (n = 126 genes, P = 0.0095). GO analysis of these genes where protein kinase domain varied across isoforms identified significant enrichment for the MAPK (Odds ratio = 21.06, Adjusted P = 5.45 x 10\textsuperscript{-23}) and Neurotrophin signalling pathway (Odds ratio = 40.36, Adjusted P = 6.711 x 10\textsuperscript{-23}). 
+
+Poly A site had the highest rate of varying by position among transcript-level features (90.2\% across 7,647 genes), followed by coding sequence (80.3\% across 6,812 genes). Furthermore, the vast majority of UTR-varying genes also exhibited CDS variation (\cref{fig:FDA_whole}\textbf{C}). This included \textit{Celf2} (\cref{fig:Celf}), which was identified as exhibiting varying lengths of 5'UTR, 3'UTR and polyA in combination with varying miRNA binding sites. The top PFAM domain by position was Ras family (P = 0.0001, Adjusted P = 0.38, Varying n = 58 genes). 
+
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[page=2,trim={3cm 7cm 3cm 4cm},scale = 0.6]{Figures/WholeFDA.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Variation in functional elements annotated across RNA and protein isoforms]%
+	{\textbf{Variation in functional elements annotated across RNA and protein isoforms} XXX}   
+	\label{fig:FDA_whole}
+\end{figure}
+
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[scale = 0.3]{Figures/tappAS_Celf2.png}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Varying functinonal elements in isoforms associated with \textit{Celf2}]%
+	{\textbf{Varying functinonal elements in isoforms associated with \textit{Celf2}}.\textit{TappAS} graphical representation of the transcript-level annotation for \textit{Celf2}, where 5'UTR, 3'UTR, CDS, and 3' alternative polyadenylation variation were detected.}   
+	\label{fig:Celf}
+\end{figure}	
+
 
 \subsection{Association of Intron Retention \& NMD}
-Nonsense-mediated mRNA decay (NMD) acts to reduce transcriptional errors by degrading transcripts containing premature stop codons\cite{Hug2015} and is one mechanism by which IR can influence gene expression\cite{Pan2006} (described in \cref{intro:AS}). Overall, >10\% of transcripts mapping to annotated genes were predicted to undergo NMD (NMD-transcripts) characterized by the presence of an ORF and a coding sequence (CDS) end motif before the last junction (n = 6,014 (13.0\%) transcripts associated with 2,945 (20.3\%) of annotated genes). These NMD-transcripts were less abundant than non-NMD-transcripts (mean expression of NMD-transcripts = 11.2 TPM, s.d =  85.0 TPM, mean expression of non-NMD-transcripts = 23.1 TPM, s.d = 143.1TPM, W = 8.72 x 107, P = 6.15 x 10\textsuperscript{-156}). 
+Nonsense-mediated mRNA decay (NMD) acts to reduce transcriptional errors by degrading transcripts containing premature stop codons\cite{Hug2015} and is one mechanism by which IR can influence gene expression\cite{Pan2006} (described in \cref{intro:AS}). Overall, >10\% of transcripts mapping to annotated genes were predicted to undergo NMD (NMD-transcripts) characterized by the presence of an ORF and a coding sequence (CDS) end motif before the last junction (n = 6,014 (13.0\%) transcripts associated with 2,945 (20.3\%) of annotated genes). These NMD-transcripts were less abundant than non-NMD-transcripts (mean expression of NMD-transcripts = 11.2 TPM, s.d =  85.0 TPM, mean expression of non-NMD-transcripts = 23.1 TPM, s.d = 143.1TPM, W = 8.72 x 107, P = 6.15 x 10\textsuperscript{-156}).  
 
 NMD was particularly enriched amongst IR-transcripts that were predicted to be protein-coding (n = 2,341 (36.2\%) IR-transcripts associated with 1,380 (9.53\%) genes), and transcripts with both IR and predicted NMD were particularly lowly expressed (W = 7.50 x 10\textsuperscript{6}, P = 1.67 x 10\textsuperscript{-42}, \cref{fig:isoseq_whole_IRNMD}\textbf{A}). Only a small number of genes had transcripts where IR and NMD were mutually exclusive (n = 277 (1.91\%) genes, \cref{fig:isoseq_whole_IRNMD}\textbf{B}), providing additional support for the hypothesized relationship between these two transcriptional control mechanisms\cite{Ge2014}. 
 
 
-\begin{figure}[!htp]
+\begin{figure}[!h]
 	\begin{center}
 		\includegraphics[page=6,trim={0 26cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Association of intron retention and NMD in Whole Transcriptome Iso-Seq]%
-	{\textbf{Intron retention is associated with nonsense-mediated mRNA decay (NMD) and reduced expression}: \textbf{A)} Isoforms that were characterised with both IR and NMD were particularly lowly expressed compared to isoforms with either IR, NMD or neither events. \textbf{B)} Shown is the overlap of genes associated with isoforms characterised with intron retention (IR), nonsense-mediated mRNA decay (NMD), and transcripts with both IR and NMD (IR-NMD). Of note, genes with isoforms characterised by both IR and NMD were further classified into genes that contain isoforms where both events are observed together (purple) and where they are mutually exclusive (dark orange). As such, 13800 genes were associated with IR-isoforms that were predicted for NMD, and 168 genes that contained IR-isoforms and NMD-isoforms. \newline 
-	IR – Intron Retention, NMD – Nonsense-mediated mRNA decay.}
+	{\textbf{Intron retention is associated with nonsense-mediated mRNA decay (NMD) and reduced expression}: \textbf{A)} Isoforms that were characterised with both IR and NMD were particularly lowly expressed compared to isoforms with either IR, NMD or neither events. \textbf{B)}Shown is the overlap of genes associated with isoforms characterised with intron retention (IR), nonsense-mediated mRNA decay (NMD), and transcripts with both IR and NMD (IR-NMD). 1380 genes were associated with IR-isoforms that were predicted for NMD, and 277 genes that contained mutually exclusive IR-isoforms and NMD-isoforms. }
 	\label{fig:isoseq_whole_IRNMD}
 \end{figure}
 
