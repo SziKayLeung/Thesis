@@ -20,7 +20,7 @@ Lowly expressed gene and minor isoform quantification
 Oxford nanopore vs Iso-Seq using ERCC: length of GC bias? --> refer to Spyros's benchmarking paper
 Number of CCS passes for accuracy, Travers2010
 \fi
-%https://www.nature.com/articles/s41467-020-17009-7#Sec14
+
 %https://www.frontiersin.org/articles/10.3389/fmolb.2021.711733/full
 
 \section{Introduction}
@@ -30,11 +30,54 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 
 %Advantages of targeted transcriptomics vs whole transcriptomics; resources in Targeted Transcriptomics paper; Literature Review 
 %List of relevance of AD genes
-%"CD33 is elevated in the AD brain in microglia and infiltrating macrophages and is thought to modulate microglial activation and Aβ clearance (Griciuc et al., 2013; Walker et al., 2015).  In fact, knock-out of CD33 in AD mouse models results in reduced Aβ plaque burden (Griciuc et al., 2013).  
-%Structural crystallography studies of mutant TREM2 proteins reveal that AD-associated risk variants were localised to the receptor's functional surface, thereby reducing ligand binding affinity\cite{Kober2016}, and modulate TREM2 signalling \cite{Wang2015a}.
+
+
 %https://journals.lww.com/co-neurology/Fulltext/2021/04000/The_role_of_innate_immune_genes_in_Alzheimer_s.13.aspx#:~:text=Neuroinflammation%20is%20as%20an%20innate,role%20in%20Alzheimer's%20disease%20pathogenesis
 %https://www.nature.com/articles/s41598-020-75057-x
-%"TREM2 mediated phagocytosis is critical for Aβ and neuronal debris clearance in AD (Kleinberger et al., 2014; Xiang et al., 2016; Yeh et al., 2016). Specifically, TREM2 expression is important for microglia to physically associate with Aβ plaques (Ulrich et al., 2014; Wang et al., 2016; Yuan et al., 2016; Jay et al., 2015, 2017a,b)." 
+
+\begin{changemargin}{1.5cm}
+	%\captionsetup{width=30cm}
+	\begin{landscape}
+		\small %smaller font
+		\setlength\tabcolsep{2pt} %reduced margin size in table
+		\renewcommand{\arraystretch}{1}
+		\begin{longtable}[c]{p{1cm}p{2cm}p{3cm}p{14cm}p{2cm}p{2cm}}
+			\caption[The role and altered splicing patterns of the target genes in AD pathology]%		
+			{\textbf{The role and altered splicing patterns of the target genes in AD pathology}. }
+			\label{tab: TargetGenes_LitReview}\\
+			
+			\toprule
+			\multicolumn{1}{c}{Gene} &
+			\multicolumn{1}{c}{Pathway} &
+			\multicolumn{1}{c}{Function} &
+			\multicolumn{1}{c}{Role and upregulated splicing AD} &
+			\multicolumn{1}{c}{Expression} & 
+			\multicolumn{1}{c}{Isoform Number and length} \\* \midrule
+			\endfirsthead
+			%
+			\endhead
+			%
+			\bottomrule
+			\endfoot
+			%
+			\endlastfoot
+			%		
+			\centering Twine et al. (2011)\cite{Twine2011} &
+			\centering 3 AD, 33 Controls\newline Total, frontal \& temporal lobe &
+			\centering RNA-Seq &
+			\tabitem \textit{APOE} was downregulated in AD temporal lobe. Identified 3 isoforms with different TSS and isoform expression: ENST00000252486 and ENST00000446996 from TSSA were downregulated (3.09-fold) whereas ENST00000425718 from TSSB was upregulated (26.5-fold) \newline
+			\tabitem \textit{Ank1} was downregulated in AD total brain \\
+			\hdashline[0.5pt/5pt]
+			
+			
+			\centering Castanho et al. (2020) \cite{Castanho2020} &
+			\centering rTg4510 (64 TG, 64 WT, 2 - 8 months) \newline Entorhinal Cortex &
+			\centering RNA-Seq &
+			\tabitem Genotype-associated differences in rTg4510 with 1,762 genes differentially expressed, including \textit{Gfap, Cd68, Itgax, Clec7a} and others robustly associated with FAD (\textit{App, Trem2, Clu, Picalm, Cd33})  
+			\tabitem Differentially-expressed genes were enriched in immune response (upregulation of \textit{C1qa, C1qb})\\* \bottomrule
+		\end{longtable}
+	\end{landscape}
+\end{changemargin}
 
 
  
@@ -142,10 +185,10 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 \begin{figure}[htp]
 	\centering
 	\vspace{20pt}
-	\includegraphics[page=1,trim={0 16cm 0 4cm},clip,scale = 0.45]{Figures/TargetedLabResults.pdf}
+	\includegraphics[page=1,trim={0 10cm 0 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_ppt.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Targeted Transcriptome - cDNA amplification and purification]%
-	{\textbf{The first stage between the targeted and whole transcriptome sequencing is the same with samples typically amplified using 14 cycles followed by enrichment of high molecular weight cDNA in Fraction 2: a)} Like whole transcriptome sequencing, samples were amplified using 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}) whereby cycles below generated insufficient cDNA and cycles above showed signs of over-amplification. The samples shown here (K19, K23, K21, K18, K20, K17) were multiplexed and sequenced in Batch 1 (see Table \ref{tab:mouse_samples_sequenced}. Ladder (L) shown is 100bp DNA ladder. \textbf{b)} Similar to whole transcriptome sequencing, amplified cDNA was further divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) AMPure beads. As shown in the Bioanalyzer gel, there was an enrichment of higher-molecular weight cDNA in Fraction 2 compared to Fraction 1 across all the samples (with the exception of Sample K21 with loss of Fraction 2). Green and purple line represent the lower marker at 50bp and the upper marker at 17kb respectively. F1 - Fraction 1 containing cDNA purified with 1X AMPure beads; F2 - Fraction 2 containing cDNA purified with 0.4X AMPure beads.}
+	{\textbf{The first stage between the targeted and whole transcriptome sequencing is the same with samples typically amplified using 14 cycles followed by enrichment of high molecular weight cDNA in Fraction 2: a)} Like whole transcriptome sequencing, samples were amplified using 14 cycles (Figure \ref{fig:isoseq_whole_pccresults}) whereby cycles below generated insufficient cDNA and cycles above showed signs of over-amplification. The samples shown here (K19, K23, K21, K18, K20, K17) were multiplexed and sequenced in Batch 1 (see Table \ref{tab:mouse_samples_sequenced}. Ladder (L) shown is 100bp DNA ladder. \textbf{B)} Similar to whole transcriptome sequencing, amplified cDNA was further divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) AMPure beads. As shown in the Bioanalyzer gel, there was an enrichment of higher-molecular weight cDNA in Fraction 2 compared to Fraction 1 across all the samples (with the exception of Sample K21 with loss of Fraction 2). Green and purple line represent the lower marker at 50bp and the upper marker at 17kb respectively. F1 - Fraction 1 containing cDNA purified with 1X AMPure beads; F2 - Fraction 2 containing cDNA purified with 0.4X AMPure beads.}
 	\label{fig:isoseq_targeted_pccresults}
 \end{figure}
 
@@ -153,10 +196,10 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 \begin{figure}[!htp]
 	\centering
 	\vspace{20pt}
-	\includegraphics[page=2,trim={0 14cm 3cm 1cm},clip,scale = 0.45]{Figures/TargetedLabResults.pdf}
+	\includegraphics[page=2,trim={0 8cm 0cm 1cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_ppt.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Iso-Seq Targeted Transcriptome - Target Capture and library preparation]%
-	{\textbf{Successful target capture and library preparation across all batches, as shown by enrichment of transcripts with specific lengths:} \textbf{a)} and \textbf{c)} are Bioanalyzer electropherogram traces of Batch 1 (n = 6) and Batch 2 (n = 9) respectively after enrichment of cDNA with selective IDT probes ( \cref{section:ch2_targetcapture_explanation}). \textbf{b)}, \textbf{d)} and \textbf{f)} are Bioanalyzer electropherogram traces of Batch 1, 2 and 3 respectively after library preparation (denoted here as "Final", \cref{section:ch2_smrtbelltemplate_explanation}. \textbf{e)} An overlay of Batch 2 after target capture and library preparation. 
+	{\textbf{Successful target capture and library preparation across all batches, as shown by enrichment of transcripts with specific lengths:} \textbf{A)} and \textbf{c)} are Bioanalyzer electropherogram traces of Batch 1 (n = 6) and Batch 2 (n = 9) respectively after enrichment of cDNA with selective IDT probes ( \cref{section:ch2_targetcapture_explanation}). \textbf{B)}, \textbf{d)} and \textbf{f)} are Bioanalyzer electropherogram traces of Batch 1, 2 and 3 respectively after library preparation (denoted here as "Final", \cref{section:ch2_smrtbelltemplate_explanation}. \textbf{e)} An overlay of Batch 2 after target capture and library preparation. 
 	\\
 	\\
 	As can be seen across all figures, target capture appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths, which differs from the broad peaks that are evident in whole transcriptome sequencing (Figure \ref{fig:isoseq_whole_bioresults}). Library preparation with ligation of SMRT bell templates retained these targeted transcripts with good peak overlay, as seen in figure e). The difference in peak height (i.e. cDNA quantity) between target capture and library preparation is due to a difference in input cDNA concentration when running Bioanalyzer - input cDNA after library preparation was diluted with a 1:5 dilution factor to maximise amount of cDNA available for sequencing, whereas input cDNA after target capture was not diluted.}  
@@ -166,10 +209,10 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 \begin{figure}[!htp]
 	\centering
 	\vspace{20pt}
-	\includegraphics[page=3,trim={0 28cm 3cm 1cm},clip,scale = 0.45]{Figures/TargetedLabResults.pdf}
+	\includegraphics[page=3,trim={0 18cm 0cm 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_ppt.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT Targeted Transcriptome - Target Capture and library preparation]%
-	{\textbf{Successful target capture and ONT library preparation, as shown by enrichment of transcripts with specific lengths:} Shown in \textbf{a)} is the gel snapshot image from the TapeStation Assay of Batch 2 (n = 9) and Batch 3 (n = 9) respectively after enrichment of cDNA with selective IDT probes (\cref{section:ch2_targetcapture_explanation}) and ONT library preparation (\cref{sec: ONTlib_preparation}), and \textbf{b)} is the respective electropherogram of Batch 3. 
+	{\textbf{Successful target capture and ONT library preparation, as shown by enrichment of transcripts with specific lengths:} Shown in \textbf{A)} is the gel snapshot image from the TapeStation Assay of Batch 2 (n = 9) and Batch 3 (n = 9) respectively after enrichment of cDNA with selective IDT probes (\cref{section:ch2_targetcapture_explanation}) and ONT library preparation (\cref{sec: ONTlib_preparation}), and \textbf{B)} is the respective electropherogram of Batch 3. 
 	\\
 	\\
 	Similar to the Bioanalyzer electropherogram from \cref{fig:isoseq_targeted_libresults}, target capture and ONT library preparation appears to be successful with detected peaks, reflecting enrichment of target transcripts with specific lengths. Diluted DNA (1:5 dilution factor) was used for TapeStation Assay to maximise the amount of cDNA available for sequencing. L - Ladder, B2 - Batch 2, B3 - Batch 3. Of note, the ladder used was expired and thus missing the lower green marker. }  
@@ -183,15 +226,39 @@ RNA from a subset of mouse samples (n = 2) was prepared for ONT cDNA library pre
 \subsection{ONT QC and data processing}
 QC of raw reads was performed using PycoQC, with subsequent analysis using the ONT bioinformatics pipeline (details are provided in \cref{section:ont_bioinformatics}). Briefly, raw reads were basecalled using \textit{Guppy} (v4.0) and reads with Phred (Q) < 7 filtered out. Primers and ONT adapters were then removed using \textit{Porechop} to generate full-length reads, followed by trimming of polyA tails with \textit{Cutadapt}. Full-length reads were then mapped to the reference mouse genome using \textit{Minimap2} (v2.17) with the following parameters "-ax splice". Owing to the high error rate attributed to ONT sequencing, artifactual noncanonical splice junctions from aligned reads were corrected with \textit{Transcript Clean} and corrected reads were subsequently processed using \textit{TALON} for annotation, quantification and filtering for intrapriming (--maxFracA = 0.5). Novel transcripts were only retained if detected with minimum 2 reads in at least 2 samples. 
  
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=16,trim={0cm 8cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[ONT Bioinformatics Pipeline]%
+	{\textbf{ONT Bioinformatics Pipeline.} Shown is a detailed bioinformatics pipeline for processing ONT 1D reads from the targeted sequencing experiments, whereby 20 samples were barcoded and sequenced simultaneously on two flow cells (referred as Batch 2 and Batch 3 of the original Iso-Seq Targeted Transcriptome set). Supplementing \cref{fig:ONT_PacBio_bioinformatics}, raw ONT reads from each flow cell were processed and the demultiplexed into the respective samples, which were then processed independently for collapse and transcript quantification. All the samples from both batches were then merged into one complete dataset, while retaining sample-specific transcript expression. 
+	}
+	\label{fig:ONT_Targeted_bioinformatics}
+\end{figure}
+
 \subsection{Comparison of Iso-Seq and Nanopore datasets}
-The Iso-Seq targeted dataset (n = 24 samples) was examined with other datasets using \textit{Gffcompare}; such datasets included transcripts identified from whole transcriptome profiling (n = 12 samples) and ONT-derived transcripts from nanopore targeted sequencing (n = 18 samples). For a fairer comparison, Iso-Seq transcripts from whole transcriptome profiling were re-annotated with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data, and only the same samples were compared for detection. Conversely, all processed but unfiltered ONT reads were used for a comprehensive comparison between the two technologies.   
+The Iso-Seq targeted dataset (n = 24 samples) was examined with other datasets using \textit{Gffcompare}; such datasets included transcripts identified from whole transcriptome profiling (n = 12 samples) and ONT-derived transcripts from nanopore targeted sequencing (n = 18 samples). For a fairer comparison, Iso-Seq transcripts from whole transcriptome profiling were re-annotated with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data, and only coverage from the same samples were used for the comparison between the whole and targeted Iso-Seq datasets. Conversely, all processed but unfiltered ONT reads were used for a comprehensive comparison between the two technologies with Iso-Seq derived transcripts as reference.   
 
-\subsection{Transcriptome Annotation and Iso-Seq Quantification}
-The Iso-Seq and ONT target datasets were merged using \textit{Gffcompare}, using all Iso-Seq derived transcripts, and ONT-derived transcripts that were either retained after filtering or pre-filtered transcripts that were also detected in Iso-Seq datasets. The merged dataset was then annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). 
+\subsection{Transcript annotation and Iso-Seq Quantification}
+For a comprehensive characterisation of the AD-associated genes enriched in the mouse transcriptome, the Iso-Seq and ONT datasets were merged using \textit{Gffcompare}. In order to retain both filtered ONT-derived transcripts (minimum 2 reads in at least 2 samples) and ONT-derived transcripts that did not pass through filtering but were also detected using the Iso-Seq platform, a custom python script was written to parse the output from \textit{Gffcompare} to identify Iso-Seq and ONT-derived transcripts with a complete exact match (defined by the class code "="), unique filtered ONT-derived and unqique Iso-Seq-derived transcripts. An output file of the abundance was also generated for each transcript and sample, using the counts either provided from \textit{Cupcake} for Iso-Seq-derived-transcripts, \textit{TALON} for ONT-derived-transcripts or the summation of both for transcripts that were commonly detected in both technologies. The merged dataset was then annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). Transcripts classified as ISM with 3'fragment were assumed to be partial 5'RNA degraded products and discarded. ORFs were predicted using the CPAT program (v3.0.2) using all default parameters and transcripts were predicted as protein-coding if the coding potential score was >0.44 for mouse (CPAT recommended parameters)  
 
-The occurrence of alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping were assessed using custom scripts based on splice junction coordinates of transcript exon relative to exons of known GENCODE transcripts (mm10). Alternative 5' and 3' splice sites were defined as splice sites differing by more than 10bp from the known splice site, and an intron was considered retained if the exon splice site differed by more than 100bp from the known splice site. Isoforms were visualised using UCSC genome browser, and were grouped by their splicing patterns to ease visualisation based on the following rank prioritisation: i) all exons with exact splice junction coordinates to know exons, ii) alternative first exons, iii) contain novel exons upstream of first exon, iv) novel exons downstream of last exon, v) characterised with intron retention, exon skipping and novel exons, vi) IR and ES, vii) novel exons within known exons, viii) IR only, ix) ES only and x) all exons with alternative 5' and 3' sites.
+\subsection{Characterisation of AS events and transcript visualisation}
+To date, current tools for assessing alternative splicing events were developed for short-read RNA-Seq data and fail to capture the connectivity and complexity of long-read-derived isoforms, particularly in targeted profiling of the transcriptome with deep sequencing coverage. A custom python script was therefore written to accurately assess the occurrence of alternative splicing events based on splice junction coordinates of transcript exons relative to exons of all known GENCODE transcripts (mm10). Common alternative splicing events such as alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping were assessed. Furthermore, other regulatory mechanisms such as alternative transcription initiation defined by alternative promoter/TSS, alternative termination likewise defined by alternative TTS, and presence of novel exons were evaluated using this custom script.
+
+
+Alternative 5' and 3' splice sites were defined as splice sites differing by more than 10bp from the known splice site, and an intron was considered retained if the exon splice site differed by more than 100bp from the known splice site. Isoforms were visualised using UCSC genome browser, and were grouped by their splicing patterns to ease visualisation based on the following rank prioritisation: i) all exons with exact splice junction coordinates to know exons, ii) alternative first exons, iii) contain novel exons upstream of first exon, iv) novel exons downstream of last exon, v) characterised with intron retention, exon skipping and novel exons, vi) IR and ES, vii) novel exons within known exons, viii) IR only, ix) ES only and x) all exons with alternative 5' and 3' sites.
 
 %ISM isoforms were assumed as partial products of longer FSM isoforms, and associated read counts were aggregated.  
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=5,trim={0.5cm 7cm 0cm 0cm},clip,scale = 0.8]{Figures/TargetedTranscriptome_LabResults}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Bioinformatics Pipeline for merging targeted Iso-Seq and ONT datasets]%
+	{\textbf{Bioinformatics Pipeline for merging targeted Iso-Seq and ONT datasets}. Shown is a outline of the bioinformatics pipeline for processing Iso-Seq reads and ONT reads 1D reads from the targeted transcriptome profiling of the mouse cortex. 
+	}
+	\label{fig:Targeted_bioinformatics_pipeline}
+\end{figure}
 
 \newpage
 \section{Results}
@@ -267,7 +334,7 @@ In addition to batch variability, the number of full-length transcripts obtained
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Targeted Transcriptome Iso-seq run performance]%
-	{\textbf{Despite batch variability in targeted transcriptome sequencing, no difference in the number of full-length transcripts was observed between wildtype and transgenic mice}. \textbf{a)} Samples (n = 24) were multiplexed and sequenced in three runs (Batch 1, 2 and 3) with varied performance, as indicated by the number of polymerase reads through to poly-A FLNC reads. In the bioinformatics pipeline, the samples were demultiplexed and individually processed after generation of CCS reads from each run. \textbf{b)} Sample variability within each batch was observed from the number of poly-A FLNC reads generated. However, \textbf{c)} no statistical difference was observed in the overall number of full-length transcripts detected between wild-type and transgenic. Full-length transcripts were collapsed from poly-A FLNC reads in Iso-Seq Cluster. CCS - Circular Consensus Sequence, FLNC - Full-Length Non-Concatemer, FL - Full-Length, WT - Wild-type, TG - Transgenic}
+	{\textbf{Despite batch variability in targeted transcriptome sequencing, no difference in the number of full-length transcripts was observed between wildtype and transgenic mice}. \textbf{A)} Samples (n = 24) were multiplexed and sequenced in three runs (Batch 1, 2 and 3) with varied performance, as indicated by the number of polymerase reads through to poly-A FLNC reads. In the bioinformatics pipeline, the samples were demultiplexed and individually processed after generation of CCS reads from each run. \textbf{B)} Sample variability within each batch was observed from the number of poly-A FLNC reads generated. However, \textbf{c)} no statistical difference was observed in the overall number of full-length transcripts detected between wild-type and transgenic. Full-length transcripts were collapsed from poly-A FLNC reads in Iso-Seq Cluster. CCS - Circular Consensus Sequence, FLNC - Full-Length Non-Concatemer, FL - Full-Length, WT - Wild-type, TG - Transgenic}
 	\label{fig:isoseq_targeted_run_output}
 \end{figure}
 
@@ -285,7 +352,7 @@ In addition to batch variability, the number of full-length transcripts obtained
 \subsection{ONT Run performance and sequencing metrics}
 Following library preparation and nanopore sequencing on a subset of samples, a total of 28.54M reads (39.68Gb) were generated across two flow cells and a total of 22.8M (80\%) reads were successfully basecalled using \textit{Guppy} (\cref{tab:ont_targetedrun_output}). Despite similar amount of loading onto the flow cell (Batch 2: 540ng, Batch 3: 500ng), there was a large yield difference in the number of basecalled reads between the two batches with Batch 3 generating significantly more reads (Batch 2: 12.3M and Batch 3: 16.3M), and after filtering for read quality (Phred Score > Q7, referring to a read accuracy > 80\%) of which the majority reads passed (Batch 2: 9.68 (78.8\%); Batch 3: 13.13M (99.3\%) (\cref{fig:ONT_targeted_run_output}\textbf{a}). 
 
-Similar to Iso-Seq Targeted Transcriptome run performance, the number of filtered reads obtained per sample varied within each batch (\cref{fig:ONT_targeted_run_output}\textbf{b}), with more reads generated in the transgenic mice in both Batches 2 and 3 (\cref{fig:ONT_targeted_run_output}\textbf{c}, Batch 2: Wilcoxon rank sum test, W = 18, P = 0.063; Batch 3: Wilcoxon rank sum test, W = 17, P = 0.11). This variability was not associated with RIN (corr = -0.267, P = 0.284, Spearman's rank) or barcode (corr = -0.058, P = 0.819, Spearman's rank), but simply a reflection of more transgenic mice sequenced (Batch 2: WT = 4, TG = 5 samples; Batch 3: WT = 4, TG = 5 samples). The difference in number of WT and TG mice in Batches 2 and 3 would have been compensated in Iso-Seq with Batch 1, where there is more WT mice; however, Batch 1 was not sequenced using ONT due to the lack of remaining cDNA. Of note, the difference in the number of reads between TG and WT, while different, was not statistically significant at the 5\% level (Wilcoxon rank sum test, W = 59, P = 0.10, \cref{fig:ONT_targeted_run_output}\textbf{d}).
+Similar to Iso-Seq Targeted Transcriptome run performance, the number of filtered reads obtained per sample varied within each batch (\cref{fig:ONT_targeted_run_output}\textbf{B}), with more reads generated in the transgenic mice in both Batches 2 and 3 (\cref{fig:ONT_targeted_run_output}\textbf{c}, Batch 2: Wilcoxon rank sum test, W = 18, P = 0.063; Batch 3: Wilcoxon rank sum test, W = 17, P = 0.11). This variability was not associated with RIN (corr = -0.267, P = 0.284, Spearman's rank) or barcode (corr = -0.058, P = 0.819, Spearman's rank), but simply a reflection of more transgenic mice sequenced (Batch 2: WT = 4, TG = 5 samples; Batch 3: WT = 4, TG = 5 samples). The difference in number of WT and TG mice in Batches 2 and 3 would have been compensated in Iso-Seq with Batch 1, where there is more WT mice; however, Batch 1 was not sequenced using ONT due to the lack of remaining cDNA. Of note, the difference in the number of reads between TG and WT, while different, was not statistically significant at the 5\% level (Wilcoxon rank sum test, W = 59, P = 0.10, \cref{fig:ONT_targeted_run_output}\textbf{d}).
   
 While the throughput was comparable between Iso-Seq and ONT nanopore sequencing for the targeted transcriptome profiling (Iso-Seq: 19.3 - 24.2Gb, ONT: 16.9 - 22.8Gb), ONT nanopore sequencing generated significantly more (1D) reads (12.3M - 16.3M) than the polymerase reads from Iso-Seq (0.3M - 0.7M), which is limited by the number of wells available for sequencing (1M ZMWs), and subsequently 20X the number of full-length reads per sample (Iso-Seq mean PolyA-FLNC reads = 38.7K, range = 16.8K - 77.2K; ONT mean basecalled, filtered reads = 918K, range = 667K - 1.32M). This significant difference in read but comparable yield output is due to the multiple sequencing of the same insert in Iso-Seq with the generation of CCS reads, whereas each insert is only sequenced once in ONT nanopore. This significantly higher yield is therefore achieved at the expense of read accuracy, whereby the average read accuracy in ONT nanopore is 90\% (mean Phred Quality = 10; \cref{tab:ont_targetedrun_output)}, \cref{fig:ont_targetedlengthquality}\textbf{a,b}). Of note, the on-target rate observed in both Iso-Seq and ONT nanopore sequencing was similar at $\tilde{50\%}$ (\cref{fig:isoseq_targeted_rate,fig:ont_targeted_rate}), indicating that more samples could have been sequenced.  
 
@@ -295,7 +362,7 @@ While the throughput was comparable between Iso-Seq and ONT nanopore sequencing 
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT Sequence Channel Activity from Whole Transcriptome Sequencing ]%
-	{\textbf{Sequencing channel activity plot from nanopore sequencing}. Heatmap representation of channel productivity spatially for \textbf{a)} Batch2 (10.1Gb) and \textbf{b)} Batch 3 (3.68Gb) as DNA is translocated through the pore and signal is collected. A contrast of activity can be seen between the two batches, with a number of inactive channels (white box) in Batch 2, and of the channels that are active, fewer DNA molecules are translocated and read.}
+	{\textbf{Sequencing channel activity plot from nanopore sequencing}. Heatmap representation of channel productivity spatially for \textbf{A)} Batch2 (10.1Gb) and \textbf{B)} Batch 3 (3.68Gb) as DNA is translocated through the pore and signal is collected. A contrast of activity can be seen between the two batches, with a number of inactive channels (white box) in Batch 2, and of the channels that are active, fewer DNA molecules are translocated and read.}
 	\label{fig:ont_targetedseq_channel}
 \end{figure}
 
@@ -306,7 +373,7 @@ While the throughput was comparable between Iso-Seq and ONT nanopore sequencing 
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT run performance over time from Whole Transcriptome Sequencing ]%
-	{\textbf{Temporal run performance from nanopore sequencing}. Shown is the \textbf{a)} number of basses generated per hour over the course of the sequencing run from Batch 2 and from \textbf{b)} Batch 3, and \textbf{c)} cumulative reads generated from Batch2 and from \textbf{d)} Batch3. The reads are classified as "pass" (dark blue) if QV > 7 and "fail" (light blue) if QV < 7. Gb - Gigabases}
+	{\textbf{Temporal run performance from nanopore sequencing}. Shown is the \textbf{A)} number of basses generated per hour over the course of the sequencing run from Batch 2 and from \textbf{B)} Batch 3, and \textbf{c)} cumulative reads generated from Batch2 and from \textbf{d)} Batch3. The reads are classified as "pass" (dark blue) if QV > 7 and "fail" (light blue) if QV < 7. Gb - Gigabases}
 	\label{fig:ont_targetedtime_performance}
 \end{figure}
 
@@ -316,7 +383,7 @@ While the throughput was comparable between Iso-Seq and ONT nanopore sequencing 
 	\includegraphics[page=4,trim={0 0 0 0},clip,scale = 0.55]{Figures/ONTTargetedTranscriptome.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT Targeted Transcriptome run performance]%
-	{\textbf{Significantly more reads were generated in Batch 3 and for transgenic mice in ONT nanopore sequencing}. \textbf{a)} A subset of samples (n = 19) were multiplexed and sequenced in two runs (Batches 2 and 3) with varied performance, as indicated by the number of sequenced reads through to reads demultiplexed per sample. \textbf{b)} Sample variability within each batch not correlated by barcode sequence. \textbf{c)} A reflection of the yield output and sequencing of more transgenic mice, there were more significantly reads generated for transgenic mice individually and \textbf{d)} and across both batches. WT - Wild-type, TG - Transgenic }
+	{\textbf{Significantly more reads were generated in Batch 3 and for transgenic mice in ONT nanopore sequencing}. \textbf{A)} A subset of samples (n = 19) were multiplexed and sequenced in two runs (Batches 2 and 3) with varied performance, as indicated by the number of sequenced reads through to reads demultiplexed per sample. \textbf{B)} Sample variability within each batch not correlated by barcode sequence. \textbf{c)} A reflection of the yield output and sequencing of more transgenic mice, there were more significantly reads generated for transgenic mice individually and \textbf{d)} and across both batches. WT - Wild-type, TG - Transgenic }
 	\label{fig:ONT_targeted_run_output}
 \end{figure}
 
@@ -361,67 +428,167 @@ While the throughput was comparable between Iso-Seq and ONT nanopore sequencing 
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[ONT read length and quality from Whole Transcriptome Sequencing ]%
-	{\textbf{Length and quality distribution of ONT basecalled reads}. Shown are histograms of the number of sequenced reads against \textbf{a)} mean read quality score of Batch 2, \textbf{b)} mean read quality score of Batch 3, and against \textbf{c)} length of Batch 2 and of \textbf{d)} Batch 3. The distribution has been shaded for reads that have passed or failed the quality filter (Q-score threshold of 7). N50 refers to the sequence length at which 50\% of reads are sized at or over. }
+	{\textbf{Length and quality distribution of ONT basecalled reads}. Shown are histograms of the number of sequenced reads against \textbf{A)} mean read quality score of Batch 2, \textbf{B)} mean read quality score of Batch 3, and against \textbf{c)} length of Batch 2 and of \textbf{d)} Batch 3. The distribution has been shaded for reads that have passed or failed the quality filter (Q-score threshold of 7). N50 refers to the sequence length at which 50\% of reads are sized at or over. }
 	\label{fig:ont_targetedlengthquality}
 \end{figure}
 
 \clearpage
 \subsection{Iso-Seq Targeted approach detects many more novel transcripts than whole transcriptome profiling}
 % Number of Iso-Seq transcripts
-After filtering for technical artefacts (563 (1.69\%) isoforms were removed due to intra-priming, 314 (0.94\%) isoforms were removed due to RT switching, 1,267 (3.80\%) were removed due to likely partial degradation), a total of 4,780 isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). Of these isoforms, an overwhelming majority were novel (n = 4601, 96.2\%) with no RNA-Seq support (n = 24 samples, total number of uniquely mapped reads = 360 million) at the junction (n = 4,033, 84.4\%). This is likely to be reflection of the low coverage of RNA-Seq reads per sample  (mean number of uniquely mapped reads = 15 million) to comprehensively span these novel junctions, rather than an indication of the invalidity of these isoforms given the stringent processing of the Iso-Seq bioinformatics pipeline. 
+After filtering for technical artefacts (563 (1.69\%) isoforms were removed due to intra-priming, 314 (0.94\%) isoforms were removed due to RT switching, 1,267 (3.80\%) were removed due to likely partial degradation), a total of 4,780 isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). Of these isoforms, an overwhelming majority were novel (n = 4601, 96.2\%) with no RNA-Seq support (n = 24 samples, total number of uniquely mapped reads = 360 million) at the junction (n = 4,033, 84.4\%). This is likely to be reflection of the low coverage of RNA-Seq reads per sample (mean number of uniquely mapped reads = 15 million) to comprehensively span these novel junctions, rather than an indication of the invalidity of these isoforms given the stringent processing of the Iso-Seq bioinformatics pipeline. 
 
+We next wanted to compare the isoform diversity and sequencing coverage of the panel of AD-associated genes captured using the targeted and whole transcriptome approach. As expected, enrichment and selective sequencing of the target genes detected many more transcripts that were not detected in the whole transcriptome approach, the majority of which were novel (NIC: XX, XX\%; NNC: XX, XX\%). Further examination of these transcripts unique to the targeted approach revealed them to be more lowly-expressed than the transcripts detected from both sequencing approaches, highlighting the greater sensitivity of the targeted approach in detecting the novel, rarer transcripts. 
+
+Conversely with a target rate of \textasciitilde{XX\%}, the targeted sequencing experiments detected many isoforms associated with non-target genes, which were found to be more highly expressed than the isoforms of non-target genes that were uniquely detected in the whole transcriptome approach. This indicates that the off-target genes from the targeted transcriptome are the most abundance rather than based on similar sequence homology to garget genes. 
+
+Intriguingly, the whole transcriptome approach detected isoforms associated with all the target genes with the exception of \textit{Trpa1}, which is the least expressed in the mouse cortex and was only detected in the targeted approach.  Given that we have previously showed that our whole transcriptome Iso-Seq sequencing datasets (n = 12 samples) was close to saturation, we do not anticipate that we would detect \textit{Trpa1} with more samples. This suggests that our sequencing coverage at a total XX Iso-Seq reads were capped at detecting genes above XXTPM.   
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=1,trim={0 20cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex]%
+	{\textbf{Wide isoform diversity observed in AD-associated genes with many novel isoforms detected}. \textbf{A)} Shown is the number of isoforms detected per target gene from the Iso-Seq targeted dataset, classified by novel and known, after sequential processing and filtering in the bioinformatics Iso-Seq pipeline. Novel isoforms refer to isoforms that are not known in current existing annotations. \textbf{B)} A strong correlation was observed between Iso-Seq and RNA-Seq gene expression. Iso-Seq gene expression was determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
+	\label{fig:isoseq_targeted_finalnumberiso}
+\end{figure}
 
 
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[page=6,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
+		\includegraphics[page=3,trim={0 1.5cm 0 0cm},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
-	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
+	\caption[Comparison of whole transcriptome vs targeted Iso-Seq transcriptome profiling]%
+	{\textbf{Iso-Seq targeted approach detected many more novel and rarer transcripts than whole transcriptome profiling of the mouse cortex}. Shown is the \textbf{A)} number of isoforms per target gene that were uniquely detected using the Iso-Seq targeted approach, uniquely detected in the whole approach and in both datasets, and the \textbf{B)} number of isoforms in the Iso-Seq targeted approach stratified by structural category. \textbf{C)} A box-plot of the full-length read counts of isoforms associated to target and non-target genes from whole transcriptome profiling approach and \textbf{D)} targeted approach. Target genes refer to the panel of 20 AD-associated genes that were enriched for targeted sequencing. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}
 \end{figure}
 
-% use same samples, compare whether off-target genes from targeted transcriptome are most abundant or whether based on similar sequence homology to target genes; output similar to targeted ppt  
-% compare the AD genes
-% threshold cut off 
+\clearpage
+\subsection{ONT achieves significantly deeper sequencing coverage than Iso-Seq with enrichment of shorter novel transcripts}
+A total of XX transcripts were identified after enrichment of 20 AD-associated genes followed by nanopore sequencing (median = XX, range = XX - XX). Further filtering of novel transcripts by expression (minimum 2 reads in 2 samples) reduced the total number of transcripts by XX fold, suggesting that a vast number of ONT novel transcripts were detected with one FL read and were not reproducibly detected across biological replicates. 
+
+After filtering, we detected a total of XXX isoforms across the same panel of AD-associated genes - XX times more than the Iso-Seq targeted dataset despite sequencing fewer samples (Iso-Seq: n = 24 samples, ONT = 18 samples). Similar to Iso-Seq dataset, target gene expression level was strongly correlated between ONT expression and RNA-Seq expression. However, strikingly the order of the isoform diversity across the panel differed between the two datasets - i.e. \textit{XXX} was associated with the greatest number of transcripts in Iso-Seq whilst \textit{XXX} was the most "isoformic" in ONT dataset, suggesting that some genes were more likely to be sequenced using the ONT platform. Further examination of the two datasets revealed an enrichment of transcripts sized 1-2kb with 5 exons (mean = X, XX) whereas Iso-Seq-derived transcripts were typically longer with more exons (mean = X, XX). This suggests an over-representation of shorter transcripts in the ONT library, a phenomenon that has been previously reported and may be attributed to premature termination of ONT transcript sequencing. 
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=2,trim={0 20cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[ONT is more sensitive than Iso-Seq with greater power to detect novel transcripts]%
+	{\textbf{ONT is more sensitive than Iso-Seq with greater power to detect novel transcripts}. \textbf{A)} Shown is the number of isoforms detected per target gene from the ONT targeted dataset, either classified as known (FSM, ISM) or novel (NIC, NNC), after sequential processing and filtering in the bioinformatics ONT pipeline. Novel isoforms refer to isoforms that are not known in current existing annotations. \textbf{B)} A stronger correlation is observed between ONT gene expression and RNA-Seq gene expression, than Iso-Seq gene expression and RNA-Seq gene expression (\cref{fig:isoseq_targeted_finalnumberiso}\textbf{B}). ONT gene expression is similarly determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
+	\label{fig:ont_targeted_finalnumberiso}
+\end{figure}
+
+However, significantly more ONT-derived Transcripts were found with TSS annotated with 50bp of a CAGE peak compared to Iso-Seq-derived transcripts, half of which were found over 200bp from the closest annotated CAGE peak. The 5' and 3' ends of ONT-derived transcripts were also more likely to be within 50bp from the closest annotated 5' and 3' ends of the target gene. Perhaps even more telling, a greater proportion of Iso-Seq-derived transcripts were classified as "ISM" (Incomplete Splice Match) with a 3' fragment that matches the 3'end of a known transcript, and are likely to represent truncated products. Furthermore, the majority of ONT-derived transcripts were supported by matched short-read RNA-Seq data (support is defined by all splice junctions supported by more than 1 RNA-Seq read) whereas almost all Iso-Seq-derived transcripts were supported. Notably, a significant difference in number of transcripts supported by RNA-Seq reads was observed with Iso-Seq derived transcripts more likely to be supported - however, we suspect this difference is driven by the greater sensitivity of ONT to detect rare, novel transcripts and relatively insufficient coverage of RNA-Seq reads. Examination of these novel transcripts not supported by RNA-Seq revealed them to be less abundant (median expression = XX FL reads) compared to those supported by RNA-Seq (median expression = XX FL reads).  However, no significant difference in the number of transcripts located to 50bp of CAGE peak was found (Fisher's exact test: XXX), highlighting the power of targeted sequencing for detection of rare, novel isoforms. 
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=3,trim={0 0cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Comparison of ONT-derived and Iso-Seq-derived isoforms for targeted transcriptome profiling]%
+	{\textbf{While ONT-derived isoforms are generally shorter with fewer exons, the 5' and 3' ends are more within the range of annotated sites and CAGE peaks than Iso-Seq derived isoforms}. \textit{Caption continues on the following page.}}
+	\label{fig:ont_isoseq_description}
+\end{figure}
+\begin{figure}[t]
+	\captionsetup{width=0.95\textwidth}
+	\contcaption{Shown are density plots of \textbf{A)} the distribution of the transcript lengths and \textbf{B)} exon number in the targeted Iso-Seq (n = 24 samples) and ONT datasets (n = 16 samples). Distance between \textbf{C)} TSS and closest annotated CAGE peak (a negative value refers to a CAGE peak located upstream of TSS), \textbf{E)} TSS and reference TSS (a negative value refers to a query start downstream of reference), \textbf{G} TTS and reference TSS (a negative value refers to a query end upstream of reference).  Proportion of isoforms \textbf{D)} classified within 50bp of a CAGE peak, \textbf{F)} within 50bp of a reference TSS and \textbf{H} within 50bp of a reference TTS. TSS - Transcription start site, TTS - Transcription termination site. Iso-Seq and ONT refer to isoforms from the Iso-Seq and ONT targeted profiling dataset, respectively.}%
+\end{figure}
+
+Comparison of the two datasets using \textit{Gffcompare} revealed that the vast majority of Iso-Seq derived transcripts were also detected in ONT nanopore sequencing (n = XX transcripts, XX\%),whereas only a small proportion of filtered ONT-transcripts were detected in Iso-Seq (n = XX transcripts, XX\%). Further examination of these unique ONT-derived transcripts revealed them to be more lowly-expressed and shorter with fewer exons than the commonly-detected ONT-derived transcripts, demonstrating ONT's greater sensitivity at detecting shorter transcripts. In contrast, no difference in length or exon number was observed between the unique and commonly-detected Iso-Seq derived transcripts, suggesting that these are transcripts that were unique to the remaining samples that were not sequenced with ONT. 
+
+Finally, we compared the number of isoforms from the Iso-Seq and ONT datasets against the number of known reference isoforms, the gene length, transcript length (longest known reference isoform) and number of exons. Similar to previous findings, the number of detected isoforms in the Iso-Seq dataset was strongly correlated with gene length and the number of known associated isoforms. However strikingly, a significantly weaker correlation was observed between the number of detected isoforms in the ONT dataset with known isoform number and gene length. Given that far more novel isoforms were detected in ONT dataset with greater sequencing coverage and depth compared to Iso-Seq dataset, this suggests that gene length and number of exons are not the primary driving factors of isoform diversity in this panel of target genes. 
 
 
-\begin{landscape}
-	\begin{table}[]
-		\centering
-		\begin{tabular}{@{}lllllll@{}}
-			\toprule
-			& \begin{tabular}[c]{@{}l@{}}Target\\ Gene\end{tabular} & \begin{tabular}[c]{@{}l@{}}Total \\ Isofoms\end{tabular} & \begin{tabular}[c]{@{}l@{}}Known\\ Isoforms\end{tabular} & NIC & NNC & List of Known\_Isoforms \\ \midrule
-			1 & Abca1 & 2 & 1 & 0 & 1 & ENSMUST00000030010.3 \\
-			2 & Sorl1 & 9 & 1 & 3 & 5 & ENSMUST00000060989.8 \\
-			3 & Mapt & 63 & 7 & 22 & 34 & ENSMUST00000106992.9,ENSMUST00000100347.10,ENSMUST00000138384.7,ENSMUST00000106988.7,ENSMUST00000126820.1,ENSMUST00000132245.7,ENSMUST00000106993.9 \\
-			4 & Bin1 & 93 & 4 & 34 & 55 & ENSMUST00000025239.8,ENSMUST00000091967.12,ENSMUST00000234496.1,ENSMUST00000234857.1 \\
-			5 & Tardbp & 24 & 6 & 15 & 3 & ENSMUST00000084125.9,ENSMUST00000186317.1,ENSMUST00000105702.8,ENSMUST00000165113.7,ENSMUST00000045180.13,ENSMUST00000172073.7 \\
-			6 & App & 118 & 8 & 19 & 91 & ENSMUST00000227654.1,ENSMUST00000228375.1,ENSMUST00000227723.1,ENSMUST00000226801.1,ENSMUST00000005406.11,ENSMUST00000227990.1,ENSMUST00000227021.1,ENSMUST00000226232.1 \\
-			7 & Abca7 & 20 & 2 & 12 & 6 & ENSMUST00000132517.7,ENSMUST00000171637.7 \\
-			8 & Ptk2b & 87 & 5 & 21 & 61 & ENSMUST00000136216.7,ENSMUST00000022622.13,ENSMUST00000089250.8,ENSMUST00000178730.7,ENSMUST00000111121.1 \\
-			9 & Ank1 & 9 & 6 & 3 & 0 & ENSMUST00000118733.7,ENSMUST00000173248.7,ENSMUST00000110688.8,ENSMUST00000141784.8,ENSMUST00000121075.7,ENSMUST00000033947.14 \\
-			10 & Fyn & 29 & 3 & 8 & 18 & ENSMUST00000136659.1,ENSMUST00000099967.9,ENSMUST00000063091.12 \\
-			11 & Clu & 63 & 1 & 11 & 51 & ENSMUST00000022616.13 \\
-			12 & Cd33 & 12 & 1 & 7 & 4 & ENSMUST00000205503.1 \\
-			13 & Fus & 25 & 4 & 10 & 11 & ENSMUST00000205261.1,ENSMUST00000128851.7,ENSMUST00000174196.7,ENSMUST00000106251.9 \\
-			14 & Picalm & 35 & 8 & 13 & 14 & ENSMUST00000207484.1,ENSMUST00000208730.1,ENSMUST00000208742.1,ENSMUST00000207225.1,ENSMUST00000208089.2,ENSMUST00000207084.1,ENSMUST00000049537.8,ENSMUST00000209068.1 \\
-			15 & Snca & 24 & 3 & 3 & 18 & ENSMUST00000114268.4,ENSMUST00000203177.1,ENSMUST00000163779.7 \\
-			16 & Apoe & 55 & 6 & 2 & 47 & ENSMUST00000174064.8,ENSMUST00000207525.1,ENSMUST00000174191.1,ENSMUST00000173739.7,ENSMUST00000174710.1,ENSMUST00000172983.7 \\
-			17 & Trpa1 & 2 & 1 & 1 & 0 & ENSMUST00000041447.4 \\
-			18 & Rhbdf2 & 3 & 1 & 2 & 0 & ENSMUST00000103029.9 \\
-			19 & Trem2 & 15 & 3 & 2 & 10 & ENSMUST00000132340.1,ENSMUST00000024791.14,ENSMUST00000113237.3 \\
-			20 & Vgf & 5 & 2 & 0 & 3 & ENSMUST00000187382.1,ENSMUST00000041543.8 \\ \bottomrule
-		\end{tabular}
-	\end{table}
-\end{landscape}
+\begin{figure}[htp]
+	\centering
+	\vspace{20pt}
+	\includegraphics[page=4,trim={0 17cm 0 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_ppt.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Total number of transcripts detected from Iso-Seq and ONT targeted sequencing]%
+	{\textbf{Total number of transcripts detected from Iso-Seq and ONT targeted sequencing}. Shown is a Venn diagram of the total number of AD-associated transcripts (20 target genes) detected in Iso-Seq (shaded red) and ONT (shaded blue) targeted datasets. "ONT filtered" transcripts refer to the subset of ONT transcripts that were retained after \textit{TALON} filtering (minimum 2 reads in at least 2 samples). The green dash refers to the subset of transcripts from ONT and Iso-Seq targeted datasets taken further for downstream annotation and quantification analysis}
+	\label{fig:ont_isoseq_venn}
+\end{figure}
 
-\subsection{ONT achieves significantly deeper sequencing coverage than Iso-Seq with enrichment of longer transcripts}
-A total of XX transcripts were identified after enrichment of 20 AD-associated genes followed by nanopore sequencing (median = XX, range = XX - XX) with the majority of transcripts detected as NIC. Further filtering of novel transcripts by expression (minimum 2 reads in 2 samples) reduced the total number of transcripts by XX fold (n = XX, median = XX, range = XX - XX), suggesting that a significant number of ONT reads were only detected once and are likely to be technical artefacts. Nonetheless, there was still significantly more transcripts detected across all the genes compared to Iso-Seq (n = XX transcripts), despite sequencing fewer samples (n = 18 samples). 
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=4,trim={0 0cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Comparison of the length, expression and exon number of common vs unique isoforms detected from targeted transcriptome profiling]%
+	{\textbf{Isoforms detected in both Iso-Seq and ONT targeted dataset are more abundant, and longer with more exons than isoforms unique to ONT dataset}. \textit{Caption continues on the following page.}}
+	\label{fig:ontvsisoseq_description}
+\end{figure}
+\begin{figure}[t]
+	\captionsetup{width=0.95\textwidth}
+	\contcaption{Shown are box-plots of the \textbf{A)} expression, \textbf{C)} length and \textbf{E)} exon number of transcripts annotated to AD-associated genes (target genes) that were either detected in both Iso-Seq and ONT targeted datasets, or unique to the Iso-Seq (n = 24 samples) and ONT dataset (n = 16 samples). Further shown are correlations of the \textbf{B)} expression, \textbf{D)} length and \textbf{F)} and exon number of the common transcripts that were detected in both datasets. The Iso-Seq and ONT transcript expression refer to the respective full-length read count for the associated isoform.}%
+\end{figure}
 
-Comparison of the two datasets using \textit{Gffcompare} revealed that the vast majority of Iso-Seq derived transcripts were also detected in ONT nanopore sequencing (n = XX transcripts, XX\%). Conversely, only a small proportion of filtered ONT-transcripts were detected in Iso-Seq (n = XX transcripts, XX\%). Further examination of these unique ONT-derived transcripts revealed them to be more lowly-expressed and longer with more exons than the commonly-detected ONT-derived transcript, demonstrating ONT superior sequencing depth and length compared to Iso-Seq. Furthermore, the vast majority of ONT-derived transcripts were supported by matched short-read RNA-Seq data (support is defined by all splice junctions supported by more than 1 RNA-Seq read). Examination of these novel transcripts not supported by RNA-Seq revealed them to be less abundant (median expression = XX FL reads) compared to those supported by RNA-Seq (median expression = XX FL reads). However, no significant difference in the number of transcripts located to 50bp of CAGE peak was found (Fisher's exact test: XXX), highlighting the power of targeted sequencing for detection of rare, novel isoforms. 
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=5,trim={0 0cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[]%
+	{\textbf{ }. .}
+	\label{fig:commonvsunique_description}
+\end{figure}
+\begin{figure}[t]
+	\captionsetup{width=0.95\textwidth}
+	\contcaption{}%
+\end{figure}
 
+
+\begin{table}[!hp]
+	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[Relationship between the number of isoforms from targeted datasets and genomic features]%
+	{\textbf{Relationship between the number of isoforms from targeted datasets and genomic features}. Shown is a table of the correlation of the number of isoforms from the targeted dataset with the number of reference isoforms, gene length, gene expression, length and exon number of the longest transcript. The merged dataset refer to the subset of transcripts encapsulated by the green dash line in \cref{fig:ont_isoseq_venn}. )}
+	\label{tab:isoformnum_corr}	
+	\begin{tabular}{cccc}
+		\hline
+		\multirow{2}{*}{Features} & \multicolumn{3}{c}{Total number of isoforms (AD-associated target genes)} \\ \cline{2-4} 
+		& Iso-Seq & ONT & Merged \\ \cline{1-4} 
+		Gencode Isoform Number & 0.57 (0.008) & 0.37 (0.109)     & 0.43 (0.061)     \\
+		Gene Length            & 0.41 (0.072) & -0.02 (0.938)    & -0.08 (0.745)    \\
+		Transcript Length      & 0.3 (0.198)  & -0.4 (0.08314)   & -0.45 (0.046)    \\
+		Gene Expression        & 0.68 (0.001) & 0.86 (9.620e-07) & 0.84 (4.416e-06) \\
+		Exon Number            & 0.11 (0.643) & -0.4 (0.080)     & -0.51 (0.020)    \\ \hline
+	\end{tabular}
+\end{table}
+
+\clearpage
 \subsection{Merged Annotations}
+\begin{itemize}
+	\item Despite characterised with 27 exons, Trpa1 only detected with the two isoforms that are known and XX novel isoforms. Of note, Trpa1 is lowly expressed but low isoform number unlikely to reflect sequencing coverage given dataset reached saturation. Similarly Rhbdf2, despite characterised with 20 exons, only detected relatively few isoforms compared to some of the other target genes. Or Abca1, with 50 exons but similarly relatively few isoforms (majority are from truncated ONT transcripts likely to be partial degraded artifacts)
+	\item Of note, with Rhbdf2, only 1 of the 4 known transcripts were detected in different variation, possibly reflecting the low gene expression. 
+	\item Sorl1 has 48 exons, but only 1 long known transcript
+	\item Ank1: long transcripts were only detected in ONT and not Iso-Seq targeted transcriptome, a likely reflection of degradation (given that the longer transcript was detected in the whole transcriptome profiling). Nonetheless, there appears to be an enrichment of the shorter transcripts with the highest expression in the shortest non-coding transcript (which is detected in both PacBio and ONT as the most highly expressed in either platform?). Unable to rule out that the transcript limit could be due to a technical limitation to sequence longer transcripts.  
+	\item Conversely, Vgf only 5 exons, though the 4 of the 5 known isoforms only have two exons. 
+ 	\item Abca1, Abca7 A lot of partial products reflecting limitation of long-range PCR. 	
+ 	\item Relationship between length of 3'UTR and variation? Sorl1 many transcripts with set lengths of 3'UTR, Cd33 also has long UTR but no skipping or mismatch. Despite, only two exons, complexity of Vgf driven by the long UTR and different variations of the 3'UTR 
+ 	\item Complexity of transcripts from mismatch and match of different ends i.e. Trem2, Apoe
+ 	\item Fus has a long UTR but only one transcript with this long UTR 	
+ 	\item exon skipping of the constitutive exons vs alternative exons?
+\end{itemize}
+% Note: Crosstalk between Cd33 and Trem2 in 5xFAD
+
+%% Differential expression in microglia, cross-reference results: https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-020-01099-x
+
+\subsection{Interesting Gene observations}
+\begin{itemize}
+	\item \textit{Abca7} A lot of IR at the end of the transcripts but do not shift the open reading frame i.e. not NMD; Also exon skipping but appear exclusive to either one of two exons, also supported by both technologies 
+	\item \textit{Cd33}: Despite long UTR, no skipping or mismatch observed, rather isoform complexity is driven by intron retention from exon 5 onwards. Also novel exon of XX bp --> functional implications?
+	\item \textit{Sorl1}: Does not have many ES transcripts despite the number of exons
+	\item \textit{Trem2}: Skipping of Exon 2 are all non-coding, shifts the ORF? A lot of variation of Exon2. Presence of Mismatch and match transcripts from alternative exon 1. Upstream novel exons --> functional implications. Require qPCR validation (discussion) 
+	\item \textit{Vgf} is a neurosecretory protein that is cleaved into different peptides --> variation of the 3'UTR reflect the generation of different peptides. Of note, observe transcripts without the 5'end of the UTR are not coding, suggesting shift ORF. NE first exon --> implications 
+	\item Fus ---> Intron Retention specific to exons 4, exact match with other exons. The full-length transcript most dominant with all exons expressed, rather than the shorter transcripts and no exon skipping observed. 
+	\item Bin1 IR and ES occurs mostly at the non-constitutively spliced alternative exons, though also in the constitutive exons. 
+	\item Ptk2b IR heavily supported by both PacBio and ONT 
+	\item Snca --> long 3'UTR in some transcripts, functional implications? new motifs or binding sites?
+	\item Clu --> A lot of transcripts with IR AP of a specific novel exon
+	\item Apoe; A5A3 truncation of exon 2 observed in several transcripts
+\end{itemize} 
 
 \subsubsection{Trem2}
 A total of XX \textit{Trem2} isoforms were detected, with the majority of isoforms containing canonical splice sites (GT-AG or GC-AC) (n = XX, XX\%). Approximately half of these isoforms have all five exons, differing in the use of alternative 5' start and 3' end sites. The remaining isoforms were characterised with complex alternative splicing with XX observed with exon skipping and XX with intron retention. Exon X was observed to be skipped the most (n = XX isoforms), followed by Exon X (n = XX isoforms), and Exon X (n = XX isoforms). "ORF prediction shows skipping of such exons shortens the ORF but maintains the reading frame". 
@@ -434,38 +601,6 @@ Using the merged full-length read count as a proxy for isoform abundance, one of
 
 %ORF prediction of these isoforms with novel exons maintain ORF
 
-
-\iffalse
-% plot for technical artefacts
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[page=5,trim={0 12cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
-	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
-\end{figure}
-\fi
-   
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[page=3,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex]%
-	{\textbf{Wide isoform diversity observed in AD-associated genes with many novel isoforms detected}. Shown is the number of isoforms detected per target gene, classified by novel and known, after sequential processing and filtering in the bioinformatics Iso-Seq pipeline. Novel isoforms refer to isoforms that are not known in current existing annotations.}
-	\label{fig:isoseq_targeted_finalnumberiso}
-\end{figure}
-
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[page=4,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
-	\end{center}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Classification of novel and known isoforms from Targeted Sequencing in mouse cortex]%
-	{\textbf{Majority of the novel isoforms detected of the target genes has at least one novel donor or acceptor splice sites}. Shown is the number of isoforms detected per target gene, further classified into FSM (Full Splice Match), ISM (Incomplete Splice Match), NIC (Novel In Catalogue) and NNC (Novel Not in Catalogue).}
-	\label{fig:isoseq_targeted_finalnumberiso_sub}
-\end{figure}
 
 \newpage
 \subsection{Quantitative analysis}
