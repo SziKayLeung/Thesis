@@ -41,40 +41,143 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 		\small %smaller font
 		\setlength\tabcolsep{2pt} %reduced margin size in table
 		\renewcommand{\arraystretch}{1}
-		\begin{longtable}[c]{p{1cm}p{2cm}p{3cm}p{14cm}p{2cm}p{2cm}}
+		\begin{longtable}[c]{p{1cm}p{2cm}p{4cm}p{16cm}p{1cm}p{1cm}}
 			\caption[The role and altered splicing patterns of the target genes in AD pathology]%		
-			{\textbf{The role and altered splicing patterns of the target genes in AD pathology}. }
+			{\textbf{The role and altered splicing patterns of the target genes in AD pathology}. Abca1 - ATP-Binding Cassette Sub-Family A Member 1, Abca7 - ATP-binding cassette sub-family A member 7, App - Amyloid-beta precursor protein, Bin1 - Bridging Integrator 1, CSF - Cerebrospinal fluid,  Fus - Fused in Sarcoma/Translocated in Liposarcoma, KPI - Kunitz-type protease inhibitor domain, Lof - Loss of Function, Picalm - Phosphatidylinositol binding clathrin assembly protein, Rhbdf2 - Rhomboid 5 Homolog 2, Sorl1 - Sortilin-related receptor 1, Trem2 - Triggering receptor expressed on myeloid cells 2, Trpa1 - Transient receptor potential ankyrin 1}
 			\label{tab: TargetGenes_LitReview}\\
 			
 			\toprule
 			\multicolumn{1}{c}{Gene} &
 			\multicolumn{1}{c}{Pathway} &
 			\multicolumn{1}{c}{Function} &
-			\multicolumn{1}{c}{Role and upregulated splicing AD} &
+			\multicolumn{1}{c}{Role and Relevance in AD} &
 			\multicolumn{1}{c}{Expression} & 
-			\multicolumn{1}{c}{Isoform Number and length} \\* \midrule
-			\endfirsthead
-			%
-			\endhead
-			%
+			\multicolumn{1}{c}{Length} \\* \midrule
+			\endfirsthead	%
+			\endhead%
 			\bottomrule
-			\endfoot
-			%
-			\endlastfoot
-			%		
-			\centering Twine et al. (2011)\cite{Twine2011} &
-			\centering 3 AD, 33 Controls\newline Total, frontal \& temporal lobe &
-			\centering RNA-Seq &
-			\tabitem \textit{APOE} was downregulated in AD temporal lobe. Identified 3 isoforms with different TSS and isoform expression: ENST00000252486 and ENST00000446996 from TSSA were downregulated (3.09-fold) whereas ENST00000425718 from TSSB was upregulated (26.5-fold) \newline
-			\tabitem \textit{Ank1} was downregulated in AD total brain \\
+			\endfoot%
+			\endlastfoot%		
+			\centering \textit{Abca1} &
+			\centering Lipid Homeostasis  &
+			\centering Transmembrane protein for cholesterol efflux to apolipoproteins \newline &
+			\tabitem\textbf{Genetics}: Identification of rare non-synonymous variants in controls vs AD cases, suggestive of a protective effect. LoF mutation Asp1800His (N1800H) is strongly associated with increased AD risk \cite{Nordestgaard2015} \newline
+			\tabitem \textbf{Pathology}: ABCA1 expression linked to ApoE isoform-specific and A$\beta$ clearance; ABCA1 deletion in amyloid mouse model resulted in decreased ApoE and increased A$\beta$ accumulation, whereas overexpression prevented A$\beta$ aggregation\cite{Koldamova2014}. ABCA1 haploinsufficiency in APP/PS1 mice significantly exacerbated memory deficits and reduced A$\beta$ clearance in Apoe-E4 expressing mice but not in Apoe-E3\cite{Fitz2012}.\ \\
 			\hdashline[0.5pt/5pt]
 			
+			\centering \textit{Abca7} &
+			\centering Lipid Homeostasis  &
+			\centering Transmembrane protein for cholesterol efflux to apolipoproteins  &
+			\tabitem \textbf{Genetics} Rare LoF variants associated with aberrant mRNA splicing; this includes generation of intron-retained transcripts predicted for NMD\cite{Steinberg2015,Cuyvers2015,Guennec2016};  aberrant 14bp extension of Exon 41 in human AD brains\cite{Steinberg2015,Grear2009}; 44bp deletion predicting a frameshift mutation from rs142076058 SNP \cite{Cukier2016} \\
+			\hdashline[0.5pt/5pt]
 			
-			\centering Castanho et al. (2020) \cite{Castanho2020} &
-			\centering rTg4510 (64 TG, 64 WT, 2 - 8 months) \newline Entorhinal Cortex &
-			\centering RNA-Seq &
-			\tabitem Genotype-associated differences in rTg4510 with 1,762 genes differentially expressed, including \textit{Gfap, Cd68, Itgax, Clec7a} and others robustly associated with FAD (\textit{App, Trem2, Clu, Picalm, Cd33})  
-			\tabitem Differentially-expressed genes were enriched in immune response (upregulation of \textit{C1qa, C1qb})\\* \bottomrule
+			\centering \textit{Ank1} &
+			\centering Epigenetics  &
+			\centering Scaffolding proteins for linking membrane proteins to cytoskeleton &
+			\tabitem \textbf{Epigenetics}: AD-associated \textit{ANK1} hypermethylation in the entorhinal cortex \cite{Smith2019, Lunnon2014} \newline 
+			\tabitem \textbf{Expression}: 4-fold increase in mRNA expression in microglia, but not in neurons or astrocytes (AD postmortem brains), suggesting an immune-based function \cite{Mastroeni2017}  \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Apoe} &
+			\centering Lipid Homeostasis  &
+			\centering Lipoprotein-mediated lipid transport  &
+			\tabitem \textbf{Genetics}: \textit{APOE}$\epsilon$2 and $\epsilon$4 are associated with beneficial and detrimental AD risk, respectively \newline
+			\tabitem \textbf{Pathology}: APOE exhibit isoform-dependent A$\beta$ binding affinity and clearance of A$\beta$; astrocytic overexpression of \textit{APOE $\epsilon$4} expression (but not \textit{APOE $\epsilon$2} or \textit{$\epsilon$3}) increased phosphorylation and aggregation of tau oligomers in P301L mouse model\cite{Jablonski2021} \newline
+			\tabitem \textbf{Splicing}: All apoE isoforms consist of 299 amino acids differing only at two key residues (Cys-112, Arg-158) \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{App} &
+			\centering Amyloid pathology  &
+			\centering Transmembrane glycoprotein  &
+			\tabitem \textbf{Genetics}: Identified causative mutations for EOAD. \newline
+			\tabitem \textbf{Pathology}: Posited in the amyloid cascade hypothesis, cleavage of APP produces longer A$\beta$ that accumulate and form insoluble fibrils and plaques characteristic of AD \newline
+			\tabitem \textbf{Isoform Analysis}: Conflicting results of isoform-specific expression in AD; expression of KPI-containing APP isoforms is reported to be upregulated in AD brain and associated with A$\beta$ accumulation\cite{Zhang2011}, whereas another study reported no differential isoform expression in AD frontal lobe vs controls\cite{Panegyres2000}. \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Bin1} &
+			\centering Endocytosis  &
+			\centering Adaptor protein &
+			\tabitem \textbf{Genetics, Epigenetics}: GWAS AD-associated variants do not alter coding sequence but localised to (presumed) regulatory region upstream of the promoter; rs59335482 SNP associated with increased \textit{BIN1} expression in AD brain\cite{Chapuis2013}. Identified causative mutations for EOAD.  EWAS studies reveal differential methylation of \textit{BIN1} in AD.  \newline
+			\tabitem \textbf{Pathology}: Rather than regulating A$\beta$ generation, BIN1 may be involved in altering tau clearance; no change in A$\beta$ deposition was observed in \textit{BIN1}-haploinsufficient 5xFAD \cite{Andrew2019} and BIN1 levels positively correlated with NFT\cite{Crotti2019}\newline 
+			\tabitem \textbf{Splicing}: Decreased expression of BIN1 isoform 1 (with exon 7) was significantly associated with NFT accumulation and AD-related traits in AD DLPFC\cite{Taga2020}. Conversely, increased expression of isoform 9 correlated with increased expression of astrocytic and microglial marker\cite{Taga2020}. Overexpression of BIN1 isoform 9, but not isoform 1, favoured tau release through extracellular vesicles and exacerbated tau pathology \cite{Crotti2019}. \newline
+			\tabitem In contrast, another study reported no change in neuronal BIN1 isoform 1 expression in AD brain, but an increase in phospho-BIN1(T348):BIN1 ratio, postulating that increased BIN1 T348 phosphorylation is involved in protective effect of interacting and subsequently blocking accumulation of phosphorylated tau\cite{Sartori2019} \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Cd33} &
+			\centering Immune  &
+			\centering Transmembrane receptor for cell signalling &
+			\tabitem \textbf{Genetics}: Multiple AD-associated SNP identified in GWAS, including  rs12459419\cite{Naj2011,Hollingworth2011,Bertram2008} located within exon 2, encoding the IgV domain involved in sialic acid binding\cite{Malik2013}. Risk variant is associated with 7-fold increase in CD33 monocyte expression due to exon 2 inclusion, resulting in increased expression of full-length CD33 isoform and repressed phagocytosis)\cite{Raj2014} 
+			\tabitem \textbf{Pathology}: CD33 inactivation in APP/PS1 and 5xFAD result in reduced A$\beta$ \textsubscript{42} production and propensity for plaque formation with enhanced phagocytosis \cite{Griciuc2013}. Differential gene expression in microglia lacking Cd33 depended on the presence of TREM2, suggesting TREM2 acts downstream of CD33\cite{Griciuc2019} 			
+			\tabitem \textbf{Splicing}: Short CD33 isoform preferentially encoded by the AD-protective variant (rs12459419) revealed to have a gain of function variant that enhances A$\beta$ phagocytosis \cite{Bhattacherjee2021}\newline		
+			\tabitem \textbf{Expression}: CD33 expression is elevated in the AD microglia and infiltrating macrophages\cite{Griciuc2013} \\
+			\hdashline[0.5pt/5pt]	
+			
+			\centering \textit{Fus} &
+			\centering TDP-43 pathology  &
+			\centering RNA-binding protein  &			
+			\tabitem \textbf{Pathology}: Disease-associated \textit{FUS} mutations result in altered alternative splicing of tau with disproportional increase of the 4R/3R-tau ratio (splicing ratio of MAPT exon 10+/exon 10- (Ex10/Ex10-)), and eventually neurodegeneration in ALS/FTLD-FUS, ALS/FTLD-TDP but not in AD\cite{Ishigaki2020} \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Fyn} &
+			\centering Tau pathology  &
+			\centering Tyrosine protein kinase for cell signalling &			
+			\tabitem \textbf{Pathology}: Fyn directly phosphorylates tau tyrosine residues and  interacts with tau (proline rich region) through the SH3 domain \cite{Bhaskar2010}. \newline 
+			\tabitem Fyn overexpression in hAPP mice accelerated synaptic loss and reduced memory retention\cite{Chin2005} \newline
+			\tabitem \textbf{Splicing}: FynB and FynT (Exon 7 skipping), predominantly expressed in the brain and haemapoietic cells respectively, have isoform-specific roles; FynT exhibited enhanced kinase activity due to a different linker region. \newline
+			\tabitem \textbf{Expression}: Increased Fyn expression in AD post-mortem brains\cite{Lee2016b} and in P301S TG mice\cite{Low2021}, with upregulation of FynT expression and isoform switching (reduced expression of FynB)\cite{Lee2016b} \\
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Picalm} &
+			\centering Endocytosis  &
+			\centering Adaptor protein involved in clathrin-mediated endocytosis &	
+			\tabitem \textbf{Genetics}: Identified various SNPs from GWAS studies, including protective rs3851179 SNP associated with modest increase in expression. Evidence of link between genetics and splicing; rs592297 SNP, located in exon 5, is associated to skipping of exons 2–4\cite{Parikh2014} \newline
+			\tabitem \textbf{Pathology}: Picalm haploinsufficiency in tau mouse model resulted in increased \& accelerated tau phosphorylation, and autophagy deficits \cite{Ando2020}. Increase of Picalm found to reverse disruption of APOE4 on early endocytosis  \cite{Narayan2020} \newline
+			\tabitem \textbf{Splicing, Expression}: PICALM, especially the longest isoform, was significantly decreased in AD post-mortem brain tissues \cite{Ando2016} \\
+			\hdashline[0.5pt/5pt]					
+			
+			\centering \textit{Rhbdf2} &
+			\centering Epigenetics  &
+			\centering Serine protease involved in TNF$\alpha$ secretion &
+			\tabitem \textbf{Epigenetics}: Meta-analysis of AD EWAS studies revealed the most significant differentially-methylated region in the entorhinal cortex residing in the intron region of \textit{Rhbdf2} between exon 3 and 4 \cite{Smith2021}, validating findings in previous studies\cite{DeJager2014, Lardenoije2019}\newline
+			\tabitem \textbf{Pathology}: Deletion of \textit{Rhbdf2} in mice inhibits releace of TNF$\alpha$, a major inflammatory cytokine involved with AD neuroinflammation\cite{Levy2020}\\
+			\hdashline[0.5pt/5pt]	
+			
+			\centering \textit{Sorl1} &
+			\centering Endocytosis, Lipid Homeostasis  &
+			\centering APOE receptor &
+			\tabitem \textbf{Genetics}: Multiple AD-associated rare loss-of-function variants in SORL1 including nonsense, frameshift and splice site mutations \cite{Fernandez2016} \newline
+			\tabitem \textbf{Pathology}: Sorl1-deficient hiPSC neurons exhibit early endosome enlargement not seen in microglia, accompanied with altered localisation of APP in early endosome, suggesting altered APP trafficking \cite{Knupp2020}\newline
+			\tabitem \textbf{Splicing}: Observed downregulation of full-length SORL1 isoform in AD human brain whereas no change in expression isoforms with exon 2 skipping resulting in a deletion of 38 amino acids. Isoform with 92bp exon 19 skipping results in shift of coding reading frame and premature stop codon\cite{Grear2009}. Identified novel exon (E38b) located between exons 38 and 39, with highest expression of E38b-containing transcripts detected in cerebellum\cite{Monti2021} \newline
+			\tabitem \textbf{Expression}: Total SORL1 expression is reduced in AD, and in rTg4510\cite{Sobue2021}. Decreased transcript expression of truncated SORL1 isoform in AD cerebellum \cite{Monti2021}\\
+			\hdashline[0.5pt/5pt]	
+						
+			\centering \textit{Trem2} &
+			\centering Immune  &
+			\centering Receptor for cell signalling pathways\newline &
+			\tabitem \textbf{Pathology}: TREM2 is essential for microglia recruitment and phagocytosis of A$\beta$ plaques; 5xFAD mice TREM2-deficient or -haploinsufficient exhibit reduction of plaque-associated microglia and defective A$\beta$ removal\cite{Wang2015a}. Can bind to ApoE and A$\beta$ \newline
+			\tabitem \textbf{Genetics}: Most LOAD-associated risk variants are located in exon 2 (Ig-like V domain), which do not impact expression or folding but reduce ligand binding affinity\cite{Kober2016}, modulate TREM2 signalling and result in partial LoF\cite{Guerreiro2013a};  rs75932628 SNP (encoding p.R47H) induces a small conformational change resulting in decreased stability\cite{Kober2016}. \newline
+			\tabitem \textbf{Expression}: Increased mRNA expression in TgCRND8 Tg mice\cite{Guerreiro2013a} \& in Tg4510 microglia \cite{Sobue2021} \newline
+			\tabitem \textbf{Splicing}: Identification of novel isoforms lacking exon 2 (10\% of Trem2 mRNA)\cite{Kiianitsa2021}; Human isoform (ENST00000373122) expression was lower in TREM2- p.R62H carriers than in AD cases, whereas expression of canonical transcript (ENST00000373113) was two fold higher\cite{Del-Aguila2019} \\
+			\hdashline[0.5pt/5pt]
+						
+			\centering \textit{Trpa1} &
+			\centering Synaptic Signalling  &
+			\centering Transmembrane calcium channel for cell signalling pathways\newline &
+			\tabitem \textbf{Pathology}: TRPA1 induced astrocyte hyperactivity, whereas inhibition of channel activity normalised astrocyte activity in APP/PS1-21 mice and reduced plaque expansion\cite{Lee2016a}. Deletion of TRPA1 in mice showed reduced morphological damage and memory loss after A$\beta$ injection, implicating detrimental role of TRPA1 receptors in AD\cite{Payrits2020} \newline
+			\tabitem \textbf{Expression}: Higher TRPA1 protein level in hippocampal astrocytes of APP/PS1 Tg mice than WT\cite{Lee2016a} \\
+			\hdashline[0.5pt/5pt]	
+			
+			\centering \textit{Vgf} &
+			\centering Synaptic Signalling  &
+			\centering Neurosecretory protein cleaved into peptides \newline &
+			\tabitem \textbf{Pathology}: \textit{Vgf} overexpression rescued cognitive deficits in 5xFAD mice\cite{Bai2020}. 9 VGF peptides were repeatedly found to decrease in AD CSF samples vs controls, likely representing a reliable diagnostic biomarker \cite{VanSteenoven2019}. \newline
+			\tabitem \textbf{Expression}: \textit{VGF} was the most significantly downregulated gene in AD human post-mortem brain tissues vs controls\cite{Beckmann2020},whereas \textit{Vgf} expression was stable between 5xFAD and WT\cite{Bai2020} \\
+			\hdashline[0.5pt/5pt]		
+			
+			\centering  &
+			\centering &
+			\centering  &
+			\tabitem \\* \bottomrule
 		\end{longtable}
 	\end{landscape}
 \end{changemargin}
@@ -154,26 +257,26 @@ Processing of raw reads were performed using the Iso-Seq bioinformatics pipeline
 		Strand &
 		\begin{tabular}[c]{@{}c@{}}Full\\  Region\\  (bp)\end{tabular} &
 		\begin{tabular}[c]{@{}c@{}}Exons inc UTR \\ (bp)\end{tabular} \\ \midrule
-		ABCA1  & 56         & chr  4 : 53030670 -   53160014    & - & 129,107 & 10,260 \\
-		ABCA7  & 47         & chr  10 : 79997615 -   80015572   & + & 17,958  & 6,594  \\
-		ANK1   & 52         & chr  8 : 22974836 -   23150497    & + & 175,662 & 9,018  \\
-		APOE   & 5          & chr  7 : 19696125 -   19699285    & - & 2,923   & 1,251  \\
-		APP    & 20         & chr  16 : 84954317 -   85173826   & - & 219,272 & 3,357  \\
-		BIN1   & 20         & chr  18 : 32377217 -   32435740   & + & 58,524  & 2,455  \\
-		CD33   & 9          & chr  7 : 43528610 -   43533290    & - & 5,716   & 2,571  \\
-		CLU    & 9          & chr  14 : 65968483 -   65981545   & + & 13,063  & 1,808  \\
-		FUS    & 16         & chr  7 : 127967479 -   127982032  & + & 14,554  & 1,845  \\
-		FYN    & 18         & chr  10 : 39369799 -   39565381   & + & 195,583 & 3,692  \\
-		MAPT   & 23         & chr  11 : 104231436 -   104332096 & + & 100,661 & 5,387  \\
-		PICALM & 24         & chr  7 : 90130232 -   90209447    & + & 79,216  & 4,174  \\
-		PTK2B  & 32         & chr  14 : 66153138 -   66281171   & - & 127,796 & 4,034  \\
-		RHBDF2 & 21         & chr  11 : 116598082 -   116627138 & - & 28,855  & 3,934  \\
-		SNCA   & 7          & chr  6 : 60731454 -   60829974    & - & 98,283  & 1,463  \\
-		SORL1  & 48         & chr  9 : 41968370 -   42124408    & - & 155,801 & 6,938  \\
-		TARDBP & 15         & chr  4 : 148612263 -   148627115  & - & 14,615  & 7,454  \\
-		TREM2  & 5          & chr  17 : 48346401 -   48352276   & + & 5,876   & 1,146  \\
-		TRPA1  & 28         & chr  1 : 14872529 -   14918981    & - & 46,215  & 4,263  \\
-		VGF    & 9          & chr  5 : 137030295 -   137033351  & + & 3,057   & 2,553  \\
+		\textit{Abca1}  & 56         & chr  4 : 53030670 -   53160014    & - & 129,107 & 10,260 \\
+		\textit{Abca7}  & 47         & chr  10 : 79997615 -   80015572   & + & 17,958  & 6,594  \\
+		\textit{Ank1}   & 52         & chr  8 : 22974836 -   23150497    & + & 175,662 & 9,018  \\
+		\textit{Apoe}   & 5          & chr  7 : 19696125 -   19699285    & - & 2,923   & 1,251  \\
+		\textit{App}    & 20         & chr  16 : 84954317 -   85173826   & - & 219,272 & 3,357  \\
+		\textit{Bin1}   & 20         & chr  18 : 32377217 -   32435740   & + & 58,524  & 2,455  \\
+		\textit{Cd33}   & 9          & chr  7 : 43528610 -   43533290    & - & 5,716   & 2,571  \\
+		\textit{Clu}    & 9          & chr  14 : 65968483 -   65981545   & + & 13,063  & 1,808  \\
+		\textit{Fus}    & 16         & chr  7 : 127967479 -   127982032  & + & 14,554  & 1,845  \\
+		\textit{Fyn}    & 18         & chr  10 : 39369799 -   39565381   & + & 195,583 & 3,692  \\
+		\textit{Mapt}   & 23         & chr  11 : 104231436 -   104332096 & + & 100,661 & 5,387  \\
+		\textit{Picalm} & 24         & chr  7 : 90130232 -   90209447    & + & 79,216  & 4,174  \\
+		\textit{Ptk2b}  & 32         & chr  14 : 66153138 -   66281171   & - & 127,796 & 4,034  \\
+		\textit{Rhbdf2} & 21         & chr  11 : 116598082 -   116627138 & - & 28,855  & 3,934  \\
+		\textit{Snca}   & 7          & chr  6 : 60731454 -   60829974    & - & 98,283  & 1,463  \\
+		\textit{Sorl1}  & 48         & chr  9 : 41968370 -   42124408    & - & 155,801 & 6,938  \\
+		\textit{Tardbp} & 15         & chr  4 : 148612263 -   148627115  & - & 14,615  & 7,454  \\
+		\textit{Trem2}  & 5          & chr  17 : 48346401 -   48352276   & + & 5,876   & 1,146  \\
+		\textit{Trpa1}  & 28         & chr  1 : 14872529 -   14918981    & - & 46,215  & 4,263  \\
+		\textit{Vgf}    & 9          & chr  5 : 137030295 -   137033351  & + & 3,057   & 2,553  \\
 		& Total: 464 &                                   &   &         &        \\ \bottomrule
 	\end{tabular}
 \caption[Mouse probes for enrichment of AD-associated target genes]%
@@ -243,8 +346,7 @@ The Iso-Seq targeted dataset (n = 24 samples) was examined with other datasets u
 For a comprehensive characterisation of the AD-associated genes enriched in the mouse transcriptome, the Iso-Seq and ONT datasets were merged using \textit{Gffcompare}. In order to retain both filtered ONT-derived transcripts (minimum 2 reads in at least 2 samples) and ONT-derived transcripts that did not pass through filtering but were also detected using the Iso-Seq platform, a custom python script was written to parse the output from \textit{Gffcompare} to identify Iso-Seq and ONT-derived transcripts with a complete exact match (defined by the class code "="), unique filtered ONT-derived and unqique Iso-Seq-derived transcripts. An output file of the abundance was also generated for each transcript and sample, using the counts either provided from \textit{Cupcake} for Iso-Seq-derived-transcripts, \textit{TALON} for ONT-derived-transcripts or the summation of both for transcripts that were commonly detected in both technologies. The merged dataset was then annotated with \textit{SQANTI3} in combination with mouse reference gene annotations (mouse GENCODE, vm22), FANTOM5 CAGE peaks and \textit{STAR}-aligned RNA-Seq junctions, and were classified as either FSM, ISM, NIC, NNC, antisense, fusion, and intergenic (described in \cref{section: sqanti_annotations}). Transcripts classified as ISM with 3'fragment were assumed to be partial 5'RNA degraded products and discarded. ORFs were predicted using the CPAT program (v3.0.2) using all default parameters and transcripts were predicted as protein-coding if the coding potential score was >0.44 for mouse (CPAT recommended parameters)  
 
 \subsection{Characterisation of AS events and transcript visualisation}
-To date, current tools for assessing alternative splicing events were developed for short-read RNA-Seq data and fail to capture the connectivity and complexity of long-read-derived isoforms, particularly in targeted profiling of the transcriptome with deep sequencing coverage. A custom python script was therefore written to accurately assess the occurrence of alternative splicing events based on splice junction coordinates of transcript exons relative to exons of all known GENCODE transcripts (mm10). Common alternative splicing events such as alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping were assessed. Furthermore, other regulatory mechanisms such as alternative transcription initiation defined by alternative promoter/TSS, alternative termination likewise defined by alternative TTS, and presence of novel exons were evaluated using this custom script.
-
+To date, current tools for assessing alternative splicing events were developed for short-read RNA-Seq data and fail to capture the connectivity and complexity of long-read-derived isoforms, particularly in targeted profiling of the transcriptome with deep sequencing coverage. A custom python script ("annotate-common-targeted-transcripts.py") was therefore developed to accurately assess the occurrence of alternative splicing events based on splice junction coordinates of transcript exons relative to exons of all known GENCODE transcripts (mm10). Notably, all the reference transcripts were "flattened" to obtain all the coordinates of known exons. Common alternative splicing events such as alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping were assessed. Furthermore, other regulatory mechanisms such as alternative transcription initiation defined by alternative promoter/TSS, alternative termination likewise defined by alternative TTS, and presence of novel exons were evaluated using this custom script.
 
 Alternative 5' and 3' splice sites were defined as splice sites differing by more than 10bp from the known splice site, and an intron was considered retained if the exon splice site differed by more than 100bp from the known splice site. Isoforms were visualised using UCSC genome browser, and were grouped by their splicing patterns to ease visualisation based on the following rank prioritisation: i) all exons with exact splice junction coordinates to know exons, ii) alternative first exons, iii) contain novel exons upstream of first exon, iv) novel exons downstream of last exon, v) characterised with intron retention, exon skipping and novel exons, vi) IR and ES, vii) novel exons within known exons, viii) IR only, ix) ES only and x) all exons with alternative 5' and 3' sites.
 
@@ -258,6 +360,26 @@ Alternative 5' and 3' splice sites were defined as splice sites differing by mor
 	{\textbf{Bioinformatics Pipeline for merging targeted Iso-Seq and ONT datasets}. Shown is a outline of the bioinformatics pipeline for processing Iso-Seq reads and ONT reads 1D reads from the targeted transcriptome profiling of the mouse cortex. 
 	}
 	\label{fig:Targeted_bioinformatics_pipeline}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=7,trim={0cm 1cm 0cm 0cm},clip,scale = 0.8]{Figures/TargetedTranscriptome_LabResults}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Characterisation of isoforms detected in targeted transcriptome profiling]%
+	{\textbf{Characterisation of isoforms detected in targeted transcriptome profiling}. 
+	}
+	\label{fig:Targeted_isoforms_annotate}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=8,trim={0cm 1cm 0cm 0cm},clip,scale = 0.8]{Figures/TargetedTranscriptome_LabResults}
+	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
+	\caption[Determining coding and NMD status]%
+	{\textbf{Determining coding and NMD status}.  
+	}
+	\label{fig:Targeted_isoforms_cpat}
 \end{figure}
 
 \newpage
@@ -497,8 +619,7 @@ However, significantly more ONT-derived Transcripts were found with TSS annotate
 
 Comparison of the two datasets using \textit{Gffcompare} revealed that the vast majority of Iso-Seq derived transcripts were also detected in ONT nanopore sequencing (n = XX transcripts, XX\%),whereas only a small proportion of filtered ONT-transcripts were detected in Iso-Seq (n = XX transcripts, XX\%). Further examination of these unique ONT-derived transcripts revealed them to be more lowly-expressed and shorter with fewer exons than the commonly-detected ONT-derived transcripts, demonstrating ONT's greater sensitivity at detecting shorter transcripts. In contrast, no difference in length or exon number was observed between the unique and commonly-detected Iso-Seq derived transcripts, suggesting that these are transcripts that were unique to the remaining samples that were not sequenced with ONT. 
 
-Finally, we compared the number of isoforms from the Iso-Seq and ONT datasets against the number of known reference isoforms, the gene length, transcript length (longest known reference isoform) and number of exons. Similar to previous findings, the number of detected isoforms in the Iso-Seq dataset was strongly correlated with gene length and the number of known associated isoforms. However strikingly, a significantly weaker correlation was observed between the number of detected isoforms in the ONT dataset with known isoform number and gene length. Given that far more novel isoforms were detected in ONT dataset with greater sequencing coverage and depth compared to Iso-Seq dataset, this suggests that gene length and number of exons are not the primary driving factors of isoform diversity in this panel of target genes. 
-
+Finally, we compared the number of isoforms from the Iso-Seq and ONT datasets against the number of known reference isoforms, the gene length, transcript length (longest known reference isoform) and number of exons. Similar to previous findings, the number of detected isoforms in the Iso-Seq dataset was strongly correlated with gene length and the number of known associated isoforms. However strikingly, a significantly weaker correlation was observed between the number of detected isoforms in the ONT dataset with known isoform number and gene length. Given that far more novel isoforms were detected in ONT dataset with greater sequencing coverage and depth compared to Iso-Seq dataset, this suggests that gene length and number of exons are not the primary driving factors of isoform diversity in this panel of target genes. Indeed, several genes harbour over 25 exons but are only characterised with relatively few exons; examples include \textit{Rhbdf2} with 20 exons and 28 transcripts, \textit{Trpa1} with 27 exons and 11 transcripts, and \textit{Abca1} with 50 exons and 61 transcripts. Conversely, \textit{Apoe} was characterised with the greatest isoform diversity with >5000 transcripts, despite only having 4 exons. 
 
 \begin{figure}[htp]
 	\centering
@@ -533,10 +654,6 @@ Finally, we compared the number of isoforms from the Iso-Seq and ONT datasets ag
 	{\textbf{ }. .}
 	\label{fig:commonvsunique_description}
 \end{figure}
-\begin{figure}[t]
-	\captionsetup{width=0.95\textwidth}
-	\contcaption{}%
-\end{figure}
 
 
 \begin{table}[!hp]
@@ -558,48 +675,388 @@ Finally, we compared the number of isoforms from the Iso-Seq and ONT datasets ag
 \end{table}
 
 \clearpage
-\subsection{Merged Annotations}
-\begin{itemize}
-	\item Despite characterised with 27 exons, Trpa1 only detected with the two isoforms that are known and XX novel isoforms. Of note, Trpa1 is lowly expressed but low isoform number unlikely to reflect sequencing coverage given dataset reached saturation. Similarly Rhbdf2, despite characterised with 20 exons, only detected relatively few isoforms compared to some of the other target genes. Or Abca1, with 50 exons but similarly relatively few isoforms (majority are from truncated ONT transcripts likely to be partial degraded artifacts)
-	\item Of note, with Rhbdf2, only 1 of the 4 known transcripts were detected in different variation, possibly reflecting the low gene expression. 
-	\item Sorl1 has 48 exons, but only 1 long known transcript
-	\item Ank1: long transcripts were only detected in ONT and not Iso-Seq targeted transcriptome, a likely reflection of degradation (given that the longer transcript was detected in the whole transcriptome profiling). Nonetheless, there appears to be an enrichment of the shorter transcripts with the highest expression in the shortest non-coding transcript (which is detected in both PacBio and ONT as the most highly expressed in either platform?). Unable to rule out that the transcript limit could be due to a technical limitation to sequence longer transcripts.  
-	\item Conversely, Vgf only 5 exons, though the 4 of the 5 known isoforms only have two exons. 
- 	\item Abca1, Abca7 A lot of partial products reflecting limitation of long-range PCR. 	
- 	\item Relationship between length of 3'UTR and variation? Sorl1 many transcripts with set lengths of 3'UTR, Cd33 also has long UTR but no skipping or mismatch. Despite, only two exons, complexity of Vgf driven by the long UTR and different variations of the 3'UTR 
- 	\item Complexity of transcripts from mismatch and match of different ends i.e. Trem2, Apoe
- 	\item Fus has a long UTR but only one transcript with this long UTR 	
- 	\item exon skipping of the constitutive exons vs alternative exons?
-\end{itemize}
-% Note: Crosstalk between Cd33 and Trem2 in 5xFAD
 
-%% Differential expression in microglia, cross-reference results: https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-020-01099-x
+\subsection{Characterisation of AS events in AD-associated genes}
+The significant deep sequencing coverage achieved with target gene enrichment, particularly with ONT nanopore sequencing, identified hundreds of novel transcripts across the panel of AD-associated genes. Comprehensive annotation revealed multiple transcriptional regulatory mechanisms at play, including alternative transcription with alternative promoter usage and alternative termination which were not previously characterised. 
 
-\subsection{Interesting Gene observations}
-\begin{itemize}
-	\item \textit{Abca7} A lot of IR at the end of the transcripts but do not shift the open reading frame i.e. not NMD; Also exon skipping but appear exclusive to either one of two exons, also supported by both technologies 
-	\item \textit{Cd33}: Despite long UTR, no skipping or mismatch observed, rather isoform complexity is driven by intron retention from exon 5 onwards. Also novel exon of XX bp --> functional implications?
-	\item \textit{Sorl1}: Does not have many ES transcripts despite the number of exons
-	\item \textit{Trem2}: Skipping of Exon 2 are all non-coding, shifts the ORF? A lot of variation of Exon2. Presence of Mismatch and match transcripts from alternative exon 1. Upstream novel exons --> functional implications. Require qPCR validation (discussion) 
-	\item \textit{Vgf} is a neurosecretory protein that is cleaved into different peptides --> variation of the 3'UTR reflect the generation of different peptides. Of note, observe transcripts without the 5'end of the UTR are not coding, suggesting shift ORF. NE first exon --> implications 
-	\item Fus ---> Intron Retention specific to exons 4, exact match with other exons. The full-length transcript most dominant with all exons expressed, rather than the shorter transcripts and no exon skipping observed. 
-	\item Bin1 IR and ES occurs mostly at the non-constitutively spliced alternative exons, though also in the constitutive exons. 
-	\item Ptk2b IR heavily supported by both PacBio and ONT 
-	\item Snca --> long 3'UTR in some transcripts, functional implications? new motifs or binding sites?
-	\item Clu --> A lot of transcripts with IR AP of a specific novel exon
-	\item Apoe; A5A3 truncation of exon 2 observed in several transcripts
-\end{itemize} 
+Including these alternative mechanisms in our custom analysis script, we observed that exon skipping (SE) (n = 21,737 events) was the most prevalent across all the genes, followed by usage of alternative 5' and 3' splice site (A5', A3') (n = 13,347). This is in line with previous findings where alternative first exon (covered here as alternative promoter and A5') was the most prevalent followed by exon skipping (described in \cref{ch4_AS}). While the vast majority of transcripts were characterised with skipping of several exons, some isoforms with characterised with significant skipping such as \textit{Bin1} (n = XX isoforms) and \textit{App} (n = XX isoforms) with more than 10 exons skipped. Deeper investigation revealed that in contrast to the initial definition of exon skipping, over a third of these exons skipped were classified as constitutive (n = 7759 exons, 34.5\%). A few genes were further characterised with skipping of more than 70\% of their constitutive exons in the rarer novel transcripts, such as \textit{Sorl1} (n = 80\% of total exons) and \textit{Ptk2b} (n = 90\% of total exons). Notably, no significant correlation was observed between the number of exon skipping events and exon number (corr = -0.23, P = 0.32, Spearman's rank). 
+
+Conversely, intron retention (IR) was the least observed splicing event characterised (n = XX, XX\%). While the majority of IR-isoforms were characterised with only one distinct IR event, several genes were associated with a few novel rare transcripts with multiple IR events; this was particularly evident in \textit{Abca7} (4 IR events = 1, 3 IR events = 3). Furthermore, the majority of IR-events involved inclusion of two exons, with a significant proportion of isoforms with intron retained over a significant stretch across 5 or more exons. 
+%expression of these transcritps
+%nonsense mediated decay
+
+%% canonical splice sites
+\clearpage
+\subsection{Comprehensive characterisation of AD-associated genes} 
+This section details the comprehensive annotation of the merged targeted long-read dataset generated from the enrichment of 20 AD-associated genes in the mouse entorhinal cortex of the rTg4510 wild-type and transgenic mice. 
+
+\vspace{1cm}
+\begingroup
+\parindent=0em
+\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
+\etocsetnexttocdepth{5}
+\localtableofcontents 
+\endgroup
 
 \subsubsection{Trem2}
-A total of XX \textit{Trem2} isoforms were detected, with the majority of isoforms containing canonical splice sites (GT-AG or GC-AC) (n = XX, XX\%). Approximately half of these isoforms have all five exons, differing in the use of alternative 5' start and 3' end sites. The remaining isoforms were characterised with complex alternative splicing with XX observed with exon skipping and XX with intron retention. Exon X was observed to be skipped the most (n = XX isoforms), followed by Exon X (n = XX isoforms), and Exon X (n = XX isoforms). "ORF prediction shows skipping of such exons shortens the ORF but maintains the reading frame". 
+In total, we detected 70 isoforms associated with \textit{Trem2}, 3 of which were known and detected using both PacBio Iso-Seq and ONT. While we did not detect the fourth known isoform, \textit{Trem2-204} (ENMUST00000148545.1) - a non-coding transcript - we identified a novel isoform that incorporated the unique exon associated with this known isoform (\cref{fig:trem_track1}\textbf{A}); this novel isoform thus contains a total of six exons rather than the annotated 5 exons that \textit{Trem2} is known to contain.   
 
-XX of isoforms were also characterised with novel exons, with XX isoforms containing novel exons upstream of the first known exon, XX isoforms containing novel exons downstream of the last exon, and XX isoforms containing a XXbp novel exon XX. Adding to the layer of complexity, such isoforms were characterised by multiple splicing events. 
+Nonetheless, the majority of isoforms (n = 46, 65.7\%) detected contained all five exons with the exclusion of this unique exon (exon 3) (\cref{fig:trem}\textbf{A, B}) and differed in the use of alternative 5' start and 3' end sites (\cref{fig:trem_track1}\textbf{B}). Notably, a significant degree of A3' (n = 11 isoforms, 15.7\%) and A5' (n = 10 isoforms, 14.3\%) truncation was observed in exon 2 (\cref{fig:trem}\textbf{C}), which encodes for the Ig-like V-type domain where the majority of human \textit{Trem2} AD-associated variants were located to. The variability in exon 2 further corresponded with RNA-Seq coverage from matched samples (\cref{fig:trem_track1}\textbf{B}). Strikingly, exon 2 was observed to be skipped the least (n = 2 isoforms, 2.9\%) and ORF prediction of such transcripts with skipping of exon 2 had a shortened ORF and were subsequently predicted to be non-coding (\cref{fig:trem_track1}\textbf{C}), reflecting the importance of exon 2. Conversely, exon 4 was characterised with the least A5' start and A3' end sites (n = 5 isoforms, \cref{fig:trem}\textbf{C}), but was skipped the most (n = 11 isoforms, 15.7\%). Finally, we detected a few transcripts with intron retention spanning multiple exons. 
+%ORF prediction shows skipping of such exons shortens the ORF but maintains the reading frame. 
+
+12 novel isoforms were further characterised with novel exons (\cref{fig:trem_track2}\textbf{C}), 3 of which contained a novel exon upstream of the first known exon and the remaining with a novel exon of two different lengths between Exon 1 and Exon 2 (\textasciitilde49bp = 4 isoforms, \textasciitilde96 - 109bp = 5 isoforms). ORF prediction of the 2 novel isoforms with upstream novel exons, however, maintained the reading frame to start at the first known exon (\cref{fig:trem_track2}\textbf{C}). This suggests that the novel upstream exons may have some regulatory effect downstream rather than be a structural protein functional effect. Conversely, ORF prediction of isoforms with internal novel exons show retention of the exon within the reading frame (\cref{fig:trem_track2}\textbf{C}). 
+%check on IR
+%check on signalP
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=1,trim={1cm 6cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Trem2]%
+	{\textbf{}: }   
+	\label{fig:trem_track1}
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=1,trim={1cm 1cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Trem2]%
+	{\textbf{}: }   
+	\label{fig:trem}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=2,trim={0 4cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=0.95\textwidth}
+		\caption[RNA-Seq defined transcriptome]%
+		{\textbf{}: }   
+		\label{fig:trem_track2}
+	\end{figure}
+\end{landscape}
 
 Using the merged full-length read count as a proxy for isoform abundance, one of the canonical isoform (XXX) was found to be most abundance with an abundance of XX-XX\% across all samples. Grouping the isoforms by splicing patterns, isoforms with all five exons accounted for XX\% of abundance. Corroborating previous findings that intron-retained transcripts with less abundantly expressed, isoforms with intron retention accounted for XX\% of abundance.
 
-%NMD
+% Note: Crosstalk between Cd33 and Trem2 in 5xFAD
+%% Differential expression in microglia, cross-reference results: https://actaneurocomms.biomedcentral.com/articles/10.1186/s40478-020-01099-x
 
-%ORF prediction of these isoforms with novel exons maintain ORF
+\subsubsection{Abca7}
+In total, we detected 41 isoforms associated with \textit{Abca7}. Reflecting the similarity of the 3 known isoforms, four novel isoforms were also identified with all the exons and only differed slightly with <10bp "wobble" within the internal structure (\cref{fig:abca7_track}). In contrast to these long isoforms, we detected significantly shorter isoforms that broadly fell into 2 categories: 1) isoforms that preserved the exonic structure at the 5'start with a truncated end accompanied by intron retention (n = 5 isoforms, 12.2\%), and 2) isoforms with preserved exonic structure at the 3'end and an enrichment of both exon skipping and intron retention (n = 23, 56\%) (\cref{fig:abca7_track}). While the isoforms with matching 3'end could be novel isoforms generated from an alternative promoter, they could also be artefacts generated from the 5' degradation. Nonetheless, we found exon skipping to be exclusive to either exon 31 (n = 1, XX\%) and exon 32 (n = XX\%) (\cref{fig:abca7}), both of which encode for the ATP binding cassette. Similarly, while intron retention was more widespread across the length of the gene, we observed intron retention particularly to be enriched between exon 37 and exon 39(\cref{fig:abca7}, \cref{fig:abca7_track}). 
+%check AUG promoter 
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=3,trim={0 6cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=0.95\textwidth}
+		\caption[RNA-Seq defined transcriptome]%
+		{\textbf{}: }   
+		\label{fig:abca7_track}
+	\end{figure}
+\end{landscape}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=2,trim={0 21cm 0 0cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Trem2]%
+	{\textbf{}: }   
+	\label{fig:abca7}
+\end{figure}
+
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=4,trim={0 7cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=0.95\textwidth}
+		\caption[RNA-Seq defined transcriptome]%
+		{\textbf{}: }   
+		\label{fig:abca7_orf}
+	\end{figure}
+\end{landscape}
+
+
+\subsubsection{Abca1}
+Despite detecting far fewer isoforms associated with \textit{Abca1} (n = 7, \cref{fig:abca1}\textbf{A}) compared to \textit{Abca7} (n = 41), we also observed occurrence of exon skipping and intron retention events. Notably, we detected an isoform that spanned the length of the known canonical isoform (ENSMUST00000030010.3) using both PacBio Iso-Seq and ONT, but skipped two exons (exon 24 and exon 35) and harboured a novel exon next to one of the skipped exons (between exon 24 and exon 25, \cref{fig:abca1}\textbf{B,C}). Skipping of exon 35, which encodes for the ABC2 membrane 3 (\textit{Abca1} transmembrane domain), was also observed in one of the shorter isoforms. ORF prediction showed skipping of such exons shortened but maintained the open reading frame, and inclusion of the novel exon did not translate to additional protein domains. Lastly, we identified two shorter isoforms with premature termination accompanied with intron retention (\cref{fig:abca1}\textbf{A,B}). ORF prediction of such transcripts similarly showed a shortened but maintained open reading frame with no prediction of NMD. 
+
+\subsubsection{Trpa1}
+From the panel of AD-associated genes enriched in the rTg4510 mouse cortex, \textit{Trpa1} - the ion channel receptor - was the least abundant and characterised with the fewest number of isoforms (n = 4) (\cref{fig:rhbdf2}\textbf{A}). Aside from detecting one of the two known canonical isoforms (Trpa1-201, ENSMUST00000041447.4), we further identified 2 novel isoforms that spanned the full-length of the known isoform and a short non-coding novel isoform (\cref{fig:rhbdf2}\textbf{A,B}). Blast analysis of the 2 novel isoforms and known isoform revealed that the exonic structure was generally conserved across the gene, with the exception of skipping of exon 20, varying lengths of the 5' and 3' UTR, and a 4-nucleotide addition at the end of exon 6 (\cref{fig:rhbdf2}\textbf{C}); RNA-Seq data from matched samples validate this 3' extension. 
+
+ORF prediction of skipping of exon 20, which encodes for part of the ion channel domain, shortened but maintained the reading frame. However, strikingly, the most well-predicted ORF of the two novel isoforms was shifted significantly with initiation at a downstream AUG codon (\cref{fig:rhbdf2}\textbf{A}). Further examination of the ORF predicted using \textit{CPAT} revealed two alternative ORF initiated from the upstream AUG codon, but resulted in premature termination with an in-frame stop codon due to the addition of 4 nucleotides at exon 6. Conversely, the reading frame was intact for the known isoform.             
+
+\subsubsection{Rhbdf2}
+The second least expressed gene within the panel of AD-associated target genes, \textit{Rhbdf2} was characterised with 5 isoforms and the least complex splicing pattern. Identifying two novel isoforms that spanned the length of the known detected canonical isoform (\cref{fig:rhbdf2}\textbf{A}), we detected exon skipping of exon 3 and exon 18 (\cref{fig:rhbdf2}\textbf{B}). While ORF prediction showed that all the isoforms generated a significantly shorter reading frame with usage of a downstream start codon, skipping of exon 18 resulted in a shorter terminal exon, which encoded for the rhomboid domain and is conserved in human (\cref{fig:rhbdf2}\textbf{A}). Similarly, the novel transcript with skipping of exon 3 had a shifted reading frame, however it was difficult to determine whether this was due to exon skipping or presence of an alternative first exon. Lastly, we detected a novel isoform that contained all the exons and was almost identical to the known isoform bar the deletion of 5 nucleotides from exon 7, which encodes for the protease domain. Strikingly, ORF prediction of this transcript revealed that this 3' truncation was accompanied with an even shorter reading frame (\cref{fig:rhbdf2}\textbf{C}).   
+
+\subsubsection{Ank1} 
+From the panel of AD-associated target genes, \textit{Ank1} stood out for the domination of significantly shorter known canonical isoforms (\cref{fig:Ank1_track}\textbf{A}). While we did detect several longer known canonical isoforms (n = 4, 23.5\%, length = 6.5 - 8.2kb), the majority (n = 11, 64.7\%) were less than \textasciitilde 2kb long and spanned the last few exons. Furthermore, the two most-abundant isoforms annotated to \textit{Ank1} using both PacBio Iso-Seq and ONT were one of the short known isoforms (Ank1-208, ENSMUST00000121075.7) and the short non-coding isoform (Ank1-211, ENSMUST00000130311.1). %Although we are unable to rule out the technical limits of sequencing the longer transcripts, given that \textit{Ank1} is one of the longer genes from the panel of target genes,  
+
+Aside from the length disparities among the isoforms detected, we found that the splicing pattern was generally conserved across the gene with consistent skipping of certain exons (\cref{fig:Ank1}\textbf{B}). Across all the long isoforms, exon 44 was skipped whereas exon 46 was skipped in half of the short isoforms (n = 4). While ORF prediction showed that skipping of the earlier exons shortened but maintained the reading frame, inclusion of exon 44 resulted in the inclusion of a stop codon and resulted in premature termination with predicted NMD. Conversely, isoforms that skipped exon 44 maintained the reading frame to the final exon and was not predicted for NMD  
+(\cref{fig:Ank1_track}\textbf{B}).        
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=5,trim={0 4cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Abca1} isoforms]%
+		{\textbf{Visualisation of \textit{Abca1} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Abca1}. Occurrence of exon skipping (ES) is boxed in purple. Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, and Pfam domains are also shown. \textbf{B)} cluster dendrogram and visualisation of exon distribution, and \textbf{C)} an zoomed in figure of the browser track to illustrate skipping of exon 24 (boxed in purple) and inclusion of a novel exon (outlined in blue).}   
+		\label{fig:abca1}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=6,trim={0 5cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Trpa1} isoforms]%
+		{\textbf{Visualisation of \textit{Trpa1} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Trpa1}. Occurrence of exon skipping (ES) is boxed in purple. Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, and Pfam domains are also shown. \textbf{B)} cluster dendrogram and visualisation of exon distribution of 4 isoforms annotated to \textit{Trpa1}. \textbf{C)} Zoomed in figure of the browser track to illustrate the addition of 4 nucleotides (GCAA, highlighted in pink) to exon 6 of the 2 novel isoforms, resulting in a truncated ORF destined for NMD (denoted with pink circle). NMD - nonsense mediated decay, ORF - Open reading frame.}   
+		\label{fig:trpa1}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=7,trim={0 5cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Rhbdf2} isoforms]%
+		{\textbf{Visualisation of \textit{Rhbdf2} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Rhbdf2}. Occurrence of exon skipping (ES) is boxed in purple. Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, Pfam domains, and the most well-predicted ORF (black) are also shown. \textbf{B)} cluster dendrogram and visualisation of exon distribution of 5 isoforms annotated to \textit{Rhbdf2}. \textbf{C)} Zoomed in figure of the browser track to illustrate the deletion of 5 nucleotides (GTAAG, highlighted in pink) to exon 7 of the 2 novel isoforms, resulting in a truncated ORF. NMD - nonsense mediated decay, ORF - Open reading frame.}   
+		\label{fig:rhbdf2}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=8,trim={0 2cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Ank1} isoforms]%
+		{\textbf{Visualisation of \textit{Ank1} isoforms}: }   
+		\label{fig:Ank1_track}
+	\end{figure}
+\end{landscape}
+\begin{figure}[t]
+	\captionsetup{width=0.95\textwidth}
+	\contcaption{\textbf{Visualisation of \textit{Ank1} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Ank1}. Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, Pfam domains, and the most well-predicted ORF (black) further classified by NMD prediction are also shown. \textit{B)} Zoomed in figure of the browser track to illustrate the skipping of exon 46 and subsequent shifting of reading frame to avoid NMD. NMD - nonsense mediated decay, ORF - Open reading frame.}%
+\end{figure}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=6,trim={1cm 1cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Ank1} with multiple exon skipping events]%
+	{\textbf{Characterisation of \textit{Ank1} with multiple exon skipping events}: \textbf{A)} Cluster dendrogram and visualisation of exon distribution of 17 isoforms annotated to \textit{Ank1}, characterised with exon skipping of multiple exons. \textbf{B)} Number of isoforms for each exon skipped}   
+	\label{fig:Ank1}
+\end{figure}
+
+\newpage
+\subsubsection{Cd33}
+In total, we detected 41 isoforms associated with \textit{Cd33}, including 5 of the known isoforms (\cref{fig:cd33_track}). Reflecting the diversity of \textit{Cd33} known isoforms, the majority of isoforms detected were similarly short, lacked the first two upstream exons and also skipped exon 8 which was only present in the Cd33-201 known isoform (ENSMUST00000004728.11) (\cref{fig:Cd33}\textbf{A}, \cref{fig:cd33_track}). ORF predictions showed that skipping of this exon slightly reduced but maintained the reading frame (\cref{fig:cd33_track2}\textbf{A}). Conversely, 3'truncation of exon 4 (which encodes for the V-set domain) shifted the reading frame with the generation of a stop codon and subsequent usage of the downstream initiator codon in exon 2 (\cref{fig:cd33_track2}\textbf{A}).   
+
+While the majority of isoforms were short, we detected a few novel, "full-length" isoforms that incorporated different features from the reference isoform (\cref{fig:cd33_track2}\textbf{B}); i.e. contained the upstream exons only present in the Cd33-202 known isoform (ENSMUST00000039861.6) while harbouring the longer 3'UTR present in the Cd33-203 known isoform (ENSMUST00000205503.1). Notably, we detected two very similar "full-length" isoforms that both contained a novel upstream exon between exons 1 and 2 (66bp, Chr7:43529866-43529932, \cref{fig:cd33_track2}\textbf{B}). However strikingly, due to similar 3' truncation of exon 4, ORF prediction of these two isoforms similarly revealed a shortened reading frame starting from exon 2 despite the presence of upstream exons.  
+
+In contrast to exon skipping, we observed multiple intron retention events (IR) across the gene with over a third of isoforms (n = 14, 34.21\%) containing at least one IR event (\cref{fig:Cd33}\textbf{B}), and one isoform containing an intron retention event that spanned 4 exons (TALONT001237573, \cref{fig:cd33_track2}\textbf{C}). Further examination revealed that intron retention primarily occurred around exon 7 (\cref{fig:Cd33}\textbf{A}) and extended to the final two exons, exon 8 and 9, with varying lengths (\cref{fig:cd33_track2}\textbf{C}). ORF predictions showed that an extended intron retention at exon 7 revealed a stop codon resulting in a shortened reading frame, whereas an intact exon 7 resulted in a slightly longer reading frame.
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=7,trim={1cm 0cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Cd33} with multiple intron retained events]%
+	{\textbf{Characterisation of \textit{Cd33} with multiple intron retained events}: \textbf{A)} Cluster dendrogram and visualisation of exon distribution of 41 isoforms annotated to \textit{Cd33}, characterised with intron retention of multiple exons. \textbf{B)} Number and percentage of isoforms that spanned the number of exons with intron retention. \textbf{C)} Number and percentage of isoforms with intron retention of the exon. "IR" refers to the sole intron retention of that exon, whereas "IRMatch" refers to presence of an intron retention event that spanned over more than one exon. 
+	}   
+	\label{fig:Cd33}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=9,trim={0 13cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Cd33} isoforms]%
+		{\textbf{Visualisation of \textit{Cd33} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Cd33}. Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, Pfam domains, and the most well-predicted ORF (black) are also shown}   
+		\label{fig:cd33_track}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=10,trim={0 4cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Cd33} isoforms]%
+		{\textbf{Visualisation of \textit{Cd33} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Cd33} with skipping of exon 8 (shaded in purple). Truncation of exon 4 (shaded in red) resulting in shifted reading frame and subsequent usage of downstream initiator codon is depicted with red arrow. \textbf{B)} Detection of "full-length" isoforms with detection of two novel exons (shaded in blue). \textbf{C)} Detection of multiple intron retention events with enriched occurrence at exon 7. The isoform (TALONT001237573) with intron retention spanning across 4 exons is denoted by asterisk and shaded in yellow.}   
+		\label{fig:cd33_track2}
+	\end{figure}
+\end{landscape}
+
+\subsubsection{Sorl1}
+Although we detected 113 isoforms associated with \textit{Sorl1} - a gene which encodes for the endocytic receptor involved in APP trafficking - the splicing pattern was relatively simple with the internal exonic structure largely conserved and only a few isoforms exhibiting exon skipping and intron retention events (\cref{fig:sorl1}\textbf{A}, \cref{fig:sorl1_track1}). Strikingly, isoform diversity was primarily driven by usage of alternative promoter and termination usage while preserving the internal exonic structure (\cref{fig:sorl1_track2}\textbf{A}). Over 75\% (n = 88, 77.9\%) of the isoforms detected were characterised with a slightly different downstream first exon, which can be further broadly classified into three groups by presence of an alternative last exon at exons 37, 38 and 41 (\cref{fig:sorl1_track2}\textbf{B}). Furthermore, the alternative last exons do not fully match the exon of interest, resulting in enrichment of isoforms with A3' truncation of exon 37, 38, and 41 (\cref{fig:sorl1}\textbf{B}). Notably, exons 37 and 38 encode for Fibronectin type III domain, which is the largest protein domain of the SORL1 protein, and of which studies have previously identified rare AD-associated variants to be located within\cite{Verheijen2016}. ORF prediction of these isoforms with alternative promoter and terminator usage show shortened but otherwise intact reading frames with no prediction for NMD. 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=8,trim={1cm 0cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Sorl1} with extensive alternative promoter usage]%
+	{\textbf{Characterisation of \textit{Sorl1} with extensive alternative promoter usage}: \textbf{A)} Cluster dendrogram and visualisation of exon distribution of 113 isoforms annotated to \textit{Sorl1}, characterised with extensive alternative promoter usage. \textbf{B)} Number of isoforms with A5' and A3' truncation and extension.
+	}   
+	\label{fig:sorl1}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=11,trim={0 11cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Sorl1} isoforms]%
+		{\textbf{Visualisation of \textit{Sorl1} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Sorl1} with exon skipping (shaded in purple) and intron retention (shaded in yellow). Isoforms are coloured based on coding status and shaded by abundance. Reference transcripts (blue), RNA-Seq data from matched samples, Pfam domains, and the most well-predicted ORF (black) are also shown.}   
+		\label{fig:sorl1_track1}
+	\end{figure}
+\end{landscape}
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=12,trim={0 6cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Visualisation of \textit{Sorl1} isoforms]%
+	{\textbf{Visualisation of \textit{Sorl1} isoforms}: \textbf{A)} Shown is the UCSC genome browser track of \textit{Sorl1} with extensive alternative promoter and terminator usage. \textbf{B)} While the isoforms greatly differ at the 5' end, the 3' ends of such isoforms are conserved with alternative termination at exons 37, 38 (outlined in blue) and 41 (outlined in pink).}   
+	\label{fig:sorl1_track2}
+\end{figure}
+
+\newpage
+\subsubsection{Vgf}
+We detected 90 isoforms associated with \textit{Vgf}, despite it only containing 5 exons. Examination of this gene, which encodes for a neurosecretory protein that is cleaved into various peptides, remarkably suggested a relatively simple splicing pattern (\cref{fig:vgf}\textbf{A}): no detection of the first two upstream exons present in only one of the known isoform, the majority of isoforms skipped exon 5 and a few intron retention events were observed. However, further examination revealed complex variations of the final exon and 3'UTR (\cref{fig:vgf}\textbf{B})), as supported by matched RNA-Seq data (\cref{fig:vgf_track}). The vast majority of isoforms detected (n = 87, 96.7\%) were characterised with either an alternative 5' start sites (n = 35 isoforms, 38.9\%) or 3'end of the last exon (n = 4, 0.04\%), or with matched 5' and 3' end sites but skipping within the exon resulting in two enclosed exons (\cref{fig:vgf_track}). This phenomenon of skipping within the exon further extended beyond exon 6 in a few intron-retained isoforms. Given that isoforms exhibiting this "internal exon skipping" were detected in both PacBio Iso-Seq and ONT with stringent filtering, these are unlikely to be artefacts. 
+
+ORF predictions of these isoforms showed that while this internal skipping phenomenon did not result in NMD, it generated significant variations of the reading frame particularly at the 3'end. Conversely, isoforms with alternative 5' start site of the last exon were predicted as either non-coding or missing an ORF.
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=10,trim={1cm 1cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Vgf} with extensive alternative last exon]%
+	{\textbf{Characterisation of \textit{Vgf} with extensive alternative last exon}: \textbf{A)} Cluster dendrogram and visualisation of exon distribution of 90 isoforms annotated to \textit{Vgf} \textbf{B)} Number of isoforms with A5' and A3' truncation and extension.
+	}   
+	\label{fig:vgf}
+\end{figure}
+
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=13,trim={0 12cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Visualisation of \textit{Vgf} isoforms]%
+	{\textbf{Visualisation of \textit{Vgf} isoforms:} Shown is the UCSC genome browser track of \textit{Vgf} with extensive variation of the last exon.}   
+	\label{fig:vgf_track}
+\end{figure}
+
+\newpage
+\subsubsection{Fyn}
+Known to directly phosphorylate and interact with tau, \textit{Fyn} encodes for a tyrosine kinase that is associated with several known isoforms that primarily differ in the first exon from usage of alternative promoter. Detecting in total 50 isoforms, we found these first exons to be mutually exclusive with either isoforms containing exon 1, 2 or 4 (\cref{fig:fyn}). In contrast, we did not detect the shorter isoforms with the most downstream alternative promoter at exon 5 or 6. However, we did detect a significant number of isoforms (n = XX) that contained novel first exons at 3 distinct positions; between exons 2 and 3, 4 and 5, and even further downstream at exon 8. Strikingly, the novel exon between exons 4 and 5 was found in isoforms with alternative 4 exon, highlighting the complexity of alternative promoter usage in \textit{Fyn}. Of note, ORF predictions of these isoforms with novel exons did not change the reading frame, and similarly exon skipping shortened but otherwise maintained reading frame.  
+
+In contrast to the complexity at the 5'end of the gene, the exonic structure downstream of exon 7 was relatively conserved across the majority of isoforms. Particularly exons between exon 7 and 12, which encode for the SH3 domain known to interact with tau, were present across all the isoforms (\cref{fig:fyn_track}). Conversely, exons 13 and 14,  which encode for the protein kinase domain, were found to be mutually exclusive with the majority of detected isoforms containing exon 13 (n = 36) and skipping exon 14 (\cref{fig:fyn_track}). Finally, we noted a complete absence of exon 16, which originated from an alternative first exon of the shortest known isoform. 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=9,trim={1cm 20cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Fyn} with alternative first exon and alternative promoter usage]%
+	{\textbf{Characterisation of \textit{Fyn} with alternative first exon and alternative:} Cluster dendrogram and visualisation of exon distribution of 50 isoforms annotated to \textit{Fyn}
+	}   
+	\label{fig:fyn}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=14,trim={0 5cm 0 0},scale = 0.85]{Figures/pdfjoiner.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Visualisation of \textit{Fyn} isoforms]%
+		{\textbf{Visualisation of \textit{Fyn} isoforms:} Shown is the UCSC genome browser track of \textit{Fyn}}   
+		\label{fig:fyn_track}
+	\end{figure}
+\end{landscape}
+
+
+\subsubsection{Picalm}
+In total, we detected 144 isoforms associated with \textit{Picalm}, a gene that encodes for an adaptor protein that is involved with APP trafficking and endocytosis. Of these 144 isoforms, we identified all the known isoforms, including the mono-exonic isoforms, bar the non-coding isoform Picalm-208	 (ENSMUST00000207949.1). Approximately a fifth of the isoforms (n = 31, 21.5\%) detected spanned the "full-length" of the gene from exon 1 to 21, while the remaining isoforms were significantly shorter with alternative first exon and promoter usage from every exon. Of note, we identified a novel isoform that contained a novel first exon 59kb upstream of known exon 1 and was detected using both PacBio Iso-Seq and ONT (PB.7635.2-TALONT001254093).
+	
+While exon skipping was observed consistently at exons 13, 18, and 21, which do not encode for any Pfam domains, the internal exonic structure was broadly conserved. ORF predictions showed that skipping of such exons shortened but maintained the reading frame. \textit{Picalm} isoform diversity was subsequently driven by usage of alternative first exon and promoter. Such shorter isoforms are unlikely to be artefacts given that a few of the known isoforms display similar feature (i.e partial subset of the longer "full-length" isoforms), a significant number (n = 66, 60\%) were detected using both long-read sequencing approaches, and after performing stringent filtering. 
+	
+%However, the vast majority of coding isoforms were predicted to undergo nonsense mediated decay (n = 115, 98.3\%) including the known reference isoforms. Further examination revealed that while the reading frame varied at the 5'end from alternative first exon usage, all the reading frames 
+
+\begin{figure}[htp]
+	\begin{center}
+		\includegraphics[page=11,trim={1cm 20cm 0 2cm},scale = 0.55]{Figures/TargetGenes.pdf}
+	\end{center}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Characterisation of \textit{Picalm} with alternative first exon and alternative promoter usage]%
+	{\textbf{Characterisation of \textit{Picalm} with alternative first exon and alternative promoter usage }: Cluster dendrogram and visualisation of exon distribution of 144 isoforms annotated to \textit{Picalm}.
+	}   
+	\label{fig:picalm}
+\end{figure}
+
+\subsubsection{Tardbp}
+\textit{Tardbp} encodes for TDP-43, aggregates of which are frequently observed in multiple neurodegenerative diseases including ALS and FTD. Although not the primary hallmark of AD, up to 75\% of AD patients are also presented with TDP-43 aggregates. Despite only containing 10 exons, \textit{Tardbp} is one of the most complex gene from the targeted panel of AD-associated genes; various isoforms contain exon overlap at multiple regions at the 3'end from exon 6 onwards. The complexity is reflective of the "internal exon skipping" phenomenon observed in the final exon of \textit{Vgf}, with added complexity from additional usage of alternative termination and 3'sites of the last exon. This complexity was also captured in our targeted dataset with detection of known isoforms either with matching or slight wobble splice sites. We also detected novel isoforms with a combination of exons from different known isoforms; e.g. a novel isoform (PB.6120.170) that contained all the exons from ENSMUST00000190287.1 and the upstream first three exons from the longer "full-length" known isoforms. 
+
+Despite the complexity of the 3'end of \textit{Tardbp}, we observed a relatively consistent splicing pattern with multiple intron retention events, particularly between exons 6 and 7. A XX of isoforms were also identified with an alternative last exon accompanied with terminal intron retention at exons 7 and 8. Conversely, exons 2 to 4, which encode for RNA recognition motif domain were present and structurally preserved in the majority of isoforms.  
+
+
+
+\subsubsection{Mapt}
+The aggregation of tau, which is encoded by \textit{Mapt}, into neurofibrillary tangles is one of the two key hallmarks of AD. To study splicing changes associated with progression of tau pathology, we used rTg4510 mouse model which harbours the human tau transgene, Mapt\textsuperscript{P301L}. As previously shown, human-specific \textit{MAPT} transcripts were only detected in TG mice and were removed for downstream analysis, retaining only mouse-specific \textit{Mapt} transcripts. 
+
+In total, we detected 140 isoforms associated with \textit{Mapt}, including 7 of the known isoforms. Upon further examination of these isoforms, one of the most striking splicing feature observed was the number of consistent exon skipping events that alternated across the gene. The majority of isoforms were characterised with at least one exon skipping event (n = 115, 82.1\%) with most isoforms skipping 3 exons or more (n = 98); notably, we detected an isoform with extensive skipping of 12 exons. Despite the widespread occurrence of exon skipping, we found that the splicing pattern was conserved across the isoforms with skipping of alternative exons; i.e. exons 4, 6, 8, 10 and 13. In contrast, exons 2, 7, 11, 12 and 14, which were present in all the known isoforms (i.e. constitutive) were also present in all the isoforms that spanned the "full-length" of the gene. 
+
+Detected in both PacBio Iso-Seq and ONT, we identified a number of isoforms with novel first exons located between exon 1 and 2 (n = 16, 11.4\%), which were broadly clustered into five groups and indicated alternative promoter usage. Notably, some of these novel exons were also contained within the other isoforms. ORF prediction of these isoforms showed that usage of these alternative first exons shortened but maintained the reading frame. 
+
+Finally, we detected some significantly shorter isoforms that were distinguished by the presence of a intron-retained first exon. These broadly appeared between exons 9 and 11 which encode for the tubulin-binding repeat domain. 
+
+\subsubsection{Fus}
+---> Intron Retention specific to exons 4, exact match with other exons. The full-length transcript most dominant with all exons expressed, rather than the shorter transcripts and no exon skipping observed. 
+
+\subsubsection{Bin1}
+Bin1 IR and ES occurs mostly at the non-constitutively spliced alternative exons, though also in the constitutive exons. 
+multiple intron retention events; 11 isoforms were characterised with intron retention, of which all but one was predicted for NMD. 9 additional isoforms were predicted for NMD. - higher level of intron retention in AD mice?
+
+\subsubsection{App}
+
+\subsubsection{Ptk2b}
+Ptk2b IR heavily supported by both PacBio and ONT 
+Ptk2b: 6 isoforms with intron retention
+
+\subsubsection{Snca}
+\textit{Snca} encodes for $\alpha$-synuclein, which is known to abnormally aggregate in patients with PD, DLB and AD as a defining hallmark of Lewy body pathology. Despite only containing 7 exons, \textit{Snca} was the third most "isoformic" gene from the targeted panel with 622 isoforms detected. Deeper characterisation revealed that exon skipping, alternative 5' and 3' start sites largely contributed to the isoform diversity. Over 75\% of isoforms (n  = 483, 77.7\%) were identified with at least one exon skipping event. Exon 4 and 5 were skipped the most (exon 4: n = XX isoforms, XX\%; exon 5: n = XX isoforms, XX), despite being present across all the reference isoforms including the two known shorter isoforms (i.e constitutive). Aside from exon skipping, extensive usage of alternative 5' and 3' sites, particularly A5' truncation, was observed across all the exons with the exception of exon 4. Of note, we detected 84 isoforms which contained all the exons and primarily differed by alternative 5' and 3' sites. 
+
+Approximately two-thirds of isoforms detected were non protein-coding (n = 402, 64\%). 
+
+\subsubsection{Clu}
+Clu --> A lot of transcripts with IR AP of a specific novel exon
+
+\subsubsection{Apoe}
 
 
 \newpage
@@ -665,23 +1122,6 @@ Visualisations of the dominant known isoform ascribed by Iso-Seq FL read counts 
 \restoregeometry
 
 
-%Alternative splicing events?
-
-\boldheader{Mapt}
-7 known isoforms detected (ENSMUST00000106992.9, ENSMUST00000100347.10, ENSMUST00000138384.7, ENSMUST00000106988.7, ENSMUST00000126820.1, ENSMUST00000132245.7, ENSMUST00000106993.9) with ENSMUST00000106992.9 the dominant isoform. 
-56 novel isoforms detected (22 NIC and 34 NNC), 4 with intron retention and 6 predicted for NMD.  
-RNA-Seq expression and Iso-Seq expression show very different profile due to RNA-Seq reads also from sequencing transgene human \textit{MAPT} - conversely any full-length transcript containing human \textit{MAPT} transgene would have been filtered out during Iso-Seq bioinformatics pipeline, thus Iso-Seq reads would only capture mouse \textit{MAPT} isoforms. Unable to use RNA-Seq reads due to sequencing of human transgene; No differential mouse \textit{MAPT} gene or transcript expression. 
-Antisense transcript to MAPT also detected.
-%Of note: 2 ISMs have have semi high expression counts and may be multimapped; apply a threshold to ensure that must have more than x number of exons from the known but caveats?
-%humanMAPT decreases but progressive tau pathology?
-
-
-\subsection{Alternative splicing in Target Genes}
-\begin{itemize}
-	\item Sorl1: intron retention and two were predicted for NMD (PB.8560.84 with a different polyA motif and PB.8560.39)
-	\item Bin1: multiple intron retention events; 11 isoforms were characterised with intron retention, of which all but one was predicted for NMD. 9 additional isoforms were predicted for NMD. - higher level of intron retention in AD mice?
-	\item Ptk2b: 6 isoforms with intron retention
-\end{itemize}
 
 
 \subsection{Isoform expression}
@@ -715,3 +1155,11 @@ Antisense transcript to MAPT also detected.
 
 \subsection{Differential transcript usage}
 
+\section{Discussion}
+While gene expression can partly explain the low isoform diversity (\textit{Trpa1} and \textit{Rhbdf2} are lowly expressed at XX and XX TPM), 
+Relationship between length of 3'UTR and variation? Sorl1 many transcripts with set lengths of 3'UTR, Cd33 also has long UTR but no skipping or mismatch. Despite, only two exons, complexity of Vgf driven by the long UTR and different variations of the 3'UTR 
+Complexity of transcripts from mismatch and match of different ends i.e. Trem2, Apoe
+Fus has a long UTR but only one transcript with this long UTR 	
+exon skipping of the constitutive exons vs alternative exons?
+
+Comprehensive annotation of each gene further shed light on the complexity of transcriptional regulation varying within each gene.
