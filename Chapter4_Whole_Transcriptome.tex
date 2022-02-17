@@ -14,7 +14,7 @@ In this chapter, I thus aimed to characterise global isoform diversity and splic
 	\item To perform PacBio Iso-Seq sequencing for the generation of full-length cDNA sequences 
 	\item To annotate the transcriptome and identify novel transcripts, novel and fusion genes  
 	\item To compare long-read Iso-Seq vs short-read RNA-Seq approach for transcriptome annotation 
-	\item To characterise splicing events  	
+	\item To characterise splicing events in the mouse cortex  	
 \end{enumerate} 
 
 \section{Methods}
@@ -84,7 +84,8 @@ Raw Iso-Seq sequencing reads were evaluated using the SMRT Link Portal v7.0 and 
 Raw RNA-Seq sequencing reads, with Phred (Q) > 35, were trimmed (ribosomal sequence removal, quality threshold Q20, minimum sequence length 35bp) using \textit{fastqmcf} (v1.0), yielding a mean untrimmed read depth of \textasciitilde20 million reads per sample. Subsequent filtered reads were then mapped to mouse (mm10) reference genome using \textit{STAR}\cite{Dobin2013} (v1.9). Gene and transcript expression were determined by aligning merged RNA-Seq reads to RNA isoforms (\textit{Cupcake} collapsed) from Iso-Seq datasets using \textit{Kallisto}\cite{Bray2016} (v0.46.0) with default parameters, as input to \textit{SQANTI2}. Using mouse RNA-Seq reads, a transcriptome assembly was generated using \textit{Stringtie}\cite{Pertea2015} (v2.1.4) with mouse reference GENCODE gtf (vM22), annotated and filtered with \textit{SQANTI2} using default parameters. 
 
 \subsection{Transcriptome Annotation and filtering}
-After filtering for partial isoforms including 5’ degradation products using \textit{TAMA} with default parameters, isoforms detected using SMRT sequencing were characterized and classified using \textit{SQANTI2} (v7.4) in combination with GENCODE (mouse vM22) comprehensive mouse gene annotation (mm10), FANTOM5 CAGE peaks (Lizio et al., 2019), polyA motifs, STAR output junction file, FL read counts (abundance file), and Kallisto counts from RNA-Seq data. Additional details are provided in \cref{section: sqanti_annotations}. Potential artefacts such as reverse transcription jumps or intra priming of intronic lariats were filtered out using the \textit{SQANTI2} filter script with an intra-priming rate of 0.6. The occurrence of mutually exclusive exons (MX) and skipped exons (SE) were assessed using \textit{SUPPA2}\cite{Trincado2018} with the parameter –f ioe, intron retention (IR) with \textit{SQANTI2}, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
+\label{ch4: transcriptome_annotation}
+After filtering for partial isoforms including 5’ degradation products using \textit{TAMA} with default parameters, isoforms detected using SMRT sequencing were characterized and classified using \textit{SQANTI2} (v7.4) in combination with GENCODE (mouse vM22) comprehensive mouse gene annotation (mm10), FANTOM5 CAGE peaks, polyA motifs, STAR output junction file, FL read counts (abundance file), and Kallisto counts from RNA-Seq data. Additional details are provided in \cref{section: sqanti_annotations}. Potential artefacts such as reverse transcription jumps or intra priming of intronic lariats were filtered out using the \textit{SQANTI2} filter script with an intra-priming rate of 0.6. The occurrence of mutually exclusive exons (MX) and skipped exons (SE) were assessed using \textit{SUPPA2}\cite{Trincado2018} with the parameter –f ioe, intron retention (IR) with \textit{SQANTI2}, and alternative first exons (AF), alternative last exons (AL), alternative 5’ splice sites (A5), and alternative 3’ splice sites (A3) using custom scripts based on splice junction coordinates. 
 
 \begin{figure}[htp]
 	\centering
@@ -301,6 +302,7 @@ Using our Iso-Seq data as a scaffold, we generated a reference-guided transcript
 \end{figure}
 
 \subsection{Detection of transcripts with fusion events across genes}
+\label{ch4:fusion_trans}
 Transcriptional read-through between two or more adjacent genes can produce ‘fusion transcripts’ that represent an important class of mutation in several types of cancer\cite{McCartney2019}. Although fusion events are thought to be rare\cite{Akiva2006a}, we found evidence of fusion transcripts (n = 297 fusion transcripts, 0.64\% of transcripts) associated with 218 genes (1.48\% of genes), \cref{fig:isoseq_whole_novelfusion}\textbf{A,B}) with a quarter of these genes were associated with more than one fusion transcript (n = 53 genes, 24.3\% of fusion genes).
 
 \subsection{Iso-Seq identifies novel cortex-expressed genes}
@@ -337,6 +339,7 @@ Although the majority of transcripts (93.6\%, 43,450) were classified as protein
 \end{figure}
 
 \subsection{AS events heavily contribute to isoform diversity}
+\label{ch4_AS}
 In total, 40,249 alternative splicing events were identified in known genes with AF (Alternative First exon/ alternative TSS variation, n = 2,853 (31.9\%) events associated with 6,476 (44.1\%) genes, 31.9\%) and SE (Skipped Exon, n = 8,686 (21.6\%) events associated with 4,570 (31.1\%) genes) being the most prevalent (\cref{fig:isoseq_whole_As_events}\textbf{A}). Splicing events and frequency were also compared between known and novel isoforms. Except for AF and AL, all the other different splicing events, and in particularly intron retention, were more likely to be observed in novel isoforms, highlighting the power of Iso-Seq to recapitulate the usage of complex splicing events that would have otherwise been underestimated using RNA-Seq data (Fisher's Test, A3: P = 7.78 x 10 \textsuperscript{–14}, odds ratio = 1.34; A5: P = 1.21 x 10\textsuperscript{–13}, odds ratio = 1.45, IR: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 4.92; MX: P = 4.18 x 10\textsuperscript{–11}, odds ratio = 1.81; SE: P < 2.23 x 10\textsuperscript{–16}, odds ratio = 1.57, \cref{fig:isoseq_whole_As_events}\textbf{A}). For the majority of genes characterised by splicing, only one or two AS events were observed (n = 10,708, 81.8\% of AS genes, \cref{fig:isoseq_whole_As_events}\textbf{B}), suggesting that AS events are often mutually independent. 
 
 \vspace{1cm}
@@ -346,7 +349,7 @@ In total, 40,249 alternative splicing events were identified in known genes with
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq]%
-	{\textbf{Alternative first is the most prevalent AS event, and novel isoforms are more likely to be characterised with complex AS events}: \textbf{A)} Proportion of AS events in annotated genes, known and novel isoforms. Novel isoforms were more likely to be characterised by all AS events, with the exception of AF and AL. \textbf{B)} Number of splicing events observed in genes that are alternatively spliced. Majority of genes are detected with only one or two splicing events. AF – Alternative First Exon, AL – Alternative Last Exon, A5’ – Alternative 5’ prime, A3’ – Alternative 3’ prime, IR – Intron Retention, MX – Mutually Exclusive, SE – Skipped Exon}
+	{\textbf{Alternative first is the most prevalent AS event, and novel isoforms are more likely to be characterised with complex AS events}: \textbf{A)} Proportion of AS events in annotated genes, known and novel isoforms. Novel isoforms were more likely to be characterised by all AS events, with the exception of AF and AL. \textbf{B)} Number of splicing events observed in genes that are alternatively spliced. Majority of genes are detected with only one or two splicing events. AF – Alternative First Exon, AL – Alternative Last Exon, A5’ – Alternative 5’ splice site, A3’ – Alternative 3’ splice site, IR – Intron Retention, MX – Mutually Exclusive, SE – Skipped Exon}
 	\label{fig:isoseq_whole_As_events}
 \end{figure}
 
