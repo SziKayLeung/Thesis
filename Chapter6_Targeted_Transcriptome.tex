@@ -1,39 +1,44 @@
-\chapter{Targeted Transcriptome}\label{ch: targeted_transcriptome}
+\chapter{Isoform landscape of AD-associated genes from targeted profiling of tau mouse model}\label{ch: targeted_transcriptome}
 \label{targetedmousetranscriptome}
-% ONT comparisons
-\iffalse
--	Comparing Read lengths 
--	Mappability 
--	Chimeric and gapped alignments 
--	Error patterns 
--	Isoform identification 
--	Isoform abundance estimation 
-
-Sequencing quality (fraction of reads aligned) on read lengths for single pass reads (subreads for PacBio) and multi-pass consensus reads (CCS for PacBio and 2D reads for ONT) 
-Fraction of Read aligned in bins
-
-Context specific errors 
-
-Pacbio non-size selection and Oxford Nanopore non-size selection
-Lowly expressed gene and minor isoform quantification  
-
-Oxford nanopore vs Iso-Seq using ERCC: length of GC bias? --> refer to Spyros's benchmarking paper
-Number of CCS passes for accuracy, Travers2010
-\fi
 
 %https://www.frontiersin.org/articles/10.3389/fmolb.2021.711733/full
 
 \section{Introduction}
-One current limitation of whole transcriptome sequencing is the low coverage/sequencing depth achieved per gene due to the distribution of reads across the whole transcriptome. Consequently, while whole transcriptome sequencing allows identification of novel genes (genes not previously annotated to the genome) and novel isoforms, it may not detect isoforms particularly those of low expression resulting in many false negatives. This can be circumvented by the use of target capture, which enriches a selective panel of genes that are then only sequenced. Multiple samples can further be pooled and sequenced together by barcoding samples at cDNA synthesis, which simplifies laboratory workflow and minimises associated sequencing costs.
+Long-read sequencing of the whole transcriptome at a global level provide valuable insights into the role of splicing and RNA isoforms in health and disease. In generating unambiguous, full-length isoform sequences, we have illustrated the dual utility of long-reads for comprehensive isoform annotation and identification of differentially expressed genes (\cref{ch5: diffgeneexp} and isoforms (\cref{ch5: diffisoexp}) in a mouse model of AD tauopathy, rTg4510. However, in comparison to short-read sequencing platforms, this approach suffers from lower sensitivity and missed coverage of the more lowly-abundant transcripts\cite{Stark2019}. This has been previously shown with missed detection of the lowly-abundant ERCC molecules (n = 30, 32.6\% of ERCC molecules, \cref{fig:isoseq_whole_ercc}), despite saturation of sample size (n = 12 samples), indicating a biased sampling of the more abundant isoforms and an inherent technological limitation to achieve a deeper sequencing depth. 
 
-%[Other methods of Targeted Sequencing i.e. CRISPR]
-
-%Advantages of targeted transcriptomics vs whole transcriptomics; resources in Targeted Transcriptomics paper; Literature Review 
-%List of relevance of AD genes
+One established solution to circumvent this lower sequencing coverage is to enrich transcripts associated with the gene of interest ("target gene"), and perform targeted sequencing. This can be achieved in two ways: i) Amplicon sequencing, which involves long-range PCR of target genes with primers designed to the 5' and 3'UTR (\cref{fig:targeted_sequencing_method}\textbf{A}), and ii) CaptureSeq, which utilises a pool of oligonucleotide probes designed to regions unique to the target genes for hybridisation-based enrichment (\cref{fig:targeted_sequencing_method}\textbf{B}). While amplicon sequencing enables extremely deep coverage of target genes including the longer isoforms, this approach generates a lower throughput and is typically applied to a small number of genes. In contrast, CaptureSeq can be applied to multiple genes of interest and is incorporated into the official Iso-Seq protocol as PacBio's recommended pipeline for targeted sequencing\cite{Tseng2019}.  
 
 
-%https://journals.lww.com/co-neurology/Fulltext/2021/04000/The_role_of_innate_immune_genes_in_Alzheimer_s.13.aspx#:~:text=Neuroinflammation%20is%20as%20an%20innate,role%20in%20Alzheimer's%20disease%20pathogenesis
-%https://www.nature.com/articles/s41598-020-75057-x
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=6,trim={1cm 40cm 1cm 0cm},clip,scale = 0.5]{Figures/Tg4510_diff_figures.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Methods for targeted sequencing]%
+	{\textbf{Methods for targeted long-read sequencing}. Shown is a schematic figure describing two commonly used methods for targeted long-read sequencing: \textbf{(A)} Amplicon sequencing and \textbf{(B)} CaptureSeq. Due to greater flexibility, we used CaptureSeq (hybridisation-based with IDT probes) method to enrich and sequence 20 AD-associated genes in the rTg4510 cortex. More details can be found in \cref{section:ch2_targetcapture_explanation}. Figure is taken and adapted from De Paoli-Iseppi et al. (2021) \cite{DePaoli-Iseppi2021}}
+	\label{fig:targeted_sequencing_method}
+\end{figure}
+
+Both sequencing approaches have been implemented in recent studies\cite{Clark2019,Treutlein2014,Tseng2019} to comprehensively survey the isoform landscape of disease-associated genes, including \textit{CACNA1C} (schizophrenia-associated risk gene)\cite{Clark2019}, \textit{NRXN1} (implicated in several neurodevelopmental disorders)\cite{Treutlein2014}, and \textit{SNCA}\cite{Tseng2019}, with notable success. Nanopore sequencing of \textit{CACNA1C} further identified a pronounced isoform switch in cerebellum from using normalised full-length read counts\cite{Clark2019}, highlighting the power of targeted sequencing to perform differential isoform usage analyses. 
+
+Given the demonstrated success of targeted long-read sequencing to identify disease-specific isoforms, this chapter focuses on comprehensively characterising the isoform landscape of 20 AD-associated genes (\cref{fig:targeted_genes}). These 20 AD-associated genes are implicated in various molecular mechanisms underpinning AD pathogenesis with evidence of altered splicing (detailed and reviewed in \cref{tab: TargetGenes_LitReview}). Using targeted enrichment with custom-designed probes (IDT) - CaptureSeq, we aimed to comprehensively characterise transcriptional and splicing changes of these well-known AD-associated genes associated with progressive tau pathology. The following objectives are:
+\begin{enumerate}
+	\item To enrich and sequence 20 AD-associated genes in rTg4510 mouse model at 4 time points with PacBio Iso-Seq
+	\item To validate Iso-Seq targeted dataset by sequencing a subset of samples with ONT nanopore cDNA sequencing
+	\item To compare isoform landscape of target genes from Iso-Seq whole transcriptome and targeted sequencing in the same samples 
+	\item To compare isoform landscape of target genes from Iso-Seq and ONT nanopore targeted sequencing
+	\item To comprehensively characterise isoform diversity and splicing events of AD-associated genes in rTg4510 mouse model 
+	\item To perform differential isoform-based analysis (differential transcript expression and differential transcript usage) on target genes to identify transcriptional and splicing changes between rTg4510 TG and WT mice
+\end{enumerate} 
+ 
+\vspace{0.5cm}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=5,trim={1cm 32cm 1cm 0cm},clip,scale = 0.5]{Figures/Tg4510_diff_figures.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\caption[Quantifying human-specific and mouse-specific \textit{MAPT}/\textit{Mapt} sequences in Iso-Seq Whole Transcriptome]%
+	{\textbf{Targeted sequencing of 20 AD-associated genes in rTg4510 cortex}: In this chapter, we performed targeted sequencing of 20 AD-associated genes (classified here by molecular pathway) in the rTg4510 mouse model.}
+	\label{fig:targeted_genes}
+\end{figure}
 
 \begin{changemargin}{1.5cm}
 	%\captionsetup{width=30cm}
@@ -41,18 +46,16 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 		\small %smaller font
 		\setlength\tabcolsep{2pt} %reduced margin size in table
 		\renewcommand{\arraystretch}{1}
-		\begin{longtable}[c]{p{1cm}p{2cm}p{4cm}p{16cm}p{1cm}p{1cm}}
-			\caption[The role and altered splicing patterns of the target genes in AD pathology]%		
-			{\textbf{The role and altered splicing patterns of the target genes in AD pathology}. Abca1 - ATP-Binding Cassette Sub-Family A Member 1, Abca7 - ATP-binding cassette sub-family A member 7, App - Amyloid-beta precursor protein, Bin1 - Bridging Integrator 1, CSF - Cerebrospinal fluid,  Fus - Fused in Sarcoma/Translocated in Liposarcoma, KPI - Kunitz-type protease inhibitor domain, Lof - Loss of Function, Picalm - Phosphatidylinositol binding clathrin assembly protein, Rhbdf2 - Rhomboid 5 Homolog 2, Sorl1 - Sortilin-related receptor 1, Trem2 - Triggering receptor expressed on myeloid cells 2, Trpa1 - Transient receptor potential ankyrin 1}
+		\begin{longtable}[c]{p{1cm}p{2cm}p{4cm}p{19cm}}
+			\caption[The role of target genes in AD pathology]%		
+			{\textbf{The role of target genes in AD pathology}. Abca1 - ATP-Binding Cassette Sub-Family A Member 1, Abca7 - ATP-binding cassette sub-family A member 7, App - Amyloid-beta precursor protein, Bin1 - Bridging Integrator 1, CSF - Cerebrospinal fluid, ER - Endoplasmic Reticulum, Fus - Fused in Sarcoma/Translocated in Liposarcoma, KPI - Kunitz-type protease inhibitor domain, Lof - Loss of Function, Picalm - Phosphatidylinositol binding clathrin assembly protein, Ptk2b - Protein tyrosine kinase 2 beta,  Rhbdf2 - Rhomboid 5 Homolog 2, Sorl1 - Sortilin-related receptor 1, Trem2 - Triggering receptor expressed on myeloid cells 2, Trpa1 - Transient receptor potential ankyrin 1}
 			\label{tab: TargetGenes_LitReview}\\
 			
 			\toprule
 			\multicolumn{1}{c}{Gene} &
 			\multicolumn{1}{c}{Pathway} &
 			\multicolumn{1}{c}{Function} &
-			\multicolumn{1}{c}{Role and Relevance in AD} &
-			\multicolumn{1}{c}{Expression} & 
-			\multicolumn{1}{c}{Length} \\* \midrule
+			\multicolumn{1}{c}{Role and Relevance in AD} \\* \midrule
 			\endfirsthead	%
 			\endhead%
 			\bottomrule
@@ -90,7 +93,7 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 			\centering Amyloid pathology  &
 			\centering Transmembrane glycoprotein  &
 			\tabitem \textbf{Genetics}: Identified causative mutations for EOAD. \newline
-			\tabitem \textbf{Pathology}: Posited in the amyloid cascade hypothesis, cleavage of APP produces longer A$\beta$ that accumulate and form insoluble fibrils and plaques characteristic of AD \newline
+			\tabitem \textbf{Pathology}: Posited in the amyloid cascade hypothesis, cleavage of APP produces longer A$\beta$ that accumulate and form insoluble fibrils and plaques characteristic of AD (\cref{aetiologyAD})\newline
 			\tabitem \textbf{Isoform Analysis}: Conflicting results of isoform-specific expression in AD; expression of KPI-containing APP isoforms is reported to be upregulated in AD brain and associated with A$\beta$ accumulation\cite{Zhang2011}, whereas another study reported no differential isoform expression in AD frontal lobe vs controls\cite{Panegyres2000}. \\
 			\hdashline[0.5pt/5pt]
 			
@@ -112,6 +115,21 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 			\tabitem \textbf{Expression}: CD33 expression is elevated in the AD microglia and infiltrating macrophages\cite{Griciuc2013} \\
 			\hdashline[0.5pt/5pt]	
 			
+			\centering \textit{Clu} &
+			\centering Lipid Homeostasis  &
+			\centering Secreted glycoprotein (apolipoprotein) with chaperone-like activity  &	
+			\tabitem \textbf{Genetics}: Majority of AD-associated SNPs are located within intronic regions intron 3 of CLU; rs11136000 is the most significant SNP associated with \textit{CLU}. \newline 
+			\tabitem AD-associated SNP, rs2279590, is identified within \textit{CLU} enhancer element and associated with increased \textit{CLU} expression; deletion of a 115bp intronic region flanking the rs2279590 variant resulted in decreased \textit{CLU} gene expression. \cite{Padhy2017}	\newline 	
+			\tabitem \textbf{Pathology}: Multiple \textit{CLU} mutations (frameshift mutation, mutations in disulphide bride region, rare-coding mutations in CLU $\beta$-chain) deregulate secretion and lead to protein degradation in ER\cite{Bettens2015} \newline 
+			\tabitem Percentage of synapses containing clusterin is higher in APOE4 carriers than APOE3 carriers\cite{Jackson2019} \newline 
+			\tabitem \textbf{Splicing}: Various isoforms generated with isoform-specific function and localisation (nucleus: 49kDa, mitochondria: 53kDa, ER/Golgi: 80kDa)
+			\tabitem 2 major isoforms in human brain (CLU1, CLU2) that are both upregulated in AD brain and produce similar-sized secreted proteins\cite{Ling2012}\newline 
+			\tabitem Identification of a novel isoform (mitoCLU) localised to the mitochondrial matrix and expressed in both mouse and human neurons and astrocytes. Mouse mitoCLU is translated from start site exon 3, which coincides with start site in human. \newline 
+			\tabitem Cell type specific \textit{CLU} expression profile observed: Exon 3–4, Exon 2 and Exon 1B mRNA was detected in both neurons and astrocytes, Exon 1A and Exon 1C appeared to be expressed specifically in astrocytes and neurons\cite{Herring2019} \newline 
+			\tabitem Intracellular form of \textit{CLU} (iCLU) was upregulated in rTg4510 mice, but not in Tg2576 mice. iCLU contains a coiled-coil motif, and interacts with tau and Bin1 isoforms (1-3).\cite{Zhou2014} \newline 
+			\tabitem \textbf{Expression}: mRNA expression upregulated in AD brain vs control\cite{Karch2012} \\
+			\hdashline[0.5pt/5pt]	
+			
 			\centering \textit{Fus} &
 			\centering TDP-43 pathology  &
 			\centering RNA-binding protein  &			
@@ -127,20 +145,44 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 			\tabitem \textbf{Expression}: Increased Fyn expression in AD post-mortem brains\cite{Lee2016b} and in P301S TG mice\cite{Low2021}, with upregulation of FynT expression and isoform switching (reduced expression of FynB)\cite{Lee2016b} \\
 			\hdashline[0.5pt/5pt]
 			
+			\centering \textit{Mapt} &
+			\centering Tau pathology  &
+			\centering Microtubule assembly and stability  &			
+			\tabitem  \textbf{Pathology}: Posited in the tau hypothesis, \textit{MAPT} encodes for tau which aggregates into neurofibrillary tangles as a characteristic hallmark of AD (\cref{aetiologyAD}) \newline 
+			\tabitem \textbf{Expression}: Regional distribution of \textit{MAPT} protein expression in human brain with highest tau protein levels observed in frontal cortex \cite{Trabzuni2012} \newline
+			\tabitem \textbf{Splicing}: Alternative splicing of exon 10 with tauopathy-associated intronic mutations resulting in inclusion of exon 10, resulting in increased 4R (4R tau, E10+)/3R (3R tau, E10-) ratio\cite{Bowles2022} \newline
+			\tabitem Coordination of exon 2 and 10 splicing; expression of exon 2 splicing regulators and subsequently exon 2 inclusion are differentially disrupted in AD brain \cite{Bowles2022} \\
+			\hdashline[0.5pt/5pt]
+			
 			\centering \textit{Picalm} &
 			\centering Endocytosis  &
 			\centering Adaptor protein involved in clathrin-mediated endocytosis &	
 			\tabitem \textbf{Genetics}: Identified various SNPs from GWAS studies, including protective rs3851179 SNP associated with modest increase in expression. Evidence of link between genetics and splicing; rs592297 SNP, located in exon 5, is associated to skipping of exons 2–4\cite{Parikh2014} \newline
 			\tabitem \textbf{Pathology}: Picalm haploinsufficiency in tau mouse model resulted in increased \& accelerated tau phosphorylation, and autophagy deficits \cite{Ando2020}. Increase of Picalm found to reverse disruption of APOE4 on early endocytosis  \cite{Narayan2020} \newline
 			\tabitem \textbf{Splicing, Expression}: PICALM, especially the longest isoform, was significantly decreased in AD post-mortem brain tissues \cite{Ando2016} \\
-			\hdashline[0.5pt/5pt]					
+			\hdashline[0.5pt/5pt]
 			
+			\centering \textit{Ptk2b} &
+			\centering Tau pathology  &
+			\centering Calcium-activated non-receptor tyrosine kinase &			
+			\tabitem \textbf{Genetics}: Altered splicing was reported as the mechanism for the effects of \textit{PTK2B} susceptibility alleles from AD TWAS; a G-to-A mutation was associated with increased intron retention in AD \cite{Raj2018}  \newline
+			\tabitem \textbf{Pathology}: \textit{Ptk2b} encodes Pyk2, which had a reduced phosphorylation level in aged 5XFAD mice\newline 
+			\tabitem \textit{Ptk2b} deletion did not markedly alter 5XFAD phenotype, whereas overexpression corrected deficits in synaptic proteins\newline
+			\tabitem \textbf{Expression}: Pyk2 protein levels were not altered in AD hippocampus or mouse 5XFAD model\cite{Giralt2018}\\
+			\hdashline[0.5pt/5pt]					
+		
 			\centering \textit{Rhbdf2} &
 			\centering Epigenetics  &
 			\centering Serine protease involved in TNF$\alpha$ secretion &
 			\tabitem \textbf{Epigenetics}: Meta-analysis of AD EWAS studies revealed the most significant differentially-methylated region in the entorhinal cortex residing in the intron region of \textit{Rhbdf2} between exon 3 and 4 \cite{Smith2021}, validating findings in previous studies\cite{DeJager2014, Lardenoije2019}\newline
 			\tabitem \textbf{Pathology}: Deletion of \textit{Rhbdf2} in mice inhibits releace of TNF$\alpha$, a major inflammatory cytokine involved with AD neuroinflammation\cite{Levy2020}\\
-			\hdashline[0.5pt/5pt]	
+			\hdashline[0.5pt/5pt]
+			
+			\centering \textit{Snca} &
+			\centering Snca pathology  &
+			\centering Presynaptic protein &
+			\tabitem \textbf{Splicing}: Alternative splicing of \textit{Snca} generates isoforms with different post-translational modifications and varying propensity for aggregation: $\alpha$-synuclein 112 (exon 6 skipping) with C-terminal truncation aggregates more easily than $\alpha$-synuclein 140 (FL and major \textit{Snca} transcript) and $\alpha$-synuclein 126 (exon 4 skipping)\cite{Beyer2012, Beyer2006}  \\
+			\hdashline[0.5pt/5pt]		
 			
 			\centering \textit{Sorl1} &
 			\centering Endocytosis, Lipid Homeostasis  &
@@ -150,7 +192,18 @@ One current limitation of whole transcriptome sequencing is the low coverage/seq
 			\tabitem \textbf{Splicing}: Observed downregulation of full-length SORL1 isoform in AD human brain whereas no change in expression isoforms with exon 2 skipping resulting in a deletion of 38 amino acids. Isoform with 92bp exon 19 skipping results in shift of coding reading frame and premature stop codon\cite{Grear2009}. Identified novel exon (E38b) located between exons 38 and 39, with highest expression of E38b-containing transcripts detected in cerebellum\cite{Monti2021} \newline
 			\tabitem \textbf{Expression}: Total SORL1 expression is reduced in AD, and in rTg4510\cite{Sobue2021}. Decreased transcript expression of truncated SORL1 isoform in AD cerebellum \cite{Monti2021}\\
 			\hdashline[0.5pt/5pt]	
-						
+			
+			\centering \textit{Tardbp} &
+			\centering TDP-43 pathology  &
+			\centering heterogeneous nuclear ribonuclear protein involved in gene regulation and splicing &			
+			\tabitem  \textbf{Pathology}: \textit{Tardbp} encodes TDP-43, which is the major constituent of neuronal inclusions characterised in FTLD and ALS\cite{Brouwers2010}. \newline 
+			\tabitem Up to 60\% of AD patients are characterised with TDP-43 deposits with identification of a rare AD-associated mutation (p.Ala90Val substitution)\cite{Brouwers2010} \newline   
+			\tabitem Overexpression of TDP-43 in APP/PS1 mouse model resulted in decreased A$\beta$ plaque burden but increased abnormal tau aggregation\cite{Davis2017}, whereas deletion similarly resulted in decreased A$\beta$ burden but increased levels of A$\beta$ oligomers\cite{LaClair2016} \newline 
+			\tabitem \textit{APOE4} associated with increased risk of developing TDP-43 pathology in AD.  \newline
+			\tabitem \textbf{Expression}: TDP-43 pathology is associated with severe AD pathology with significant increase in TDP-43 levels in late stage AD patients\cite{Herman2011} \\
+			\hdashline[0.5pt/5pt]	
+			
+			
 			\centering \textit{Trem2} &
 			\centering Immune  &
 			\centering Receptor for cell signalling pathways\newline &
@@ -556,6 +609,7 @@ While the throughput was comparable between Iso-Seq and ONT nanopore sequencing 
 
 \clearpage
 \subsection{Iso-Seq Targeted approach detects many more novel transcripts than whole transcriptome profiling}
+\label{ch6: wholevstargeted}
 % Number of Iso-Seq transcripts
 After filtering for technical artefacts (563 (1.69\%) isoforms were removed due to intra-priming, 314 (0.94\%) isoforms were removed due to RT switching, 1,267 (3.80\%) were removed due to likely partial degradation), a total of 4,780 isoforms were detected across 20 AD-associated target genes across all the samples (n = 24). Of these isoforms, an overwhelming majority were novel (n = 4601, 96.2\%) with no RNA-Seq support (n = 24 samples, total number of uniquely mapped reads = 360 million) at the junction (n = 4,033, 84.4\%). This is likely to be reflection of the low coverage of RNA-Seq reads per sample (mean number of uniquely mapped reads = 15 million) to comprehensively span these novel junctions, rather than an indication of the invalidity of these isoforms given the stringent processing of the Iso-Seq bioinformatics pipeline. 
 
@@ -688,6 +742,7 @@ Conversely, intron retention (IR) was the least observed splicing event characte
 %% canonical splice sites
 \clearpage
 \subsection{Comprehensive characterisation of AD-associated genes} 
+\label{ch6: target_gene_annotation}
 This section details the comprehensive annotation of the merged targeted long-read dataset generated from the enrichment of 20 AD-associated genes in the mouse entorhinal cortex of the rTg4510 wild-type and transgenic mice. 
 
 \vspace{1cm}
@@ -1036,125 +1091,116 @@ Detected in both PacBio Iso-Seq and ONT, we identified a number of isoforms with
 Finally, we detected some significantly shorter isoforms that were distinguished by the presence of a intron-retained first exon. These broadly appeared between exons 9 and 11 which encode for the tubulin-binding repeat domain. 
 
 \subsubsection{Fus}
----> Intron Retention specific to exons 4, exact match with other exons. The full-length transcript most dominant with all exons expressed, rather than the shorter transcripts and no exon skipping observed. 
+Identified as a causative gene for amyotrophic lateral sclerosis (ALS) and FTD, \textit{Fus} has become the characteristic pathological hallmark for neuronal aggregation in the subset of sporadic FTD cases that lack the more established inclusion markers of TDP-43 and tau\cite{Seelaar2010}. Despite only containing 15 exons, \textit{Fus} is a complex gene; multiple isoforms with varying lengths and exon inclusion are generated with only a quarter of the known isoforms (n = 4, 25\%) spanning the full-length of the gene. In total, we detected a total of 236 isoforms annotated to \textit{Fus}, the majority of which were "full-length" (n = 154, 58.6\%). Consequently in contrast to the known \textit{Fus} isoform landscape in the mouse genome, we found the \textit{Fus} splicing pattern relatively simpler in our dataset. A quarter (n = 53, 25.7\%) of the isoforms detected were largely analogous to the "full-length" isoform in preserving the exonic structure, differing by minor variations ("wobble") at the splice site. 
+
+Nonetheless, we detected widespread occurrence of exon skipping and intron retention events that were not observed in the reference genome. Over 40\% of isoforms (n = 103, 43.6\%) were characterised with at least one exon skipping event, with exon 8 exclusion observed in almost half of the these isoforms (n = 50 isoforms with exon 8 skipped, n = 48.5\%). Around the same region, we also detected a number of isoforms with intron retention events spanning across exons 6 and 7, which are also identified in the novel isoforms. However notably, we noted an intron-retained isoform than incorporated one of the known mono-exonic isoforms, resulting in an intron retained region spanning exons 10-12 which encode the RNA recognition motif (RRM) domain. Finally, we detected a number of intron retention events at the 3'end of the gene between exons 12 and 14, which encode zinc-finger-containing RGG-Znf-RGG domain (zF-RanBP). As an RNA-binding protein and a subunit of the heterogeneous nuclear ribonucleoprotein complex (hnRNP) complex involved in splicing, FUS recognition of RNA is mediated by both the RRM and zF-RanBP domains\cite{Wang2015c}. 
 
 \subsubsection{Bin1}
-Bin1 IR and ES occurs mostly at the non-constitutively spliced alternative exons, though also in the constitutive exons. 
-multiple intron retention events; 11 isoforms were characterised with intron retention, of which all but one was predicted for NMD. 9 additional isoforms were predicted for NMD. - higher level of intron retention in AD mice?
+\textit{Bin1} has been well implicated in AD pathology through identification of multiple AD-associated SNPs from GWAS studies, and recent studies on human post-mortem AD brains have shed light on the function and differential expression of its associated isoforms\cite{Taga2020}. Drawing parallels to the human-equivalent \textit{Bin1} isoforms, we observed extensive exon skipping within certain parts of the gene; the majority of isoforms (n = 290 isoforms, 78.8\%) were characterised with at least one exon skipping event. The first 10 exons encoding the N-BAR domain, which is involved in membrane curvature, were conserved and included in the "full-length" isoforms. Conversely inclusion of exons 14-16, which encode the CLAP domain involved in endocytosis, was highly variable among isoforms (Exon 14 skipping: XX isoforms, Exon 15 skipping: XX isoforms, Exon 16 skipping: XX isoforms). However, intron retention events (n = XX) were also notably enriched within this region. Aside from detecting long isoforms spanning the full-length of the gene, we also detected shorter isoforms with exclusion of the initial exons encoding the N-BAR domain but inclusion of the terminal exons encoding the Src homology 3 (SH3) domains. Among these, a number of isoforms (n = 19, ) were relatively similar in length and exonic structure to Bin1-204 (ENSMUST00000234373.1) with a long alternative first exon encoding the CLAP domain.  
 
 \subsubsection{App}
+\textit{App}, encoding for amyloid precursor protein, is one of the most commonly involved gene for AD with \textasciitilde30 causative mutations described. Detecting a total of 466 isoforms annotated to \textit{App}, we observed varying isoform lengths with less than half of the isoforms (n = 183, 39.9\%) containing exon 1 and spanning the full length of the gene. While a number of isoforms were structurally analogous to the two known shorter isoforms - App-205 (ENSMUST00000227654.1) and App-210 (ENSMUST00000228375.1) - we detected a significant number that started with a novel alternative first exon between exons 3 and 5, which encode the APP heparin binding domain. Nonetheless, the variation typically resided within the 5' end of the gene with the vast majority of isoforms (n = 428, 91.8\%) containing the terminal exon, which encode the cleaved beta amyloid peptide. 
+
+Despite this length variation, we observed a consistent splicing pattern with exon skipping (n = 406 isoforms, 87.1\%) enriched in two regions of the gene: across exon 7 (n = 289 isoforms) and exon 8 (n = 304 isoforms), which encode the Kunitz-type protease inhibitor (KPI), and exons 14 (n = 392 isoforms) and 15 (n = 390 isoforms), which were alternative last exons present in only two of the known \textit{APP} isoforms (App-208, ENSMUST00000227753.1 and App-209, ENSMUST00000227990.1). Previous studies to characterise \textit{App} isoforms have reported exon skipping of the KPI domain with conflicting results reported for the differential expression of KPI-containing isoforms in AD post-mortem brains. Despite enrichment of exon skipping within these two regions, exon skipping was widespread across the gene with majority of isoforms detecting characterised with 4 or more skipping events (n = 291 isoforms, 71.7\% of ES-isoforms). This included skipping of exons 18 and 19, which encode the beta-amyloid precursor protein C-terminus that is strongly implicated in AD and are often skipped together.   
 
 \subsubsection{Ptk2b}
-Ptk2b IR heavily supported by both PacBio and ONT 
-Ptk2b: 6 isoforms with intron retention
+\textit{Ptk2b}, which encodes for protein tyrosine kinase 2 (Pyk2), was one of the few genes for which altered splicing was reported to be a direct mechanism for the effects of AD-associated variants identified from human GWAS studies\cite{Raj2018}. Although increased intron retention  was reported from AD TWAS study, we observed that the \textit{Ptk2b} isoform landscape (n = 563 isoforms) in our dataset was dominated by varying isoform lengths with usage of alternative first exon and exon skipping, particularly exon 27 (n = 296, 52.5\%). ORF predictions showed that skipping of this 24bp exon, which was included in all the known isoforms (i.e. "constitutive"), shortened but maintained the reading frame. Conversely, intron retention was only evident in a few isoforms (n = 6, 1.1\%, detected using both PacBio Iso-Seq and ONT nanopore sequencing), which were analogous in exonic structure to the known shorter isoform (Ptk2b-205, ENSMUST00000136216.7) spanning the 3'end of the gene. 
+
+Drawing parallels to the human-equivalent \textit{PTK2B}, the mouse \textit{Pt2kb} gene similarly encompasses several well-defined structural domains including the N-terminal FERM domain, a central tyrosine kinase domain, and a C-terminal focal adhesion targeting domain (FAT)\cite{DePins2021}. Deeper characterisation of \textit{Pt2kb}-annotated isoforms in our dataset revealed isoforms with varying lengths from 5'truncation of the gene; i.e. the first exon starts downstream and contain exons encoding the kinase and FAT domain but lack the N-terminal FERM domain. Given that we performed stringent processing and filtering, it is unlikely that these isoforms are a by-product of RNA degradation, particularly given a number of these isoforms were detected by both long-read sequencing technologies and half of the known \textit{Ptk2b} isoforms exhibit a similar exonic structure. Previous studies have also identified similar isoforms that lack the FERM and kinase domain, and is predicted to be transcribed from an alternative promoter as an endogenous regulator of Pyk2 activity\cite{DePins2021}. Finally, we noticed that while the splice sites were largely conserved across the gene, exon 26 - the neighbouring exon to exon 27 which was skipped in half of the isoforms, was characterised with extensive A3' extension (i.e. matched 5' splice site but varying 3' splice site to the known isoform). 
 
 \subsubsection{Snca}
 \textit{Snca} encodes for $\alpha$-synuclein, which is known to abnormally aggregate in patients with PD, DLB and AD as a defining hallmark of Lewy body pathology. Despite only containing 7 exons, \textit{Snca} was the third most "isoformic" gene from the targeted panel with 622 isoforms detected. Deeper characterisation revealed that exon skipping, alternative 5' and 3' start sites largely contributed to the isoform diversity. Over 75\% of isoforms (n  = 483, 77.7\%) were identified with at least one exon skipping event. Exon 4 and 5 were skipped the most (exon 4: n = XX isoforms, XX\%; exon 5: n = XX isoforms, XX), despite being present across all the reference isoforms including the two known shorter isoforms (i.e constitutive). Aside from exon skipping, extensive usage of alternative 5' and 3' sites, particularly A5' truncation, was observed across all the exons with the exception of exon 4. Of note, we detected 84 isoforms which contained all the exons and primarily differed by alternative 5' and 3' sites. 
-
-Approximately two-thirds of isoforms detected were non protein-coding (n = 402, 64\%). 
+%Approximately two-thirds of isoforms detected were non protein-coding (n = 402, 64\%). 
 
 \subsubsection{Clu}
-Clu --> A lot of transcripts with IR AP of a specific novel exon
+In line with previous findings from human studies, we identified multiple isoforms (n = 733) annotated to \textit{Clu} in the mouse cortex. Although \textit{Clu}'s known isoform landscape was dominated by the presence of alternative first exons (n = 6 alternative first exons across 9 known isoforms), the majority of detected isoforms (n = 402, 55\%) originated from the first upstream exon and spanned the full-length of the gene. However, we did identify a handful of novel isoforms (n = 12, 1.6\%) with various alternative first exon, indicating the importance of alternative promoter usage as a transcriptional mechanism of \textit{Clu} expression.
+
+Deeper characterisation revealed that \textit{Clu} isoform diversity in our dataset was driven primarily by extensive usage of alternative 5' and 3' splice sites, and exon skipping and intron retention events enriched in certain parts of the gene. While we detected some degree of exon skipping across all the exons, exon 9 (n = 143 isoforms, 19.5\%), exon 10 (n = 129 isoforms, 17.6\%) and exon 11 (n = 165 isoforms, 22.5\%) were notably more skipped. Adding to the complexity of splicing in \textit{Clu}, these ES-annotated-isoforms were further characterised with alternative 5' and 3' splice sites in the exons included; Exon 10 was identified as one of the most skipped and most varied exon with alternative splice sites. In contrast, intron retention events (n = 217 events) predominantly occurred at the 5'end of the gene between exons 7 and 8. Notably, we identified a number of isoforms with intron retention spanning across exon 7 and upstream known alternative first exons; 42 isoforms with IR spanning across exon 7 and alternative first exon from Clu-206 (ENSMUST00000144619.1) and 4 isoforms with IR spanned across alternative first exon from Clu-203 (ENSMUST00000128539.7). 
 
 \subsubsection{Apoe}
+Despite only containing 5 exons, \textit{Apoe} - the strongest risk factor for AD - was annotated with the highest number of isoforms (n = 2,006). While the majority of isoforms contained all 5 exons (n = X), a deeper examination of \textit{Apoe} revealed complex variations of the final exon and 3'UTR, 
+supported by RNA-Seq data from matched samples. Drawing parallels to \textit{Vgf} and akin to one of the known isoforms of \textit{Apoe} (ENSMUST00000167646.8), the vast majority of isoforms detected were characterised with matched A5' and 3' end sites of exon 6 but skipping within the exon, resulting in two enclosed exons. As the primary contributor of isoform diversity in \textit{Apoe}, we also further detected a number of short isoforms that only contained exon 6 with evidence of "internal exon skipping". 
+
+In contrast to exon 6, the other exons were relatively conserved with significantly fewer variation of alternative 5' and 3' splice sites. Furthermore, despite the widespread isoform diversity identified for \textit{Apoe}, we only detected 4 isoforms that contained the known alternative first exon present in two of the known isoforms (ENSMUST00000172983.7). Notably, one of them (TALONT00166063) contained both the first exon and an alternative first exon, indicating that these exons are not mutually exclusive and further highlight the over-simplicity of the reference genome. 
+
+Aside from extensive usage of alternative 5' and 3' splice site, we also detected relatively low occurrence of exon skipping (n = 125 isoforms (0.06\%), XX events) and intron retention (n = 4 isoforms, n = XX events ). Exon 5 was found to be skipped the most (n = 89, 71.2\% of isoforms with ES), followed by exon 4 (n = 61 isoforms, 48.8\%). 
+
+\newpage
+\subsection{Improved sensitivity from targeted sequencing detects upregulation of AD-associated genes in rTg4510 TG mice}
+Despite the success of capturing full-length transcripts with long-read sequencing of the global transcriptome, we have shown that this approach falls short of sufficiently covering the more-lowly abundant genes and isoforms (\cref{ch6: wholevstargeted}). In contrast, target enrichment with CaptureSeq achieved deep sequencing of AD-associated genes, revealing unprecedented diversity of alternatively-spliced isoforms numbering in the hundreds (\cref{ch6: target_gene_annotation}). We suspected that this deep sequencing coverage would further allow accurate quantification of gene and isoform expression using normalised full-length read counts (\cref{fig:isoform_quant_strategy}\textbf{C}), forgoing the need of short-read RNA-Seq data (\cref{fig:isoform_quant_strategy}\textbf{B}). Subsequently, we sought to characterise transcriptional changes of these well known AD-associated genes between rTg4510 WT and TG mice by identifying changes in gene and isoform expression and usage.
+
+Using targeted Iso-Seq reads for annotation and expression, we identified three genes that were upregulated with progressive tau pathology in rTg4510 TG mice: \textit{Trem2} (log\textsubscript{2} fold change (FC) = 2.26, P = 2.45 x 10 \textsuperscript{-16}, R\textsuperscript{2} = 0.788), \textit{Cd33} (log\textsubscript{2}FC = 1.79, P = 4.5 x 10 \textsuperscript{-9}, R\textsuperscript{2} = 0.588) and \textit{Rhbdf2} (log\textsubscript{2}FC = 1.39, P = 3.06 x 10 \textsuperscript{-6}, R\textsuperscript{2} = 0.5). Upregulation of these genes were also observed using normalised ONT read counts, and was significantly more robust due to the greater sequencing depth achieved with ONT nanopore sequencing (\textit{Trem2}: log\textsubscript{2} fold change (FC) = 2.47, P = 1.91 x 10 \textsuperscript{-40}, R\textsuperscript{2} = 0.938); \textit{Cd33}: log\textsubscript{2}FC = 2.25, P = 2.97 x 10 \textsuperscript{-20}, R\textsuperscript{2} = 0.823; \textit{Rhbdf2}: log\textsubscript{2}FC = 1.31, P = 1.36 x 10\textsuperscript{-6}, R\textsuperscript{2} = 0.564). Consequently, we detected a significant increase in \textit{Apoe} (log\textsubscript{2}FC = 1.44, P = 1.45 x 10\textsuperscript{-8},  R\textsuperscript{2} = 0.76), \textit{Clu} (log\textsubscript{2}FC = 1.36, P = 1.39 x 10\textsuperscript{-16}, R\textsuperscript{2} = 0.80) and \textit{Abca1} (log\textsubscript{2}FC = 1.56, P = 5.66 x 10\textsuperscript{-5}, R\textsuperscript{2} = 0.7) gene expression using normalised ONT but not Iso-Seq FL read counts. This is in line with a previous RNA-Seq study that reported upregulation of \textit{Trem2} and \textit{Apoe} in isolated-microglia from rTg4510 mice\cite{Sobue2021}. Notably, these gene expression changes were recapitulated using normalised RNA-Seq reads aligned to the whole transcriptome Iso-Seq dataset, but not from normalised Iso-Seq read counts from the whole transcriptome profiling, as further evidence of the greater sensitivity of targeted sequencing. 
+
+Given the improved sensitivity of targeted sequencing and the extensive mapping of isoform landscape of AD-associated genes, we next sought to identify changes in transcript expression between rTg4510 TG and WT mice. In total, we detected 553 differentially expressed transcripts using normalised ONT reads counts, the majority (n = 485, 87.7\%) of which were associated with progressive tau pathology. Among these, 448 transcripts (81\%) were novel and \textit{Clu} was annotated with the most differentially expressed transcripts (n = 151, 31.1\%); no differential transcript expression was detected for \textit{Ank1, Tardbp} and \textit{Trpa1}. Despite this unprecedented detection of novel transcripts whose expression changed with increased tau pathology, we found that the majority (n = 366, 75.4\%) of these isoforms were lowly-expressed ($<$20 normalised FL read counts) and accounted less than 5\% of the respective isoform fraction. Further examination revealed that the isoform landscape across the 20 AD-associated genes were characterised by a few dominant isoforms. This corroborates with findings from the largest database genome-wide, quantitative profiles of AS events to date, reporting that more than 18\% of genes simultaneously express multiple major isoforms\cite{Tapial2017}. 
+
+A reflection of the relatively lower sequencing depth of the Iso-Seq targeted dataset, we only detected 16 differentially expressed transcripts using Iso-Seq normalised read counts. Comparison of the ONT and Iso-Seq targeted dataset revealed 6 that were commonly identified as differentially expressed. Among these, the top ranked differentially expressed transcript was a known isoform (Trem2-201, ENSMUST00000024791.14) annotated to \textit{Trem2}. Expression of this known isoform significantly dominated that of the novel isoforms, and was strongly upregulated with progressive tau pathology; this was evident in both ONT and Iso-Seq targeted dataset. Drawing parallels to \textit{Gfap} and \textit{C4b}, upregulation of Trem2-201 mirrored that of \textit{Trem2} gene expression, indicating that increased \textit{Trem2} gene expression in aged rTg4510 TG mice was primarily driven by one dominant isoform. Despite this upregulation of Trem2-201, we found that there was no change in isoform usage across genotype or with age; Trem2-201 occupied over 75\% of the isoform proportion in rTg4510 irrespective of genotype and age. The remaining isoform proportions were equally divided into the two other known isoforms - Trem2-202 (ENSMUST00000113237.3) and Trem2-203 (ENSMUST00000113237.3) - and all of the other novel isoforms combined. These findings suggest that the drastic upregulation of the dominant isoform (Trem2-201) in aged rTg4510 TG mice was accompanied with an increased expression of all the other minor isoforms by the same magnitude, resulting in a consistent isoform proportion. Hierarchical clustering of individual mouse samples based on \textit{Trem2} isoform expression level was further found to robustly discriminate between TG and WT groups and by age, as evidence of the global increase of \textit{Trem2}-associated transcript expression with progressive tau pathology.  
+
+Aside from \textit{Trem2}, we identified changes in expression of the known isoform annotated to \textit{Cd33} and \textit{Bin1} with accumulation of the tau pathology in rTg4510 TG mice. Using normalised ONT read counts, we noted a drastic increase in gene expression of \textit{Cd33} and its known isoform, Cd33-203 (ENSMUST00000205503.1) in aged rTg4510 TG mice. However, unlike \textit{Trem2}, the \textit{Cd33} isoform landscape was relatively more complex, suggesting that increased \textit{Cd33} gene expression is not solely driven by one isoform. Several novel isoforms were found to be abundantly expressed, occupying \textasciitilde50\% of \textit{Cd33} isoform proportion. Among these, two isoforms (TALONT001237522, TALONT001237572) were significantly upregulated with progressive tau pathology (TALONT001237572: log\textsubscript{2} FC = 2.65, P = 2.37 x 10\textsuperscript{-14}, R\textsuperscript{2} = 0.79, TALONT001237522: log\textsubscript{2} FC = 1.91, P = 7.62 x 10\textsuperscript{-25}, R\textsuperscript{2} = 0.90). Both isoforms differed from the known isoform by an alternative last exon characterised with intron retention of exons 7 and 8. Finally, we observed a notable change in isoform usage between rTg4510 TG and WT mice aged 8 months with upregulation of Cd33-203 coupled with downregulation of a novel mono-exonic isoform (TALONT001237520, P = 2.38 x 10\textsuperscript{-5}, R\textsuperscript{2} = 0.50) that spanned the 3'UTR. 
+
+  
+
+  
+
+
+ 
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=19,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{Trem2}]%
+		{\textbf{Significant upregulation of dominant known isoform of \textit{Trem2} with progressive tau pathology}: \textit{Caption continues on the following page.}}   
+		\label{fig:trem2_diff_analysis}
+	\end{figure}
+\begin{figure}[p]
+	\captionsetup{width=1.5\textwidth}
+	\contcaption{\textbf{(A)} }%
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=7,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{Bin1}]%
+		{\textbf{Significant upregulation of dominant known isoform of \textit{Bin1} with progressive tau pathology}: \textit{Caption continues on the following page.}}   
+		\label{fig:bin1_diff_analysis}
+	\end{figure}
+	\begin{figure}[p]
+		\captionsetup{width=1.5\textwidth}
+		\contcaption{\textbf{(A)} }%
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[htp]
+		\begin{center}
+			\includegraphics[page=8,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
+		\end{center}
+		\captionsetup{width=1.5\textwidth}
+		\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{Bin1}]%
+		{\textbf{Significant upregulation of dominant known isoform of \textit{Cd33} with progressive tau pathology}: \textit{Caption continues on the following page.}}   
+		\label{fig:cd33_diff_analysis}
+	\end{figure}
+	\begin{figure}[p]
+		\captionsetup{width=1.5\textwidth}
+		\contcaption{\textbf{(A)} }%
+	\end{figure}
+\end{landscape}
+
+
+Notably also identified upregulation of novel isoforms. One example is \textit{Clu}.
+
+%https://journals.lww.com/co-neurology/Fulltext/2021/04000/The_role_of_innate_immune_genes_in_Alzheimer_s.13.aspx#:~:text=Neuroinflammation%20is%20as%20an%20innate,role%20in%20Alzheimer's%20disease%20pathogenesis
+
+
+
 
 
 \newpage
-\subsection{Quantitative analysis}
-\subsection{RNA-Seq Alignment to Iso-Seq defined transcriptome}
-For the hybrid approach of aligning short reads to Iso-Seq defined transcriptome from the targeted approach, several factors were optimised including the library size and the Iso-Seq annotation (\cref{tab:rnaseq_alignment_targeted}) to align RNA-Seq reads to targeted transcriptome dataset using \textit{Kallisto}. 
-
-\begin{table}[h]
-	\centering
-	\caption[RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome]%
-	{\textbf{RNA-Seq Alignment strategy to Iso-Seq defined targeted transcriptome}. Tabulated is trialled methods of aligning short reasd to Iso-Seq defined transcriptome, with alterations either of the sequencing library (such as the pool of the sequencing reads for alignment) and the choice of Iso-Seq isoform for alignment}
-	\label{tab:rnaseq_alignment_targeted}
-	\begin{threeparttable}
-		\begin{tabular}{@{}cll@{}}
-			\toprule
-			Method & Sequencing Library                       & Annotation                            \\ \midrule
-			1      & Targeted Transcriptome (All Reads)\tnote{a}       & No Isoform collapse\tnote{c}                   \\
-			2      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to longest FSM\tnote{d}       \\
-			3      & Targeted Transcriptome (All Reads)\tnote{a}       & Isoform collapse to most abundant FSM\tnote{e} \\
-			4      & Targeted Transcriptome (On-Target Reads)\tnote{b} & Isoform collapse to longest FSM\tnote{d}       \\
-			5      & Targeted Transcriptome (On-Target Reads)\tnote{b} & Isoform collapse to most abundant FSM\tnote{e} \\
-			6 & \begin{tabular}[c]{@{}l@{}}Whole Transcriptome \& \\ Targeted Transcriptome (On Target Reads)\end{tabular} & Isoform collapse to longest FSM \\ \bottomrule
-		\end{tabular}
-		\begin{tablenotes}
-			\footnotesize
-			\item[a] Sequencing reads from on-target and off-target genes
-			\item[b] Sequencing reads aligned only to on-target genes
-			\item[c] Transcriptome annotation following \textit{SQANTI} with no removal of redundant ISM and FSM
-			\item[d] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISM to respective longest FSM of same transcript and aggregated counts
-			\item[e] Transcriptome annotation following \textit{SQANTI} with collapse of redundant ISM to respective most abundant FSM of same transcript and aggregated counts 
-		\end{tablenotes}
-	\end{threeparttable}
-\end{table}
-
-However, independent of the scaffold or library size, \textit{Kallisto} appeared to mis-assign short reads to novel isoforms. This is exemplified with \textit{Clu} (\cref{fig:Clu_TargetedRNAseqAlignment}) and \textit{Bin1} (\cref{fig:Bin1_TargetedRNAseqAlignment}).   Using total Iso-Seq FL reads from targeted transcriptome as proxy of transcript expression, the known and longer isoforms associated with both \textit{Clu} (\cref{fig:Clu_TargetedRNAseqAlignment}\textbf{A}) and \textit{Bin1}(\cref{fig:Bin1_TargetedRNAseqAlignment}\textbf{A}) were most abundant whereas the novel isoforms were only lowly detected. Conversely, alignment of RNA-Seq reads to targeted transcriptome often ascribed the novel isoforms as the dominant isoform(s), particularly when further collapsing targeted transcriptome to longest or most abundantly expressed isoforms or limiting the scaffold to only on-target reads (Methods 2 - 5 from \cref{tab:rnaseq_alignment_targeted}). Nonetheless, while using all the reads from the targeted transcriptome with redundant ISM and FSM is more likely to ascribe the known isoform as the dominant isoform, mis-asignment can still occur with the shorter, redundant ISM annotated as most abundantly expressed rather than the longer, complete FSM (\cref{fig:Clu_TargetedRNAseqAlignment}\textbf{a, b, d}).
-
-Visualisations of the dominant known isoform ascribed by Iso-Seq FL read counts and the dominant novel isoform ascribed by RNA-Seq alignment from \textit{Clu} and \textit{Bin1} show that both isoforms are structurally very similar, with almost identical internal exonic structure bar one or two exons with differing splice junctions. There was no difference in RNA-Seq coverage from \textit{Kallisto} alignment to targeted transcriptome across all the methods \cref{tab:rnaseq_alignment_targeted}), suggesting that the issue is the probabilistic assignment of reads to isoforms (Expectation-Maximum algorithm) rather than the alignment. It appears that in cases where the known and novel isoforms are similar in transcript structure, and consequently there are only a few short reads that can be unambiguously assigned, \textit{Kallisto} fails to quantify at an isoform level. Given that significantly more novel isoforms are identified using the targeted approach than the whole transcriptome approach, this is more likely to be evident in the former.   
-
-
-\newgeometry{left=0.5cm,top=1cm,right=0.5cm}
-\begin{landscape}
-	\begin{figure}[htp]
-		\centering
-		\includegraphics[page=1,trim={0cm 1cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures_Landscape.pdf}
-		\captionsetup{width=1.2\textwidth,singlelinecheck=off}
-		\caption[RNA-Seq mis assignment of dominant isoform associated with \textit{Clu}]%
-		{\textbf{RNA-Seq mis assigns \textit{Clu}'s novel isoform as most abundantly expressed}. Shown are the top 10 most abundantly expressed \textit{Clu} transcripts based on \textbf{A)} Iso-Seq full-length read counts from targeted transcriptome, \textbf{B)} RNA-Seq reads aligned to all reads in targeted transcriptome, with no further collapse of redundant FSM and ISM transcripts (Method 1 in \cref{tab:rnaseq_alignment_targeted}) and \textbf{C)} RNA-Seq reads aligned to all reads in targeted transcriptome with isoforms further collapsed to longest FSM (Method 2 in \cref{tab:rnaseq_alignment_targeted}). Of note, all other methods (3 - 6) generated a similar plot to figure c. \textbf{D)} Swan visualisations of most abundantly expressed isoforms according to respective methods. Iso-Seq mean expression refer to average full length read counts from targeted transcriptome. RNA-Seq mean expression refer to estimated counts from \textit{Kallisto} in Figures b and c. 
-		}
-		\label{fig:Clu_TargetedRNAseqAlignment}
-	\end{figure}
-	
-	
-	\begin{figure}[htp]
-		\centering
-		\includegraphics[page=2,trim={0cm 0cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures_Landscape.pdf}
-		\captionsetup{width=1.2\textwidth,singlelinecheck=off}
-		\caption[RNA-Seq mis-assignment of dominant isoform associated with \textit{Bin1}]%
-		{\textbf{RNA-Seq mis-assigns \textit{Bin1}'s novel isoform as most abundantly expressed}. Shown are the top 10 most abundantly expressed \textit{Bin1} transcripts based on \textbf{A)} Iso-Seq full-length read counts from targeted transcriptome, \textbf{B)} RNA-Seq reads aligned to all reads in targeted transcriptome, with no further collapse of redundant FSM and ISM transcripts (Method 1 in \cref{tab:rnaseq_alignment_targeted}) and \textbf{C)} RNA-Seq reads aligned to all reads in targeted transcriptome with isoforms further collapsed to longest FSM (Method 2 in \cref{tab:rnaseq_alignment_targeted}). Of note, all other methods (3 - 6) generated a similar plot to figure c. \textbf{D)} Swan visualisations of most abundantly expressed isoforms according to respective methods. Iso-Seq mean expression refer to average full length read counts from targeted transcriptome. RNA-Seq mean expression refer to estimated counts from \textit{Kallisto} in Figures b and c. 
-		}
-		\label{fig:Bin1_TargetedRNAseqAlignment}
-	\end{figure}
-\end{landscape}
-\restoregeometry
-
-
-
-
-\subsection{Isoform expression}
-\begin{itemize}
-	\item Detected many novel isoforms using Iso-Seq reads with lower expression
-	\item Despite detecting many isoforms, some genes only have one dominant isoform which is typically the known (Sorl1, Tardbp, Clu, particularly in the case with APP with 118 isoforms detected)
-	\item Some isoforms that appear to be all similarly expressed (Picalm)
-	\item Very lowly expressed Trpa1 and Rhbdf2 with only one isoform and three isoforms detected respectively
-\end{itemize}
-
-\subsection{Differential transcript expression}
-
-\begin{itemize}
-	\item As would be expected, target transcriptome detected more isoforms per associated gene than whole transcriptome (with the exception of \textit{Ank1,Snca}) and lowly-expressed genes not otherwise detected in whole transcriptome, including \textit{Cd33},\textit{Rhbdf2}, \textit{Trpa1}
-	\item Across all genes independent of sequencing approach, RNA-Seq expression of associated gene and isoform is significantly higher than corresponding Iso-Seq expression, reflecting of higher sequencing coverage and sample size 
-	\item Except for \textit{Trem2}, differential gene and transcript expression was only identified in whole transcriptome when RNA-Seq was used as expression (rather than Iso-Seq)
-	\item This observation was recapitulated in targeted transcriptome with \textit{Abca1} and \textit{Clu}
-\end{itemize}
-
-\begin{itemize}
-	\item Abca1: RNA-Seq expression identified differential gene and isoform expression with increased expression of known isoform with progressive tau pathology. A smaller general trend is observed with Iso-Seq data alone but insignificant.
-	\item Bin1 Differential transcript expression observed using Iso-Seq reads with increased expression of novel isoform (PB.3915.524, NIC, P = 3.66 x 10\textsuperscript{-5}, R-squared = 0.547), but this was not recapitulated with RNA-Seq reads.
-	\item Tardby: 18 novel isoforms, the majority of which were characterised with intron retention (n = 14) and also predicted for NMD (n = 8) and 3 additional for NMD
-	\item App: Differential transcript expression observed using Iso-Seq reads with increased expression of known isoform (ENSMUST00000227654.1, P = 1.75 x 10\textsuperscript{-8}, R-squared = 0.657), but this was not recapitulated with RNA-Seq reads
-	\item Sorl1: Differential transcript expression observed using Iso-Seq reads with increased expression of known isoform (ENSMUST00000089250.8, P = 2.317 x 10\textsuperscript{-8}, R-squared = 0.634), but this was not recapitulated with RNA-Seq reads.
-	\item Clu: Differential gene and isoform expression was detected using RNA-Seq reads as expression, with upregulated expression associated with progressive tau pathology. However, this increase expression was attributed to a novel isoform (G4103.43,PB.2634.299) rather than the known longer isoform
-	\item Differential gene expression identified using both Iso-Seq and RNA-Seq reads as expression with TG showing increased gene expression across progressive tau pathology. Iso-Seq attributed this increase to the known isoform (PB.7333.28, ENSMUST00000173739.7), whereas RNA-Seq attributed this increase to the novel isoform (G11287.50)
-	\item Cd33: Differential gene expression and isoform expression was observed using both Iso-Seq and RNA-Seq reads, driven by upregulated expression of the known isoform (PB.7476.2), which was also detected in the whole transcriptome. 
-	\item Observed significant differential gene expression and transcript expression - increased gene expression associated with progressive tau pathology, which is attributed to the known isoform (ENSMUST00000024791.14).
-\end{itemize}
-
-\subsection{Differential transcript usage}
-
 \section{Discussion}
 While gene expression can partly explain the low isoform diversity (\textit{Trpa1} and \textit{Rhbdf2} are lowly expressed at XX and XX TPM), 
 Relationship between length of 3'UTR and variation? Sorl1 many transcripts with set lengths of 3'UTR, Cd33 also has long UTR but no skipping or mismatch. Despite, only two exons, complexity of Vgf driven by the long UTR and different variations of the 3'UTR 
