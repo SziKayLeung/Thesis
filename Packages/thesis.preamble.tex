@@ -1,5 +1,6 @@
+ 
 \newcommand{\myparagraph}[1]{\textbf{#1}\mbox{}\\} % next line after paragraph use
-\newcommand{\boldheader}[1]{\vspace{0.5cm}\textbf{#1}\mbox{}\\} % bold header titles and space before and after
+\newcommand{\boldheader}[1]{\vspace{0.15cm}\textbf{#1}\mbox{}\\} % bold header titles and space before and after
 \newcommand{\underlineheader}[1]{\vspace{0.5cm}\underline{#1}\mbox{}\\} % bold header titles and space before and after
 \newcommand*\conj[1]{\bar{#1}}
 \newenvironment{changemargin}[1]{\begin{list}{}{\setlength{\voffset}{#1}}\item[]}{\end{list}} %change margin for long table intro
@@ -7,7 +8,8 @@
 
 %\usepackage[backend=biber, style = geschichtsfrkl]{biblatex}
 %\addbibresource{Knit.bbl}
- 
+
+\usepackage{ccaption}% http://ctan.org/pkg/ccaption
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{latexsym}
@@ -188,38 +190,38 @@
 
 \def\coop{\mbox{\large $\rhd\!\!\!\lhd$}}
 \newcommand{\sync}[1]{\raisebox{-1.0ex}{$\;\stackrel{\coop}{\scriptscriptstyle
-#1}\,$}}
+			#1}\,$}}
 
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{theorem}{Theorem}[chapter]
 
 \newcommand{\Figref}[1]{Figure~\ref{#1}}
 \newcommand{\fig}[3]{
- \begin{figure}[!ht]
- \begin{center}
- \scalebox{#3}{\includegraphics{figs/#1.ps}}
- \vspace{-0.1in}
- \caption[ ]{\label{#1} #2}
- \end{center}
- \end{figure}
+	\begin{figure}[!ht]
+		\begin{center}
+			\scalebox{#3}{\includegraphics{figs/#1.ps}}
+			\vspace{-0.1in}
+			\caption[ ]{\label{#1} #2}
+		\end{center}
+	\end{figure}
 }
 
 \newcommand{\figtwo}[8]{
- \begin{figure}
- \parbox[b]{#4 \textwidth}{
- \begin{center}
- \scalebox{#3}{\includegraphics{figs/#1.ps}}
- \vspace{-0.1in}
- \caption{\label{#1}#2}
- \end{center}
- }
- \hfill
- \parbox[b]{#8 \textwidth}{
- \begin{center}
- \scalebox{#7}{\includegraphics{figs/#5.ps}}
- \vspace{-0.1in}
- \caption{\label{#5}#6}
- \end{center}
- }
- \end{figure}
+	\begin{figure}
+		\parbox[b]{#4 \textwidth}{
+			\begin{center}
+				\scalebox{#3}{\includegraphics{figs/#1.ps}}
+				\vspace{-0.1in}
+				\caption{\label{#1}#2}
+			\end{center}
+		}
+		\hfill
+		\parbox[b]{#8 \textwidth}{
+			\begin{center}
+				\scalebox{#7}{\includegraphics{figs/#5.ps}}
+				\vspace{-0.1in}
+				\caption{\label{#5}#6}
+			\end{center}
+		}
+	\end{figure}
 }

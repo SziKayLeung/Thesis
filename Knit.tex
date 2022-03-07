@@ -26,12 +26,7 @@
 %------------------------------------------------------------------------------------------
 
 \begin{document}
-\sloppy % text not to overflow across margin
-\title{
-	{Thesis Title}\\
-	{\large Institution Name}\\}
-\author{Author Name}
-\date{Day Month Year}
+\include{Preamble/TitlePage}
 
 \normallinespacing
 \maketitle
@@ -50,6 +45,7 @@
 \addcontentsline{toc}{chapter}{List of Tables}
 
 \newpage
+\include{Preamble/Publications}
 %\listofmyequations
 %\addcontentsline{toc}{chapter}{List of Equations}
 
@@ -59,6 +55,7 @@
 \renewcommand{\nomname}{Abbreviations}
 \addcontentsline{toc}{chapter}{Abbreviations}
 \printnomenclature 
+\include{Preamble/GeneNomen}
 
 
 %==========================================================================================
@@ -73,7 +70,8 @@
 \include{Chapter3c_LongReadSequencing_IsoformQuantification}
 \include{Chapter4_Whole_Transcriptome}
 \include{Chapter5_Tg4510_GlobalAnalysis}
-%\include{Chapter6_Targeted_Transcriptome}
+\include{Chapter6_Targeted_Transcriptome}
+\include{Conclusions}
 %\include{Chapter7_BDR}
 
 
@@ -84,9 +82,9 @@
 
 \begin{appendix}
 \crefalias{chapter}{appendix}
-%\include{Appendix/Isoseq_Protocol}
-%\include{Appendix/ONT_Protocol}
-%\include{Appendix/cDNA_Synthesis_Approaches}
+\include{Appendix/Isoseq_Protocol}
+\include{Appendix/ONT_Protocol}
+\include{Appendix/cDNA_Synthesis_Approaches}
 \include{Appendix/ONT_Bioinformatics}
 \end{appendix}
 
@@ -96,7 +94,9 @@
 % References
 %------------------------------------------------------------------------------------------
 
-\bibliographystyle{unsrt}
+%\bibliographystyle{unsrt}
+%https://www.youtube.com/watch?v=VWgf1CPfUFc
+\bibliographystyle{makenewstyle}
 \bibliography{library}
 
 \end{document}
