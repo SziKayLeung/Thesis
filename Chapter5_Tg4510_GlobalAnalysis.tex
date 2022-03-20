@@ -18,11 +18,11 @@ Following on from the results presented in \textbf{Chapter 4}, this chapter aime
 \section{Methods}
 
 \subsection{Datasets}
-All analyses presented in this chapter follow on from \cref{ch: whole_transcriptome} and use the same Iso-Seq long-read datasets generated from 12 female mice (WT = 6, rTg4510 TG = 6, aged 2 and 8 months, \cref{tab:whole_phenotype}). Briefly, RNA was prepared for Iso-Seq library preparation and SMRT sequencing on the PacBio Sequel (\cref{ch4_methods: isoseq_library}), followed by QC and data processing (\cref{ch4_methods: isoseq_data}). Reads from individual samples were processed separately with \textit{IsoSeq3} and merged for transcript collapse with \textit{Cupcake}, genome alignment with \textit{Minimap2}(v2.17) and re-annotation with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data. ISM transcripts with only the 3' fragment matching reference transcript (3'ISM) were considered technical artefacts resulting from 5'degradation and thus removed.  
+All analyses presented in this chapter follow on from \cref{ch: whole_transcriptome} and use the same Iso-Seq long-read datasets generated from 12 female mice (WT = 6, rTg4510 TG = 6, aged 2 and 8 months, \cref{tab:whole_phenotype}). Briefly, RNA was prepared for Iso-Seq library preparation and SMRT sequencing on the PacBio Sequel (\cref{ch4_methods: isoseq_library}), followed by QC and data processing (\cref{ch4_methods: isoseq_data}). Reads from individual samples were processed separately with \textit{IsoSeq3} and merged for transcript collapse with \textit{Cupcake}, genome alignment with \textit{Minimap2} (v2.17) and re-annotation with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data. ISM transcripts with only the 3' fragment matching reference transcript (3'ISM) were considered technical artefacts resulting from 5'degradation and thus removed.  
 
 \subsection{Quantification of human MAPT transgene expression}
 \label{ch5: hmapt_quant}
-The presence of human- and mouse-specific \textit{Mapt/MAPT} sequences was determined in FL transcripts as a QC check of sample identity. Species-specific \textit{Mapt/MAPT} sequence, located in a 2kb region present in the 3'UTR, was identified after using BLAT\cite{Kent2002} to compare human and mouse MAPT/Mapt sequence for divergent transcript sequences \cite{Castanho2020}).  
+The presence of human and mouse-specific \textit{Mapt/MAPT} sequences was determined in FL transcripts as a QC check of sample identity. Species-specific \textit{Mapt/MAPT} sequence, located in a 2kb region present in the 3'UTR, was identified after using BLAT\cite{Kent2002} to compare human and mouse MAPT/Mapt sequence for divergent transcript sequences \cite{Castanho2020}).  
 
 \subsection{Characterisation of Alternative Splicing Events} 
 Alternative splicing events were examined using a range of packages and custom scripts (as described and implemented in \cref{ch4: transcriptome_annotation}), to assess whether there was a difference in splicing patterns associated with progressive tau pathology in the rTg4510 mouse model. 
@@ -35,9 +35,9 @@ Differential expression analysis was performed with \textit{tappAS} (fully descr
 
 \vspace{1cm}
 \begin{myequation}[h]
-Let \textit{I} denote the genotype groups (wild-type - WT, transgenic - TG) and \textit{J} as the age (2 and 8 months) for each particular group, and assuming that gene or transcript expression in measured in replicated samples (\textit{R}).  
+Let \textit{i} denote the genotype group (wild-type - WT, transgenic - TG), \textit{j} the age (2 or 8 months) and \textit{r} the replicate number (assuming that gene or transcript expression is measured in replicated samples).  
 \begin{align}
-	y_{ijr} =  \:&\beta_{0} + \beta_{1}D_{ijr} \nonumber
+	y_{ijr} =  \:&\beta_{0} + \beta_{1}D_{i} \nonumber
 	\\ &+ \delta_{0}T_{ijr} + \delta_{1}T_{ijr}D_{ijr}   \nonumber
 \end{align}
 where
@@ -65,7 +65,7 @@ therefore, if:
 	\caption[Different conditions modelled for rTg4510 genotype and age effects]%
 	{\textbf{Different conditions modelled for rTg4510 genotype and age effects.} Statistical models generated to dissect genotype and age effects with \textit{maSigPro} using \textbf{Equation 5.1} for 2 experimental groups (WT - wild-type/Control, TG - Transgenic/Case) across two time points/age (T1, T2). 
 	\\\\
-	The regression coefficients from \textbf{Equation 5.1} - $\beta_{1}$, $\delta_{0}$, $\delta_{1}$ - refer to the different variables modelled, the significance of which can be used to infer whether there is a genotype, age or interaction effect. The significance is symbolised by the tick and cross, which refers to adjusted p-value (FDR) < 0.05 and > 0.05 respectively. A significance of  $\beta_{1}$ denotes to a statistically significant difference between WT and TG at T1 (Genotype effect),$\delta_{0}$ to a difference in WT over time (Age effect), and $\delta_{1}$ to a difference between WT and TG across age (Interaction effect).}   
+	The regression coefficients from \textbf{Equation 5.1} - $\beta_{1}$, $\delta_{0}$, $\delta_{1}$ - refer to the different variables modelled, the significance of which can be used to infer whether there is a genotype, age or interaction effect. The significance is symbolised by the tick and cross, which refers to adjusted p-value (FDR) < 0.05 and > 0.05 respectively. A significant value of $\beta_{1}$ denotes to a statistically significant difference between WT and TG at T1 (Genotype effect), $\delta_{0}$ to a difference in WT over time (Age effect), and $\delta_{1}$ to a difference between WT and TG across age (Interaction effect).}   
 	\label{fig:dea_model}
 \end{figure}
 
