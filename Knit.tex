@@ -5,7 +5,7 @@
 
 % latex template: https://www.overleaf.com/project/5e7ca0498eb4030001ac3e0c
 %% packages
-\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=3cm]{geometry}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
 \include{Packages/thesis.preamble}
 %\renewcommand{\nomname}{List of Abbreviations}
 
@@ -32,7 +32,8 @@
 \maketitle
 \pagestyle{plain} % page numbering
 
-\include{Preamble/Abstract}
+\include{Abstract}
+\include{Preamble/Dedication}
 \include{Preamble/Acknowledgements}
 \tableofcontents
 
@@ -93,9 +94,13 @@
 % References
 %------------------------------------------------------------------------------------------
 
-%\bibliographystyle{unsrt}
+\begingroup
+\bibliographystyle{abbrv}
+\setstretch{0.2}
+\setlength\bibitemsep{0pt}
 %https://www.youtube.com/watch?v=VWgf1CPfUFc
-\bibliographystyle{makenewstyle}
+%\bibliographystyle{makenewstyle}
 \bibliography{library}
+\endgroup
 
 \end{document}
