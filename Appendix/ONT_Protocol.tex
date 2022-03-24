@@ -1,47 +1,43 @@
-\chapter{Oxford Nanopore Transcriptome Protocol}
+\chapter{Customised ONT nanopore sequencing protocol}
 \label{app_longread_ont_protocol}
 
-%\etocsetnexttocdepth{}
-%\etocsettocstyle{\subsection*{Contents}}{}
-%\etocsetnexttocdepth{5}
-%\localtableofcontents
+\stoptocwriting
+This protocol was adapted from three sources: i) "Wellcome Trust Advanced Course: RNA Transcriptomics (2018)" that I attended as part of my PhD, and provided by J.Ragoussis (hereby referred to as "WTAC"), ii) the official ONT protocol "1D amplicon/cDNA by Ligation (SQK-LSK109)", and iii) directed under the guidance of Dr Karen Moore, Exeter's sequencing services. In brief, this protocol aimed to complement the Iso-Seq Protocol (\textbf{\cref{app_longread_protocol}}) as a direct comparison of the two sequencing technologies. It was therefore important to ensure that all the steps, except the ONT library preparation step, were consistent (\cref{fig:ONT_TargetedProtocol}). Consequently, cDNA synthesis and amplification was performed, followed by target capture, and the lab workflow then branched out upon the respective library preparation.   
 
-This protocol was adapted from Wellcome Trust Advanced Course: RNA Transcriptomics (2018), provided by J.Ragoussis (referred as WTAC), the official ONT protocol "1D amplicon/cDNA by Ligation (SQK-LSK109)", and directed under the guidance of K.Moore, Exeter's sequencing services. In brief, this protocol aimed to complement the Iso-Seq Protocol (Section \ref{Isoseq_Protocol}) as a direct comparison of the two sequencing technologies. It was therefore important to ensure that all other steps, bar library preparation, were consistent (Figure X). Consequently, cDNA synthesis and amplification \ref{section:ch2_cDNA_synthesis_explanation} was performed twice in parallel for the sample of interest, and the pipeline branched upon the respective library preparation.   
+\section{cDNA Synthesis and Amplification}
+For a direct comparison of ONT nanopore sequencing and PacBio Iso-Seq approach, the same methods for cDNA synthesis and amplification in the Iso-Seq protocol were used (\cref{Isoseq_protocol_cDNAsynthesis} - \cref{Isoseq_Protocol_largescalepcr}). There were attempts to perform cDNA synthesis and amplification from WTAC protocol, particularly as it used the capped-dependent Teloprime kit (\textbf{\cref{ch:alt_cDNA}}). However, there were difficulties in achieving sufficient yield for downstream library preparation, in addition to complicating downstream comparative analyses.
 
-\begingroup
-\parindent=0em
-\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
-\etocsetnexttocdepth{5}
-\localtableofcontents 
-\endgroup
+%Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to use 400ng of Total RNA and then dilute in 180ul (rather than 90ul as per protocol). Concentration of diluted cDNA would be same as in previous experiments (200ng diluted in 90ul), therefore expect similar number of PCR cycles; only difference is with more diluted cDNA, able to split cDNA products for PacBio and ONT protocols (90ul each); Unfortunately, due to low concentration of starting Total RNA, not able to reverse-transcribe 400ng of total RNA. One other possible solution is to dilute 200ng in 180ul before proceeding with PCR cycle optimisation and large scale amplification. However, this would result in more PCR cycles required, resulting in more PCR bias and errors etc.   
 
-\subsection{cDNA Synthesis and Amplification}
-For a direct comparison of ONT's minion sequencing and PacBio's Iso-Seq approach, the same methods for cDNA synthesis and amplification in the Iso-Seq protocol were used (\cref{Isoseq_protocol_cDNAsynthesis} - \cref{Isoseq_Protocol_largescalepcr}). There were attempts to perform cDNA synthesis and amplification from WTAC's protocol, particularly as it used the capped-dependent Teloprime kit (Appendix X). However, there were difficulties in achieving sufficient yield for downstream library preparation, in addition to complicating downstream comparative analyses.
-
-Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to use 400ng of Total RNA and then dilute in 180ul (rather than 90ul as per protocol). Concentration of diluted cDNA would be same as in previous experiments (200ng diluted in 90ul), therefore expect similar number of PCR cycles; only difference is with more diluted cDNA, able to split cDNA products for PacBio and ONT protocols (90ul each); Unfortunately, due to low concentration of starting Total RNA, not able to reverse-transcribe 400ng of total RNA. One other possible solution is to dilute 200ng in 180ul before proceeding with PCR cycle optimisation and large scale amplification. However, this would result in more PCR cycles required, resulting in more PCR bias and errors etc.   
-
-\subsection{Bead Purification of Large Scale PCR Products}
+\section{Bead Purification of Large Scale PCR Products}
 \label{ONT_Protocol_Bead_Purification}
 \begin{enumerate}
 	\item Pool 800$\mu$L PCR reactions (16 x 50$\mu$L PCR reactions) and add 0.90X volume of AMPure PB (200$\mu$L) magnetic beads. 
-	\item 20-30$\mu$L loss is expected from evaporation,therefore would not be able to recover 800$\mu$L of cDNA . Note: only prepare 1 Fraction for downstream library preparation rather than 2 Fractions in Iso-Seq
-	\item Proceed with AMPure PB Bead Purification (Section X), with 51$\mu$L of TE Buffer
-	\item Quantify DNA amount and concentration of using a high-sensitivity Qubit (Section X) 
-	\item Determine library size using the BioAnalyzer with DNA 12000 Kit (Section \ref{section:ch2_bioanalyzer}) 
+	\begin{itemize}
+		\item 20-30$\mu$L loss is expected from evaporation, therefore do not be able to recover 800$\mu$L of cDNA.
+		\item Note: Only prepare 1 Fraction for downstream library preparation rather than the 2 Fractions in Iso-Seq.
+	\end{itemize}
+	\item Proceed with AMPure PB Bead Purification (\cref{proto: ampure}), with 51$\mu$L of TE Buffer.
+	\item Quantify DNA amount and concentration using a high-sensitivity Qubit (\cref{Isoseq_Protocol_qubit}).
+	\item Determine library size using the BioAnalyzer with DNA 12000 Kit (\cref{Isoseq_Protocol_tapestation_bioanalyzer}). 
 \end{enumerate}
 
-\subsection{ONT MinION Library Preparation}
-\subsubsection{Repair DNA and Ends}
+\section{ONT MinION Library Preparation}
+\subsection{Repair DNA and ends}
 \begin{enumerate}
-	\item Thaw DNA CS (DCS) at room temperature, spin down, mix by pipetting, and place on ice
-	\item Prepare the NEBNext FFPE DNA Repair Mix and NEBNext End repair / dA-tailing Module reagents in accordance with manufacturer’s instructions, and place on ice
-	\item Prepare a PCR reaction mix for each sample in microcentrifuge tube (Table \ref{tab:ont_repair_dna_ends})
-	\item Mix gently by flicking tube and spin down 
-	\item Incubate in thermal cycle at 20° C for 5 minutes and 65° C for 5 mins
+	\item Thaw DNA CS (DCS) at room temperature, mix, spin down, and place on ice.
+	\item Prepare the NEBNext FFPE DNA Repair Mix and NEBNext End repair/dA-tailing Module reagents in accordance with manufacturer’s instructions, and place on ice.
+	\item Prepare a PCR reaction mix for each sample in micro-centrifuge tube (\cref{tab:ont_repair_dna_ends}).
+	\item Mix gently by flicking tube and spin down. 
+	\item Incubate in thermal-cycler at 20°C for 5 minutes and 65°C for 5 minutes.
 \end{enumerate}
-\
+
+\vspace{1cm}
 \begin{table}[h]
 	\centering
+	\caption[Repair DNA and Ends]%
+	{\textbf{Reagent composition for DNA and end repairs}}
+	\label{tab:ont_repair_dna_ends}
 	\begin{tabularx}{0.8\textwidth}{lc}
 		\toprule
 		Reagents                          & Volume ($\mu$L) \\ \midrule
@@ -54,16 +50,11 @@ Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to
 		Nuclease-free water               & Up to 60    \\
 		Total                             & 60          \\ \bottomrule
 	\end{tabularx}
-	\caption{Repair DNA and Ends]}
-	\label{tab:ont_repair_dna_ends}
 \end{table}
 
 \subsubsection{Bead Purification of cDNA end-repaired products}
 \begin{enumerate}
-	\item	Proceed with AMPure PB Bead Purification (Section \ref{general_ampure_bead_purification}), with 1X of AMPure Beads and elute with 61$\mu$L of nuclease-free water
-		\begin{itemize}
-		\item Incubate on a Hula mixer (rotator mixer) for 5 minutes at room temperature, rather than shaking in a VWR vortex mixer at 2000rpm for 10 minutes at room temperature 
-	\end{itemize} 
+	\item Proceed with AMPure PB Bead Purification (\cref{general_ampure_bead_purification}), with 1X of AMPure Beads and elute with 61$\mu$L of nuclease-free water.
 \end{enumerate}
 
 \subsubsection{Prepare Ligation Reaction}
@@ -74,30 +65,30 @@ Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to
 		\item Thaw Ligation Buffer (LNB) at room temperature, spin down and mix by pipetting. Due to viscosity, vortexing this buffer is ineffective. Place on ice immediately after thawing and mixing.
 		\item Thaw Elution Buffer (EB) and S Fragment Buffer (SFB) at room temperature, mix by vortexing, spin down and place on ice.
 	\end{itemize}
-	\item Prepare PCR reaction mix in a 1.5 ml Eppendorf DNA LoBind tube
-	\item Mix gently by flicking the tube, and spin down 
-	\item Incubate the reaction for 10 minutes at room temperature (up to 4hours)
+	\item Prepare PCR reaction mix in a 1.5 ml Eppendorf DNA LoBind tube.
+	\item Mix gently by flicking the tube, and spin down.
+	\item Incubate the reaction for 10 minutes at room temperature (up to 4hours).
 \end{enumerate}
 
 \subsubsection{Bead Purification of ligated cDNA}
 \begin{enumerate}
-	\item Prepare the AMPure beads for use by allowing to equilibrate to room temperature for a minimum of 15minutes. Resuspend by vortexing.
+	\item Prepare the AMPure beads for use by allowing to equilibrate to room temperature for a minimum of 15m inutes. Resuspend by vortexing.
 	\item Add 40$\mu$l of resuspended AMPure XP beads to the reaction and mix the bead/DNA solution thoroughly.
 	\item Incubate on a Hula mixer (rotator mixer) for 5 minutes at room temperature.
-	\item Spin down both tubes (for 1 second) to collect beads 
+	\item Spin down both tubes (for 1 second) to collect beads.
 	\item Place tubes in a magnetic bead rack, and wait until the beads collect to the side of the tubes and the solution appears clear (2 minutes).
 	\item With the tubes still on the magnetic bead rack, slowly pipette off cleared supernatant and save in other tubes. Avoid disturbing the bead pellet.
 	\item With the tubes still on the magnetic bead rack, wash the beads by adding either 250$\mu$l S Fragment Buffer (SFB). Flick the beads to resuspend, then return the tube to magnetic rack and allow the beads to pellet. Remove the supernatant using a pipette and discard.
 	\item Repeat the previous step.
-	\item Remove residual supernatant by taking tubes from magnetic bead rack and spin to pellet beads. Place the tubes back on magnetic bead rack and pipette off any remaining supernatant 
-	\item Remove tubes from magnetic bead rack and allow beads to air-dry (with tube caps open) for 30 seconds
-	\item Elute with 15$\mu$l Elution Buffer (EB). Tap tubes until beads are uniformly re-suspended. Do not pipette to mix
-	\item Elute DNA by letting the mix stand at room temperature for 10 minutes 
+	\item Remove residual supernatant by taking tubes from magnetic bead rack and spin to pellet beads. Place the tubes back on magnetic bead rack and pipette off any remaining supernatant. 
+	\item Remove tubes from magnetic bead rack and allow beads to air-dry (with tube caps open) for 30 seconds.
+	\item Elute with 15$\mu$L Elution Buffer (EB). Tap tubes until beads are uniformly re-suspended. Do not pipette to mix.
+	\item Elute DNA by letting the mix stand at room temperature for 10 minutes.
 	\item Spin the tube down to pellet beads, then place the tube back on the magnetic bead rack. Let beads separate fully and transfer supernatant to a new 1.5ml Lo-Bind tube. Avoid disturbing beads.
-	\item Quantify DNA amount and concentration of Fraction 1 and Fraction 2 using a high-sensitivity Qubit (Section X). Determine library size using the BioAnalyzer with DNA 12000 Kit (Section \ref{section:ch2_bioanalyzer}) 
+	\item Quantify DNA amount and concentration of Fraction 1 and Fraction 2 using a high-sensitivity Qubit (\cref{Isoseq_Protocol_qubit}). Determine library size using the BioAnalyzer with DNA 12000 Kit (\cref{Isoseq_Protocol_tapestation_bioanalyzer}). 
 \end{enumerate}
 
-\subsection{Priming the Flow Cell}
+\section{Priming the Flow Cell}
 \begin{enumerate}
 	\item Prepare the following reagents:
 	\begin{itemize}
@@ -106,44 +97,46 @@ Rationale for repeating ClonTech 2x and then pooling: Ideal scenario would be to
 		\item Spin down the Flush Tether (FLT) tube, mix by pipetting, and return to ice.
 	\end{itemize}
 	\item Open the lid of the nanopore sequencing device and slide the flow cell's priming port cover clockwise so that the priming port is visible.
-	\item Priming and loading the SpotON Flow Cell
+	\item Priming and loading the SpotON Flow Cell.
 	\begin{itemize}
-		\item Take care to avoid introducing any air during pipetting
-		\item Care must be taken when drawing back buffer from the flow cell. The array of pores must be covered by buffer at all times. Removing more than 20-30$\mu$l risks damaging the pores in the array.
+		\item Take care to avoid introducing any air during pipetting.
+		\item Care must be taken when drawing back buffer from the flow cell. The array of pores must be covered by buffer at all times. Removing more than 20-30$\mu$L risks damaging the pores in the array.
 	\end{itemize}
-	\item After opening the priming port, check for small bubble under the cover. Draw back a small volume to remove any bubble (a few $\mu$ls):
+	\item After opening the priming port, check for small bubble under the cover. Draw back a small volume to remove any bubble (a few $\mu$Ls):
 	\begin{itemize}
-		\item Set a P1000 pipette to 200 $\mu$l
+		\item Set a P1000 pipette to 200$\mu$L
 		\item Insert the tip into the priming port
-		\item Turn the wheel until the dial shows 220-230$\mu$l, or until you can see a small volume of buffer entering the pipette tip
+		\item Turn the wheel until the dial shows 220-230$\mu$L, or until you can see a small volume of buffer entering the pipette tip
 		\item Visually check that there is continuous buffer from the priming port across the sensor array.
 	\end{itemize}
-	\item Prepare the flow cell priming mix: add 30$\mu$l of thawed and mixed Flush Tether (FLT) directly to the tube of thawed and mixed Flush Buffer (FLB), and mix by pipetting up and down.
-	\item Load 800$\mu$l of the priming mix into the flow cell via the priming port, avoiding the introduction of air bubbles. Wait for 5 minutes.
+	\item Prepare the flow cell priming mix: add 30$\mu$L of thawed and mixed Flush Tether (FLT) directly to the tube of thawed and mixed Flush Buffer (FLB), and mix by pipetting up and down.
+	\item Load 800$\mu$L of the priming mix into the flow cell via the priming port, avoiding the introduction of air bubbles. Wait for 5 minutes.
 	\item Thoroughly mix the contents of the LB tube by pipetting. The Loading Beads (LB) tube contains a suspension of beads. These beads settle very quickly. It is vital that they are mixed immediately before use.
 \end{enumerate}
 
 \subsection{Library loading into the Flow Cell}
 \begin{enumerate}
-	\item Prepare sample with for library as in Table 
+	\item Prepare sample with for library as in \cref{tab:ont_loading_flow_cells}.
 	\item Gently lift the SpotON sample port cover to make the SpotON sample port accessible.
-	\item Load 200 $\mu$l of the priming mix into the flow cell via the priming port (not the SpotON sample port), avoiding the introduction of air bubbles.
+	\item Load 200 $\mu$L of the priming mix into the flow cell via the priming port (not the SpotON sample port), avoiding the introduction of air bubbles.
 	\item Mix the prepared library gently by pipetting up and down just prior to loading.
-	\item Add 75 $\mu$l of sample to the flow cell via the SpotON sample port in a drop-wise fashion. Ensure each drop flows into the port before adding the next.
+	\item Add 75 $\mu$L of sample to the flow cell via the SpotON sample port in a drop-wise fashion. Ensure each drop flows into the port before adding the next.
 	\item Gently replace the SpotON sample port cover, making sure the bung enters the SpotON port, close the priming port and replace the MinION lid.
 \end{enumerate}
 \
 
 \begin{table}[h]
 	\centering
+	\caption[Loading Flow Cells]%
+	{\textbf{Loading ONT flow cells}}
+	\label{tab:ont_loading_flow_cells}
 	\begin{tabularx}{0.8\textwidth}{lc}
 		\toprule
-		Reagents                                          & Volume ($\mu$l) \\ \midrule
+		Reagents                                          & Volume ($\mu$L) \\ \midrule
 		Sequencing Buffer (SQB)                           & 37.5        \\
 		Loading Buffer (LB), mixed immediately before use & 25.5        \\
 		DNA library                                       & 12          \\
 		Total                                             & 75          \\ \bottomrule
 	\end{tabularx}
-	\caption{Loading Flow Cells}
-	\label{tab:ont_loading_flow_cells}
 \end{table}
+\resumetocwriting

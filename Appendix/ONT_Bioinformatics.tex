@@ -1,17 +1,7 @@
-\chapter{ONT Bioinformatics}\label{app_ONTBioinformatics}
+\chapter{Optimisation of ONT bioinformatics pipeline}\label{app_ONTBioinformatics}
 \label{ONT_Bioinformatics_appendix}
-%\etocsetnexttocdepth{}
-%\etocsettocstyle{\subsection*{Contents}}{}
-%\etocsetnexttocdepth{5}
-%\localtableofcontents
 
-\begingroup
-\parindent=0em
-\etocsettocstyle{\rule{\linewidth}{\tocrulewidth}\vskip0.5\baselineskip}{\rule{\linewidth}{\tocrulewidth}}
-\etocsetnexttocdepth{5}
-\localtableofcontents 
-\endgroup
-
+\stoptocwriting
 This section documents the results generated from processing ONT targeted datasets with various community-based tools and provides a rationale for the optimised ONT pipeline (depicted in XX) and the final curation of AD-associated transcripts in the mouse transcriptome (Chapter X). 
 
 \subsection{Introduction}
@@ -59,3 +49,4 @@ We next compared the isoforms associated with target genes from all three ONT da
 \textit{TALON} was used to address the challenges of processing noisy ONT reads and achieve a balance between retaining true, novel rare transcripts and removing artefacts or novel transcripts that are not biologically meaningful. Rather than use RNA-Seq reads as filter, novel isoforms were removed if they were lowly-expressed and were not reproducibly detected as means of assessing transcript validity. Through this approach, we found that i) the majority of transcripts had only one read and were only detected in one sample, ii) the number of reads in each sample (expression) rather than the number of samples (reproducibility) primarily determine whether a transcript is retained or filtered, and ii) the default parameter (minimum 5 reads across minimum 2 samples) is too stringent in removing the vast majority of reads - a lower threshold (minimum 2 reads across minimum 2 samples) was therefore proposed. 
 
 Notably, aside from the added features of reference-based error correction and quantification-led filtering, \textit{TALON} also superseded \textit{TAMA} and \textit{FLAIR} for simultaneous transcript discovery and quantification (the abundance output from \textit{TAMA}'s tama\_read\_support\_levels.py is computationally intensive to recover the read counts for each sample). 
+\resumetocwriting
