@@ -23,8 +23,8 @@ Successful nanopore sequencing requires the efficient capture and threading of s
 	\centering
 	\includegraphics[page=1,trim={0 6cm 0 0 },clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT's Nanopore cDNA Sequencing]%
-	{\textbf{ONT's Nanopore cDNA Sequencing.}\textbf{A)} Oxford Nanopore Technologies pioneered the development of sequencing DNA through a biological nanopore. The translocation of the sequence, controlled by the enzyme motor protein, causes nucleotide-sensitive perturbations in the electric current. \textbf{B)} The structure of the library DNA with ligation of the sequencing adapter, containing the motor protein (brown circle), to the template and complementary strand. \textbf{C)} Two sequencing translocation modes are currently offered, generating either 1D or 1D\textsuperscript{2} reads. Figures are taken from Oxford Nanopore Product Brochure July 2018.}
+	\caption[ONT nanopore cDNA Sequencing]%
+	{\textbf{ONT nanopore cDNA Sequencing.} Shown is an overview of Oxford Nanopore Technologies (ONT) nanopore platform. \textbf{(A)} ONT nanopore sequencing involves the translocation of a DNA sequence through a biological nanopore, which is controlled by the enzyme motor protein and causes nucleotide-sensitive perturbations in the electric current. \textbf{(B)} The structure of the library DNA with ligation of the sequencing adapter, containing the motor protein (brown circle), to the template and complementary strand. \textbf{(C)} Two sequencing translocation modes are currently offered, generating either 1D or 1D\textsuperscript{2} reads. Figures are taken from Oxford Nanopore Product Brochure July 2018.}
 	\label{fig:ONT_Mechanism}
 \end{figure}
 
@@ -39,8 +39,8 @@ For a fairer and more direct comparison, all steps prior to the ONT library prep
 	\centering
 	\includegraphics[page=7,trim={0 6cm 0 0 },clip, scale = 0.7]{Figures/ProjectDevelopment_FiguresONT}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT and Iso-Seq Lab workflow for targeted transcriptome profiling]%
-	{\textbf{ONT and Iso-Seq Lab workflow for targeted transcriptome profiling.} Shown is a flow diagram of the ONT lab workflow in parallel with the Iso-Seq lab workflow for a fair and direct comparison of targeted transcriptome profiling. RNA was barcoded (denoted by the orange and purple star), converted to cDNA using SMARTer PCR cDNA synthesis kit. Amplified and purified cDNA was then pooled in equimolar quantities across multiple fractions and samples, followed by with target gene enrichment using the hybridisation-based capture (IDT), respective library preparation and sequencing.}
+	\caption[Comparison of the ONT and Iso-Seq lab workflow for targeted profiling]%
+	{\textbf{Comparison of the ONT and Iso-Seq lab workflow for targeted profiling.} Shown is a flow diagram of the ONT lab workflow in parallel with the Iso-Seq lab workflow for a fair and direct comparison of targeted transcriptome profiling. RNA was barcoded (denoted by the orange and purple star), converted to cDNA using SMARTer PCR cDNA synthesis kit. Amplified and purified cDNA was then pooled in equimolar quantities across multiple fractions and samples, followed by with target gene enrichment using the hybridisation-based capture (IDT), respective library preparation and sequencing.}
 	\label{fig:ONT_TargetedProtocol}
 \end{figure}
 
@@ -76,8 +76,8 @@ However, major advances in the basecalling algorithms, the chemistry and nanopor
 	\centering
 	\includegraphics[page=2,trim={0 19cm 0 0},clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Significant advances in ONT nanopore sequencing read accuracy]%
-	{\textbf{Significant advances in ONT nanopore sequencing read accuracy.} Optimisation in the structure of nanopores (chemistry updates) and development in basecalling algorithms have led to drastic improvements in read accuracy. The R7 and R9 nanopore series is based on the MspA and CsgG protein, respectively. Of note, the figure does not include the latest chemistry (1D\textsuperscript{2}) or nanopore development (R.10.4, this involves a longer barrel and two pinch points to provide better resolution of homo-polymer sequences). Figure is taken from Rang et al.(2018)\cite{Rang2018}}
+	\caption[Advances in ONT nanopore sequencing read accuracy]%
+	{\textbf{Advances in ONT nanopore sequencing read accuracy.} Shown is a timeline of the improvement of read accuracy as a consequence of the development of ONT nanopore chemistry and basecalling algorithms. The R7 and R9 nanopore series are based on the MspA and CsgG protein, respectively. Of note, the figure does not include the latest chemistry (1D\textsuperscript{2}) or nanopore development (R.10.4, this involves a longer barrel and two pinch points to provide better resolution of homo-polymer sequences). Figure is taken from Rang et al.(2018)\cite{Rang2018}}
 	\label{fig:ONT_advances}
 \end{figure}
 
@@ -89,7 +89,7 @@ In contrast to PacBio SMRT sequencing, real-time feedback and progress of the na
 	\includegraphics[page=6,trim={0 14cm 0 0 },clip, scale = 0.8]{Figures/ProjectDevelopment_FiguresONT}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Examples of successful and suboptimal ONT nanopore sequencing runs]%
-	{\textbf{Examples of successful and suboptimal ONT nanopore sequencing runs.} Shown are duty time plots from \textbf{A)} a good quality run indicated by the majority of pores in the "sequencing" state (bright green), \textbf{B)} a suboptimal run with channels being blocked as indicated by an accumulation of pores in the "recovering" state (dark blue), \textbf{C)} a suboptimal run with low pore occupancy as indicated by the high ratio of "pore" (dark green) to "sequencing" state, and \textbf{D)} a suboptimal run with flow cell failure indicated by the majority of pores in "inactive state" (light blue). 
+	{\textbf{Examples of successful and suboptimal ONT nanopore sequencing runs.} Shown are duty time plots from \textbf{(A)} a good quality run indicated by the majority of pores in the "sequencing" state (bright green), \textbf{(B)} a suboptimal run with channels being blocked as indicated by an accumulation of pores in the "recovering" state (dark blue), \textbf{(C)} a suboptimal run with low pore occupancy as indicated by the high ratio of "pore" (dark green) to "sequencing" state, and \textbf{(D)} a suboptimal run with flow cell failure indicated by the majority of pores in "inactive state" (light blue). 
 	\\ \\
 	Channel blocking typically occurs when there are contaminants in the library. Conversely, low pore occupancy suggests insufficient loading material or poor library preparation (poor ligation reaction). Flow cell failure indicate damaged channel or membranes, which can be caused by multiple factors (air bubbles, osmotic imbalance, presence of detergents in library). Figures are taken from Wellcome Trust Advanced Course: RNA Transcriptomics (2018). Channel states are classified as sequencing (bright green), pore (dark green), recovering (dark blue), inactive (light blue) and unclassified (grey).}
 	\label{fig:ONTPoreOccupancy}
@@ -113,7 +113,7 @@ Unlike the Iso-Seq bioinformatics pipeline which was largely established by PacB
 	\centering
 	\includegraphics[page=15,trim={0cm 6cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Comparison of the bioinformatics pipeline for processing PacBio Iso-Seq and ONT 1D-reads]%
+	\caption[Comparison of the Iso-Seq and ONT bioinformatics pipeline]%
 	{\textbf{Comparison of the bioinformatics pipeline for processing PacBio Iso-Seq and ONT 1D-reads.} Shown is a side-by-side comparison of the bioinformatics pipeline used to process PacBio Iso-Seq and ONT 1D-reads from initial processing of raw reads, alignment to reference genome with \textit{Minimap2}, to collapse of reads to transcripts and final isoform annotation with \textit{SQANTI}. The bioinformatic pipelines adopted are largely similar between Iso-Seq and ONT with the difference primarily in the initial processing of raw reads; raw Iso-Seq reads were processed with the PacBio bioinformatics suite (\textit{Iso-Seq3}) whereas raw ONT reads were processed using various community-based packages.   
 	}
 	\label{fig:ONT_PacBio_bioinformatics}
@@ -135,8 +135,8 @@ Trimmed reads with adaptors present at both ends were retained, and reads corres
 		\includegraphics[page=22,trim={0cm 18cm 0cm 1cm},clip, scale = 0.7]{Figures/ProjectDevelopment_Figures.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Structure of ONT cDNA template]%
-	{\textbf{Structure of ONT cDNA template.} Shown is the \textbf{A)} final structure of the cDNA molecules for ONT sequencing, after cDNA synthesis and adaptor ligation, and the corresponding differentiating start and end sequence for the plus and minus strands \textbf{B)} and with just the adaptor sequences for comparison between the different read strands. The original cDNA molecules are outlined in purple and green, and the ONT boxes indicate the position of the ONT sequencing adaptors. The barcode location of sample demultiplexing is indicated in red (see \cref{tab:barcode_primers} and \cref{tab:ont_barcode} for barcode sequences). 
+	\caption[Structure of the ONT cDNA template]%
+	{\textbf{Structure of the ONT cDNA template.} Shown is the \textbf{(A)} final structure of the cDNA molecules for ONT sequencing, after cDNA synthesis and adaptor ligation, and the corresponding differentiating start and end sequence for the plus and minus strands \textbf{(B)} and with just the adaptor sequences for comparison between the different read strands. The original cDNA molecules are outlined in purple and green, and the ONT boxes indicate the position of the ONT sequencing adaptors. The barcode location of sample demultiplexing is indicated in red (see \cref{tab:barcode_primers} and \cref{tab:ont_barcode} for barcode sequences). 
 	\\ 
 	\\	
 	As illustrated, the barcode is only present in the 3'end of the plus strand and 5'end of the minus strand, as part of the oligo-dT primer during cDNA synthesis (\cref{tab:barcode_primers}). The differing nucleotides between the plus start and the minus start is highlighted in yellow. The brown and orange circle refer to the motor protein and cholesterol moiety, respectively. The start and end of the strand is defined by the 5' and 3' end, respectively. }
@@ -147,8 +147,8 @@ Trimmed reads with adaptors present at both ends were retained, and reads corres
 	\begin{table}[]
 		\centering
 		\captionsetup{width=0.95\linewidth}
-		\caption[ONT adapter sequences for plus and minus strand of barcoded samples]%
-		{\textbf{ONT adapter sequences for plus and minus strand of barcoded samples.} Tabulated are the sequences used in \textit{Porechop} for sample demultiplexing and identifying the plus and minus strands. As depicted in \cref{fig:ONT_cdnatemplate}, only the plus strand end sequences and the minus strand start sequences contain the sample-specific barcode sequence (reverse complementary of one another). BC - Barcode}
+		\caption[ONT adapter sequences for sample demultiplexing in targeted dataset]%
+		{\textbf{ONT adapter sequences to discriminate sample-specific plus and minus ONT reads.} Tabulated are the sequences used in \textit{Porechop} for sample demultiplexing and identifying the plus and minus strands. As depicted in \cref{fig:ONT_cdnatemplate}, only the plus strand end sequences and the minus strand start sequences contain the sample-specific barcode sequence (reverse complementary of one another). BC - Barcode}
 		\label{tab:ont_barcode}
 		\begin{tabular}{@{}ccccc@{}}
 			\toprule

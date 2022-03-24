@@ -28,51 +28,61 @@
 \begin{document}
 \include{Preamble/TitlePage}
 
-\normallinespacing
-\maketitle
 \pagestyle{plain} % page numbering
-
+\pagenumbering{gobble}
 \include{Abstract}
 \include{Preamble/Dedication}
 \include{Preamble/Acknowledgements}
+
+\pagenumbering{roman}
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 \newpage
 \listoffigures
-\addcontentsline{toc}{chapter}{List of Figures}
 
 \newpage
 \listoftables
-\addcontentsline{toc}{chapter}{List of Tables}
+
 
 \newpage
 \include{Preamble/Publications}
-%\listofmyequations
-%\addcontentsline{toc}{chapter}{List of Equations}
+\addcontentsline{toc}{chapter}{Publications}
 
+\newpage
 \include{Preamble/Declarations}
+\addcontentsline{toc}{chapter}{Declarations}
+
+\newpage
+\include{Preamble/GeneNomen}
+\addcontentsline{toc}{chapter}{Gene Names}
 
 \newpage
 \renewcommand{\nomname}{Abbreviations}
 \addcontentsline{toc}{chapter}{Abbreviations}
-\printnomenclature 
-\include{Preamble/GeneNomen}
 
+\begingroup
+\setstretch{0.2}
+\printnomenclature 
+\endgroup
 
 %==========================================================================================
 %------------------------------------------------------------------------------------------
 % Chapters
 %------------------------------------------------------------------------------------------
 
+\clearpage
+\pagenumbering{arabic}
+
 \include{Chapter1_General_Introduction}
 \include{Chapter2_General_Methodology}
 \include{Chapter3a_LongReadSequencing_PacBio}
 \include{Chapter3b_LongReadSequencing_ONT}
-\include{Chapter3c_LongReadSequencing_IsoformQuantification}
-\include{Chapter4_Whole_Transcriptome}
-\include{Chapter5_Tg4510_GlobalAnalysis}
+%\include{Chapter3c_LongReadSequencing_IsoformQuantification}
+%\include{Chapter4_Whole_Transcriptome}
+%\include{Chapter5_Tg4510_GlobalAnalysis}
 \include{Chapter6_Targeted_Transcriptome}
-\include{Chapter7_General_Discussion}
+%\include{Chapter7_General_Discussion}
 
 
 %==========================================================================================
@@ -80,13 +90,23 @@
 % Appendices
 %------------------------------------------------------------------------------------------
 
-\begin{appendix}
+\clearpage
+% do not add appendix table and figures to main list
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+	\ifthenelse{\equal{#1}{lof}}{}%
+	{\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
+
+\appendix
+\begin{appendices}
 \crefalias{chapter}{appendix}
 \include{Appendix/Isoseq_Protocol}
 \include{Appendix/ONT_Protocol}
 \include{Appendix/cDNA_Synthesis_Approaches}
-\include{Appendix/ONT_Bioinformatics}
-\end{appendix}
+\include{Appendix/ONT_Bioinformatics}	
+\end{appendices}
+
+
 
 
 %==========================================================================================
@@ -94,10 +114,10 @@
 % References
 %------------------------------------------------------------------------------------------
 
+\phantomsection
 \begingroup
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
 \setstretch{0.2}
-\setlength\bibitemsep{0pt}
 %https://www.youtube.com/watch?v=VWgf1CPfUFc
 %\bibliographystyle{makenewstyle}
 \bibliography{library}

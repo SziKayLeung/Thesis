@@ -9,6 +9,13 @@
 %\usepackage[backend=biber, style = geschichtsfrkl]{biblatex}
 %\addbibresource{Knit.bbl}
 
+\newcommand\mycontcaption[1]{
+	\begingroup
+	\captiondelim{~}
+	\contcaption{#1}
+	\endgroup
+}
+
 \usepackage{ccaption}% http://ctan.org/pkg/ccaption
 \usepackage{graphicx}
 \usepackage{verbatim}
@@ -22,7 +29,7 @@
 \usepackage{etoc} % local contents list 
 \setcounter{secnumdepth}{4} % local contents list 
 \usepackage{etoolbox} % https://tex.stackexchange.com/questions/384514/make-subsection-visible-in-local-toc-only-not-in-main-toc
-\usepackage[titletoc,page, title, header]{appendix}
+\usepackage[toc,page]{appendix}
 \usepackage{enumitem} % enumerate, itemize formatting
 %\immediate\write18{makeindex \Knit.nlo -s nomencl.ist -o Knit.nls} 
 \usepackage{nomencl} %list of abbreviations
@@ -42,13 +49,27 @@
 \usepackage{pdflscape} %landscape pdf
 
 
+
+
 %% Bibliography
 \usepackage[superscript,biblabel]{cite}
 %\usepackage[round]{natbib} % referecing style with ()
 %\bibliographystyle{plainnat} % bioligraophy 
 
-\AtBeginEnvironment{appendix}{\etocsettocdepth.toc{section}\etocignoretoctocdepth
-	\etocsetnexttocdepth{subsection}}
+%\AtBeginEnvironment{appendix}{\etocsettocdepth.toc{section}\etocignoretoctocdepth
+%	\etocsetnexttocdepth{subsection}}
+
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+\newcommand{\stoptocwriting}{%
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{-5}}}
+\newcommand{\resumetocwriting}{%
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{\arabic{tocdepth}}}}
+
+% reinstate the correct level for list of tables and figures
+\appto\listoffigures{\addtocontents{lof}{\protect\setcounter{tocdepth}{1}}}
+\appto\listoftables{\addtocontents{lot}{\protect\setcounter{tocdepth}{1}}}
+
 
 % tables and landscape
 \captionsetup[table]{width=16cm}
@@ -66,6 +87,8 @@
 
 \usepackage{notoccite}
 \usepackage{hyperref} %hyperlinks
+%\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage[nottoc]{tocbibind}
 \hypersetup{
 	colorlinks=true, %set true if you want colored links
 	linktoc=all,     %set to all if you want both sections and subsections linked
@@ -81,8 +104,6 @@
 \crefname{table}{\textbf{Table}}{\textbf{Table}}
 \crefname{figure}{\textbf{Figure}}{\textbf{Figure}}
 %\Crefname{section}{\textbf{Section}}{\textbf{Sections}}
-
-
 
 \input{Packages/code.sty} % for including programming 
 \input{Packages/blocked.sty}
@@ -224,4 +245,15 @@
 			\end{center}
 		}
 	\end{figure}
+}
+
+\newcommand{\makededication}{
+	\ifx\@dedication\@empty \else
+	\clearpage
+	\thispagestyle{plain}
+	\null\vfill
+	{\centering \Large \@dedication \par}
+	\vskip \z@ \@plus3fill
+	\cleardoublepage
+	\fi
 }

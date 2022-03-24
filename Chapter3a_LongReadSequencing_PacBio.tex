@@ -24,12 +24,12 @@ Unlike the short reads produced by standard Illumina-based RNA-seq, PacBio Iso-S
 	\centering
 	\includegraphics[page=14,trim={0 5cm 0 0 },clip, scale = 0.7]{Figures/ProjectDevelopment_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Pacific Bioscience's Single Molecule Real-time Sequencing]%
-	{\textbf{Pacific Bioscience's Single Molecule Real-time Sequencing (SMRT)}: PacBio's SMRT technology is able to generate long reads >10kb by \textbf{A)} enclosing the cDNA fragment of interest within a circular template (SMRTbell) to allow uninterrupted DNA polymerisation,  followed by the \textbf{B)} sequencing of each SMRTbell with a bound polymerase at the bottom of ZMWs, enabling sensitive detection of polymerisation at nucleotide level from \textbf{C)} addition of phospholinked nucleotides with differently labelled fluorophore. ZWW - Zero-Mode-Waveguide}
+	\caption[Pacific Biosciences single-molecule real-time sequencing technology]%
+	{\textbf{Pacific Biosciences single-molecule real-time sequencing technology} Shown is an overview of Pacific Biosciences single-molecule real-time sequencing technology (SMRT), which is able to generate long reads >10kb by \textbf{(A)} enclosing the cDNA fragment of interest within a circular template (SMRTbell) to allow uninterrupted DNA polymerisation,  followed by the \textbf{(B)} sequencing of each SMRTbell with a bound polymerase at the bottom of ZMWs, enabling sensitive detection of polymerisation at nucleotide level from \textbf{(C)} addition of phospholinked nucleotides with differently labelled fluorophore. ZWW - Zero-Mode-Waveguide}
 	\label{fig:Mechanism}
 \end{figure}
 
-\newpage
+\clearpage
 \subsection{Lab Workflow}
 \label{chap:isoseq_labpipeline}
 This section describes the lab workflow for PacBio Iso-Seq library preparation, which was subsequently implemented in the long-read sequencing experiments for global transcriptome and targeted profiling in \textbf{Chapters 4 and 6}, respectively. General methods pertaining to sample preparation, cDNA synthesis and amplification can be found in \cref{ch: general methodology}.
@@ -49,8 +49,8 @@ The Iso-Seq lab workflow for the targeted profiling of the transcriptome (\textb
 \begin{figure}[htp]
 	\includegraphics[page=1,trim={0 12cm 5cm 1cm},clip,scale = 1]{Figures/ProjectDevelopment_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Lab workflow for global transcriptome profiling]%
-	{\textbf{An overview of the Iso-Seq lab workflow for global transcriptome profiling}. Shown is a flow diagram of the Iso-Seq lab workflow. Adapted from the official Iso-Seq protocol, it involves three main steps: 1) reverse transcription and amplification of cDNA (\cref{section:ch2_cDNA_synthesis_explanation}), 2) cDNA purification with AMPure beads (\cref{section:ch2_AMPure_explanation}) and 3) library preparation involving ligation of SMRTbell templates, and binding of the primer and polymerase (\cref{section:ch2_smrtbelltemplate_explanation}). Due to the usage of newer chemistries, size selection was not performed.}
+	\caption[Iso-Seq lab workflow for global transcriptome profiling]%
+	{\textbf{Iso-Seq lab workflow for global transcriptome profiling.} Shown is a flow diagram of the Iso-Seq lab workflow. Adapted from the official Iso-Seq protocol, it involves three main steps: 1) reverse transcription and amplification of cDNA (\cref{section:ch2_cDNA_synthesis_explanation}), 2) cDNA purification with AMPure beads (\cref{section:ch2_AMPure_explanation}) and 3) library preparation involving ligation of SMRTbell templates, and binding of the primer and polymerase (\cref{section:ch2_smrtbelltemplate_explanation}). Due to the usage of newer chemistries, size selection was not performed.}
 	\label{fig:isoseq_wholelab_protocol}
 \end{figure}
 
@@ -59,8 +59,8 @@ The Iso-Seq lab workflow for the targeted profiling of the transcriptome (\textb
 		\includegraphics[page=2,trim={1cm 11cm 1cm 1cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Lab workflow used for targeted profiling]%
-	{\textbf{An overview of the Iso-Seq lab workflow for targeted profiling}. Shown is a flow diagram of the Iso-Seq lab workflow for targeted profiling, which follows a similar workflow as global transcriptome profiling (depicted in Figure \ref{fig:isoseq_wholelab_protocol}), with the addition of a target cDNA capture step (boxed orange, described in \cref{section:ch2_targetcapture_explanation}) and the use of barcode sequences in cDNA synthesis (boxed green and denoted here as Barcode 1 and Barcode n) to allow sample multiplexing. The list of barcodes can be found in \cref{tab:barcode_primers}}
+	\caption[Iso-Seq lab workflow for targeted profiling]%
+	{\textbf{Iso-Seq lab workflow for targeted profiling.} Shown is a flow diagram of the Iso-Seq lab workflow for targeted profiling, which follows a similar workflow as global transcriptome profiling (depicted in Figure \ref{fig:isoseq_wholelab_protocol}), with the addition of a target cDNA capture step (boxed orange, described in \cref{section:ch2_targetcapture_explanation}) and the use of barcode sequences in cDNA synthesis (boxed green and denoted here as Barcode 1 and Barcode n) to allow sample multiplexing. The list of barcodes can be found in \cref{tab:barcode_primers}}
 	\label{fig:isoseq_targetedlab_protocol}
 \end{figure}
 
@@ -73,8 +73,8 @@ After cDNA synthesis, cDNA products were amplified using PCR to generate suffici
 		\includegraphics[page=13,trim={1cm 24cm 10cm 1cm},clip,scale = 0.9]{Figures/ProjectDevelopment_Figures.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Example of an agarose gel for determining the optimum number of PCR cycles for amplification]%
-	{\textbf{PCR optimisation is required to determine the optimum number of cycles}. Shown is an agarose gel of Human Brain Total RNA after first strand cDNA synthesis and PCR amplification through cycles 8 to 18, with PCR aliquots collected during every two cycles. In this example, 10 cycles were determined to be the optimum number for large-scale amplification. While smear distribution from 8 and 10 cycles look similar, 10 cycles show a slightly stronger smear, thereby generating more material for downstream pooling. Cycles above 12 show signs of over-amplification which will result in biased sequencing representation. Figure and legend are adapted from Iso-Seq protocol}
+	\caption[Example of an agarose gel for determining the optimum number of PCR cycles]%
+	{\textbf{Example of an agarose gel for determining the optimum number of PCR cycles.} Shown is an agarose gel of Human Brain Total RNA after first strand cDNA synthesis and PCR amplification through cycles 8 to 18, with PCR aliquots collected during every two cycles. In this example, 10 cycles were determined to be the optimum number for large-scale amplification. While smear distribution from 8 and 10 cycles look similar, 10 cycles show a slightly stronger smear, thereby generating more material for downstream pooling. Cycles above 12 show signs of over-amplification which will result in biased sequencing representation. Figure and legend are adapted from Iso-Seq protocol}
 	\label{fig:pcr_optimisation_gel_eg}
 \end{figure}
 
@@ -112,7 +112,7 @@ Examples of the initial set of probes provided by IDT and the final curated sets
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Lab workflow for hybridisation-based cDNA capture for targeted profiling]%
-	{\textbf{Lab workflow for hybridisation-based cDNA capture for targeted profiling.}. Shown is an overview of the lab workflow for target gene enrichment involving hybridisation of cDNA with probes and blockers (poly(T) oligonucleotide, cDNA synthesis primers), followed by isolation with streptavidin beads. The addition of blockers prevent non-specific binding, and subsequently increases capture rate and target gene sequencing coverage}
+	{\textbf{Lab workflow for hybridisation-based cDNA capture for targeted profiling.} Shown is \textbf{(A)} a schematic figure of the target gene enrichment step involving hybridisation of cDNA with probes and blockers (poly(T) oligonucleotide, cDNA synthesis primers), followed by isolation with streptavidin beads. The addition of blockers prevent non-specific binding, and subsequently increases capture rate and target gene sequencing coverage. \textbf{(B)} An overview of the lab workflow.}
 	\label{fig:isoseq_targetcapture}
 \end{figure}
 
@@ -123,7 +123,7 @@ Examples of the initial set of probes provided by IDT and the final curated sets
 		\end{center}
 		\captionsetup{width=1.5\textwidth}
 		\caption[Manual curation of probes designed to 20 AD-associated target genes]%
-		{\textbf{Manual curation of probes designed to 20 AD-associated target genes.} \textbf{A)} Pre-designed set of probes were provided to "Exons (with UTR)" of target genes. Shown are USCS genome browser tracks of pre-designed and curated probes to \textbf{B)} \textit{Trem2}, \textbf{C)}\textit{Vgf} and \textbf{D)}\textit{Sorl1} in the mouse genome (mm10). As shown, exons were unnecessarily covered by contiguous probes which not only increases costs but also induces off-target binding (referred in figure as "Pre-designed Target Probes"). Manual curation was therefore needed for each target gene (referred in figure as "Curated Target Probes") to ensure that exons were covered with one probe for every 500bp. }
+		{\textbf{Manual curation of probes designed to 20 AD-associated target genes.} \textbf{(A)} Pre-designed set of probes were provided to "Exons (with UTR)" of target genes. Shown are USCS genome browser tracks of pre-designed and curated probes to \textbf{(B)} \textit{Trem2}, \textbf{(C)}\textit{Vgf} and \textbf{(D)}\textit{Sorl1} in the mouse genome (mm10). As shown, exons were unnecessarily covered by contiguous probes which not only increases costs but also induces off-target binding (referred in figure as "Pre-designed Target Probes"). Manual curation was therefore needed for each target gene (referred in figure as "Curated Target Probes") to ensure that exons were covered with one probe for every 500bp. }
 		\label{fig:target_probes_eg}
 	\end{figure}
 \end{landscape}
@@ -143,8 +143,8 @@ All Iso-Seq experiments in this thesis were performed on the PacBio Sequel 1M SM
 		\includegraphics[page=1,trim={0cm 8cm 0cm 0cm},clip,scale = 0.70]{Figures/labwork_isoseq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Iso-Seq Lab workflow for SMRTbell Template Preparation, Primer Annealing \& Polymerase Binding]%
-	{\textbf{Iso-Seq Lab workflow for SMRTbell Template Preparation, Primer Annealing \& Polymerase Binding.} Shown is a flow diagram of the Iso-Seq lab workflow for library preparation:
+	\caption[Detailed Iso-Seq lab workflow for SMRTbell library preparation]%
+	{\textbf{Detailed Iso-Seq lab workflow for SMRTbell library preparation.} Shown is a flow diagram of the Iso-Seq lab workflow for library preparation:
 		\begin{enumerate}
 			\item Repair DNA by filling in abasic sites, removing thymine dimers, oxidising guanines, deaminating cytosine. This is essential to ensure a continuous sequence for uninterrupted polymerase processivity.
 			\item Repair ends for blunt ligation with removal of 3'hangs and addition of 5'hangs by T4 DNA polymerase, which is required for blunt ligation of SMRTbell adapters. 
@@ -170,8 +170,8 @@ Sequencing metrics for the DNA Internal Control (described in \cref{section:ch2_
 
 \vspace{1cm}
 \begin{table}[!h]
-	\caption[Iso-Seq DNA Internal Control Sequencing Metrics]%
-	{\textbf{Iso-Seq DNA Internal Control Sequencing Metrics.} Tabulated are the expected median values for the number of control reads (median count), the control polymerase read length (median length), and the identity match between control raw reads and reference sequence (median concordance). The expected values provided assume a sequencing run performed on the PacBio Sequel 1M SMRT cell with a 4-hour pre-extension and a 20-hour capture time. QR - Quantile range.}	\label{tab:control_Isoseqmetrics}
+	\caption[Iso-Seq DNA Internal Control sequencing metrics]%
+	{\textbf{Iso-Seq DNA Internal Control sequencing metrics.} Tabulated are the expected median values for the number of control reads (median count), the control polymerase read length (median length), and the identity match between control raw reads and reference sequence (median concordance). The expected values provided assume a sequencing run performed on the PacBio Sequel 1M SMRT cell with a 4-hour pre-extension and a 20-hour capture time. QR - Quantile range.}	\label{tab:control_Isoseqmetrics}
 	
 	\centering
 	\begin{tabular}{@{}cccc@{}}
@@ -214,8 +214,8 @@ While raw Iso-Seq data can be processed using the PacBio SMRT Link Suite, a web-
 	\vspace{20pt}
 	\includegraphics[page=17,trim={0 6cm 0 0},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Bioinformatics Pipeline]%
-	{\textbf{Iso-Seq Bioinformatics Pipeline.} Shown is an overview of the Iso-Seq bioinformatics pipeline used in this thesis, which involves three main steps: i) processing and filtering of raw reads into high-quality, full-length transcripts using \textit{IsoSeq3}, ii) alignment of HQ transcripts to the reference genome using \textit{Minimap2} and iii) collapsing of mapped transcripts to unique, annotated isoforms using \textit{Cupcake} and \textit{SQANTI}. HQ - High quality}
+	\caption[Iso-Seq bioinformatics pipeline]%
+	{\textbf{Iso-Seq bioinformatics pipeline.} Shown is an overview of the Iso-Seq bioinformatics pipeline used in this thesis, which involves three main steps: i) processing and filtering of raw reads into high-quality, full-length transcripts using \textit{IsoSeq3}, ii) alignment of HQ transcripts to the reference genome using \textit{Minimap2} and iii) collapsing of mapped transcripts to unique, annotated isoforms using \textit{Cupcake} and \textit{SQANTI}. HQ - High quality}
 	\label{fig:isoseq_bioinformatics_Pipeline}
 \end{figure}
 
@@ -258,8 +258,8 @@ A minimum of two FLNC reads was required for clustering with the longest read ch
 	\centering
 	\includegraphics[page=18,trim={0 8cm 0 0},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures.pdf}
 	\captionsetup{width=0.95\textwidth, singlelinecheck=off}
-	\caption[PacBio \textit{Iso-Seq3} Bioinformatics suite for raw Iso-Seq read processing]%
-	{\textbf{PacBio \textit{Iso-Seq3} Bioinformatics suite for raw Iso-Seq read processing}: An overview and flow diagram of \textit{Iso-Seq3} Bioinformatics suite. \textbf{A)} The circular SMRTbell template allows uninterrupted, processive DNA synthesis to generate a polymerase read containing multiple subreads. \textbf{B)} \textit{CCS} - A polymerase read, associated with each productive ZMW, with multiple "passes" are processed to generate a CCS read containing the 5' and 3' cDNA primer, polyA tail and barcode (if used). \textbf{C)} \textit{lima} - Successfully generated CCS reads are then trimmed for cDNA primers and orientated to generate FL reads. \textbf{D)} \textit{Refine} - FL reads are then trimmed for poly(A) tails and artificial concatemers are removed to generate FLNC reads. \textbf{E)} \textit{Cluster} - FLNC reads considered to be derived from the same transcript are then clustered to generate unique transcripts. \textbf{F)} The output from this pipeline is the processing of raw Iso-Seq reads to accurate, high quality transcripts without the need for a reference genome or transcriptome. Of note, the abundance for each transcript can be inferred from the number of associated FL reads (i.e number of ZMWs that sequenced the isoform of interest). CCS - Circular consensus sequence, FL- Full-length, FLNC - Full-length Non-chimeric.}
+	\caption[PacBio \textit{Iso-Seq3} bioinformatics suite for raw Iso-Seq read processing]%
+	{\textbf{PacBio \textit{Iso-Seq3} bioinformatics suite for raw Iso-Seq read processing}: An overview and flow diagram of \textit{Iso-Seq3} Bioinformatics suite. \textbf{A)} The circular SMRTbell template allows uninterrupted, processive DNA synthesis to generate a polymerase read containing multiple subreads. \textbf{B)} \textit{CCS} - A polymerase read, associated with each productive ZMW, with multiple "passes" are processed to generate a CCS read containing the 5' and 3' cDNA primer, polyA tail and barcode (if used). \textbf{C)} \textit{lima} - Successfully generated CCS reads are then trimmed for cDNA primers and orientated to generate FL reads. \textbf{D)} \textit{Refine} - FL reads are then trimmed for poly(A) tails and artificial concatemers are removed to generate FLNC reads. \textbf{E)} \textit{Cluster} - FLNC reads considered to be derived from the same transcript are then clustered to generate unique transcripts. \textbf{F)} The output from this pipeline is the processing of raw Iso-Seq reads to accurate, high quality transcripts without the need for a reference genome or transcriptome. Of note, the abundance for each transcript can be inferred from the number of associated FL reads (i.e number of ZMWs that sequenced the isoform of interest). CCS - Circular consensus sequence, FL- Full-length, FLNC - Full-length Non-chimeric. Figure is taken from PacBio \textit{Iso-Seq v3} GitHub repository\cite{githubpacbio}.}
 	\label{fig:isoseq3_tool}
 \end{figure}
 
@@ -294,8 +294,8 @@ RNA-Seq data from the same samples were also supplied to \textit{SQANTI} in two 
 		\centering
 		\includegraphics[page=3,trim={0 4cm 0 0},clip,scale = 0.9]{Figures/ProjectDevelopment_Figures_Landscape}
 		\captionsetup{width=1.5\textwidth}
-		\caption[Isoform Classifications by \textit{SQANTI}]%
-		{\textbf{Isoform Classifications by \textit{SQANTI}}. Isoforms were classified by \textit{SQANTI} as novel or known, and annotated to novel or known genes based on splice junctions}
+		\caption[Isoform classifications by \textit{SQANTI}]%
+		{\textbf{Isoform classifications by \textit{SQANTI}.} Shown are the isoform classifications from \textit{SQANTI} with an isoform classified as being either "novel" or "known" and annotated to a "known" gene, or a "novel gene".}
 		\label{fig:sqanti_cate}
 	\end{figure}
 \end{landscape}
@@ -310,8 +310,8 @@ It was therefore important to perform additional filtering using \textit{SQANTI}
 		\includegraphics[page=4,trim={2cm 21.5cm 0 1cm},clip, scale = 0.9]{Figures/ProjectDevelopment_Figures.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Generation of technical artefacts during cDNA synthesis]%
-	{\textbf{Generation of technical artefacts during cDNA synthesis. A)}: Shown is a schematic diagram of reverse transcription template-switching. The black and blue lines represent the original cDNA and synthesising cDNA from RT, respectively. The black box and light grey sphere represent the direct repeats and RT enzyme, respectively. As exemplified, RT template switching is further facilitated by RNA secondary structures that could bring the repeats into proximity\cite{Cocquet2006}. Figure is taken from Cocquet et al.(2006)\cite{Cocquet2006}. \textbf{B)} Shown is a schematic diagram of off-priming events from priming of oligo(dT) to an internal poly(A) sequence rather than the 3'end poly(A) tail during cDNA synthesis, generating two truncated cDNA templates. Figure is taken from Nam et al.(2002)\cite{Nam2002}. }
+	\caption[Examples of technical artefacts generated during cDNA synthesis]%
+	{\textbf{Examples of technical artefacts generated during cDNA synthesis.} Shown are schematic figures of \textbf{(A)} a reverse transcription template-switching event. The black and blue lines represent the original cDNA and synthesising cDNA from RT, respectively. The black box and light grey sphere represent the direct repeats and RT enzyme, respectively. As exemplified, RT template switching is further facilitated by RNA secondary structures that could bring the repeats into proximity\cite{Cocquet2006}. Figure is taken from Cocquet et al.(2006)\cite{Cocquet2006}. \textbf{(B)} off-priming events from priming of oligo(dT) to an internal poly(A) sequence rather than the 3'end poly(A) tail during cDNA synthesis, generating two truncated cDNA templates. Figure is taken from Nam et al.(2002)\cite{Nam2002}. }
 	\label{fig:lib_prep_artifacts}
 \end{figure}
 

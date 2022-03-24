@@ -13,8 +13,8 @@ One established solution to circumvent this low sequencing coverage of rare tran
 	\centering
 	\includegraphics[page=6,trim={1cm 40cm 1cm 0cm},clip,scale = 0.5]{Figures/Tg4510_diff_figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Methods for targeted sequencing]%
-	{\textbf{Methods for targeted long-read sequencing}. Shown is a schematic figure describing two commonly used methods for targeted long-read sequencing: \textbf{(A)} Amplicon sequencing and \textbf{(B)} CaptureSeq. Due to greater flexibility, we used CaptureSeq (hybridisation-based enrichment with custom designed IDT probes) to enrich and sequence 20 AD-associated genes in the rTg4510 cortex. More details can be found in \cref{section:ch2_targetcapture_explanation}. Figure is taken and adapted from De Paoli-Iseppi et al. (2021) \cite{DePaoli-Iseppi2021}}
+	\caption[Lab approaches for targeted profiling]%
+	{\textbf{Lab approaches for targeted profiling.} Shown is a schematic figure describing two commonly used methods for targeted long-read sequencing: \textbf{(A)} Amplicon sequencing and \textbf{(B)} CaptureSeq. Due to greater flexibility, we used CaptureSeq (hybridisation-based enrichment with custom designed IDT probes) to enrich and sequence 20 AD-associated genes in the rTg4510 cortex. More details can be found in \cref{section:ch2_targetcapture_explanation}. Figure is taken and adapted from De Paoli-Iseppi et al. (2021)\cite{DePaoli-Iseppi2021}}
 	\label{fig:targeted_sequencing_method}
 \end{figure}
 
@@ -24,7 +24,7 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 \begin{enumerate}
 	\item To enrich and sequence transcripts from 20 AD-associated genes in the rTg4510 mouse model at 4 time points with PacBio long-read sequencing (hereby referred to as "Iso-Seq targeted dataset")
 	\item To validate the Iso-Seq targeted dataset by sequencing a subset of samples using targeted ONT nanopore cDNA sequencing (hereby referred to as "ONT targeted dataset")
-	\item To compare the isoform landscape of AD-associated genes observed in the Iso-Seq whole transcriptome dataset (generated in \cref{ch: whole_transcriptome}, hereby referred to as "Iso-Seq whole dataset") with Iso-Seq targeted dataset from the same samples 
+	\item To compare the isoform landscape of AD-associated genes observed in the Iso-Seq global transcriptome dataset (generated in \cref{ch: whole_transcriptome}, hereby referred to as "Iso-Seq global dataset") with Iso-Seq targeted dataset from the same samples 
 	\item To compare the isoform landscape of the AD-associated genes in the Iso-Seq and ONT targeted datasets
 	\item To comprehensively characterise isoform diversity and splicing events for AD-associated genes in the rTg4510 mouse model 
 	\item To perform differential isoform-based analysis (differential transcript expression and differential transcript usage) for target genes to identify transcriptional and splicing changes between rTg4510 WT and TG mice
@@ -35,8 +35,8 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 	\centering
 	\includegraphics[page=5,trim={1cm 32cm 1cm 0cm},clip,scale = 0.45]{Figures/Tg4510_diff_figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Targeted sequencing of 20 AD-associated genes in the cortex of rTg4510 mouse model]%
-	{\textbf{Targeted sequencing of 20 AD-associated genes in the cortex of rTg4510 mouse model}: In this chapter, we performed targeted sequencing of 20 AD-associated genes (classified here by molecular pathway) in the rTg4510 mouse model.}
+	\caption[Targeted profiling of 20 AD-risk genes in the rTg4510 cortex]%
+	{\textbf{Targeted profiling of 20 AD-risk genes in the rTg4510 cortex.} In this chapter, we performed targeted sequencing of 20 AD-associated genes (classified here by molecular pathway) in the rTg4510 mouse model.}
 	\label{fig:targeted_genes}
 \end{figure}
 
@@ -44,8 +44,8 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 \begin{table}[]
 	\centering
 	\captionsetup{width=1\textwidth}
-	\caption[Transcriptional features of target genes]%
-	{\textbf{Transcriptional features of target genes:} Tabulated is the list of 20 AD-associated genes selected for targeted sequencing, with a summary of the respective gene length, transcript length, number of isoforms and exons number taken from the mouse reference genome (mm10, GENCODE, vM22). \\
+	\caption[Transcriptional features of AD-risk genes selected for targeted profiling]%
+	{\textbf{Transcriptional features of AD-risk genes selected for targeted profiling.} Tabulated is the list of 20 AD-associated genes selected for targeted sequencing, with a summary of the respective gene length, transcript length, number of isoforms and exons number taken from the mouse reference genome (mm10, GENCODE, vM22). \\
 	\textit{Abca1} - ATP Binding Cassette Subfamily A Member 1, \textit{Abca7} - ATP Binding Cassette Subfamily A Member 7, \textit{App} - Amyloid Beta Precursor Protein, \textit{Bin1} - Bridging Integrator 1, \textit{Fus} - Fused in Sarcoma, \textit{Picalm} - Phosphatidylinositol Binding Clathrin Assembly Protein, \textit{Ptk2b} - Protein Tyrosine Kinase 2 Beta,  \textit{Rhbdf2} - Rhomboid 5 Homolog 2, \textit{Sorl1} - Sortilin Related Receptor 1, \textit{Trem2} - Triggering Receptor Expressed On Myeloid Cells 2, \textit{Trpa1} - Transient Receptor Potential Cation Channel Subfamily A Member 1}
 	\label{tab:target_genes_description}
 	\begin{threeparttable}
@@ -94,8 +94,8 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 		\setlength\tabcolsep{2pt} %reduced margin size in table
 		%\renewcommand{\arraystretch}{1}
 		\begin{longtable}[c]{p{1cm}p{2cm}p{4cm}p{19cm}}
-			\caption[Relevance and role of target genes in AD pathogenesis]%		
-			{\textbf{Relevance and role of target genes in AD pathogenesis}. Tabulated are details of the role and relevance of the 20 selected target genes, which were enriched for targeted sequencing in the rTg4510 mouse model. \\
+			\caption[Role and relevance of 20 AD-risk target genes in AD pathogenesis]%		
+			{\textbf{Role and relevance of 20 AD-risk target genes in AD pathogenesis.} Tabulated is a detailed review of the role and relevance of the 20 selected AD-risk genes, which were enriched for targeted sequencing in the rTg4510 mouse model. \\
 			\textsuperscript{*} Details of mouse models can be found in \cref{tab:mouse_models}, where stated. \\ 
 			\textit{Abca1} - ATP Binding Cassette Subfamily A Member 1, \textit{Abca7} - ATP Binding Cassette Subfamily A Member 7, \textit{App} - Amyloid Beta Precursor Protein, \textit{Bin1} - Bridging Integrator 1, CSF - Cerebrospinal fluid \nomenclature{CSF}{Cerebrospinal fluid}, EWAS - Epigenome-wide association study, \textit{Fus} - Fused in Sarcoma, KPI - Kunitz-type protease inhibitor domain, GWAS - Genome-wide association study, Lof - Loss of Function, NMD - Nonsense-mediated decay, \textit{Picalm} - Phosphatidylinositol Binding Clathrin Assembly Protein, \textit{Ptk2b} - Protein Tyrosine Kinase 2 Beta,  \textit{Rhbdf2} - Rhomboid 5 Homolog 2, \textit{Sorl1} - Sortilin Related Receptor 1, \textit{Trem2} - Triggering Receptor Expressed On Myeloid Cells 2, \textit{Trpa1} - Transient Receptor Potential Cation Channel Subfamily A Member 1, TG - Transgenic, TWAS - Transcriptome-wide association studies, WT - Wild-type}
 			\label{tab: TargetGenes_LitReview}\\
@@ -291,9 +291,9 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 \begin{landscape}
 \begin{table}[]
 	\captionsetup{width=1.5\textwidth}
-	\caption[Phenotype information for targeted transcriptome profiling of the rTg4510 cortex]%
-	{\textbf{Phenotype information for targeted transcriptome profiling of the rTg4510 cortex}. RNA from the rTg4510 mouse cortex was subjected to global and targeted transcriptome profiling using PacBio Iso-Seq and ONT nanopore cDNA sequencing. While whole transcriptome profiling was performed by sequencing each sample separately, targeted transcriptome profiling was performed in batches after sample barcoding. \\
-	\textsuperscript{*} Samples were multiplexed and sequenced in batches for targeted transcriptome profiling
+	\caption[Phenotype information for targeted profiling of the rTg4510 cortex]%
+	{\textbf{Phenotype information for targeted profiling of the rTg4510 cortex.} Tabulated is an overview of the phenotype information of the rTg4510 mouse samples sequenced using PacBio Iso-Seq and ONT nanopore cDNA sequencing. While global transcriptome profiling was performed by sequencing each sample separately, targeted profiling was performed in batches after sample barcoding. \\
+	\textsuperscript{*} Samples were multiplexed and sequenced in batches for targeted profiling
 	\newline ECX - Entorhinal Cortex, RIN - RNA Integrity Number, WT - Wild-type, TG - Transgenic rTg4510}
 	\label{tab:mouse_samples_sequenced}
 		\resizebox{1.5\textwidth}{!}{%
@@ -341,8 +341,8 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 \end{landscape}
 
 \begin{table}[!htp]
-	\caption[Mouse probes for target enrichment of AD-associated genes]%
-	{\textbf{Mouse probes for target enrichment of AD-associated genes}. Target enrichment of 20 AD-associated genes was performed by capturing regions of interest using pre-designed probes (as illustrated in \cref{fig:target_probes_eg} and detailed in \cref{section:ch2_targetcapture_explanation}). bp - base pairs. }
+	\caption[Mouse probes for target profiling of AD-risk genes]%
+	{\textbf{Mouse probes for target profiling of AD-risk genes.} Tabulated is a summary of the pre-designed probes used to enrich for 20 AD-risk genes (as illustrated in \cref{fig:target_probes_eg} and detailed in \cref{section:ch2_targetcapture_explanation}). bp - base pairs. }
 	\label{tab:mouse_probes}
 	\setlength\tabcolsep{10pt} %reduced margin size in table
 	\begin{tabular}{@{}cccccc@{}}
@@ -383,8 +383,8 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 	\vspace{20pt}
 	\includegraphics[page=1,trim={0 10cm 0 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_LabResults.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Targeted Transcriptome - cDNA amplification and purification]%
-	{\textbf{Samples for targeted transcriptome profiling were amplified with 14 PCR cycles: (A)} Analogous to whole transcriptome profiling (\cref{fig:isoseq_whole_pccresults}), samples were amplified using 14 cycles. Ladder (L) denotes to a 100bp DNA ladder. \textbf{(B)} A Bioanalyzer gel of amplified cDNA after purification with 1X (F1) and 0.4X (F2) AMPure beads. Size distribution for each fraction was determined from the start to the end point of the smear. Ladder (L) denotes to a 12kb DNA ladder, whereby the green and purple line represent the lower marker at 50bp and the upper marker at 12kb, respectively.}
+	\caption[Iso-Seq targeted profiling - PCR cycle optimisation]%
+	{\textbf{Samples for targeted profiling were amplified with 14 PCR cycles.} Shown is \textbf{(A)} an example of an agarose gel image from PCR cycle optimisation of six mouse samples after cDNA synthesis. Analogous to global transcriptome profiling (\cref{fig:isoseq_whole_pccresults}), 14 cycles were determined to be optimal for large scale amplifications. Ladder (L) denotes to a 100bp DNA ladder. \textbf{(B)} A Bioanalyzer gel of amplified cDNA after purification with 1X (F1) and 0.4X (F2) AMPure beads. Size distribution for each fraction was determined from the start to the end point of the smear. Ladder (L) denotes to a 12kb DNA ladder, whereby the green and purple line represent the lower marker at 50bp and the upper marker at 12kb, respectively.}
 	\label{fig:isoseq_targeted_pccresults}
 \end{figure}
 
@@ -394,11 +394,11 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 	\vspace{20pt}
 	\includegraphics[page=2,trim={0 15cm 0cm 1cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_LabResults.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Targeted Transcriptome - Target Capture and library preparation]%
-	{\textbf{Successful target capture and Iso-Seq library preparation:} Shown are Bioanalyzer electropherograms of \textbf{(A)} batch 1 (n = 6 samples) after target enrichment and \textbf{(B)} Iso-Seq library preparation, and \textbf{(C)} batch 2 (n = 9 samples) after target enrichment and \textbf{(D)} Iso-Seq library preparation. 
+	\caption[Iso-Seq targeted profiling - target capture \& SMRTbell library preparation]%
+	{\textbf{Successful target capture and Iso-Seq library preparation.} Shown are Bioanalyzer electropherograms of \textbf{(A)} batch 1 (n = 6 samples) after target enrichment and \textbf{(B)} Iso-Seq library preparation, and \textbf{(C)} batch 2 (n = 9 samples) after target enrichment and \textbf{(D)} Iso-Seq library preparation. 
 	\\
 	\\
-	Illustrating successful target enrichment, we observed peaks that correspond to enriched transcript lengths from genes of interest, which notably differs from the broad peaks seen in whole transcriptome sequencing (\cref{fig:isoseq_whole_bioresults}). Iso-Seq library preparation retained these target transcripts with detection of similar peaks, albeit less pronounced due to a lower cDNA input for Bioanalyzer assays in order to conserve cDNA for maximum sequencing yield.}  
+	Illustrating successful target enrichment, we observed peaks that correspond to enriched transcript lengths from genes of interest, which notably differs from the broad peaks seen in Iso-Seq global dataset (\cref{fig:isoseq_whole_bioresults}). Iso-Seq library preparation retained these target transcripts with detection of similar peaks, albeit less pronounced due to a lower cDNA input for Bioanalyzer assays in order to conserve cDNA for maximum sequencing yield.}  
 	\label{fig:isoseq_targeted_libresults}
 \end{figure}
 
@@ -407,8 +407,8 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 	\vspace{20pt}
 	\includegraphics[page=3,trim={0 17cm 0cm 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_ppt.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT Targeted Transcriptome - Target Capture and library preparation]%
-	{\textbf{Successful target capture and ONT library preparation:} Shown in \textbf{(A)} is the TapeStation gel of batch 2 (n = 9) and batch 3 (n = 9) after target enrichment and ONT library preparation, and \textbf{B)} is the respective TapeStation electropherogram of batch 3. 
+	\caption[ONT targeted profiling - target capture \& library preparation]%
+	{\textbf{Successful target capture and ONT library preparation.} Shown in \textbf{(A)} is the TapeStation gel of batch 2 (n = 9) and batch 3 (n = 9) after target enrichment and ONT library preparation, and \textbf{B)} is the respective TapeStation electropherogram of batch 3. 
 	\\
 	\\
 	Illustrating successful target enrichment analogous to \cref{fig:isoseq_targeted_libresults}, we observed peaks that correspond to enriched transcript lengths from genes of interest. Lower cDNA input was used for TapeStation assays to maximise the amount of cDNA available for sequencing. L - Ladder, B2 - batch 2, B3 - batch 3.}  
@@ -417,20 +417,20 @@ Finally, RNA from matched samples (n = 12 WT, 12 TG) were prepared with TruSeq S
 
 \newpage
 \subsection{SMRT sequencing QC and data processing}
-The processing of raw reads was performed using the Iso-Seq bioinformatics pipeline (outlined in \cref{section:isoseq_bioinformatics}), in an approach analogous to that used in the processing of the whole transcriptomic dataset with the exception of sample demultiplexing using barcode-specific sequences. Briefly, CCS reads were generated from a minimum of 1 pass (\textit{Iso-Seq3 CCS}, v3.4.1) for each batch followed by removal of primers and barcode sequences using \textit{Lima} (v1.9) to generate full-length (FL) reads for each sample. After removal of artificial concatemer reads and trimming of polyA tails using \textit{Iso-Seq3 Refine}, full-length reads were then merged and collapsed to high quality transcripts using \textit{Cupcake} (parameters: -c 0.85 -i 0.95 --dun-merge-5-shorter), and mapped to the mouse reference genome (mm10) using \textit{Minimap2} (v2.17). Full-length Iso-Seq read counts from each individual sample were extracted from \textit{Cupcake's} read\_stat.txt file using the CCS read ID as sample identifier.
+The processing of raw reads was performed using the Iso-Seq bioinformatics pipeline (outlined in \cref{section:isoseq_bioinformatics}), in an approach analogous to that used in the processing of the Iso-Seq global dataset with the exception of sample demultiplexing using barcode-specific sequences. Briefly, CCS reads were generated from a minimum of 1 pass (\textit{Iso-Seq3 CCS}, v3.4.1) for each batch followed by removal of primers and barcode sequences using \textit{Lima} (v1.9) to generate full-length (FL) reads for each sample. After removal of artificial concatemer reads and trimming of polyA tails using \textit{Iso-Seq3 Refine}, full-length reads were then merged and collapsed to high quality transcripts using \textit{Cupcake} (parameters: -c 0.85 -i 0.95 --dun-merge-5-shorter), and mapped to the mouse reference genome (mm10) using \textit{Minimap2} (v2.17). Full-length Iso-Seq read counts from each individual sample were extracted from \textit{Cupcake's} read\_stat.txt file using the CCS read ID as sample identifier.
 
 \subsection{ONT nanopore sequencing QC and data processing}
 The QC of raw reads was performed using PycoQC followed by subsequent analysis using the ONT bioinformatics pipeline (details are provided in \cref{section:ont_bioinformatics}). Briefly, raw reads were basecalled using \textit{Guppy} (v4.0) and reads with Phred (Q) < 7 were filtered. Primers and ONT adapters were then removed using \textit{Porechop} (v0.2.4) to generate full-length reads for each sample. After trimming of polyA tails using \textit{Cutadapt} (v2.9), full-length reads were then mapped to the reference mouse genome (mm10) using \textit{Minimap2} (v2.17, parameters: "-ax splice"). Owing to the high error rate of ONT nanopore sequencing, artefactual non-canonical splice junctions from mapped reads were corrected with \textit{Transcript Clean}. Corrected reads were then processed using \textit{TALON} (v5.0) for annotation, quantification and filtering for intrapriming (--maxFracA = 0.5). Novel transcripts were only retained if they were covered by >5 full-length reads and detected in >2 samples. \textit{TALON} was chosen as the preferred tool for ONT processing after trialling multiple tools (more details are provided in \textbf{Appendix} \textbf{\ref{ONT_Bioinformatics_appendix}}). 
 
 \subsection{Comparison of Iso-Seq and ONT datasets}
-The Iso-Seq targeted dataset (n = 24 samples) was examined with other datasets using \textit{Gffcompare}; such datasets included Iso-Seq-derived transcripts identified from whole transcriptome profiling (n = 12 samples, \cref{tab:isoseq_wholerun_result}, Iso-Seq whole dataset) and ONT-derived transcripts from targeted transcriptome profiling (n = 18 samples, \cref{tab:mouse_samples_sequenced}, ONT targeted dataset). For a fair comparison, the Iso-Seq whole dataset was re-annotated with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data, and only transcripts derived from matched samples were used for comparison. Conversely, all processed but unfiltered ONT reads were used for a comprehensive comparison between the two technologies with Iso-Seq derived transcripts as reference. 
+The Iso-Seq targeted dataset (n = 24 samples) was examined with other datasets using \textit{Gffcompare}; such datasets included Iso-Seq-derived transcripts identified from global transcriptome profiling (n = 12 samples, \cref{tab:isoseq_wholerun_result}, Iso-Seq global dataset) and ONT-derived transcripts from targeted profiling (n = 18 samples, \cref{tab:mouse_samples_sequenced}, ONT targeted dataset). For a fair comparison, the Iso-Seq global dataset was re-annotated with \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data, and only transcripts derived from matched samples were used for comparison. Conversely, all processed but unfiltered ONT reads were used for a comprehensive comparison between the two technologies with Iso-Seq derived transcripts as reference. 
 
 \begin{figure}[htp]
 	\centering
 	\includegraphics[page=16,trim={0cm 8cm 0cm 0cm},clip,scale = 0.8]{Figures/ProjectDevelopment_Figures}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[ONT Targeted Bioinformatics Pipeline]%
-	{\textbf{ONT Targeted Bioinformatics Pipeline:} Shown is a detailed bioinformatics pipeline for processing ONT reads from targeted transcriptome profiling after sequencing of the rTg4510 cortex (S\textsubscript{n}) on two flow cells (referred as batch 2 and batch 3 of the Iso-Seq targeted dataset, summarised in \cref{tab:mouse_samples_sequenced}). Supplementing \cref{fig:ONT_PacBio_bioinformatics}, raw ONT reads from each flow cell were processed and demupliplexed using \textit{Porechop} to generate sample-specifici reads, which were subsequently processed independently for collapse and transcript quantification. Samples from both batches were then merged into one dataset, while retaining sample-specific transcript expression. 
+	\caption[Detailed ONT bioinformatics pipeline for targeted profiling]%
+	{\textbf{Detailed ONT bioinformatics pipeline for targeted profiling.} Shown is a detailed bioinformatics pipeline for processing ONT reads from targeted profiling after sequencing of the rTg4510 cortex (S\textsubscript{n}) on two flow cells (referred as batch 2 and batch 3 of the Iso-Seq targeted dataset, summarised in \cref{tab:mouse_samples_sequenced}). Supplementing \cref{fig:ONT_PacBio_bioinformatics}, raw ONT reads from each flow cell were processed and demupliplexed using \textit{Porechop} to generate sample-specifici reads, which were subsequently processed independently for collapse and transcript quantification. Samples from both batches were then merged into one dataset, while retaining sample-specific transcript expression. 
 	}
 	\label{fig:ONT_Targeted_bioinformatics}
 \end{figure}
@@ -443,8 +443,8 @@ For a comprehensive characterisation of the target genes enriched in the rTg4510
 	\centering
 	\includegraphics[page=5,trim={0.5cm 7cm 0cm 0cm},clip,scale = 0.8]{Figures/TargetedTranscriptome_LabResults}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Bioinformatics Pipeline for merging targeted Iso-Seq and ONT datasets]%
-	{\textbf{Bioinformatics Pipeline for merging targeted Iso-Seq and ONT datasets}. Shown is a outline of the bioinformatics pipeline for processing Iso-Seq reads and ONT reads 1D reads from the targeted transcriptome profiling of the mouse cortex. 
+	\caption[Bioinformatics pipeline for merging targeted Iso-Seq and ONT datasets]%
+	{\textbf{Bioinformatics pipeline for merging targeted Iso-Seq and ONT datasets.} Shown is a outline of the bioinformatics pipeline for processing Iso-Seq reads and ONT reads 1D reads from the targeted profiling of the mouse cortex. 
 	}
 	\label{fig:Targeted_bioinformatics_pipeline}
 \end{figure}
@@ -455,7 +455,7 @@ The presence of human- and mouse-specific \textit{Mapt/MAPT} sequences was deter
 \newpage
 \subsection{Characterisation of AS events and transcript visualisation}
 \label{ch6: methods_characterisation}
-Existing tools for assessing alternative splicing events were developed for analysing short-read RNA-Seq data and fail to capture the connectivity and complexity of long-read-derived isoforms, particularly in targeted transcriptome profiling where deep sequencing coverage is achieved. A custom python script ("annotate\_common\_targeted\_transcripts.py") was therefore developed to accurately assess the occurrence of alternative splicing events by comparing splice sites (exon) coordinates between long-read-derived transcripts and reference transcripts (mm10) (depicted in \cref{fig:Targeted_bioinformatics_pipeline}). Common alternative splicing events such as alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping (ES) were assessed (depicted in \cref{fig:AS_events}). Alternative 5' and 3' splice sites were defined as splice sites differing by more than 10bp from the known splice site, and an intron was considered retained if the exon splice site differed by more than 100bp from the known splice site (depicted in \cref{fig:Targeted_isoforms_annotate}). Other regulatory mechanisms such as alternative transcription initiation (defined by alternative TSS) and termination (defined by alternative TSS), and the presence of novel exons, were also evaluated. 
+Existing tools for assessing alternative splicing events were developed for analysing short-read RNA-Seq data and fail to capture the connectivity and complexity of long-read-derived isoforms, particularly in targeted profiling where deep sequencing coverage is achieved. A custom python script ("annotate\_common\_targeted\_transcripts.py") was therefore developed to accurately assess the occurrence of alternative splicing events by comparing splice sites (exon) coordinates between long-read-derived transcripts and reference transcripts (mm10) (depicted in \cref{fig:Targeted_bioinformatics_pipeline}). Common alternative splicing events such as alternative first exons (AF), alternative last exons (AL), alternative 5' splice sites (A5), alternative 3' splice sites (A3), intron retention (IR) and exon skipping (ES) were assessed (depicted in \cref{fig:AS_events}). Alternative 5' and 3' splice sites were defined as splice sites differing by more than 10bp from the known splice site, and an intron was considered retained if the exon splice site differed by more than 100bp from the known splice site (depicted in \cref{fig:Targeted_isoforms_annotate}). Other regulatory mechanisms such as alternative transcription initiation (defined by alternative TSS) and termination (defined by alternative TSS), and the presence of novel exons, were also evaluated. 
 
 Open reading frames were predicted using the Coding-Potential Assessment Tool (CPAT) (v3.0.2) under default parameters, and transcripts with coding potential score >0.44 (recommended threshold) were predicted as protein-coding. Isoforms were predicted as being characterised by nonsense-mediated decay if the distance between predicted open read frame and last exon-exon junction was >50bp. Finally, a separate custom python script ("colour\_common\_targeted\_transcripts.py") was applied to colour transcripts by coding potential (green for protein coding, red for non-protein coding) and also shade them by abundance. Isoforms were then grouped by splicing patterns and visualised using the UCSC genome browser. 
 
@@ -463,8 +463,8 @@ Open reading frames were predicted using the Coding-Potential Assessment Tool (C
 	\centering
 	\includegraphics[page=7,trim={0cm 3cm 0cm 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_LabResults}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Characterisation of isoforms detected in targeted transcriptome profiling]%
-	{\textbf{Characterisation of isoforms detected in targeted transcriptome profiling:} \textbf{(A)} Reference transcripts were "flattened" to obtain splice site coordinates. \textbf{(B)} Exon-level comparison of long-read-derived transcripts and reference transcripts was then performed by comparing splice site coordinates to assess occurrence of alternative splicing sites. Splice sites differing <10bp ("wobble") were considered identical, >10bp as truncation, >10bp but <100bp as extension ,and >100bp as intron retention.  
+	\caption[Characterisation of isoforms detected in targeted profiling]%
+	{\textbf{Characterisation of isoforms detected in targeted profiling.} \textbf{(A)} Reference transcripts were "flattened" to obtain splice site coordinates. \textbf{(B)} Exon-level comparison of long-read-derived transcripts and reference transcripts was then performed by comparing splice site coordinates to assess occurrence of alternative splicing sites. Splice sites differing <10bp ("wobble") were considered identical, >10bp as truncation, >10bp but <100bp as extension ,and >100bp as intron retention.  
 	}
 	\label{fig:Targeted_isoforms_annotate}
 \end{figure}
@@ -473,8 +473,8 @@ Open reading frames were predicted using the Coding-Potential Assessment Tool (C
 	\centering
 	\includegraphics[page=8,trim={0cm 1cm 0cm 0cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_LabResults}
 	\captionsetup{width=0.95\textwidth,singlelinecheck=off}
-	\caption[Visualising isoforms by coding, abundance and NMD status]%
-	{\textbf{Visualising isoforms by coding, abundance and NMD status:} \textbf{(A)} Open reading frames were determined using \textit{CPAT} and \textbf{(B)} isoforms were subsequently coloured by protein coding potential (green for coding, red for non-coding, and gray for no open reading frame) and shaded by abundance (described in \cref{ch6: methods_quantification}) \textbf{(C)} A schematic figure illustrating approach for predicting nonsense-mediated decay (NMD). ORF - Open Reading Frame. 
+	\caption[Visualising isoforms by coding potential, abundance and NMD status]%
+	{\textbf{Visualising isoforms by coding potential, abundance and NMD status.} Shown is a flow-diagram for isoform visualisation. \textbf{(A)} Open reading frames were determined using \textit{CPAT} and \textbf{(B)} isoforms were subsequently coloured by protein coding potential (green for coding, red for non-coding, and gray for no open reading frame) and shaded by abundance (described in \cref{ch6: methods_quantification}). \textbf{(C)} A schematic figure illustrating approach for predicting nonsense-mediated decay (NMD). ORF - Open Reading Frame. 
 	}
 	\label{fig:Targeted_isoforms_cpat}
 \end{figure}
@@ -486,7 +486,7 @@ Differential expression analysis was performed with \textit{tappAS} using full-l
 \newpage
 \section{Results}
 \subsection{Iso-Seq run performance and sequencing metrics}
-Following Iso-Seq library preparation and SMRT sequencing, we generated a total of 62.8Gb sequencing data (n = 24 samples, mean yield = 20.9Gb, s.d = 2.84Gb, range = 19.25Gb - 24.2Gb, \cref{tab:targeted_mouse_run_output}). While the sequencing yield was comparable to whole transcriptome profiling (\cref{tab:isoseq_wholerun_result}), the run performance varied across the three Iso-Seq targeted datasets, particularly between batch 1 (n = 6 samples) and batches 2 (n = 9 samples), 3 (n = 9 samples), which were sequenced pre- and post-Covid-19 lockdown respectively. The run performance metrics for batch 1 were optimal (\cref{tab:targeted_mouse_run_output}). Conversely, batches 2 and 3 had a poor loading rate (batch 1 P1:  71\%, batch 3 P1: 38.1\%) with sequencing yields that were comparable to batch 1, despite containing more samples. We suspect that this reduced run performance was likely a result of relative sample degradation, given samples were stored in -20\textdegree C for >9 months (due to Covid-19 lockdown) before sequencing. 
+Following Iso-Seq library preparation and SMRT sequencing, we generated a total of 62.8Gb sequencing data (n = 24 samples, mean yield = 20.9Gb, s.d = 2.84Gb, range = 19.25Gb - 24.2Gb, \cref{tab:targeted_mouse_run_output}). While the sequencing yield was comparable to global transcriptome profiling (\cref{tab:isoseq_wholerun_result}), the run performance varied across the three Iso-Seq targeted datasets, particularly between batch 1 (n = 6 samples) and batches 2 (n = 9 samples), 3 (n = 9 samples), which were sequenced pre- and post-Covid-19 lockdown respectively. The run performance metrics for batch 1 were optimal (\cref{tab:targeted_mouse_run_output}). Conversely, batches 2 and 3 had a poor loading rate (batch 1 P1:  71\%, batch 3 P1: 38.1\%) with sequencing yields that were comparable to batch 1, despite containing more samples. We suspect that this reduced run performance was likely a result of relative sample degradation, given samples were stored in -20\textdegree C for >9 months (due to Covid-19 lockdown) before sequencing. 
 
 Following the Iso-Seq bioinformatics pipeline, raw reads were processed and clustered to unique consensus transcripts, which were then mapped to the mouse reference genome. A total of 966K CCS reads (mean = 332K, s.d = 126K, range =  221K - 469K) and 930K FLNC reads (mean = 310K, s.d = 77.7K, range = 2556K - 399K) were successfully generated (\cref{fig:isoseq_targeted_run_output}\textbf{A}). Where there was evident difference in the number of CCS reads obtained for batch 1 and batches 2,3 - a reflection of the run performance - batches 2 and 3 had a significantly greater coverage of target genes than batch 1 (\cref{fig:isoseq_targeted_rate}). These results indicate that the sub-optimal run performance and subsequent lower sequencing yield of batches 2 and 3 were compensated by a bigger sample size, generating more full-length reads associated to target genes. In contrast, the better run performance but lower sample size of batch 1 resulted in quicker saturation of target genes and the generation of more full-length reads associated to off-target genes. 
 
@@ -495,8 +495,8 @@ Finally, we noted that the number of full-length transcripts obtained per sample
 
 \begin{table}[]
 	\captionsetup{width=1.0\textwidth}
-	\caption[Iso-Seq sequencing yield for targeted transcriptome profiling of rTg4510 mouse cortex]%
-	{\textbf{Iso-Seq sequencing yield for targeted transcriptome profiling of the rTg4510 mouse cortex:} rTg4510 cortex (n = 9 WT, n = 9 TG) was sequenced using the Iso-Seq approach on 3 runs (batch 1, 2 and 3) after multiplexing and enrichment of 20 AD-associated genes. Further details on evaluation of the performance of Iso-Seq sequencing runs are provided in \cref{sec: Isoseq_run_performance}. K - Thousand, Pol - Polymerase. N50 is defined as the sequence length of the shortest read at 50\% of all reads}
+	\caption[Iso-Seq sequencing yield for targeted profiling of rTg4510 mouse cortex]%
+	{\textbf{Iso-Seq sequencing yield for targeted profiling of the rTg4510 mouse cortex.} rTg4510 cortex (n = 9 WT, n = 9 TG) was sequenced using the Iso-Seq approach on 3 runs (batch 1, 2 and 3) after multiplexing and enrichment of 20 AD-associated genes. Further details on evaluation of the performance of Iso-Seq sequencing runs are provided in \cref{sec: Isoseq_run_performance}. K - Thousand, Pol - Polymerase. N50 is defined as the sequence length of the shortest read at 50\% of all reads}
 	\label{tab:targeted_mouse_run_output}
 	\centering
 	\setlength\tabcolsep{6pt} %reduced margin size in table
@@ -538,8 +538,8 @@ Finally, we noted that the number of full-length transcripts obtained per sample
 		\includegraphics[page=1,trim={0 1cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Targeted Transcriptome Iso-seq run performance]%
-	{\textbf{Despite batch variability in Iso-Seq targeted datasets, no difference was reported in the number of FL transcripts between WT and TG mice:} \textbf{(A)} The number of reads generated through the Iso-Seq bioinformatics pipeline from initial generation of CCS reads, to FL reads with primer removal, and poly-A FLNC reads with removal of artificial concatemers and trimming of poly(A) tails. Samples were multiplexed and sequenced in three runs (batch 1, 2 and 3). Shown is a \textbf{(B)} box-plot of the number of poly-A FLNC reads by batch and genotype and \textbf{(C)} box-plot of the final number of FL transcripts by genotype. CCS - Circular Consensus Sequence, FLNC - Full-Length Non-Concatemer, FL - Full-Length, WT - Wild-type, TG - Transgenic}
+	\caption[Iso-Seq sequencing metrics from targeted profiling of rTg4510 mice]%
+	{\textbf{Despite batch variability in Iso-Seq targeted datasets, no difference was reported in the number of FL transcripts between WT and TG mice.} Shown is \textbf{(A)} a scatter plot of the number of reads generated through the Iso-Seq bioinformatics pipeline from initial generation of CCS reads, to FL reads with primer removal, and poly-A FLNC reads with removal of artificial concatemers and trimming of poly(A) tails. Samples were multiplexed and sequenced in three runs (batch 1, 2 and 3). Shown are box-plots of the \textbf{(B)} number of poly-A FLNC reads by batch and genotype and \textbf{(C)} final number of FL transcripts by genotype. CCS - Circular Consensus Sequence, FLNC - Full-Length Non-Concatemer, FL - Full-Length, WT - Wild-type, TG - Transgenic}
 	\label{fig:isoseq_targeted_run_output}
 \end{figure}
 
@@ -547,29 +547,29 @@ Finally, we noted that the number of full-length transcripts obtained per sample
 	\centering
 		\includegraphics[page=2,trim={0 25cm 0 0},clip,scale = 0.55]{Figures/TargetedTranscriptome.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[On-Target rate of Iso-Seq targeted transcriptome profiling]%
-	{\textbf{Higher coverage of target genes in batches 2 and 3 due to more samples multiplexed and sequenced:} Shown is a box-plot of the on-target rate, defined as the proportion of mapped transcripts associated with target genes (AD-associated genes) with overlapping sequences to at least one target probe. Of note, a difference in the on-target rate between WT and TG in batch 1 is a likely reflection of the sample variability in sequencing (\cref{fig:isoseq_targeted_run_output}\textbf{B}). WT - Wild-type, TG - Transgenic.}
+	\caption[On-target rate of Iso-Seq targeted profiling]%
+	{\textbf{Higher coverage of target genes in batches 2 and 3 due to more samples multiplexed and sequenced.} Shown is a box-plot of the on-target rate, defined as the proportion of mapped transcripts associated with target genes (AD-associated genes) with overlapping sequences to at least one target probe. Of note, a difference in the on-target rate between WT and TG in batch 1 is a likely reflection of the sample variability in sequencing (\cref{fig:isoseq_targeted_run_output}\textbf{B}). WT - Wild-type, TG - Transgenic.}
 	\label{fig:isoseq_targeted_rate}
 \end{figure}
 
 \newpage
-\subsection{Iso-Seq targeted transcriptome profiling approach detects many novel, rare isoforms annotated to AD-associated genes}
+\subsection{Iso-Seq targeted profiling approach detects many novel, rare isoforms annotated to AD-associated genes}
 \label{ch6: wholevstargeted}
-Following stringent quality-control and filtering of technical artefacts, we detected 19,659 isoforms in the Iso-Seq targeted dataset of which 2,015 isoforms (10.2\%) were annotated to 20 AD-associated genes enriched in the rTg4510 cortex (n = 12 WT, n = 12 TG). This was in stark contrast to the whole transcriptome profiling dataset, where we detected 175 isoforms (0.25\% of total number of isoforms detected from whole transcriptome profiling) annotated to the same AD-associated genes, highlighting the power of targeted profiling for deep coverage of target genes. As expected, target enrichment and sequencing of matched samples (n = 6 WT, 6 TG, \cref{tab:whole_phenotype}) detected many more AD-associated transcripts than the whole transcriptome profiling approach (\cref{fig:targeted_vs_whole}\textbf{A}, Iso-Seq whole dataset: n = 46 unique isoforms, Iso-Seq targeted dataset = 658 unique isoforms, Iso-Seq Whole and targeted dataset = 221 isoforms). The majority of these isoforms unique to the Iso-Seq targeted dataset were novel (\cref{fig:targeted_vs_whole}\textbf{B}, n = 525 isoforms, 79.8\%) as NIC (n = 218 isoforms, 33.1\%) and NNC (n = 307 isoforms, 46.7\%), and less abundant (\cref{fig:targeted_vs_whole}\textbf{D}), highlighting the greater sensitivity of the targeted profiling approach to detect the novel, rarer transcripts. Strikingly, the whole transcriptome profiling approach detected all the target genes with the exception of \textit{Trpa1}, the most lowly-expressed target gene in the mouse cortex (\cref{tab:target_genes_description}), which suggests that the gene sensitivity with 5.6 million CCS reads (n = 12 samples) using the Iso-Seq whole transcriptome profiling approach was capped between 0.1 TPM (mouse cortex \textit{Trpa1} expression) and 0.5 TPM (mouse cortex \textit{Rhbdf2} expression, the second least expressed target gene). Given that our whole Iso-Seq datasets approached saturation particularly at the gene level (\cref{fig:isoseq_whole_rarefaction}\textbf{A}), it is unlikely that we would have been able to detect \textit{Trpa1} transcripts with more samples using the whole transcriptome profiling approach.
+Following stringent quality-control and filtering of technical artefacts, we detected 19,659 isoforms in the Iso-Seq targeted dataset of which 2,015 isoforms (10.2\%) were annotated to 20 AD-associated genes enriched in the rTg4510 cortex (n = 12 WT, n = 12 TG). This was in stark contrast to the global transcriptome profiling dataset, where we detected 175 isoforms (0.25\% of total number of isoforms detected from global transcriptome profiling) annotated to the same AD-associated genes, highlighting the power of targeted profiling for deep coverage of target genes. As expected, target enrichment and sequencing of matched samples (n = 6 WT, 6 TG, \cref{tab:whole_phenotype}) detected many more AD-associated transcripts than the whole transcriptome profiling approach (\cref{fig:targeted_vs_whole}\textbf{A}, Iso-Seq global dataset: n = 46 unique isoforms, Iso-Seq targeted dataset = 658 unique isoforms, Iso-Seq global and targeted dataset = 221 isoforms). The majority of these isoforms unique to the Iso-Seq targeted dataset were novel (\cref{fig:targeted_vs_whole}\textbf{B}, n = 525 isoforms, 79.8\%) as NIC (n = 218 isoforms, 33.1\%) and NNC (n = 307 isoforms, 46.7\%), and less abundant (\cref{fig:targeted_vs_whole}\textbf{D}), highlighting the greater sensitivity of the targeted profiling approach to detect the novel, rarer transcripts. Strikingly, the global transcriptome profiling approach detected all the target genes with the exception of \textit{Trpa1}, the most lowly-expressed target gene in the mouse cortex (\cref{tab:target_genes_description}), which suggests that the gene sensitivity with 5.6 million CCS reads (n = 12 samples) using the Iso-Seq global transcriptome profiling approach was capped between 0.1 TPM (mouse cortex \textit{Trpa1} expression) and 0.5 TPM (mouse cortex \textit{Rhbdf2} expression, the second least expressed target gene). Given that our Iso-Seq global datasets approached saturation particularly at the gene level (\cref{fig:isoseq_whole_rarefaction}\textbf{A}), it is unlikely that we would have been able to detect \textit{Trpa1} transcripts with more samples using the global transcriptome profiling approach.
 
-Further comparison of the isoform landscape of AD-associated genes in the Iso-Seq whole and targeted datasets revealed a similar distribution of isoform length (Iso-Seq whole dataset: mean = 2.67kb, s.d = 1.6kb, range = 300bp - 10.3kb, Iso-Seq targeted dataset: mean = 2.4kb, s.d = 1.2kb, range = 140bp - 10.3kb; Mann-Whitney-Wilcoxon test: W = 1.91 x 10\textsuperscript{6}, P = 0.068) and number of exons (Iso-Seq whole dataset: mean = 12.9, s.d = 9.6, range - 1 - 50; Iso-Seq targeted dataset: mean = 11.7, s.d = 7.9, range = 1 - 50; Mann-Whitney-Wilcoxon test: W = 1.86 x 10\textsuperscript{6}, P = 0.22). Drawing parallels to the isoform landscape of the global transcriptome, approximately half of the isoforms identified in Iso-Seq targeted dataset were novel (n = 919 isoforms, 45.6\%) as NIC (n = 485, 24.1\%) and NNC (n = 434 isoforms, 21.5\%) (\cref{fig:isoseq_targeted_finalnumberiso}\textbf{A}), with the remaining half identified as known and predominantly ISM (n = 913, 45.3\%). However, AD-associated isoforms in Iso-Seq targeted dataset were less enriched near CAGE peaks from the FANTOM5 dataset (median distance from CAGE peak = 335 bp, 646 transcripts located within 50bp of a CAGE peak) than those in Iso-Seq whole dataset (median distance from CAGE peak = 2 bp, 122 transcripts (69.7\%) located with 50bp of a CAGE peak), and were located further to annotated transcription start sites (Iso-Seq targeted dataset: median distance = 808bp, Iso-Seq whole dataset: median distance = 8bp) and transcription termination sites (Iso-Seq targeted dataset: median distance = 2bp, Iso-Seq whole dataset: median distance = 1bp). 
+Further comparison of the isoform landscape of AD-associated genes in the Iso-Seq global and targeted datasets revealed a similar distribution of isoform length (Iso-Seq global dataset: mean = 2.67kb, s.d = 1.6kb, range = 300bp - 10.3kb, Iso-Seq targeted dataset: mean = 2.4kb, s.d = 1.2kb, range = 140bp - 10.3kb; Mann-Whitney-Wilcoxon test: W = 1.91 x 10\textsuperscript{6}, P = 0.068) and number of exons (Iso-Seq global dataset: mean = 12.9, s.d = 9.6, range - 1 - 50; Iso-Seq targeted dataset: mean = 11.7, s.d = 7.9, range = 1 - 50; Mann-Whitney-Wilcoxon test: W = 1.86 x 10\textsuperscript{6}, P = 0.22). Drawing parallels to the isoform landscape of the global transcriptome, approximately half of the isoforms identified in Iso-Seq targeted dataset were novel (n = 919 isoforms, 45.6\%) as NIC (n = 485, 24.1\%) and NNC (n = 434 isoforms, 21.5\%) (\cref{fig:isoseq_targeted_finalnumberiso}\textbf{A}), with the remaining half identified as known and predominantly ISM (n = 913, 45.3\%). However, AD-associated isoforms in Iso-Seq targeted dataset were less enriched near CAGE peaks from the FANTOM5 dataset (median distance from CAGE peak = 335 bp, 646 transcripts located within 50bp of a CAGE peak) than those in Iso-Seq global dataset (median distance from CAGE peak = 2 bp, 122 transcripts (69.7\%) located with 50bp of a CAGE peak), and were located further to annotated transcription start sites (Iso-Seq targeted dataset: median distance = 808bp, Iso-Seq global dataset: median distance = 8bp) and transcription termination sites (Iso-Seq targeted dataset: median distance = 2bp, Iso-Seq global dataset: median distance = 1bp). 
 
 Generating highly parallel RNA-Seq data on the same samples (n = 24 samples, total number of uniquely mapped reads = 360 million), we further found that the vast majority of these isoforms were not supported by RNA-Seq reads spanning the junction (n = 1658 isoforms, 82.2\%). Given the stringent process of the Iso-Seq bioinformatics pipeline and target enrichment, this likely reflects the low coverage of RNA-Seq reads to comprehensively span these novel junctions and the elevated power of long-read sequencing to detect profile transcript structure. However, a strong correlation between gene-level expression level was observed across both methods (n = 20 genes, corr = 0.86, P = 1.18 x 10\textsuperscript{-6}), \cref{fig:isoseq_targeted_finalnumberiso}\textbf{B}). 
 
-Finally, we observed a relatively high off-target rate of Iso-Seq targeted experiments with detection of isoforms (n = 17,644, 89.8\%) that were not associated with target genes. Comparison with the whole Iso-Seq datasets using matched samples (n = 12, n = 7,925 off-target isoforms, 89.8\%) revealed that the overwhelming majority of these isoforms (n = 7,418, 93.6\% off-target isoforms) were also detected in the whole Iso-Seq dataset. These isoforms were more abundant than isoforms unique to the whole Iso-Seq dataset and isoforms associated to target genes (\cref{fig:targeted_vs_whole}\textbf{C}), suggesting that capture of off-target genes is predominantly driven by abundance rather than sequence homology to target genes (off-target binding).  
+Finally, we observed a relatively high off-target rate of Iso-Seq targeted experiments with detection of isoforms (n = 17,644, 89.8\%) that were not associated with target genes. Comparison with the Iso-Seq global datasets using matched samples (n = 12, n = 7,925 off-target isoforms, 89.8\%) revealed that the overwhelming majority of these isoforms (n = 7,418, 93.6\% off-target isoforms) were also detected in the Iso-Seq global dataset. These isoforms were more abundant than isoforms unique to the Iso-Seq global dataset and isoforms associated to target genes (\cref{fig:targeted_vs_whole}\textbf{C}), suggesting that capture of off-target genes is predominantly driven by abundance rather than sequence homology to target genes (off-target binding).  
 
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[page=3,trim={0 1.5cm 0 0cm},clip,scale = 0.50]{Figures/TargetedTranscriptome.pdf}
 	\label{fig:targeted_vs_whole}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Comparison of whole transcriptome vs targeted Iso-Seq transcriptome profiling]%
-	{\textbf{Iso-Seq targeted approach detected many more novel and rarer transcripts than whole transcriptome profiling of the mouse cortex}. Shown is the \textbf{(A)} number of isoforms per target gene that were uniquely detected using the Iso-Seq targeted transcriptome profiling approach ("Targeted"), uniquely detected in the Iso-Seq whole transcriptome profiling approach ("Whole") and in both datasets ("Both"), and the \textbf{(B)} number of isoforms in the Iso-Seq targeted approach stratified by structural category. \textbf{(C)} A box-plot of the full-length read counts of isoforms associated to target and non-target genes in the Iso-Seq whole and \textbf{(D)} targeted datasets. Target genes refer to the panel of 20 AD-associated genes that were enriched for targeted sequencing. Only transcripts from matched samples were compared. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}
+	\caption[Comparison of Iso-Seq global transcriptome and targeted profiling]%
+	{\textbf{Iso-Seq targeted approach detected many more novel and rarer transcripts than global transcriptome profiling of the mouse cortex.} Shown are \textbf{(A)} bar-plots of the number of isoforms per target gene that were uniquely detected using the Iso-Seq targeted profiling approach ("Targeted"), uniquely detected in the Iso-Seq global transcriptome profiling approach ("Whole") and in both datasets ("Both"), and the \textbf{(B)} bar-plots of the number of isoforms in the Iso-Seq targeted approach stratified by structural category. \textbf{(C)} A box-plot of the full-length read counts of isoforms associated to target and non-target genes in the Iso-Seq global and \textbf{(D)} targeted datasets. Target genes refer to the panel of 20 AD-associated genes that were enriched for targeted sequencing. Only transcripts from matched samples were compared. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}
 \end{figure}
 
 \begin{figure}[!htp]
@@ -577,22 +577,22 @@ Finally, we observed a relatively high off-target rate of Iso-Seq targeted exper
 		\includegraphics[page=1,trim={0 20cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Wide isoform diversity in AD-associated genes from Targeted Sequencing in mouse cortex]%
-	{\textbf{Wide isoform diversity observed in AD-associated genes with many novel isoforms detected}. \textbf{(A)} Shown is the number of isoforms detected per target gene from the Iso-Seq targeted dataset, classified by novel and known, after sequential processing and filtering in the bioinformatics Iso-Seq pipeline. Novel isoforms refer to isoforms that are not known in current existing annotations. \textbf{(B)} A strong correlation was observed between Iso-Seq and RNA-Seq gene expression. Iso-Seq gene expression was determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
+	\caption[Isoform landscape of AD-risk genes from Iso-Seq targeted profiling]%
+	{\textbf{Widespread isoform diversity was observed in AD-risk genes with detection of many novel isoforms in the rTg4510 cortex.} Shown is \textbf{(A)} a bar plot of the number of isoforms detected per AD-risk gene from the Iso-Seq targeted dataset, classified by novel and known, after sequential processing and filtering in the bioinformatics Iso-Seq pipeline, and \textbf{(B)} a density plot of the RNA-Seq and Iso-Seq gene expression. Iso-Seq gene expression was determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
 	\label{fig:isoseq_targeted_finalnumberiso}
 \end{figure}
 
 \newpage
 \subsection{Confirmation that the \textit{MAPT} transgene is only expressed in rTg4510 TG mice}
-The mouse \textit{Mapt} gene was one of the 20 target genes enriched for the targeted transcriptome profiling of the rTg4510 mouse cortex. Given the high homology between the mouse \textit{Mapt} and human \textit{MAPT} coding sequence (as seen in \cref{mapt_transgene_whole} ), we anticipated that the target enrichment approach would also capture the human \textit{MAPT} transgene. As expected, BLAST analysis of the species-specific \textit{Mapt/MAPT} sequences showed only detection of the human-specific \textit{MAPT} sequences in reads from TG mice (\cref{fig:hmapt_ont_isoseq}\textbf{A,B}), confirming stable activation of the human \textit{MAPT} transgene. There was also an enrichment of full-length reads corresponding to the mouse \textit{Mapt} gene, which was not previously noticeable in the whole Iso-Seq dataset (\cref{fig:isoseq_humanmapt}\textbf{A}), as a further testament to the success of the targeted experiments. Notably, there was a striking difference in the number of reads corresponding to the human \textit{MAPT} transgene and the mouse \textit{Mapt} gene in the ONT targeted dataset (\cref{fig:hmapt_ont_isoseq}\textbf{B}) - a likely reflection of the extra-deep sequencing coverage provided using ONT nanopore sequencing. 
+The mouse \textit{Mapt} gene was one of the 20 target genes enriched for the targeted profiling of the rTg4510 mouse cortex. Given the high homology between the mouse \textit{Mapt} and human \textit{MAPT} coding sequence (as seen in \cref{mapt_transgene_whole} ), we anticipated that the target enrichment approach would also capture the human \textit{MAPT} transgene. As expected, BLAST analysis of the species-specific \textit{Mapt/MAPT} sequences showed only detection of the human-specific \textit{MAPT} sequences in reads from TG mice (\cref{fig:hmapt_ont_isoseq}\textbf{A,B}), confirming stable activation of the human \textit{MAPT} transgene. There was also an enrichment of full-length reads corresponding to the mouse \textit{Mapt} gene, which was not previously noticeable in the Iso-Seq global dataset (\cref{fig:isoseq_humanmapt}\textbf{A}), as a further testament to the success of the targeted experiments. Notably, there was a striking difference in the number of reads corresponding to the human \textit{MAPT} transgene and the mouse \textit{Mapt} gene in the ONT targeted dataset (\cref{fig:hmapt_ont_isoseq}\textbf{B}) - a likely reflection of the extra-deep sequencing coverage provided using ONT nanopore sequencing. 
 
 \begin{figure}[!htp]
 	\begin{center}
 		\includegraphics[page=12,trim={0 20cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Quantifying human-specific and mouse-specific \textit{MAPT}/\textit{Mapt} sequences in targeted transcriptome profiling approach]%
-	{\textbf{Human-specific \textit{MAPT} sequences were only present in transgenic mice, with enrichment of mouse \textit{Mapt} reads:} Shown are two scatter plots of the ratio of full-length transcripts that were mapped to human-specific \textit{MAPT} and mouse-specific \textit{Mapt} sequences in the \textbf{(A)} Iso-Seq targeted dataset and \textbf{(B)} ONT targeted dataset. Dotted lines represent the mean paths across ages.}
+	\caption[Quantifying human-specific \textit{MAPT} sequences in Iso-Seq targeted dataset]%
+	{\textbf{Human-specific \textit{MAPT} sequences were only present in transgenic mice, with enrichment of mouse \textit{Mapt} reads.} Shown are two scatter plots of the ratio of full-length transcripts that were mapped to human-specific \textit{MAPT} and mouse-specific \textit{Mapt} sequences in the \textbf{(A)} Iso-Seq targeted dataset and \textbf{(B)} ONT targeted dataset. Dotted lines represent the mean paths across ages.}
 	\label{fig:hmapt_ont_isoseq}
 \end{figure}
 
@@ -605,8 +605,8 @@ Following library preparation and nanopore sequencing on a subset of samples (n 
 \vspace{1cm}
 \begin{table}[!htp]
 	\captionsetup{width=0.95\textwidth}
-	\caption[Run Yield Output from Targeted Transcriptome Nanopore Sequencing of Tg4510]%
-	{\textbf{Comparable run performance and yield output from Targeted Nanopore sequencing of Tg4510}. A subset of samples (n = 18) were also prepared for sequencing on the ONT MinION using two separate flow cells over 48hours (batch 2: WT = 4, TG = 5 samples; batch 3: WT = 4, TG = 5 samples). Following the ONT bioinformatics pipeline, raw ONT reads were basecalled and filtered by read accuracy (Phred, Q > 7). Active channels refer to the total number of channels that were detected with sequencing activity over the course of the run. N50 refers to the sequence length at which 50\% of reads are sized at or over. Gb - Gigabases, kb- kilobases, M - Million}
+	\caption[ONT sequencing yield from nanopore targeted profiling of Tg4510 mice]%
+	{\textbf{Comparable run performance and yield output from targeted nanopore sequencing of Tg4510 mice.} Tabulated is a summary of the sequencing yield generated on a subset of mouse samples (n = 18) after sequencing on the ONT MinION using two separate flow cells over 48hours (batch 2: WT = 4, TG = 5 samples; batch 3: WT = 4, TG = 5 samples). Following the ONT bioinformatics pipeline, raw ONT reads were basecalled and filtered by read accuracy (Phred, Q > 7). Active channels refer to the total number of channels that were detected with sequencing activity over the course of the run. N50 refers to the sequence length at which 50\% of reads are sized at or over. Gb - Gigabases, kb- kilobases, M - Million}
 	\label{tab:ont_targetedrun_output}
 	\centering
 	\setlength\tabcolsep{4pt} %reduced margin size in table
@@ -662,8 +662,8 @@ Following library preparation and nanopore sequencing on a subset of samples (n 
 		\includegraphics[page=1,trim={0 13cm 0 0},scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT sequencing channel activity for targeted transcriptome profiling of rTg4510 cortex]%
-	{\textbf{ONT sequencing channel activity for targeted transcriptome profiling of rTg4510 cortex:} Shown is a spatial heatmap representation of channel productivity for \textbf{(A)} batch 2 (sequencing yield = 16.9Gb) and \textbf{(B)} batch 3 (sequencing yield = 22.8Gb). Each square is a channel that contains 4 nanopore nanopore, and the productivity is determined by the number of DNA sequences (represented here with a colour density from white to dark blue) that translocates through each pore in the duration of a given run. A contrast in activity can be seen across both runs: a concentrated patch of inactive channels(white box, 0 reads translocated through pore of interest) in the batch 2 run vs more active channels (dark blue, >50,000 reads translocated through pore of interest) in the batch 3 run. Similar amounts of cDNA were loaded into the flow cells (batch 2: 540ng, batch 3: 500ng)}
+	\caption[ONT sequencing channel activity for targeted profiling of the rTg4510 cortex]%
+	{\textbf{High sequencing channel activity from nanopore sequencing of the rTg4510 cortex after target enrichment.} Shown is a spatial heatmap representation of channel productivity for \textbf{(A)} batch 2 (sequencing yield = 16.9Gb) and \textbf{(B)} batch 3 (sequencing yield = 22.8Gb). Each square is a channel that contains 4 nanopore nanopore, and the productivity is determined by the number of DNA sequences (represented here with a colour density from white to dark blue) that translocates through each pore in the duration of a given run. A contrast in activity can be seen across both runs: a concentrated patch of inactive channels(white box, 0 reads translocated through pore of interest) in the batch 2 run vs more active channels (dark blue, >50,000 reads translocated through pore of interest) in the batch 3 run. Similar amounts of cDNA were loaded into the flow cells (batch 2: 540ng, batch 3: 500ng)}
 	\label{fig:ont_targetedseq_channel}
 \end{figure}
 
@@ -672,22 +672,22 @@ Following library preparation and nanopore sequencing on a subset of samples (n 
 		\includegraphics[page=2,,trim={0 0cm 0cm 10cm},clip, scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT temporal run performance for targeted transcriptome profiling]%
-	{\textbf{ONT temporal run performance for targeted transcriptome profiling:} Shown are time-series plots with the \textbf{(A)} number of bases generated per hour over the course of the run for batch 2 and \textbf{(B)} batch 3, and \textbf{(C)} the reads generated cumulatively for batch 2 and \textbf{(D)} batch 3. The reads were classified as "pass" (dark blue) if QV >= 7 and "fail" (light blue) if QV < 7. T50 and T90 refer to the time (hours) at which 50\% and 90\% of the total number of bases were sequenced. Gb - Gigabases}
+	\caption[ONT temporal run performance for targeted profiling]%
+	{\textbf{ONT temporal run performance for targeted profiling.} Shown are time-series plots with the \textbf{(A)} number of bases generated per hour over the course of the run for batch 2 and \textbf{(B)} batch 3, and \textbf{(C)} the reads generated cumulatively for batch 2 and \textbf{(D)} batch 3. The reads were classified as "pass" (dark blue) if QV >= 7 and "fail" (light blue) if QV < 7. T50 and T90 refer to the time (hours) at which 50\% and 90\% of the total number of bases were sequenced. Gb - Gigabases}
 	\label{fig:ont_targetedtime_performance}
 \end{figure}
 
 \newpage
 Although the sequencing yield from ONT nanopore sequencing was comparable to Iso-Seq after target enrichment (Iso-Seq: 19.3 - 24.2Gb, ONT: 16.9 - 22.8Gb), we detected significantly more ONT ID reads (range: 12.3M - 16.3M) than Iso-Seq polymerase reads (range: 0.3M - 0.7M) and subsequently more full-length reads per sample (ONT mean basecalled, filtered reads = 918K, range = 667K - 1.32M, \cref{fig:ONT_targeted_run_output}\textbf{A}; Iso-Seq mean PolyA-FLNC reads = 38.7K, range = 16.8K - 77.2K, \cref{fig:isoseq_targeted_run_output}\textbf{A}). The on-target rate from ONT nanopore sequencing was also comparable to that seen in Iso-Seq (\cref{fig:isoseq_targeted_rate}, \cref{fig:ont_targeted_rate}), suggesting that the ONT targeted dataset provides a deeper coverage of the target genes. We suspect that this reflects an inherent difference between the two technologies: an insert (cDNA sequence of interest) would be sequenced multiple times from multiple polymerase passes in Iso-Seq (\cref{fig:Mechanism}\textbf{A}), whereas the same insert would only be sequenced once following translocation in nanopore sequencing (\cref{fig:ONT_Mechanism}\textbf{A}). The yield in Iso-Seq was thus limited by the number of wells available for sequencing (1M ZMWs), whilst the yield in ONT nanopore sequencing was constrained by the amount of material and channel activity, which was easily maximised to ensure high throughput. However, we also observed that this high ONT sequencing yield was achieved at the expense of read accuracy given reads were only sequenced once; the average ONT read accuracy was 90\% (mean Phred Quality = 10; \cref{tab:ont_targetedrun_output}, \cref{fig:ont_targetedlengthquality}\textbf{A,B}) in comparison to the 99.9\% accuracy of Iso-Seq reads. Of note, this low ONT read accuracy was expected and in line with developments of nanopore chemistry at the time of research (summarised in \cref{fig:ONT_advances}).  
 
-Finally, we noted that the number of full-length reads obtained per sample varied within each batch (\cref{fig:ONT_targeted_run_output}\textbf{B}), reflecting the data from Iso-Seq targeted transcriptome profiling. We also detected slightly more reads for TG than WT mice in both batches (\cref{fig:ONT_targeted_run_output}\textbf{C}, batch 2: Wilcoxon rank sum test, W = 18, P = 0.063; batch 3: Wilcoxon rank sum test, W = 17, P = 0.11), although the difference was not significant at the 5\% level after merging both datasets (Wilcoxon rank sum test, W = 59, P = 0.10, \cref{fig:ONT_targeted_run_output}\textbf{D}). Deeper examination revealed that this variability was not associated with RIN (corr = -0.267, P = 0.284, Spearman's rank) or barcode from multiplexing (corr = -0.058, P = 0.819, Spearman's rank, \cref{fig:ONT_targeted_run_output}), but a reflection of sequencing more TG samples across both runs (batch 2: WT = 4, TG = 5 samples; batch 3: WT = 4, TG = 5 samples). Notably, this was not an issue with Iso-Seq targeted transcriptome profiling where the number of WT and TG mice was overall balanced after including samples from batch 1. %Nonetheless, this is unlikely to have a significant impact on subsequent differential analysis given that counts are normalised to the sample 
+Finally, we noted that the number of full-length reads obtained per sample varied within each batch (\cref{fig:ONT_targeted_run_output}\textbf{B}), reflecting the data from Iso-Seq targeted profiling. We also detected slightly more reads for TG than WT mice in both batches (\cref{fig:ONT_targeted_run_output}\textbf{C}, batch 2: Wilcoxon rank sum test, W = 18, P = 0.063; batch 3: Wilcoxon rank sum test, W = 17, P = 0.11), although the difference was not significant at the 5\% level after merging both datasets (Wilcoxon rank sum test, W = 59, P = 0.10, \cref{fig:ONT_targeted_run_output}\textbf{D}). Deeper examination revealed that this variability was not associated with RIN (corr = -0.267, P = 0.284, Spearman's rank) or barcode from multiplexing (corr = -0.058, P = 0.819, Spearman's rank, \cref{fig:ONT_targeted_run_output}), but a reflection of sequencing more TG samples across both runs (batch 2: WT = 4, TG = 5 samples; batch 3: WT = 4, TG = 5 samples). Notably, this was not an issue with Iso-Seq targeted profiling where the number of WT and TG mice was overall balanced after including samples from batch 1. %Nonetheless, this is unlikely to have a significant impact on subsequent differential analysis given that counts are normalised to the sample 
 
 \begin{figure}[]
 	\centering
 	\includegraphics[page=5,trim={0 27cm 0 0cm},clip,scale = 0.5]{Figures/ONTTargetedTranscriptome.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[On-Target rate in ONT nanopore runs]%
-	{\textbf{On-target rate in ONT nanopore targeted sequencing was comparable to targeted Iso-Seq}. Shown is a box-plot of the on-target rate observed in ONT nanopore sequencing, which was similar to that observed in Iso-Seq targeted sequencing (\cref{fig:isoseq_targeted_rate}). Of note, a difference in the on-target rate between WT and TG in both batches is a likely reflection of the sample variability in sequencing (\cref{fig:ONT_targeted_run_output}\textbf{C,D}). WT - Wild-type, TG - Transgenic}
+	\caption[On-target rate of ONT targeted profiling]%
+	{\textbf{On-target rate of ONT nanopore targeted sequencing was comparable to Iso-Seq targeted profiling.} Shown is a box-plot of the on-target rate observed in ONT nanopore sequencing, which was similar to that observed in Iso-Seq targeted sequencing (\cref{fig:isoseq_targeted_rate}). Of note, a difference in the on-target rate between WT and TG in both batches is a likely reflection of the sample variability in sequencing (\cref{fig:ONT_targeted_run_output}\textbf{C,D}). WT - Wild-type, TG - Transgenic}
 	\label{fig:ont_targeted_rate}
 \end{figure}
 
@@ -696,8 +696,8 @@ Finally, we noted that the number of full-length reads obtained per sample varie
 		\includegraphics[page=3,trim={0 0cm 0cm 11cm},clip, scale = 0.45]{Figures/ONTTargetedTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT read length and quality from Whole Transcriptome Sequencing]%
-	{\textbf{Length and quality distribution of ONT basecalled reads}. Shown are histograms displaying the distribution of \textbf{(A)} mean read quality score of batch 2 and \textbf{(B)} batch 3, and \textbf{(C)} read lengths in batch 2 and \textbf{(D)} batch 3. The distribution is shaded by filtering: light blue for failed reads (Q < 7) and dark blue for passed reads (Q >= 7) }
+	\caption[ONT run performance metrics from targeted profiling of rTg4510 mice]%
+	{\textbf{Expected length and quality distribution of ONT basecalled reads.} Shown are histograms displaying the distribution of \textbf{(A)} mean read quality score of batch 2 and \textbf{(B)} batch 3, and \textbf{(C)} read lengths in batch 2 and \textbf{(D)} batch 3. The distribution is shaded by filtering: light blue for failed reads (Q < 7) and dark blue for passed reads (Q >= 7) }
 	\label{fig:ont_targetedlengthquality}
 \end{figure}
 
@@ -705,8 +705,8 @@ Finally, we noted that the number of full-length reads obtained per sample varie
 	\centering
 	\includegraphics[page=4,trim={0 0 0 0},clip,scale = 0.55]{Figures/ONTTargetedTranscriptome.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT Targeted Transcriptome run performance]%
-	{\textbf{The number of reads generated by ONT nanopore targeted sequencing varied by batch and genotype:} Shown are \textbf{(A)} the number of reads generated from the bioinformatics pipeline after basecalling and demultiplexing, \textbf{(B)} the number of minus and plus reads for each sample after demultiplexing (see \cref{fig:ONT_cdnatemplate} for structure of ONT read template), \textbf{(C)} a box-plot of the number of filtered basecalled reads by batch and genotype, and  \textbf{(D)} by genotype after merging data from both runs. WT - Wild-type, TG - Transgenic }
+	\caption[ONT sequencing metrics from targeted profiling of rTg4510 mice]%
+	{\textbf{The number of reads generated by ONT nanopore targeted sequencing varied by batch and genotype.} Shown are scatter plots of the \textbf{(A)} number of reads generated from the bioinformatics pipeline after basecalling and demultiplexing, \textbf{(B)} number of minus and plus reads for each sample after demultiplexing (see \cref{fig:ONT_cdnatemplate} for structure of ONT read template), and box-plots of the \textbf{(C)} number of filtered basecalled reads by batch and genotype, and \textbf{(D)} by genotype after merging data from both runs. WT - Wild-type, TG - Transgenic }
 	\label{fig:ONT_targeted_run_output}
 \end{figure}
 
@@ -724,8 +724,8 @@ Comparison of the two datasets using custom scripts revealed that the majority o
 	\vspace{20pt}
 	\includegraphics[page=4,trim={0 4cm 0 14cm},clip,scale = 0.75]{Figures/TargetedTranscriptome_LabResults.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Total number of transcripts detected from Iso-Seq and ONT targeted sequencing]%
-	{\textbf{Total number of transcripts detected from Iso-Seq and ONT targeted sequencing:} Shown is a Venn diagram of the total number of transcripts annotated to 20 AD-associated target genes detected in Iso-Seq (shaded red) and ONT (shaded blue) targeted datasets. "ONT filtered" transcripts refer to the subset of ONT transcripts that were retained after \textit{TALON} filtering (minimum 5 reads in at least 2 samples). Transcripts in the overlapping sector were defined as complete exact match (class code: "=") using \textit{Gffcompare}. The green dash encompasses the subset of transcripts from ONT and Iso-Seq targeted datasets that were taken further for downstream annotation and quantification analysis}
+	\caption[Finalised output from Iso-Seq and ONT targeted profiling of the rTg4510 cortex]%
+	{\textbf{Total number of transcripts detected from Iso-Seq and ONT targeted sequencing.} Shown is a Venn diagram of the total number of transcripts annotated to 20 AD-associated target genes detected in Iso-Seq (shaded red) and ONT (shaded blue) targeted datasets. "ONT filtered" transcripts refer to the subset of ONT transcripts that were retained after \textit{TALON} filtering (minimum 5 reads in at least 2 samples). Transcripts in the overlapping sector were defined as complete exact match (class code: "=") using \textit{Gffcompare}. The green dash encompasses the subset of transcripts from ONT and Iso-Seq targeted datasets that were taken further for downstream annotation and quantification analysis}
 	\label{fig:ont_isoseq_venn}
 \end{figure}
 
@@ -734,8 +734,8 @@ Comparison of the two datasets using custom scripts revealed that the majority o
 		\includegraphics[page=4,trim={0 13cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Comparison of the length, expression and exon number of common vs unique isoforms detected from targeted transcriptome profiling]%
-	{\textbf{Isoforms detected in both Iso-Seq and ONT targeted dataset are more abundant, and longer with more exons than isoforms unique to ONT dataset:} Shown are box-plots of the \textbf{(A)} length, \textbf{(B)} exon number and \textbf{(C)} expression of transcripts annotated to AD-associated genes (target genes) that were either detected in both Iso-Seq and ONT targeted datasets, or unique to the Iso-Seq (n = 24 samples) and ONT dataset (n = 18 samples). "Both" refer to transcripts that are detected in Iso-Seq targeted and ONT targeted dataset, "Iso-Seq" and "ONT" refer to transcripts that are only detected in Iso-Seq and ONT targeted datasets, respectively. The Iso-Seq and ONT transcript expression refer to the respective full-length read count for the associated isoform.}
+	\caption[Comparison of commonly-detected and unique isoforms from targeted datasets]%
+	{\textbf{Transcripts detected in both Iso-Seq and ONT targeted datasets were more abundant, and longer with more exons than isoforms unique to ONT dataset.} Shown are box-plots of the \textbf{(A)} length, \textbf{(B)} exon number and \textbf{(C)} expression of transcripts annotated to AD-associated genes (target genes) that were either detected in both Iso-Seq and ONT targeted datasets, or unique to the Iso-Seq (n = 24 samples) and ONT dataset (n = 18 samples). "Both" refer to transcripts that are detected in Iso-Seq targeted and ONT targeted dataset, "Iso-Seq" and "ONT" refer to transcripts that are only detected in Iso-Seq and ONT targeted datasets, respectively. The Iso-Seq and ONT transcript expression refer to the respective full-length read count for the associated isoform.}
 	\label{fig:ontvsisoseq_description}
 \end{figure}
 
@@ -755,8 +755,8 @@ Finally, using RNA-Seq data generated on matched samples, we found that 80\% (n 
 		\includegraphics[page=2,trim={0 19cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[ONT is more sensitive than Iso-Seq with greater power to detect novel transcripts]%
-	{\textbf{ONT is more sensitive than Iso-Seq with greater power to detect novel transcripts:} Shown is the \textbf{(A)} number of isoforms detected per target gene from the ONT targeted dataset, either classified as known (FSM, ISM) or novel (NIC, NNC), after sequential processing and filtering in the bioinformatics ONT pipeline. \textbf{(B)} A strong correlation was observed between ONT gene expression and RNA-Seq gene expression. ONT gene expression was determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
+	\caption[Isoform landscape of AD-risk genes from ONT targeted profiling]%
+	{\textbf{ONT is more sensitive than Iso-Seq with greater power to detect novel transcripts.} Shown is the \textbf{(A)} number of isoforms detected per target gene from the ONT targeted dataset, either classified as known (FSM, ISM) or novel (NIC, NNC), after sequential processing and filtering in the bioinformatics ONT pipeline. \textbf{(B)} A strong correlation was observed between ONT gene expression and RNA-Seq gene expression. ONT gene expression was determined from the summation of full-length read counts of associated transcripts, whereas RNA-Seq gene expression was deduced from the normalised \textit{DESeq} counts of aligned RNA-Seq reads to reference genome\cite{Castanho2020}.}
 	\label{fig:ont_targeted_finalnumberiso}
 \end{figure}
 
@@ -765,8 +765,8 @@ Finally, using RNA-Seq data generated on matched samples, we found that 80\% (n 
 		\includegraphics[page=3,trim={0 9cm 0 0cm},clip,scale = 0.60]{Figures/ONTvsIsoSeq.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Comparison of ONT-derived and Iso-Seq-derived isoforms for targeted transcriptome profiling]%
-	{\textbf{While ONT-derived isoforms were generally shorter with fewer exons, the 5' and 3' ends are more within the range of annotated sites and CAGE peaks than Iso-Seq derived isoforms:} Shown are density plots of \textbf{(A)} the distribution of the transcript lengths and \textbf{(B)} exon number in the targeted Iso-Seq (n = 24 samples) and ONT datasets (n = 16 samples). Distance between \textbf{(C)} TSS and closest annotated CAGE peak (a negative value refers to a CAGE peak located upstream of TSS), \textbf{(D)} TSS and reference TSS (a negative value refers to a query start downstream of reference), \textbf{(E)} TTS and reference TSS (a negative value refers to a query end upstream of reference). {(E)} A bar plot of the proportion of isoforms in the Iso-Seq and ONT targeted dataset with a poly(A) site. Percentages denoted in green refer to the proportion of isoforms within the respective category with a poly(A) site. TSS - Transcription start site, TTS - Transcription termination site. Iso-Seq and ONT refer to isoforms from the Iso-Seq and ONT targeted profiling dataset, respectively.}
+	\caption[Comparison of Iso-Seq and ONT targeted datasets]%
+	{\textbf{While ONT-derived isoforms were generally shorter with fewer exons, the 5' and 3' ends are more within the range of annotated sites and CAGE peaks than Iso-Seq derived isoforms.} Shown are density plots of \textbf{(A)} the distribution of the transcript lengths and \textbf{(B)} exon number in the targeted Iso-Seq (n = 24 samples) and ONT datasets (n = 16 samples). Distance between \textbf{(C)} TSS and closest annotated CAGE peak (a negative value refers to a CAGE peak located upstream of TSS), \textbf{(D)} TSS and reference TSS (a negative value refers to a query start downstream of reference), \textbf{(E)} TTS and reference TSS (a negative value refers to a query end upstream of reference). {(E)} A bar plot of the proportion of isoforms in the Iso-Seq and ONT targeted dataset with a poly(A) site. Percentages denoted in green refer to the proportion of isoforms within the respective category with a poly(A) site. TSS - Transcription start site, TTS - Transcription termination site. Iso-Seq and ONT refer to isoforms from the Iso-Seq and ONT targeted profiling dataset, respectively.}
 	\label{fig:ont_isoseq_description}
 \end{figure}
 
@@ -790,8 +790,8 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=8,trim={0 26cm 0 0cm},clip,scale = 0.55]{Figures/ONTvsIsoSeq.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Final number of isoforms identified from targeted transcriptome profiling of the rTg4510 cortex]%
-	{\textbf{Targeted transcriptome profiling of the rTg4510 cortex identify hundreds of novel transcripts annotated to AD-associated target genes:} Shown is a plot of the final number of isoforms detected per target gene after merging Iso-Seq and ONT targeted datasets.}
+	\caption[Merged isoform landscape from Iso-Seq \& ONT targeted profiling]%
+	{\textbf{Targeted profiling of the rTg4510 cortex identify hundreds of novel transcripts annotated to AD-associated target genes.} Shown is a bar plot of the final number of isoforms detected per AD-risk gene after merging Iso-Seq and ONT targeted datasets.}
 	\label{fig:final_targeted_num}
 \end{figure}
 
@@ -800,7 +800,7 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\captionsetup{width=0.95\textwidth}
 	\caption[Overview of the isoform landscape of AD-associated genes]%
-	{\textbf{Overview of the isoform landscape of AD-associated genes:} Tabulated is a summary of the isoform landscape per AD-associated gene after targeted transcriptome profiling of the rTg4510 cortex. Splice junctions were defined by the two pairs of dinucleotides present at the exon-intron boundary, and any other combinations aside from GT-AG, GC-AG and AT-AC pairs were considered non-canonical.}
+	{\textbf{Overview of the isoform landscape of AD-associated genes.} Tabulated is a summary of the isoform landscape per AD-associated gene after targeted profiling of the rTg4510 cortex. Splice junctions were defined by the two pairs of dinucleotides present at the exon-intron boundary, and any other combinations aside from GT-AG, GC-AG and AT-AC pairs were considered non-canonical.}
 	\label{tab: merged_targeted_num}
 	\centering
 	\setlength\tabcolsep{5pt} %reduced margin size in table
@@ -836,16 +836,16 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=9,trim={0 26cm 0 0cm},clip,scale = 0.55]{Figures/ONTvsIsoSeq.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Final number of isoforms identified from targeted transcriptome profiling of the rTg4510 cortex]%
-	{\textbf{Targeted transcriptome profiling of the rTg4510 cortex identify hundreds of novel transcripts annotated to AD-associated target genes:} Shown is a plot of the final number of isoforms detected per target gene after merging Iso-Seq and ONT targeted datasets.}
+	\caption[Merged splicing landscape from Iso-Seq and ONT targeted profiling]%
+	{\textbf{Targeted profiling of the rTg4510 cortex identify widespread usage of splicing events.} Shown is a bar plot of proportion of alternative splicing events identified per AD-risk gene after merging Iso-Seq and ONT targeted datasets.}
 	\label{fig:AS_targeted}
 \end{figure}
 
 \begin{table}[]
 	\centering
 	\captionsetup{width=0.95\textwidth}
-	\caption[Overview of AS events in AD-associated target genes]%
-	{\textbf{Overview of AS events in AD-associated target genes:} Tabulated is a summary of alternative splicing events per AD-associated gene after targeted transcriptome profiling of the rTg4510 cortex.}
+	\caption[Characterisation of alternative splicing events in AD-risk genes]%
+	{\textbf{Characterisation of alternative splicing events in AD-risk genes.} Tabulated is a summary of alternative splicing events per AD-risk gene after targeted profiling of the rTg4510 cortex.}
 	\label{tab: merged_targeted_ASevents}
 	\setlength\tabcolsep{9pt} %reduced margin size in table
 	\begin{tabular}{@{}ccccccccc@{}}
@@ -879,8 +879,8 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=10,trim={0 20cm 0 0cm},clip,scale = 0.55]{Figures/ONTvsIsoSeq.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of alternative 5' and 3' splice sites in AD-associated genes]%
-	{\textbf{Characterisation of alternative 5' and 3' splice sites in AD-associated genes:} Shown are bar-plots of the \textbf{(A)} number of isoforms annotated to AD-associated gene with A5' and A3' splice sites, further classified as the relative location of the novel splice site to the reference splice site, \textbf{(B)} proportion of isoforms with alternative splice sites in the first, internal and last exons.}
+	\caption[Characterisation of alternative 5' and 3' splice sites in AD-risk genes]%
+	{\textbf{Extensive usage of alternative 5' and 3' splice sites in AD-risk genes.} Shown are bar plots of the \textbf{(A)} number of isoforms annotated to AD-risk genes with alternative 5' (A5') and alternative 3' (A3') splice sites, further classified by the relative location of the novel splice site to the reference splice site, and of the \textbf{(B)} proportion of isoforms with alternative splice sites in the first, internal and last exons.}
 	\label{fig:A5A3_targeted}
 \end{figure}
 
@@ -888,8 +888,8 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=6,trim={0 20cm 0 0cm},clip,scale = 0.55]{Figures/ONTvsIsoSeq.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of exon skipping events in AD-associated genes]%
-	{\textbf{Characterisation of exon skipping events in AD-associated genes:} Shown are bar-plots of the \textbf{(A)} number of isoforms annotated to AD-associated gene with exon skipping events, \textbf{(B)} number of unique exons skipped. Constitutive exons refer to exons that are present in all known reference isoforms.}
+	\caption[Characterisation of exon skipping events in AD-risk genes]%
+	{\textbf{Extensive occurrence of exon skipping events in AD-risk genes.} Shown are bar plots of the \textbf{(A)} number of isoforms annotated to AD-risk genes with exon skipping events, \textbf{(B)} number of unique exons skipped. Constitutive exons refer to exons that are present in all known reference isoforms.}
 	\label{fig:ES_targeted}
 \end{figure}
 
@@ -897,8 +897,8 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=11,trim={0 0cm 0 0cm},clip,scale = 0.55]{Figures/ONTvsIsoSeq.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of intron retention events in AD-associated genes]%
-	{\textbf{Characterisation of intron retention events in AD-associated genes:} Shown is \textbf{(A)} a bar-plot of the number of isoforms annotated to AD-associated gene with intron retention events, and \textbf{(B)} the number of exons for which intron retention events span across, and \textbf{(C)} a box-plot of the expression of transcripts with multiple intron retention events. Transcript expression is deduced from normalised ONT full-length read counts.}
+	\caption[Characterisation of intron retention events in AD-risk genes]%
+	{\textbf{Relatively few occurrence of intron retention events, which typically spanned across two exons in lowly-expressed transcripts.} Shown is \textbf{(A)} a bar-plot of the number of isoforms annotated to AD-associated gene with intron retention events, and \textbf{(B)} the number of exons for which intron retention events span across, and \textbf{(C)} a box-plot of the expression of transcripts with multiple intron retention events. Transcript expression is deduced from normalised ONT full-length read counts.}
 	\label{fig:IR_targeted}
 \end{figure}
 \restoregeometry
@@ -909,8 +909,8 @@ Conversely, intron retention (IR) was one of the least observed splicing event c
 	\centering
 	\includegraphics[page=1,trim={0 1.5cm 0 1cm},clip,scale = 0.85]{Figures/TargetGenesASExamples.pdf}
 	\captionsetup{width=1.25\textwidth}
-	\caption[Examples of AD-associated genes with extensive usage of splicing events]%
-	{\textbf{Examples of AD-associated genes with extensive usage of splicing events:} Shown are UCSC genome browser tracks of \textbf{(A)} three \textit{Vgf}-associated isoforms with usage of alternative splice sites in last exon (green box), \textbf{(B)} two \textit{App}-associated isoforms \textbf{(C)} three \textit{Bin1}-associated isoforms with multiple exons skipped (>15 exons, red box), and \textbf{(D)} four \textbf{Abca7}-associated isoforms with multiple intron retention events (blue box).}
+	\caption[Examples of AD-risk genes with extensive usage of splicing events]%
+	{\textbf{Examples of AD-risk genes with extensive usage of splicing events.} Shown are UCSC genome browser tracks of \textbf{(A)} three \textit{Vgf}-associated isoforms with usage of alternative splice sites in last exon (green box), \textbf{(B)} two \textit{App}-associated isoforms \textbf{(C)} three \textit{Bin1}-associated isoforms with multiple exons skipped (>15 exons, red box), and \textbf{(D)} four \textbf{Abca7}-associated isoforms with multiple intron retention events (blue box).}
 	\label{fig: AS_Examples}
 \end{figure}
 \end{landscape}
@@ -933,13 +933,13 @@ This section details comprehensive transcript annotations from the merged Iso-Se
 	\centering
 	\includegraphics[page=1,trim={1cm 19cm 0 0},scale = 0.85]{Figures/ExamplePlots.pdf}
 	\captionsetup{width=0.95\textwidth, singlelinecheck=off}
-	\caption[Example of UCSC genome browser track of an AD-associated target gene]%
-	{\textbf{Example of UCSC genome browser track of an AD-associated target gene:} Shown is an example of a UCSC genome browser track of isoforms annotated to \textit{Cd33}. Tracks are typically displayed in four panels in the following order: 
+	\caption[Example of a UCSC genome browser track of an AD-risk target gene]%
+	{\textbf{Example of a UCSC genome browser track of an AD-risk target gene.} Shown is an example of a UCSC genome browser track of isoforms annotated to \textit{Cd33}. Tracks are typically displayed in four panels in the following order: 
 	\begin{enumerate}[label=\textbf{(\Alph*)}]
 		\item isoforms detected from the merged targeted dataset of the rTg4510 cortex (n = 12 WT, n = 12 TG) coloured by protein coding potential (green for protein-coding, red for non-protein coding) and shaded by abundance. Isoforms detected using both Iso-Seq and ONT nanopore sequencing are labelled with two IDs separated by an underscore ("\_") with the first and second part denoting to the PacBio and ONT isoform IDs, respectively. Conversely, isoforms unique to the Iso-Seq and ONT targeted datasets are labelled as "PB.XXX" and "TALONTXXXX", respectively.   
 		\item open reading frame (black) predicted for isoforms using \textit{CPAT} 
 		\item known isoforms (blue) from existing reference mouse annotations (mm10, GENCODE vM22)
-		\item RNA-Seq data from whole transcriptome profiling of the rTg4510 cortex\cite{Castanho2020} (n = 30 WT, n = 29 TG)
+		\item RNA-Seq data from global transcriptome profiling of the rTg4510 cortex\cite{Castanho2020} (n = 30 WT, n = 29 TG)
 		\item Pfam domains from the pfam database - a large curated collection of protein families and domains - as part of UCSC genome browser tracks	
 		\\ \\	
 	\end{enumerate} 
@@ -953,8 +953,8 @@ This section details comprehensive transcript annotations from the merged Iso-Se
 	\centering
 	\includegraphics[page=2,trim={1cm 19cm 0 0},scale = 0.85]{Figures/ExamplePlots.pdf}
 	\captionsetup{width=0.95\textwidth, singlelinecheck=off}
-	\caption[Example of cluster dendrogram of AD-associated target gene]%
-	{\textbf{Example of cluster dendrogram of AD-associated target gene:} Shown is an example of a cluster dendrogram of all detected isoforms annotated to \textit{Cd33}. Each row corresponds to an isoform and each column represents an exon. The isoforms are further clustered by exonic structure and two key splicing events - exon skipping (ES) and intron retention (IR), to ease visualisation. Providing an overview of the isoform landscape, we can evidently see occurrence of intron retention events (box blue) in almost all exons except for exon 1 and 3, and prevalent skipping of exon 8. 
+	\caption[Example of a cluster dendrogram of an AD-risk target gene]%
+	{\textbf{Example of a cluster dendrogram of an AD-risk target gene.} Shown is an example of a cluster dendrogram of all detected isoforms annotated to \textit{Cd33}. Each row corresponds to an isoform and each column represents an exon. The isoforms are further clustered by exonic structure and two key splicing events - exon skipping (ES) and intron retention (IR), to ease visualisation. Providing an overview of the isoform landscape, we can evidently see occurrence of intron retention events (box blue) in almost all exons except for exon 1 and 3, and prevalent skipping of exon 8. 
 	}   
 	\label{fig:eg_heatmap}
 \end{figure}
@@ -971,8 +971,8 @@ Spanning over 129kb on chromosome 4, the mouse \textit{Abca1} gene is characteri
 		\centering
 		\includegraphics[page=1,trim={0 4cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
 		\captionsetup{width=1.3\textwidth}
-		\caption[Characterisation of \textit{Abca1} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Abca1} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Abca1}, \textbf{(B)} a cluster dendrogram for an overview of the \textit{Abca1} isoform landscape, and \textbf{(C)} a zoomed-in track showing skipping of exon 24 (boxed red) and inclusion of a novel exon (boxed green).}   
+		\caption[Characterisation of the \textit{Abca1} isoform landscape in the rTg4510 mouse cortex]%
+		{\textbf{Characterisation of the \textit{Abca1} isoform landscape in the rTg4510 cortex.} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Abca1}, \textbf{(B)} a cluster dendrogram for an overview of the \textit{Abca1} isoform landscape, and \textbf{(C)} a zoomed-in track showing skipping of exon 24 (boxed red) and inclusion of a novel exon (boxed green).}   
 		\label{fig:abca1}
 	\end{figure}
 \end{landscape}
@@ -991,8 +991,8 @@ Spanning 20kb on chromosome 10, the mouse \textit{Abca7} gene is characterised w
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=2,trim={0 1.5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Abca7} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Abca7} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Abca7} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with exon skipping, \textbf{(C)} the number of isoforms with intron retention (IR), and \textbf{(D)} a UCSC genome browser track of isoforms annotated to \textit{Abca7}. Intron retention events are further classified as "IR" it occurs at one exon or "IR Match" if it spans across multiple exons. }    
+		\caption[Characterisation of the \textit{Abca7} isoform landscape]%
+		{\textbf{Characterisation of the \textit{Abca7} isoform landscape in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Abca7} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with exon skipping, \textbf{(C)} the number of isoforms with intron retention (IR), and \textbf{(D)} a UCSC genome browser track of isoforms annotated to \textit{Abca7}. Intron retention events are further classified as "IR" it occurs at one exon or "IR Match" if it spans across multiple exons. }    
 		\label{fig:abca7}
 	\end{figure}
 \end{landscape}
@@ -1012,8 +1012,8 @@ Aside from the length disparities among the isoforms detected, we found that the
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=3,trim={0 1.5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Ank1} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Ank1} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Ank1} isoform landscape, \textbf{(B)} a UCSC genome browser track of isoforms annotated to \textit{Ank1}. Isoforms with a black box and indicated by a black arrow contain exon 44 and are subsequently not predicted for nonsense-mediated decay (NMD). \textbf{(C)} A bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} a zoomed-in track showing isoforms with exon 44 inclusion resulting in truncated reading frames and products predicted for nonsense-mediated decay. }    
+		\caption[Characterisation of \textit{Ank1} isoforms]%
+		{\textbf{Characterisation of \textit{Ank1} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Ank1} isoform landscape, \textbf{(B)} a UCSC genome browser track of isoforms annotated to \textit{Ank1}. Isoforms with a black box and indicated by a black arrow contain exon 44 and are subsequently not predicted for nonsense-mediated decay (NMD). \textbf{(C)} A bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} a zoomed-in track showing isoforms with exon 44 inclusion resulting in truncated reading frames and products predicted for nonsense-mediated decay. }    
 		\label{fig:ank1}
 	\end{figure}
 \end{landscape}
@@ -1032,8 +1032,8 @@ In contrast to exon 6, the other exons were relatively conserved with significan
 	\centering
 	\includegraphics[page=1,trim={0cm 11cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{Apoe} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Apoe} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Apoe} isoform landscape (exons 2, 3 and 4 are alternative first exons from other known reference isoforms), \textbf{(B)} UCSC genome browser tracks of isoforms annotated to \textit{Ank1} with usage of alternative 5' and 3' splice sites, and \textbf{(C)} exon skipping events (box red), and \textbf{(D)} a bar-plot of the number of isoforms with alternative 5' and 3' splice sites, and \textbf{(E)} exon skipping events.}    
+	\caption[Characterisation of the \textit{Apoe} isoform landscape]%
+	{\textbf{Characterisation of \textit{Apoe} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Apoe} isoform landscape (exons 2, 3 and 4 are alternative first exons from other known reference isoforms), \textbf{(B)} UCSC genome browser tracks of isoforms annotated to \textit{Ank1} with usage of alternative 5' and 3' splice sites, and \textbf{(C)} exon skipping events (box red), and \textbf{(D)} a bar-plot of the number of isoforms with alternative 5' and 3' splice sites, and \textbf{(E)} exon skipping events.}    
 	\label{fig:apoe}
 \end{figure}
 
@@ -1050,8 +1050,8 @@ Despite this variation in isoform length, we observed a consistent splicing patt
 	\centering
 	\includegraphics[page=2,trim={0 2.2cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{App} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{App} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{App} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of \textit{App}-associated isoforms with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} isoforms with the total number of exons skipped, \textbf{(E)} zoomed-in UCSC genome browser tracks showing skipping of exons 14 and 15, \textbf{(F)} exon 7 encoding the KPI domain, \textbf{G} exons 18 and 19 encoding the uncleaved beta amyloid peptide, and \textbf{(H)} a UCSC genome browser track of the short isoforms that aligned with App-205 (ENSMUST00000227654.1).}    
+	\caption[Characterisation of the \textit{App} isoform landscape]%
+	{\textbf{Characterisation of \textit{App} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{App} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of \textit{App}-associated isoforms with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} isoforms with the total number of exons skipped, \textbf{(E)} zoomed-in UCSC genome browser tracks showing skipping of exons 14 and 15, \textbf{(F)} exon 7 encoding the KPI domain, \textbf{G} exons 18 and 19 encoding the uncleaved beta amyloid peptide, and \textbf{(H)} a UCSC genome browser track of the short isoforms that aligned with App-205 (ENSMUST00000227654.1).}    
 	\label{fig:app}
 \end{figure}
 \restoregeometry
@@ -1070,8 +1070,8 @@ Despite the relatively conserved nature of the N-BAR domain, we detected a numbe
 	\centering
 	\includegraphics[page=3,trim={0 1cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{Bin1} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Bin1} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Bin1} isoform landscape, \textbf{(B)} a UCSC genome browser track of the subset of \textit{Bin1}-associated with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} intron retention events, \textbf{(E)} a zoomed-in UCSC genome browser tracks showing intron retention events spanning across exons 16-17, and \textbf{(F)} a UCSC genome browser track of the short isoforms that aligned with Bin1-204 (ENSMUST00000234373.1) with the alternative long exon boxed in blue.}    
+	\caption[Characterisation of the \textit{Bin1} isoform landscape]%
+	{\textbf{Characterisation of \textit{Bin1} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Bin1} isoform landscape, \textbf{(B)} a UCSC genome browser track of the subset of \textit{Bin1}-associated with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} intron retention events, \textbf{(E)} a zoomed-in UCSC genome browser tracks showing intron retention events spanning across exons 16-17, and \textbf{(F)} a UCSC genome browser track of the short isoforms that aligned with Bin1-204 (ENSMUST00000234373.1) with the alternative long exon boxed in blue.}    
 	\label{fig:bin1}
 \end{figure}
 \restoregeometry
@@ -1093,8 +1093,8 @@ While exon skipping was localised to exon 8, we observed widespread occurrence o
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=4,trim={0 3cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Cd33} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Cd33} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Cd33} isoform landscape, \textbf{(C)} a bar-plot of the number of isoforms with intron retention events, and \textbf{(D)} the number of exons characterised with IR, and \textbf{(D)} a UCSC genome browser track of the detected isoforms that aligned with known \textit{Cd33} isoforms. Intron retention events are further classified as "IR" it occurs at one exon or "IR Match" if it spans across multiple exons.}    
+		\caption[Characterisation of the \textit{Cd33} isoform landscape]%
+		{\textbf{Characterisation of \textit{Cd33} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Cd33} isoform landscape, \textbf{(C)} a bar-plot of the number of isoforms with intron retention events, and \textbf{(D)} the number of exons characterised with IR, and \textbf{(D)} a UCSC genome browser track of the detected isoforms that aligned with known \textit{Cd33} isoforms. Intron retention events are further classified as "IR" it occurs at one exon or "IR Match" if it spans across multiple exons.}    
 		\label{fig:cd33}
 	\end{figure}
 \end{landscape}
@@ -1104,8 +1104,8 @@ While exon skipping was localised to exon 8, we observed widespread occurrence o
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=5,trim={0 3.5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Cd33} splicing events in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Cd33} splicing events in the rTg4510 cortex:} Shown are UCSC genome browser tracks of \textbf{(A)} \textit{Cd33} isoforms with exon skipping and the respective predicted open reading frame - the exon truncation and the shift in reading frame are denoted by the pink box and pink arrow, respectively - \textbf{(B)} two novel long isoforms with presence of a novel exon located between exon 1 and exon 2 (boxed), and \textbf{(C)} isoforms characterised with intron retention (IR) events - the isoform with IR spanning across 4 exons is highlighted in yellow.}    
+		\caption[Characterisation of the \textit{Cd33} splicing landscape]%
+		{\textbf{Characterisation of \textit{Cd33} splicing events in the rTg4510 cortex.} Shown are UCSC genome browser tracks of \textbf{(A)} \textit{Cd33} isoforms with exon skipping and the respective predicted open reading frame - the exon truncation and the shift in reading frame are denoted by the pink box and pink arrow, respectively - \textbf{(B)} two novel long isoforms with presence of a novel exon located between exon 1 and exon 2 (boxed), and \textbf{(C)} isoforms characterised with intron retention (IR) events - the isoform with IR spanning across 4 exons is highlighted in yellow.}    
 		\label{fig:cd33_orf}
 	\end{figure}
 \end{landscape}
@@ -1127,8 +1127,8 @@ Deeper characterisation of our dataset revealed that \textit{Clu} isoform divers
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=6,trim={0 1.5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Clu} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Clu} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Clu} isoform landscape, \textbf{(B)} UCSC genome browser tracks of isoforms annotated to \textit{Clu} that shared exonic structure with the long \textit{Clu} isoform (Clu-201), and \textbf{(C)} isoforms characterised with exon skipping events, \textbf{(D)} bar plots of the number of isoforms with exon skipping, \textbf{(E)} number of isoforms with intron retention events, and \textbf{(G)} a UCSC genome browser tracks of two \textit{Clu} isoforms with intron retention spanning across exon 7 and 8, resulting in two different open reading frames.}    
+		\caption[Characterisation of the \textit{Clu} isoform landscape]%
+		{\textbf{Characterisation of \textit{Clu} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Clu} isoform landscape, \textbf{(B)} UCSC genome browser tracks of isoforms annotated to \textit{Clu} that shared exonic structure with the long \textit{Clu} isoform (Clu-201), and \textbf{(C)} isoforms characterised with exon skipping events, \textbf{(D)} bar plots of the number of isoforms with exon skipping, \textbf{(E)} number of isoforms with intron retention events, and \textbf{(G)} a UCSC genome browser tracks of two \textit{Clu} isoforms with intron retention spanning across exon 7 and 8, resulting in two different open reading frames.}    
 		\label{fig:clu}
 	\end{figure}
 \end{landscape}
@@ -1149,8 +1149,8 @@ Despite this relatively simple isoform landscape, we detected widespread occurre
 	\centering
 	\includegraphics[page=4,trim={0 4cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{Fus} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Fus} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Fus} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the subset of isoforms that spanned the full-length of the \textit{Fus} gene with minor splice site variation, \textbf{(C)} isoforms characterised with exon skipping events, \textbf{(D)} bar-plots of the number of isoforms with exon skipping and \textbf{(E)} intron retention events, and \textbf{(F)} a zoomed-in UCSC genome browser tracks of isoforms with intron retention spanning across exons 6, 7 and 8 and between exons 12 and 14 (boxed in blue).}    
+	\caption[Characterisation of the \textit{Fus} isoform landscape]%
+	{\textbf{Characterisation of \textit{Fus} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Fus} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the subset of isoforms that spanned the full-length of the \textit{Fus} gene with minor splice site variation, \textbf{(C)} isoforms characterised with exon skipping events, \textbf{(D)} bar-plots of the number of isoforms with exon skipping and \textbf{(E)} intron retention events, and \textbf{(F)} a zoomed-in UCSC genome browser tracks of isoforms with intron retention spanning across exons 6, 7 and 8 and between exons 12 and 14 (boxed in blue).}    
 	\label{fig:fus}
 \end{figure}
 \restoregeometry
@@ -1169,8 +1169,8 @@ In contrast to the complexity at the 5'end of the \textit{Fyn} gene, which does 
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=7,trim={0 1cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Fyn} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Fyn} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Fyn} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(C)} a UCSC genome browser track of isoforms characterised with exon skipping (boxed red) events and presence of novel exons (boxed green).}    
+		\caption[Characterisation of the \textit{Fyn} isoform landscape]%
+		{\textbf{Characterisation of \textit{Fyn} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Fyn} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(C)} a UCSC genome browser track of isoforms characterised with exon skipping (boxed red) events and presence of novel exons (boxed green).}    
 		\label{fig:fyn}
 	\end{figure}
 \end{landscape}
@@ -1191,7 +1191,7 @@ Finally, using Iso-Seq and ONT nanopore sequencing, we detected some significant
 	\includegraphics[page=5,trim={0 10cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Characterisation of \textit{Mapt} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Mapt} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Mapt} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} a zoomed-in track of the shorter isoforms with an alternative first exon characterised with intron retention. The isoforms with intron retention spanning across exons 7 and 9 generated a truncated peptide destined for nonsense-mediated decay (highlight yellow), whereas the isoforms with intron retention spanning across exons 10 and 11 maintained the reading frame (highlighted orange).}    
+	{\textbf{Characterisation of \textit{Mapt} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Mapt} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms with exon skipping (boxed in red), \textbf{(C)} a bar-plot of the number of isoforms with exon skipping, and \textbf{(D)} a zoomed-in track of the shorter isoforms with an alternative first exon characterised with intron retention. The isoforms with intron retention spanning across exons 7 and 9 generated a truncated peptide destined for nonsense-mediated decay (highlight yellow), whereas the isoforms with intron retention spanning across exons 10 and 11 maintained the reading frame (highlighted orange).}    
 	\label{fig:mapt}
 \end{figure}
 \restoregeometry
@@ -1212,8 +1212,8 @@ Although the exonic structure was broadly conserved across the isoforms (\cref{f
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=8,trim={0 1cm 0 0},scale = 0.8]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Picalm} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Picalm} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Picalm} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the isoforms that aligned to the reference isoforms, \textbf{(D)} isoforms with exon skipping events (highlighted in red), \textbf{(D)} bar-plots of the number of isoforms with alternative first exons, \textbf{(E)} number of isoforms with exon skipping, and \textbf{(F)} a UCSC genome browser track of the novel isoform containing a novel exon upstream of the gene.}    
+		\caption[Characterisation of the \textit{Picalm} isoform landscape]%
+		{\textbf{Characterisation of \textit{Picalm} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Picalm} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the isoforms that aligned to the reference isoforms, \textbf{(D)} isoforms with exon skipping events (highlighted in red), \textbf{(D)} bar-plots of the number of isoforms with alternative first exons, \textbf{(E)} number of isoforms with exon skipping, and \textbf{(F)} a UCSC genome browser track of the novel isoform containing a novel exon upstream of the gene.}    
 		\label{fig:picalm}
 	\end{figure}
 \end{landscape}
@@ -1233,8 +1233,8 @@ Finally, we noticed that while the exonic structure was largely conserved across
 	\centering
 	\includegraphics[page=6,trim={0 2cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{Ptk2b} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Ptk2b} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Ptk2b} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms that shared a similar internal exonic structure but varied at the 5'end, \textbf{(C)} bar-plots of the number of isoforms with exon skipping, \textbf{(D)} zoomed-in tracks of isoforms with skipping of exon 27 and of \textbf{(F)} isoforms with intron retention events. Isoforms characterised with an intron retention event spanning across exons 29 and 30 were predicted for NMD (boxed yellow, isoforms not predicted for NMD are boxed in blue)}    
+	\caption[Characterisation of the \textit{Ptk2b} isoform landscape]%
+	{\textbf{Characterisation of \textit{Ptk2b} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Ptk2b} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms that shared a similar internal exonic structure but varied at the 5'end, \textbf{(C)} bar-plots of the number of isoforms with exon skipping, \textbf{(D)} zoomed-in tracks of isoforms with skipping of exon 27 and of \textbf{(F)} isoforms with intron retention events. Isoforms characterised with an intron retention event spanning across exons 29 and 30 were predicted for NMD (boxed yellow, isoforms not predicted for NMD are boxed in blue)}    
 	\label{fig:ptk2b}
 \end{figure}
 \restoregeometry
@@ -1252,8 +1252,8 @@ Spanning across 29kb on chromosome 11 with known 19 unique exons, the mouse \tex
 		\centering
 		\includegraphics[page=9,trim={0 5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
 		\captionsetup{width=1.3\textwidth}
-		\caption[Characterisation of \textit{Rhbdf2} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Rhbdf2} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Rhbdf2}, \textbf{(B)} cluster dendrogram for an overview of the \textit{Rhbdf2} isoform landscape, and \textbf{(C)} a zoomed-in track showing the 5bp deletion at exon 7 which resulted in a reading frame shift and the subsequent usage of the downstream start codon at exon 7.}   
+		\caption[Characterisation of the \textit{Rbhdf2} isoform landscape]%
+		{\textbf{Characterisation of \textit{Rhbdf2} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Rhbdf2}, \textbf{(B)} cluster dendrogram for an overview of the \textit{Rhbdf2} isoform landscape, and \textbf{(C)} a zoomed-in track showing the 5bp deletion at exon 7 which resulted in a reading frame shift and the subsequent usage of the downstream start codon at exon 7.}   
 		\label{fig:rhbdf2}
 	\end{figure}
 \end{landscape}
@@ -1272,8 +1272,8 @@ Comprehensive characterisation revealed widespread usage of alternative splicing
 	\centering
 	\includegraphics[page=7,trim={0 10cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of \textit{Snca} isoforms in the rTg4510 cortex]%
-	{\textbf{Characterisation of \textit{Snca} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Snca} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the subset of isoforms with alternative 5' and 3' splice sites, and \textbf{(C)} subset of isoforms characterised with exon skipping events, particularly skipping of exons 4 and 5 (boxed in red). Isoforms are coloured by protein-coding potential (green for protein-coding and red for non protein-coding) and shaded by abundance. \textbf{(D)} Bar-plots of the number isoforms with exon skipping, and \textbf{(E)} the number of isoforms with alternative 5' and 3' splice sites.}    
+	\caption[Characterisation of the \textit{Snca} isoform landscape]%
+	{\textbf{Characterisation of \textit{Snca} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Snca} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the subset of isoforms with alternative 5' and 3' splice sites, and \textbf{(C)} subset of isoforms characterised with exon skipping events, particularly skipping of exons 4 and 5 (boxed in red). Isoforms are coloured by protein-coding potential (green for protein-coding and red for non protein-coding) and shaded by abundance. \textbf{(D)} Bar-plots of the number isoforms with exon skipping, and \textbf{(E)} the number of isoforms with alternative 5' and 3' splice sites.}    
 	\label{fig:snca}
 \end{figure}
 \restoregeometry
@@ -1293,8 +1293,8 @@ Spanning over 160kb on chromosome 9, the mouse \textit{Sorl1} gene is characteri
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=10,trim={0 0.5cm 0 0},scale = 0.8]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Sorl1} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Sorl1} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Sorl1} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with alternative splice sites, \textbf{(C)} a UCSC genome browser track of the isoforms that shared an identical internal exonic structure but contained an alternative first exon, \textbf{(D)} zoomed-in figure of these isoforms with alternative first exon overlapping exon 41, \textbf{(E)} isoforms with alternative first exon overlapping exon 38, and \textbf{(F)} a UCSC genome browser track displaying isoforms with exon skipping (boxed red) and intron retention (boxed blue) events.}    
+		\caption[Characterisation of the \textit{Sorl1} isoform landscape]%
+		{\textbf{Characterisation of \textit{Sorl1} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Sorl1} isoform landscape, \textbf{(B)} a bar-plot of the number of isoforms with alternative splice sites, \textbf{(C)} a UCSC genome browser track of the isoforms that shared an identical internal exonic structure but contained an alternative first exon, \textbf{(D)} zoomed-in figure of these isoforms with alternative first exon overlapping exon 41, \textbf{(E)} isoforms with alternative first exon overlapping exon 38, and \textbf{(F)} a UCSC genome browser track displaying isoforms with exon skipping (boxed red) and intron retention (boxed blue) events.}    
 		\label{fig:sorl1}
 	\end{figure}
 \end{landscape}
@@ -1313,8 +1313,8 @@ Spanning over 14.6kb on chromosome 4, the mouse \textit{Tardbp} gene is characte
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=11,trim={0 1cm 0 0},scale = 0.8]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Tardbp} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Tardbp} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Tardbp} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the isoforms that aligned to reference isoforms, \textbf{(C)} isoforms with intron retention events, \textbf{(D)} bar-plots of the number of isoforms with intron retention and \textbf{(E)} usage of alternative 5' and 3' splice sites.}    
+		\caption[Characterisation of the \textit{Tardbp} isoform landscape]%
+		{\textbf{Characterisation of \textit{Tardbp} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Tardbp} isoform landscape, \textbf{(B)} UCSC genome browser tracks of the isoforms that aligned to reference isoforms, \textbf{(C)} isoforms with intron retention events, \textbf{(D)} bar-plots of the number of isoforms with intron retention and \textbf{(E)} usage of alternative 5' and 3' splice sites.}    
 		\label{fig:tardbp}
 	\end{figure}
 \end{landscape}
@@ -1335,8 +1335,8 @@ Nonetheless, the vast majority of isoforms (n = 64, 91.4\%) were characterised w
 		\centering
 		\captionsetup{width=1.3\textwidth}
 		\includegraphics[page=12,trim={0 2cm 0 0},scale = 0.8]{Figures/TargetGenes_Annotation_Landscape.pdf}
-		\caption[Characterisation of \textit{Trem2} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Trem2} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Trem2} isoform landscape, \textbf{(B)} a UCSC genome browser track of the isoforms that aligned to reference isoforms, \textbf{(C)} a bar-plot of the number of isoforms with alternative splice sites, \textbf{(D)} a UCSC genome browser track of the isoforms with alternative 5' and 3' splice sites and exon skipping events (boxed red), and of \textbf{(E)} coding and non-coding isoforms with their respective open reading frames (ORF) }    
+		\caption[Characterisation of the \textit{Trem2} isoform landscape]%
+		{\textbf{Characterisation of \textit{Trem2} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Trem2} isoform landscape, \textbf{(B)} a UCSC genome browser track of the isoforms that aligned to reference isoforms, \textbf{(C)} a bar-plot of the number of isoforms with alternative splice sites, \textbf{(D)} a UCSC genome browser track of the isoforms with alternative 5' and 3' splice sites and exon skipping events (boxed red), and of \textbf{(E)} coding and non-coding isoforms with their respective open reading frames (ORF) }    
 		\label{fig:trem2}
 	\end{figure}
 \end{landscape}
@@ -1351,7 +1351,7 @@ Finally, we also detected 12 novel isoforms characterised with novel exons (\cre
 	\captionsetup{width=0.95\textwidth}
 	\includegraphics[page=8,trim={0 23cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Portrait.pdf}
 	\caption[Characterisation of \textit{Trem2} novel exons]%
-	{\textbf{Characterisation of \textit{Trem2} splicing events in the rTg4510 cortex:} Shown is a UCSC genome browser track of a subset of isoforms annotated to \textit{Trem2} containing novel exons located upstream of the gene and between exon 1 and 2. The predicted open reading frames from these isoforms are also shown (black tracks)}    
+	{\textbf{Characterisation of \textit{Trem2} splicing events in the rTg4510 cortex.} Shown is a UCSC genome browser track of a subset of isoforms annotated to \textit{Trem2} containing novel exons located upstream of the gene and between exon 1 and 2. The predicted open reading frames from these isoforms are also shown (black tracks)}    
 	\label{fig:trem2_orf}
 \end{figure}
 
@@ -1372,8 +1372,8 @@ Spanning over 46kb on chromosome 1, the mouse \textit{Trpa1} gene is the least e
 		\centering
 		\includegraphics[page=13,trim={0 5cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
 		\captionsetup{width=1.3\textwidth}
-		\caption[Characterisation of \textit{Trpa1} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Trpa1} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Trpa1} with exon 20 skipping and extension of exon 6 denoted in red and pink box respectively, \textbf{(B)} a cluster dendrogram for an overview of the \textit{Trpa1} isoform landscape, and \textbf{(C)} a zoomed-in track showing the 4bp addition at the end of exon 6, which resulted in a reading frame shift and the generation of a stop codon (marked with a pink circle).}   
+		\caption[Characterisation of the \textit{Trpa1} isoform landscape]%
+		{\textbf{Characterisation of \textit{Trpa1} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a UCSC genome browser track of isoforms annotated to \textit{Trpa1} with exon 20 skipping and extension of exon 6 denoted in red and pink box respectively, \textbf{(B)} a cluster dendrogram for an overview of the \textit{Trpa1} isoform landscape, and \textbf{(C)} a zoomed-in track showing the 4bp addition at the end of exon 6, which resulted in a reading frame shift and the generation of a stop codon (marked with a pink circle).}   
 		\label{fig:trpa1}
 	\end{figure}
 \end{landscape}
@@ -1393,8 +1393,8 @@ However, deeper examination revealed complex variations of the final exon and 3'
 		\centering
 		\includegraphics[page=14,trim={0 3cm 0 0},scale = 0.85]{Figures/TargetGenes_Annotation_Landscape.pdf}
 		\captionsetup{width=1.3\textwidth}
-		\caption[Characterisation of \textit{Vgf} isoforms in the rTg4510 cortex]%
-		{\textbf{Characterisation of \textit{Vgf} isoforms in the rTg4510 cortex:} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Vgf} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms illustrating the complex variation of the last exon, and \textbf{(C)} a bar-plot of the number of exons with alternative 5' and 3' splice sites.}   
+		\caption[Characterisation of the \textit{Vgf} isoform landscape]%
+		{\textbf{Characterisation of \textit{Vgf} isoforms in the rTg4510 cortex.} Shown are \textbf{(A)} a cluster dendrogram for an overview of the \textit{Vgf} isoform landscape, \textbf{(B)} a UCSC genome browser track of a subset of isoforms illustrating the complex variation of the last exon, and \textbf{(C)} a bar-plot of the number of exons with alternative 5' and 3' splice sites.}   
 		\label{fig:vgf}
 	\end{figure}
 \end{landscape}
@@ -1404,13 +1404,13 @@ However, deeper examination revealed complex variations of the final exon and 3'
 \subsection{Improved sensitivity from targeted sequencing detects upregulation of AD-associated genes in rTg4510 TG mice}
 Despite the success of capturing full-length transcripts from long-read sequencing of the global transcriptome, we have shown that this approach falls cannot robustly detect more-lowly abundant genes and isoforms (\cref{ch6: wholevstargeted}). In contrast, we have illustrated that target enrichment achieves deep sequencing of 20 AD-associated target genes, revealing unprecedented diversity of alternatively-spliced isoforms including hundreds of novel transcripts not previously described in existing annotations (\cref{ch6: target_gene_annotation}). We anticipated that this deep sequencing coverage would further allow more accurate quantification of gene and isoform expression using normalised full-length read counts (\cref{fig:isoform_quant_strategy}\textbf{C}), forgoing the need of short-read RNA-Seq data (\cref{fig:isoform_quant_strategy}\textbf{B}). Subsequently, we sought to characterise transcriptional differences of these well known AD-associated genes between rTg4510 WT and TG mice.
 
-Using targeted Iso-Seq reads for annotation and expression, we identified three genes that were upregulated with progressive tau pathology in rTg4510 TG mice (summarised in \cref{tab: de_analysis}): \textit{Trem2} (log\textsubscript{2} fold change (FC) = 2.26, P = 2.45 x 10 \textsuperscript{-16}, R\textsuperscript{2} = 0.788), \textit{Cd33} (log\textsubscript{2}FC = 1.79, P = 4.5 x 10 \textsuperscript{-9}, R\textsuperscript{2} = 0.588) and \textit{Rhbdf2} (log\textsubscript{2}FC = 1.39, P = 3.06 x 10 \textsuperscript{-6}, R\textsuperscript{2} = 0.5). Upregulation of these genes were also observed using normalised ONT read counts, and were significantly more robust due to the greater sequencing depth achieved with ONT nanopore sequencing (\textit{Trem2}: log\textsubscript{2} fold change (FC) = 2.47, P = 1.91 x 10 \textsuperscript{-40}, R\textsuperscript{2} = 0.938; \textit{Cd33}: log\textsubscript{2}FC = 2.25, P = 2.97 x 10 \textsuperscript{-20}, R\textsuperscript{2} = 0.823; \textit{Rhbdf2}: log\textsubscript{2}FC = 1.31, P = 1.36 x 10\textsuperscript{-6}, R\textsuperscript{2} = 0.564). Furthermore, we detected a significant increase in \textit{Apoe} (log\textsubscript{2}FC = 1.44, P = 1.45 x 10\textsuperscript{-8},  R\textsuperscript{2} = 0.76), \textit{Clu} (log\textsubscript{2}FC = 1.36, P = 1.39 x 10\textsuperscript{-16}, R\textsuperscript{2} = 0.80) and \textit{Abca1} (log\textsubscript{2}FC = 1.56, P = 5.66 x 10\textsuperscript{-5}, R\textsuperscript{2} = 0.7) gene expression using normalised ONT but not Iso-Seq FL read counts. This corroborated with recent findings in a RNA-Seq study that reported upregulation of \textit{Trem2} and \textit{Apoe} in isolated-microglia from rTg4510 mice\cite{Sobue2021}. Notably, these gene expression changes were not recapitulated using normalised Iso-Seq read counts from the whole dataset, indicating the greater sensitivity of targeted sequencing to perform differential gene expression analyses. 
+Using targeted Iso-Seq reads for annotation and expression, we identified three genes that were upregulated with progressive tau pathology in rTg4510 TG mice (summarised in \cref{tab: de_analysis}): \textit{Trem2} (log\textsubscript{2} fold change (FC) = 2.26, P = 2.45 x 10 \textsuperscript{-16}, R\textsuperscript{2} = 0.788), \textit{Cd33} (log\textsubscript{2}FC = 1.79, P = 4.5 x 10 \textsuperscript{-9}, R\textsuperscript{2} = 0.588) and \textit{Rhbdf2} (log\textsubscript{2}FC = 1.39, P = 3.06 x 10 \textsuperscript{-6}, R\textsuperscript{2} = 0.5). Upregulation of these genes were also observed using normalised ONT read counts, and were significantly more robust due to the greater sequencing depth achieved with ONT nanopore sequencing (\textit{Trem2}: log\textsubscript{2} fold change (FC) = 2.47, P = 1.91 x 10 \textsuperscript{-40}, R\textsuperscript{2} = 0.938; \textit{Cd33}: log\textsubscript{2}FC = 2.25, P = 2.97 x 10 \textsuperscript{-20}, R\textsuperscript{2} = 0.823; \textit{Rhbdf2}: log\textsubscript{2}FC = 1.31, P = 1.36 x 10\textsuperscript{-6}, R\textsuperscript{2} = 0.564). Furthermore, we detected a significant increase in \textit{Apoe} (log\textsubscript{2}FC = 1.44, P = 1.45 x 10\textsuperscript{-8},  R\textsuperscript{2} = 0.76), \textit{Clu} (log\textsubscript{2}FC = 1.36, P = 1.39 x 10\textsuperscript{-16}, R\textsuperscript{2} = 0.80) and \textit{Abca1} (log\textsubscript{2}FC = 1.56, P = 5.66 x 10\textsuperscript{-5}, R\textsuperscript{2} = 0.7) gene expression using normalised ONT but not Iso-Seq FL read counts. This corroborated with recent findings in a RNA-Seq study that reported upregulation of \textit{Trem2} and \textit{Apoe} in isolated-microglia from rTg4510 mice\cite{Sobue2021}. Notably, these gene expression changes were not recapitulated using normalised Iso-Seq read counts from the Iso-Seq global dataset, indicating the greater sensitivity of targeted sequencing to perform differential gene expression analyses. 
 
 \begin{table}[]
 	\centering
 	\captionsetup{width=0.95\textwidth}
-	\caption[Summary of differential gene and transcript expression analysis from targeted transcriptome profiling of the rTg4510 cortex]%
-	{\textbf{Summary of differential gene and transcript expression analysis from targeted transcriptome profiling of the rTg4510 cortex:} Tabulated is a summary of the differential expression analyses performed using full-length counts derived from Iso-Seq and ONT nanopore sequencing. Grey blocks refer to no significant change in expression.}
+	\caption[Differential expression analysis from targeted profiling of the rTg4510 cortex]%
+	{\textbf{Differential gene and transcript expression analysis from targeted profiling of the rTg4510 cortex.} Tabulated is a summary of the differential expression analyses performed using full-length counts derived from Iso-Seq and ONT nanopore sequencing. Grey blocks refer to no significant change in expression.}
 	\label{tab: de_analysis}
 	\setlength\tabcolsep{4pt} %reduced margin size in table
 	\begin{threeparttable}
@@ -1595,8 +1595,8 @@ Reflecting the relatively lower sequencing depth of the Iso-Seq targeted dataset
 		\includegraphics[page=1,trim={0 1cm 0 0},scale =0.4]{Figures/GlobalIF.pdf}
 		\captionsetup{width=1.5\textwidth}
 		\label{fig:globalIF}
-		\caption[Identification of major isoforms annotated to AD-associated target genes]%
-		{\textbf{Identification of major isoforms annotated to AD-associated target genes:} Shown is a bar-plot of the proportion of dominant isoforms annotated to the 20 AD-associated target genes that were enriched for targeted sequencing of the rTg4510 cortex. Isoforms that constitute < 5\% of total counts are clustered as "Other". Known isoforms refer to isoforms existing in mouse reference annotations (mm10, GENCODE, vM22). The proportion of each isoform (isoform fraction) is determined using the mean normalised ONT full-length count across all of the samples in the ONT dataset (n = 8 WT, n = 10 TG). }   
+		\caption[Identification of major isoforms annotated to AD-risk target genes]%
+		{\textbf{The isoform landscape for the majority of AD-risk genes were dominated by a few major isoforms.} Shown is a bar-plot of the proportion of major isoforms annotated to the 20 AD-risk target genes that were enriched for targeted sequencing of the rTg4510 cortex. Isoforms that constitute < 5\% of total counts are clustered as "Other". Known isoforms refer to isoforms existing in mouse reference annotations (mm10, GENCODE, vM22). The proportion of each isoform (isoform fraction) is determined using the mean normalised ONT full-length count across all of the samples in the ONT dataset (n = 8 WT, n = 10 TG). }   
 	\end{figure}
 \end{landscape}
 
@@ -1617,26 +1617,26 @@ Drawing parallels to \textit{Cd33}, we similarly identified expression changes i
 			\includegraphics[page=18,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
 		\end{center}
 		\captionsetup{width=1.5\textwidth}
-		\caption[Differential Isoform Expression: Changes in transcript expression of isoforms associated with \textit{Trem2}]%
+		\caption[Differential \textit{Trem2} transcript expression from targeted profiling of rTg4510 mice]%
 		{\textbf{Global increase of \textit{Trem2}-associated isoforms, particularly Trem2-201}: Shown are plots generated from the differential analyses of \textit{Trem2} in the rTg4510 cortex. \textit{Caption continues on the following page.}}   
 		\label{fig:trem2_diff_analysis}
 	\end{figure}
 \end{landscape}
 \begin{figure}
 	\captionsetup{width=0.9\textwidth}
-	\contcaption{Shown are three panels relating to \textbf{(A)} UCSC genome browser track of the \textit{Trem2}-associated isoforms of interest with the reference mouse annotations (mm10, GENCODE, vM22) and RNA-Seq data from matched samples, \textbf{(B - E)} differential analyses results using normalised Iso-Seq full-length counts and \textbf{(F - I)} differential analyses results using normalised ONT full-length counts. 
-	\vspace{0.5cm} \\
+	\mycontcaption{Shown are three panels relating to \textbf{(A)} UCSC genome browser track of the \textit{Trem2}-associated isoforms of interest with the reference mouse annotations (mm10, GENCODE, vM22) and RNA-Seq data from matched samples, \textbf{(B - E)} differential analyses results using normalised Iso-Seq full-length counts and \textbf{(F - I)} differential analyses results using normalised ONT full-length counts.
+	\vspace{0.5cm} 
 	In detail, \textbf{(B)} and \textbf{(F)} are scatter plots of \textit{Trem2} gene expression determined using normalised Iso-Seq and ONT counts, respectively. Red and grey dots refer to TG and WT samples, and dotted lines represent the mean paths across ages.  
 	
-	\vspace{0.5cm} \\
+	\vspace{0.5cm} 
 	\textbf{(C)} and \textbf{(G)} are heat-maps representing expression of all the \textit{Trem2}-associated isoforms detected in the Iso-Seq and ONT targeted dataset, respectively. Each row refers to an isoform, labelled using \textit{SQANTI} classification, and each column refers to a sample with the genotype and age provided.    	
 	
-	\vspace{0.5cm} \\
+	\vspace{0.5cm} 
 	\textbf{(D)} and \textbf{(H)} are scatter plots of the top three ranked differentially-expressed \textit{Trem2} isoform using normalised Iso-Seq and ONT counts, respectively. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). 
 	
-	\vspace{0.5cm} \\
-	\textbf{(E)} and \textbf{(I)} show the isoform proportion of \textit{Trem2} by age and genotype using normalised counts from Iso-Seq and ONT counts, respectively. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). Light grey bars refer to the fraction of novel isoforms that individually account < 5\% of the total count.        
-}%
+	\vspace{0.5cm} 
+	\textbf{(E)} and \textbf{(I)} show the isoform proportion of \textit{Trem2} by age and genotype using normalised counts from Iso-Seq and ONT counts, respectively. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). Light grey bars refer to the fraction of novel isoforms that individually account < 5\% of the total count.   
+}     
 \end{figure}
 
 \begin{landscape}
@@ -1645,26 +1645,26 @@ Drawing parallels to \textit{Cd33}, we similarly identified expression changes i
 			\includegraphics[page=7,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
 		\end{center}
 		\captionsetup{width=1.5\textwidth}
-		\caption[Drastic upregulation of Cd33-203 accompanied with reduced usage of other isoforms]%
+		\caption[Differential \textit{Cd33} transcript expression and usage]%
 		{\textbf{Drastic upregulation of Cd33-203 accompanied with reduced usage of other isoforms}: Shown are plots generated from the differential analyses of \textit{Cd33} in the rTg4510 cortex. \textit{Caption continues on the following page.}}   
 		\label{fig:cd33_diff_analysis}
 	\end{figure}
 \end{landscape}
 \begin{figure}
 	\captionsetup{width=0.9\textwidth}
-	\contcaption{Shown are three panels relating to \textbf{(A)} UCSC genome browser track of the \textit{Cd33}-associated isoforms of interest with the reference mouse annotations (mm10, GENCODE, vM22) and RNA-Seq data from matched samples, \textbf{(B - D)} differential analyses results using normalised Iso-Seq full-length counts and \textbf{(E - H)} differential analyses results using normalised ONT full-length counts. 
-		\vspace{0.5cm} \\
-		In detail, \textbf{(B)} and \textbf{(E)} are scatter plots of gene expression determined using normalised Iso-Seq and ONT counts, respectively. Red and grey dots refer to TG and WT samples, and dotted lines represent the mean paths across ages.  
-		
-		\vspace{0.5cm} \\
-		\textbf{(C)} and \textbf{(F)} are heat-maps representing expression of all the isoforms detected in the Iso-Seq and ONT targeted dataset, respectively. Each row refers to an isoform, labelled using \textit{SQANTI} classification, and each column refers to a sample with the genotype and age provided.    	
-		
-		\vspace{0.5cm} \\
-		Shown are scatter plots of \textbf{(D)} the top three most abundant isoforms detected using Iso-Seq, and \textbf{(G)} the top three most differentially-expressed isoform using normalised ONT counts, respectively. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). No change in differential isoform expression was detected using Iso-Seq counts (Figure D) due to the relatively lower sequencing depth.
-		
-		\vspace{0.5cm} \\
-		\textbf{(H)} show the isoform proportion of by age and genotype using normalised ONT counts. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). Light grey bars refer to the fraction of novel isoforms that individually account < 5\% of the total count. The respective plot for normalised Iso-Seq counts is now shown here given Iso-Seq failed to detect differential isoform expression changes.         
-	}%
+	\mycontcaption{Shown are three panels relating to \textbf{(A)} UCSC genome browser track of the \textit{Cd33}-associated isoforms of interest with the reference mouse annotations (mm10, GENCODE, vM22) and RNA-Seq data from matched samples, \textbf{(B - D)} differential analyses results using normalised Iso-Seq full-length counts and \textbf{(E - H)} differential analyses results using normalised ONT full-length counts.   
+	\vspace{0.5cm} 
+	In detail, \textbf{(B)} and \textbf{(E)} are scatter plots of gene expression determined using normalised Iso-Seq and ONT counts, respectively. Red and grey dots refer to TG and WT samples, and dotted lines represent the mean paths across ages.  
+	
+	\vspace{0.5cm} 
+	\textbf{(C)} and \textbf{(F)} are heat-maps representing expression of all the isoforms detected in the Iso-Seq and ONT targeted dataset, respectively. Each row refers to an isoform, labelled using \textit{SQANTI} classification, and each column refers to a sample with the genotype and age provided.    	
+	
+	\vspace{0.5cm} 
+	Shown are scatter plots of \textbf{(D)} the top three most abundant isoforms detected using Iso-Seq, and \textbf{(G)} the top three most differentially-expressed isoform using normalised ONT counts, respectively. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). No change in differential isoform expression was detected using Iso-Seq counts (Figure D) due to the relatively lower sequencing depth.
+	
+	\vspace{0.5cm} 
+	\textbf{(H)} show the isoform proportion of by age and genotype using normalised ONT counts. The coloured isoforms correspond to those displayed on the UCSC genome browser track (Figure A). Light grey bars refer to the fraction of novel isoforms that individually account < 5\% of the total count. The respective plot for normalised Iso-Seq counts is now shown here given Iso-Seq failed to detect differential isoform expression changes.
+	}
 \end{figure}
 
 
@@ -1674,7 +1674,7 @@ Drawing parallels to \textit{Cd33}, we similarly identified expression changes i
 			\includegraphics[page=6,trim={0 0.5cm 0 1.5cm},scale =0.85]{Figures/TargetGene_DifferentialAnalysis.pdf}
 		\end{center}
 		\captionsetup{width=1.5\textwidth}
-		\caption[Gradual isoform switch in expression of \textit{Bin1} known isoforms]%
+		\caption[Differential \textit{Bin1} transcript expression and usage]%
 		{\textbf{Gradual isoform switch in expression of \textit{Bin1} known isoforms}: Shown are plots generated from the differential analyses of \textit{Bin1} in the rTg4510 cortex. \textit{Refer to \cref{fig:cd33_diff_analysis} for the same caption.}}   
 		\label{fig:bin1_diff_analysis}
 	\end{figure}
@@ -1699,7 +1699,7 @@ Finally, we detected robust differential expression changes in \textit{Bin1} wit
 
 
 \subsection{Limitations}
-Our results should be interpreted in the context of several limitations. Firstly, in following the official Iso-Seq protocol, we did not perform 5′-cap selection. Although our cDNA synthesis kit preferentially enriched for full-length cDNA sequences and stringent filtering was performed as part of our bioinformatics pipeline, we cannot exclude the possibility that some of the shorter isoforms may be a reflection of 5' degradation. While sequencing the library using two separate long-read sequencing platforms allowed us to validate our isoform annotations and reduce the number of these artefacts, this caveat becomes particularly apparent when we still detect isoforms that only differ at the transcription start site. Of note, we did trial a protocol borrowed from the Wellcome Trust Advanced Course that I attended during my PhD; however we were unable to generate sufficient material for library preparation. Moving forward for new long-read sequencing studies, we should optimise and integrate some of the 5'-cap protocols recently released as part of the lab workflow to guarantee the generation of full-length transcripts.   
+Our results should be interpreted in the context of several limitations. Firstly, in following the official Iso-Seq protocol, we did not perform 5'-cap selection. Although our cDNA synthesis kit preferentially enriched for full-length cDNA sequences and stringent filtering was performed as part of our bioinformatics pipeline, we cannot exclude the possibility that some of the shorter isoforms may be a reflection of 5' degradation. While sequencing the library using two separate long-read sequencing platforms allowed us to validate our isoform annotations and reduce the number of these artefacts, this caveat becomes particularly apparent when we still detect isoforms that only differ at the transcription start site. Of note, we did trial a protocol borrowed from the Wellcome Trust Advanced Course that I attended during my PhD; however we were unable to generate sufficient material for library preparation. Moving forward for new long-read sequencing studies, we should optimise and integrate some of the 5'-cap protocols recently released as part of the lab workflow to guarantee the generation of full-length transcripts.   
 
 Secondly, PCR amplification was required following target enrichment. Our approach, as with most target enrichment methods, was thus constrained by the length of cDNA inserts used for library preparation as it becomes more challenging to amplify longer transcripts, particularly transcripts sized above 5-6kb. Evaluation of both Iso-Seq and ONT targeted datasets, however, showed that we detected transcripts up to 10kb, with detection of many long isoforms (>8kb) known to span the full-length of the gene. Nonetheless, we acknowledge that there is an inherent length bias in preferentially sequencing the shorter transcripts. 
 

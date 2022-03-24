@@ -4,7 +4,7 @@
 %While the methods I have adopted for long-read sequencing in this thesis allows interrogation of full-length transcripts, this is reliant on the generation and amplification of cDNA from mRNA, which can produce artefacts (template switching), introduce bias (distortion of relative cDNA abundance) and lose RNA modifications. In 2018, ONT showed that it was able to sequence RNA directly using the minION by adding poly(T) adapters directly to the mRNA, with a translocase that was able to bind and process RNA efficiently	 \cite{Garalde2018}, achieving coverage and accuracy comparable to that with ONT-cDNA method. 
 
 % Recite
-This chapter is an abridged and modified version of a peer-reviewed manuscript, which I co-authored and has been accepted for publication in Cell Reports (Leung et al. 2021)\cite{Jeffries2020}. Additional lab QC output and run reports are included. 
+This chapter is an abridged and modified version of a peer-reviewed manuscript, which I co-authored and has been accepted for publication in Cell Reports (Leung et al. 2021)\cite{KayLeung2021}. Additional lab QC output and run reports are included. 
 
 \section{Introduction}
 Characterisation of the full complement of isoforms across tissues and development is important for understanding the transcriptional variation in health and disease. Previous transcriptomic profiling studies of AD post-mortem brain tissues and mouse models have revealed significant changes in transcript expression and splicing (reviewed in \cref{tab: AS_ADHuman_studies} and \cref{tab: AS_ADMouse_studies}), implicating the role for transcriptomic dysregulation and aberrant splicing in AD pathogenesis\cite{Raj2018}. Despite significant advances made in genome annotations, alternative splicing pattern and capturing isoform diversity remain challenging due to technical limitations with current standard RNA-Seq approaches (explained in \cref{rnaseq_intro}). Recent advances in long-read cDNA sequencing address these challenges - Pacific Biosciences (PacBio) isoform sequencing (Iso-Seq) (described in \cref{sec:pb_isoform_sequencing}) and Oxford Nanopore Technologies (ONT) nanopore sequencing (\cref{sec:ONT_cDNA_Sequencing}) - enabling direct assessment of alternatively-spliced transcripts \cite{Amarasinghe2020a}.
@@ -25,8 +25,8 @@ Entorhinal cortex was dissected from 6 female rTg4510 transgenic mice (TG \nomen
 \vspace{1cm}
 \begin{table}[h]
 	\captionsetup{width=0.95\textwidth}
-	\caption[Phenotype information for global transcriptome profiling of the mouse cortex]%
-	{\textbf{Phenotype information for global transcriptome profiling of the mouse cortex.}\newline ECX - Entorhinal Cortex, ONT - Oxford Nanopore Technology, RIN - RNA Integrity Number, WT - Wild-type, TG - Transgenic rTg4510}
+	\caption[Phenotype information for global transcriptome profiling of the rTg4510 cortex]%
+	{\textbf{Phenotype information for global transcriptome profiling of the rTg4510 cortex.} Tabulated is a summary of the phenotype information of the rTg4510 mouse samples sequenced using Iso-Seq.\newline ECX - Entorhinal Cortex, ONT - Oxford Nanopore Technology, RIN - RNA Integrity Number, WT - Wild-type, TG - Transgenic rTg4510}
 	\label{tab:whole_phenotype}
 	\centering
 	\begin{tabular}{@{}cccccccc@{}}
@@ -55,8 +55,8 @@ RNA from each mouse sample was prepared for Iso-Seq library preparation and SMRT
 	\centering
 	\includegraphics[page=2,trim={2.5cm 25cm 0cm 0cm},clip,scale = 1]{Figures/WholeTranscriptome_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Whole Transcriptome - PCR cycle optimisation]%
-	{\textbf{Samples were amplified with 14 PCR cycles after performing PCR cycle optimisation}: An example of an agarose gel image from PCR cycle optimisation of Samples K17, O23, L22 and S18. PCR aliquots were collected every two cycles (10, 12, 14, 16, 18, 20) and then run on gel electrophoresis. 14 cycles was determined to be optimal for large-scale amplification, as cycles below showed insufficient amplification whereas cycles above showed signs of over-amplification; this would result in biased sequencing representation. Ladder (L) denotes to a 1kb DNA ladder.}
+	\caption[Iso-Seq global transcriptome profiling - PCR cycle optimisation]%
+	{\textbf{Samples were amplified with 14 PCR cycles after performing PCR cycle optimisation.} Shown is an example of an agarose gel image from PCR cycle optimisation of four mouse samples after cDNA synthesis. PCR aliquots were collected every two cycles (10, 12, 14, 16, 18, 20) and then run on gel electrophoresis. 14 cycles was determined to be optimal for large-scale amplification, as cycles below showed insufficient amplification whereas cycles above showed signs of over-amplification; this would result in biased sequencing representation. Ladder (L) denotes to a 1kb DNA ladder.}
 	\label{fig:isoseq_whole_pccresults}
 \end{figure}
 
@@ -65,11 +65,11 @@ RNA from each mouse sample was prepared for Iso-Seq library preparation and SMRT
 	\vspace{20pt}
 	\includegraphics[page=3,trim={1cm 12cm 0 0cm},clip,scale = 0.8]{Figures/WholeTranscriptome_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Iso-Seq Whole Transcriptome - cDNA purification and library preparation]%
-	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates}: Following large scale amplification using the optimum cycle number (as determined from \cref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) AMPure beads. \textbf{A)} A Bioanalyzer gel of amplified cDNA from the two fractions after AMPure bead purification. Figures \textbf{B - D)} are zoomed-in Bioanalyzer electropherograms of \textbf{B)} Sample K17 Fraction 1, \textbf{C)} Sample K17 Fraction 2, \textbf{D)} Sample K17 and \textbf{E)} Sample K23 after library preparation. The x-axis of the Bioanalyzer electropherogram represents the molecular size. Size distribution for each fraction was determined from the start to the end point of the smear. 
+	\caption[Iso-Seq global transcript profiling - SMRTbell library preparation]%
+	{\textbf{Library preparation was performed for each sample with successful cDNA purification and ligation with SMRT bell templates.} Following large scale amplification using the optimum cycle number (as determined from \cref{fig:isoseq_whole_pccresults}), the resulting cDNA was divided into two fractions (denoted here as F1 and F2) and purified with 1X (F1) and 0.4X (F2) AMPure beads. Shown is \textbf{(A)} a Bioanalyzer gel of amplified cDNA from the two fractions after AMPure bead purification. Figures \textbf{(B - D)} are zoomed-in Bioanalyzer electropherograms of \textbf{(B)} Sample K17 Fraction 1, \textbf{(C)} Sample K17 Fraction 2, \textbf{(D)} Sample K17 and \textbf{(E)} Sample K23 after library preparation. The x-axis of the Bioanalyzer electropherogram represents the molecular size. Size distribution for each fraction was determined from the start to the end point of the smear. 
 	\\
 	\\	 	
-	Of note, cDNA in Fraction 2 has a significantly higher molecular weight across all the samples as expected (shown in Figures a and c). Pooling of both fractions enriched for high molecular weight cDNA molecules, which were intact after performing SMRTbell template preparation (as seen in Figures d and e). Despite the fact that samples were prepared sequentially, Bioanalyzer electropherogram profiles were fairly consistent. 
+	Of note, cDNA in Fraction 2 has a significantly higher molecular weight across all the samples as expected (shown in Figures A and C). Pooling of both fractions enriched for high molecular weight cDNA molecules, which were intact after performing SMRTbell template preparation (as seen in Figures D and E). Despite the fact that samples were prepared sequentially, Bioanalyzer electropherogram profiles were fairly consistent. 
 	}
 	\label{fig:isoseq_whole_bioresults}
 \end{figure}
@@ -93,8 +93,8 @@ After filtering for partial isoforms including 5’ degradation products using \
 	\vspace{20pt}
 	\includegraphics[page=1,trim={0 7cm 2cm 1cm},clip, scale = 0.7]{Figures/WholeTranscriptome_Figures.pdf}
 	\captionsetup{width=0.95\textwidth}
-	\caption[PacBio Iso-Seq Bioinformatics Pipeline for global transcriptome profiling]%
-	{\textbf{PacBio Iso-Seq Bioinformatics Pipeline for global transcriptome profiling.} An overview of the analysis pipeline used to generate full-length transcript annotations in mouse entorhinal cortex samples (n = 12, WT = 6, TG = 6). Briefly, polymerase reads from PacBio Sequel for each dataset were processed using \textit{Iso-Seq 3.1.2} and \textit{Cupcake} to generate high quality, full-length isoforms, which were then mapped to the mouse reference genome using \textit{Minimap2}. Isoforms were then annotated with \textit{SQANTI2} with input from matched short-read RNA-Seq datasets and reference annotations. Additional details are provided in \cref{section:isoseq_bioinformatics}. CCS - Circular Consensus Sequence, FLNC - Full-length non-chimeric, FL - Full-length}
+	\caption[Detailed Iso-Seq bioinformatics pipeline for global transcriptome profiling]%
+	{\textbf{Iso-Seq reads from each mouse sample was processed individually before merging to generate one complete dataset.} Shown is an overview of the analysis pipeline used to generate full-length transcript annotations in mouse entorhinal cortex samples (n = 12, WT = 6, TG = 6). Briefly, polymerase reads from PacBio Sequel for each dataset were processed using \textit{Iso-Seq 3.1.2} and \textit{Cupcake} to generate high quality, full-length isoforms, which were then mapped to the mouse reference genome using \textit{Minimap2}. Isoforms were then annotated with \textit{SQANTI2} with input from matched short-read RNA-Seq datasets and reference annotations. Additional details are provided in \cref{section:isoseq_bioinformatics}. CCS - Circular Consensus Sequence, FLNC - Full-length non-chimeric, FL - Full-length}
 	\label{fig:isoseq_whole_pipeline}
 \end{figure}
  
@@ -113,8 +113,8 @@ Following stringent quality-control, Iso-Seq reads mapped to 14,482 ‘annotated
 		\includegraphics[page=1,trim={0 26cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Rarefaction Curves of global transcriptome profiling of the mouse cortex]%
-	{\textbf{Saturation is reached at the gene and isoform level with the majority of transcripts sized \textit{3kb}}:\textbf{A)} Full-length were subsampled to generate rarefaction curves, using \textit{Cupcake} scripts, at the gene and isoform level. \textbf{B)} Distribution of transcript length across all the Iso-Seq datasets. K - Thousands}
+	\caption[Rarefaction curves from global transcriptome profiling of the rTg4510 cortex]%
+	{\textbf{Saturation was reached at the gene and isoform level with the majority of transcripts sized \textit{3kb}.} Shown is \textbf{(A)} a rarefaction curve of the number of subsampled reads against the number of unique genes and isoforms detected, and \textbf{(B)} a distribution of transcript length from merging all the Iso-Seq datasets. K - Thousands}
 	\label{fig:isoseq_whole_rarefaction}
 \end{figure}
 
@@ -124,121 +124,122 @@ Following stringent quality-control, Iso-Seq reads mapped to 14,482 ‘annotated
 		\includegraphics[page=2,trim={0 26cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Isoform diversity across Tg4510 samples and coverage of ERCC transcripts]%
-	{\textbf{Highly-expressed isoforms were more likely to be sequenced across samples}: Shown is \textbf{A)} the distribution of isoforms detected in the number of mouse samples, with a third detected in any two of the total 12 samples. However, \textbf{B)} quantification of these isoforms had very low expression (1-2 FL read), whereas those that were commonly detected across all 12 samples were very highly expressed. FL - Full Length}
+	\caption[Isoform diversity across the samples from global transcriptome profiling]%
+	{\textbf{Highly-expressed isoforms were more likely to be sequenced across samples.} Shown is \textbf{(A)} the distribution of isoforms detected in the number of mouse samples, with a third detected in any two of the total 12 samples. However, \textbf{(B)} quantification of these isoforms had very low expression (1-2 FL read), whereas those that were commonly detected across all 12 samples were very highly expressed. FL - Full Length}
 	\label{fig:isoseq_whole_lowlyexp}
 \end{figure}
 
 \begin{landscape}
-\begin{table}[]
-	\captionsetup{width=1.5\textwidth}
-	\caption[Iso-Seq sequencing yield for global transcriptome profiling of rTg4510 mouse cortex]%
-	{\textbf{Iso-Seq sequencing yield for global transcriptome profiling of the mouse cortex.} Mouse cortex was successfully sequenced using the Iso-Seq approach with over >20GB achieved per sample, expected subread lengths, good productivity ratios and expected control metrics. Further details on evaluation of the performance of Iso-Seq sequencing runs are provided in \cref{sec: Isoseq_run_performance}. K - Thousand, Pol - Polymerase. N50 is defined as the sequence length of the shortest read at 50\% of all reads}
-	\label{tab:isoseq_wholerun_result}
-	\resizebox{1.5\textwidth}{!}{%
-	\centering
-	\begin{tabular}{@{}ccccccccccccccccccc@{}}
-		\toprule
-		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Sample   \\ ID\end{tabular}} &
-		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Total \\ Bases \\ (GB)\end{tabular}} &
-		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Pol\\ Reads \\ (K)\end{tabular}} &
-		\multicolumn{6}{c}{Read   Length (kB)} &
-		\multicolumn{3}{c}{Productivity} &
-		\multicolumn{4}{c}{Control} &
-		\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Local \\ Base\\ Rate\end{tabular}} &
-		\multicolumn{2}{c}{Template} \\ \cmidrule(lr){4-16} \cmidrule(l){18-19} 
-		&
-		&
-		&
-		\multicolumn{2}{c}{Polymerase} &
-		\multicolumn{2}{c}{Subread} &
-		\multicolumn{2}{c}{Insert} &
-		\multirow{2}{*}{P0} &
-		\multirow{2}{*}{P1} &
-		\multirow{2}{*}{P2} &
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total   \\ Reads\end{tabular}} &
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Length   \\ (Kb)\end{tabular}} &
-		\multicolumn{2}{c}{Concordance} &
-		&
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Adapter \\ Dimer\end{tabular}} &
-		\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Short\\ Insert\end{tabular}} \\ \cmidrule(lr){4-9} \cmidrule(lr){15-16}
-		&&&	Mean &	N50 & Mean & N50 &	Mean &	N50 &
-		&&&&&
-		Mean &	Mode &&&
-		\\ \midrule
-		Mouse 1 & 29.56 & 674 &	43.86 &	90.56 &	1.25 & 2.02 & 3.34 & 4.75 &
-		\begin{tabular}[c]{@{}c@{}}10.55\% \\ (107K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}67.42\% \\ (682K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}22.73\% \\ (230K)\end{tabular} &
-		7036 &	34.7 &	0.85 &	0.89 &	2.72 &	0.08 &	0.06 \\
-		Mouse 2 & 31.1 & 566 & 54.89 & 101.22 &	1.26 &	1.78 & 2.86 & 3.66 &
-		\begin{tabular}[c]{@{}c@{}}29.77\% \\ (300K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}57.25\% \\ (577K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}14.05\%\\ (142K)\end{tabular} &
-		10707 &	44.6 &	0.87 &	0.89 &	3.05 &	0 &	0 \\
-		Mouse 3 & 34.60 & 698 & 49.56 &	98.80 &	1.70 &	2.67 &	3.78 &	4.78 &
-		\begin{tabular}[c]{@{}c@{}}16.1\% \\ (164K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}69.2\%  \\ (704K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}14.7\% \\ (150K)\end{tabular} &
-		5951 &	40.5 &	0.85 &	0.89 &	2.78 &	0 &	0 \\
-		Mouse 4 &	34.61 &	711 &	48.68 &	97.02 &	1.71 &	2.49 &	3.83 &	5.02 &
-		\begin{tabular}[c]{@{}c@{}}14.22\% \\ (145K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}70.49\%\\ (718K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}15.28\%\\ (156K)\end{tabular} &
-		6762 &	38.4 &	0.85 &	0.87 &	2.671 &	0.01 &	0.01 \\
-		Mouse 5 &	38.74 & 675 &	57.37 &	112.63 &	1.87 &	2.87 &	3.90 &	4.79 &
-		\begin{tabular}[c]{@{}c@{}}17.41\% \\ (176K )\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}68.08\% \\ (686K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}15.575 \\ (157K)\end{tabular} &
-		10647 &	44.2 &	0.86 &	0.89 &	2.96 &	0.01 &	0 \\
-		Mouse 6 &	30.45 &	661 &	46.08 &	91.63 &	2.23 &	2.75 &	3.95 &	4.73 &
-		\begin{tabular}[c]{@{}c@{}}16.6\% \\ (169K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}65.9\% \\ (671K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}17.5\% \\ (179K)\end{tabular} &
-		10301 &	38.7 &	0.85 &	0.87 &	2.79 &	0.01 &	0.01 \\
-		Mouse 7 &	22.53 &	531 &	42.42 &	85.33 &	2.61 &	3.15 &	3.44 &	4.08 &
-		\begin{tabular}[c]{@{}c@{}}41.8\% \\ (426K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}52.6\% \\ (536K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}5.5\% \\ (56.4K)\end{tabular} &
-		5415 &	49.8 & 0.86 &	0.85 &	2.05 &	0 &	0 \\
-		Mouse 8 &	31.25 &	731 &	42.77 &	89.37 &	1.49 &	2.35 &	3.61 &	4.88 &
-		\begin{tabular}[c]{@{}c@{}}9.37\% \\ (94.5K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}73.33\% \\ (740K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}18.19\% \\ (184K)\end{tabular} &
-		8908 &	35.0 &	0.85 &	0.89 &	2.56 &	0.06 &	0.04 \\
-		Mouse 9 &	33.16 &	715 &	46.36 &	92.52 &	2.00 &	2.93 &	3.98 &	4.95 &
-		\begin{tabular}[c]{@{}c@{}}11.51\%\\ (117K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}70.91\% \\ (722K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}17.58\% \\ (18.0K)\end{tabular} &
-		6855 &	38.0 &	0.85 &	0.87 &	2.6 &	0.01 &	0.01 \\
-		Mouse 10 &	24.52 &	733 &	33.43 &		70.75 &	2.56 &	3.29 &	3.71 &	4.75 &
-		\begin{tabular}[c]{@{}c@{}}15.9\% \\ (162K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}72.1\% \\ (735K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}12.0\% \\ (122K)\end{tabular} &
-		1668 & 44.2 &	0.85 &	0.85 &	1.99 &	0.00 &	0.01 \\
-		Mouse 11 &	30.41 &	683 &	44.55 &	90.04 &	1.44 &	2.04 &	3.28 &	4.40 &
-		\begin{tabular}[c]{@{}c@{}}11.98\%\\ (121K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}68.45\% \\ (692K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}20.35\% \\ (206K)\end{tabular} &
-		7881 &	36.5 &	0.86 &	0.89 &	2.85 &	0.11 &	0.07 \\
-		Mouse 12 &	30.28 &	704 &	42.99 &	89.16 &	1.35 &	2.02 &	3.27 &	4.38 &
-		\begin{tabular}[c]{@{}c@{}}7.02\%\\ (71.1K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}70.18\% \\ (710K)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}23.39\% \\ (237K)\end{tabular} &
-		6019 &	35.2 &	0.85 &	0.89 &	2.57 &	0.01 &	0.01 \\ \bottomrule
-	\end{tabular}%
-}
-\end{table}
+	\begin{table}[]
+		\captionsetup{width=1.5\textwidth}
+		\caption[Iso-Seq sequencing yield for global transcriptome profiling]%
+		{\textbf{Iso-Seq sequencing yield for global transcriptome profiling.} Tabulated is a summary of the Iso-Seq sequencing metrics from global transcriptome profiling of the rTg4510 mouse cortex. Sequencing runs appeared optimal with with >20GB achieved per sample, expected subread lengths, good productivity ratios and expected control metrics. Further details on evaluation of the performance of Iso-Seq sequencing runs are provided in \cref{sec: Isoseq_run_performance}. K - Thousand, Pol - Polymerase. N50 is defined as the sequence length of the shortest read at 50\% of all reads}
+		\label{tab:isoseq_wholerun_result}
+		\resizebox{1.5\textwidth}{!}{%
+			\centering
+			\begin{tabular}{@{}ccccccccccccccccccc@{}}
+				\toprule
+				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Sample   \\ ID\end{tabular}} &
+				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Total \\ Bases \\ (GB)\end{tabular}} &
+				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Pol\\ Reads \\ (K)\end{tabular}} &
+				\multicolumn{6}{c}{Read   Length (kB)} &
+				\multicolumn{3}{c}{Productivity} &
+				\multicolumn{4}{c}{Control} &
+				\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Local \\ Base\\ Rate\end{tabular}} &
+				\multicolumn{2}{c}{Template} \\ \cmidrule(lr){4-16} \cmidrule(l){18-19} 
+				&
+				&
+				&
+				\multicolumn{2}{c}{Polymerase} &
+				\multicolumn{2}{c}{Subread} &
+				\multicolumn{2}{c}{Insert} &
+				\multirow{2}{*}{P0} &
+				\multirow{2}{*}{P1} &
+				\multirow{2}{*}{P2} &
+				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Total   \\ Reads\end{tabular}} &
+				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Length   \\ (Kb)\end{tabular}} &
+				\multicolumn{2}{c}{Concordance} &
+				&
+				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Adapter \\ Dimer\end{tabular}} &
+				\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Short\\ Insert\end{tabular}} \\ \cmidrule(lr){4-9} \cmidrule(lr){15-16}
+				&&&	Mean &	N50 & Mean & N50 &	Mean &	N50 &
+				&&&&&
+				Mean &	Mode &&&
+				\\ \midrule
+				Mouse 1 & 29.56 & 674 &	43.86 &	90.56 &	1.25 & 2.02 & 3.34 & 4.75 &
+				\begin{tabular}[c]{@{}c@{}}10.55\% \\ (107K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}67.42\% \\ (682K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}22.73\% \\ (230K)\end{tabular} &
+				7036 &	34.7 &	0.85 &	0.89 &	2.72 &	0.08 &	0.06 \\
+				Mouse 2 & 31.1 & 566 & 54.89 & 101.22 &	1.26 &	1.78 & 2.86 & 3.66 &
+				\begin{tabular}[c]{@{}c@{}}29.77\% \\ (300K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}57.25\% \\ (577K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}14.05\%\\ (142K)\end{tabular} &
+				10707 &	44.6 &	0.87 &	0.89 &	3.05 &	0 &	0 \\
+				Mouse 3 & 34.60 & 698 & 49.56 &	98.80 &	1.70 &	2.67 &	3.78 &	4.78 &
+				\begin{tabular}[c]{@{}c@{}}16.1\% \\ (164K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}69.2\%  \\ (704K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}14.7\% \\ (150K)\end{tabular} &
+				5951 &	40.5 &	0.85 &	0.89 &	2.78 &	0 &	0 \\
+				Mouse 4 &	34.61 &	711 &	48.68 &	97.02 &	1.71 &	2.49 &	3.83 &	5.02 &
+				\begin{tabular}[c]{@{}c@{}}14.22\% \\ (145K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}70.49\%\\ (718K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}15.28\%\\ (156K)\end{tabular} &
+				6762 &	38.4 &	0.85 &	0.87 &	2.671 &	0.01 &	0.01 \\
+				Mouse 5 &	38.74 & 675 &	57.37 &	112.63 &	1.87 &	2.87 &	3.90 &	4.79 &
+				\begin{tabular}[c]{@{}c@{}}17.41\% \\ (176K )\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}68.08\% \\ (686K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}15.575 \\ (157K)\end{tabular} &
+				10647 &	44.2 &	0.86 &	0.89 &	2.96 &	0.01 &	0 \\
+				Mouse 6 &	30.45 &	661 &	46.08 &	91.63 &	2.23 &	2.75 &	3.95 &	4.73 &
+				\begin{tabular}[c]{@{}c@{}}16.6\% \\ (169K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}65.9\% \\ (671K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}17.5\% \\ (179K)\end{tabular} &
+				10301 &	38.7 &	0.85 &	0.87 &	2.79 &	0.01 &	0.01 \\
+				Mouse 7 &	22.53 &	531 &	42.42 &	85.33 &	2.61 &	3.15 &	3.44 &	4.08 &
+				\begin{tabular}[c]{@{}c@{}}41.8\% \\ (426K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}52.6\% \\ (536K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}5.5\% \\ (56.4K)\end{tabular} &
+				5415 &	49.8 & 0.86 &	0.85 &	2.05 &	0 &	0 \\
+				Mouse 8 &	31.25 &	731 &	42.77 &	89.37 &	1.49 &	2.35 &	3.61 &	4.88 &
+				\begin{tabular}[c]{@{}c@{}}9.37\% \\ (94.5K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}73.33\% \\ (740K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}18.19\% \\ (184K)\end{tabular} &
+				8908 &	35.0 &	0.85 &	0.89 &	2.56 &	0.06 &	0.04 \\
+				Mouse 9 &	33.16 &	715 &	46.36 &	92.52 &	2.00 &	2.93 &	3.98 &	4.95 &
+				\begin{tabular}[c]{@{}c@{}}11.51\%\\ (117K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}70.91\% \\ (722K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}17.58\% \\ (18.0K)\end{tabular} &
+				6855 &	38.0 &	0.85 &	0.87 &	2.6 &	0.01 &	0.01 \\
+				Mouse 10 &	24.52 &	733 &	33.43 &		70.75 &	2.56 &	3.29 &	3.71 &	4.75 &
+				\begin{tabular}[c]{@{}c@{}}15.9\% \\ (162K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}72.1\% \\ (735K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}12.0\% \\ (122K)\end{tabular} &
+				1668 & 44.2 &	0.85 &	0.85 &	1.99 &	0.00 &	0.01 \\
+				Mouse 11 &	30.41 &	683 &	44.55 &	90.04 &	1.44 &	2.04 &	3.28 &	4.40 &
+				\begin{tabular}[c]{@{}c@{}}11.98\%\\ (121K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}68.45\% \\ (692K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}20.35\% \\ (206K)\end{tabular} &
+				7881 &	36.5 &	0.86 &	0.89 &	2.85 &	0.11 &	0.07 \\
+				Mouse 12 &	30.28 &	704 &	42.99 &	89.16 &	1.35 &	2.02 &	3.27 &	4.38 &
+				\begin{tabular}[c]{@{}c@{}}7.02\%\\ (71.1K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}70.18\% \\ (710K)\end{tabular} &
+				\begin{tabular}[c]{@{}c@{}}23.39\% \\ (237K)\end{tabular} &
+				6019 &	35.2 &	0.85 &	0.89 &	2.57 &	0.01 &	0.01 \\ \bottomrule
+			\end{tabular}%
+		}
+	\end{table}
 \end{landscape}
 
 \subsection{Detection of many novel isoforms with novel junctions}
 \label{sec:whole_novelIso}
 Amongst full-length transcripts annotated to known genes, 50\% (n = 23,096) were novel and not present in existing annotation databases (\cref{tab:sqanti_output_whole}). Compared to known isoforms, these novel isoforms were less abundant (Mann-Whitney-Wilcoxon test: W = 3.66 x 10\textsuperscript{8}, P < 2.23 x 10\textsuperscript{-308}, \cref{fig:isoseq_whole_novel_known_iso_corr}\textbf{A,B}), longer (W = 2.37 x10\textsuperscript{8}, P = 2.13 x 10\textsuperscript{-42}, \cref{fig:isoseq_whole_novel_known_iso_corr}\textbf{C,D}) and had more exons (W = 1.94 x 10\textsuperscript{8}, P < 2.23 x 10\textsuperscript{-308}, \cref{fig:isoseq_whole_novel_known_iso_corr}\textbf{E,F}), suggesting that they would have been harder to detect using RNA-Seq due to the difficulty in assembling transcripts with limited read coverage. These novel isoforms were also more likely to be associated with novel transcription start sites (TSS) (1,454 novel vs 1,154 known isoforms at least 1kb away from known TSS, Fisher's Test: P = 6.16 x 10\textsuperscript{-12}, odds ratio = 1.32) and termination sites (TTS) (21,506 novel vs 21,434 annotated isoforms less than 1kb away from known TTS). Assessing the reliability of novel isoforms against known, there was no difference in the number of isoforms supported within 50bp of CAGE peak (17,252 (75.4\%) novel vs 17,842 (75.8\%) known isoforms, Fisher's Test: P = 0.31, odds ratio = 0.978). While novel isoforms had a lower RNA-Seq expression (mean RNA-Seq expression: 8.95TPM for known vs 1.99TPM novel isoforms; two-tailed unpaired t-test: t(46401) = 14.8, P = 1.37 x 10\textsuperscript{-49}), this is a likely reflection of the relatively lower expression of novel isoforms and RNA-Seq's lack of power to detect them.
 
+
 \vspace{0.7cm}
 \begin{table}[!h]
-	\caption[Number of genes and isoforms identified from global transcriptome profiling of the mouse cortex]%
-	{\textbf{Number of genes and isoforms identified from global transcriptome profiling of the mouse cortex.} Tabulated is the total number of genes identified in the mouse cortex (n = 12). Classifications were performed using \textit{SQANTI2}(\cref{fig:sqanti_cate}). FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue. }
+	\caption[Transcriptome annotations from global transcriptome profiling]%
+	{\textbf{Transcriptome annotations from global transcriptome profiling of the mouse cortex.} Tabulated is an overview of the Iso-Seq transcriptome annotations in the mouse cortex (n = 12). Classifications were performed using \textit{SQANTI2}(\cref{fig:sqanti_cate}). FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue. }
 	\label{tab:sqanti_output_whole}
 	\begin{tabularx}{1\textwidth}{lcl}
 		\toprule
@@ -266,11 +267,11 @@ Amongst full-length transcripts annotated to known genes, 50\% (n = 23,096) were
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Comparison of known and novel isoforms detected in the mouse cortex]%
-	{\textbf{Novel isoforms were less expressed, longer and had more exons than known isoforms}: Shown is the \textbf{A)} Iso-Seq transcript expression, the \textbf{C)} transcript length, and the \textbf{E)} the number of exons of novel and known isoforms. The known and novel isoforms can be further subdivided for \textbf{B)} Iso-Seq expression \textbf{D)} transcript length and \textbf{F)} number of exons. Known isoforms were subdivided into FSM and ISM, whereas novel isoforms were subdivided into NIC, NNC, and fusion. FSM – Full Splice Match, ISM – Incomplete Splice Match, NIC – Novel In Catalogue, NNC – Novel Not in Catalogue.}   
+	{\textbf{Novel isoforms were less expressed, longer and had more exons than known isoforms.} Shown are box-plots of the Iso-Seq \textbf{(A, B)} transcript expression, \textbf{C, D} transcript length, and \textbf{E, F} number of exons, with further classification of \textbf{A, C, D} novel and known isoforms, into \textbf{B, D, F} classifications according to \textit{SQANTI}: known isoforms were subdivided into FSM and ISM, whereas novel isoforms were subdivided into NIC, NNC, and fusion. FSM – Full Splice Match, ISM – Incomplete Splice Match, NIC – Novel In Catalogue, NNC – Novel Not in Catalogue.}   
 	\label{fig:isoseq_whole_novel_known_iso_corr}
 \end{figure}
-
-
+	
+	
 \newpage
 \subsection{Comparisons with RNA-Seq confirm Iso-Seq sensitivity} 
 \label{sec: whole_isoseqvsrnaseq}
@@ -286,19 +287,18 @@ Using our Iso-Seq data as a scaffold, we generated a reference-guided transcript
 		\includegraphics[page=3,trim={0 25cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Detection of ERCC standards in Whole Transcriptome Iso-Seq]%
-	{\textbf{Over 60\% of ERCC were detected with highly accurate quantification} \textbf{A)} Highly-concentrated ERCC were detected as single molecules, as expected, and \textbf{B)} the number of full-length reads associated for each detected ERCC was highly correlated to known amount. FL - Full Length}
+	\caption[Detection of ERCC controls from global transcriptome profiling]%
+	{\textbf{Over 60\% of ERCC controls were detected with highly accurate quantification.} Shown is \textbf{(A)} a box-plot of the number of isoforms detected per ERCC control. As expected,  highly-concentrated ERCC controls were detected as single molecules. \textbf{(B)} A density plot of the number of full-length reads associated for each detected ERCC control against the known amount used. FL - Full Length}
 	\label{fig:isoseq_whole_ercc}
 \end{figure}
-
 
 \begin{figure}[htp]
 	\begin{center}
 		\includegraphics[page=9,trim={0 13cm 0 0},scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[RNA-Seq defined transcriptome]%
-	{\textbf{Iso-Seq identified more isoforms per gene, that were longer with more exons, and with a greater proportion of isoforms with CAGE peak}: A reference-guided transcriptome using only RNA-Seq data (RNA-Seq defined transcriptome) was generated. \textbf{A)} The isoform diversity in RNA-Seq defined transcriptome was smaller than that from the Iso-Seq defined transcriptome with the majority of genes associated with only one isoform. \textbf{B)} Highlighting the power of Iso-Seq to identify true full-length isoforms in comparison to RNA-Seq reads, a significantly larger proportion of isoforms from Iso-Seq data were found within 50bp of a CAGE peak. \textbf{F)} Approximately half of the isoforms identified using Iso-Seq were novel (NIC, NNC), which were not recapitulated using RNA-Seq. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}   
+	\caption[Comparison of Iso-Seq-defined and RNA-Seq-defined transcriptome]%
+	{\textbf{Iso-Seq identified more novel isoforms per gene that were more likely to be located within a CAGE peak.} A reference-guided transcriptome using only RNA-Seq data (RNA-Seq defined transcriptome) was generated. Shown are bar-plots of \textbf{(A)} the isoform diversity in Iso-Seq- and RNA-Seq-defined transcriptome, \textbf{(B)} the number of isoforms located within 50bp of a CAGE peak, and \textbf{(C))} the number of isoforms classified as novel and known using \textit{SQANTI}. FSM - Full Splice Match, ISM - Incomplete Splice Match, NIC - Novel In Catalogue, NNC - Novel Not in Catalogue.}   
 	\label{fig:isoseq_whole_rnaseqvsisoseq}
 \end{figure}
 
@@ -319,23 +319,23 @@ Interestingly, over half of these novel-genes transcripts were antisense to know
 		\end{center}
 		\vspace{1cm}
 		\captionsetup{width=1.5\textwidth}
-		\caption[Iso-Seq identifies fusion transcripts and novel genes in Mouse cortex]%
-		{\textbf{Examples of fusion transcripts and novel genes identified in Mouse cortex}: \textbf{A)}Five read-through "fusion" transcripts incorporating exons from \textit{Kctd13} (SZ-associated) and \textit{Sez6I2} (SZ-associated). \textbf{B)} Two read-through "fusion" transcripts incorporating exons from \textit{Yjefn3} and \textit{Ndufa13} (SZ-associated). \textbf{C)} An example of a novel antisense transcript spanning \textit{Serpina1e} and \textit{Serpina11} in the mouse cortex. Transcripts are coloured based on \textit{SQANTI2} classification categories (blue = FSM, cyan = ISM, red = NNC, orange = NIC). Fusion transcripts are boxed in green. SZ - Schizophrenia.}   
+		\caption[Examples of fusion transcripts and novel genes identified in the mouse cortex]%
+		{\textbf{Examples of fusion transcripts and novel genes identified in the mouse cortex.} Shown are UCSC genome browser tracks of \textbf{(A)} Five read-through "fusion" transcripts incorporating exons from \textit{Kctd13} (SZ-associated) and \textit{Sez6I2} (SZ-associated), \textbf{(B)} Two read-through "fusion" transcripts incorporating exons from \textit{Yjefn3} and \textit{Ndufa13} (SZ-associated), and \textbf{C)} a novel antisense transcript spanning \textit{Serpina1e} and \textit{Serpina11} in the mouse cortex. Transcripts are coloured based on \textit{SQANTI2} classification categories (blue = FSM, cyan = ISM, red = NNC, orange = NIC). Fusion transcripts are boxed in green. SZ - Schizophrenia.}   
 		\label{fig:isoseq_whole_novelfusion}
 	\end{figure}
 \end{landscape}
 
 
 \subsection{Many transcripts map to long non-coding RNA genes}
-Although the majority of transcripts (93.6\%, 43,450) were classified as protein-coding by the presence of an ORF, a relatively large number of transcripts were annotated as encoding long non-coding RNA (lncRNA) (n = 1,141 transcripts associated with 734 genes). These lncRNA transcripts were shorter than non-lncRNA transcripts (mean length of lncRNA transcripts = 2.22kb, s.d =1.36kb, range = 0.148 - 8.49kb; mean length of non-lncRNA transcripts = 3.21kb, s.d = 1.68kb, range = 0.083 - 15.9kb; W = 3.52 x 10\textsuperscript{7}, P = 8.24 x 10\textsuperscript{-98}, \cref{fig:isoseq_whole_lncRNA}\textbf{A}), and contained fewer exons\cite{Statello2020} (W = 4.56 x 10\textsuperscript{7}, P < 2.23 x 10\textsuperscript{-308}, \cref{fig:isoseq_whole_lncRNA}\textbf{B}) with a dramatic enrichment of mono-exonic molecules\cite{Kuo2017} (n = 273, 23.9\%) compared to non-lncRNA transcripts (914, 2.02\%). They were also characterised by lower transcript expression\cite{Statello2020, Liu2016a} (W = 3.16 x 10\textsuperscript{7}, P = 5.67 x 10\textsuperscript{-40}, \cref{fig:isoseq_whole_lncRNA}\textbf{C}), and detected with fewer isoforms (lncRNA mean n = 1.55 vs non lncRNA mean n = 3.29, W = 7.40 x 10\textsuperscript{6}, P = 5.76 x 10\textsuperscript{-107}, \cref{fig:isoseq_whole_lncRNA}\textbf{E}). A small proportion of these annotated lncRNA transcripts further contained a putative ORF (n = 153 (13.4\%), \cref{fig:isoseq_whole_lncRNA}\textbf{D}) supporting recent observations that some lncRNA have potential protein coding capacity\cite{Kageyama2011}, although the majority of such ORFs are unlikely to code for proteins\cite{Guttman2013}; of note, these ORFs were shorter than those identified in non-lncRNA transcripts (mean length = 139bp vs 519bp, W = 1.75 x 10\textsuperscript{7}, P = 8.33 x 10\textsuperscript{-195}). 
+Although the majority of transcripts (93.6\%, 43,450) were classified as protein-coding by the presence of an ORF, a relatively large number of transcripts were annotated as encoding long non-coding RNAs (lncRNAs)\nomenclature{lncRNAs}{long non-coding RNAs} (n = 1,141 transcripts associated with 734 genes). These lncRNA transcripts were shorter than non-lncRNA transcripts (mean length of lncRNA transcripts = 2.22kb, s.d =1.36kb, range = 0.148 - 8.49kb; mean length of non-lncRNA transcripts = 3.21kb, s.d = 1.68kb, range = 0.083 - 15.9kb; W = 3.52 x 10\textsuperscript{7}, P = 8.24 x 10\textsuperscript{-98}, \cref{fig:isoseq_whole_lncRNA}\textbf{A}), and contained fewer exons\cite{Statello2020} (W = 4.56 x 10\textsuperscript{7}, P < 2.23 x 10\textsuperscript{-308}, \cref{fig:isoseq_whole_lncRNA}\textbf{B}) with a dramatic enrichment of mono-exonic molecules\cite{Kuo2017} (n = 273, 23.9\%) compared to non-lncRNA transcripts (914, 2.02\%). They were also characterised by lower transcript expression\cite{Statello2020, Liu2016a} (W = 3.16 x 10\textsuperscript{7}, P = 5.67 x 10\textsuperscript{-40}, \cref{fig:isoseq_whole_lncRNA}\textbf{C}), and detected with fewer isoforms (lncRNA mean n = 1.55 vs non lncRNA mean n = 3.29, W = 7.40 x 10\textsuperscript{6}, P = 5.76 x 10\textsuperscript{-107}, \cref{fig:isoseq_whole_lncRNA}\textbf{E}). A small proportion of these annotated lncRNA transcripts further contained a putative ORF (n = 153 (13.4\%), \cref{fig:isoseq_whole_lncRNA}\textbf{D}) supporting recent observations that some lncRNA have potential protein coding capacity\cite{Kageyama2011}, although the majority of such ORFs are unlikely to code for proteins\cite{Guttman2013}; of note, these ORFs were shorter than those identified in non-lncRNA transcripts (mean length = 139bp vs 519bp, W = 1.75 x 10\textsuperscript{7}, P = 8.33 x 10\textsuperscript{-195}). 
 
 \begin{figure}[htp]
 	\begin{center}
 		\includegraphics[page=7,trim={0 1cm 0 0},scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Characterisation of LncRNA in Whole Transcriptome runs]%
-	{\textbf{LncRNA transcripts were more lowly expressed and typically longer than non-lncRNA transcripts, despite containing fewer exons}: Shown is the distribution of the \textbf{A)} transcript length, \textbf{B)} number of exons, \textbf{C)} transcript expression, \textbf{D)} ORF length and the \textbf{E)} diversity of isoforms annotated to lncRNA and non-lncRNA. LncRNA – Long non-coding RNA}
+	\caption[Characterisation of LncRNAs in the mouse cortex]%
+	{\textbf{LncRNA transcripts were more lowly expressed and typically longer than non-lncRNA transcripts, despite containing fewer exons.} Shown are distributions of the \textbf{(A)} transcript length, \textbf{(B)} number of exons, \textbf{(C)} transcript expression, \textbf{(D)} ORF length and the \textbf{(E)} diversity of isoforms annotated to lncRNAs and non-lncRNAs. LncRNA – Long non-coding RNAs}
 	\label{fig:isoseq_whole_lncRNA}
 \end{figure}
 
@@ -349,42 +349,15 @@ In total, 40,249 alternative splicing events were identified in known genes with
 		\includegraphics[page=5,trim={0 26cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Number of Alternative Splicing Events in Whole Transcriptome Iso-Seq]%
-	{\textbf{Alternative first is the most prevalent AS event, and novel isoforms are more likely to be characterised with complex AS events}: \textbf{A)} Proportion of AS events in annotated genes, known and novel isoforms. Novel isoforms were more likely to be characterised by all AS events, with the exception of AF and AL. \textbf{B)} Number of splicing events observed in genes that are alternatively spliced. Majority of genes are detected with only one or two splicing events. AF – Alternative First Exon, AL – Alternative Last Exon, A5’ – Alternative 5’ splice site, A3’ – Alternative 3’ splice site, IR – Intron Retention, MX – Mutually Exclusive, SE – Skipped Exon}
+	\caption[Alternative splicing events from transcriptome profiling of the mouse cortex]%
+	{\textbf{Alternative first is the most prevalent AS event, and novel isoforms are more likely to be characterised with complex AS events.} Shown are \textbf{(A)} bar-plot of the proportion of AS events in annotated genes, known and novel isoforms, \textbf{B)} bar-plot of the number of splicing events observed in alternative-spliced genes. AF – Alternative First Exon, AL – Alternative Last Exon, A5’ – Alternative 5’ splice site, A3’ – Alternative 3’ splice site, IR – Intron Retention, MX – Mutually Exclusive, SE – Skipped Exon}
 	\label{fig:isoseq_whole_As_events}
 \end{figure}
-
-\subsection{Isoforms characterised with varying functional domains}
-Aside from changes in splicing patterns, variations in structural and feature elements annotated across RNA and protein isoforms of the same gene can have functional implications \cite{DeLaFuente2020}. We identified that the majority of genes had elements that varied either by absence/presence or by position (\cref{fig:FDA_whole}\textbf{A}). Among elements at a transcript level, miRNA binding had the highest rate of varying (n = 4209 genes) with a large number of miRNA sites varying at the 3'UTR (n = 431). Top miRNAs included miR-207 (P = 0.0003, Adjusted P = 0.07, Varying n = 163 genes), which transfected expression in astrocytes was found to alleviate symptoms of depression in stressed mice\cite{Li2020}, and miR-335-3p (P = 0.0015, Adjusted P = 0.1992, Varying n = 167 genes), which was found enriched in aged cultured astrocytes and hippocampal brains\cite{Raihan2018}, while downregulated in PD patients versus controls\cite{Oliveira2020}. 
-%nonsense-mediated decay had no variation
-Regarding protein-level features, PFAM domains had the highest rate of varying (55\%), with cytochrome P450 as the top most varying PFAM domain (n = 10 genes, P = 0.002) and protein kinase domain as the domain with most varied number of genes (n = 126 genes, P = 0.0095). GO analysis of these genes where protein kinase domain varied across isoforms identified significant enrichment for the MAPK (Odds ratio = 21.06, Adjusted P = 5.45 x 10\textsuperscript{-23}) and Neurotrophin signalling pathway (Odds ratio = 40.36, Adjusted P = 6.711 x 10\textsuperscript{-23}). 
-
-Poly A site had the highest rate of varying by position among transcript-level features (90.2\% across 7,647 genes), followed by coding sequence (80.3\% across 6,812 genes). Furthermore, the vast majority of UTR-varying genes also exhibited CDS variation (\cref{fig:FDA_whole}\textbf{C}). This included \textit{Celf2} (\cref{fig:Celf}), which was identified as exhibiting varying lengths of 5'UTR, 3'UTR and polyA in combination with varying miRNA binding sites. The top PFAM domain by position was Ras family (P = 0.0001, Adjusted P = 0.38, Varying n = 58 genes). 
-
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[page=2,trim={3cm 7cm 3cm 4cm},scale = 0.6]{Figures/WholeFDA.pdf}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Variation in functional elements annotated across RNA and protein isoforms]%
-	{\textbf{Variation in functional elements annotated across RNA and protein isoforms} XXX}   
-	\label{fig:FDA_whole}
-\end{figure}
-
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[scale = 0.3]{Figures/tappAS_Celf2.png}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Varying functinonal elements in isoforms associated with \textit{Celf2}]%
-	{\textbf{Varying functinonal elements in isoforms associated with \textit{Celf2}}.\textit{TappAS} graphical representation of the transcript-level annotation for \textit{Celf2}, where 5'UTR, 3'UTR, CDS, and 3' alternative polyadenylation variation were detected.}   
-	\label{fig:Celf}
-\end{figure}	
 
 
 \subsection{Association of Intron Retention \& NMD}
 \cref{ch4: IR}
-Nonsense-mediated mRNA decay (NMD) acts to reduce transcriptional errors by degrading transcripts containing premature stop codons\cite{Hug2015} and is one mechanism by which IR can influence gene expression\cite{Pan2006} (described in \cref{intro:AS}). Overall, >10\% of transcripts mapping to annotated genes were predicted to undergo NMD (NMD-transcripts) characterized by the presence of an ORF and a coding sequence (CDS) end motif before the last junction (n = 6,014 (13.0\%) transcripts associated with 2,945 (20.3\%) of annotated genes). These NMD-transcripts were less abundant than non-NMD-transcripts (mean expression of NMD-transcripts = 11.2 TPM, s.d =  85.0 TPM, mean expression of non-NMD-transcripts = 23.1 TPM, s.d = 143.1 TPM, W = 8.72 x 107, P = 6.15 x 10\textsuperscript{-156}).  
+nonsense-mediated decay (NMD) acts to reduce transcriptional errors by degrading transcripts containing premature stop codons\cite{Hug2015} and is one mechanism by which IR can influence gene expression\cite{Pan2006} (described in \cref{intro:AS}). Overall, >10\% of transcripts mapping to annotated genes were predicted to undergo NMD (NMD-transcripts) characterized by the presence of an ORF and a coding sequence (CDS) end motif before the last junction (n = 6,014 (13.0\%) transcripts associated with 2,945 (20.3\%) of annotated genes). These NMD-transcripts were less abundant than non-NMD-transcripts (mean expression of NMD-transcripts = 11.2 TPM, s.d =  85.0 TPM, mean expression of non-NMD-transcripts = 23.1 TPM, s.d = 143.1 TPM, W = 8.72 x 107, P = 6.15 x 10\textsuperscript{-156}).  
 
 NMD was particularly enriched amongst IR-transcripts that were predicted to be protein-coding (n = 2,341 (36.2\%) IR-transcripts associated with 1,380 (9.53\%) genes), and transcripts with both IR and predicted NMD were particularly lowly expressed (W = 7.50 x 10\textsuperscript{6}, P = 1.67 x 10\textsuperscript{-42}, \cref{fig:isoseq_whole_IRNMD}\textbf{A}). Only a small number of genes had transcripts where IR and NMD were mutually exclusive (n = 277 (1.91\%) genes, \cref{fig:isoseq_whole_IRNMD}\textbf{B}), providing additional support for the hypothesized relationship between these two transcriptional control mechanisms\cite{Ge2014}. 
 
@@ -394,8 +367,8 @@ NMD was particularly enriched amongst IR-transcripts that were predicted to be p
 		\includegraphics[page=6,trim={0 26cm 0 0},clip,scale = 0.55]{Figures/IsoSeqWholeTranscriptome.pdf}
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Association of intron retention and NMD in Whole Transcriptome Iso-Seq]%
-	{\textbf{Intron retention is associated with nonsense-mediated mRNA decay (NMD) and reduced expression}: \textbf{A)} Isoforms that were characterised with both IR and NMD were particularly lowly expressed compared to isoforms with either IR, NMD or neither events. \textbf{B)} Shown is the overlap of genes associated with isoforms characterised with intron retention (IR), nonsense-mediated mRNA decay (NMD), and transcripts with both IR and NMD (IR-NMD). 1380 genes were associated with IR-isoforms that were predicted for NMD, and 277 genes that contained mutually exclusive IR-isoforms and NMD-isoforms. }
+	\caption[Association of intron retention and nonsense-mediated decay]%
+	{\textbf{Intron retention is associated with nonsense-mediated decay and reduced expression.} Shown is \textbf{(A)} a bar-plot of the expression of transcripts characterised with intron retention (IR) and nonsense-mediated decay (NMD), and \textbf{(B)} a Venn diagram of the number of genes associated with transcripts characterised with intron retention (IR), nonsense-mediated decay (NMD), or both (IR-NMD). 1380 genes were associated with IR-transcripts that were predicted for NMD, and 277 genes that contained mutually exclusive IR-transcripts and NMD-transcripts. }
 	\label{fig:isoseq_whole_IRNMD}
 \end{figure}
 
@@ -407,8 +380,14 @@ We used long-read isoform sequencing to characterize full-length cDNA sequences 
 Several findings are particularly notable. First, we highlight that existing gene annotations are incomplete and that novel transcripts are likely to exist for a large proportion of expressed genes. Our data show examples of novel exons and even entire genes not currently annotated in existing databases. Second, we show that read-through transcripts (or gene fusion transcripts) occur naturally\cite{Mehani2020} and at detectable levels in the cortex. Although many of these fusion transcripts appear to be associated with NMD, some have the potential to be translated into proteins or may have a regulatory effect at the RNA level. Third, we are able to highlight the significant extent to which alternative splicing events contribute to isoform diversity in the cortex. In particular we show that IR is a relatively common form of AS in the cortex that is associated with reduced expression and NMD. Finally, our findings highlight the power of long-read sequencing approaches for transcriptional profiling. We show that transcriptional profiles generated using Iso-Seq reflect the cerebral cortex as expected, and our findings were validated using complementary approaches (i.e. RNA-Seq, and by comparison to existing genomic databases). Despite long-read sequencing often assumed to be less quantitative than standard short-read RNA sequencing methods\cite{Zhao2019}, we observed a strong correlation between expected and detected levels of ERCC spike-in control molecules, highlighting the power of Iso-Seq to accurately quantify the abundance of highly-expressed transcripts.
 
 Our results should be interpreted in the context of several limitations. First, we profiled tissue from a relatively small number of mouse samples. Although we found highly consistent patterns of alternative splicing across these biological replicates and rarefaction curves confirmed our sequencing dataset was close to saturation, we were unable to explore inter-individual variation in alternative splicing. Future work will aim to extend our analyses to larger numbers of samples to explore population-level variation in transcript abundance in the mouse cortex and differences associated with AD pathology. Second, despite the advantages of long-read sequencing approaches for the characterization of novel full-length transcripts, we implemented a stringent QC pipeline and undertook considerable filtering of our data. Many true transcripts from our final dataset, particularly lowly-expressed transcripts, are likely to have been filtered out. Our analyses is likely to represent an underestimation of the extent of RNA isoform diversity in the cerebral cortex. Future work will aim to sequence samples at a deeper coverage to explore gene-specific splicing differences associated with AD. Third, our analyses were performed on ‘bulk’ cortex tissue containing a heterogeneous mix of neurons, oligodendrocytes and other glial cell-types. A recent study using a combination of long-read and single-cell sequencing identified cell-type-specific transcript diversity in the mouse hippocampus and prefrontal cortex\cite{Joglekar2021} (described in \cref{tab: longread_advancedstudies}). However, we were limited in exploring these differences in our data. Finally, although we explored the extent to which novel transcripts contained ORFs, the extent to which they are translated and contribute to cortical proteomic diversity is unknown.  
- 
+
 In summary, our data confirm the importance of alternative splicing and alternative first exon usage in the mouse entorhinal cortex, dramatically increasing transcriptional diversity and representing an important mechanism underpinning gene regulation in the brain. We highlight the power of long-read sequencing for completing our understanding of mouse gene annotation.
 
 %Although skipped exons are known to be the most common AS events in mouse, our data conversely suggests that splice variants from a single gene are predominantly generated through alternative first exons 
 %Single cell analysis (\cite{Karlsson2017}) noted that alternative TSS and TTS variation in the first exon representing more than 70\% of splicing events,
+
+
+
+
+
+
