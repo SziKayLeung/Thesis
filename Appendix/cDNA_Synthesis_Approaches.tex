@@ -2,32 +2,34 @@
 
 \stoptocwriting
 \section{Alternative cDNA synthesis approaches}
-Despite the reliability of SMARTer cDNA synthesis kit (Clontech) to generate high-quality, and full-length cDNA, this recommended kit in PacBio Iso-Seq protocol is expensive and cannot differentiate between degraded and intact RNA. Two alternative methods were therefore trialled and developed on a mouse sample, similar in genotype to those sequenced on RNA-Seq:
-
+Despite the power of the SMARTer cDNA synthesis kit (Clontech) to enrich for high-quality and full-length cDNA templates, this kit is costly and fails to differentiate between intact and degraded RNA (as described in \cref{section:ch2_cDNA_synthesis_explanation}). Two alternative methods were therefore trialled and optimised on a mouse cortical sample:
 \begin{enumerate}
-	\item An adaptation of the cDNA synthesis protocol from Wellcome Trust Advanced Course: RNA Transcriptomics (2018), provided by J.Ragoussis, which is based on Smart-seq2 first formulated by Picelli et al.(2014). It is also worthy to note that the Smart-Seq2 protocol formed the basis for the SMARTer cDNA synthesis kit. 
-	\item Full-Length cDNA Amplification (Teloprime) kit, which only ensures the amplification of fully-intact cDNA with 5'cap.    
+	\item An adaptation of the cDNA synthesis protocol (provided by J.Ragoussis) taken from the "Wellcome Trust Advanced Course: RNA Transcriptomics (2018)" (hereby referred to as "WTAC") which I attended during my PhD. This protocol is based on the Smart-seq2 protocol\cite{Picelli2014}, which formed the basis for the SMARTer cDNA synthesis kit. 
+	\item Full-Length cDNA Amplification (Teloprime) kit, which ensured the amplification of fully-intact cDNA containing the 5'cap.    
 \end{enumerate}
 
-\subsection{Adaptation of Smart-Seq2}
-In the WTAC's protocol, SuperScript IV enzyme (SSIV) was used for reverse transcription of RNA into cDNA due to its high thermal-stability and subsequent usage in high temperature to resolve complex RNA secondary structures. Reverse transcription was split into two steps, pre-RT and RT, to first hybridise poly-T primer to poly-A tract of mRNA before first-strand synthesis (Tables \ref{WTAC_Pre_RT_Mix} - \ref{WTAC_RT_incubation}). cDNA amplification was then achieved using Advantage 2 High fidelity polymerase.
+Unfortunately, I was unable to generate sufficient cDNA material from the Full-Length cDNA Amplification kit required for downstream library preparation. The following section thus only documents the optimised protocol and results from the adaptation of the WTAC protocol, based on Smart-seq2.
 
-One major limitation of the WTAC's protocol was the initial requirement of high RNA concentration (300ng/uL), whereby most of the mouse RNA extracted had an average concentration of 70ng/uL. The volume of pre-RT and RT PCR mix had to therefore be upscaled to account for additional sample volume, while maintaining reagent concentration. 
+\subsection{Adaptation of Smart-seq2}
+In the WTAC protocol, SuperScript IV enzyme (SSIV) was used for reverse transcription of RNA into cDNA due to its high thermal-stability, subsequently allowing it to be used in high temperatures to resolve complex RNA secondary structures. Reverse transcription step was also split into two steps, pre-RT and RT, to first hybridise poly(T) primer to poly(A) tract of mRNA before first-strand synthesis (\cref{WTAC_Pre_RT_Mix} - \cref{WTAC_RT_incubation}). cDNA templates were then amplified using Advantage 2 high fidelity polymerase.
 
+One of the challenges in applying the WTAC protocol to the mouse experiments was the high amount of RNA needed for cDNA synthesis: 300ng/$\mu$L was specified as the starting amount where majority of the extracted RNA only had an average concentration of  70ng/$\mu$L. The volume of pre-RT and RT PCR mix was therefore upscaled to account for additional sample volume, while maintaining the concentration of other reagents. 
 
-
-\newpage
 \subsubsection{Protocol}
-\
 
+\vspace{1cm}
 \begin{table}[h]
+	\setlength\tabcolsep{6pt} %reduced margin size in table
+	\caption[List of reagents for Smart-seq2]%
+	{\textbf{List of reagents for Smart-seq2 protocol}}
+	\label{reagents}
 	\begin{tabularx}{0.95\textwidth}{lcc}
 		\toprule
 		Reagents                                                      & Supplier (Catalogue)                                  & Step                 \\ \midrule
 		ERCC RNA Spike-In Mix                                         & Thermo Fisher Scientific (4456740)                    & Pre-RT               \\
-		RNAse inhibitor (40 U/uL)                                     & Clontech (2313A)                                      & Pre-RT               \\
+		RNAse inhibitor (40 U/$\mu$L)                                     & Clontech (2313A)                                      & Pre-RT               \\
 		\begin{tabular}[c]{@{}l@{}}Advantage UltraPure PCR dNTP Mix \\ (10 mM each dNTP)\end{tabular} & Clontech (639125)                                     & Pre-RT               \\
-		\tabitem SuperScript IV (200U/uL)                                      & \multirow{3}{*}{Thermo Fischer Scientific (18090010)} & RT                   \\
+		\tabitem SuperScript IV (200U/$\mu$L)                                      & \multirow{3}{*}{Thermo Fischer Scientific (18090010)} & RT                   \\
 		\tabitem 5X RT Buffer                                                  &                                                       & Pre-RT               \\
 		\tabitem DTT (0.1M)                                                    &                                                       & RT                   \\
 		Betaine (5M)                                                  & Sigma-Aldrich (B0300-1VL)                             & RT                   \\
@@ -39,45 +41,51 @@ One major limitation of the WTAC's protocol was the initial requirement of high 
 \end{table}
 
 \begin{enumerate}
-	\item Assuming a stock ERCC RNA spike-in concentration of 30.3ng/uL, and a final concentration of 1.8ng/uL based on the calculation from Equation \ref{eqn:ercc_calcaluations}, 1uL of stock ERCC RNA spike-in was originally diluted with 15.83 TE buffer (dilution of 1:16.83). 
-	\item Pre-Reverse Transcription PCR Mix was prepared with RNA (Table \ref{WTAC_Pre_RT_Mix})
-	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in Table \ref{WTAC_Pre_RT_incubation} to prime the RNA with poly-T
-	\item Reverse Transcription PCR Mix was prepared with primed-RNA (Table \ref{WTAC_RT_Mix})
-	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in Table \ref{WTAC_RT_incubation} for first-strand cDNA synthesis
-	\item cDNA from RT reaction was split into 7 PCR tubes, each with 1uL of cDNA and reagents tabulated in Table \ref{WTAC_PCR_Mix}
+	\item Assuming a stock ERCC RNA spike-in concentration of 30.3ng/$\mu$L, and a final concentration of 1.8ng/$\mu$L based on the calculation from \textbf{Equation \ref{eqn:ercc_calcaluations}}, 1$\mu$L of stock ERCC RNA spike-in was originally diluted with 15.83 TE buffer (dilution of 1:16.83). 
+	\item Pre-reverse transcription PCR mix was prepared with RNA (\cref{WTAC_Pre_RT_Mix}).
+	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in \cref{WTAC_Pre_RT_incubation} to prime the RNA with poly(T).
+	\item Reverse transcription PCR mix was prepared with primed-RNA (\cref{WTAC_RT_Mix}).
+	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in \cref{WTAC_RT_incubation} for first-strand cDNA synthesis.
+	\item cDNA from RT reaction was split into 7 PCR tubes, each with 1uL of cDNA and reagents tabulated in \cref{WTAC_PCR_Mix}.
 		\begin{itemize}
-			\item This step was necessary to test the optimum number of PCR cycles to prevent over-amplification, with the PCR tubes incubated for different cycle durations
+			\item This step was necessary to test the optimum number of PCR cycles to prevent over-amplification, with the PCR tubes incubated for different cycle durations.
 		\end{itemize}
-	\item All 7 PCR tubes were incubated simultaneously (Table \ref{WTAC_PCR_Incubation}), with one PCR tube removed at each cycle from cycle 12 to cycle 18 in Segment 3 (as suggested by WTAC protocol) and placed in ice
-	\item At the end of Segment 3 in Table \ref{WTAC_PCR_Incubation}, all 6 PCR tubes, taken from cycles 12 to cycle 17, were placed back into thermal cycler for enzyme termination (Table \ref{WTAC_PCR_Incubation}, Segment 4) 
-	\item PCR tubes were analysed on a 1\% agarose gel or on a D5000 genomic tape	
+	\item All 7 PCR tubes were incubated simultaneously (\cref{WTAC_PCR_Incubation}), with one PCR tube removed at each cycle from cycle 12 to cycle 18 in Segment 3 (as suggested by WTAC protocol) and placed in ice.
+	\item At the end of Segment 3 in \cref{WTAC_PCR_Incubation}, all 6 PCR tubes were placed back into the thermal cycler for enzyme termination (\cref{WTAC_PCR_Incubation}, Segment 4). 
+	\item PCR tubes were analysed on a 1\% agarose gel (described in \cref{Isoseq_Protocol_running_agarose_gel}) or on a D5000 genomic ScreenTape (described in \cref{Isoseq_Protocol_tapestation_bioanalyzer}).	
 \end{enumerate}
-\
 
+\vspace{1cm}
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[Pre-reverse transcription PCR mix]%
+	{\textbf{Pre-reverse transcription PCR mix.} Tabulated is a list of the reagent volume from the WTAC protocol, and of that optimised to use a lower initial RNA concentration. While the total volume per sample was different due to amount of RNA (200ng) used, the final concentrations of all of the other remaining reagents were maintained.}
+	\label{WTAC_Pre_RT_Mix}
+	\setlength\tabcolsep{8pt} %reduced margin size in table
 	\begin{tabularx}{0.95\textwidth}{lccc}
 		\toprule
-		\multirow{2}{*}{Reagents} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Final\\ Concentration\end{tabular}} & \multicolumn{2}{c}{Volume (uL/Sample)}      \\ \cmidrule(l){3-4} 
+		\multirow{2}{*}{Reagents} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Final\\ Concentration\end{tabular}} & \multicolumn{2}{c}{Volume ($\mu$L/Sample)}      \\ \cmidrule(l){3-4} 
 		&                                                                                & WTAC protocol & Optimised protocol \\ \cmidrule(r){1-4}
 		Diluted ERCC RNA            &                                                                                & 0.1                    & 0.1                \\
-		Rnase Inhibitor             & 0.64U/ul                                                                       & 0.05                   & 0.08               \\
-		Poly-T primer               & 2.76uM                                                                         & 0.7                    & 1.15               \\
+		Rnase Inhibitor             & 0.64U/$\mu$L                                                                       & 0.05                   & 0.08               \\
+		Poly(T) primer               & 2.76$\mu$M                                                                         & 0.7                    & 1.15               \\
 		SuperScript IV Buffer       & 0.17                                                                           & 0.1                    & 0.17               \\
-		Nuclease Free Water                        &                                                                                & 0                      & 0.55               \\
+		Nuclease-Free Water                        &                                                                                & 0                      & 0.55               \\
 		dNTP Mix                    & 1.9mM                                                                          & 0.56                   & 0.95               \\
 		Total RNA                   &                                                                                & 1.5 (300ng)                    & 2 (200ng)                 \\
-		Total Volume per Sample            &                                                                                & 3                      & 5                  \\ \bottomrule
+		Total volume per Sample            &                                                                                & 3                      & 5                  \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Pre-Reverse Transcription PCR Mix for Smart-Seq2 cDNA synthesis]%
-	{\textbf{Pre-RT PCR Mix for Smart-Seq2 cDNA synthesis}. Reagent volume from Wellcome Trust Advanced Course's protocol, and of that optimised to use a lower initial RNA concentration are tabulated. The total volume per sample is different due to the input of RNA amount; the final concentration of the reagents are however maintained. 200ng of total RNA was used in the optimised protocol for consistency as was used.}
-	\label{WTAC_Pre_RT_Mix}
 \end{table}
 
-
+\vspace{1cm}
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[PCR conditions for pre-reverse transcription]%
+	{\textbf{PCR conditions for pre-reverse transcription.} Tabulated are the PCR conditions for amplification of cDNA templates: initial 72°C to prompt unfolding of RNA secondary structures, 4°C for poly(T) binding and 25°C to encourage more specific binding.}
+	\setlength\tabcolsep{6pt} %reduced margin size in table
+	\label{WTAC_Pre_RT_incubation}
 	\begin{tabularx}{0.95\textwidth}{
 			>{\centering\arraybackslash}X 
 			>{\centering\arraybackslash}X 
@@ -88,18 +96,18 @@ One major limitation of the WTAC's protocol was the initial requirement of high 
 		2        & 4                & 10             \\
 		3        & 25               & 1                   \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[PCR conditions for Pre-Reverse Transcription in Smart-Seq2 cDNA synthesis]%
-	{\textbf{PCR conditions for Pre-RT in Smart-Seq2}. Reagent volume similarly optimised from Wellcome Trust Advanced course's protocol to take account greater volume from initial lower RNA concentration. Initial 72°C prompts unfolding of RNA secondary structures, 4°C for poly-T binding and 25°C to encourage more specific binding.}
-	\label{WTAC_Pre_RT_incubation}
 \end{table}
 
 
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[Reverse transcription PCR mix]%
+	{\textbf{Reverse transcription PCR mix.}}
+	\label{WTAC_RT_Mix}
 	\begin{tabularx}{0.95\textwidth}{lccc}
 		\toprule
-		\multirow{2}{*}{Reagents}            & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Final\\ Concentration\end{tabular}} & \multicolumn{2}{c}{Volume (uL/Sample)}      \\ \cmidrule(l){3-4} 
+		\multirow{2}{*}{Reagents}            & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Final\\ Concentration\end{tabular}} & \multicolumn{2}{c}{Volume ($\mu$L/Sample)}      \\ \cmidrule(l){3-4} 
 		&                                                                                &  WTAC protocol & Optimised protocol \\ \cmidrule(r){1-4}
 		Sample from pre-RT                   &                                                                                & 3                      & 5                  \\
 		dH20                                 &                                                                                & 0.85                   & 0.55               \\
@@ -107,20 +115,20 @@ One major limitation of the WTAC's protocol was the initial requirement of high 
 		DTT                                  & 0.57 X                                                                         & 0.175                  & 0.25               \\
 		TSO                                  & 2.50 mM                                                                        & 0.7                    & 1                  \\
 		RNAse inhibitor                      & 1.20 uM                                                                        & 0.175                  & 0.25               \\
-		SuperScript IV RT & 10.0 U/ul                                                                      & 0.35                   & 0.5                \\
+		SuperScript IV RT & 10.0 U/$\mu$L                                                                      & 0.35                   & 0.5                \\
 		Betaine                              & 0.50 M                                                                         & 0.7                    & 1                  \\
 		MgCl2                                & 3.57 mM                                                                        & 0.25                   & 0.35               \\
-		Total Volume per Sample              &                                                                                & 7                      & 10                 \\ \bottomrule
+		Total volume per Sample              &                                                                                & 7                      & 10                 \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[Reverse Transcription PCR Mix in Smart-Seq2]%
-	{\textbf{RT PCR Mix in Smart-Seq2}. Mg Cl2 is required as co-factors for the reverse transcriptase, betaine to reduce the formation of secondary structure caused by GC-rich regions and the template switching primer (TSO)}
-	\label{WTAC_RT_Mix}
 \end{table}
 
 
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[PCR conditions for reverse transcription]%
+	{\textbf{PCR conditions for reverse transcription.} Tabulated is a list of the PCR conditions as taken from the WTAC protocol. Segments 2, 3, 5, 7, 9 allow the unfolding of RNA secondary structures and completion or continuation of RT with successive higher temperatures, whereas segments 1, 4, 6 and 8 allow template switching. Segment 11 is for enzyme termination.}
+	\label{WTAC_RT_incubation}
 	\begin{tabularx}{0.95\textwidth}{
 			>{\raggedright\arraybackslash}X
 			>{\centering\arraybackslash}X 
@@ -145,37 +153,37 @@ One major limitation of the WTAC's protocol was the initial requirement of high 
 		10       & 50          & 1 min  & 1      \\
 		11       & 80          & 10 min & 1      \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[PCR conditions for Reverse Transcription in Smart-Seq2 cDNA synthesis]%
-	{\textbf{PCR conditions for Reverse Transcription in Smart-Seq2}, taken from WTAC's protocol. Segments 2, 3, 5, 7, 9 allow the unfolding of RNA secondary structures and completion or continuation of RT with successive higher temperatures, whereas segments 1, 4, 6 and 8 allow template switching. Segment 11 is for enzyme termination}
-	\label{WTAC_RT_incubation}
 \end{table}
 
 
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[PCR Mix]%
+	{\textbf{PCR Mix.} Tabulated is a list of the reagent volumes as taken from the WTAC protocol. The volume tabulated is sufficient for only 1$\mu$L of cDNA from total RT reaction - upscale accordingly.}
+	\label{WTAC_PCR_Mix}
 	\begin{tabularx}{0.95\textwidth}{
 			>{\raggedright\arraybackslash}X 
 			>{\centering\arraybackslash}X}
 		\toprule
-		Reagents                       & Volume (uL/sample) \\ \midrule
+		Reagents                       & Volume ($\mu$L/sample) \\ \midrule
 		cDNA from RT Reaction          & 1                  \\
 		Nuclease-Free water            & 6.8                \\
 		10X Advantage 2 PCR Buffer     & 1                  \\
 		50X dNTP Mix                   & 0.4                \\
 		PCR primer                     & 0.4                \\
 		50X Advantage 2 Polymerase Mix & 0.4                \\
-		Total Volume for Sample        & 10                 \\ \bottomrule
+		Total volume for Sample        & 10                 \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[PCR Mix in Smart-seq2 cDNA synthesis]%
-	{\textbf{PCR Mix for cDNA amplification in Smart-seq2 cDNA synthesis}, taken from WTAC's protocol. Volume tabulated is for 1uL of cDNA from total RT reaction (Table \ref{WTAC_PCR_Mix}).}
-	\label{WTAC_PCR_Mix}
 \end{table}
 
 
 \begin{table}[h]
 	\centering
+	\captionsetup{width=0.95\textwidth}
+	\caption[PCR conditions for cDNA amplification]%
+	{\textbf{PCR conditions for cDNA amplification.} Tabulated is a list of PCR conditions as taken from WTAC protocol. All 7 prepared PCR tubes were individually removed and placed on ice in segment 3 (between cycles 12 to 18) to determine the optimum number of PCR cycles for amplification. After cycle 18, all removed PCR tubes were placed back into the thermal cycler for enzyme termination (segment 4).}
+	\label{WTAC_PCR_Incubation}
 	\begin{tabularx}{0.95\textwidth}{
 			>{\raggedright\arraybackslash}X
 			>{\centering\arraybackslash}X
@@ -192,33 +200,23 @@ One major limitation of the WTAC's protocol was the initial requirement of high 
 		& 68°C        & 6 min  &                                 \\
 		4        & 72°C        & 10 min & 1                               \\ \bottomrule
 	\end{tabularx}
-	\captionsetup{width=0.95\textwidth}
-	\caption[PCR Condition for cDNA amplification in Smart-Seq2 cDNA synthesis]%
-	{\textbf{PCR Condition for cDNA amplification in Smart-Seq2}, taken from WTAC's protocol. All 7 prepared PCR tubes were individually removed and placed on ice in Segment 3, from cycle 12 to cycle 18, to determine the optimum number of PCR cycles. After the 18th cycle, PCR tubes that were removed and on ice were placed back into the thermal cycler for enzyme termination, segment 4.}
-	\label{WTAC_PCR_Incubation}
 \end{table}
 
 \clearpage
 \subsubsection{Results}
-To determine the optimum number of cycles necessary for cDNA amplification (similar to section X), cDNA taken from cycles 11 to 18 during PCR amplification was run on an agarose gel electrophoresis. No difference in bands was observed between the original WTAC and optimised protocol, indicating successful modification of the optimised protocol. However, both protocols showed a consistent intensity of DNA bands across the cycles rather than an expected gradual increase, suggesting over-amplification by cycle 12 (Figure \ref{fig:wtac_optimised_gel1_2}a). The stark bands further suggest concentration of 
-
-The optimised protocol was thus repeated with a wider range of cycles from cycle 2 to 20, and with a lower ERCC RNA spike-in concentration to reduce sequencing of ERCC (final concentration of 0.6ng/ul and a dilution factor of 1:50.5) (Figure \ref{fig:wtac_optimised_gel1_2}b). 
+Following the optimised WTAC protocol, we similarly determined the optimum number of PCR cycles necessary for cDNA amplification (akin to \cref{ch: pcr_optimisation}) by assessing the quality of cDNA templates from cycles 11 to 18 using agarose gel electrophoresis. No difference in bands was observed between the original WTAC and optimised protocol (\cref{fig:wtac_optimised_gel1_2}\textbf{A}), indicating that I had successfully optimised the WTAC protocol for smaller initial input of RNA. However, both protocols showed a consistent intensity of DNA bands across the range of PCR cycles rather than an expected gradual increase, suggesting there was already over-amplification by cycle 12 (\cref{fig:wtac_optimised_gel1_2}\textbf{A}). The two stark bands at \textasciitilde600bp and \textasciitilde1000bp against the smear of cDNA further suggests over-usage of ERCC, possibly due to the overestimation of assumed proportion of mRNA. The optimised protocol was thus repeated with a wider range of cycles from cycle 2 to 20, and with a lower ERCC RNA spike-in concentration to reduce unnecessary sequencing of ERCC (final concentration of 0.6ng/ul and a dilution factor of 1:50.5) (\cref{fig:wtac_optimised_gel1_2}\textbf{B}). 
     
-
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.15\textheight]{Figures/WTAC_Adapted_Gel1.png}
-		\caption{Gel image of WTAC and optimised protocol}
-	\end{subfigure}
-	\hspace{2em}
-	\begin{subfigure}{0.4\linewidth}
-		\includegraphics[width=\linewidth, height=0.15\textheight]{Figures/WTAC_Adapted_Final.png}
-		\caption{Gel image from repeat of optimised protocol}
-	\end{subfigure}
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[page=5,trim={0 23cm 0 0cm},clip,scale = 0.65]{Figures/General_Methodology_Figures.pdf}
+	\end{center}
 	\captionsetup{width=0.95\textwidth}
-	\caption[Gel image of repeated optimised protocol]%
-	{\textbf{Gel images of WTAC and optimised protocol for SMART-seq2 cDNA synthesis}: Figure a) Amplified DNA from original WTAC and optimised protocol taken from cycles 12 to 18 were run on 1\% agarose gel. Figure b) Repeated optimised protocol with a greater range of cycles and lower ERCC RNA spike-in concentration. Numbers represent the number of cycles, L refers to 100bp ladder. -ve refers to negative control with water.} 
+	\caption[Successful optimisation of Smart-seq2 protocol]%
+	{\textbf{Successful optimisation of Smart-seq2 protocol} Shown are agarose gel images of amplified cDNA from the  \textbf{(A)} WTAC and optimised protocol following amplification from cycles 12 to 18, and from \textbf{(B)} repeating the optimised protocol with a greater range of PCR cycles and lower ERCC RNA spike-in concentration. Numbers represent the number of PCR cycles, L refers to 100bp ladder, -ve refers to negative control with water.}
 	\label{fig:wtac_optimised_gel1_2}
-\end{figure} 
+\end{figure}
+
+
+Despite successfully optimising the WTAC protocol for lower input of RNA and for determining the optimum number of PCR cycles for amplification, it was technically challenging to upscale the final amount of cDNA (10$\mu$L) synthesised for large scale PCR amplification (which required 160$\mu$L for Iso-Seq). I therefore decided to switch back to the SMARTer cDNA synthesis kit (Clontech) for the processing of mouse cortical samples used for Iso-Seq and ONT profiling  in \textbf{Chapters 4 and 6}. Nonetheless, this optimised protocol provided insights into the appropriate amount of ERCC to be used, which was subsequently integrated into the final laboratory workflow. (as described in \cref{section:ch2_ERCC_explanation}).  
 \resumetocwriting
+
