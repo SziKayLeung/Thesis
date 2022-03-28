@@ -1623,14 +1623,15 @@ Given the improved sensitivity of target enrichment and the extensive mapping of
 
 Despite this unprecedented detection of novel transcripts whose expression altered with increased tau pathology, we found that the majority (n = 366, 75.4\%) of these isoforms were lowly-expressed ($<$20 normalised FL read counts) and accounted less than 5\% of the respective isoform fraction. Further examination revealed that the isoform landscape across the 20 AD-associated genes were characterised by a few dominant isoforms (\cref{fig:globalIF}). This corroborates with recent findings from the VastDB\cite{Tapial2017} (the largest resource documenting genome-wide AS events in vertebrates to date) that reported simultaneous expression of multiple major isoforms in more than 18\% of genes\cite{Tapial2017}. 
 
-Reflecting the relatively lower sequencing depth of the Iso-Seq targeted dataset, we only detected 16 differentially expressed transcripts using Iso-Seq normalised read counts. Comparison of the ONT and Iso-Seq targeted dataset revealed six (37.5\%) that were commonly identified as differentially expressed. 
+Reflecting the relatively lower sequencing depth of the Iso-Seq targeted dataset, we only detected 16 differentially expressed transcripts using Iso-Seq normalised read counts. Comparison of the ONT and Iso-Seq targeted dataset revealed six (37.5\%) that were commonly identified as differentially expressed (summarised in \cref{tab_diffcommon}): three transcripts were annotated to \textit{Trem2} (\cref{fig:diffcommon_1}), one novel transcript to \textit{Clu} (\cref{fig:diffcommon_2}\textbf{A,B,C}), one known transcript to \textit{Ptk2b} (\cref{fig:diffcommon_2}\textbf{D,E,F}) and one novel transcript to \textit{Apoe} (\cref{fig:diffcommon_2}\textbf{G,H,I}). All six transcripts were upregulated with progressive tau pathology in the rTg4510 mice with similar effect size in the Iso-Seq and ONT targeted datasets (\cref{tab_diffcommon}).  
 
 The following sections describe the transcriptional variation of three genes: \textit{Trem2} (\cref{trem2_diff}), \textit{Cd33} (\cref{cd33_diff}) and \textit{Bin1} (\cref{bin1_diff}). These were chosen due to their prominent transcriptional profiles, which make them particularly suited to be investigated in more detail. Transcriptional profiles of the remaining 17 AD-risk genes can be found in \textbf{\cref{app_diff_adrisk_others}}.
+
 
 \begin{landscape}
 	\begin{figure}[htp]
 		\centering
-		\includegraphics[page=1,trim={0 1cm 0 0},scale =0.4]{Figures/GlobalIF.pdf}
+		\includegraphics[page=1,trim={0 0 0 0},scale =0.4]{Figures/GlobalIF.pdf}
 		\captionsetup{width=1.5\textwidth}
 		\label{fig:globalIF}
 		\caption[Identification of major isoforms annotated to AD-risk target genes]%
@@ -1638,7 +1639,56 @@ The following sections describe the transcriptional variation of three genes: \t
 	\end{figure}
 \end{landscape}
 
-\newpage
+\begin{landscape}
+\begin{table}[]
+	\centering
+	\captionsetup{width=1.5\textwidth}
+	\caption[Common differentially spliced transcripts identified targeted profiling]%
+	{\textbf{Common differentially spliced transcripts identified from Iso-Seq \& ONT targeted profiling.} Tabulated is a summary of the six transcripts commonly identified as differentially expressed using Iso-Seq and ONT targeted profiling of rTg4510 mice. FDR - False Discovery Rate. R\textsuperscript{2} is a statistical measure that represents the amount of variance explained by the model.}
+	\label{tab_diffcommon}
+	\setlength\tabcolsep{5.5pt} %reduced margin size in table
+	\begin{threeparttable}
+	\begin{tabular}{@{}ccccccccccc@{}}
+		\toprule
+		\multicolumn{2}{c}{Transcript} & \multirow{2}{*}{Gene} & \multicolumn{4}{c}{Iso-Seq summary statistics} & \multicolumn{4}{c}{ONT summary statistics} \\ \cmidrule(r){1-2} \cmidrule(l){4-11} 
+		PacBio ID   & ONT ID\tnote{a}                &       & FDR      & R\textsuperscript{2}     & log\textsubscript{2} FC\textsubscript{genotype}\tnote{b} & log\textsubscript{2} FC\textsubscript{age}\tnote{c} & FDR      & R\textsuperscript{2}     & log\textsubscript{2} FC\textsubscript{genotype}\tnote{b} & log\textsubscript{2} FC\textsubscript{age}\tnote{c} \\ \midrule
+		PB.3742.3   & ENSMUST00000024791.14 & \textit{Trem2} & 1.75E-14 & 0.79  & 2.08   & 2.27   & 1.5E-41  & 0.939 & 2.42   & 2.46   \\
+		PB.3742.1   & ENSMUST00000132340.1  & \textit{Trem2} & 0.000001 & 0.561 & Inf    & Inf    & 6.47E-22 & 0.873 & 1.93   & 2.18   \\
+		PB.2634.256 & TALONT000465283       & \textit{Clu}   & 4.63E-07 & 0.593 & 1.12   & 1.3    & 1.47E-13 & 0.827 & 1.4    & 1.57   \\
+		PB.2637.336 & ENSMUST00000089250.8  & \textit{Ptk2b} & 2.8E-13  & 0.74  & 2.05   & 1.65   & 2.62E-06 & 0.609 & 1.46   & 1.02   \\
+		PB.3742.12  & TALONT000740634       & \textit{Trem2} & 1.98E-18 & 0.773 & 2.66   & 2.93   & 3.91E-06 & 0.577 & 2.34   & 2.64   \\
+		PB.7333.32  & TALONT001163706       & \textit{Apoe}  & 0.000149 & 0.549 & 0.615  & 0.891  & 0.00107  & 0.546 & 0.976  & 1.17   \\ \bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+	\footnotesize
+	\item[a] The isoform classification can be inferred from the ONT ID whereby the prefix "ENSMUST" and "TALONT" refers to known and novel isoform, respectively 
+	\item[b] log\textsubscript{2} fold change of TG aged 8 months vs WT aged 8 months
+	\item[c] log\textsubscript{2} fold change of TG aged 8 months vs TG aged 2 months
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}	
+\end{landscape}
+
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=1,trim={0 3cm 0 0},scale =0.75]{Figures/DiffCommon.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\label{fig:diffcommon_1}
+	\caption[Three common differentially expressed transcripts annotated to \textit{Trem2}]%
+	{\textbf{Three common differentially expressed transcripts annotated to \textit{Trem2}.} Shown is \textbf{(A)} a UCSC genome browser of the three \textit{Trem2} transcripts that were commonly identified as differentially expressed in Iso-Seq and ONT targeted dataset, and their respective transcript expression of WT (grey) and rTg4510 TG mice (red) measured using \textbf{(B, D, F)} normalised Iso-Seq full-length read counts and \textbf{(C, E, G)} normalised ONT full-length read counts. Dotted lines represent the mean paths across ages (months)}   
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[page=2,trim={0 0cm 0 0},scale =0.75]{Figures/DiffCommon.pdf}
+	\captionsetup{width=0.95\textwidth}
+	\label{fig:diffcommon_2}
+	\caption[Common differentially expressed transcripts annotated to \textit{Clu, Ptk2b} and \textit{Apoe}]%
+	{\textbf{Common differentially expressed transcripts annotated to \textit{Clu, Ptk2b} and \textit{Apoe}.} Shown are \textbf{(A, D, G)} UCSC genome browser tracks of the common (i.e. identified in both ONT and Iso-Seq targeted dataset) differentially expressed transcripts annotated to \textit{Clu, Ptk2b} and \textit{Apoe}, and their respective transcript expression of WT (grey) and rTg4510 TG mice (red) measured using \textbf{(B, E, H)} normalised Iso-Seq full-length read counts and \textbf{(D, F, I)} normalised ONT full-length read counts. Dotted lines represent the mean paths across ages (months).}   
+\end{figure}
+
+\clearpage
 \subsubsection{Global increase of \textit{Trem2}-associated isoforms, particularly Trem2-201}
 \label{trem2_diff}
 The top ranked differentially expressed transcript between WT and TG mice was a known isoform (Trem2-201, ENSMUST00000024791.14, \cref{fig:trem2_diff_analysis}\textbf{A}) annotated to \textit{Trem2} (detailed annotations of \textit{Trem2} are provided in \cref{ch5: trem2_annotation}). Expression of this known isoform significantly dominated that of the novel isoforms (\cref{fig:trem2_diff_analysis}\textbf{C,G}), and was strongly upregulated with progressive tau pathology (\cref{fig:trem2_diff_analysis}\textbf{D,H}); this was evident in both the ONT and Iso-Seq targeted dataset adding confidence to this finding. Drawing parallels to \textit{Gfap} (\cref{fig:DEI_gfap}) and \textit{C4b} (\cref{fig:DEI_c4b}), upregulation of Trem2-201 mirrored that of \textit{Trem2} gene expression (\cref{fig:trem2_diff_analysis}\textbf{B,F}), indicating that the increased \textit{Trem2} gene expression in aged rTg4510 TG mice was primarily driven by one dominant isoform. Despite this upregulation of Trem2-201, we found that there was no change in isoform usage across genotype or with age (\cref{fig:trem2_diff_analysis}\textbf{E,I}); Trem2-201 occupied over 75\% of the isoform proportion in rTg4510 irrespective of genotype and age. The remaining isoform proportions were equally divided between the two other known isoforms (\cref{fig:trem2_diff_analysis}\textbf{I}) - Trem2-202 (ENSMUST00000113237.3) and Trem2-203 (ENSMUST00000113237.3) - and all of the other novel isoforms combined. These findings suggest that the drastic upregulation of the dominant isoform (Trem2-201) in aged rTg4510 TG mice was also accompanied with an increased expression of all minor isoforms by the same magnitude, resulting in a consistent isoform proportion. Hierarchical clustering of individual samples based on \textit{Trem2} isoform expression level confirmed the robust differences between TG and WT groups by age, reflecting the global increase of \textit{Trem2}-associated transcript expression with progressive tau pathology.  
