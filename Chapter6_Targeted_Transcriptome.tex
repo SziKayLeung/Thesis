@@ -41,63 +41,26 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 \end{figure}
 
 
+\newgeometry{left=2.7cm,bottom=1.5cm, right=1.5cm, top=1.5cm}
+\begin{landscape}
 \begin{table}[]
-	\centering
-	\captionsetup{width=1\textwidth}
+		\centering
+	\captionsetup{width=1.5\textwidth}
 	\caption[Transcriptional features of AD-risk genes selected for targeted profiling]%
 	{\textbf{Transcriptional features of AD-risk genes selected for targeted profiling.} Tabulated is the list of 20 AD-associated genes selected for targeted sequencing, with a summary of the respective gene length, transcript length, number of isoforms and exons number taken from the mouse reference genome (mm10, GENCODE, vM22). \\
 	\textit{Abca1} - ATP Binding Cassette Subfamily A Member 1, \textit{Abca7} - ATP Binding Cassette Subfamily A Member 7, \textit{App} - Amyloid Beta Precursor Protein, \textit{Bin1} - Bridging Integrator 1, \textit{Fus} - Fused in Sarcoma, \textit{Picalm} - Phosphatidylinositol Binding Clathrin Assembly Protein, \textit{Ptk2b} - Protein Tyrosine Kinase 2 Beta,  \textit{Rhbdf2} - Rhomboid 5 Homolog 2, \textit{Sorl1} - Sortilin Related Receptor 1, \textit{Trem2} - Triggering Receptor Expressed On Myeloid Cells 2, \textit{Trpa1} - Transient Receptor Potential Cation Channel Subfamily A Member 1}
 	\label{tab:target_genes_description}
 	\begin{threeparttable}
-	\begin{tabular}{@{}cccccc@{}}
-		\toprule
-		\begin{tabular}[c]{@{}c@{}}Target \\ Gene\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Gene \\ Length \\ (kb)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Number of \\ known \\ isoforms\tnote{a}\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Transcript \\ length\tnote{a} \\ (min - max, kb)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Number of \\ Exons\tnote{a}\\ (min - max)\end{tabular} &
-		Expression\tnote{b} \\ \midrule
-		\textit{Abca1}  & 129.108 & 2  & 0.769-10.212 & 1-50 & 983.29   \\
-		\textit{Abca7}  & 19.078  & 3  & 6.544-6.649  & 1-47 & 319.14   \\
-		\textit{Ank1}   & 175.612 & 17 & 0.325-8.321  & 1-46 & 1038.15  \\
-		\textit{Apoe}   & 3.079   & 11 & 0.453-1.404  & 1-5  & 27354.1  \\
-		\textit{App}    & 224.081 & 11 & 0.654-8.149  & 1-18 & 21953.7  \\
-		\textit{Bin1}   & 58.492  & 6  & 0.533-2.676  & 1-19 & 2556.89  \\
-		\textit{Cd33}   & 16.054  & 6  & 0.4-5.722    & 1-8  & 93       \\
-		\textit{Clu}    & 13.064  & 9  & 0.553-1.801  & 1-9  & 17854.89 \\
-		\textit{Fus}    & 18.244  & 16 & 0.35-5.521   & 1-15 & 2214.98  \\
-		\textit{Fyn}    & 195.617 & 9  & 0.329-3.548  & 1-14 & 2077.36  \\
-		\textit{Mapt}   & 100.7   & 12 & 0.289-5.243  & 1-13 & 7739.63  \\
-		\textit{Picalm} & 83.25   & 15 & 0.33-8.188   & 1-21 & 1695.2   \\
-		\textit{Ptk2b}  & 127.795 & 8  & 1.278-4.003  & 1-31 & 5506.74  \\
-		\textit{Rhbdf2} & 28.85   & 4  & 0.81-3.836   & 1-19 & 23.4     \\
-		\textit{Snca}   & 98.28   & 4  & 0.565-1.403  & 1-6  & 3716.69  \\
-		\textit{Sorl1}  & 159.577 & 4  & 0.221-10.667 & 1-48 & 3372.8   \\
-		\textit{Tardbp} & 14.637  & 30 & 0.356-7.471  & 1-10 & 1337.29  \\
-		\textit{Trem2}  & 7.707   & 4  & 0.523-4.78   & 1-5  & 301.92   \\
-		\textit{Trpa1}  & 46.214  & 2  & 3.262-4.236  & 1-27 & 5.77     \\
-		\textit{Vgf}    & 6.959   & 4  & 0.579-2.829  & 1-5  & 1849.63  \\ \bottomrule
-	\end{tabular}
-		\begin{tablenotes}
-	\footnotesize
-	\item[a] According to the mouse reference genome (mm10, GENCODE vM22)
-	\item[b] Gene expression in rTg4510 cortex (n = 29TG, 30 WT) derived from normalised RNA-Seq data\cite{Castanho2020}
-\end{tablenotes}
-\end{threeparttable}
-\end{table}
-
-
-\begin{table}[]
-	\centering
 	\begin{tabular}{@{}ccccccc@{}}
 		\toprule
+		\setlength\tabcolsep{6pt} %reduced margin size in table
 		\textit{\begin{tabular}[c]{@{}c@{}}Target   \\ Gene\end{tabular}} &
-		Genome co-ordinates &
+		Genome co-ordinates\tnote{a} &
 		\begin{tabular}[c]{@{}c@{}}Gene \\ Length\\ (kb)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Number of \\ known \\ isoforms\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Transcript Length\\  (min -max, kb)\end{tabular} &
-		\begin{tabular}[c]{@{}c@{}}Number of Exons \\ (min - max)\end{tabular} &
-		Expression \\ \midrule
+		\begin{tabular}[c]{@{}c@{}}Number of \\ known \\ isoforms\tnote{a}\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}Transcript Length\tnote{a}\\  (min -max, kb)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}Number of Exons\tnote{a} \\ (min - max)\end{tabular} &
+		Expression\tnote{b} \\ \midrule
 		\textit{Abca1}  & chr 4 : 53030670 -  53160014   & 129.108 & 2  & 0.769-10.212 & 1-50 & 983.29   \\
 		\textit{Abca7}  & chr 10 : 79997615 - 80015572   & 19.078  & 3  & 6.544-6.649  & 1-47 & 319.14   \\
 		\textit{Ank1}   & chr 8 : 22974836 - 23150497    & 175.612 & 17 & 0.325-8.321  & 1-46 & 1038.15  \\
@@ -119,7 +82,17 @@ Given the demonstrated success of targeted long-read sequencing to identify dise
 		\textit{Trpa1}  & chr 1 : 14872529 - 14918981    & 46.214  & 2  & 3.262-4.236  & 1-27 & 5.77     \\
 		\textit{Vgf}    & chr 5 : 137030295 - 137033351  & 6.959   & 4  & 0.579-2.829  & 1-5  & 1849.63  \\ \bottomrule
 	\end{tabular}
+\begin{tablenotes}
+	\footnotesize
+	\item[a] According to the mouse reference genome (mm10, GENCODE vM22)
+	\item[b] Gene expression in rTg4510 cortex (n = 29TG, 30 WT) derived from normalised RNA-Seq data\cite{Castanho2020}
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
+\end{landscape}
+\restoregeometry
+
+
 
 \newgeometry{left=2.7cm,bottom=1.5cm, right=1.5cm, top=1.5cm}
 %\begin{changemargin}{1.5cm}
@@ -1436,9 +1409,9 @@ However, deeper examination revealed complex variations of the final exon and 3'
 
 \newpage
 \subsection{Improved sensitivity from targeted sequencing detects upregulation of AD-associated genes in rTg4510 TG mice}
-Despite the success of capturing full-length transcripts from long-read sequencing of the global transcriptome, we have shown that this approach falls cannot robustly detect less abundant genes and isoforms (\cref{ch6: wholevstargeted}). In contrast, we have illustrated that target enrichment achieves deep sequencing of 20 AD-associated target genes, revealing unprecedented diversity of alternatively-spliced isoforms including hundreds of novel transcripts not previously described in existing annotations (\cref{ch6: target_gene_annotation}). We anticipated that this deep sequencing coverage would further allow more accurate quantification of gene and isoform expression using normalised full-length read counts (\cref{fig:isoform_quant_strategy}\textbf{C}), forgoing the need of short-read RNA-Seq data (\cref{fig:isoform_quant_strategy}\textbf{B}). Subsequently, we sought to characterise transcriptional differences of these well known AD-associated genes between rTg4510 WT and TG mice.
+Despite the success of capturing full-length transcripts from long-read sequencing of the global transcriptome, we have shown that this approach falls cannot robustly detect less abundant genes and isoforms (\cref{ch6: wholevstargeted}). In contrast, we have illustrated that target enrichment achieves deep sequencing of 20 AD-associated target genes, revealing unprecedented diversity of alternatively-spliced isoforms including hundreds of novel transcripts not previously described in existing reference annotations or in the global Iso-Seq dataset (\cref{ch6: target_gene_annotation}). We anticipated that this deep sequencing coverage would further allow more accurate quantification of gene and isoform expression using normalised full-length read counts (\cref{fig:isoform_quant_strategy}\textbf{C}), forgoing the need of short-read RNA-Seq data for quantitative analyses (\cref{fig:isoform_quant_strategy}\textbf{B}). Subsequently, we sought to characterise transcriptional differences of these well known AD-associated genes between rTg4510 WT and TG mice.
 
-Using targeted Iso-Seq reads for both annotation and expression, we identified three genes that were upregulated with progressive tau pathology in rTg4510 TG mice (summarised in \cref{tab: de_analysis}): \textit{Trem2} (log\textsubscript{2} fold change (FC) = 2.26, P = 2.45 x 10 \textsuperscript{-16}, R\textsuperscript{2} = 0.788), \textit{Cd33} (log\textsubscript{2}FC = 1.79, P = 4.5 x 10 \textsuperscript{-9}, R\textsuperscript{2} = 0.588) and \textit{Rhbdf2} (log\textsubscript{2}FC = 1.39, P = 3.06 x 10 \textsuperscript{-6}, R\textsuperscript{2} = 0.5). Upregulation of these genes was also observed using normalised ONT read counts, and were significantly more robust due to the greater sequencing depth achieved with ONT nanopore sequencing (\textit{Trem2}: log\textsubscript{2} fold change (FC) = 2.47, P = 1.91 x 10 \textsuperscript{-40}, R\textsuperscript{2} = 0.938; \textit{Cd33}: log\textsubscript{2}FC = 2.25, P = 2.97 x 10 \textsuperscript{-20}, R\textsuperscript{2} = 0.823; \textit{Rhbdf2}: log\textsubscript{2}FC = 1.31, P = 1.36 x 10\textsuperscript{-6}, R\textsuperscript{2} = 0.564). In each of these replicated genotype-associations, the direction of effect was the same (\cref{tab: de_analysis}). 
+Using targeted Iso-Seq reads for both annotation and quantification, we identified three genes that were upregulated with progressive tau pathology in rTg4510 TG mice (summarised in \cref{tab: de_analysis}): \textit{Trem2} (log\textsubscript{2} fold change (FC) = 2.26, P = 2.45 x 10 \textsuperscript{-16}, R\textsuperscript{2} = 0.788), \textit{Cd33} (log\textsubscript{2}FC = 1.79, P = 4.5 x 10 \textsuperscript{-9}, R\textsuperscript{2} = 0.588) and \textit{Rhbdf2} (log\textsubscript{2}FC = 1.39, P = 3.06 x 10 \textsuperscript{-6}, R\textsuperscript{2} = 0.5). Upregulation of these genes was also observed using normalised ONT read counts, with significantly greater expression diffeences between WT and TG mice, due to the greater sequencing depth achieved with ONT nanopore sequencing (\textit{Trem2}: log\textsubscript{2} fold change (FC) = 2.47, P = 1.91 x 10 \textsuperscript{-40}, R\textsuperscript{2} = 0.938; \textit{Cd33}: log\textsubscript{2}FC = 2.25, P = 2.97 x 10 \textsuperscript{-20}, R\textsuperscript{2} = 0.823; \textit{Rhbdf2}: log\textsubscript{2}FC = 1.31, P = 1.36 x 10\textsuperscript{-6}, R\textsuperscript{2} = 0.564). In each of these validated genotype-associations, the direction of effect was the same (\cref{tab: de_analysis}). 
 
 Finally, we detected a significant increase in \textit{Apoe} (log\textsubscript{2}FC = 1.44, P = 1.45 x 10\textsuperscript{-8},  R\textsuperscript{2} = 0.76), \textit{Clu} (log\textsubscript{2}FC = 1.36, P = 1.39 x 10\textsuperscript{-16}, R\textsuperscript{2} = 0.80) and \textit{Abca1} (log\textsubscript{2}FC = 1.56, P = 5.66 x 10\textsuperscript{-5}, R\textsuperscript{2} = 0.7) gene expression using normalised ONT but not Iso-Seq FL read counts. This corroborated with recent findings in a RNA-Seq study that reported upregulation of \textit{Trem2} and \textit{Apoe} in isolated-microglia from rTg4510 mice\cite{Sobue2021}. Notably, these gene expression differences were not recapitulated using normalised Iso-Seq read counts from the Iso-Seq global dataset, indicating the greater sensitivity of targeted sequencing to perform differential gene expression analyses. 
 
@@ -1619,13 +1592,13 @@ Finally, we detected a significant increase in \textit{Apoe} (log\textsubscript{
 
 \newpage
 \subsection{Gene-specific differential transcript expression and usage in TG mice}
-Given the improved sensitivity of target enrichment and the extensive mapping of isoform landscape of AD-associated genes (detailed in \cref{ch6: target_gene_annotation}), we next sought to identify differences in transcript expression between rTg4510 TG and WT mice. In total, we detected 553 differentially expressed transcripts using normalised ONT reads counts (summarised in \cref{tab: de_analysis}), the majority (n = 485, 87.7\%) of which were associated with progressive tau pathology. Among these, 448 transcripts (81\%) were novel with the greatest number of differentially expressed transcripts annotated to \textit{Clu} (n = 151, 31.1\%). Of note, differential transcript expression was detected for all 20 AD-associated target genes with the exception of \textit{Ank1} and \textit{Trpa1}. 
+Given the improved sensitivity of target enrichment and the extensive mapping of isoform landscape of AD-associated genes (detailed in \cref{ch6: target_gene_annotation}), we next sought to identify differences in transcript expression between rTg4510 TG and WT mice. In total, we detected 553 differentially expressed transcripts using normalised ONT reads counts (summarised in \cref{tab: de_analysis}), the majority (n = 485, 87.7\%) of which were associated with progressive tau pathology and the remaining associated with either age or genotype alone. Among these, 448 transcripts (81\%) were novel with the greatest number of differentially expressed transcripts annotated to \textit{Clu} (n = 151, 31.1\%). Of note, differential transcript expression was detected for all 20 AD-associated target genes with the exception of \textit{Ank1} and \textit{Trpa1}. 
 
 Despite this unprecedented detection of novel transcripts whose expression altered with increased tau pathology, we found that the majority (n = 366, 75.4\%) of these isoforms were lowly-expressed ($<$20 normalised FL read counts) and accounted for less than 5\% of the respective isoform fraction. Further examination revealed that the isoform landscape across the 20 AD-associated genes were characterised by a few dominant isoforms (\cref{fig:globalIF}). This corroborates with recent findings from the VastDB\cite{Tapial2017} (the largest resource documenting genome-wide AS events in vertebrates to date) that reported simultaneous expression of multiple major isoforms in more than 18\% of genes\cite{Tapial2017}. 
 
-Reflecting the relatively lower sequencing depth of the Iso-Seq targeted dataset, we only detected 16 differentially expressed transcripts using Iso-Seq normalised read counts. Comparison of the ONT and Iso-Seq targeted dataset revealed six (37.5\%) that were commonly identified as differentially expressed (summarised in \cref{tab_diffcommon}): three transcripts were annotated to \textit{Trem2} (\cref{fig:diffcommon_1}), one novel transcript to \textit{Clu} (\cref{fig:diffcommon_2}\textbf{A,B,C}), one known transcript to \textit{Ptk2b} (\cref{fig:diffcommon_2}\textbf{D,E,F}) and one novel transcript to \textit{Apoe} (\cref{fig:diffcommon_2}\textbf{G,H,I}). All six transcripts were upregulated with progressive tau pathology in the rTg4510 mice with similar effect size in the Iso-Seq and ONT targeted datasets (\cref{tab_diffcommon}).  
+Reflecting the relatively lower sequencing depth of the Iso-Seq targeted dataset, we only detected 16 differentially expressed transcripts using Iso-Seq normalised read counts. Comparison of the ONT and Iso-Seq targeted dataset revealed six (37.5\%) that were commonly identified as differentially expressed (\cref{tab_diffcommon}): three transcripts were annotated to \textit{Trem2} (\cref{fig:diffcommon_1}), one novel transcript to \textit{Clu} (\cref{fig:diffcommon_2}\textbf{A,B,C}), one known transcript to \textit{Ptk2b} (\cref{fig:diffcommon_2}\textbf{D,E,F}) and one novel transcript to \textit{Apoe} (\cref{fig:diffcommon_2}\textbf{G,H,I}). All six transcripts were upregulated with progressive tau pathology in the rTg4510 mice with similar effect size in the Iso-Seq and ONT targeted datasets (\cref{tab_diffcommon}).  
 
-The following sections describe the transcriptional variation of three genes: \textit{Trem2} (\cref{trem2_diff}), \textit{Cd33} (\cref{cd33_diff}) and \textit{Bin1} (\cref{bin1_diff}). These were chosen due to their prominent transcriptional profiles, which make them particularly suited to be investigated in more detail. Transcriptional profiles of the remaining 17 AD-risk genes can be found in \textbf{\cref{app_diff_adrisk_others}}.
+The following sections describe the transcriptional profiles of \textit{Trem2} (\cref{trem2_diff}), \textit{Cd33} (\cref{cd33_diff}) and \textit{Bin1} (\cref{bin1_diff}) in detail, which exhibited significant variation associated with progression of tau pathology. Profiles of the remaining 17 AD-risk genes can be found in \textbf{\cref{app_diff_adrisk_others}}.
 
 
 \begin{landscape}
