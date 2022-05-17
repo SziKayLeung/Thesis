@@ -46,9 +46,9 @@ One of the challenges in applying the WTAC protocol to the mouse experiments was
 	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in \cref{WTAC_Pre_RT_incubation} to prime the RNA with poly(T).
 	\item Reverse transcription PCR mix was prepared with primed-RNA (\cref{WTAC_RT_Mix}).
 	\item The sample was mixed by tapping the tube, spun down and incubated in the conditions outlined in \cref{WTAC_RT_incubation} for first-strand cDNA synthesis.
-	\item cDNA from RT reaction was split into 7 PCR tubes, each with 1uL of cDNA and reagents tabulated in \cref{WTAC_PCR_Mix}.
+	\item cDNA from RT reaction was split into 7 PCR tubes, each with 1$\mu$L of cDNA and reagents tabulated in \cref{WTAC_PCR_Mix}.
 		\begin{itemize}
-			\item This step was necessary to test the optimum number of PCR cycles to prevent over-amplification, with the PCR tubes incubated for different cycle durations.
+			\item This step was necessary to test the optimal number of PCR cycles to prevent over-amplification, with the PCR tubes incubated for different cycle durations.
 		\end{itemize}
 	\item All 7 PCR tubes were incubated simultaneously (\cref{WTAC_PCR_Incubation}), with one PCR tube removed at each cycle from cycle 12 to cycle 18 in Segment 3 (as suggested by WTAC protocol) and placed in ice.
 	\item At the end of Segment 3 in \cref{WTAC_PCR_Incubation}, all 6 PCR tubes were placed back into the thermal cycler for enzyme termination (\cref{WTAC_PCR_Incubation}, Segment 4). 
@@ -102,6 +102,7 @@ One of the challenges in applying the WTAC protocol to the mouse experiments was
 \begin{table}[h]
 	\centering
 	\captionsetup{width=0.95\textwidth}
+	\setlength\tabcolsep{7pt} %reduced margin size in table
 	\caption[Reverse transcription PCR mix]%
 	{\textbf{Reverse transcription PCR mix.}}
 	\label{WTAC_RT_Mix}
@@ -111,8 +112,8 @@ One of the challenges in applying the WTAC protocol to the mouse experiments was
 		&                                                                                &  WTAC protocol & Optimised protocol \\ \cmidrule(r){1-4}
 		Sample from pre-RT                   &                                                                                & 3                      & 5                  \\
 		dH20                                 &                                                                                & 0.85                   & 0.55               \\
-		Superscript IV Buffer                & 1.00 U/ul                                                                      & 0.8                    & 1.1                \\
-		DTT                                  & 0.57 X                                                                         & 0.175                  & 0.25               \\
+		Superscript IV Buffer                & 1.00 U/$\mu$L                                                                      & 0.8                    & 1.1                \\
+		DTT                                  & 0.57 mM                                                                         & 0.175                  & 0.25               \\
 		TSO                                  & 2.50 mM                                                                        & 0.7                    & 1                  \\
 		RNAse inhibitor                      & 1.20 uM                                                                        & 0.175                  & 0.25               \\
 		SuperScript IV RT & 10.0 U/$\mu$L                                                                      & 0.35                   & 0.5                \\
@@ -204,7 +205,7 @@ One of the challenges in applying the WTAC protocol to the mouse experiments was
 
 \clearpage
 \subsubsection{Results}
-Following the optimised WTAC protocol, we similarly determined the optimum number of PCR cycles necessary for cDNA amplification (akin to \cref{ch: pcr_optimisation}) by assessing the quality of cDNA templates from cycles 11 to 18 using agarose gel electrophoresis. No difference in bands was observed between the original WTAC and optimised protocol (\cref{fig:wtac_optimised_gel1_2}\textbf{A}), indicating that I had successfully optimised the WTAC protocol for smaller initial input of RNA. However, both protocols showed a consistent intensity of DNA bands across the range of PCR cycles rather than an expected gradual increase, suggesting there was already over-amplification by cycle 12 (\cref{fig:wtac_optimised_gel1_2}\textbf{A}). The two stark bands at \textasciitilde600bp and \textasciitilde1000bp against the smear of cDNA further suggests over-usage of ERCC, possibly due to the overestimation of assumed proportion of mRNA. The optimised protocol was thus repeated with a wider range of cycles from cycle 2 to 20, and with a lower ERCC RNA spike-in concentration to reduce unnecessary sequencing of ERCC (final concentration of 0.6ng/ul and a dilution factor of 1:50.5) (\cref{fig:wtac_optimised_gel1_2}\textbf{B}). 
+Following the optimised WTAC protocol, we similarly determined the optimal number of PCR cycles necessary for cDNA amplification (akin to \cref{ch: pcr_optimisation}) by assessing the quality of cDNA templates from cycles 11 to 18 using agarose gel electrophoresis. No difference in bands was observed between the original WTAC and optimised protocol (\cref{fig:wtac_optimised_gel1_2}\textbf{A}), indicating that I had successfully optimised the WTAC protocol for smaller initial input of RNA. However, both protocols showed a consistent intensity of DNA bands across the range of PCR cycles rather than an expected gradual increase, suggesting there was already over-amplification by cycle 12 (\cref{fig:wtac_optimised_gel1_2}\textbf{A}). The two stark bands at \textasciitilde600bp and \textasciitilde1000bp against the smear of cDNA further suggests over-usage of ERCC, possibly due to the overestimation of assumed proportion of mRNA. The optimised protocol was thus repeated with a wider range of cycles from cycle 2 to 20, and with a lower ERCC RNA spike-in concentration to reduce unnecessary sequencing of ERCC (final concentration of 0.6ng/$\mu$L and a dilution factor of 1:50.5) (\cref{fig:wtac_optimised_gel1_2}\textbf{B}). 
     
 \begin{figure}[!htp]
 	\begin{center}
