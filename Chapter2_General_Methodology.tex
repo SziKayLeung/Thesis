@@ -6,28 +6,34 @@ This chapter describes the general methods that were applied in the long-read se
 
 \subsection{Mouse model of AD tauopathy: rTg4510} 
 \label{ch2: rtg4510}
-rTg4510 mice recapitulate AD tauopathy through the overexpression of the human tau transgene, MAPT\textsuperscript{P301L}, which harbours the FTD-associated P301L mutation. It contains four microtubule-binding domains while lacking the N-terminal segment (0N4R), and exons 2-3 of the mouse prion protein gene \textit{Prnp}. The transgene expression is controlled under the calcium calmodulin kinase II promoter (CaMK2a) and is largely restricted to the forebrain, with rapid age-dependent spread of neuropathology starting from as early as 2 months in the neocortex to the hippocampus by 5 months (\cref{fig:immunohistochemistry}). Neuronal and synaptic loss are also observed from 9 months, with these mice exhibiting cognitive and behavioural impairments. Sex differences in pathology have been reported with female mice exhibiting earlier and more severe cognitive and behavioural impairments than transgenic male mice\cite{M2011}. 
+rTg4510 mice recapitulate AD tauopathy through the overexpression of the human tau transgene, MAPT\textsuperscript{P301L}, which harbours the FTD-associated P301L mutation. It contains four microtubule-binding domains while lacking the N-terminal segment (0N4R), and exons 2-3 of the mouse prion protein gene \textit{Prnp}. The transgene expression is controlled under the CaMK2a promoter and is largely restricted to the forebrain, with rapid age-dependent spread of neuropathology starting from as early as 2 months in the neocortex to the hippocampus by 5 months (\cref{fig:immunohistochemistry}). Neuronal and synaptic loss are also observed from 9 months, with these mice exhibiting cognitive and behavioural impairments. Sex differences in pathology have been reported with female mice exhibiting earlier and more severe cognitive and behavioural impairments than transgenic male mice\cite{M2011}. 
 
 The rTg4510 mouse model is particularly informative as tau expression can be induced through the tetracycline operon-responsive element and suppressed upon doxycycline treatment\cite{Ramsden2005}. However, a recent study reported disruption of several endogenous mouse genes due to the random integration of MAPT\textsuperscript{P301L}, which has additional off-target effects that may potentially contribute to the neurodegenerative phenotype associated with rTg4510 transgenic mice\cite{Gamache2019}. 
  
 
-\subsection{Animal breeding \& Sample Preparation}
+\subsection{Animal breeding \& sample preparation}
 \label{sec: animalbreeding_sample preparation}
-All animal procedures were carried out at Eli Lilly and Company (Windlesham, UK), in accordance with the UK Animals (Scientific Procedures) Act 1986 and with approval of the local Animal Welfare and Ethical Review Board. The mice were housed under standard conditions (constant temperature and humidity with a 12h light/dark cycle in individually ventilated cages) before terminal anaesthesia with pentobarbital and transcardial perfusion with phosphate-buffered saline (PBS)\cite{Castanho2020}.
+All animal procedures were carried out at Eli Lilly and Company (Windlesham, UK), in accordance with the UK Animals (Scientific Procedures) Act 1986 and with approval of the local Animal Welfare and Ethical Review Board. rTg4510 mice, licensed from the Mayo Clinic (Jacksonville, US), were bred on a mixed 129S6/SvEvTac + FVB/NCrl background (heterozygous tau responder x heterozygous tTA effector)\cite{Castanho2020}. Six breeding colonies were required to produce the rTg4510 transgenic mice (\cref{tab:mouse_breeding}). The mice were housed under standard conditions (constant temperature and humidity with a 12h light/dark cycle in individually ventilated cages) before terminal anaesthesia with pentobarbital and transcardial perfusion with phosphate-buffered saline (PBS)\cite{Castanho2020}.
 
-The entorhinal cortex was dissected from the left-brain hemisphere of female transgenic mice (TG\nomenclature{TG}{Transgenic mice}) and wild-type controls (WT\nomenclature{WT}{Wild-type mice}), aged 2, 4, 6 and 8 months (n = 9 - 10 mice per group). Total RNA was then extracted\cite{Castanho2020} using the AllPrep DNA/RNA Mini Kit (Qiagen) according to the manufacturer's protocol, and converted to cDNA for library preparation (described later in \cref{section:ch2_cDNA_synthesis_explanation}). Of note, more than 80\% of total RNA is comprised of ribosomal RNA (rRNA), with the remaining 15\% representing transfer RNA (tRNA) and only 1-5\% representing mRNA. 
+The entorhinal cortex was dissected from the left-brain hemisphere on wet ice using common neuroanatomical landmarks, as described by Heffner et al.(1980)\cite{Heffner1980}, to ensure reproducibility. Total RNA was then extracted\cite{Castanho2020} using the AllPrep DNA/RNA Mini Kit (Qiagen) according to the manufacturer's protocol, and converted to cDNA for library preparation (described later in \cref{section:ch2_cDNA_synthesis_explanation}). Of note, more than 80\% of total RNA is comprised of ribosomal RNA (rRNA), with the remaining 15\% representing transfer RNA (tRNA) and only 1-5\% representing mRNA. 
 
-\begin{landscape}
-	\begin{figure}[htp]
-		\centering
-		\vspace{20pt}
-		\includegraphics[page=3,trim={0 7cm 0 0 },clip, scale = 0.7]{Figures/Introduction_Figures_Landscape.pdf}
-		\captionsetup{width=1.5\textwidth}
-		\caption[Progressive pathological characterisation of rTg4510 mouse model]%
-		{\textbf{Progressive pathological characterisation of rTg4510 mouse model.} Shown are \textbf{(A)} representative immunohistochemistry images from the hippocampus showing accumulation of tau in rTg4510 transgenic (TG) mice compared with wild-type (WT) mice at 2, 4, 6 and 8 months of age. \textbf{(B)} Progressive accumulation of tau is observed in the hippocampus and the \textbf{(C)} entorhinal cortex in rTg4510 TG but not WT mice. Figures and legends are adapted from Castanho et al. 2020 \cite{Castanho2020}.}
-		\label{fig:immunohistochemistry}
-	\end{figure}	
-\end{landscape}
+
+\begin{table}[]
+	\captionsetup{width=0.95\textwidth}
+	\caption[rTg4510 breeding procedures]%
+	{\textbf{rTg4510 breeding procedures.} Tabulated are the strain backgrounds and breeding schemes required to generate the rTg4510 transgenic mice. Table is taken from Castanho (2019)\cite{Castanho2019}.}
+	\label{tab:mouse_breeding}
+	\setlength\tabcolsep{5.5pt} %reduced margin size in table
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		& Line                                                                     & Strain background                                                   & Breeding scheme                                                                    & Offspring                                                                                                              \\ \midrule
+		1 & \begin{tabular}[c]{@{}c@{}}Background \\ Line 1\end{tabular}             & \begin{tabular}[c]{@{}c@{}}129S6/SvEvTac \\ (Taconic)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}129S6/SvEvTac \\ x \\ 129S6/SvEvTac\end{tabular}        & 129S6/SvEvTac                                                                                                          \\
+		2 & \begin{tabular}[c]{@{}c@{}}Background \\ Line 2\end{tabular}             & \begin{tabular}[c]{@{}c@{}}FVB/NCrl \\ (Charles River)\end{tabular} & \begin{tabular}[c]{@{}c@{}}FVB/NCrl \\ x \\ FVB/NCrl\end{tabular}                  & FVB/NCrl                                                                                                               \\
+		3 & \begin{tabular}[c]{@{}c@{}}Tau responder\\  Parental Line 1\end{tabular} & FVB/NCr                                                             & \begin{tabular}[c]{@{}c@{}}Tau P301L \\ x\\  FVB/NCrl\end{tabular}                 & Heterozygous Tau Responder                                                                                             \\
+		4 & \begin{tabular}[c]{@{}c@{}}tTA Effector \\ Parental Line 2\end{tabular}  & 29S6/SvEvTac                                                        & \begin{tabular}[c]{@{}c@{}}Camk2a-tTa \\ x \\ 129S6/SvEvTac\end{tabular}           & Heterozygous tTA Effector                                                                                              \\
+		5 & rTg4510                                                                  & Mixed                                                               & \begin{tabular}[c]{@{}c@{}}HET Tau Responder \\ x \\ HET tTA Effector\end{tabular} & \begin{tabular}[c]{@{}c@{}}rTg4510 wildtype \\ (tTA WT) \\ rTg4510 transgenic\\  (tTA with Tau transgene)\end{tabular} \\ \bottomrule
+	\end{tabular}
+\end{table}
 
 \subsection{Assessment of nucleic acid quality and quantity}
 Acquiring high-quality RNA, generating full-length cDNA and successfully performing the multi-step library preparation are all crucial for optimal sequencing experiments, particularly long-read sequencing. The assessment of the purity and integrity of extracted RNA, followed by cDNA quality and quantity, was therefore required throughout library preparation and quality control (QC)\nomenclature{QC}{Quality control} stages of my sequencing experiments. This was undertaken using the RNA/DNA ScreenTape and Bioanalyzer assays for qualitative assessment, and the Qubit for DNA quantification. 
@@ -159,7 +165,7 @@ At various stages of long-read library preparation, cDNA was purified using AMPu
 \clearpage
 \section{ERCC-RNA Spike-In Controls}
 \label{section:ch2_ERCC_explanation} 
-A set of external RNA Spike-In controls, generated by the External RNA Controls Consortium (hereby referred to as "ERCC"\nomenclature{ERCC}{External RNA Controls Consortium}), was used to i) evaluate the performance of library preparation and the sequencing experiments, and to ii) validate the Iso-Seq bioinformatics pipeline in accurately characterising the transcriptome using long reads. ERCC consists of 92 polyadenylated synthetic transcripts (250 to 2000 nucleotides) of known sequences from the ERCC plasmid library, which were added in pre-determined amounts to the sample before first-strand cDNA synthesis. The usage of ERCC allowed me to assess the quantitative power of long-read sequencing in addition to providing absolute quantification of mRNA isoforms (with the generation of a standard curve). It can further assess the validity of the bioinformatic analysis as only one unique molecule per ERCC should be detected. 
+A set of external RNA Spike-In controls, generated by the External RNA Controls Consortium (hereby referred to as "ERCC"\nomenclature{ERCC}{External RNA Controls Consortium}), was used to i) evaluate the performance of library preparation and the sequencing experiments, and to ii) validate the Iso-Seq bioinformatics pipeline in accurately characterising the transcriptome using long reads. ERCC consists of 92 polyadenylated synthetic transcripts (250 to 2000 nucleotides) of known sequences from the ERCC plasmid library, which were added in pre-determined amounts to the sample before first-strand cDNA synthesis. 
 
 The amount of ERCC added was determined using the below equation \cite{WTAC}:
 \begin{myequation}[!h]
@@ -196,4 +202,7 @@ A separate pilot experiment (\textbf{Appendix \ref{ch:alt_cDNA}}) showed success
 	{\textbf{Usage of ERCC controls to evaluate performance of long-read sequencing runs.} Shown is \textbf{(A)} an agarose gel image taken from PCR amplification of cDNA and ERCC (1.8ng/$\mu$L determined from \textbf{Equation 2.1}), and ERCC alone as a positive control. 5$\mu$L of PCR aliquots were taken every cycle (cycles 13 to 18) and then assessed on gel electrophoresis. The two bands at 600bp and 1000bp correspond to the enrichment of ERCC at these two lengths as expected. \textbf{(B)} Distribution of known ERCC length, with a significant proportion of transcripts sized at 500-600bp and 1000-1200bp. \textbf{(C)} An agarose gel image after a repeat of PCR amplification of cDNA and ERCC at a lower concentration (0.6ng/$\mu$L) with ERCC as positive and water as negative control, respectively. The numbers above the lanes refer to the number of PCR cycles. L denotes to 100bp Ladder.}
 	\label{fig:ercc_lab_gel}
 \end{figure}
+
+The usage of ERCC guided me in the development of our bioinformatics pipeline by i) estimating and reducing the number of false negatives, and ii) ensuring that only one unique molecule per ERCC is detected. This resulted in optimisation of various parameters and addition of further filtering steps downstream (described later in \cref{ercc_development}).  
+
  

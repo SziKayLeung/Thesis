@@ -30,7 +30,7 @@ Unlike the short reads produced by standard Illumina-based RNA-seq, PacBio Iso-S
 \end{figure}
 
 \clearpage
-\subsection{Lab Workflow}
+\subsection{Lab workflow}
 \label{chap:isoseq_labpipeline}
 This section describes the lab workflow for PacBio Iso-Seq library preparation, which was subsequently implemented in the long-read sequencing experiments for global transcriptome and targeted profiling in \textbf{Chapters 4 and 6}, respectively. General methods pertaining to sample preparation, cDNA synthesis and amplification can be found in \cref{ch: general methodology}.
 
@@ -112,7 +112,7 @@ Examples of the initial set of probes provided by IDT and the final curated sets
 	\end{center}
 	\captionsetup{width=0.95\textwidth}
 	\caption[Lab workflow for hybridisation-based cDNA capture for targeted profiling]%
-	{\textbf{Lab workflow for hybridisation-based cDNA capture for targeted profiling.} Shown is \textbf{(A)} a schematic figure of the target gene enrichment step involving hybridisation of cDNA with probes and blockers (poly(T) oligonucleotides, cDNA synthesis primers), followed by isolation with streptavidin beads. The addition of blockers prevents non-specific binding, and subsequently increases capture rate and target gene sequencing coverage. \textbf{(B)} An overview of the lab workflow.}
+	{\textbf{Lab workflow for hybridisation-based cDNA capture for targeted profiling.} Shown is \textbf{(A)} a schematic figure of the target gene enrichment step involving hybridisation of cDNA with probes and blocking oligonucleotides (such as oligonucleotides complementary to the poly(A) tail and cDNA synthesis primers), followed by isolation with streptavidin beads. The addition of blocking oligonucleotides prevents non-specific binding, and subsequently increases capture rate and target gene sequencing coverage. \textbf{(B)} An overview of the lab workflow.}
 	\label{fig:isoseq_targetcapture}
 \end{figure}
 
@@ -194,7 +194,7 @@ Productivity or loading metrics provide a measure of the number of ZMWs that gen
 An optimal sequencing run would achieve a total run yield of 20-30Gb with \textasciitilde70\% of ZWMs in P1 (positive signal), and 20-30\% ZMWs in P0 (empty ZMWs). A low P0 (<20\%) indicates over-loading of polymerase-bound templates, resulting in shorter P1 polymerase reads and poor sequencing yield (noisy basecalling). Conversely, a high P0 (> 40\%) from under-loading would generate fewer P1 reads and result in low sequencing yield. A combination of high P0, low P1 and high P2 loading profiles indicates presence of contaminants (possibly from poor AMPure bead purification) that is interfering with productive polymerase activity. A good balance between P0, P1 and P2 is therefore key to achieving a good sequencing run with high yield and high-quality, long P1 polymerase reads. Multiple titrations of loading concentrations can be trialled to determine the optimum loading concentration essential for reaching this balance. 
 
 \clearpage
-\subsection{Bioinformatics Pipeline} 
+\subsection{Bioinformatics pipeline} 
 \label{section:isoseq_bioinformatics}
 This section describes the bioinformatics pipeline that we established for analysing Iso-Seq data generated on the PacBio Sequel I following Iso-Seq library preparation (\textbf{Chapters 4 - 6}). 
 
@@ -329,10 +329,10 @@ Under these filtering criteria (depicted in \cref{fig:sqantifiltering}), an isof
 \end{figure}
 
 \newpage
-\subsubsection{Usage of ERCC to inform Iso-Seq bioinformatic analysis}
+\subsubsection{Methodological contribution: Usage of ERCC to inform Iso-Seq bioinformatic analysis}
+\label{ercc_development}
 A set of 92 synthetic spike-in ERCC controls was added to the global transcriptome profiling experiments (described in \cref{section:ch2_ERCC_explanation}) to assess the sensitivity of the Iso-Seq approach and validate our downstream bioinformatics pipeline. After processing of Iso-Seq raw reads (described in \cref{section: Isoseq_rawprocessing}), HQ transcripts were aligned to ERCC reference sequences in parallel to the reference genome. ERCC-aligned and reference-aligned transcripts were then collapsed using \textit{Cupcake} scripts under default parameters (-c 95 -i 99) and annotated using \textit{SQANTI} annotations - the standard bioinformatics pipeline that has been recommended by the PacBio research community. 
 
 The application of this pipeline to our data, however, resulted in the detection of only a proportion of the individual ERCC molecules (n = 37, 40.22\%). Furthermore, several ERCC molecules were annotated with more than one molecule (n = 8, 8.7\%), contrary to the fact that there should only be one synthetic molecule sequenced for each ERCC. These "multiple-isoformic ERCC" molecules were generally more abundant, suggesting that more highly-expressed genes are likely to be associated with more isoforms that have failed to collapse properly. Visualisation and BLAST analysis of these "isoforms" revealed them to be shorter fragments of the original ERCC sequence, generated as technical artefacts either from fragmentation of the originals molecule or incomplete PCR synthesis. Application of \textit{Tama-remove-fragment-models.py} script from \textit{TAMA}\cite{Kuo2017} successfully removed these partial, redundant isoforms, while retaining the longer, intact isoforms. 
 
-Deeper investigation into the low coverage of ERCC identified  20 additional less-abundant ERCC molecules that were 
-discarded from \textit{Cupcake} due to an imperfect reference alignment with a shorter 5' end - a likely result of 5'degradation. Lowering the coverage threshold (the amount of sequence overlap) from 99\% (default) to 95\% rescued these ERCC molecules and increased the total number of ERCC molecules detected by 20\% (n = 57 unique number of ERCC, 61.96\%), subsequently strengthening the correlation between FL Iso-Seq read count and the actual amount of ERCC used (95\% coverage: corr = 0.98, \textit{P} = 1.41 x 10\textsuperscript{-41}; 99\% coverage: corr = 0.82, \textit{P} = 4.89 x 10\textsuperscript{-10}, as illustrated later in \cref{fig:isoseq_whole_lowlyexp}). Notably, this finding highlights the limitation of our current Iso-Seq approach in failing, to i) differentiate between intact and truncated RNA, resulting in reduced confidence about isoform TSS, and ii) detect lowly-expressed genes and transcripts where the deleterious impact of RNA degradation is even more significant. 
+Deeper investigation into the low coverage of ERCC identified  20 additional less-abundant ERCC molecules that were discarded from \textit{Cupcake} due to an imperfect reference alignment with a shorter 5' end - a likely result of 5'degradation. Lowering the coverage threshold (the amount of sequence overlap) from 99\% (default) to 95\% rescued these ERCC molecules and increased the total number of ERCC molecules detected by 20\% (n = 57 unique number of ERCC, 61.96\%), subsequently strengthening the correlation between FL Iso-Seq read count and the actual amount of ERCC used (95\% coverage: corr = 0.98, \textit{P} = 1.41 x 10\textsuperscript{-41}; 99\% coverage: corr = 0.82, \textit{P} = 4.89 x 10\textsuperscript{-10}, illustrated in \cref{fig:isoseq_whole_lowlyexp}). This finding highlights the limitation of our current Iso-Seq approach in failing, to i) differentiate between intact and truncated RNA, resulting in reduced confidence about isoform TSS, and ii) detect lowly-expressed genes and transcripts where the deleterious impact of RNA degradation is more significant. 
