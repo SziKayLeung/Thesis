@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt,oneside]{report}
+\usepackage{xr}
+\usepackage{xcolor}
+\usepackage{varioref}
+\usepackage{cleveref}
+\externaldocument{Chapter1_General_Introduction}
+\externaldocument{Chapter2_General_Methodology}
+\externaldocument{Chapter3a_LongReadSequencing_PacBio}
+\externaldocument{Chapter3b_LongReadSequencing_ONT}
+\externaldocument{Chapter3c_LongReadSequencing_IsoformQuantification}
+\externaldocument{Chapter5_Tg4510_GlobalAnalysis}
+\externaldocument{Chapter6_Targeted_Transcriptome}
+\externaldocument{Chapter7_General_Discussion}
+\usepackage[textwidth=157mm,textheight=257mm,left=2.6cm,right=2.6cm,top=2cm,bottom=2cm]{geometry}
+
+\begin{document}
+
+\textbf{Chapter 1: Introduction}
+\begin{itemize}
+	\item \textcolor{blue}{Please define ‘heritability’ in this context (p4) and consider a discussion of broad-sense versus narrow-sense heritability.} 
+	This has been addressed and defined appropriately in \cref{Genetics_of_AD} (i.e. broad sense heritability) with reference to twin studies. I've also included "narrow-sense heritability" later on in the descriptions relating to GWAS studies.	
+	\item \textcolor{blue}{Please discuss Thal vs Braak staging. Can you comment how amyloid and tau pathology relate to each other and how they relate to clinical measures.}
+	This has now been addressed in \cref{fig:AD_development} legend and expanded in \cref{ch1: ad_pathology}.
+	\item \textcolor{blue}{Some more details re the rTg4510 mouse model should be discussed in the introduction – what are the advantages and disadvantage of this model? What other mouse models could you consider?} 
+	\newline Additional details relating to the tetracycline-controlled operon system and disruption of endogeneous genes are included (\cref{ch1_mouse_model}).
+	\newline Advantages and disadvantages of this model and its relevance to AD is expanded in the General Discussion (\cref{ch7: rTg4510 relevance}). A new section dedicated to future work on other AD models (i.e CRISPR-cas9 as discussed during viva) is also included in the General Discussion (\cref{ch7: cross-validation_mouse_models}).  
+	\item \textcolor{blue}{Please discuss limitations of a mouse model without amyloid pathology for studying AD. Would this model be better suited to study of FTD?} 
+	\newline The implications of this mouse model without amyloid pathology (as a disadvantage) has now been included in the General Discussion (\cref{ch7: cross-validation_mouse_models}).
+	\item \textcolor{blue}{Please explain the focus on the entorhinal cortex.} 
+	\newline This has now been addressed in \cref{ch1_mouse_model}.
+	\item \textcolor{red}{Please discuss problems in determining whether transcriptome changes are upstream or downstream of disease. Could splicing changes be a consequence rather than a cause of AD?}
+\end{itemize}
+
+\vspace{1cm}
+\textbf{Chapter 2: Methods} 
+\begin{itemize}
+	\item \textcolor{blue}{Please add some more explanation of the use of ERCC controls. Explain that this analysis led to the conclusion that reads should be removed from both Iso-seq and Nanopore pipelines if they show 100\% sequence identity with the reference but are obviously truncated.} 
+	\newline I have provided further explanation of the use of ERCC controls at the end of \cref{section:ch2_ERCC_explanation} with a reference to a \cref{ercc_development}, detailing the analysis and conclusions surrounding usage of ERCC controls.
+	\item \textcolor{blue}{Please include additional detail regarding the mouse breeding is performed.}
+	\newline I have included additional detail (\cref{sec: animalbreeding_sample preparation}) with a new table of the breeding schemes and mouse background (\cref{tab:mouse_breeding}).
+	\item \textcolor{blue}{How was entorhinal cortex isolated to ensure reproducibility?} 
+	\newline A sentence on the methods used to isolate the entorhinal cortex has now been included, with a reference to the method, see \cref{sec: animalbreeding_sample preparation}. 
+	\item \textcolor{blue}{Please justify your use of wildtypes as controls compared to DOX-treated rTg4510 – briefly explain the advantages and disadvantages of both}. 
+	\newline The rationale of using wildtypes as controls has now been provided in the General Discussion (\cref{ch7: rTg4510 relevance}), with introduction to DOX-treated rTg4510 model, and a brief comparison of both models.
+\end{itemize}
+
+\vspace{1cm}
+\textbf{Chapter 3} 
+\begin{itemize}
+	\item \textcolor{blue}{Please clarify the method development that was performed as part of this chapter. In particular the steps which led to the conclusion that an optimal pipeline would have an alignment threshold of 85\% combined with the removal of obviously truncated reads, should be described.}
+	\newline The section detailing the steps where I have optimised the pipeline is now emphasised from the title (\cref{ercc_development}).
+	\item \textcolor{blue}{Please clarify the problems with protocols dependent on PCR amplification.}
+	\newline Further details of the problems of PCR amplification and solutions to overcome these challenges have been added to the General Discussion (\cref{ch7: artefacts}).
+	\item \textcolor{blue}{Fig 3.5 – please describe the role of blocking oligos}
+	\newline This has been reworded in \cref{fig:isoseq_targetcapture} legend for clarification.
+	\item \textcolor{blue}{P105 Can you explain in more detail the ‘iterative backward stepwise approach’}.
+	\newline This has now been addressed (see \cref{diffrential_exp}). 
+	\item \textcolor{blue}{P106 – was one or both strategies used to exclude lowly expressed isoforms?}.
+	\newline This has now been addressed. The strategy chosen and the rationale can be reviewed in \cref{ch:diu_method}.
+\end{itemize}
+
+
+\vspace{1cm}
+\textbf{Chapter 4} 
+\begin{itemize} 
+	\item \textcolor{blue}{Fig 4.3 appears to show that TG and WT samples processed differently – please correct figure.}
+	\newline This figure has now been corrected to show consistent processing of TG and WT samples.
+	\item \textcolor{blue}{Fig 4.7 – in the legend you state this is a box plot, but there’s no box! Please adjust the legend.} 
+	\newline This has now been corrected. 
+	\item \textcolor{blue}{Please clarify the comment that there was a ‘high degree consistency across biological replicates’ – how was this demonstrated?}
+	\newline This sentence here has now been removed to avoid confusion, though this comment is demonstrated in later analysis (\cref{ch4: mice_AS_events}).
+\end{itemize}
+
+\vspace{1cm}
+\textbf{Chapter 5}
+\begin{itemize}
+	\item \textcolor{blue}{Please add statistics (e.g. p-values to figures), especially where it aids interpretation e.g. Fig 5.2A.}
+	\newline The statistics have been added to \cref{fig:rTg4510_sequencing_metrics} and \cref{fig:isoseq_targeted_run_output}
+	\item \textcolor{blue}{Fig 5.3 appears to show that the expression of the human transgene reduces with age despite increasing pathology with age. Please discuss this data and discuss its interpretation.}
+	\newline This has now been followed up and discussed in \cref{mapt_transgene_whole}
+	\item \textcolor{blue}{Fig 5.4 – Please add some explanation of the WGCNA modules from the previous study.}
+	\newline This has now been addressed in the legend (\cref{fig:dea_model_num}).
+	\item \textcolor{blue}{Please add a discussion of how transcriptome changes might be assigned to specific cell types. You mentioned the use of FACS sorting and we discussed single cell methods and bioinformatic deconvolution (clustering with cell-specific transcripts). This could be added to the existing section regarding cell-specificity in the General Discussion.}
+	\newline The use of single-cell sequencing has been added to the discussion of chapter 5 (\cref{ch5: limitations}). 
+	\item \textcolor{blue}{Please discuss how quantification of relative proportion of isoforms depends on detecting majority of isoforms and describe how this is a limitation.}
+	\newline This has now been addressed in the conclusion (see \cref{ch5: limitations}). 
+	\item \textcolor{blue}{Please mention detected changes in gene/transcripts disrupted by transgene insertion.}
+	\newline This has now been emphasised as a limitation to the mouse model in the General Discussion (\cref{ch7: rTg4510 relevance}). 
+\end{itemize}
+ 
+
+\vspace{1cm}
+\textbf{Chapter 6}
+\begin{itemize}
+	\item \textcolor{blue}{Please add the conclusion that 80\% of ONT only one read in 1 sample and highlight your idea for validating across multiple platforms.}
+	\newline This conclusion has been added with reference to a figure from the appendix. The importance of sequencing the same samples across multiple platforms is also emphasised. See \cref{ch6: overview}.
+	\item \textcolor{red}{Please mention your more recent human analysis where no change in transcript expression was detected using Iso-seq.}
+	\item \textcolor{blue}{Fig6.14 – Please discuss why the human MAPT gene is relatively lower expressed in the Nanopore data versus the Iso-seq}
+	\newline This is now clarified in the text describing the figure (see \cref{ch6: mapt_transgene}) and the legend (\cref{fig:hmapt_ont_isoseq}).
+	\item \textcolor{red}{Please describe your new data showing that differential methylation within the BIN1 gene coincides with exon skipping. This demonstrates the power of a multi-omic analysis for validating data.}
+	\item \textcolor{blue}{P170 – “Increasing the sample size is therefore unlikely to make any difference in detecting the more lowly-expressed transcripts.” If this deficiency is based upon low sequencing depth for long read technology then should this be rephrased: “Increasing the sample size without increasing the number of reads per sample is therefore unlikely to make any difference in detecting the more lowly-expressed transcripts on a per sample basis.” What is the cost calculation here i.e. why not just increase the depth per sample?} 
+	\newline This has been rephrased and clarified in \cref{ch6_introduction} as to why there is a challenge to increasing the depth per sample
+	\item \textcolor{blue}{Please clarify the reasons for choosing each of the 20 genes studied.}
+	\newline The rationale for each gene has now been specified in \cref{fig:targeted_genes} legend.
+	\item \textcolor{blue}{Table 6.2 – Typo suggesting that FUS is associated with TDP-43 pathology}. 
+	\newline This has been corrected. 
+	\item \textcolor{blue}{Is capture-seq the future for studies of transcript isoforms using iso-seq? What about the use of live selection of reads (with the Nanopore) to select for specific sequences?}
+	\newline The applications of live selection of reads has now been discussed in \label{ch6: limitation}, as a method of addressing the limitations of capture-seq.
+	\item \textcolor{blue}{Fig 6.15 – both panels (corresponding to different batches) should have the same scale for assessing number of sequences per nanopore channel}
+	\newline The scales look visually different, but I've checked the code from the official nanopore github scripts, and the density appears to be consistent.  
+	\item \textcolor{blue}{Please highlight your role in developing tools for visualisation of novel transcript isoforms.}
+	\newline This has now been emphasised in \cref{ch6: overview}.
+\end{itemize}
+
+\vspace{1cm}
+\textbf{Chapter 7: General Discussion}
+\begin{itemize}
+	\item \textcolor{blue}{Please add to the discussion of downstream validation. How would you design a systematic large-scale protein-level validation of novel transcript isoforms? Is this feasible with current technology?} 
+	\newline Protein-level validation has been discussed in \cref{ch7: functional_importance}. More details of applying this approach to this thesis and its limitations can now be found in \cref{ch7: validation}.
+	\item \textcolor{blue}{Please add a discussion of the functional relevance of transcript isoforms including your idea that the burden of transcripts may lead to excessive load on autophagy/UPS system.}
+	\newline A discussion on the functional relevance including the burden of transcripts on UPS system can be found in \cref{ch7: functional_importance}.
+\end{itemize}
+
+\end{document}
