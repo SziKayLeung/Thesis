@@ -20,14 +20,14 @@ Following on from the results presented in \textbf{Chapter 4}, this chapter aime
 \subsection{Datasets}
 All analyses presented in this chapter follow on from \cref{ch: whole_transcriptome} and use the same Iso-Seq long-read datasets generated from 12 female mice (n = 6 WT, n = 6 TG, aged 2 and 8 months, \cref{tab:whole_phenotype}). Briefly, RNA was prepared for Iso-Seq library preparation and SMRT sequencing on the PacBio Sequel (\cref{ch4_methods: isoseq_library}), followed by QC and data processing (\cref{ch4_methods: isoseq_data}). Reads from individual samples were processed separately with \textit{IsoSeq3} and merged for transcript collapse using \textit{Cupcake}. High-quality, full-length transcripts from the merged dataset were then aligned to the mouse reference genome (mm10, GENCODE) using \textit{Minimap2} (v2.17) and re-annotated using \textit{SQANTI3} with no splice junction filtering from short-read RNA-Seq data. ISM transcripts with only the 3' fragment matching reference transcript (3' ISM) were considered technical artefacts resulting from 5' degradation and thus removed.  
 
-\subsection{Quantification of human MAPT transgene expression}
+\subsection{Quantification of human \textit{MAPT} transgene expression}
 \label{ch5: hmapt_quant}
 As described in \cref{ch2: rtg4510}, rTg4510 mice recapitulate AD tauopathy through the overexpression of the human tau transgene, MAPT\textsuperscript{P301L}. The presence of the human-specific \textit{MAPT} sequence was therefore determined in the Iso-Seq datasets by using the \textit{grep} Unix command, as QC of sample identity. A 2kb region present in the 3' UTR was chosen as the representative human \textit{MAPT} sequence\cite{Castanho2020}.
 
 \subsection{Characterisation of alternative splicing events} 
 Alternative splicing events were examined using a range of packages and custom scripts (as described and implemented in \cref{ch4: transcriptome_annotation}), to assess whether there was a difference in splicing patterns associated with progressive tau pathology in the rTg4510 mouse model. 
 
-\subsection{Gene and Isoform Quantification}
+\subsection{Gene and isoform quantification}
 Gene and isoform expression were estimated using two approaches (as described in \cref{sec: gene_isoform_quant_explained}). Briefly, these were: i) the alignment of short-read RNA-Seq reads to the Iso-Seq-derived transcriptome (hybrid approach) using \textit{Kallisto}\cite{Bray2016} (v0.46.0), and ii) the use of normalised Iso-Seq full-length read counts as a proxy for expression. Full-length read counts for each sample were taken from the \textit{read\_stat.txt} file generated using the \textit{collapse\_isoforms\_by\_sam.py} script (\textit{Cupcake}) with the sequencing run ID as identifiers. 
 
 \subsection{Differential expression analysis}

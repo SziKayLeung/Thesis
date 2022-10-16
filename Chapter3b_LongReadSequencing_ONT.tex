@@ -66,7 +66,7 @@ After obtaining high-quality and full-length cDNA sequences, nanopore library pr
 Nanopore sequencing was performed on the MinION using a Min106D Flow cell, which contains the R9 nanopore (as shown in \cref{fig:ONT_advances}). Prior to sequencing, the flow cells were tested for the total number of functional pores present and were only used if > 800 pores were available (as recommended by ONT). The flow cell was subsequently primed for sequencing using a “Running Buffer with Fuel mix” (RBF), which contained the substrate cofactor essential for efficient motor protein activity (i.e. ATP for the ATPase activity of the helicase component of the translocation motor). The library was then loaded onto the MinION with “Library Loading Beads” (LLB), which are sepharose beads that work on a principle similar to that of Iso-Seq MagBeads by immobilising the library to the lipid membrane.
 
 % https://community.nanoporetech.com/posts/flo-minxxx-x-rx-x-r
-\subsection{Run performance and quality metric}
+\subsection{Run performance and quality metrics}
 \label{ONT_performance}
 One major drawback of nanopore sequencing is the relatively high error rate compared to short-read RNA sequencing. This can arise from random and systematic error during sequencing or during translation of the raw electric signal into a DNA sequence (a process known as “basecalling”)\cite{Rang2018}. The first error is exacerbated by the fact that i) several nucleotides occupy the pore at any given time point, resulting in multiple effects on the signal, and that ii) the signal does not change with translocation of homopolymers (stretches of identical bases).
 
